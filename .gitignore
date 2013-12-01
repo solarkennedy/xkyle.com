@@ -9,6 +9,6 @@ sass.old
 source.old
 source/_stash
 source/stylesheets/screen.css
-source/unused_uploads
+source/_unused_uploads
 vendor
 node_modules
