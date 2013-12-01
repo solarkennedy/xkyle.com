@@ -23,6 +23,6 @@ My good friend [Pete](http://www.timelordz.com/blog/) has [his](http://www.timel
 
 Mine is more personal, for my own projects, his more more like a Linux/General knowledgebase.
 
-[![](https://xkyle.com/wp-content/uploads/screenshot-main-page-xkylecom-notebook-mozilla-firefox.png)](http://wiki.xkyle.com)
+[![](/uploads/screenshot-main-page-xkylecom-notebook-mozilla-firefox.png)](http://wiki.xkyle.com)
 
 Click on the picture to go there.

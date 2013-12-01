@@ -30,7 +30,7 @@ If you are good then you don't play the waiting game:
 
 
 But even still, this doesn't get you around having to manually choose the bios settings you want. Human interaction leads to mistakes, and more importantly, servers are **NOT** snowflakes:
-[![bios-meme](https://xkyle.com/wp-content/uploads/bios-meme.jpg)](https://xkyle.com/wp-content/uploads/bios-meme.jpg)
+[![bios-meme](/uploads/bios-meme.jpg)](/uploads/bios-meme.jpg)
 
 
 ## The Solution

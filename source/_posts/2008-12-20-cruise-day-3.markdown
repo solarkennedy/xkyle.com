@@ -13,14 +13,14 @@ tags:
 
 Today Cody and I visited the beautiful [Grand Cayman](http://en.wikipedia.org/wiki/Grand_Cayman):
 
-[![](https://xkyle.com/wp-content/uploads/pict0003-300x225.jpg)](https://xkyle.com/wp-content/uploads/pict0003.jpg)
+[![](/uploads/pict0003-300x225.jpg)](/uploads/pict0003.jpg)
 
 Myspace shot:
 
-[![](https://xkyle.com/wp-content/uploads/pict0002-300x225.jpg)](https://xkyle.com/wp-content/uploads/pict0002.jpg)
+[![](/uploads/pict0002-300x225.jpg)](/uploads/pict0002.jpg)
 
 And for the geek in everyone, hacked someone's WEP key and used their wireless while on the land. The ip I used was 63.136.113.229 which is hosted by Cable and Wireless. Here is an MTR to it:
 
-[![](https://xkyle.com/wp-content/uploads/screenshot-terminal-kylekyle-laptop-bin-wireless-300x201.png)](https://xkyle.com/wp-content/uploads/screenshot-terminal-kylekyle-laptop-bin-wireless.png)
+[![](/uploads/screenshot-terminal-kylekyle-laptop-bin-wireless-300x201.png)](/uploads/screenshot-terminal-kylekyle-laptop-bin-wireless.png)
 
 Yea..maybe not so interesting to others. Our shore excursions to go snorkeling with sting rays got canceled because of the weather....

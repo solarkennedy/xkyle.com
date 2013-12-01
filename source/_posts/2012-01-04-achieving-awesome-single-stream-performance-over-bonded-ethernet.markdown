@@ -20,7 +20,7 @@ tags:
 Ethernet Link Aggregation (aka PortChannel, Etherchannel, ethernet bonding, NIC teaming, trunking, link bundling, Smartgroup, Ethertrunk, etc) is a way to combine multiple Ethernet links to a single logical link. This improves redundancy and increases aggregate performance. It is good stuff, especially if you are into [High Availability](https://xkyle.com/tag/highavailability/).
 
 Here is a typical setup:
-[![](https://xkyle.com/wp-content/uploads/typical.png)](https://xkyle.com/wp-content/uploads/typical.png)
+[![](/uploads/typical.png)](/uploads/typical.png)
 
 A good start. If you can spare the ports and cables to make this work, you should do it. You get the benefit of very fast fail-over between links if one dies. And you get the aggregated bandwidth. However, you probably will **not** get the combined bandwidth over a **single **tcp stream. The reason for this is that the switch probably does not round-robin the ethernet frames to the source server. Usually switches have a configurable algorithm for switching frames over bonded links. Here are some options on my switch:
 
@@ -49,7 +49,7 @@ Yea, no round robin.  As referenced in [http://www.kernel.org/doc/Documentatio
 
 If you do know of a switch that supports striped frames, please [contact me](mailto:kyle@xkyle.com). But! There is a way to work around this limitation and achieve Awesome performance! It costs an extra switch, but the benefits are double performance and the ability to withstand a switch failure. Here is a crappy diagram:
 
-[![](https://xkyle.com/wp-content/uploads/dual.png)](https://xkyle.com/wp-content/uploads/dual.png)
+[![](/uploads/dual.png)](/uploads/dual.png)
 
 This is what is suggested in Section 12 in [http://www.kernel.org/doc/Documentation/networking/bonding.txt](http://www.kernel.org/doc/Documentation/networking/bonding.txt)
 
@@ -113,7 +113,7 @@ Proof is in the pudding:
   * [Round Robin Bonding](https://wiki.xkyle.com/Channel_Bonding) on the Linux server side
 
 	
-  * [Switch Config Setup for Virtual Port Channel](https://xkyle.com/wp-content/uploads/10g-switch.txt) by some awesome networking dudes
+  * [Switch Config Setup for Virtual Port Channel](/uploads/10g-switch.txt) by some awesome networking dudes
 
 
 In the end it breaks down to about $2000 per 20g bond. (taking into account switch ports, nics, cables, etc) If your speed and availability can justify that cost, then it is a cool setup.

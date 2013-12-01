@@ -17,7 +17,7 @@ tags:
 
 The [Hallmark Text Band](http://www.textbands.com/) is a strange thing:
 
-[![Hallmark Text Band](https://xkyle.com/wp-content/uploads/P3130076-300x235.jpg)](https://xkyle.com/wp-content/uploads/P3130076.jpg)
+[![Hallmark Text Band](/uploads/P3130076-300x235.jpg)](/uploads/P3130076.jpg)
 
 Doesn't Hallmark know kids have cell phones now?
 Anyway, it is an extremely simple micro-controller driving a led matrix and a [C-Max CMM-9201](http://www.c-max.com.hk/en/technology/rfcomm/2_4g_trans_ic). You get 10 characters, and a small reed-switch? triggers a hardware interrupt, and broadcasts your 10 characters to a friend, and you swap messages. The devices holds 24 messages, FIFO. Memory is volatile. Profanity filter included.
@@ -26,7 +26,7 @@ Oh well. Lets hack it.
 
 I don't have any fancy hardware to listen to the RF. I decided to sniff the SPI bus with a [Bus Pirate](http://dangerousprototypes.com/docs/Bus_Pirate) (Sparkfun version).
 
-[![](https://xkyle.com/wp-content/uploads/P3130078-300x224.jpg)](https://xkyle.com/wp-content/uploads/P3130078.jpg)[![](https://xkyle.com/wp-content/uploads/P3130081-300x300.jpg)](https://xkyle.com/wp-content/uploads/P3130081.jpg)
+[![](/uploads/P3130078-300x224.jpg)](/uploads/P3130078.jpg)[![](/uploads/P3130081-300x300.jpg)](/uploads/P3130081.jpg)
 
 With the Bus Pirate I've tried using the SPISniffer and the text interface in SPI monitor mode. I've tried all sorts of variations of speed, etc, and I can't get a reliable output.
 

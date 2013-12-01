@@ -39,7 +39,7 @@ Personally, I don't have any kind of battle-hardened wisdom. Most of what I know
 I'm not saying [IT is dead](https://www.networkworld.com/news/2008/010908-carr-wrong.html). But IT is changing.
 
 Look at how building houses has changed over time:
-[![](https://xkyle.com/wp-content/uploads/brick.jpg)](https://xkyle.com/wp-content/uploads/brick.jpg)[![](https://xkyle.com/wp-content/uploads/cinderblock.jpg)](https://xkyle.com/wp-content/uploads/cinderblock.jpg)[![](https://xkyle.com/wp-content/uploads/concrete-1024x731.jpg)](https://xkyle.com/wp-content/uploads/concrete.jpg)[![](https://xkyle.com/wp-content/uploads/Prefabricated_house_construction-300x225.jpg)](https://xkyle.com/wp-content/uploads/Prefabricated_house_construction.jpg)
+[![](/uploads/brick.jpg)](/uploads/brick.jpg)[![](/uploads/cinderblock.jpg)](/uploads/cinderblock.jpg)[![](/uploads/concrete-1024x731.jpg)](/uploads/concrete.jpg)[![](/uploads/Prefabricated_house_construction-300x225.jpg)](/uploads/Prefabricated_house_construction.jpg)
 
 
 

@@ -27,4 +27,4 @@ http://kyle.com/other/pap/output.html
 And the mixed reactions from Conceptis:
 [http://www.conceptispuzzles.com/forum/fb.aspx?m=28503](http://www.conceptispuzzles.com/forum/fb.aspx?m=28503)
 
-[![](https://xkyle.com/wp-content/uploads/pap.jpg)](https://xkyle.com/wp-content/uploads/pap.jpg)
+[![](/uploads/pap.jpg)](/uploads/pap.jpg)

@@ -18,13 +18,13 @@ tags:
 
 Today is the Birthday of AloR, the author of the amazing tool, ettercap.
 
-[![](https://xkyle.com/wp-content/uploads/etter-terminal.png)](https://xkyle.com/wp-content/uploads/etter-terminal.png)
+[![](/uploads/etter-terminal.png)](/uploads/etter-terminal.png)
 
 You can see that because it is his birthday, he asks that you email him. I happily obliged.
 
 Ettercap is an amazing tool. Not only does it have a console, curses, and graphical versions, it can be scripted, hacked, used with plugins, and the list goes on. Here is a screen shot of it in progress:
 
-[![](https://xkyle.com/wp-content/uploads/ettercap.png)](https://xkyle.com/wp-content/uploads/ettercap.png)
+[![](/uploads/ettercap.png)](/uploads/ettercap.png)
 
 Here is the everyday use senario:
 

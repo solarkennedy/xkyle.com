@@ -17,7 +17,7 @@ tags:
 - wep
 ---
 
-[![](https://xkyle.com/wp-content/uploads/verizon_fios_250.jpg)](https://xkyle.com/wp-content/uploads/verizon_fios_250.jpg)
+[![](/uploads/verizon_fios_250.jpg)](/uploads/verizon_fios_250.jpg)
 
 Take a look at some wireless keys that I've collected from some Verizon FiOS installs around Tampa:
 
@@ -45,7 +45,7 @@ I want to emphasize that these are the defaults, and only geeks, nerds and the l
 
 Here is a typical type of router (actiontec) that does this:
 
-[![](https://xkyle.com/wp-content/uploads/mi424wr-300x216.gif)](https://xkyle.com/wp-content/uploads/mi424wr.gif)
+[![](/uploads/mi424wr-300x216.gif)](/uploads/mi424wr.gif)
 
 Take a real close look at two of the examples:
 

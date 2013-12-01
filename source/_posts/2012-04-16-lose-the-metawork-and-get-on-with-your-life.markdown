@@ -22,7 +22,7 @@ Different jobs have different types of metawork. Sometimes it is just paperwork.
 
 I personally like the word metawork. In the same sense that metdata is the data about the data, metawork is the work done about the actual work. Let me give some examples with some sort of chart:
 
-[![](https://xkyle.com/wp-content/uploads/metawork.png)](https://xkyle.com/wp-content/uploads/metawork.png)
+[![](/uploads/metawork.png)](/uploads/metawork.png)
 
 Try to put some of your activities on a similar chart. Where is most of your time spent?
 

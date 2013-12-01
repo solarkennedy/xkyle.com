@@ -17,18 +17,18 @@ tags:
 
 Last month Games Magazine published their [Online Contest 29 - Role Playing 4](http://www.gamesmagazine-online.com/gameslinks/contest29.html). Here is the puzzle:
 
-[![](https://xkyle.com/wp-content/uploads/GamesMagazineContest29.gif)](https://xkyle.com/wp-content/uploads/GamesMagazineContest29.gif)
+[![](/uploads/GamesMagazineContest29.gif)](/uploads/GamesMagazineContest29.gif)
 
 The circles represent actors, the diamonds represent movies they have been in. Pink is for actresses and blue is for actors. The numbers represent the numbers in their name: First, Last. Question marks indicate the number in their name is 3,4,6, or 9 letters. The center actress is what we are after. Note there are no clues for her name, but she has been in 13 movies. All movies in this puzzle are in the last century (2000-now) and are not shorts or documentaries.
 
 Personally, I can't imagine solving this puzzle without computer aid. Just ask yourself, how many actresses do you know with 7 letters in their last name? Uh....
 
 So how will we go about solving this? Let us start by numbering the nodes to make them easy to reference:
-[![](https://xkyle.com/wp-content/uploads/GamesMagazineContest29-WithNodes.gif)](https://xkyle.com/wp-content/uploads/GamesMagazineContest29-WithNodes.gif)
+[![](/uploads/GamesMagazineContest29-WithNodes.gif)](/uploads/GamesMagazineContest29-WithNodes.gif)
 
 My language of choice to solve this is going to be python. The first thing we will need though, is a copy of the IMDB. Luckily, the IMDB provides alternative interfaces besides their web interface, including [plain text file downloads](http://www.imdb.com/interfaces#plain)! And now we need the [python-imdbpy](http://imdbpy.sourceforge.net/) package. It comes with a script that will allow you to import these imdb downloads into local mysql tables. For exact commands you can check out my [README](https://dev.xkyle.com/gamesmagazine/Role%20Playing%204/README) file, which includes exact wget, mysql, and python commands to import the database locally.
 
-[caption id="attachment_539" align="alignnone" width="835" caption="I'm hopeless without phpmyadmin. Yes I am a noob."][![](https://xkyle.com/wp-content/uploads/phpmyadmin-rp4.jpg)](https://xkyle.com/wp-content/uploads/phpmyadmin-rp4.jpg)[/caption]
+[caption id="attachment_539" align="alignnone" width="835" caption="I'm hopeless without phpmyadmin. Yes I am a noob."][![](/uploads/phpmyadmin-rp4.jpg)](/uploads/phpmyadmin-rp4.jpg)[/caption]
 
 So you have a local copy of the imdb? Great! Now how will we go about solving the puzzle? My approach is to start first by narrowing down all of the possibilities for the actors in each node. The center node possibilities are going to be any actress who has been in 13 movies in the last century (only a few hundred). How will we narrow down the other nodes? Regular expressions. For example, node 0 has 5 letters in their first name, and 3,4,6 or 9 letters in their last. Here is a regular expression to find that:
 

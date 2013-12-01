@@ -12,4 +12,4 @@ tags:
 - carbon fiber
 ---
 
-[![](https://xkyle.com/wp-content/uploads/PA0900022-300x111.jpg)](https://xkyle.com/wp-content/uploads/PA0900022.jpg)[![](https://xkyle.com/wp-content/uploads/PA090004-300x175.jpg)](https://xkyle.com/wp-content/uploads/PA090004.jpg)[![](https://xkyle.com/wp-content/uploads/PA090005-300x89.jpg)](https://xkyle.com/wp-content/uploads/PA090005.jpg)[![](https://xkyle.com/wp-content/uploads/PB030038-300x95.jpg)](https://xkyle.com/wp-content/uploads/PB030038.jpg)[![](https://xkyle.com/wp-content/uploads/PB0300401-300x156.jpg)](https://xkyle.com/wp-content/uploads/PB0300401.jpg)[![](https://xkyle.com/wp-content/uploads/PB030041-300x142.jpg)](https://xkyle.com/wp-content/uploads/PB030041.jpg)
+[![](/uploads/PA0900022-300x111.jpg)](/uploads/PA0900022.jpg)[![](/uploads/PA090004-300x175.jpg)](/uploads/PA090004.jpg)[![](/uploads/PA090005-300x89.jpg)](/uploads/PA090005.jpg)[![](/uploads/PB030038-300x95.jpg)](/uploads/PB030038.jpg)[![](/uploads/PB0300401-300x156.jpg)](/uploads/PB0300401.jpg)[![](/uploads/PB030041-300x142.jpg)](/uploads/PB030041.jpg)

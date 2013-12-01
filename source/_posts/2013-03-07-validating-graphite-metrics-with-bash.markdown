@@ -16,7 +16,7 @@ tags:
 
 At my dayjob I get to work with [Graphite](http://graphite.wikidot.com/) and power meters. It is cool:
 
-[![power-breakdown](https://xkyle.com/wp-content/uploads/power-breakdown.png)](https://xkyle.com/wp-content/uploads/power-breakdown.png)
+[![power-breakdown](/uploads/power-breakdown.png)](/uploads/power-breakdown.png)
 
 To make it easy for my clients to get power information, I've written a command line tool called "power" that they can run to get the power usage for a server when running their program. Here is an example:
 

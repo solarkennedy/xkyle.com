@@ -14,11 +14,11 @@ I've seen a lot of electronic fireflies on the internet. [Here](http://negativea
 
 This is my first microcontroller project from scratch, and I got to learn all sorts of interesting things like SPI programming, Watchdog Timers, Sleep states, and many other things...
 
-[![IMAG0001](https://xkyle.com/wp-content/uploads/IMAG0001-300x225.jpg)](https://xkyle.com/wp-content/uploads/IMAG0001.JPG)[![IMAG0002](https://xkyle.com/wp-content/uploads/IMAG0002-300x225.jpg)](https://xkyle.com/wp-content/uploads/IMAG0002.JPG)
+[![IMAG0001](/uploads/IMAG0001-300x225.jpg)](/uploads/IMAG0001.JPG)[![IMAG0002](/uploads/IMAG0002-300x225.jpg)](/uploads/IMAG0002.JPG)
 
 I wanted to flash more than just one firefly at a time, so I couldn't do true PWM with all 12 with an ATtiny85. So I came up with my own way to control varying levels of brightness. Also I wanted a light sensor so the fireflies could come out slowly during the night, and the quickly disappear when the lights come on. The hardware was pretty difficult to solder, involving stripping [magnet wire](http://www.radioshack.com/product/index.jsp?productId=2036277) and hand soldering SMD LEDs.
 
-[![IMAG0016](https://xkyle.com/wp-content/uploads/IMAG0016-300x225.jpg)](https://xkyle.com/wp-content/uploads/IMAG0016.JPG)[![IMAG0005](https://xkyle.com/wp-content/uploads/IMAG0005-300x225.jpg)](https://xkyle.com/wp-content/uploads/IMAG0005.JPG)
+[![IMAG0016](/uploads/IMAG0016-300x225.jpg)](/uploads/IMAG0016.JPG)[![IMAG0005](/uploads/IMAG0005-300x225.jpg)](/uploads/IMAG0005.JPG)
 
 Sorry for the poor pictures, my camera doesn't do well in low light.
 

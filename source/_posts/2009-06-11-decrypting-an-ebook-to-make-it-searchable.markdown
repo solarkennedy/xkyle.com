@@ -53,5 +53,5 @@ Now I have a fully searchable, plain text file. Exactly what I wanted in the fir
 
 For the REAL magic, I use agrep to search for strings similar to provided example test questions to help "highlight" the answers. More technical details on that magic on [my wiki](http://wiki.xkyle.com/Answer_Finder).
 
-[![answer](https://xkyle.com/wp-content/uploads/answer-300x25.jpg)](https://xkyle.com/wp-content/uploads/answer.JPG)
+[![answer](/uploads/answer-300x25.jpg)](/uploads/answer.JPG)
 

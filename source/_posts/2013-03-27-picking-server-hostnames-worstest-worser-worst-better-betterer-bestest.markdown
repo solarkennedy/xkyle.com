@@ -42,7 +42,7 @@ You wouldn't do this would you?
 hostname `shuf -n 1 /usr/share/dict/words`
 
 
-[![bios-meme](https://xkyle.com/wp-content/uploads/bios-meme-300x225.jpg)](https://xkyle.com/wp-content/uploads/bios-meme.jpg)
+[![bios-meme](/uploads/bios-meme-300x225.jpg)](/uploads/bios-meme.jpg)
 Additionally, the name almost **enables** admins to overload the server with multiple services. "What server should we run DNS on? Put it on Alf, it has some spare cycles." That conversation would not happen if the server was called "db04". Also we have no way to judge the urgency of a server outage without being very familiar with the services it provides.
 
 Oh, and it doesn't scale. Say it with me here: **Servers are not Precious Snowflakes! **And no, giving your server's custy names does NOT increase your security. Prove me wrong.
@@ -64,7 +64,7 @@ Oh, and it doesn't scale. Say it with me here: **Servers are not Precious Snowfl
   * wtf5
 
 
-[![36743853](https://xkyle.com/wp-content/uploads/36743853-300x225.jpg)](https://xkyle.com/wp-content/uploads/36743853.jpg)These names sometimes come from ancient department abbreviations  or maybe three unrelated words. They also might hint at being part of a collection, but many times they are indicators of server cruft. For example, wtf5 could be the fifth server in a long line of failures. wtf1-4 don't exist anymore, sorry for the confusion.
+[![36743853](/uploads/36743853-300x225.jpg)](/uploads/36743853.jpg)These names sometimes come from ancient department abbreviations  or maybe three unrelated words. They also might hint at being part of a collection, but many times they are indicators of server cruft. For example, wtf5 could be the fifth server in a long line of failures. wtf1-4 don't exist anymore, sorry for the confusion.
 
 Don't do this! I appreciate the brevity, but save it for DNS CNAMES. I can understand naming something "server2" during an upgrade from "server", but unless you have good reason, rename it back when you are done. Future employees will thank you and it makes your infrastructure _**feel** _cleaner.
 
@@ -153,7 +153,7 @@ I'm conflicted on leading zeros. Future proofing is one thing, but how many dns 
   * mail
 
 
-[![36744679](https://xkyle.com/wp-content/uploads/36744679-300x300.jpg)](https://xkyle.com/wp-content/uploads/36744679.jpg)Yes. To me these are perfect. The very name of the server implies what runs on it, and deters admins from running other things on it. We are talking _one logical service per server_.
+[![36744679](/uploads/36744679-300x300.jpg)](/uploads/36744679.jpg)Yes. To me these are perfect. The very name of the server implies what runs on it, and deters admins from running other things on it. We are talking _one logical service per server_.
 
 I like db01a because it implies that there is a pair, db01b. (Bonus points for a db01 floating ip, if applicable)
 

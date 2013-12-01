@@ -14,6 +14,6 @@ tags:
 
 It kinda sucks. No matter how much sanding and polish I do, I can't get it to look great. It is smooth, however. Corners are hard. Just posting these pics for archival purposes, not to show off here.
 
-[![](https://xkyle.com/wp-content/uploads/PC1500021-300x224.jpg)](https://xkyle.com/wp-content/uploads/PC1500021.jpg)[![](https://xkyle.com/wp-content/uploads/PC150005-300x224.jpg)](https://xkyle.com/wp-content/uploads/PC150005.jpg)
+[![](/uploads/PC1500021-300x224.jpg)](/uploads/PC1500021.jpg)[![](/uploads/PC150005-300x224.jpg)](/uploads/PC150005.jpg)
 
-[![](https://xkyle.com/wp-content/uploads/PC150008-300x224.jpg)](https://xkyle.com/wp-content/uploads/PC150008.jpg)[![](https://xkyle.com/wp-content/uploads/PC150009-300x224.jpg)](https://xkyle.com/wp-content/uploads/PC150009.jpg)
+[![](/uploads/PC150008-300x224.jpg)](/uploads/PC150008.jpg)[![](/uploads/PC150009-300x224.jpg)](/uploads/PC150009.jpg)

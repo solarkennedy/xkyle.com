@@ -16,7 +16,7 @@ tags:
 
 I'm tired of configuring Nagios by hand. Just tired. I always forget to do stuff. I'll add a new host, or stick in a raid card, add a new website, whatever, and forget to add a nagios check for it.
 
-[![](https://xkyle.com/wp-content/uploads/nagiosforget.png)](https://xkyle.com/wp-content/uploads/nagiosforget.png)
+[![](/uploads/nagiosforget.png)](/uploads/nagiosforget.png)
 
 So it happened. You setup a server, put critical infrastructure on it, but forgot to monitor it. It goes down, bad stuff happens. Your boss asks, why weren't we monitoring this? Let me supply a few options to prevent this from happening in the future:
 
@@ -106,4 +106,4 @@ The <||> operator takes virtual resources that were defined on other servers, an
 
 So go forth, and define @@nagios_services's whenever you have a puppet server setup. Like a boss.
 
-[![](https://xkyle.com/wp-content/uploads/gravitron-300x225.jpg)](https://xkyle.com/wp-content/uploads/gravitron.jpg)
+[![](/uploads/gravitron-300x225.jpg)](/uploads/gravitron.jpg)

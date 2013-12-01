@@ -14,7 +14,7 @@ tags:
 - scripting
 ---
 
-[![](https://xkyle.com/wp-content/uploads/boggle-300x239.jpg)](https://xkyle.com/wp-content/uploads/boggle.jpg)
+[![](/uploads/boggle-300x239.jpg)](/uploads/boggle.jpg)
 
 Bash is my favorite computer language. I also love writing programs to help human problems.
 

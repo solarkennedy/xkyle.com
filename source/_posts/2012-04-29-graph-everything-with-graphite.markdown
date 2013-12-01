@@ -63,7 +63,7 @@ Monitoring
   * "Ldap queries up 200% in 6 months"
 
 	
-  * [![](https://xkyle.com/wp-content/uploads/graphite_fullscreen_800.png)](https://xkyle.com/wp-content/uploads/graphite_fullscreen_800.png)
+  * [![](/uploads/graphite_fullscreen_800.png)](/uploads/graphite_fullscreen_800.png)
 
 
 
@@ -95,7 +95,7 @@ Monitoring
   * "LDAP IS DOWN"
 
 	
-  * [![](https://xkyle.com/wp-content/uploads/nagios.png)](https://xkyle.com/wp-content/uploads/nagios.png)
+  * [![](/uploads/nagios.png)](/uploads/nagios.png)
 
 
 
@@ -153,10 +153,10 @@ What kind of graphs can you make with Graphite? Lets see some cool examples:
 [Etsy's](http://codeascraft.etsy.com/2010/12/08/track-every-release/) php warnings correlated with code deploys:
 ![](http://etsycodeascraft.files.wordpress.com/2010/12/warnings_1hr_deploys3.png)
 
-My cool stacked latency graph:[![](https://xkyle.com/wp-content/uploads/graphite-latency.png)](https://xkyle.com/wp-content/uploads/graphite-latency.png)
+My cool stacked latency graph:[![](/uploads/graphite-latency.png)](/uploads/graphite-latency.png)
 
 Filtering out [deviant server loads](http://obfuscurity.com/2012/04/Unhelpful-Graphite-Tip-6): [
-![](https://xkyle.com/wp-content/uploads/graphite-load.png)](https://xkyle.com/wp-content/uploads/graphite-load.png)
+![](/uploads/graphite-load.png)](/uploads/graphite-load.png)
 
 You can see that graphite fits my initial principles. It can suck in metrics from anywhere, and create graphs to fit your imagination. Combine this with a crazy amount of [functions](http://graphite.readthedocs.org/en/1.0/functions.html) that you can apply to your metrics, the sky is the limit!
 

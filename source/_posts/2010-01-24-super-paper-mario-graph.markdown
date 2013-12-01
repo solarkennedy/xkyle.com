@@ -22,7 +22,7 @@ This means that Room 9's Bottom Right door drops you into Room 5's top door. I i
 
 Using the graphviz mediawiki plugin, all I have to do is input the graph text into a page on my wiki, click save, and it will spit out a graphical version (click to see the full size):
 
-[![](https://xkyle.com/wp-content/uploads/papergraph-255x300.png)](https://xkyle.com/wp-content/uploads/papergraph.png)
+[![](/uploads/papergraph-255x300.png)](/uploads/papergraph.png)
 
 It could use some tweaking for the overlaps, but its pretty good as is if you ask me. It certainly gives you an insight into the developers thinking when creating the maze. This would certainly be very difficult to do on paper and have it come out clean.
 

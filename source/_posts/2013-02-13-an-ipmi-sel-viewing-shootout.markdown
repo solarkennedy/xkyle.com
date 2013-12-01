@@ -16,7 +16,7 @@ tags:
 ---
 
 Servers are like women. You are supposed to know their needs.
-[![Server Says: If you don't know what's wrong, I'm not going to tell you](https://xkyle.com/wp-content/uploads/server_meme.png)](https://xkyle.com/wp-content/uploads/server_meme.png)
+[![Server Says: If you don't know what's wrong, I'm not going to tell you](/uploads/server_meme.png)](/uploads/server_meme.png)
 
 So how do you know what is wrong with your server when it isn't giving you any hints? **IPMI Server Event Logs (SEL).**
 

@@ -44,7 +44,7 @@ arpalert - Monitor ARP changes in ethernet networks
 You should edit the config file to your liking, but the main thing is the log file in /var/log/arpalert.log. I have it logging every interesting arp thing, because I find them interesting! You need to read up on it if you want to fully understand arpalert: [http://www.arpalert.org/](http://www.arpalert.org/)
 
 
-[![](https://xkyle.com/wp-content/uploads/tailarps.png)](https://xkyle.com/wp-content/uploads/tailarps.png)
+[![](/uploads/tailarps.png)](/uploads/tailarps.png)
 
 
 
@@ -66,4 +66,4 @@ done
 I don't think I'm done with it yet. (I want to make it give different time outs for different types of messages, and I want it to change the heading to something dynamic instead of the Arp Alert, but yea) So put that in a .sh and run it! Nothing may pop up! Try putting something new on the network and seeing if something shows up in the log. Its pretty easy to troubleshoot and modify to your liking.
 
 
-[![](https://xkyle.com/wp-content/uploads/screenshot1.png)](https://xkyle.com/wp-content/uploads/screenshot1.png)
+[![](/uploads/screenshot1.png)](/uploads/screenshot1.png)

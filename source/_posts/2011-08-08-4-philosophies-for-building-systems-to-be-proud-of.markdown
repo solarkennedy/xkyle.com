@@ -23,7 +23,7 @@ Below are a few philosophical guidelines that I use when thinking about syste
 
 Sometimes systems can sprawl and get out of hand. Before you know if you have all your servers using ldap, which gets looked up by DNS, and the DNS server has a mysql backend, which is stored on an NFS mount. So... what happens after a power outage and your servers boot from scratch?
 
-[![](https://xkyle.com/wp-content/uploads/server-dependencies.png)](https://xkyle.com/wp-content/uploads/server-dependencies.png)
+[![](/uploads/server-dependencies.png)](/uploads/server-dependencies.png)
 
 The above example seems obviously broken, but sometimes it is not so obvious with our own systems. (Nobody builds stuff like that... right? :)) Our own familiarity with our own systems can blind us to their internal fragility. Some tips on how to achieve this:
 

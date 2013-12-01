@@ -10,7 +10,7 @@ categories:
 - All
 ---
 
-# [![puppet+openwrt](https://xkyle.com/wp-content/uploads/puppet+openwrt.jpg)](https://xkyle.com/wp-content/uploads/puppet+openwrt.jpg)
+# [![puppet+openwrt](/uploads/puppet+openwrt.jpg)](/uploads/puppet+openwrt.jpg)
 
 
 

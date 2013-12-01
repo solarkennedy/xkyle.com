@@ -28,7 +28,7 @@ The actual process or hacking into a network like this requires a suite of tools
 
 But, once you understand what you are doing, you will appreciate the tool I have written. It automates the process of getting the keys. I wrote it as a type of "set-it-and-forget-it" tool that I could just leave running. It isn't too clean, but if you can read bash scripting you can figure it out.
 
-[caption id="attachment_137" align="aligncenter" width="500" caption="Here is a screen shot of my tool cracking wep"][![Here is a screen shot of my tool cracking wep](https://xkyle.com/wp-content/uploads/screenshot.jpg)](https://xkyle.com/wp-content/uploads/screenshot.jpg)[/caption]
+[caption id="attachment_137" align="aligncenter" width="500" caption="Here is a screen shot of my tool cracking wep"][![Here is a screen shot of my tool cracking wep](/uploads/screenshot.jpg)](/uploads/screenshot.jpg)[/caption]
 
 Remember! Don't try to just run this tool without understanding what it does and how to read it. If you haven't breaking a wep key manually you don't want to run this. It does WEP and WPA cracking (saving the handshake for later). Good luck! I will provide minimal support via comments on this post. Don't forget to have your radio in monitor mode first, and if you are  going to do wpa you need the [mdk3](http://homepages.tu-darmstadt.de/~p_larbig/wlan/) tool.
 

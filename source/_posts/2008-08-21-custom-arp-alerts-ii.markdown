@@ -38,7 +38,7 @@ Its so simple, it just runs that script sending the information about the alert 
 
 
 
-[![](https://xkyle.com/wp-content/uploads/screenshot2.png)](https://xkyle.com/wp-content/uploads/screenshot2.png)
+[![](/uploads/screenshot2.png)](/uploads/screenshot2.png)
 
 
 

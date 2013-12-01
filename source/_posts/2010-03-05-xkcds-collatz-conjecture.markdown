@@ -47,7 +47,7 @@ So I wrote a quick bash script to generate the approrpiate links for graphviz to
 
 So what does it really look like? Here:
 
-[![](https://xkyle.com/wp-content/uploads/xkcd-collatz-672x1024.png)](https://xkyle.com/wp-content/uploads/xkcd-collatz.png)
+[![](/uploads/xkcd-collatz-672x1024.png)](/uploads/xkcd-collatz.png)
 
 There are lots of straggling links. This is of course only because I went to 100. Why not 1000? It is a little big... click [Here](https://xkyle.com/images/xkcd-collatz2.jpg).
 

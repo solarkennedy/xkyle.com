@@ -17,7 +17,7 @@ tags:
 
 Most vpns... in fact... all of them, are based on a client/server model. This means that all vpn clients call home to one vpn server and connect. All traffic goes through that vpn server and then gets passed on to its original destination. But what if you could have the benefits of VPN, but be able to communicate directly to other VPN peers, so without the latency and bandwidth limitations?
 
-[![](https://xkyle.com/wp-content/uploads/2.png)](https://xkyle.com/wp-content/uploads/2.png)
+[![](/uploads/2.png)](/uploads/2.png)
 
 That is what [n2n](http://www.ntop.org/n2n/) is. The supernodes are NOT servers. They merely function as a way to punch holes in firewalls. Once the firewalls are open, the edge servers (think of them as clients) can talk directly with other edge clients. Cool!
 

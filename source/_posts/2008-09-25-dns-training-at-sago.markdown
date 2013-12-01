@@ -15,7 +15,7 @@ tags:
 - work
 ---
 
-[![](https://xkyle.com/wp-content/uploads/dns.jpg)](https://xkyle.com/wp-content/uploads/dns.jpg)
+[![](/uploads/dns.jpg)](/uploads/dns.jpg)
 
 
 This past Tuesday I hosted a DNS training seminar for all the employees at Sago. It went over great! The curriculum involved:

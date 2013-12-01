@@ -32,21 +32,21 @@ Cons: Expensive. 25% Disk Space. Bad blocks over time.
 So lets do it! I started with instructions from [this guy.](http://www.evilblobbie.com/mm20.php)
 
 First step, disassembling the laptop:
-[![Opened up](https://xkyle.com/wp-content/uploads/dcam0093.thumbnail.JPG)](https://xkyle.com/wp-content/uploads/dcam0093.JPG)[![Antenna](https://xkyle.com/wp-content/uploads/dcam0100.thumbnail.JPG)](https://xkyle.com/wp-content/uploads/dcam0100.JPG)[![Drive](https://xkyle.com/wp-content/uploads/dcam0098.thumbnail.JPG)](https://xkyle.com/wp-content/uploads/dcam0098.JPG)
+[![Opened up](/uploads/dcam0093.thumbnail.JPG)](/uploads/dcam0093.JPG)[![Antenna](/uploads/dcam0100.thumbnail.JPG)](/uploads/dcam0100.JPG)[![Drive](/uploads/dcam0098.thumbnail.JPG)](/uploads/dcam0098.JPG)
 You can see that this is not a normal size laptop hard drive. This is a 1.8" drive. So I bought this card and a cheap laptop IDE to flash converter off of ebay. (Sorry I don't have a picture.)
 
 We used containers with numbers and a legend to keep track of small screws and parts. When we were done, these were left over:
-[![Leftovers](https://xkyle.com/wp-content/uploads/dcam0106.thumbnail.JPG)](https://xkyle.com/wp-content/uploads/dcam0106.JPG)
+[![Leftovers](/uploads/dcam0106.thumbnail.JPG)](/uploads/dcam0106.JPG)
 (Don't ask me whats in compartment 8, I really don't know what it goes to. But there is the leftover drive and screws)
 
 Second step,  spray paint it! Oh, and don't forget to put in the flash card when you put it back together.
-[![Closed1](https://xkyle.com/wp-content/uploads/dcam0118.thumbnail.JPG)](https://xkyle.com/wp-content/uploads/dcam0118.JPG)[![Finished1](https://xkyle.com/wp-content/uploads/dcam0108.thumbnail.JPG)](https://xkyle.com/wp-content/uploads/dcam0108.JPG)
+[![Closed1](/uploads/dcam0118.thumbnail.JPG)](/uploads/dcam0118.JPG)[![Finished1](/uploads/dcam0108.thumbnail.JPG)](/uploads/dcam0108.JPG)
 Can you spot the laptop?
-[![Woods1](https://xkyle.com/wp-content/uploads/dcam0119.thumbnail.JPG)](https://xkyle.com/wp-content/uploads/dcam0119.JPG)[![Woods2](https://xkyle.com/wp-content/uploads/dcam0120.thumbnail.JPG)](https://xkyle.com/wp-content/uploads/dcam0120.JPG)
+[![Woods1](/uploads/dcam0119.thumbnail.JPG)](/uploads/dcam0119.JPG)[![Woods2](/uploads/dcam0120.thumbnail.JPG)](/uploads/dcam0120.JPG)
 
 Of course, with only a 4GB drive, I will be running my favorite operating system of course, [Ubuntu](http://www.ubuntu.com)!
 
-[![Screenshot](https://xkyle.com/wp-content/uploads/screenshot.thumbnail.png)](https://xkyle.com/wp-content/uploads/screenshot.png)
+[![Screenshot](/uploads/screenshot.thumbnail.png)](/uploads/screenshot.png)
 
 And the obligatory screen shot!
 

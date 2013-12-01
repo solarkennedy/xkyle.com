@@ -23,7 +23,7 @@ If you have a hotmail email account, I don't have to have hotmail to email you, 
 
 What we need is a common protocol, so people on different networks can follow and join the conversation! What we need is a protocol... what we need is...
 
-[![](https://xkyle.com/wp-content/uploads/statustheme_logo.png)](https://xkyle.com/wp-content/uploads/statustheme_logo.png)
+[![](/uploads/statustheme_logo.png)](/uploads/statustheme_logo.png)
 
 Yes, Status.net! Status.net is an application that allows you to microblog, and converse with people even if they are different networks. That's right! Now you can follow your favorite pets on [Petstatus.com](http://www.petstatus.com/) even though you are on[ Identi.ca](http://identi.ca/). People on [Swisen.com](http://swisen.com/) can subscribe to people on [WowTweet.net](http://wowtweet.net/). Amazing!
 

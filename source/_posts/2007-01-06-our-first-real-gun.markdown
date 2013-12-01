@@ -14,7 +14,7 @@ tags:
 Here it is, the big milestone: our first real gun!
 
 From this:
-[![The beginning of the first gun](https://xkyle.com/wp-content/uploads/dcam0069.thumbnail.JPG)](https://xkyle.com/wp-content/uploads/dcam0069.JPG)
+[![The beginning of the first gun](/uploads/dcam0069.thumbnail.JPG)](/uploads/dcam0069.JPG)
 
 To [this!](https://xkyle.com/video/gun.mov)
 

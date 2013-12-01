@@ -78,7 +78,7 @@ You can see that there are three things going on here (gist [here](https://gist.
   2. Only if the script is in place, it will setup the **cronjob** to populate the motd
   3. And only if the cron job is in place, a **sensu check** is installed to verify that it is indeed working (test driven system administration?).
 
-[![sensu_motd](https://xkyle.com/wp-content/uploads/sensu_motd.png)](https://xkyle.com/wp-content/uploads/sensu_motd.png)
+[![sensu_motd](/uploads/sensu_motd.png)](/uploads/sensu_motd.png)
 
 
 ## Coolness

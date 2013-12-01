@@ -38,7 +38,7 @@ You can run "palimpsest" on the command line, or in a gnome environment go Syste
 
 Here is a gallery of some examples:
 
-[![](https://xkyle.com/wp-content/uploads/Screenshot-1-10.0-GB-RAID-1-Array-–-Benchmark-150x150.png)](https://xkyle.com/wp-content/uploads/Screenshot-1-10.0-GB-RAID-1-Array-–-Benchmark.png)[![](https://xkyle.com/wp-content/uploads/Screenshot-1-20-GB-RAID-5-Array-–-Benchmark-150x150.png)](https://xkyle.com/wp-content/uploads/Screenshot-1-20-GB-RAID-5-Array-–-Benchmark.png)[![](https://xkyle.com/wp-content/uploads/Screenshot-1-30-GB-RAID-0-Array-–-Benchmark-150x150.png)](https://xkyle.com/wp-content/uploads/Screenshot-1-30-GB-RAID-0-Array-–-Benchmark.png)[![](https://xkyle.com/wp-content/uploads/Screenshot-64-GB-Solid-State-Disk-ATA-Corsair-CSSD-V64GB2-–-Benchmark-150x150.png)](https://xkyle.com/wp-content/uploads/Screenshot-64-GB-Solid-State-Disk-ATA-Corsair-CSSD-V64GB2-–-Benchmark.png)[![](https://xkyle.com/wp-content/uploads/Screenshot-2.0-TB-Hard-Disk-ATA-WDC-WD20EARS-00MVWB0-–-Benchmark-150x150.png)](https://xkyle.com/wp-content/uploads/Screenshot-2.0-TB-Hard-Disk-ATA-WDC-WD20EARS-00MVWB0-–-Benchmark.png)
+[![](/uploads/Screenshot-1-10.0-GB-RAID-1-Array-–-Benchmark-150x150.png)](/uploads/Screenshot-1-10.0-GB-RAID-1-Array-–-Benchmark.png)[![](/uploads/Screenshot-1-20-GB-RAID-5-Array-–-Benchmark-150x150.png)](/uploads/Screenshot-1-20-GB-RAID-5-Array-–-Benchmark.png)[![](/uploads/Screenshot-1-30-GB-RAID-0-Array-–-Benchmark-150x150.png)](/uploads/Screenshot-1-30-GB-RAID-0-Array-–-Benchmark.png)[![](/uploads/Screenshot-64-GB-Solid-State-Disk-ATA-Corsair-CSSD-V64GB2-–-Benchmark-150x150.png)](/uploads/Screenshot-64-GB-Solid-State-Disk-ATA-Corsair-CSSD-V64GB2-–-Benchmark.png)[![](/uploads/Screenshot-2.0-TB-Hard-Disk-ATA-WDC-WD20EARS-00MVWB0-–-Benchmark-150x150.png)](/uploads/Screenshot-2.0-TB-Hard-Disk-ATA-WDC-WD20EARS-00MVWB0-–-Benchmark.png)
 
 Notice the slow writes on the raid 5 (second picture), and the small deviation on seeks on the SSD (forth picture). Also you can see how spinning disks slow down as the approach the center of the spindle. (fifth picture)
 
@@ -57,7 +57,7 @@ Here would be a typical invocation:
 
 It is better to run it as not root. Run it in the directory where you want it to make files. Its output is... a little hard to comprehend and outside the scope of this article. One can read the documentation and compile your own spreadsheet and graph with some Libreoffice Calc foo:
 
-[![](https://xkyle.com/wp-content/uploads/Bonnie-Graphs-300x178.png)](https://xkyle.com/wp-content/uploads/Bonnie-Graphs.png)
+[![](/uploads/Bonnie-Graphs-300x178.png)](/uploads/Bonnie-Graphs.png)
 
 Nothing too fancy. It has a lot of output, so you have to pick the numbers that are important to you. Another option is to use the bon_csv2html to output a slightly more readable output:
 
@@ -67,7 +67,7 @@ Nothing too fancy. It has a lot of output, so you have to pick the numbers that 
 firefox bench.html
 
 
-[![](https://xkyle.com/wp-content/uploads/bonnie-html-300x62.png)](https://xkyle.com/wp-content/uploads/bonnie-html.png)
+[![](/uploads/bonnie-html-300x62.png)](/uploads/bonnie-html.png)
 
 Bonnie benchmarks are the hardest to read, but are they closest to the *reality* of the performance of your disk in your environment.
 

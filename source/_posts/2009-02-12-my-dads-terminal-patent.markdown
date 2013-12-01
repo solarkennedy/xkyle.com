@@ -17,7 +17,7 @@ But back in the day they worked on "[Terminals](http://en.wikipedia.org/wiki/Com
 
 But I've read about such times, and I know about the history of my [xterm](http://en.wikipedia.org/wiki/Xterm) and [picocom](http://efault.net/npat/hacks/picocom/) programs. They emulate these devices. Such devices that my Dad (Richard Anderson) designed! It is good to know your roots. Amazing:
 
-[![](https://xkyle.com/wp-content/uploads/terminal-300x221.jpg)](https://xkyle.com/wp-content/uploads/terminal.jpg)
+[![](/uploads/terminal-300x221.jpg)](/uploads/terminal.jpg)
 
 [Terminal Design (PDF)](https://xkyle.com/other/patd273189.pdf)
 

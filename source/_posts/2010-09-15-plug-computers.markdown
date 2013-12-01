@@ -18,6 +18,6 @@ Recently I gave a presentation on [Plug Computers](http://en.wikipedia.org/wiki/
 
 They make great home servers, appropriate for file sharing, exporting media files for your devices ([DLNA](http://en.wikipedia.org/wiki/Digital_Living_Network_Alliance)), making backups ([backuppc](http://backuppc.sourceforge.net/)), etc.
 
-If you would like to check out the slides for my presentation: [Plug Computers Presentation](https://xkyle.com/wp-content/uploads/PlugComputers.odp)
+If you would like to check out the slides for my presentation: [Plug Computers Presentation](/uploads/PlugComputers.odp)
 
 If you would like to see my wiki notes on plug computers: [http://wiki.xkyle.com/Plugcomputers](http://wiki.xkyle.com/Plugcomputers)

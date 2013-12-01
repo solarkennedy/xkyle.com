@@ -13,6 +13,6 @@ tags:
 
 Often I get to enjoy wonderful mornings with my girlfriend Cody. She is a great cook, and one of her best concoctions are these AMAZING breakfast burritos:
 
-[![](https://xkyle.com/wp-content/uploads/image_00002-300x225.jpg)](https://xkyle.com/wp-content/uploads/image_00002.jpg)
+[![](/uploads/image_00002-300x225.jpg)](/uploads/image_00002.jpg)
 
 Sorry for the bad picture, I took it with the webcam on my eeepc. I don't apologize for her cleavage. I did that intentionally without her knowing :)

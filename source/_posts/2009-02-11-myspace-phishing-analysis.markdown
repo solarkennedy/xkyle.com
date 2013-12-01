@@ -13,7 +13,7 @@ tags:
 - security
 ---
 
-[![](https://xkyle.com/wp-content/uploads/myspace.jpeg)](https://xkyle.com/wp-content/uploads/myspace.jpeg)
+[![](/uploads/myspace.jpeg)](/uploads/myspace.jpeg)
 
 A couple of years ago, a large list of phished Myspace accounts was leaked on the internet.
 I stumpled upon them and ran a very simple analysis. Check it out:

@@ -17,9 +17,9 @@ But the Myspace chain bullitens or picture comments are not what makes Myspace.c
 
 First, because I do not have direct access to Myspace.com's database of friends, I would have to create my own local database, and then write a spider to crawl around and populate it. So I did. I wrote it in what I know best, are you ready people: bash scripting. You can look at it for yourself in the download below, its called myspace.robot. Basically it parses a myspace profile, grabs friends, pictures, music, interests, as much information that can be harvested, and then inserts it into the database. This robot is called by other scripts that say oh, pick a random profile. Or I have a robot caller that calls in a tree like fashion, starting at a given place and traversing so many levels (myspace.tree).
 
-Once I have the information (friends in particular). We can use this information to create a map. At first I used imagemagick to generate an image. It sucked.![Early Attempt](https://xkyle.com/wp-content/uploads/2006/07/mosaic.thumbnail.png)
+Once I have the information (friends in particular). We can use this information to create a map. At first I used imagemagick to generate an image. It sucked.![Early Attempt](/uploads/2006/07/mosaic.thumbnail.png)
 
-It took me a while to find graphviz.[![Friend map1](https://xkyle.com/wp-content/uploads/sample1.thumbnail.jpg)](https://xkyle.com/wp-content/uploads/sample1.jpg)
+It took me a while to find graphviz.[![Friend map1](/uploads/sample1.thumbnail.jpg)](/uploads/sample1.jpg)
 
 Graphviz is the perfect tool for the job. I feed it the nodes, and weights between nodes. It calculated the best positions to put the nodes. It is very configurable, including different ploting algorithms, graph styles, and output formats. It take all of this and put it into a php-mysql interface for others to input their graph-making requests. My server on the backend takes the top one on the queue, grabs the appropriate profiles, creates the friend-map, then sends an email to let the user know that the map is ready!
 

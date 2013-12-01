@@ -20,7 +20,7 @@ You may remember my old laptop from such posts as [this](https://xkyle.com/2007/
 
 Well it broke, so I bought another one!
 
-[![](https://xkyle.com/wp-content/uploads/mm20.gif)](https://xkyle.com/wp-content/uploads/mm20.gif)
+[![](/uploads/mm20.gif)](/uploads/mm20.gif)
 
 It even has the original stickers. But.. Its slower than I remember. So I'm trying out different Ubuntu versions to see what boots the fastest. Here are my methodology and results.
 

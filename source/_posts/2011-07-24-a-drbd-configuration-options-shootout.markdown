@@ -91,7 +91,7 @@ Basically I took these potential variables in a DRBD configuration and permutate
 
 
 
-My testing methodology was to configure DRBD in the test configuration, wait for the synchronization to finish, then make one node primary and mount the filesystem. From there I ran the Bonnie++ benchmark program (version 1.03), and then record the results. If you want my raw data, [here it is](https://xkyle.com/wp-content/uploads/drbd-shootout-bonnie.csv). But I will also try to distill the data and share some conclusions.
+My testing methodology was to configure DRBD in the test configuration, wait for the synchronization to finish, then make one node primary and mount the filesystem. From there I ran the Bonnie++ benchmark program (version 1.03), and then record the results. If you want my raw data, [here it is](/uploads/drbd-shootout-bonnie.csv). But I will also try to distill the data and share some conclusions.
 
 
 
@@ -101,7 +101,7 @@ My testing methodology was to configure DRBD in the test configuration, wait for
 
 
 
-## [![](https://xkyle.com/wp-content/uploads/drbd-stand-alone.png)](https://xkyle.com/wp-content/uploads/drbd-stand-alone.png)
+## [![](/uploads/drbd-stand-alone.png)](/uploads/drbd-stand-alone.png)
 
 
 The differences in speed here are within the standard deviation of just running bonnie, the only conclusion I would draw here is that in stand-alone mode the read and write speed of the array is the same as without drbd. (Sorry I don't have the non-drbd on the list). This is mostly expected, but how can we **_know_** without testing?
@@ -110,7 +110,7 @@ The differences in speed here are within the standard deviation of just running 
 ## Testing Read Speed
 
 
-[![](https://xkyle.com/wp-content/uploads/drbd-read-speeds1.png)](https://xkyle.com/wp-content/uploads/drbd-read-speeds1.png)
+[![](/uploads/drbd-read-speeds1.png)](/uploads/drbd-read-speeds1.png)
 
 With Read speeds across every configuration are about the same. There are some high and lows but they are within the standard deviation of Bonnie runs. I wish I had even more time to run many Bonnie runs and average them. The conclusion I take away from this is that DRBD does not impact the read speed performance. Again this is kinda expected, but_ I wasn't about to claim to know this without testing_. As such from now on I will be focusing on write performance. Again, no matter what your DRBD configuration, your disk read speed should be around the same as if you didn't have DRBD.
 
@@ -118,7 +118,7 @@ With Read speeds across every configuration are about the same. There are some h
 ## 10G versus 1G
 
 
-[![](https://xkyle.com/wp-content/uploads/drbd-write-speed.png)](https://xkyle.com/wp-content/uploads/drbd-write-speed.png)
+[![](/uploads/drbd-write-speed.png)](/uploads/drbd-write-speed.png)
 
 Here I'm comparing paired DRBD configurations with a 1g Ethernet crossover versus a 10g Ethernet crossover. As mentioned before, no matter what your connection is, the read speed is the same. You could have a 16mb Token Ring adapter between the two servers and the read speed would be the same. It is the write speed that changes. Here the 10g Ethernet gives us a tangible speed increase. For about $1.5k (at the time of this writing) you can throw in 2X 10g cards and a copper crossover and get the full potential write speeds out of your disks. Now, of course if these servers are only connected to client computers via 1g and not much disk IO happens on the server itself, this upgrade may not pass the cost/benefit test. But it is good to **_know_** what it would be like if you did take the 10g plunge.
 
@@ -128,7 +128,7 @@ Here I'm comparing paired DRBD configurations with a 1g Ethernet crossover ver
 
 
 
-## [![](https://xkyle.com/wp-content/uploads/drbd-1g-writes.png)](https://xkyle.com/wp-content/uploads/drbd-1g-writes.png)[![](https://xkyle.com/wp-content/uploads/drbd-10g-writes.png)](https://xkyle.com/wp-content/uploads/drbd-10g-writes.png)
+## [![](/uploads/drbd-1g-writes.png)](/uploads/drbd-1g-writes.png)[![](/uploads/drbd-10g-writes.png)](/uploads/drbd-10g-writes.png)
 
 
 With the write speeds brought up next to each other it is easier to see the speed differences between the different protocols and whether disabling disk flushes matters. Here is a hint: it doesn't matter. Well, at least with my particular situation it doesn't matter. When the servers are linked together in a crossover situation (a very common scenario), the latency is so low that the protocol choice is mostly inconsequential. The bottom line is that most people can afford protocol C (completely synchronous replication).

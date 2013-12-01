@@ -24,13 +24,13 @@ Update: I wrote a bash implementation to make it easy to script, and for offline
 In my [previous post](https://xkyle.com/2009/02/07/verizon-fios-wireless-security-analysis/) I showed a correlation between the WEP key of a Verizon FiOS install and the MAC address of the access point. This was simply a collection of experimental data that I gathered.
 
 Thanks to [Fred Williams?](http://www.linkedin.com/pub/dir/Fred/Williams?trk=ppro_find_others) for pointing out the correlation between the ESSID and the WEP. With these powers combined form:
-[![captain-planet](https://xkyle.com/wp-content/uploads/captain-planet-185x300.jpg)](https://xkyle.com/wp-content/uploads/captain-planet.jpeg)
+[![captain-planet](/uploads/captain-planet-185x300.jpg)](/uploads/captain-planet.jpeg)
 
 Well.. Not exactly. If there was a super hero with the phrase: "Hack the Planet" instead of "Save the Planet" I would have chosen it.
 
 So what is the deal?
 
-[![](https://xkyle.com/wp-content/uploads/verizon_fios_250.jpg)](https://xkyle.com/wp-content/uploads/verizon_fios_250.jpg)
+[![](/uploads/verizon_fios_250.jpg)](/uploads/verizon_fios_250.jpg)
 
 The first part of the key is a combination of the second and third part of the MAC, which is either 1801 or 1F90.
 
@@ -61,7 +61,7 @@ The first 4 hex digits of the WEP key are the 2nd and 3rd byte from the MAC addr
 
 Thanks again Fred! To math majors this is like a beam of light coming down from the heavens
 
-[![lightbeam](https://xkyle.com/wp-content/uploads/lightbeam.jpg)](http://www.flickr.com/photos/dorowski/456250234/)
+[![lightbeam](/uploads/lightbeam.jpg)](http://www.flickr.com/photos/dorowski/456250234/)
 So I wrote this Javascript calculator (my first javascript program actually) in order to aid the calculation of the keys! Just type in your neighbor's ESSID and out comes the KEY!
 (Sorry about the iframe if that is an issue to you. Goto [here](https://xkyle.com/other/wep.html) if it is.)
 Your browser does not support iframes.

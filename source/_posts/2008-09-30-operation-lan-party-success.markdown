@@ -30,4 +30,4 @@ Games we played:
   * [Nexuiz](http://www.alientrap.org/nexuiz/)
 
 
-[![](https://xkyle.com/wp-content/uploads/pict0390-300x225.jpg)](https://xkyle.com/wp-content/uploads/pict0390.jpg)
+[![](/uploads/pict0390-300x225.jpg)](/uploads/pict0390.jpg)

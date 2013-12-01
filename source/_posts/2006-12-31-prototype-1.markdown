@@ -13,12 +13,12 @@ tags:
 
 Here are some pictures and some short video of our first prototype gun!
 
-A more or less finished backpack.[![Finished Pack](https://xkyle.com/wp-content/uploads/dcam0040.thumbnail.JPG)](https://xkyle.com/wp-content/uploads/dcam0040.JPG)
+A more or less finished backpack.[![Finished Pack](/uploads/dcam0040.thumbnail.JPG)](/uploads/dcam0040.JPG)
 
-2x4 Gun and LCD wristband![![Gun and LCD](https://xkyle.com/wp-content/uploads/dcam0039.thumbnail.JPG)](https://xkyle.com/wp-content/uploads/dcam0039.JPG)
+2x4 Gun and LCD wristband![![Gun and LCD](/uploads/dcam0039.thumbnail.JPG)](/uploads/dcam0039.JPG)
 
-I love having good tools, and this $40 soldering iron is the best $40 I ever spent.[![The New Soldering Iron](https://xkyle.com/wp-content/uploads/dcam0038.thumbnail.JPG)](https://xkyle.com/wp-content/uploads/dcam0038.JPG)
+I love having good tools, and this $40 soldering iron is the best $40 I ever spent.[![The New Soldering Iron](/uploads/dcam0038.thumbnail.JPG)](/uploads/dcam0038.JPG)
 
-Nicd battery pack! With velcro! [![battery pack](https://xkyle.com/wp-content/uploads/dcam0037.thumbnail.JPG)](https://xkyle.com/wp-content/uploads/dcam0037.JPG)
+Nicd battery pack! With velcro! [![battery pack](/uploads/dcam0037.thumbnail.JPG)](/uploads/dcam0037.JPG)
 
-And Kyle explains it all! Sort of...[![Movie Thumb](https://xkyle.com/wp-content/uploads/screenshot0.thumbnail.png)](https://xkyle.com/video/prototype.mov)
+And Kyle explains it all! Sort of...[![Movie Thumb](/uploads/screenshot0.thumbnail.png)](https://xkyle.com/video/prototype.mov)

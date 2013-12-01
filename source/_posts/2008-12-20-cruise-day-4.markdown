@@ -13,6 +13,6 @@ tags:
 
 Today we visited the ancient [Mayan ruins of Tulum](http://en.wikipedia.org/wiki/Tulum).
 
-[![](https://xkyle.com/wp-content/uploads/pict0009-300x225.jpg)](https://xkyle.com/wp-content/uploads/pict0009.jpg)
+[![](/uploads/pict0009-300x225.jpg)](/uploads/pict0009.jpg)
 
 [gallery]

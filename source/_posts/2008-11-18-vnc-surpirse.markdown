@@ -17,6 +17,6 @@ tags:
 
 Don't you just love it when co-workers communicate with you in the most interesting ways???
 
-[![](https://xkyle.com/wp-content/uploads/screenshot-untitled-window.png)](https://xkyle.com/wp-content/uploads/screenshot-untitled-window.png)
+[![](/uploads/screenshot-untitled-window.png)](/uploads/screenshot-untitled-window.png)
 
 Sorry it is so small. Click on it!

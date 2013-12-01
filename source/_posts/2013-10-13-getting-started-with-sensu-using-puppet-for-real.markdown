@@ -23,7 +23,7 @@ Puppet's [exported resources](http://docs.puppetlabs.com/guides/exported_resourc
 Let's try it out, but gosh, I am SO lazy. I cannot be bothered to read the installation instructions. All I want to do is install the puppet module, add a couple of lines to my manifest, and let puppet do the rest. Then I can run puppet agent in debug mode so when my boss comes by it looks like I'm REALLY busy.
 
 
-# [![sensu_logo](https://xkyle.com/wp-content/uploads/sensu_logo_large-300x260.png)](https://xkyle.com/wp-content/uploads/sensu_logo_large.png)
+# [![sensu_logo](/uploads/sensu_logo_large-300x260.png)](/uploads/sensu_logo_large.png)
 
 
 

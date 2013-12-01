@@ -26,11 +26,11 @@ TL;DR version: Use Linux and "rpc.mountd --manage-gids" and you are done.
 
 So what is the actual problem? This problem occurs when a user, who is a member of more than 16 groups, tries to access a file or directory on an nfs mount that depends on his group rights in order to be authorized to see it.  The default authorization mechanism for NFS (auth_sys) will take only a subset of your groups and send it to the nfs server to check if you have rights to read a file. This leads to unpredicatable and intermittent permission problems when it looks like you *should* have permission. Allow me to demonstrate:
 
-[![](https://xkyle.com/wp-content/uploads/groups-failure-300x273.png)](https://xkyle.com/wp-content/uploads/groups-failure.png)
+[![](/uploads/groups-failure-300x273.png)](/uploads/groups-failure.png)
 
 Seems odd right? I *should* be able to ls those other directories. Still don't believe me? See a wireshark disessction of one of the nfs packet:
 
-[![](https://xkyle.com/wp-content/uploads/wireshark-groups-300x176.png)](https://xkyle.com/wp-content/uploads/wireshark-groups.png)
+[![](/uploads/wireshark-groups-300x176.png)](/uploads/wireshark-groups.png)
 
 You can see that the nfs client is telling the nfs server what groups you are in. And the protocol only has room for 16 :(
 
@@ -53,7 +53,7 @@ Dispelling Myths and Superstition
 
 Actually trying to wrap your brain around the problem and trying to solve it turns into a whiteboard that looks like this:
 
-[![](https://xkyle.com/wp-content/uploads/acl-whiteboard-300x131.jpg)](https://xkyle.com/wp-content/uploads/acl-whiteboard.jpg)
+[![](/uploads/acl-whiteboard-300x131.jpg)](/uploads/acl-whiteboard.jpg)
 
 
 ## The Best Solution Ever!: A New Option for the NFS Server
@@ -93,7 +93,7 @@ So what, are you going to add every user that needs access to any file or folder
 
 You might read somewhere that you can use NFS4 specific acls. While this is true, that they do exist, they do not solve the 16 group limit problem:
 
-[![](https://xkyle.com/wp-content/uploads/nfs4-acls-300x148.png)](https://xkyle.com/wp-content/uploads/nfs4-acls.png)
+[![](/uploads/nfs4-acls-300x148.png)](/uploads/nfs4-acls.png)
 
 You don't have to believe my screen shots. Just do it for yourself.
 

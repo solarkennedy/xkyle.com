@@ -15,7 +15,7 @@ tags:
 - linux
 ---
 
-![](https://xkyle.com/wp-content/uploads/interesting-ipmi-239x300.jpg)
+![](/uploads/interesting-ipmi-239x300.jpg)
 [IPMI](http://en.wikipedia.org/wiki/Intelligent_Platform_Management_Interface) is Awesome. But, it is underused. Most sysadmins don't even enable it. If they do enable it, they probably enable it by manually going into the BIOS, and then probably only using the Web interface. LAME.
 
 There is no need to go to the BIOS to configure ipmi. You can use IPMItool to configure it in-band. This is my first underused command:
@@ -64,7 +64,7 @@ Freak out a NOC tech by running this command on all your servers as soon as they
 ## (Make your server go directly into bios on next reboot)
 
 
-[![](https://xkyle.com/wp-content/uploads/morpheus-ipmi-300x300.jpg)](https://xkyle.com/wp-content/uploads/morpheus-ipmi.jpg)Now we are getting fancy! We've all been there. Waiting for a slow-ass HP super server to boot, waiting and waiting for the signal to start frantically pounding the F2 key to enter the bios. Then missing it because the VGA didn't show up in time. Reboot again. Repeat.
+[![](/uploads/morpheus-ipmi-300x300.jpg)](/uploads/morpheus-ipmi.jpg)Now we are getting fancy! We've all been there. Waiting for a slow-ass HP super server to boot, waiting and waiting for the signal to start frantically pounding the F2 key to enter the bios. Then missing it because the VGA didn't show up in time. Reboot again. Repeat.
 
 Fuck that noise. I don't wait for servers. The servers wait for me! Also works for EFI shell, PXE, disk, etc.
 
@@ -92,7 +92,7 @@ SOL or serial-over-lan allows you to use the server's serial console over ipmi. 
 ## (Get server power measurements)
 
 
-[![](https://xkyle.com/wp-content/uploads/already-killawatt-300x300.jpg)](https://xkyle.com/wp-content/uploads/already-killawatt.jpg)
+[![](/uploads/already-killawatt-300x300.jpg)](/uploads/already-killawatt.jpg)
 Yes. On some platforms you can actually measure how much power your server is using. Scrape that shit and pump it to graphite man! I'm trying to [collect the different ways](https://wiki.xkyle.com/IPMI_Power_Measurement) to do this, as there are different vendor specific implementations.
 
 

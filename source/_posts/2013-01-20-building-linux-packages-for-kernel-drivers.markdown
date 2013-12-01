@@ -23,7 +23,7 @@ Most of the time the Linux kernel does a great job of having drivers you need, b
 
 Running make; make install is all fine and dandy for testing, but for production you want a repeatable process. For me, this means OS packages. (deb/rpms)
 
-[![33657094](https://xkyle.com/wp-content/uploads/33657094-300x181.jpg)](https://xkyle.com/building-linux-packages-for-kernel-drivers/attachment/33657094/)
+[![33657094](/uploads/33657094-300x181.jpg)](https://xkyle.com/building-linux-packages-for-kernel-drivers/attachment/33657094/)
 
 
 
@@ -168,7 +168,7 @@ Lets build something. In this example I'm on an Ubuntu machine building the late
 
 
 
-## [![33657298](https://xkyle.com/wp-content/uploads/33657298.jpg)](https://xkyle.com/building-linux-packages-for-kernel-drivers/attachment/33657298/)
+## [![33657298](/uploads/33657298.jpg)](https://xkyle.com/building-linux-packages-for-kernel-drivers/attachment/33657298/)
 
 
 

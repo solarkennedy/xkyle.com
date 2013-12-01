@@ -21,7 +21,7 @@ I like to think about how games work, in the case of [Jenga](http://en.wikipedia
 
 But don't you wish you could peel back reality and see what is happening with the physics from the inside? Well now you can, with the help of a Wii Balance Board.
 
-[![](https://xkyle.com/wp-content/uploads/wii-jengasetup-300x224.jpg)](https://xkyle.com/wp-content/uploads/wii-jengasetup.jpg)
+[![](/uploads/wii-jengasetup-300x224.jpg)](/uploads/wii-jengasetup.jpg)
 
 For the setup you need these ingredients:
 

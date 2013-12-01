@@ -97,4 +97,4 @@ Take your listen line, and add "ssl spdy" to it:
 Try this [SPDY testing page](http://spdycheck.org/#xkyle.com).
 And try a [Chrome plugin](https://chrome.google.com/webstore/detail/spdy-indicator/mpbpobfflnpcgagjijhmgnchggcjblin?hl=en) that will visually indicate if the server you are talking to supports SPDY.
 
-[![spdy indicator](https://xkyle.com/wp-content/uploads/Screenshot-from-2013-05-16-174759.png)](https://xkyle.com/wp-content/uploads/Screenshot-from-2013-05-16-174759.png)
+[![spdy indicator](/uploads/Screenshot-from-2013-05-16-174759.png)](/uploads/Screenshot-from-2013-05-16-174759.png)

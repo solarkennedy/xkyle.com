@@ -35,6 +35,6 @@ rm /tmp/$FILENAME.jpg /tmp/$FILENAME.txt
 
 You can see that it takes a picture, grabs my ifconfig and public ip, then ships it all to my server.  I just saved it in my /usr/local/bin/ and added the program to my /etc/network/if-up.d/openvpn program. This program is called whenever the interface comes up, so it will also run this program too when it's ready.
 
-[![](https://xkyle.com/wp-content/uploads/2008-12-05-11-51-571-300x225.jpg)](https://xkyle.com/wp-content/uploads/2008-12-05-11-51-571.jpg)
+[![](/uploads/2008-12-05-11-51-571-300x225.jpg)](/uploads/2008-12-05-11-51-571.jpg)
 
 It's not amazing, but its good. Feel free to take my script and adjust for your needs. You may have a different command-line tool to take a picture with your webcam or whatever. You could even go crazy and setup something to email you or whatver, its YOUR program!
