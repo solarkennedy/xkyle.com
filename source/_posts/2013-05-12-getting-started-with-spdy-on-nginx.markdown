@@ -7,7 +7,6 @@ slug: getting-started-with-spdy-on-nginx
 title: Getting Started With SPDY on Nginx
 wordpress_id: 972
 categories:
-- All
 tags:
 - httpd
 - nginx

@@ -7,7 +7,6 @@ slug: hacking-a-hallmark-text-band-first-attempt
 title: 'Hacking a Hallmark Text Band: First Attempt'
 wordpress_id: 908
 categories:
-- All
 tags:
 - bus pirate
 - hardware

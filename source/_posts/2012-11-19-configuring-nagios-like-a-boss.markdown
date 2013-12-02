@@ -7,7 +7,6 @@ slug: configuring-nagios-like-a-boss
 title: Configuring Nagios Like a Boss!
 wordpress_id: 790
 categories:
-- All
 tags:
 - linux
 - nagios

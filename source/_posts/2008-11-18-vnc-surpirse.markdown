@@ -7,9 +7,7 @@ slug: vnc-surpirse
 title: VNC Surpirse!
 wordpress_id: 169
 categories:
-- All
 tags:
-- All
 - nclug
 - ubuntu
 - work

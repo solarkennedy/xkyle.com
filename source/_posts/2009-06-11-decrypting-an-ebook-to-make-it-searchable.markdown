@@ -7,9 +7,7 @@ slug: decrypting-an-ebook-to-make-it-searchable
 title: Decrypting an eBook to make it Searchable
 wordpress_id: 364
 categories:
-- All
 tags:
-- All
 - drm
 - ebook
 - hacking

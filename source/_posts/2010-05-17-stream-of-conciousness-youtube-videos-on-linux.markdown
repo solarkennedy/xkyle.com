@@ -7,7 +7,6 @@ slug: stream-of-conciousness-youtube-videos-on-linux
 title: Stream of Conciousness Youtube Videos on Linux
 wordpress_id: 502
 categories:
-- All
 tags:
 - nclug
 - totem

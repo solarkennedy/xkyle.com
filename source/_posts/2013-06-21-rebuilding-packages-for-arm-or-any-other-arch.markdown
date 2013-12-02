@@ -7,7 +7,6 @@ slug: rebuilding-packages-for-arm-or-any-other-arch
 title: Rebuilding Packages for ARM (or any other arch)
 wordpress_id: 1011
 categories:
-- All
 ---
 
 Sometimes there are packages out there that don't come in your cool new Architecture. In my case it is ARM, and the package I wanted was Puppet. Here is how to rebuild source packages the cool way.

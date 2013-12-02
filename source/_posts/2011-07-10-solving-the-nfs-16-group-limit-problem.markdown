@@ -7,7 +7,6 @@ slug: solving-the-nfs-16-group-limit-problem
 title: Solving the NFS 16-Group Limit Problem
 wordpress_id: 612
 categories:
-- All
 tags:
 - acls
 - linux

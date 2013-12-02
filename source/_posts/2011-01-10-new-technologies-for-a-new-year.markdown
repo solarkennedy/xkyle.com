@@ -7,9 +7,7 @@ slug: new-technologies-for-a-new-year
 title: New Technologies for a New Year
 wordpress_id: 571
 categories:
-- All
 tags:
-- All
 - dnssec
 - ipv6
 - nclug

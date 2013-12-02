@@ -7,7 +7,6 @@ slug: great-american-teach-in-wikipedia
 title: Great American Teach In - Wikipedia
 wordpress_id: 247
 categories:
-- All
 tags:
 - learning
 - wiki

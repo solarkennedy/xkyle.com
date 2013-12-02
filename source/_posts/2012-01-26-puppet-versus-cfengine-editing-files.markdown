@@ -7,7 +7,6 @@ slug: puppet-versus-cfengine-editing-files
 title: 'Puppet versus CFEngine 2: Editing Files'
 wordpress_id: 664
 categories:
-- All
 tags:
 - cfengine
 - Puppet

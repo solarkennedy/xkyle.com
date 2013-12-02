@@ -7,7 +7,6 @@ slug: isps-should-capitalize-on-their-reverse-dns
 title: ISPs Should Capitalize on their Reverse DNS!
 wordpress_id: 504
 categories:
-- All
 tags:
 - nclug
 ---

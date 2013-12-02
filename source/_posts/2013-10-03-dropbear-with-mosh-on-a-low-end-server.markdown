@@ -7,7 +7,6 @@ slug: dropbear-with-mosh-on-a-low-end-server
 title: Dropbear with Mosh on a Low End Server
 wordpress_id: 1021
 categories:
-- All
 tags:
 - dropbear
 - mosh

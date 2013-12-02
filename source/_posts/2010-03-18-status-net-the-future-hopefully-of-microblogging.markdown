@@ -7,7 +7,6 @@ slug: status-net-the-future-hopefully-of-microblogging
 title: Status.net - The future (hopefully) of microblogging!
 wordpress_id: 472
 categories:
-- All
 tags:
 - microblogging
 - nclug

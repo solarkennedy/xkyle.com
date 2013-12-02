@@ -7,7 +7,6 @@ slug: a-car-wreck
 title: A Car Wreck
 wordpress_id: 416
 categories:
-- All
 tags:
 - Personal
 ---

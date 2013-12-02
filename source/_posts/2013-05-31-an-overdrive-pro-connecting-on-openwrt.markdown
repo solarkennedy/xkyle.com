@@ -7,7 +7,6 @@ slug: an-overdrive-pro-connecting-on-openwrt
 title: An Overdrive Pro Connecting on OpenWrt
 wordpress_id: 1013
 categories:
-- All
 tags:
 - freedompop
 - openwrt

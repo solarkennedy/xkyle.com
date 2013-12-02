@@ -7,9 +7,7 @@ slug: ettercaps-authors-birthday
 title: Ettercap's Author's Birthday!
 wordpress_id: 151
 categories:
-- All
 tags:
-- All
 - ettercap
 - nclug
 - security

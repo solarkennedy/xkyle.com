@@ -7,7 +7,6 @@ slug: puppet-on-openwrt
 title: Puppet on OpenWrt!
 wordpress_id: 959
 categories:
-- All
 ---
 
 # [![puppet+openwrt](/uploads/puppet+openwrt.jpg)](/uploads/puppet+openwrt.jpg)

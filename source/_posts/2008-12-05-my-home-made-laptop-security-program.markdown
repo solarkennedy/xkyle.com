@@ -7,9 +7,7 @@ slug: my-home-made-laptop-security-program
 title: 'My Home-Made Laptop Security Program '
 wordpress_id: 174
 categories:
-- All
 tags:
-- All
 - eeepc
 - nclug
 - security

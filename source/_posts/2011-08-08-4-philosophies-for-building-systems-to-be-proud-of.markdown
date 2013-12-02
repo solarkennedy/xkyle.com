@@ -7,7 +7,6 @@ slug: 4-philosophies-for-building-systems-to-be-proud-of
 title: 4 Philosophies For Building Systems To Be Proud Of
 wordpress_id: 648
 categories:
-- All
 tags:
 - cfengine
 - linux

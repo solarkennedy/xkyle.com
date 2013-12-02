@@ -7,9 +7,7 @@ slug: my-desktop
 title: My Desktop
 wordpress_id: 271
 categories:
-- All
 tags:
-- All
 - desktop
 - ubuntu
 ---

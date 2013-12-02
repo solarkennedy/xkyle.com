@@ -7,7 +7,6 @@ slug: disabling-microphone-auto-gain-sensitivity-for-google-plus-hangouts
 title: Disabling Microphone Auto-Gain (Sensitivity) For Google Plus Hangouts
 wordpress_id: 970
 categories:
-- All
 tags:
 - audio
 - google

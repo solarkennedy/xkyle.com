@@ -7,7 +7,6 @@ slug: how-to-benchmark-harddrives-in-linux
 title: How to Benchmark Harddrives in Linux
 wordpress_id: 599
 categories:
-- All
 tags:
 - benchmarks
 - hard drives
@@ -22,12 +21,10 @@ The thing about benchmarks is that you always must be skeptical. Each system's p
 This particular "benchmark" is easiest and the least reliable. It does raw reads only, good luck on where it pulls them from. Here is an example:
 
 
-> root@archive:/# hdparm -tT /dev/sda
-
-/dev/sda:
-Timing cached reads:   1472 MB in  2.00 seconds = 735.81 MB/sec
-Timing buffered disk reads: 360 MB in  3.02 seconds = 119.24 MB/sec
-
+    root@archive:/# hdparm -tT /dev/sda
+    /dev/sda:
+    Timing cached reads:   1472 MB in  2.00 seconds = 735.81 MB/sec
+    Timing buffered disk reads: 360 MB in  3.02 seconds = 119.24 MB/sec
 
 Its... something. Good for just real quick, non-destructive read tests to compare between two disks or arrays.
 
@@ -52,24 +49,22 @@ The solution here is bonnie++, which does what most applications do: write, read
 Here would be a typical invocation:
 
 
-> kyle@archive:/tmp# bonnie++
+    kyle@archive:/tmp# bonnie++
 
 
 It is better to run it as not root. Run it in the directory where you want it to make files. Its output is... a little hard to comprehend and outside the scope of this article. One can read the documentation and compile your own spreadsheet and graph with some Libreoffice Calc foo:
 
 [![](/uploads/Bonnie-Graphs-300x178.png)](/uploads/Bonnie-Graphs.png)
 
-Nothing too fancy. It has a lot of output, so you have to pick the numbers that are important to you. Another option is to use the bon_csv2html to output a slightly more readable output:
+Nothing too fancy. It has a lot of output, so you have to pick the numbers that are important to you. Another option is to use the bon\_csv2html to output a slightly more readable output:
 
-
-> cat benchmarks.csv | bon_csv2html  > bench.html
-
-firefox bench.html
+    cat benchmarks.csv | bon_csv2html  > bench.html
+    firefox bench.html
 
 
 [![](/uploads/bonnie-html-300x62.png)](/uploads/bonnie-html.png)
 
 Bonnie benchmarks are the hardest to read, but are they closest to the *reality* of the performance of your disk in your environment.
 
-_**Conclusion**_
+## Conclusion
 So that is it. Try out different raid configurations and filesystems, but benchmark them to **_know_** if it improves or degrades your performance instead of depending on hunches and superstition!

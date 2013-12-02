@@ -7,7 +7,6 @@ slug: decoding-balanced-payments-puzzle-1
 title: Decoding Balanced Payments Puzzle 1
 wordpress_id: 927
 categories:
-- All
 tags:
 - bash
 - programming

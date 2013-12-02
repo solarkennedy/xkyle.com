@@ -7,7 +7,6 @@ slug: picking-server-hostnames-worstest-worser-worst-better-betterer-bestest
 title: 'Picking Server Hostnames: Worstest, Worser, Worst... Better, Betterer, Bestest'
 wordpress_id: 947
 categories:
-- All
 tags:
 - hostnames
 - rant

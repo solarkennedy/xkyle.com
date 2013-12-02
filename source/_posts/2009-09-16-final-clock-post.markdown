@@ -7,7 +7,6 @@ slug: final-clock-post
 title: Final Clock Post
 wordpress_id: 390
 tags:
-- All
 - arduino
 - Clock
 - nclug

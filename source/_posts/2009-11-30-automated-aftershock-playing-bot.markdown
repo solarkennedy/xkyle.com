@@ -7,7 +7,6 @@ slug: automated-aftershock-playing-bot
 title: Automated Aftershock Playing Bot
 wordpress_id: 422
 tags:
-- All
 - graphviz
 - nclug
 ---

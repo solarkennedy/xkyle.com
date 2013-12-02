@@ -7,7 +7,6 @@ slug: its-a-wiki-wiki-world
 title: Its a Wiki-Wiki-World
 wordpress_id: 159
 categories:
-- All
 tags:
 - notebook
 - wiki

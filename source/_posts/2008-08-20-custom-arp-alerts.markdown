@@ -7,9 +7,7 @@ slug: custom-arp-alerts
 title: Custom Arp-Alerts
 wordpress_id: 101
 categories:
-- All
 tags:
-- All
 - programming
 - scripting
 - security

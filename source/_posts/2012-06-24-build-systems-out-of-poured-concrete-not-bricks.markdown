@@ -7,7 +7,6 @@ slug: build-systems-out-of-poured-concrete-not-bricks
 title: Build Systems out of Poured Concrete, not Bricks
 wordpress_id: 739
 categories:
-- All
 tags:
 - it
 - platforms

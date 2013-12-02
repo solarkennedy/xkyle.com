@@ -7,7 +7,6 @@ slug: my-jar-of-fireflies
 title: My Jar of Fireflies
 wordpress_id: 397
 categories:
-- All
 ---
 
 I've seen a lot of electronic fireflies on the internet. [Here](http://negativeacknowledge.com/2008/10/18/led-fireflies-in-a-jar/), [here](http://www.instructables.com/id/Jar-of-Fireflies/), and probably others. The theory is simple, just small LED's [charlieplexed](http://en.wikipedia.org/wiki/Charlieplexing) with a microcontroller. I wanted to take it a step futher, with a light sensor, solar panel, and more complex firmware.

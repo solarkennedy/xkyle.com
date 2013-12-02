@@ -7,7 +7,6 @@ slug: solving-role-playing-4
 title: Solving "Role Playing 4"
 wordpress_id: 536
 categories:
-- All
 tags:
 - Games Magazine
 - imdb

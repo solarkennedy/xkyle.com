@@ -7,7 +7,6 @@ slug: configuring-bios-settings-with-puppet
 title: Configuring BIOS Settings With Puppet!
 wordpress_id: 853
 categories:
-- All
 tags:
 - bios
 - linux

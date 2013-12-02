@@ -7,9 +7,7 @@ slug: dns-cache-poisoning
 title: 'DNS Cache Poisoning '
 wordpress_id: 96
 categories:
-- All
 tags:
-- All
 - programming
 - scripting
 - security

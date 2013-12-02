@@ -7,7 +7,6 @@ slug: myspace-phishing-analysis
 title: Myspace Phishing Analysis
 wordpress_id: 251
 tags:
-- All
 - Myspace
 - passwords
 - security

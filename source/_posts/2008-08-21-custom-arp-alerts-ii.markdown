@@ -7,9 +7,7 @@ slug: custom-arp-alerts-ii
 title: Custom Arp Alerts II!
 wordpress_id: 112
 categories:
-- All
 tags:
-- All
 - nclug
 - programming
 - scripting

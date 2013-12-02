@@ -7,7 +7,6 @@ slug: bash-boggle-a-boggle-solver-written-in-bash
 title: Bash Boggle - A Boggle Solver Written in Bash!
 wordpress_id: 526
 categories:
-- All
 tags:
 - bash
 - nclug
