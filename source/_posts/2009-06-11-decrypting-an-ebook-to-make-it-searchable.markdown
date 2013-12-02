@@ -31,16 +31,16 @@ So I use the tool and get a pdf, now I can use one of the most awesome tools in 
 Imagemagick can whip this pdf into shape. The first thing I'm going to do is convert each page into a tiff:
 
 
-> $ convert -density 200 input.pdf[1-124] -depth 8 -monochrome %05d.tif
+    $ convert -density 200 input.pdf[1-124] -depth 8 -monochrome %05d.tif
 
 
 Then I'm going to run tesseract-ocr on them to get the text:
 
 
-> $ for i in $(seq --format=%005.f 1 324)
-do
-tesseract $i.tif tesseract-$i -l eng
-done
+    $ for i in $(seq --format=%005.f 1 324)
+    do
+    tesseract $i.tif tesseract-$i -l eng
+    done
 
 
 Now all I have to do is cat all the text together:

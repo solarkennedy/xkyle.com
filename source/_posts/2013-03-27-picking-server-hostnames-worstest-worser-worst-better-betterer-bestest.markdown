@@ -18,17 +18,8 @@ Picking a server hostname is a[ big deal](http://xkcd.com/910/). I've seen quite
 
 # Worsest
 
-
-
-
-
-	
   * morpheous
-
-	
   * trinity
-
-	
   * alf
 
 
@@ -50,17 +41,9 @@ Oh, and it doesn't scale. Say it with me here: **Servers are not Precious Snowfl
 
 # Worser
 
-
-
-
-
 	
   * msr2
-
-	
   * eln4
-
-	
   * wtf5
 
 
@@ -73,19 +56,10 @@ And no, incrementing the number on the end of your hostname on every new server 
 
 # Worse
 
-
-
-
-
 	
   * srv001-100
-
-	
   * dell01-08
-
-	
   * node01-99
-
 
 We are getting slightly better here I think. This is another anti-pattern I have seen in the wild: pick a generic name and span it across the range. Fill up the servers as needed.
 
@@ -95,42 +69,20 @@ Whyyy!!? Again, there is no inherent information or context from the hostname.
 > Pro Tip: Bake tribal knowledge into your infrastructure by setting descriptive hostnames.
 
 
-
-
 # **Better**
-
-
-
-
-
 	
   * clientname
-
-	
   * different-client
-
-	
   * legacy-name (that has no relevant meaning today)
-
 
 The world isn't perfect. Sometimes it does make sense to group services by a client's name, or maybe because you have some legacy that you want self-contained on a single server. Could be as good as it gets.
 
 
 # Betterer
-
-
-
-
-
 	
   * dns1-5
-
-	
   * backend01-04
-
-	
   * fe01-99
-
 
 These are nice. I have a good idea about what these servers do, how important it is if one goes down, what services are impacted, etc. These are pretty much bestest, honestly.
 
@@ -139,17 +91,8 @@ I'm conflicted on leading zeros. Future proofing is one thing, but how many dns 
 
 # Bestest
 
-
-
-
-
-	
   * db01a
-
-	
   * nfs01-04
-
-	
   * mail
 
 

@@ -24,7 +24,7 @@ TL;DR version: Use Linux and "rpc.mountd --manage-gids" and you are done.
 ## Defining the Actual Problem
 
 
-So what is the actual problem? This problem occurs when a user, who is a member of more than 16 groups, tries to access a file or directory on an nfs mount that depends on his group rights in order to be authorized to see it.  The default authorization mechanism for NFS (auth_sys) will take only a subset of your groups and send it to the nfs server to check if you have rights to read a file. This leads to unpredicatable and intermittent permission problems when it looks like you *should* have permission. Allow me to demonstrate:
+So what is the actual problem? This problem occurs when a user, who is a member of more than 16 groups, tries to access a file or directory on an nfs mount that depends on his group rights in order to be authorized to see it.  The default authorization mechanism for NFS (auth\_sys) will take only a subset of your groups and send it to the nfs server to check if you have rights to read a file. This leads to unpredicatable and intermittent permission problems when it looks like you *should* have permission. Allow me to demonstrate:
 
 [![](/uploads/groups-failure-300x273.png)](/uploads/groups-failure.png)
 
@@ -34,18 +34,16 @@ Seems odd right? I *should* be able to ls those other directories. Still don't b
 
 You can see that the nfs client is telling the nfs server what groups you are in. And the protocol only has room for 16 :(
 
-Dispelling Myths and Superstition
-
-
+## Dispelling Myths and Superstition
 
 	
-  * This problem nothing to do with NFSv4, NFSv2, NFSv3, etc. This is a limitation of auth_sys. Going to NFSv4 does not make this problem go away.
+  * This problem nothing to do with NFSv4, NFSv2, NFSv3, etc. This is a limitation of auth\_sys. Going to NFSv4 does not make this problem go away.
 
 	
   * The problem has nothing to do with the underlying filesystem on the nfs server.
 
 	
-  * This 16 group limit with auth_sys is not tuneable. It is defined in [RFC 5531](http://tools.ietf.org/html/rfc5531) and cannot be adjusted or patched.
+  * This 16 group limit with auth\_sys is not tuneable. It is defined in [RFC 5531](http://tools.ietf.org/html/rfc5531) and cannot be adjusted or patched.
 
 	
   * Using group-based ACLs will not solve the problem.
@@ -107,27 +105,21 @@ Yea, just in case you didn't think hundreds of ACLs couldn't get any more compli
 Now, I don't have much to say on this subject. This might be a potential solution for you if you have conversations like this:
 
 
-> **Comrade**: Do you have a good recommendation for a text editor?
+**Comrade**: Do you have a good recommendation for a text editor?
 
 **You**: I recommend Eclipse or Microsoft Visual Studio.
-
-
 
 **Comrade**: Hey dude, what is the key to your wifi?
 
 **You**: You need an active directory account syncronized with the RADIUS server before you can authenticate. What is your MAC address?
 
 
-Yes, you can replace auth_sys with auth_krb5. Get ready for authentication tickets, backup key servers, crypto exchanges, setting up trust relationships, etc. If you have this many groups you probably have LDAP or Active Directory as well as your NFS server and client machines. What's one more complicated system you don't fully understand thrown into the mix?
+Yes, you can replace auth\_sys\ with auth\_krb5. Get ready for authentication tickets, backup key servers, crypto exchanges, setting up trust relationships, etc. If you have this many groups you probably have LDAP or Active Directory as well as your NFS server and client machines. What's one more complicated system you don't fully understand thrown into the mix?
 
 
 ## Oustide the Box Solutions
 
 
-
-
-
-	
   * Use Samba?
 
 	
@@ -143,7 +135,7 @@ Yes, you can replace auth_sys with auth_krb5. Get ready for authentication ticke
   * Google Docs?
 
 
-Appendix: Fully Understanding What Is Going On Behind The Scenes With --manage-gids
+## Appendix: Fully Understanding What Is Going On Behind The Scenes With --manage-gids
 
 Ok. If you have come this far and you are using --manage-gids to elegantly solve this problem. Congratulations. Ready for the behind the scenes look?
 
@@ -156,66 +148,30 @@ When the NFS server intercepts the access request, the server must now look up y
 Also, the NFS server will cache group lookups so it doesn't have to continuously make queries. The cache is visible like this:
 
 
-> 
-
->     
->     root@archive:~# cat /proc/net/rpc/auth.unix.gid/content
->     #uid cnt: gids...
->     0 9: 0 4 20 24 46 100 112 121 127
->     1001 30: 100 4 20 24 46 112 115 121 122 127 1001 1002 1004 1005 1006 1007 1008 1009 1010 1011 1012 1013 1014 1015 1016 1017 1018 1019 1020 1021
-> 
-> 
-
-
-
+    root@archive:~# cat /proc/net/rpc/auth.unix.gid/content
+    #uid cnt: gids...
+    0 9: 0 4 20 24 46 100 112 121 127
+    1001 30: 100 4 20 24 46 112 115 121 122 127 1001 1002 1004 1005 1006 1007 1008 1009 1010 1011 1012 1013 1014 1015 1016 1017 1018 1019 1020 1021
 
     
-    <span style="color: #444444; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 26px; white-space: normal;" class="Apple-style-span">You can see the map, and it provides a legend at the top. If you are making changes to group memberships very often, you must flush this cache to get reasonable results. The NFS rpc.mountd program will cache group mappings for <strong>30 minutes</strong> (nfs-utils-1.2.2/utils/mountd/cache.c line 157).  Flush it like this:</span>
+You can see the map, and it provides a legend at the top. If you are making changes to group memberships very often, you must flush this cache to get reasonable results. The NFS rpc.mountd program will cache group mappings for <strong>30 minutes</strong> (nfs-utils-1.2.2/utils/mountd/cache.c line 157).  Flush it like this:
 
-
-
-
-> 
-
->     
->     root@archive:~# date +%s >  /proc/net/rpc/auth.unix.gid/flush
->     root@archive:~# cat /proc/net/rpc/auth.unix.gid/content
->     #uid cnt: gids...
->     0 9: 0 4 20 24 46 100 112 121 127
-> 
-> 
-
-
-
-
+    root@archive:~# date +%s >  /proc/net/rpc/auth.unix.gid/flush
+    root@archive:~# cat /proc/net/rpc/auth.unix.gid/content
+    #uid cnt: gids...
+    0 9: 0 4 20 24 46 100 112 121 127
     
-    <span style="color: #444444; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 26px; white-space: normal;" class="Apple-style-span">Also, you now have a new limit on group membership. It isn't exactly a specific set number as much as a total number of bytes needed to represent your group memberships. In my experimenting it was 1000 bytes (characters). So if you are using group IDs that are 5 digits, +1 for a space separator and you have (1000 / 6) = 166 as your new group limit. This of course may change with time, so I encourage you to test this in your own environment. (I could not verify this with source code. It looks like it should be 100 to me? Experimentation was the only way for me to be sure what the new limit <strong>actually</strong> was.)</span>
+Also, you now have a new limit on group membership. It isn't exactly a specific set number as much as a total number of bytes needed to represent your group memberships. In my experimenting it was 1000 bytes (characters). So if you are using group IDs that are 5 digits, +1 for a space separator and you have (1000 / 6) = 166 as your new group limit. This of course may change with time, so I encourage you to test this in your own environment. (I could not verify this with source code. It looks like it should be 100 to me? Experimentation was the only way for me to be sure what the new limit <strong>actually</strong> was.)
 
 
+When a user hits this limit, that user (and only that user) will have his process hang, and the nfs client kernel will complain that the nfs server isn't responding, which it isn't. The nfs server will not be able to look up the groups for that user, and fails to send back a nfs packet with a response.
 
-    
-    <span style="color: #444444; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 26px; white-space: normal;" class="Apple-style-span">When a user hits this limit, that user (and only that user) will have his process hang, and the nfs client kernel will complain that the nfs server isn't responding, which it isn't. The nfs server will not be able to look up the groups for that user, and fails to send back a nfs packet with a response. </span>
+In addition, your gid map cache will have a special entry that will be commented out like this:
 
-
-
-    
-    <span style="color: #444444; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 26px; white-space: normal;" class="Apple-style-span">In addition, your gid map cache will have a special entry that will be commented out like this: </span>
-
-
-
-
-> 
-
->     
->     root@archive:~# cat /proc/net/rpc/auth.unix.gid/content
->     #uid cnt: gids...
->     0 9: 0 4 20 24 46 100 112 121 127
->     #1001 0:
-> 
-> 
-
-
+    root@archive:~# cat /proc/net/rpc/auth.unix.gid/content
+    #uid cnt: gids...
+    0 9: 0 4 20 24 46 100 112 121 127
+    #1001 0:
 
 This is an indication that the nfs server could not look up the groups for user 1001. I've setup a nagios check on my nfs servers to detect for this, in order to let us know right away that the problem is occurring. In addition I have nagios checks to alert us if we are approaching the new group limit.
 
- 
