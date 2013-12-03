@@ -7,7 +7,6 @@ slug: cool-things-to-do-after-installing-openwrt
 title: Cool Things to Do After Installing OpenWrt
 wordpress_id: 830
 categories:
-tags:
 - openwrt
 - plug computers
 - pxe

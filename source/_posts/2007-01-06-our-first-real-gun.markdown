@@ -6,7 +6,7 @@ layout: post
 slug: our-first-real-gun
 title: Our First Real Gun
 wordpress_id: 41
-tags:
+categories:
 - gun
 - LaserTag
 ---

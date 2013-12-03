@@ -6,8 +6,7 @@ layout: post
 slug: toorcamp-day-2
 title: 'Toorcamp: Day 2'
 wordpress_id: 380
-tags:
-- nclug
+categories:
 - toorcamp
 ---
 

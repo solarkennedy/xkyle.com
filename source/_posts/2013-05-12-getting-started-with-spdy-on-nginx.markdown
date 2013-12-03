@@ -7,7 +7,6 @@ slug: getting-started-with-spdy-on-nginx
 title: Getting Started With SPDY on Nginx
 wordpress_id: 972
 categories:
-tags:
 - httpd
 - nginx
 - SPDY
@@ -20,13 +19,9 @@ If you have SSL enabled and are using nginx, they you are pretty close to runnin
 
 ## Step 1: Get a version of nginx with spdy enabled.
 
-
-
-
 ### Ubuntu
 
-
-Get some [packages](http://nginx.org/en/linux_packages.html). The **Ubuntu** packages have "--with-http_spdy_module" compiled, so you can install them with no problem:
+Get some [packages](http://nginx.org/en/linux_packages.html). The **Ubuntu** packages have "--with-http\_spdy\_module" compiled, so you can install them with no problem:
 
     
     cd /tmp
@@ -41,14 +36,9 @@ Get some [packages](http://nginx.org/en/linux_packages.html). The **Ubuntu** pac
     apt-get autoremove
     apt-get install nginx
 
-
-
-
 ### Centos / RHEL
 
-
 The **Centos** packages need to be rebuilt. And you need a new openssl. (carefully)
-
     
     yum install yum-utils rpmdevtools
     yum-builddep nginx
@@ -61,13 +51,10 @@ The **Centos** packages need to be rebuilt. And you need a new openssl. (careful
 
 Now add these lines to the two configure commands (one normal, one debug) in the spec file (~/rpmbuild/SPECS/nginx.spec):
 
-    
      --with-http_spdy_module \
      --with-openssl=/tmp/openssl-1.0.1e/ \
 
-
 Now build yourself and RPM:
-
     
     cd ~/rpmbuild/
     rpmbuild -ba SPECS/nginx.spec
@@ -75,11 +62,7 @@ Now build yourself and RPM:
     rpm -Uvh RPMS/i386/nginx-1.4.1-1.el6.ngx.i386.rpm
     /etc/init.d/nginx restart
 
-
-
-
 ##  Configuring nginx
-
 
 Take your listen line, and add "ssl spdy" to it:
 
@@ -87,11 +70,7 @@ Take your listen line, and add "ssl spdy" to it:
     server {
           listen 443 ssl spdy;
 
-
-
-
 ## Testing
-
 
 Try this [SPDY testing page](http://spdycheck.org/#xkyle.com).
 And try a [Chrome plugin](https://chrome.google.com/webstore/detail/spdy-indicator/mpbpobfflnpcgagjijhmgnchggcjblin?hl=en) that will visually indicate if the server you are talking to supports SPDY.

@@ -7,7 +7,6 @@ slug: the-seagate-dockstar-a-very-cool-linux-device
 title: 'The Seagate Dockstar: A Very Cool Linux Device'
 wordpress_id: 511
 categories:
-tags:
 - dockstar
 - nclug
 - openwrt

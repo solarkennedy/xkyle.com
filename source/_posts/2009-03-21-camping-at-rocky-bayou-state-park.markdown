@@ -6,7 +6,7 @@ layout: post
 slug: camping-at-rocky-bayou-state-park
 title: Camping at Rocky Bayou State Park
 wordpress_id: 294
-tags:
+categories:
 - camping
 - cody
 - vacation

@@ -4,7 +4,6 @@ title: "Saying Goodbye to Wordpress"
 date: 2013-12-01 21:40:42 -0800
 comments: true
 categories: 
-tags:
 - wordpress
 - git
 - octopress

@@ -7,7 +7,6 @@ slug: carbon-fiber-table
 title: Carbon Fiber Table
 wordpress_id: 807
 categories:
-tags:
 - carbon fiber
 ---
 

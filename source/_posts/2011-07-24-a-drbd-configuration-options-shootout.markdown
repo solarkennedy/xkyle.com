@@ -7,7 +7,6 @@ slug: a-drbd-configuration-options-shootout
 title: A DRBD Configuration Options Shootout!
 wordpress_id: 632
 categories:
-tags:
 - benchmarks
 - drdb
 ---

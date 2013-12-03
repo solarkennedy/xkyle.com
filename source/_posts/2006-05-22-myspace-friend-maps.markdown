@@ -6,7 +6,7 @@ layout: post
 slug: myspace-friend-maps
 title: Myspace Friend Maps
 wordpress_id: 6
-tags:
+categories:
 - Myspace
 - Personal
 ---

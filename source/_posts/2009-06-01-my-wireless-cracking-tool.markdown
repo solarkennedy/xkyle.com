@@ -7,7 +7,6 @@ slug: my-wireless-cracking-tool
 title: My Wireless Cracking Tool
 wordpress_id: 136
 categories:
-tags:
 - security
 - wep
 - wifi

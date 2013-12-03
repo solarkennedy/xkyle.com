@@ -7,7 +7,6 @@ slug: how-to-benchmark-harddrives-in-linux
 title: How to Benchmark Harddrives in Linux
 wordpress_id: 599
 categories:
-tags:
 - benchmarks
 - hard drives
 - raid

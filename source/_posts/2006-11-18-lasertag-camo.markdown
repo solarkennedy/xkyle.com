@@ -6,7 +6,7 @@ layout: post
 slug: lasertag-camo
 title: Lasertag Camo
 wordpress_id: 32
-tags:
+categories:
 - gun
 - LaserTag
 ---

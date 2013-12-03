@@ -6,7 +6,7 @@ layout: post
 slug: final-clock-post
 title: Final Clock Post
 wordpress_id: 390
-tags:
+categories:
 - arduino
 - Clock
 - nclug
@@ -17,10 +17,9 @@ I've finally moved to Colorado, and I had to leave the big clock behind, and luc
 
 [![photo](/uploads/photo-300x225.jpg)](/uploads/photo.jpg)
 
-I finilized the code, installed the clock in my [church](http://relevantchurch.com), and programmed it for there needs. The code is stored [here](https://dev.xkyle.com/clock/) if someone want to see it. If you want to check it out run:
+I finilized the code, installed the clock in my [church](http://relevantchurch.com), and programmed it for there needs. The code is stored [here](https://github.com/solarkennedy/clock) if someone want to see it. If you want to check it out run:
 
-
-> svn co https://dev.xkyle.com/clock
+    git clone https://github.com/solarkennedy/clock.git
 
 
 I have a little more technical info on my [wiki](http://wiki.xkyle.com/Clock), but it basically goes like this:

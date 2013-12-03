@@ -7,7 +7,6 @@ slug: graph-everything-with-graphite
 title: Graph EVERYTHING with Graphite!
 wordpress_id: 715
 categories:
-tags:
 - devops
 - ganglia
 - graphite

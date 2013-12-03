@@ -6,7 +6,7 @@ layout: post
 slug: prototype-1
 title: 'Prototype #1'
 wordpress_id: 38
-tags:
+categories:
 - gun
 - LaserTag
 ---

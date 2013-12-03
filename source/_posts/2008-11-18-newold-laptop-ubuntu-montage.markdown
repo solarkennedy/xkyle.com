@@ -7,7 +7,6 @@ slug: newold-laptop-ubuntu-montage
 title: 'New/Old Laptop: Ubuntu Montage '
 wordpress_id: 164
 categories:
-tags:
 - hardware
 - Laptop
 - nclug

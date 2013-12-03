@@ -7,7 +7,6 @@ slug: a-team-fortress-2-see-n-say
 title: A Team Fortress 2 See 'n Say!
 wordpress_id: 977
 categories:
-tags:
 - arduino
 - Personal
 - See N Say

@@ -7,7 +7,6 @@ slug: goodbye-intel-my-favorite-commands
 title: Goodbye Intel - My Favorite Commands
 wordpress_id: 940
 categories:
-tags:
 - bios
 - git
 - icc

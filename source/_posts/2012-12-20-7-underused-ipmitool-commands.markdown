@@ -7,7 +7,6 @@ slug: 7-underused-ipmitool-commands
 title: 7 Underused IPMItool Commands
 wordpress_id: 815
 categories:
-tags:
 - bios
 - ipmi
 - ipmitool

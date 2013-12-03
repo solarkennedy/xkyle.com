@@ -7,7 +7,6 @@ slug: building-linux-packages-for-kernel-drivers
 title: Building Linux Packages For Kernel Drivers! (dkms howto)
 wordpress_id: 835
 categories:
-tags:
 - debs
 - dkms
 - kernel modules

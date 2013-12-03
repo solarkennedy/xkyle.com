@@ -7,7 +7,6 @@ slug: an-ipmi-sel-viewing-shootout
 title: An IPMI SEL Viewing Shootout!
 wordpress_id: 869
 categories:
-tags:
 - intel
 - ipmi
 - linux

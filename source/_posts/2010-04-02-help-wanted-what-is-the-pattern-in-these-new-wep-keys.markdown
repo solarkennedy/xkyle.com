@@ -7,7 +7,6 @@ slug: help-wanted-what-is-the-pattern-in-these-new-wep-keys
 title: 'Help Wanted: What is the pattern in these new WEP Keys?'
 wordpress_id: 477
 categories:
-tags:
 - wep
 - wireless
 ---

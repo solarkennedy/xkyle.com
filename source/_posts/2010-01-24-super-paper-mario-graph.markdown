@@ -7,7 +7,6 @@ slug: super-paper-mario-graph
 title: Super Paper Mario - Chapter 2 Graph
 wordpress_id: 431
 categories:
-tags:
 - nclug
 ---
 

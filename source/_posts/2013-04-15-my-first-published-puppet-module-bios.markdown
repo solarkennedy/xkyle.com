@@ -7,7 +7,6 @@ slug: my-first-published-puppet-module-bios
 title: 'My First Published Puppet Module: bios'
 wordpress_id: 945
 categories:
-tags:
 - bios
 - dell
 - hp

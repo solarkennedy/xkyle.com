@@ -7,7 +7,6 @@ slug: xkcds-collatz-conjecture
 title: XKCD's Collatz Conjecture
 wordpress_id: 463
 categories:
-tags:
 - graphviz
 - nclug
 - xkcd

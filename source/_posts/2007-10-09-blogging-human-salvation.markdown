@@ -6,7 +6,7 @@ layout: post
 slug: blogging-human-salvation
 title: Blogging = Human Salvation
 wordpress_id: 73
-tags:
+categories:
 - blogging
 - humanity
 - Personal

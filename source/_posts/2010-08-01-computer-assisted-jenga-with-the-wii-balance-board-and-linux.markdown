@@ -7,7 +7,6 @@ slug: computer-assisted-jenga-with-the-wii-balance-board-and-linux
 title: Computer Assisted Jenga with the Wii Balance Board and Linux
 wordpress_id: 518
 categories:
-tags:
 - cwiid
 - nclug
 - pygame

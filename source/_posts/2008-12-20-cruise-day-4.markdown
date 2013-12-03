@@ -6,7 +6,7 @@ layout: post
 slug: cruise-day-4
 title: Cruise - Day 4
 wordpress_id: 194
-tags:
+categories:
 - cody
 - vacation
 ---

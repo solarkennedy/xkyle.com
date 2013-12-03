@@ -6,7 +6,7 @@ layout: post
 slug: diydrone-imu-first-steps
 title: 'DIYDrone: IMU First steps'
 wordpress_id: 427
-tags:
+categories:
 - arduino
 - diydrone
 - nclug

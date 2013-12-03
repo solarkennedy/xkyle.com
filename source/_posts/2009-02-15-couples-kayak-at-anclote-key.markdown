@@ -6,7 +6,7 @@ layout: post
 slug: couples-kayak-at-anclote-key
 title: Couples Kayak at Anclote Key
 wordpress_id: 263
-tags:
+categories:
 - camping
 - cody
 - kayak

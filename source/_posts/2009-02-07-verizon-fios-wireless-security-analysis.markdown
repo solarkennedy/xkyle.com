@@ -7,7 +7,6 @@ slug: verizon-fios-wireless-security-analysis
 title: Verizon FiOS Wireless Security Analysis
 wordpress_id: 243
 categories:
-tags:
 - aircrack
 - hacking
 - nclug

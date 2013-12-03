@@ -7,7 +7,6 @@ slug: verizon-fios-wireless-key-calculator
 title: Verizon FiOS Wireless Key Calculator!
 wordpress_id: 276
 categories:
-tags:
 - aircrack
 - nclug
 - wep

@@ -6,7 +6,7 @@ layout: post
 slug: whiteboard-whiteboard-interactions
 title: Whiteboard Whiteboard Interactions
 wordpress_id: 64
-tags:
+categories:
 - Personal
 - whiteboard
 ---

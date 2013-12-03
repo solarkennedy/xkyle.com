@@ -7,7 +7,6 @@ slug: carbon-fiber-glasses
 title: Carbon Fiber Glasses
 wordpress_id: 776
 categories:
-tags:
 - carbon fiber
 ---
 

@@ -7,7 +7,6 @@ slug: plug-computers
 title: Plug Computers!
 wordpress_id: 531
 categories:
-tags:
 - backuppc
 - nclug
 - plug computers

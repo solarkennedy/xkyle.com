@@ -6,7 +6,7 @@ layout: post
 slug: yes-yes-very-professional
 title: Yes yes... very professional...
 wordpress_id: 488
-tags:
+categories:
 - nclug
 - windows
 ---

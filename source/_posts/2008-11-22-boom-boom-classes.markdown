@@ -6,7 +6,7 @@ layout: post
 slug: boom-boom-classes
 title: Boom-Boom Classes?
 wordpress_id: 172
-tags:
+categories:
 - Personal
 - School
 ---
@@ -17,22 +17,14 @@ In an effort to locate some sort of source for my definition besides anecdotes o
 
 Here is my evidence:
 
-
-
 	
   1. [Urban Dictionary ](http://www.urbandictionary.com/define.php?term=boom%20boom)Claiming this fact[
 ](http://www.urbandictionary.com/define.php?term=boom%20boom)
-
 	
   2. [Google Results ](http://www.google.com/search?hl=en&client=firefox-a&rls=com.ubuntu%3Aen-US%3Aunofficial&hs=HQd&q=%22boom+boom+class%22+site%3Amyspace.com&btnG=Search)only turning up myspace pages in Tampa and Arizona?
-
 	
   3. [More Google](http://www.google.com/search?hl=en&client=firefox-a&rls=com.ubuntu:en-US:unofficial&hs=kmI&sa=X&oi=spell&resnum=0&ct=result&cd=1&q=%22boom+boom+class%22+forum&spell=1) on forum hits, again only Tampa and Arizona specific things
-
 	
   4. [Nothing on Wikipedia](http://en.wikipedia.org/wiki/Boom_Boom_(disambiguation))
-
 	
   5. That is all I have. Its mostly anecdotal.
-
-

@@ -6,7 +6,7 @@ layout: post
 slug: cruise-day-3
 title: Cruise - Day 3
 wordpress_id: 189
-tags:
+categories:
 - cody
 - vacation
 ---

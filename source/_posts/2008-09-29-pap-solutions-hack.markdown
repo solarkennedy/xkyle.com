@@ -7,7 +7,6 @@ slug: pap-solutions-hack
 title: PAP Solutions Hack
 wordpress_id: 125
 categories:
-tags:
 - cody
 - nclug
 - programming

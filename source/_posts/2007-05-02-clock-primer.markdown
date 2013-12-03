@@ -6,7 +6,7 @@ layout: post
 slug: clock-primer
 title: Clock Primer
 wordpress_id: 72
-tags:
+categories:
 - Clock
 - hardware
 ---

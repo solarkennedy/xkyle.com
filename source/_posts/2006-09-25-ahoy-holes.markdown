@@ -6,7 +6,7 @@ layout: post
 slug: ahoy-holes
 title: Ahoy! Holes!
 wordpress_id: 14
-tags:
+categories:
 - backpack
 - LaserTag
 ---

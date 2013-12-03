@@ -7,7 +7,6 @@ slug: sensu-reports-in-your-motd-with-puppet
 title: Sensu Reports in your Motd with Puppet!
 wordpress_id: 1043
 categories:
-tags:
 - Puppet
 - sensu
 ---

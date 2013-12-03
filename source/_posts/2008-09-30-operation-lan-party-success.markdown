@@ -6,7 +6,7 @@ layout: post
 slug: operation-lan-party-success
 title: 'Operation LAN Party: Success '
 wordpress_id: 129
-tags:
+categories:
 - games
 - vacation
 ---

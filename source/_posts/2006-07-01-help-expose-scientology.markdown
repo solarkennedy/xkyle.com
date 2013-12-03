@@ -6,7 +6,7 @@ layout: post
 slug: help-expose-scientology
 title: Help Expose Scientology
 wordpress_id: 9
-tags:
+categories:
 - Personal
 - scientology
 - ytmnd.com

@@ -6,7 +6,7 @@ layout: post
 slug: sparkfuns-autonomous-vehicle-competition
 title: Sparkfun's Autonomous Vehicle Competition
 wordpress_id: 491
-tags:
+categories:
 - nclug
 - sparkfun
 - UAV

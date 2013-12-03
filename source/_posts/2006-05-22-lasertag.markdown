@@ -6,7 +6,7 @@ layout: post
 slug: lasertag
 title: LaserTag!
 wordpress_id: 5
-tags:
+categories:
 - LaserTag
 ---
 

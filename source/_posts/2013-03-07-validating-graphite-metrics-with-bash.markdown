@@ -7,7 +7,6 @@ slug: validating-graphite-metrics-with-bash
 title: Validating Graphite Metrics With Bash!
 wordpress_id: 895
 categories:
-tags:
 - bash
 - graphite
 - power

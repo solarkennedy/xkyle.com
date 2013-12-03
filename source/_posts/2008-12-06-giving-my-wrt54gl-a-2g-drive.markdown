@@ -7,7 +7,6 @@ slug: giving-my-wrt54gl-a-2g-drive
 title: Giving My WRT54GL a 2G Drive
 wordpress_id: 178
 categories:
-tags:
 - hacking
 - hardware
 - linksys

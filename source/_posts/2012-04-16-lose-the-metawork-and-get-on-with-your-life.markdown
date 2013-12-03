@@ -7,7 +7,6 @@ slug: lose-the-metawork-and-get-on-with-your-life
 title: Lose the Metawork and Get on with Your Life!
 wordpress_id: 675
 categories:
-tags:
 - code
 - git
 - management

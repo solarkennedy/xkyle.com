@@ -7,7 +7,6 @@ slug: dns-training-at-sago
 title: DNS Training At Sago
 wordpress_id: 119
 categories:
-tags:
 - dns
 - learning
 - nclug

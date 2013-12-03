@@ -6,7 +6,7 @@ layout: post
 slug: next-piece-armband
 title: 'Next Piece: Armband'
 wordpress_id: 45
-tags:
+categories:
 - gun
 - LaserTag
 ---

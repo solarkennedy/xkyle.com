@@ -6,7 +6,7 @@ layout: post
 slug: my-dads-terminal-patent
 title: My Dad's Terminal Patent
 wordpress_id: 257
-tags:
+categories:
 - dad
 - patent
 ---

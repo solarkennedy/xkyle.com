@@ -6,7 +6,7 @@ layout: post
 slug: discrete-wavelets-final-project-decaptcha
 title: Discrete Wavelets Final Project - Decaptcha,
 wordpress_id: 301
-tags:
+categories:
 - captcha
 - mathematica
 - nclug
@@ -20,7 +20,7 @@ This semester I took a class on [Discrete Wavelets](http://en.wikipedia.org/wiki
 
 We've all seen Captchas before. They are used on websites to make sure that the person on the website is a real human, not a computer program. Why do we want to break them? The same reason we want to climb Mount Everest, it's There!
 
-[![input_captcha](/uploads/input_captcha-300x108.jpg)](/uploads/input_captcha.jpg)
+[![input\_captcha](/uploads/input_captcha-300x108.jpg)](/uploads/input\_captcha.jpg)
 
 The above is the captcha we intended to solve. Its not particularly difficult, but this class is an introduction to wavelets and requires no previous experience with the language we had to use: Mathematica. Our real task was to implement the algorithm in [this paper](http://faculty.gvsu.edu/aboufade/web/cmj101-108.pdf).
 

@@ -6,9 +6,8 @@ layout: post
 slug: how-to-fix-a-power-plug-with-sugru
 title: How to Fix a Power Plug with Sugru!
 wordpress_id: 480
-tags:
+categories:
 - eeepc
-- nclug
 - sugru
 ---
 
@@ -16,20 +15,10 @@ I have a first generation Asus Eeepc, but the power plug is failing. All plugs d
 
 So should I throw it away and buy a new one? No! It can be easily fixed. Here is what you need:
 
-
-
-	
   * Soldering Iron + Solder
-
-	
   * Flux helps if you have it (If you have not soldered with flux, you are missing out big time)
-
-	
   * Heat shrink or electrical tape
-
-	
   * [Sugru](http://sugru.com/) can add a nice touch
-
 
 Start by using a sharp blade to cut off the plastic molding around the connector to expose the raw barrel connector and wires:
 

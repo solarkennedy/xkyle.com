@@ -7,7 +7,6 @@ slug: carbon-fiber-copper-solar-light
 title: Carbon Fiber / Copper Solar Light
 wordpress_id: 799
 categories:
-tags:
 - carbon fiber
 - copper
 ---

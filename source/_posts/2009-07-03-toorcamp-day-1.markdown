@@ -7,7 +7,6 @@ slug: toorcamp-day-1
 title: 'ToorCamp: Day 1'
 wordpress_id: 372
 categories:
-tags:
 - nclug
 - toorcamp
 ---

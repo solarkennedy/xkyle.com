@@ -7,7 +7,6 @@ slug: getting-started-with-sensu-using-puppet-for-real
 title: 'Getting Started With Sensu Using Puppet. For Real. '
 wordpress_id: 1023
 categories:
-tags:
 - nagios
 - Puppet
 - sensu

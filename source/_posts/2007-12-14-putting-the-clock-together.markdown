@@ -6,7 +6,7 @@ layout: post
 slug: putting-the-clock-together
 title: Putting the Clock Together
 wordpress_id: 86
-tags:
+categories:
 - Clock
 - hardware
 ---

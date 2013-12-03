@@ -7,7 +7,6 @@ slug: n2n-peer-to-peer-vpn
 title: n2n - Peer to peer VPN?
 wordpress_id: 156
 categories:
-tags:
 - nclug
 - security
 - vpn

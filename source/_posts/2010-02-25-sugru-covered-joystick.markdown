@@ -6,7 +6,7 @@ layout: post
 slug: sugru-covered-joystick
 title: Sugru Covered Joysticks
 wordpress_id: 456
-tags:
+categories:
 - UAV
 ---
 

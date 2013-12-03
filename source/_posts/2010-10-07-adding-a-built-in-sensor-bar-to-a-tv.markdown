@@ -6,7 +6,7 @@ layout: post
 slug: adding-a-built-in-sensor-bar-to-a-tv
 title: Adding a Built-in Sensor Bar to a TV
 wordpress_id: 545
-tags:
+categories:
 - IR
 - Leds
 - Sensor Bar

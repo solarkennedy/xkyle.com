@@ -7,7 +7,6 @@ slug: setting-up-your-very-own-pxe-server
 title: Setting Up Your Very Own PXE Server!
 wordpress_id: 508
 categories:
-tags:
 - nclug
 - pxe
 ---

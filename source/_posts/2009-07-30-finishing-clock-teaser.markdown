@@ -6,7 +6,7 @@ layout: post
 slug: finishing-clock-teaser
 title: Finishing Clock Teaser
 wordpress_id: 386
-tags:
+categories:
 - Clock
 ---
 

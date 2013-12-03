@@ -7,7 +7,6 @@ slug: failing-hard-drives
 title: Failing Hard Drives
 wordpress_id: 95
 categories:
-tags:
 - drives
 - hardware
 - nclug

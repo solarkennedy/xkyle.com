@@ -7,7 +7,6 @@ slug: managing-dns-automatically-with-puppet
 title: Managing DNS Automatically with Puppet
 wordpress_id: 1038
 categories:
-tags:
 - dns
 - Puppet
 - puppetdb

@@ -6,7 +6,7 @@ layout: post
 slug: compact-flash-replacement
 title: Compact Flash Replacement
 wordpress_id: 48
-tags:
+categories:
 - flash
 - Laptop
 - Personal
