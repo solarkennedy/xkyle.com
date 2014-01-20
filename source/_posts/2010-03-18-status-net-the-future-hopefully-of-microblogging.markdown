@@ -21,12 +21,10 @@ If you have a hotmail email account, I don't have to have hotmail to email you, 
 
 What we need is a common protocol, so people on different networks can follow and join the conversation! What we need is a protocol... what we need is...
 
-[![](/uploads/statustheme_logo.png)](/uploads/statustheme_logo.png)
+[![](/uploads/statustheme_logo.png)](/uploads/statustheme\_logo.png)
 
 Yes, Status.net! Status.net is an application that allows you to microblog, and converse with people even if they are different networks. That's right! Now you can follow your favorite pets on [Petstatus.com](http://www.petstatus.com/) even though you are on[ Identi.ca](http://identi.ca/). People on [Swisen.com](http://swisen.com/) can subscribe to people on [WowTweet.net](http://wowtweet.net/). Amazing!
 
 And guess what, you can actually MOVE and DELETE your status updates. Yes you actually own them. You can move them to another server if you want. Does twitter allow that? Didn't think so.
 
 If you are using Dreamhost to host a website, installing Status.net is super easy! They have [one-click install for status.net](http://status.net/trackback/338). If you have trouble working with their installer, I have [some notes](http://wiki.xkyle.com/Dreamhost-statusnet) that might help.
-
-So when you are ready you can follow me! [https://xkyle.com/status/](https://xkyle.com/status/)
