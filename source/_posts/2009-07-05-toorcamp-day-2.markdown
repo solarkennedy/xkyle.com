@@ -22,4 +22,4 @@ Afterwards there was free beer, and let me tell you, geeks can party hardy all n
 
 That is two people with EL wires suits and a pirate's mast camp. Below is a zip of all the movies and pictures I collected from this day:
 
-[Day2.zip](https://xkyle.com/other/day2.zip)
+[Day2.zip](/other/day2.zip)
