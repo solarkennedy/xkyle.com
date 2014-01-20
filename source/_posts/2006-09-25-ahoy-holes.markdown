@@ -39,4 +39,4 @@ I can't think of a better way to do this in plastic. And the results are nice, w
 All thanks to this one bit:
 [![The miracle tool](/uploads/dcam0019.thumbnail.JPG)](/uploads/dcam0019.JPG)
 
-Who needs a CNC machine when you have steady hands Karl? [(Video) ](https://xkyle.com/video/routing.mov)
+Who needs a CNC machine when you have steady hands Karl? [(Video) ](/video/routing.mov)

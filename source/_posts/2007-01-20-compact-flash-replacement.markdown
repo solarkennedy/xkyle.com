@@ -50,6 +50,6 @@ Of course, with only a 4GB drive, I will be running my favorite operating system
 
 And the obligatory screen shot!
 
-Want more? [Click here to download every picture we took.](https://xkyle.com/other/laptopproject.zip)
+Want more? [Click here to download every picture we took.](/other/laptopproject.zip)
 Closing thoughts:
 I'm extremely impressed. The camo-finish is beautiful and feels great thanks to the clear coat. Nothing broke, and everything went back together correctly thanks to good documentation and pictures for reference. If you have any questions about what I did, post a comment and I'll come back and answer them.

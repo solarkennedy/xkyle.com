@@ -17,6 +17,6 @@ So we have modified roller-blading wrist-guards for the purpose:
 
 [![Armband Pieces](/uploads/dcam0088.thumbnail.JPG)](/uploads/dcam0088.JPG)[![Completed Armband](/uploads/dcam0089.thumbnail.JPG)](/uploads/dcam0089.JPG)[![Wearing the Armband](/uploads/dcam0091.thumbnail.JPG)](/uploads/dcam0091.JPG)
 
-Watch Karl [Show It Off!](https://xkyle.com/video/armband.mov)
+Watch Karl [Show It Off!](/video/armband.mov)
 
 Karl's Mom helped with the sewing. Next we'll add buttons for mode and backlight. I think they will be very thin and unobtrusive.
