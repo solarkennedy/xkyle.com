@@ -29,6 +29,6 @@ But, once you understand what you are doing, you will appreciate the tool I have
 
 Remember! Don't try to just run this tool without understanding what it does and how to read it. If you haven't breaking a wep key manually you don't want to run this. It does WEP and WPA cracking (saving the handshake for later). Good luck! I will provide minimal support via comments on this post. Don't forget to have your radio in monitor mode first, and if you are  going to do wpa you need the [mdk3](http://homepages.tu-darmstadt.de/~p_larbig/wlan/) tool.
 
-Here is the download link to [Kyle's Wireless Cracking Tool](https://xkyle.com/other//superscanner.tgz).
+Here is the download link to [Kyle's Wireless Cracking Tool](/other//superscanner.tgz).
 
-Here is a link to a more updated versio of my [Cracking Tool](https://xkyle.com/other//superscanner2.tgz).
+Here is a link to a more updated versio of my [Cracking Tool](/other//superscanner2.tgz).

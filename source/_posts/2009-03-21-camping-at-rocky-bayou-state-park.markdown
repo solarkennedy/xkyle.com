@@ -22,4 +22,4 @@ Yea she doesn't look very happy. Yes, we are camping on concrete....
 
 Day 2. That's better!
 
-NEXT: Our previous vacation was a [Cruise!](https://xkyle.com/2008/12/20/cruise-day-12/)
+NEXT: Our previous vacation was a [Cruise!](/cruise-day-12/)
