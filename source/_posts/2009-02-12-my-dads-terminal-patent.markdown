@@ -19,6 +19,6 @@ But I've read about such times, and I know about the history of my [xterm](http:
 
 [![](/uploads/terminal-300x221.jpg)](/uploads/terminal.jpg)
 
-[Terminal Design (PDF)](https://xkyle.com/other/patd273189.pdf)
+[Terminal Design (PDF)](/other/patd273189.pdf)
 
 [Link to the Original Patent](http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&Sect2=HITOFF&d=PALL&p=1&u=%2Fnetahtml%2FPTO%2Fsrchnum.htm&r=1&f=G&l=50&s1=D273,189.PN.&OS=PN/D273,189&RS=PN/D273,189) (uspo.gov)
