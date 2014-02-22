@@ -9,7 +9,7 @@ author: Kyle Anderson
 simple_search: http://google.com/search
 description:
 
-safe: true
+safe: false
 lsi: false
 
 
