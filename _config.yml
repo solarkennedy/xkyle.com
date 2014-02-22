@@ -2,12 +2,16 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: https://xkyle.com
+url: http://solarkennedy.github.io/xkyle
 title: Postmodern Sysadmin
 subtitle: A blog about servers and junk
 author: Kyle Anderson
 simple_search: http://google.com/search
 description:
+
+safe: true
+lsi: false
+
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
