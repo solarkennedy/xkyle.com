@@ -16,7 +16,7 @@ categories:
 # UPDATE (2015-02-18)
 
 Albert Chu from FreeIPMI [commented](https://github.com/solarkennedy/ipmi-sel-comparison/issues/1)
-that FreeIPMI does *NOT* attempt to decode OEM events. These are events that
+that FreeIPMI does *NOT* attempt to decode OEM events by default. These are events that
  are OEM specific, so each motherboard may require a different interpretation.
 
 FreeIPMI has a `--interpret-oem-data` option and possibly in conjunction with
