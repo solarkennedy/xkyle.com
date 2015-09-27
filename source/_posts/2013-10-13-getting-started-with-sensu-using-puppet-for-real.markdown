@@ -80,7 +80,7 @@ for puppet to distribute for me.
 
 Here is the configuration I needed to get a full system running:
     
-```puppet
+```ruby
     node mon1 {
       file { '/etc/rabbitmq/ssl/server_key.pem':
         source => 'puppet:///files/sensu/server_key.pem',
@@ -128,7 +128,7 @@ I personally believe that **purge_config** should default to true. We are using
 
 With your SSL certs in place, adding clients is pretty easy:
   
-```puppet  
+```ruby  
     node client1 {
       class { 'sensu':
         purge_config => true,
@@ -155,7 +155,7 @@ If all of this is working, you should see client1 in the clients list.
 Sensu [handlers](http://docs.sensuapp.org/0.11/handlers.html) are scripts 
 that are called with event data. For getting started I use the simplest example:
 
-```puppet
+```ruby
     sensu::handler { 'default':
       command => 'mail -s "sensu alert" kyle@xkyle.com',
     }
@@ -167,7 +167,7 @@ You are going to get json in your body, but we can make it pretty later.
 
 This type of check is what you might consider an NRPE check, it runs on the client:
     
-```puppet
+```ruby
     node client1 {
     ...
       package { 'nagios-plugins-basic': ensure => latest } 
@@ -191,7 +191,7 @@ The Sensu documentation doesn't seem to have examples of this. The only way
  with something like 
 [puppetdb](http://docs.puppetlabs.com/guides/exported_resources.html):
 
-```puppet
+```ruby
     node client1 {
     ...
     @@sensu::check { "check-ping-$fqdn":

@@ -17,7 +17,7 @@ code is "Commented" out of a manifest. Lets look at a few examples.
 Lets say you used this [popular sudo module](https://forge.puppetlabs.com/saz/sudo)
 with the following params:
 
-```puppet
+```ruby
 class { 'sudo':
   purge => true,
 }
@@ -26,7 +26,7 @@ class { 'sudo':
 Great start. All future `sudo::conf` blocks you write will _automatically_ disappear
 from the host:
 
-```puppet
+```ruby
 sudo::conf { 'web':
    source => 'puppet:///files/etc/sudoers.d/web',
  }
@@ -45,7 +45,7 @@ Good stuff. Do this.
 How about another example with the
 [Puppetlabs Firewall module](https://forge.puppetlabs.com/puppetlabs/firewall)?
 
-```puppet
+```ruby
 # Automatically remove rules that are not declared
 resources { "firewall":
   purge => true
@@ -77,7 +77,7 @@ prevents cruft.
 I want to purge packages. If someone installs a package not controlled by
 Puppet, I want puppet to purge it. Crazy I know. 
 
-```puppet
+```ruby
 package { 'apache': ensure => installed }
 
 # No longer using php

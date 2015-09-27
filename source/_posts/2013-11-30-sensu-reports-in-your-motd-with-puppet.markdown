@@ -54,7 +54,7 @@ print
 
 ##  Puppet Glue
 
-{% codeblock lang:puppet %}
+{% codeblock lang:ruby %}
 file { '/usr/bin/sensu_report':
   mode   => '0555',
   source => 'puppet:///files/sensu/sensu_report',

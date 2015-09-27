@@ -19,7 +19,7 @@ I like to use configuration management to manage servers. Here I use a
 [Puppet module](https://github.com/justinclayton/puppet-module-serf) to 
 install and configure Serf:
 
-```puppet
+```ruby
 class { 'serf':
   config_hash   => {  
     'node_name'  => $::fqdn, 
