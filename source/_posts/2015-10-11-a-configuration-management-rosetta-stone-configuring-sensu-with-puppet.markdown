@@ -162,13 +162,11 @@ The [Chef Supermarket](https://supermarket.chef.io/) serves as the public
 registry for Chef cookbooks. There are not too many quality indicators to see,
 to help find which cookbooks are any good. The best metric I could see is just
 sorting by "followers". This is made up by the fact that there are over
-a hundred [officially supported
-cookbooks](https://supermarket.chef.io/users/chef). 
+a hundred [officially supported cookbooks](https://supermarket.chef.io/users/chef).
 
 Probably the most difficult aspect of Chef for me to understand was how
 attributes interact. This confusion is probably most obvious when you look at
-Chef's [15 levels of attribute
-precedence](https://docs.chef.io/attributes.html#attribute-precedence). It seems
+Chef's [15 levels of attribute precedence](https://docs.chef.io/attributes.html#attribute-precedence). It seems
 to me that there should be a more obvious way for intent to flow, but I could
 be just spoiled by Puppet's Hiera.
 
@@ -177,16 +175,14 @@ be just spoiled by Puppet's Hiera.
 The [Sensu Chef Cookbook](https://github.com/sensu/sensu-chef) is also a
 first-class citizen in the Sensu-world. Chef is the "native config language" of
 [Sean Porter](https://github.com/portertech), the main author of Sensu. This
-gives a lot of credibility to the Cookbook, and shows in the [contributor
-page](https://github.com/sensu/sensu-chef/graphs/contributors).
+gives a lot of credibility to the Cookbook, and shows in the [contributor page](https://github.com/sensu/sensu-chef/graphs/contributors).
 
 The Cookbook itself is feature complete, with recipes for installing and
 configuring all aspects of Sensu.
 
 The scope of the cookbook includes all Sensu related technologies, including
 RabbitMQ, Redis, and Uchiwa. It is certainly "batteries included" and on by
-default.  It even downloads and compiles [Redis from
-source](https://github.com/sensu/sensu-chef/issues/340) for you.
+default.  It even downloads and compiles [Redis from source](https://github.com/sensu/sensu-chef/issues/340) for you.
 
 Another example of this "batteries included" design is the RabbitMQ module
 [setting](https://github.com/jjasghar/rabbitmq/pull/301)
@@ -194,8 +190,7 @@ Another example of this "batteries included" design is the RabbitMQ module
 above Redis example, this behavior surprised me, but technically it is not related to
 the Sensu chef cookbook.
 
-At the same time, [wrapper
-cookbooks](https://github.com/portertech/chef-monitor) are recommended as a
+At the same time, [wrapper cookbooks](https://github.com/portertech/chef-monitor) are recommended as a
 method to combine multiple cookbooks together in a coherent way. I think in
 general I just expected the wrapper cookbooks to do more and the main Sensu
 cookbook to do less.
