@@ -3,7 +3,12 @@ layout: post
 title: "A Configuration Management Rosetta Stone: Configuring Sensu with Puppet, Chef, Ansible and Salt"
 date: 2015-10-11 18:21:14 -0700
 comments: true
-categories: puppet
+categories:
+- puppet
+- chef
+- ansible
+- salt
+- sensu
 ---
 
 I recently finished my [Intermediate Sensu Training](https://www.udemy.com/sensu-intermediate/?couponCode=xkyle) on Udemy.
@@ -323,25 +328,25 @@ mutators, you are expected to fork the formula and drop in the json file into
 A rough opinionated comparison between the tools, with regards the tool itself
 and the tool in conjunction with Sensu. "High" doesn't necessarily mean "good" here:
 
-|                                                     | Puppet | Chef                | Ansible           | Salt     | Manual (via the docs) |
-|-----------------------------------------------------|--------|---------------------|-------------------|----------|-----------------------|
-| **Review of The Config Management Tool in General** |        |                     |                   |          |                       |
-| Version used                                        | 3.4.3  | 12.4.1              | 1.5.4             | 2015.5.3 | 0.20.1                |
-| Third Party Module Easy of Use                      | High   | High                | Medium            | Low      | Great!                |
-| Official Sensu Support for the Tool                 | High   | High                | Low               | Low      | N/A                   |
-| Reproducibility                                     | High   | High                | High              | High     | N/A                   |
-| Easy of use getting started                         | Medium | Medium              | High              | Medium   | Low                   |
-| Language extensibility                              | High   | High                | Low               | Low      | N/A                   |
-| Separation between config data and code             | Hiera  | Databags/Attributes | Random variables? | Pillar   | N/A                   |
-| Module re-usability?                                 | High   | High                | Low               | Low      | None                  |
-| **Review of the Sensu Module/Cookbook/Etc**         |        |                     |                   |          |                       |
-| Version of the module Used                          | 1.5.5  | 2.10.0              | 0.1.0             | c6324b3  |                       |
-| Sensu Module Feature Completeness                   | High   | High                | Medium            | Medium   |                       |
-| Sensu Module Integration with Other Modules         | None   | Extreme?            | None              | None     |                       |
-| Sensu Module Flexibility                            | High   | High                | Medium            | Low      |                       |
-| Sensu Module Re-usability                           | High   | High                | High              | Low      |                       |
-| How Opinionated Was It?                             | Low    | High                | Low               | Medium   |                       |
-| Usability with Sensu's Embedded Ruby                | Yes    | Yes                 | Not natively      | Sorta    |                       |
+|                                                     | Puppet | Chef                | Ansible         | Salt     |
+|-----------------------------------------------------|--------|---------------------|-----------------|----------|
+| **Review of The Config Management Tool in General** |        |                     |                 |          |
+| Version used                                        | 3.4.3  | 12.4.1              | 1.5.4           | 2015.5.3 |
+| Third Party Module Easy of Use                      | High   | High                | Medium          | Low      |
+| Official Sensu Support for the Tool                 | High   | High                | Low             | Low      |
+| Reproducibility                                     | High   | High                | High            | High     |
+| Easy of use getting started                         | Medium | Medium              | High            | Medium   |
+| Language extensibility                              | High   | High                | Low             | Low      |
+| Separation between config data and code             | Hiera  | Databags/Attributes | just variables? | Pillar   |
+| Module re-usability?                                | High   | High                | Low             | Low      |
+| **Review of the Sensu Module/Cookbook/Etc**         |        |                     |                 |          |
+| Version of the module Used                          | 1.5.5  | 2.10.0              | 0.1.0           | c6324b3  |
+| Sensu Module Feature Completeness                   | High   | High                | Medium          | Medium   |
+| Sensu Module Integration with Other Modules         | Low    | Extreme?            | None            | None     |
+| Sensu Module Flexibility                            | High   | High                | Medium          | Low      |
+| Sensu Module Re-usability                           | High   | High                | High            | Low      |
+| How Opinionated Was It?                             | Low    | High                | Low             | Medium   |
+| Usability with Sensu's Embedded Ruby                | Yes    | Yes                 | Not natively    | Sorta    |
 
 ## Conclusion
 
