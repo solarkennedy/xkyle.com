@@ -6,7 +6,7 @@ comments: true
 categories: puppet
 ---
 
-I recently finished my [Intermediate Sensu Training](https://www.udemy.com/draft/559976/?couponCode=comparison) on Udemy.
+I recently finished my [Intermediate Sensu Training](https://www.udemy.com/sensu-intermediate/?couponCode=xkyle) on Udemy.
 It was a ton of work but I'm glad I got it all together. Part of that training
 includes how to deploy and configure [Sensu](https://sensuapp.org/) with four
 of the most popular open-source configuration management tools:
@@ -383,3 +383,15 @@ to provide the primitives.
   * Centralized formulas emphasize consolidated development effort
   * No strong state testing emphasis or framework
   
+## Going Further
+
+If you want to know more about Sensu, of course you can take my training course:
+
+* [Sensu-Introduction](https://www.udemy.com/sensu-introduction/) (Free)
+* [Sensu-Intermediate](https://www.udemy.com/sensu-intermediate/?couponCode=xkyle) (50% off, $50)
+
+Or you can tell me I'm wrong. You can raise and
+[issue](https://github.com/solarkennedy/xkyle.com/issues/new) or make a
+[pull-request](https://github.com/solarkennedy/xkyle.com/pulls) for the blog
+post or investigate my actual training material and code on
+[Github](https://github.com/solarkennedy/sensu-training/tree/master/intermediate/lectures).
