@@ -3,6 +3,7 @@ layout: post
 title: "A Configuration Management Rosetta Stone: Configuring Sensu with Puppet, Chef, Ansible and Salt"
 date: 2015-10-11 18:21:14 -0700
 comments: true
+slug: configuration-management-rosetta-stone-configuring-sensu-with-puppet-chef-ansible-and-salt
 categories:
 - puppet
 - chef
