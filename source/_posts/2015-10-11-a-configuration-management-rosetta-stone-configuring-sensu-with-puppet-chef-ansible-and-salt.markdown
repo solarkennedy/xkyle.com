@@ -10,6 +10,7 @@ categories:
 - ansible
 - salt
 - sensu
+alias: [a-configuration-management-rosetta-stone-configuring-sensu-with-puppet]
 ---
 
 I recently finished my [Intermediate Sensu Training](https://www.udemy.com/sensu-intermediate/?couponCode=xkyle) on Udemy.
