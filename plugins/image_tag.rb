@@ -34,12 +34,18 @@ module Jekyll
         end
         @img['class'].gsub!(/"/, '') if @img['class']
       end
+      extension = File.extname(@img['src'])
+      dirname = File.dirname(@img['src'])
+      basename  = File.basename(@img['src'],".*")
+      thumb_name = File.join(dirname, "#{basename}_thumb#{extension}")
+      @img['original'] = @img['src']
+      @img['src'] = thumb_name
       super
     end
 
     def render(context)
       if @img
-        "<a href=\"#{@img['src']}\"><img #{@img.collect {|k,v| "#{k}=\"#{v}\"" if v}.join(" ")}></a>"
+        "<a href=\"#{@img['original']}\"><img #{@img.collect {|k,v| "#{k}=\"#{v}\"" if v}.join(" ")}></a>"
       else
         "Error processing input, expected syntax: {% img [class name(s)] [http[s]:/]/path/to/image [width [height]] [title text | \"title text\" [\"alt text\"]] %}"
       end
