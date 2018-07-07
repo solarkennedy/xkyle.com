@@ -13,3 +13,4 @@ source/_unused_uploads
 vendor
 node_modules
 *.swp
+hugo_target/
