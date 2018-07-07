@@ -1,0 +1,17 @@
+---
+author: admin
+categories:
+- cody
+- vacation
+comments: true
+date: 2008-12-20T23:00:05Z
+slug: cruise-day-4
+title: Cruise - Day 4
+wordpress_id: 194
+---
+
+Today we visited the ancient [Mayan ruins of Tulum](http://en.wikipedia.org/wiki/Tulum).
+
+[![](/uploads/pict0009-300x225.jpg)](/uploads/pict0009.jpg)
+
+[gallery]

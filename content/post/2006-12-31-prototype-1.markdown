@@ -1,0 +1,23 @@
+---
+author: admin
+categories:
+- gun
+- LaserTag
+comments: true
+date: 2006-12-31T15:33:53Z
+slug: prototype-1
+title: 'Prototype #1'
+wordpress_id: 38
+---
+
+Here are some pictures and some short video of our first prototype gun!
+
+A more or less finished backpack.[![Finished Pack](/uploads/dcam0040.thumbnail.JPG)](/uploads/dcam0040.JPG)
+
+2x4 Gun and LCD wristband![![Gun and LCD](/uploads/dcam0039.thumbnail.JPG)](/uploads/dcam0039.JPG)
+
+I love having good tools, and this $40 soldering iron is the best $40 I ever spent.[![The New Soldering Iron](/uploads/dcam0038.thumbnail.JPG)](/uploads/dcam0038.JPG)
+
+Nicd battery pack! With velcro! [![battery pack](/uploads/dcam0037.thumbnail.JPG)](/uploads/dcam0037.JPG)
+
+And Kyle explains it all! Sort of...[![Movie Thumb](/uploads/screenshot0.thumbnail.png)](/video/prototype.mov)
