@@ -5,7 +5,7 @@ serve:
 	hugo serve
 
 deploy: public
-	cd public && git add --all && git commit -m "Publishing to gh-pages" && cd ..
+	cd public && git add --all && git commit -m "Publishing to gh-pages" && git push origin gh-pages
 
 public:
 	rm -rf public
