@@ -3,3 +3,5 @@ disablePathToLower: true
 languageCode: en-us
 title: xkyle.com
 theme: hugo-material-blog
+permalinks:
+  post: /:slug/
