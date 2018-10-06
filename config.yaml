@@ -1,7 +1,7 @@
-baseURL: https://www.xkyle.com/
 disablePathToLower: true
 languageCode: en-us
 title: xkyle.com
 theme: hugo-material-blog
 permalinks:
   post: /:slug/
+relativeURLs: true

@@ -7,7 +7,7 @@ title: Another Comparison of Image to ASCII Conversion Tools (2017)
 ---
 
 Time for another round of terminal-based ascii/ansi art image conversion
-tools. Check out my [last post from 2015](http://www.xkyle.com/a-comparison-of-image-to-ascii-conversion-tools/)
+tools. Check out my [last post from 2015](./a-comparison-of-image-to-ascii-conversion-tools/)
 with more comparisons of more tools.
 
 This year I compare the best tool from 2015, img2xterm, against
