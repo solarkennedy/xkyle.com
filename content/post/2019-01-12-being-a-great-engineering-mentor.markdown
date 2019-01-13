@@ -47,7 +47,7 @@ effort. Doubly so if that effort leads them down the wrong path.
 
 Of course, being a friendly person sounds like good general advice, but it is
 especially important to be extra friendly to a mentee. It is likely they have
-been relocated to be a this new job, so they probably already have plenty of
+been relocated to be at this new job, so they probably already have plenty of
 anxiety. Being that local friend that is sitting literally right next to them
 every day can go a long way towards reducing that anxiety.
 
@@ -98,8 +98,8 @@ But then I'll also assure them from a non-technical perspective. I'll say
 things like:
 
 > "This codebase doesn't have much test coverage, but I've worked on it a bunch
-> and I understand it. If it breaks, we'll look at it, and I'm we can figure it
-> out together."
+> and I understand it. If it breaks, we'll look at it, and I'm sure we can
+> figure it out together."
 
 or
 
@@ -116,12 +116,12 @@ Adjust as necessary.
 
 Being a really good "[dungeon
 master](https://en.wikipedia.org/wiki/Dungeon_Master)" for the game that is
-being a software engineer requires understanding your mentee's strength and
+"being a software engineer" requires understanding your mentee's strength and
 weaknesses. Your job is to help them "level up" by giving them appropriately
 challenging tasks. There is some degree of "fun" as well. A game that is too
 easy isn't very fun, and likewise a game that is brutally hard is also no fun.
 
-Sometimes things are difficult because they are simply unfair. Sometimes
+Sometimes things are difficult because they are simply unfamiliar. Sometimes
 "simple" things seem easy only because they are "[at
 hand](https://www.infoq.com/presentations/Simple-Made-Easy)". I try to balance
 steering mentees towards tasks that are easy for them (even if they are not
@@ -129,8 +129,8 @@ necessarily easy for me), to get their confidence up early, and then slowly add
 in more challenging and unfamiliar tasks.
 
 Sometimes though, a mentee can surprise you at their abilities. Sometimes
-things you think are hard are not actually hard. Sometimes tasks become
-difficult, simply because we (mentors) prime the menetee's thoughts
+things *you* think are hard are not actually hard. Sometimes tasks become
+difficult, simply because we (mentors) prime the mentee's thoughts
 unnecessarily. Instead of saying:
 
 > "This is going to be a hard ticket, it has 5 story points and involves an old
@@ -145,8 +145,8 @@ Say:
 
 Give them the opportunity to surprise you.
 
-The other thing I do that really makes tasks much easier than they seem for
-mentees is "code hints". Giving them jumpstart into the codebase can turn
+The other thing I do that really makes tasks much easier than they seem is
+"code hints". Giving them jumpstart into the codebase can turn
 easily change their mind from an intimidated "gosh, I don't even know where to
 begin with this" to "oh, there is the code, looks straightforward". An example
 might be in a ticket:
@@ -154,12 +154,14 @@ might be in a ticket:
 > "BUG - we ping authors of a changeset twice: Looks like we ping authors twice
 > on slack for some reason. We should only ping them once. Code hint is
 > somewhere around
-> [here](https://github.com/Yelp/paasta/blob/e976953d6e04bcad8460ad84b3682462241465ce/paasta_tools/cli/cmds/mark_for_deployment.py#L305)
+> [here](https://github.com/Yelp/paasta/blob/e976953d6e04bcad8460ad84b3682462241465ce/paasta_tools/cli/cmds/mark_for_deployment.py#L305)"
 
 By giving a code hint, you give the illusion of familiarity, and allow the
 mentee to focus on the problem itself.
 
-Giving mentees "stretch goals" or "extra credit" is another way of giving them room to show off, gain confidence, and in general give them a chance to impress you. You can encourage this in tickets as well:
+Giving mentees "stretch goals" or "extra credit" is another way of giving them
+room to show off, gain confidence, and in general give them a chance to impress
+you. You can encourage this in tickets as well:
 
 > "BUG - Off by one error in the pagination code .... Code hint: ... Extra
 > Credit: replace the custom pagination code with a library to solve this class
