@@ -1,0 +1,13 @@
+---
+categories: null
+comments: true
+date: 2019-03-08T19:35:56Z
+published: true
+title: Layers
+---
+
+I recently gave a talk called "[Layers](https://youtu.be/hC4wkchMbBs?t=386)" (~35min).
+
+Warning: The audio and video quality are horrendous:
+
+{{< youtube id="hC4wkchMbBs?start=386" autoplay="false" >}}
