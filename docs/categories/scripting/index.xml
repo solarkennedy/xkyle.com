@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Scripting on xkyle.com</title>
+    <link>/categories/scripting/</link>
+    <description>Recent content in Scripting on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 22 Aug 2010 07:24:10 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/scripting/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Bash Boggle - A Boggle Solver Written in Bash!</title>
+      <link>/bash-boggle-a-boggle-solver-written-in-bash/</link>
+      <pubDate>Sun, 22 Aug 2010 07:24:10 +0000</pubDate>
+      
+      <guid>/bash-boggle-a-boggle-solver-written-in-bash/</guid>
+      <description>Bash is my favorite computer language. I also love writing programs to help human problems.
+Inspired by this online Boggle solver, I decided to write my own solver while my friends were too busy playing the game and having fun :)
+If you would like to test my work, here is the code:
+https://dev.xkyle.com/bashboggle/
+You will need the linux &amp;ldquo;words&amp;rdquo; dictionary, which is installable on Ubuntu by running &amp;ldquo;sudo apt-get install wamerican&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>Verizon FiOS Wireless Security Analysis</title>
+      <link>/verizon-fios-wireless-security-analysis/</link>
+      <pubDate>Sat, 07 Feb 2009 18:29:04 +0000</pubDate>
+      
+      <guid>/verizon-fios-wireless-security-analysis/</guid>
+      <description>Take a look at some wireless keys that I&amp;rsquo;ve collected from some Verizon FiOS installs around Tampa:
+ 00-18-01-EA-3D-99,E3X12,6,WEP,1801349FCA 00-18-01-F0-6D-C4,NAMX2,1,WEP,18014B311F 00-18-01-F0-95-78,MWXV2,11,WEP,180149FF66 00-18-01-FD-4F-0E,R0LC7,1,WEP,1801BC5C6B 00-18-01-FE-15-46,JE2K7,1,WEP,1801C1B02B 00-18-01-FF-DF-DD,HH150,1,WEP,1F900396C5 00-1F-90-E0-B1-F8,3RA18,6,WEP,1801CDF4AF 00-1F-90-E0-B5-AC,OQ838,6,WEP,1801CF5700 00-1F-90-E2-7E-61,7WY20,6,WEP,1F90021D27 00-1F-90-E3-1E-90,C7WA0,6,WEP,1F9007C188 00-1F-90-E3-2E-07,DJP80,6,WEP,1F90063349 00-1F-90-E6-A7-D5,BJ2Z0,11,WEP,1F9018F797 00-1F-90-E6-D4-E3,RSHZ0,4,WEP,1F901944DB
+ What you are looking at here is MAC, SSID, Channel, Encryption, Key.
+Notice that they are all WEP, 64bit, with 5 Alpha numeric SSID&amp;rsquo;s.
+I want to emphasize that these are the defaults, and only geeks, nerds and the like change the defaults.</description>
+    </item>
+    
+    <item>
+      <title>Custom Arp Alerts II!</title>
+      <link>/custom-arp-alerts-ii/</link>
+      <pubDate>Thu, 21 Aug 2008 11:59:57 +0000</pubDate>
+      
+      <guid>/custom-arp-alerts-ii/</guid>
+      <description>So I&amp;rsquo;ve found a better way to do what I did in the previous post. Instead of running a separate script to parse the arp alert logs, I have arp alert itself send the alerts! The key is this line in the arpalert.conf
+action on detect = &amp;quot;/etc/scripts/arp-alert&amp;quot;  Its so simple, it just runs that script sending the information about the alert as certain arguments. With this I have more control over the formatting of arpalert messages:</description>
+    </item>
+    
+    <item>
+      <title>Custom Arp-Alerts</title>
+      <link>/custom-arp-alerts/</link>
+      <pubDate>Wed, 20 Aug 2008 23:17:05 +0000</pubDate>
+      
+      <guid>/custom-arp-alerts/</guid>
+      <description>So I was looking around, and I wanted some sort of tool to allow me to be more aware about what was happening in the lower &amp;ldquo;bowels&amp;rdquo; of the network that I&amp;rsquo;m on with my laptop. So what is it that I want&amp;hellip;
+What I really want is some sort of mac-address based buddy list. One that would show my a list of the mac addresses talking on my network, and allow me to alias them.</description>
+    </item>
+    
+    <item>
+      <title>DNS Cache Poisoning </title>
+      <link>/dns-cache-poisoning/</link>
+      <pubDate>Thu, 31 Jul 2008 12:00:10 +0000</pubDate>
+      
+      <guid>/dns-cache-poisoning/</guid>
+      <description>Recently a DNS expert found a flaw in the way that DNS servers talk to other DNS servers to get records that allows interested parties (hackers) to insert their own records. If you need a primer: the Wikipedia link.
+Well&amp;hellip; a DNS flaw is no fun without a tool to use it. So this guy &amp;ldquo;HD Moore&amp;rdquo; wrote a program (script) that takes advantage of this and makes it relatively easy for someone to use something called Metasploit to tinker with it.</description>
+    </item>
+    
+  </channel>
+</rss>

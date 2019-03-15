@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pygame on xkyle.com</title>
+    <link>/categories/pygame/</link>
+    <description>Recent content in Pygame on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 Aug 2010 05:07:57 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/pygame/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Computer Assisted Jenga with the Wii Balance Board and Linux</title>
+      <link>/computer-assisted-jenga-with-the-wii-balance-board-and-linux/</link>
+      <pubDate>Sun, 01 Aug 2010 05:07:57 +0000</pubDate>
+      
+      <guid>/computer-assisted-jenga-with-the-wii-balance-board-and-linux/</guid>
+      <description>I like to think about how games work, in the case of Jenga, it is just physics!
+But don&amp;rsquo;t you wish you could peel back reality and see what is happening with the physics from the inside? Well now you can, with the help of a Wii Balance Board.
+
+For the setup you need these ingredients:
+ Wii Balance Board
+ Computer with Bluetooth
+ Linux, preferably Ubuntu
+ Jenga Set, alternatively &amp;ldquo;Tension Tower&amp;ldquo;</description>
+    </item>
+    
+  </channel>
+</rss>

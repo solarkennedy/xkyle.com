@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Toorcamp on xkyle.com</title>
+    <link>/categories/toorcamp/</link>
+    <description>Recent content in Toorcamp on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 05 Jul 2009 02:14:13 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/toorcamp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Toorcamp: Day 2</title>
+      <link>/toorcamp-day-2/</link>
+      <pubDate>Sun, 05 Jul 2009 02:14:13 +0000</pubDate>
+      
+      <guid>/toorcamp-day-2/</guid>
+      <description>After this second day of talks and no missle silo, there was this strange influx of women as the sunset approached. Turns out they were not for the camp, they were for the band:
+
+They thought it was cool I guess. Somehow the owner of the silo booked these two events to have them intersect. Why else would 3 bands play in the middle of nowhere?
+Afterwards there was free beer, and let me tell you, geeks can party hardy all night long:</description>
+    </item>
+    
+    <item>
+      <title>ToorCamp: Day 1</title>
+      <link>/toorcamp-day-1/</link>
+      <pubDate>Fri, 03 Jul 2009 17:37:32 +0000</pubDate>
+      
+      <guid>/toorcamp-day-1/</guid>
+      <description>When I first arrived at toor camp, I was issued a Hardhat and a kit of electronics to construct my own badge:
+
+What a cool start! Combined with the already cool scenery:
+
+Only one problem: no silo access. We&amp;rsquo;ll see if that changes for day two&amp;hellip;</description>
+    </item>
+    
+  </channel>
+</rss>

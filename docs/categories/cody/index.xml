@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cody on xkyle.com</title>
+    <link>/categories/cody/</link>
+    <description>Recent content in Cody on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 21 Mar 2009 22:49:40 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/cody/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Camping at Rocky Bayou State Park</title>
+      <link>/camping-at-rocky-bayou-state-park/</link>
+      <pubDate>Sat, 21 Mar 2009 22:49:40 +0000</pubDate>
+      
+      <guid>/camping-at-rocky-bayou-state-park/</guid>
+      <description>Cody and I camped two nights at Rocky Bayou State Park!
+
+Yea she doesn&amp;rsquo;t look very happy. Yes, we are camping on concrete&amp;hellip;.
+
+Day 2. That&amp;rsquo;s better!
+NEXT: Our previous vacation was a Cruise!</description>
+    </item>
+    
+    <item>
+      <title>Couples Kayak at Anclote Key</title>
+      <link>/couples-kayak-at-anclote-key/</link>
+      <pubDate>Sun, 15 Feb 2009 22:17:09 +0000</pubDate>
+      
+      <guid>/couples-kayak-at-anclote-key/</guid>
+      <description>The weekend I Kayaked to Anclote Key. Here is a picture of us unloading our Kayaks! (Not me in the picture)
+
+We Kayaked 4 hours to the north end of Anclote Key. Here the the google maps link.
+We camped overnight on the night of Valentines day. How romantic right?
+
+And here is Cody inside the tent looking cutsy:
+
+And if you have Google Earth, here is a link to a path I made of the trip: anclote-key-trip</description>
+    </item>
+    
+    <item>
+      <title>Amazing Breakfasts with Cody!</title>
+      <link>/amazing-breakfasts-with-cody/</link>
+      <pubDate>Sat, 10 Jan 2009 15:31:52 +0000</pubDate>
+      
+      <guid>/amazing-breakfasts-with-cody/</guid>
+      <description>Often I get to enjoy wonderful mornings with my girlfriend Cody. She is a great cook, and one of her best concoctions are these AMAZING breakfast burritos:
+
+Sorry for the bad picture, I took it with the webcam on my eeepc. I don&amp;rsquo;t apologize for her cleavage. I did that intentionally without her knowing :)</description>
+    </item>
+    
+    <item>
+      <title>Cruise - Day 5</title>
+      <link>/cruise-day-5/</link>
+      <pubDate>Sat, 20 Dec 2008 23:05:19 +0000</pubDate>
+      
+      <guid>/cruise-day-5/</guid>
+      <description>Today was our trip back to Tampa, so we saw a show:
+
+Crowd Control?
+
+I&amp;rsquo;m sure this family had fun. I wonder what the personality is like of whoever made the door decorations:</description>
+    </item>
+    
+    <item>
+      <title>Cruise - Day 4</title>
+      <link>/cruise-day-4/</link>
+      <pubDate>Sat, 20 Dec 2008 23:00:05 +0000</pubDate>
+      
+      <guid>/cruise-day-4/</guid>
+      <description>Today we visited the ancient Mayan ruins of Tulum.
+
+[gallery]</description>
+    </item>
+    
+    <item>
+      <title>Cruise - Day 3</title>
+      <link>/cruise-day-3/</link>
+      <pubDate>Sat, 20 Dec 2008 20:42:53 +0000</pubDate>
+      
+      <guid>/cruise-day-3/</guid>
+      <description>Today Cody and I visited the beautiful Grand Cayman:
+
+Myspace shot:
+
+And for the geek in everyone, hacked someone&amp;rsquo;s WEP key and used their wireless while on the land. The ip I used was 63.136.113.229 which is hosted by Cable and Wireless. Here is an MTR to it:
+
+Yea..maybe not so interesting to others. Our shore excursions to go snorkeling with sting rays got canceled because of the weather&amp;hellip;.</description>
+    </item>
+    
+    <item>
+      <title>Cruise - Day 1,2</title>
+      <link>/cruise-day-12/</link>
+      <pubDate>Sat, 20 Dec 2008 20:35:49 +0000</pubDate>
+      
+      <guid>/cruise-day-12/</guid>
+      <description>Cody and I took started off our cruise in Tampa on Monday, Dec 15:
+
+Beautiful! Here is look at the Bow (We were on the Carnival Inspiration):
+
+And the cool Radars!</description>
+    </item>
+    
+    <item>
+      <title>PAP Solutions Hack</title>
+      <link>/pap-solutions-hack/</link>
+      <pubDate>Mon, 29 Sep 2008 17:19:35 +0000</pubDate>
+      
+      <guid>/pap-solutions-hack/</guid>
+      <description>My girlfirend likes to do these puzzles called Pic-A-Pix from ConceptisPuzzles. They use a matrix of numbers to hint the puzzler to to filling in pixels to create pixel art. Sometimes there is color. Every week four new PAP&amp;rsquo;s are pushed out, and I&amp;rsquo;ve been told that the answers are somewhere on the website&amp;hellip;. but that would be cheating. :)
+So I wrote my own program to decode these and make images using html tables.</description>
+    </item>
+    
+  </channel>
+</rss>

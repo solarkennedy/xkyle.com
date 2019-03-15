@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Acls on xkyle.com</title>
+    <link>/categories/acls/</link>
+    <description>Recent content in Acls on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 10 Jul 2011 22:28:22 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/acls/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Solving the NFS 16-Group Limit Problem</title>
+      <link>/solving-the-nfs-16-group-limit-problem/</link>
+      <pubDate>Sun, 10 Jul 2011 22:28:22 +0000</pubDate>
+      
+      <guid>/solving-the-nfs-16-group-limit-problem/</guid>
+      <description>I apologize for the verbose post. This is a complicated problem and it merits full explanation. If you are experiencing this problem I advise you to avoid skimming and read it very carefully :)
+Sometimes you come across a problem that is a little more complex than average. Sometimes it is problem that is rare enough that there isn&amp;rsquo;t an obvious answer in the first google hint. Sometimes a problem may seem unavoidable, which leads to work-arounds, and before you know it you have a mess.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="Configuring Nagios Like a Boss!" />
+<meta property="og:description" content="I&rsquo;m tired of configuring Nagios by hand. Just tired. I always forget to do stuff. I&rsquo;ll add a new host, or stick in a raid card, add a new website, whatever, and forget to add a nagios check for it.
+
+So it happened. You setup a server, put critical infrastructure on it, but forgot to monitor it. It goes down, bad stuff happens. Your boss asks, why weren&rsquo;t we monitoring this?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/configuring-nagios-like-a-boss/" /><meta property="article:published_time" content="2012-11-19T05:41:17&#43;00:00"/>
+<meta property="article:modified_time" content="2012-11-19T05:41:17&#43;00:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Configuring Nagios Like a Boss!"/>
+<meta name="twitter:description" content="I&rsquo;m tired of configuring Nagios by hand. Just tired. I always forget to do stuff. I&rsquo;ll add a new host, or stick in a raid card, add a new website, whatever, and forget to add a nagios check for it.
+
+So it happened. You setup a server, put critical infrastructure on it, but forgot to monitor it. It goes down, bad stuff happens. Your boss asks, why weren&rsquo;t we monitoring this?"/>
+
+
+    <meta name="description" content="">
+    <link rel="canonical" href="../configuring-nagios-like-a-boss/">
+
+    
+    <title>Configuring Nagios Like a Boss! &middot; xkyle.com</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <link href="css/style.css" rel="stylesheet">
+
+    
+
+    
+
+    
+  </head>
+  <body>
+    
+      
+
+
+
+<nav class="white" role="navigation">
+    <div class="row max-width">
+        <div class="col s12 l10 offset-l1">
+            
+            <a href="#" data-activates="nav-mobile" class="button-collapse black-text">
+                <i class="material-icons">menu</i>
+            </a>
+
+            
+            <ul id="nav-mobile" class="side-nav">
+                
+                
+    
+    
+
+            </ul>
+
+            
+            <a href="../" class="brand-logo grey-text text-darken-3">xkyle.com</a>
+
+            
+            <div class="nav-wrapper">
+
+                
+                <ul class="right hide-on-med-and-down">
+                    
+                    
+    
+    
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</nav>
+    
+
+    
+
+<article class="max-width">
+    
+    <section class="row">
+        <div class="col s12 m10 offset-m1 l10 offset-l1">
+            <h1>Configuring Nagios Like a Boss!</h1>
+        </div>
+    </section>
+
+    
+    
+
+    
+    <section class="row">
+        <div class="col s12 m8 offset-m2 l2 offset-l1">
+            
+
+<p class="article-meta">
+    <div class="article-meta-container">
+        <div class="article-meta-author-name">admin</div>
+        <div class="article-meta-description"></div>
+    </div>
+    <span class="article-meta-published-at grey-text text-darken-1">Nov 19, 2012</span>
+</p>
+        </div>
+        <div class="col s12 m8 offset-m2 l6">
+            
+
+<p>I&rsquo;m tired of configuring Nagios by hand. Just tired. I always forget to do stuff. I&rsquo;ll add a new host, or stick in a raid card, add a new website, whatever, and forget to add a nagios check for it.</p>
+
+<p><a href="../uploads/nagiosforget.png"><img src="../uploads/nagiosforget.png" alt="" /></a></p>
+
+<p>So it happened. You setup a server, put critical infrastructure on it, but forgot to monitor it. It goes down, bad stuff happens. Your boss asks, why weren&rsquo;t we monitoring this? Let me supply a few options to prevent this from happening in the future:</p>
+
+<ol>
+<li><p>Enforce draconian punishment for people who forget to do it (one cutoff finger per service check?)</p></li>
+
+<li><p>Have strict workflows/bkms/procedures for doing things like adding a vhost, starting a server, etc that include a step for adding them to Nagios</p></li>
+
+<li><p>Invent a fake sysadmin named Paco, and blame all the mistake on him.</p></li>
+
+<li><p>Automate it with puppet. Then blame puppet when it goes wrong!</p></li>
+</ol>
+
+<h1 id="a-migration-plan">A Migration Plan</h1>
+
+<p>Let&rsquo;s do it. Let&rsquo;s make puppet do the work. After all, puppet is aware of my hosts, and it even knows what services are running them.</p>
+
+<p>You don&rsquo;t have to switch all at once, you can have a mix of automatically generated and manually configured checks. I like to put my automated definitions go into folders called hosts.d and services.d. Do what makes sense for your environment.</p>
+
+<h1 id="howto">Howto</h1>
+
+<p>First, define a &ldquo;virtual resource&rdquo; wherever a service is defined. Lets take a really simple, but overlooked example of health-checking raid:</p>
+
+<pre><code>class nagios_checks::raid {
+   file { &quot;/usr/lib64/nagios/plugins/check_raid&quot;:
+      mode =&gt; 555,
+      source =&gt; &quot;puppet:///modules/nagios_checks/check_raid&quot;,
+   }
+   @@nagios_service { &quot;${fqdn}_raid&quot;:
+      ensure =&gt; present,
+      host_name =&gt; &quot;$fqdn&quot;,
+      use =&gt; &quot;generic-service&quot;,
+      target =&gt; &quot;/etc/nagios/services.d/$fqdn-raid.cfg&quot;,
+      check_command =&gt; &quot;check_nrpe!check_raid&quot;,
+      service_description =&gt; &quot;raid&quot;,
+      notify =&gt; Service[&quot;nagios&quot;],
+   }
+}
+</code></pre>
+
+<p>So what is going on here? In this class we define a Nagios plugin, and we copy it over. (I like making things that puppet copies over set to 555 as a reminder that I shouldn&rsquo;t be editing them)</p>
+
+<p>The virtual resource is &ldquo;@@nagios_server&rdquo;. The @@ means that the resource is just saved on the puppet master, and not instantiated on the client. (this assumes you have <a href="http://projects.puppetlabs.com/projects/puppet/wiki/Using_Stored_Configuration">stored configs</a> enabled in your puppet setup.)</p>
+
+<p>With &ldquo;target =&gt;&rdquo; I&rsquo;m dumping the config into /etc/nagios/services.d/$fqdn-raid.cfg. It&rsquo;s a good idea to let puppet put service definitions in separate files. Making puppet scan a single file chock full of definitions will be slow.</p>
+
+<p>If this virtual resource is defined on a bunch of clients, on some nagios server we need to let puppet dump these files:</p>
+
+<pre><code>class nagios::server {
+   package { nagios:
+      ensure =&gt; latest;
+   }
+   service { &quot;nagios&quot;:
+      ensure =&gt; running,
+      enabled =&gt; true,
+   }
+
+   # Hack for bug #3299 where nagios stuff is root:600
+   file { [&quot;/etc/nagios/hosts.d/&quot;, &quot;/etc/nagios/services.d/&quot;]:
+      ensure =&gt; directory,
+      mode =&gt; 644,
+      recurse =&gt; true,
+   }
+
+   # Collect and instantiate all the puppet stuff
+   Nagios_host &lt;||&gt;
+   Nagios_service &lt;||&gt;
+
+}
+</code></pre>
+
+<p>That is a basic recipe for a Nagios server. We get the package, make sure the package is running, fix some permissions&hellip; when what the crap is that?</p>
+
+<p>The &lt;||&gt; operator takes virtual resources that were defined on other servers, and then makes them real. This means the $fqdn-host.cfg files will be created wherever this nagios::server is setup.</p>
+
+<p>So go forth, and define @@nagios_services&rsquo;s whenever you have a puppet server setup. Like a boss.</p>
+
+<p><a href="../uploads/gravitron.jpg"><img src="../uploads/gravitron-300x225.jpg" alt="" /></a></p>
+
+        </div>
+    </section>
+</article>
+
+
+
+    
+      <footer class="page-footer grey lighten-5">
+    <div class="row max-width">
+        <div class="col s12 l10 offset-l1 clear-padding">
+            <div class="row">
+    
+        
+    
+
+    
+    
+    <div class="col s12 l12">
+        <h5 class="black-text"></h5>
+<p class="grey-text text-darken-4"></p>
+
+    </div>
+
+    
+</div>
+
+
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="row max-width" style="width: 100%;">
+            <div class="col s12 l10 offset-l1">
+                <span class="grey-text text-darken-4"></span>
+<div class="right">
+    
+</div>
+            </div>
+        </div>
+    </div>
+</footer>
+    
+
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

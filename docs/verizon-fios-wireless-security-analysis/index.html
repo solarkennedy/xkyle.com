@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="Verizon FiOS Wireless Security Analysis" />
+<meta property="og:description" content="Take a look at some wireless keys that I&rsquo;ve collected from some Verizon FiOS installs around Tampa:
+ 00-18-01-EA-3D-99,E3X12,6,WEP,1801349FCA 00-18-01-F0-6D-C4,NAMX2,1,WEP,18014B311F 00-18-01-F0-95-78,MWXV2,11,WEP,180149FF66 00-18-01-FD-4F-0E,R0LC7,1,WEP,1801BC5C6B 00-18-01-FE-15-46,JE2K7,1,WEP,1801C1B02B 00-18-01-FF-DF-DD,HH150,1,WEP,1F900396C5 00-1F-90-E0-B1-F8,3RA18,6,WEP,1801CDF4AF 00-1F-90-E0-B5-AC,OQ838,6,WEP,1801CF5700 00-1F-90-E2-7E-61,7WY20,6,WEP,1F90021D27 00-1F-90-E3-1E-90,C7WA0,6,WEP,1F9007C188 00-1F-90-E3-2E-07,DJP80,6,WEP,1F90063349 00-1F-90-E6-A7-D5,BJ2Z0,11,WEP,1F9018F797 00-1F-90-E6-D4-E3,RSHZ0,4,WEP,1F901944DB
+ What you are looking at here is MAC, SSID, Channel, Encryption, Key.
+Notice that they are all WEP, 64bit, with 5 Alpha numeric SSID&rsquo;s.
+I want to emphasize that these are the defaults, and only geeks, nerds and the like change the defaults." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/verizon-fios-wireless-security-analysis/" /><meta property="article:published_time" content="2009-02-07T18:29:04&#43;00:00"/>
+<meta property="article:modified_time" content="2009-02-07T18:29:04&#43;00:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Verizon FiOS Wireless Security Analysis"/>
+<meta name="twitter:description" content="Take a look at some wireless keys that I&rsquo;ve collected from some Verizon FiOS installs around Tampa:
+ 00-18-01-EA-3D-99,E3X12,6,WEP,1801349FCA 00-18-01-F0-6D-C4,NAMX2,1,WEP,18014B311F 00-18-01-F0-95-78,MWXV2,11,WEP,180149FF66 00-18-01-FD-4F-0E,R0LC7,1,WEP,1801BC5C6B 00-18-01-FE-15-46,JE2K7,1,WEP,1801C1B02B 00-18-01-FF-DF-DD,HH150,1,WEP,1F900396C5 00-1F-90-E0-B1-F8,3RA18,6,WEP,1801CDF4AF 00-1F-90-E0-B5-AC,OQ838,6,WEP,1801CF5700 00-1F-90-E2-7E-61,7WY20,6,WEP,1F90021D27 00-1F-90-E3-1E-90,C7WA0,6,WEP,1F9007C188 00-1F-90-E3-2E-07,DJP80,6,WEP,1F90063349 00-1F-90-E6-A7-D5,BJ2Z0,11,WEP,1F9018F797 00-1F-90-E6-D4-E3,RSHZ0,4,WEP,1F901944DB
+ What you are looking at here is MAC, SSID, Channel, Encryption, Key.
+Notice that they are all WEP, 64bit, with 5 Alpha numeric SSID&rsquo;s.
+I want to emphasize that these are the defaults, and only geeks, nerds and the like change the defaults."/>
+
+
+    <meta name="description" content="">
+    <link rel="canonical" href="../verizon-fios-wireless-security-analysis/">
+
+    
+    <title>Verizon FiOS Wireless Security Analysis &middot; xkyle.com</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <link href="css/style.css" rel="stylesheet">
+
+    
+
+    
+
+    
+  </head>
+  <body>
+    
+      
+
+
+
+<nav class="white" role="navigation">
+    <div class="row max-width">
+        <div class="col s12 l10 offset-l1">
+            
+            <a href="#" data-activates="nav-mobile" class="button-collapse black-text">
+                <i class="material-icons">menu</i>
+            </a>
+
+            
+            <ul id="nav-mobile" class="side-nav">
+                
+                
+    
+    
+
+            </ul>
+
+            
+            <a href="../" class="brand-logo grey-text text-darken-3">xkyle.com</a>
+
+            
+            <div class="nav-wrapper">
+
+                
+                <ul class="right hide-on-med-and-down">
+                    
+                    
+    
+    
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</nav>
+    
+
+    
+
+<article class="max-width">
+    
+    <section class="row">
+        <div class="col s12 m10 offset-m1 l10 offset-l1">
+            <h1>Verizon FiOS Wireless Security Analysis</h1>
+        </div>
+    </section>
+
+    
+    
+
+    
+    <section class="row">
+        <div class="col s12 m8 offset-m2 l2 offset-l1">
+            
+
+<p class="article-meta">
+    <div class="article-meta-container">
+        <div class="article-meta-author-name">admin</div>
+        <div class="article-meta-description"></div>
+    </div>
+    <span class="article-meta-published-at grey-text text-darken-1">Feb 7, 2009</span>
+</p>
+        </div>
+        <div class="col s12 m8 offset-m2 l6">
+            <p><a href="../uploads/verizon_fios_250.jpg"><img src="../uploads/verizon_fios_250.jpg" alt="" /></a></p>
+
+<p>Take a look at some wireless keys that I&rsquo;ve collected from some Verizon FiOS installs around Tampa:</p>
+
+<blockquote>
+<p>00-18-01-EA-3D-99,E3X12,6,WEP,1801349FCA
+00-18-01-F0-6D-C4,NAMX2,1,WEP,18014B311F
+00-18-01-F0-95-78,MWXV2,11,WEP,180149FF66
+00-18-01-FD-4F-0E,R0LC7,1,WEP,1801BC5C6B
+00-18-01-FE-15-46,JE2K7,1,WEP,1801C1B02B
+00-18-01-FF-DF-DD,HH150,1,WEP,1F900396C5
+00-1F-90-E0-B1-F8,3RA18,6,WEP,1801CDF4AF
+00-1F-90-E0-B5-AC,OQ838,6,WEP,1801CF5700
+00-1F-90-E2-7E-61,7WY20,6,WEP,1F90021D27
+00-1F-90-E3-1E-90,C7WA0,6,WEP,1F9007C188
+00-1F-90-E3-2E-07,DJP80,6,WEP,1F90063349
+00-1F-90-E6-A7-D5,BJ2Z0,11,WEP,1F9018F797
+00-1F-90-E6-D4-E3,RSHZ0,4,WEP,1F901944DB</p>
+</blockquote>
+
+<p>What you are looking at here is MAC, SSID, Channel, Encryption, Key.</p>
+
+<p>Notice that they are all WEP, 64bit, with 5 Alpha numeric SSID&rsquo;s.</p>
+
+<p>I want to emphasize that these are the defaults, and only geeks, nerds and the like change the defaults. :)</p>
+
+<p>Here is a typical type of router (actiontec) that does this:</p>
+
+<p><a href="../uploads/mi424wr.gif"><img src="../uploads/mi424wr-300x216.gif" alt="" /></a></p>
+
+<p>Take a real close look at two of the examples:</p>
+
+<blockquote>
+<p>00-18-01-FE-15-46,JE2K7,1,WEP,1801C1B02B
+00-1F-90-E2-7E-61,7WY20,6,WEP,1F90021D27</p>
+</blockquote>
+
+<p>Notice the relationship the MAC and the key have. Let me split up the bytes for you:</p>
+
+<blockquote>
+<p>00:18:01:FE:15:46   -  18:01:C1:B0:2B</p>
+</blockquote>
+
+<p>Verizon, or Actiontec, or someone is setting the first byte of the 40bit key to the second byte of the MAC of the unit. And then they are setting the second byte of the key to the third byte of the MAC!</p>
+
+<p>You can look on the list, and this is mostly the case, there is some overlap on the OIDs. (sometimess it is 1801, sometimes 1f90) Why is this useful? Well if you know it is a FiOS install, you have already decreased your &ldquo;64bit&rdquo; key to a real &ldquo;40bit&rdquo; key, and you already know 16 bits of it, so you only have to crack 24 bits. This is insane. This is like guessing 3 letters.</p>
+
+<p>The way to use this is with the <a href="http://www.aircrack-ng.org">Aircrack-ng</a> program. Capture some packets, and use the -d option to tell it what the key starts with.</p>
+
+<blockquote>
+<p>aircrack-ng -d 1801 stupid-fios.cap</p>
+</blockquote>
+
+<p>You will get the key in No time! Silly Verizon, you didn&rsquo;t think we would notice you weren&rsquo;t using constructed (not random) keys?</p>
+
+<p>Have FiOS yourself? Want to share your MAC and default key in the comments? :)</p>
+
+<blockquote>
+</blockquote>
+
+        </div>
+    </section>
+</article>
+
+
+
+    
+      <footer class="page-footer grey lighten-5">
+    <div class="row max-width">
+        <div class="col s12 l10 offset-l1 clear-padding">
+            <div class="row">
+    
+        
+    
+
+    
+    
+    <div class="col s12 l12">
+        <h5 class="black-text"></h5>
+<p class="grey-text text-darken-4"></p>
+
+    </div>
+
+    
+</div>
+
+
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="row max-width" style="width: 100%;">
+            <div class="col s12 l10 offset-l1">
+                <span class="grey-text text-darken-4"></span>
+<div class="right">
+    
+</div>
+            </div>
+        </div>
+    </div>
+</footer>
+    
+
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

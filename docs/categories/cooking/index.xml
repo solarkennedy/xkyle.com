@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cooking on xkyle.com</title>
+    <link>/categories/cooking/</link>
+    <description>Recent content in Cooking on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 10 Jan 2009 15:31:52 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/cooking/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Amazing Breakfasts with Cody!</title>
+      <link>/amazing-breakfasts-with-cody/</link>
+      <pubDate>Sat, 10 Jan 2009 15:31:52 +0000</pubDate>
+      
+      <guid>/amazing-breakfasts-with-cody/</guid>
+      <description>Often I get to enjoy wonderful mornings with my girlfriend Cody. She is a great cook, and one of her best concoctions are these AMAZING breakfast burritos:
+
+Sorry for the bad picture, I took it with the webcam on my eeepc. I don&amp;rsquo;t apologize for her cleavage. I did that intentionally without her knowing :)</description>
+    </item>
+    
+  </channel>
+</rss>

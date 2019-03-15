@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Twitter on xkyle.com</title>
+    <link>/categories/twitter/</link>
+    <description>Recent content in Twitter on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 18 Mar 2010 01:25:37 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/twitter/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Status.net - The future (hopefully) of microblogging!</title>
+      <link>/status-net-the-future-hopefully-of-microblogging/</link>
+      <pubDate>Thu, 18 Mar 2010 01:25:37 +0000</pubDate>
+      
+      <guid>/status-net-the-future-hopefully-of-microblogging/</guid>
+      <description>First, if you think Twitter / Google Buzz / Petstatus.com are silly and just fads, you can go ahead and navigate away from this page.
+For those of you who believe that &amp;ldquo;microblogging&amp;rdquo; is a new form of communication between people, then listen up. If you have an account on twitter, why do I have to have an account on twitter as well to subscribe to your updates? What about facebook?</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Salt on xkyle.com</title>
+    <link>/categories/salt/</link>
+    <description>Recent content in Salt on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 11 Oct 2015 18:21:14 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/salt/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A Configuration Management Rosetta Stone: Configuring Sensu with Puppet, Chef, Ansible and Salt</title>
+      <link>/configuration-management-rosetta-stone-configuring-sensu-with-puppet-chef-ansible-and-salt/</link>
+      <pubDate>Sun, 11 Oct 2015 18:21:14 +0000</pubDate>
+      
+      <guid>/configuration-management-rosetta-stone-configuring-sensu-with-puppet-chef-ansible-and-salt/</guid>
+      <description>I recently finished my Intermediate Sensu Training on Udemy. It was a ton of work but I&amp;rsquo;m glad I got it all together. Part of that training includes how to deploy and configure Sensu with four of the most popular open-source configuration management tools: Puppet, Chef, Ansible, and Salt.
+ TOC {:toc}  The Sensu Decree In order to do the training I had to learn each of these tools enough so I could install a baseline Sensu installation.</description>
+    </item>
+    
+  </channel>
+</rss>

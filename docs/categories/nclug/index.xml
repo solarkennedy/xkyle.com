@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nclug on xkyle.com</title>
+    <link>/categories/nclug/</link>
+    <description>Recent content in Nclug on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 10 Jan 2011 02:33:49 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/nclug/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>New Technologies for a New Year</title>
+      <link>/new-technologies-for-a-new-year/</link>
+      <pubDate>Mon, 10 Jan 2011 02:33:49 +0000</pubDate>
+      
+      <guid>/new-technologies-for-a-new-year/</guid>
+      <description>Starting with the new year, I decided to move my xkyle.com domain and related stuff away from my account at Dreamhost, a shared hosting server, to my virtual machine at Tummy.com. I have nothing but good things to say about Dreamhost though, they are excellent at what they do. However, I wanted to do more than what a shared hosting provider could do for me, I needed Root!
+Moving my websites and dns to a dedicated server grants me the ability to implement a few technologies to usher in the new year.</description>
+    </item>
+    
+    <item>
+      <title>Solving &#34;Role Playing 4&#34;</title>
+      <link>/solving-role-playing-4/</link>
+      <pubDate>Tue, 05 Oct 2010 20:25:06 +0000</pubDate>
+      
+      <guid>/solving-role-playing-4/</guid>
+      <description>Last month Games Magazine published their Online Contest 29 - Role Playing 4. Here is the puzzle:
+
+The circles represent actors, the diamonds represent movies they have been in. Pink is for actresses and blue is for actors. The numbers represent the numbers in their name: First, Last. Question marks indicate the number in their name is 3,4,6, or 9 letters. The center actress is what we are after. Note there are no clues for her name, but she has been in 13 movies.</description>
+    </item>
+    
+    <item>
+      <title>Plug Computers!</title>
+      <link>/plug-computers/</link>
+      <pubDate>Wed, 15 Sep 2010 22:27:30 +0000</pubDate>
+      
+      <guid>/plug-computers/</guid>
+      <description>Recently I gave a presentation on Plug Computers at the local NCLUG. Plug computers are inexpensive, small, and low power computers, about the size of a wall wart.
+They make great home servers, appropriate for file sharing, exporting media files for your devices (DLNA), making backups (backuppc), etc.
+If you would like to check out the slides for my presentation: Plug Computers Presentation
+If you would like to see my wiki notes on plug computers: http://wiki.</description>
+    </item>
+    
+    <item>
+      <title>Bash Boggle - A Boggle Solver Written in Bash!</title>
+      <link>/bash-boggle-a-boggle-solver-written-in-bash/</link>
+      <pubDate>Sun, 22 Aug 2010 07:24:10 +0000</pubDate>
+      
+      <guid>/bash-boggle-a-boggle-solver-written-in-bash/</guid>
+      <description>Bash is my favorite computer language. I also love writing programs to help human problems.
+Inspired by this online Boggle solver, I decided to write my own solver while my friends were too busy playing the game and having fun :)
+If you would like to test my work, here is the code:
+https://dev.xkyle.com/bashboggle/
+You will need the linux &amp;ldquo;words&amp;rdquo; dictionary, which is installable on Ubuntu by running &amp;ldquo;sudo apt-get install wamerican&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>Computer Assisted Jenga with the Wii Balance Board and Linux</title>
+      <link>/computer-assisted-jenga-with-the-wii-balance-board-and-linux/</link>
+      <pubDate>Sun, 01 Aug 2010 05:07:57 +0000</pubDate>
+      
+      <guid>/computer-assisted-jenga-with-the-wii-balance-board-and-linux/</guid>
+      <description>I like to think about how games work, in the case of Jenga, it is just physics!
+But don&amp;rsquo;t you wish you could peel back reality and see what is happening with the physics from the inside? Well now you can, with the help of a Wii Balance Board.
+
+For the setup you need these ingredients:
+ Wii Balance Board
+ Computer with Bluetooth
+ Linux, preferably Ubuntu
+ Jenga Set, alternatively &amp;ldquo;Tension Tower&amp;ldquo;</description>
+    </item>
+    
+    <item>
+      <title>The Seagate Dockstar: A Very Cool Linux Device</title>
+      <link>/the-seagate-dockstar-a-very-cool-linux-device/</link>
+      <pubDate>Tue, 20 Jul 2010 05:35:25 +0000</pubDate>
+      
+      <guid>/the-seagate-dockstar-a-very-cool-linux-device/</guid>
+      <description>What if I told you there was a computer out there, a small one, with gigabit ethernet, 4 USB 2.0 ports, runs on 5 watts, and serves as a great NAS (network attached storage) for your home. It can share files, serve media, be a router, make backups for you, host a lamp stack, be a mail server, etc. It can do whatever you can think up.
+
+How much would you pay for such a neat little device?</description>
+    </item>
+    
+    <item>
+      <title>Setting Up Your Very Own PXE Server!</title>
+      <link>/setting-up-your-very-own-pxe-server/</link>
+      <pubDate>Fri, 16 Jul 2010 22:42:46 +0000</pubDate>
+      
+      <guid>/setting-up-your-very-own-pxe-server/</guid>
+      <description>Ever fumbled around your house looking for a Linux CD, but you can&amp;rsquo;t find it? Ever suspected that your ram was going bad, but you didn&amp;rsquo;t have a way to test it? Ever needed to backup files on a computer that had a dead and broken operating system? A solution to all these problems is a super cool tool called PXE booting. PXE booting allows you to load alternative operating systems over the network, without the need for cds, cdroms, etc!</description>
+    </item>
+    
+    <item>
+      <title>ISPs Should Capitalize on their Reverse DNS!</title>
+      <link>/isps-should-capitalize-on-their-reverse-dns/</link>
+      <pubDate>Wed, 19 May 2010 01:20:39 +0000</pubDate>
+      
+      <guid>/isps-should-capitalize-on-their-reverse-dns/</guid>
+      <description>Actually&amp;hellip; no they shouldn&amp;rsquo;t. Here is what it would look like:
+ My traceroute [v0.75] kyle (0.0.0.0) Tue May 18 15:14:52 2010 Keys: Help Display mode Restart statistics Order of fields quit Host Loss% Snt Last Avg Best Wrst StDev 1. 192.168.0.1 0.0% 10 12.0 15.6 11.3 33.6 6.7 2 UPGRADE-YOUR-CONNECTION-1800-COMCAST.res.comcast.net 0.0% 10 13.1 15.8 11.5 31.1 5.9 3. TURBOBOOST-UP-TO-50MBS.car1.Den.core.comcast.net 44.4% 10 15.3 17.7 11.8 23.1 4.5 4. LIKE-WHAT-YOU-SEE?-GET-WITH-LEVEL3!.Level3.net 0.0% 10 27.</description>
+    </item>
+    
+    <item>
+      <title>Stream of Conciousness Youtube Videos on Linux</title>
+      <link>/stream-of-conciousness-youtube-videos-on-linux/</link>
+      <pubDate>Mon, 17 May 2010 03:20:20 +0000</pubDate>
+      
+      <guid>/stream-of-conciousness-youtube-videos-on-linux/</guid>
+      <description>While sitting watching TV I yearned for a more stream-of-consciousness experience. Youtube was the answer.
+However, Youtube requires too much interaction. I wanted to vege out and let it just feed me the stream of random images and sound. Selecting purely random youtube videos sounded like a bad idea though&amp;hellip;
+I decided to do a twitter search for anything with a youtube link, and then let a script just enqueue them into totem, ad-infinitum.</description>
+    </item>
+    
+    <item>
+      <title>Sparkfun&#39;s Autonomous Vehicle Competition</title>
+      <link>/sparkfuns-autonomous-vehicle-competition/</link>
+      <pubDate>Sun, 18 Apr 2010 03:50:33 +0000</pubDate>
+      
+      <guid>/sparkfuns-autonomous-vehicle-competition/</guid>
+      <description>The Sparkfun Autonomous Vehicle Competition (AVC) was a smash! You can watch some footage of the event at Sparkfun&amp;rsquo;s Ustream page.
+Here is what the starting / finishing line looked like:
+
+And some judges on the roof watching to make sure the Flying robots do not cut corners.
+[](/uploads/startingline.jpg)
+I was very impressed by the UAVs (unmanned aerial vehicles). Most of them were able to complete the course in record time.</description>
+    </item>
+    
+    <item>
+      <title>Yes yes... very professional...</title>
+      <link>/yes-yes-very-professional/</link>
+      <pubDate>Sun, 11 Apr 2010 00:42:25 +0000</pubDate>
+      
+      <guid>/yes-yes-very-professional/</guid>
+      <description>I&amp;rsquo;m not saying that all OS&amp;rsquo;s don&amp;rsquo;t have problems, but it would be nice if you didn&amp;rsquo;t plaster the problems all over the store :)</description>
+    </item>
+    
+    <item>
+      <title>Status.net - The future (hopefully) of microblogging!</title>
+      <link>/status-net-the-future-hopefully-of-microblogging/</link>
+      <pubDate>Thu, 18 Mar 2010 01:25:37 +0000</pubDate>
+      
+      <guid>/status-net-the-future-hopefully-of-microblogging/</guid>
+      <description>First, if you think Twitter / Google Buzz / Petstatus.com are silly and just fads, you can go ahead and navigate away from this page.
+For those of you who believe that &amp;ldquo;microblogging&amp;rdquo; is a new form of communication between people, then listen up. If you have an account on twitter, why do I have to have an account on twitter as well to subscribe to your updates? What about facebook?</description>
+    </item>
+    
+    <item>
+      <title>XKCD&#39;s Collatz Conjecture</title>
+      <link>/xkcds-collatz-conjecture/</link>
+      <pubDate>Fri, 05 Mar 2010 05:44:25 +0000</pubDate>
+      
+      <guid>/xkcds-collatz-conjecture/</guid>
+      <description>In the XKCD comic dated 3/4/2010, the Collatz Conjecture presents the following scenario: Well I don&amp;rsquo;t know if your friends will stop calling your or not, but I was curious about what the graph would actually look like. The graph in the comic looks like it was created with Graphviz, one of my favorite programs!
+So I wrote a quick bash script to generate the approrpiate links for graphviz to interpret:</description>
+    </item>
+    
+    <item>
+      <title>Super Paper Mario - Chapter 2 Graph</title>
+      <link>/super-paper-mario-graph/</link>
+      <pubDate>Sun, 24 Jan 2010 19:15:09 +0000</pubDate>
+      
+      <guid>/super-paper-mario-graph/</guid>
+      <description>My girlfriend plays an interesting Wii game called Super Paper Mario where Mario can shift between a 2-dimensional and a 3-dimensional world. Pretty interesting. In chapter 2 section 4 there is a maze of rooms where one must find the last room, room 10. Of course there are walk-throughs all over the internet, but I had her read to me what room she was in, which door she walked through, and what in what room she emerged.</description>
+    </item>
+    
+    <item>
+      <title>DIYDrone: IMU First steps</title>
+      <link>/diydrone-imu-first-steps/</link>
+      <pubDate>Fri, 15 Jan 2010 16:45:54 +0000</pubDate>
+      
+      <guid>/diydrone-imu-first-steps/</guid>
+      <description>This is my first step towards building a UAV, it is a Inertial Measurement Unit.</description>
+    </item>
+    
+    <item>
+      <title>Automated Aftershock Playing Bot</title>
+      <link>/automated-aftershock-playing-bot/</link>
+      <pubDate>Mon, 30 Nov 2009 02:18:16 +0000</pubDate>
+      
+      <guid>/automated-aftershock-playing-bot/</guid>
+      <description>This is a bot I wrote to play Aftershock games for me. Aftershock produces these 5 games that are all basically the same, but with different themes:
+Engines of War - 138071613 Undead Live - 175496321 Mark of Mafia - 833613775 Gunshock Racing - 124286853 Dragon Masters - 304299067
+If you play any of these games, feel free to ally with me :) If aftershock bans me, no big deal :)</description>
+    </item>
+    
+    <item>
+      <title>Final Clock Post</title>
+      <link>/final-clock-post/</link>
+      <pubDate>Wed, 16 Sep 2009 01:43:46 +0000</pubDate>
+      
+      <guid>/final-clock-post/</guid>
+      <description>I&amp;rsquo;ve finally moved to Colorado, and I had to leave the big clock behind, and luckily I had finished it:
+
+I finilized the code, installed the clock in my church, and programmed it for there needs. The code is stored here if someone want to see it. If you want to check it out run:
+git clone https://github.com/solarkennedy/clock.git  I have a little more technical info on my wiki, but it basically goes like this:</description>
+    </item>
+    
+    <item>
+      <title>ToorCamp: Day 1</title>
+      <link>/toorcamp-day-1/</link>
+      <pubDate>Fri, 03 Jul 2009 17:37:32 +0000</pubDate>
+      
+      <guid>/toorcamp-day-1/</guid>
+      <description>When I first arrived at toor camp, I was issued a Hardhat and a kit of electronics to construct my own badge:
+
+What a cool start! Combined with the already cool scenery:
+
+Only one problem: no silo access. We&amp;rsquo;ll see if that changes for day two&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Discrete Wavelets Final Project - Decaptcha,</title>
+      <link>/discrete-wavelets-final-project-decaptcha/</link>
+      <pubDate>Fri, 01 May 2009 17:17:02 +0000</pubDate>
+      
+      <guid>/discrete-wavelets-final-project-decaptcha/</guid>
+      <description>This semester I took a class on Discrete Wavelets. It was awesome. The coolest part was our group final project. My group had the best topic by far: Decoding a Captcha! (Click on any of the following images to view them full size)
+[](/uploads/file_captcha.jpg)
+We&amp;rsquo;ve all seen Captchas before. They are used on websites to make sure that the person on the website is a real human, not a computer program.</description>
+    </item>
+    
+    <item>
+      <title>Verizon FiOS Wireless Key Calculator!</title>
+      <link>/verizon-fios-wireless-key-calculator/</link>
+      <pubDate>Tue, 03 Mar 2009 18:58:33 +0000</pubDate>
+      
+      <guid>/verizon-fios-wireless-key-calculator/</guid>
+      <description>More Update: There are new AP&amp;rsquo;s that don&amp;rsquo;t conform to this pattern. If the calculator doesn&amp;rsquo;t work on yours, maybe it is like these non-conforming-wep keys
+Update: A cool cool guy named Dylan Taylor wrote a java implementation of this script: http://www.fwc.dylanmtaylor.com/ if you need an offline version
+Update: I wrote a bash implementation to make it easy to script, and for offline usage
+In my previous post I showed a correlation between the WEP key of a Verizon FiOS install and the MAC address of the access point.</description>
+    </item>
+    
+    <item>
+      <title>Verizon FiOS Wireless Security Analysis</title>
+      <link>/verizon-fios-wireless-security-analysis/</link>
+      <pubDate>Sat, 07 Feb 2009 18:29:04 +0000</pubDate>
+      
+      <guid>/verizon-fios-wireless-security-analysis/</guid>
+      <description>Take a look at some wireless keys that I&amp;rsquo;ve collected from some Verizon FiOS installs around Tampa:
+ 00-18-01-EA-3D-99,E3X12,6,WEP,1801349FCA 00-18-01-F0-6D-C4,NAMX2,1,WEP,18014B311F 00-18-01-F0-95-78,MWXV2,11,WEP,180149FF66 00-18-01-FD-4F-0E,R0LC7,1,WEP,1801BC5C6B 00-18-01-FE-15-46,JE2K7,1,WEP,1801C1B02B 00-18-01-FF-DF-DD,HH150,1,WEP,1F900396C5 00-1F-90-E0-B1-F8,3RA18,6,WEP,1801CDF4AF 00-1F-90-E0-B5-AC,OQ838,6,WEP,1801CF5700 00-1F-90-E2-7E-61,7WY20,6,WEP,1F90021D27 00-1F-90-E3-1E-90,C7WA0,6,WEP,1F9007C188 00-1F-90-E3-2E-07,DJP80,6,WEP,1F90063349 00-1F-90-E6-A7-D5,BJ2Z0,11,WEP,1F9018F797 00-1F-90-E6-D4-E3,RSHZ0,4,WEP,1F901944DB
+ What you are looking at here is MAC, SSID, Channel, Encryption, Key.
+Notice that they are all WEP, 64bit, with 5 Alpha numeric SSID&amp;rsquo;s.
+I want to emphasize that these are the defaults, and only geeks, nerds and the like change the defaults.</description>
+    </item>
+    
+    <item>
+      <title>Giving My WRT54GL a 2G Drive</title>
+      <link>/giving-my-wrt54gl-a-2g-drive/</link>
+      <pubDate>Sat, 06 Dec 2008 22:05:55 +0000</pubDate>
+      
+      <guid>/giving-my-wrt54gl-a-2g-drive/</guid>
+      <description>The WRT54GL is a pretty cool little toy. Yes it is a router with a cheezy web interface for grandmas with ESSID&amp;rsquo;s named &amp;ldquo;linksys&amp;rdquo;. But you can flash it with your own linux and solder in your own SD card to turn it from a 4MB machine to a 2GB machine&amp;hellip; far out!
+
+Above it the bare board that I&amp;rsquo;ve unscrewed out of the thing. Some solder + a card&amp;hellip;.</description>
+    </item>
+    
+    <item>
+      <title>My Home-Made Laptop Security Program </title>
+      <link>/my-home-made-laptop-security-program/</link>
+      <pubDate>Fri, 05 Dec 2008 17:17:50 +0000</pubDate>
+      
+      <guid>/my-home-made-laptop-security-program/</guid>
+      <description>The NetworkManager program in linux has a create feature called a dispatcher, which can run arbitrary programs when certian things about the network change. For instance it can turn on a firewall or notify a user when the network comes up, or start up an arp alert program!
+I wanted a program that would alert me of my laptop&amp;rsquo;s where-a-bouts, as well as use the webcam to take a picture, in order to aid me in tracking it down if it got stolen.</description>
+    </item>
+    
+    <item>
+      <title>VNC Surpirse!</title>
+      <link>/vnc-surpirse/</link>
+      <pubDate>Tue, 18 Nov 2008 03:01:04 +0000</pubDate>
+      
+      <guid>/vnc-surpirse/</guid>
+      <description>Don&amp;rsquo;t you just love it when co-workers communicate with you in the most interesting ways???
+
+Sorry it is so small. Click on it!</description>
+    </item>
+    
+    <item>
+      <title>New/Old Laptop: Ubuntu Montage </title>
+      <link>/newold-laptop-ubuntu-montage/</link>
+      <pubDate>Tue, 18 Nov 2008 01:20:49 +0000</pubDate>
+      
+      <guid>/newold-laptop-ubuntu-montage/</guid>
+      <description>You may remember my old laptop from such posts as this.
+Well it broke, so I bought another one!
+
+It even has the original stickers. But.. Its slower than I remember. So I&amp;rsquo;m trying out different Ubuntu versions to see what boots the fastest. Here are my methodology and results.
+Methodology: The first number is the ammount of seconds from the 0 in the grub countdown till the X in the initial X-server.</description>
+    </item>
+    
+    <item>
+      <title>n2n - Peer to peer VPN?</title>
+      <link>/n2n-peer-to-peer-vpn/</link>
+      <pubDate>Sat, 15 Nov 2008 02:17:33 +0000</pubDate>
+      
+      <guid>/n2n-peer-to-peer-vpn/</guid>
+      <description>Most vpns&amp;hellip; in fact&amp;hellip; all of them, are based on a client/server model. This means that all vpn clients call home to one vpn server and connect. All traffic goes through that vpn server and then gets passed on to its original destination. But what if you could have the benefits of VPN, but be able to communicate directly to other VPN peers, so without the latency and bandwidth limitations?</description>
+    </item>
+    
+    <item>
+      <title>Ettercap&#39;s Author&#39;s Birthday!</title>
+      <link>/ettercaps-authors-birthday/</link>
+      <pubDate>Sat, 15 Nov 2008 02:04:41 +0000</pubDate>
+      
+      <guid>/ettercaps-authors-birthday/</guid>
+      <description>Today is the Birthday of AloR, the author of the amazing tool, ettercap.
+
+You can see that because it is his birthday, he asks that you email him. I happily obliged.
+Ettercap is an amazing tool. Not only does it have a console, curses, and graphical versions, it can be scripted, hacked, used with plugins, and the list goes on. Here is a screen shot of it in progress:</description>
+    </item>
+    
+    <item>
+      <title>PAP Solutions Hack</title>
+      <link>/pap-solutions-hack/</link>
+      <pubDate>Mon, 29 Sep 2008 17:19:35 +0000</pubDate>
+      
+      <guid>/pap-solutions-hack/</guid>
+      <description>My girlfirend likes to do these puzzles called Pic-A-Pix from ConceptisPuzzles. They use a matrix of numbers to hint the puzzler to to filling in pixels to create pixel art. Sometimes there is color. Every week four new PAP&amp;rsquo;s are pushed out, and I&amp;rsquo;ve been told that the answers are somewhere on the website&amp;hellip;. but that would be cheating. :)
+So I wrote my own program to decode these and make images using html tables.</description>
+    </item>
+    
+    <item>
+      <title>DNS Training At Sago</title>
+      <link>/dns-training-at-sago/</link>
+      <pubDate>Thu, 25 Sep 2008 02:14:57 +0000</pubDate>
+      
+      <guid>/dns-training-at-sago/</guid>
+      <description>This past Tuesday I hosted a DNS training seminar for all the employees at Sago. It went over great! The curriculum involved:
+ The difference between Caching and Authoritative DNS All the different types of DNS Records How to use dig and how to interpret it How to troubleshoot dns problems Secret DNS Tricks!  I recorded the AUDIO (sorry the audio sucks) and the BASH history for those poor souls who want to listen to me drone on for an hour about dns&amp;hellip;.</description>
+    </item>
+    
+    <item>
+      <title>Custom Arp Alerts II!</title>
+      <link>/custom-arp-alerts-ii/</link>
+      <pubDate>Thu, 21 Aug 2008 11:59:57 +0000</pubDate>
+      
+      <guid>/custom-arp-alerts-ii/</guid>
+      <description>So I&amp;rsquo;ve found a better way to do what I did in the previous post. Instead of running a separate script to parse the arp alert logs, I have arp alert itself send the alerts! The key is this line in the arpalert.conf
+action on detect = &amp;quot;/etc/scripts/arp-alert&amp;quot;  Its so simple, it just runs that script sending the information about the alert as certain arguments. With this I have more control over the formatting of arpalert messages:</description>
+    </item>
+    
+    <item>
+      <title>Failing Hard Drives</title>
+      <link>/failing-hard-drives/</link>
+      <pubDate>Wed, 26 Mar 2008 14:14:12 +0000</pubDate>
+      
+      <guid>/failing-hard-drives/</guid>
+      <description>So lots of people use computers, and lots of people have harddrives.
+At my work I deal with lots and lots of computers and lots and lots of drives. So during a week I see plenty of failing drives, just because of the statistics.
+So now-a-days I run a &amp;ldquo;smart test&amp;rdquo; on the drive to see how it is. Unfortunately most drive testers and smart tests are crap. So I made my own and I want to share it with you&amp;hellip;.</description>
+    </item>
+    
+  </channel>
+</rss>

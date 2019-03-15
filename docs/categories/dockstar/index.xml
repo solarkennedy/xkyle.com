@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dockstar on xkyle.com</title>
+    <link>/categories/dockstar/</link>
+    <description>Recent content in Dockstar on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 20 Jul 2010 05:35:25 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/dockstar/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The Seagate Dockstar: A Very Cool Linux Device</title>
+      <link>/the-seagate-dockstar-a-very-cool-linux-device/</link>
+      <pubDate>Tue, 20 Jul 2010 05:35:25 +0000</pubDate>
+      
+      <guid>/the-seagate-dockstar-a-very-cool-linux-device/</guid>
+      <description>What if I told you there was a computer out there, a small one, with gigabit ethernet, 4 USB 2.0 ports, runs on 5 watts, and serves as a great NAS (network attached storage) for your home. It can share files, serve media, be a router, make backups for you, host a lamp stack, be a mail server, etc. It can do whatever you can think up.
+
+How much would you pay for such a neat little device?</description>
+    </item>
+    
+  </channel>
+</rss>

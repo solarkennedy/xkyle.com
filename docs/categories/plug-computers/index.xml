@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Plug Computers on xkyle.com</title>
+    <link>/categories/plug-computers/</link>
+    <description>Recent content in Plug Computers on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 06 Jan 2013 23:16:33 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/plug-computers/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cool Things to Do After Installing OpenWrt</title>
+      <link>/cool-things-to-do-after-installing-openwrt/</link>
+      <pubDate>Sun, 06 Jan 2013 23:16:33 +0000</pubDate>
+      
+      <guid>/cool-things-to-do-after-installing-openwrt/</guid>
+      <description>OpenWrt is the bomb. Think all the power of a full Linux distro on your tiny home router or plug computer.
+Install an External Root Overlay What the heck does that mean? OpenWrt uses an ingenious system were the root filesystem is a super compressed squashfs, merged with a read/write jffs2 filesystem called the overlay. This maximizes your available space on the device. Instead of using part of your remaining flash for read/write, you can use a larger, external device for the overlay.</description>
+    </item>
+    
+    <item>
+      <title>Plug Computers!</title>
+      <link>/plug-computers/</link>
+      <pubDate>Wed, 15 Sep 2010 22:27:30 +0000</pubDate>
+      
+      <guid>/plug-computers/</guid>
+      <description>Recently I gave a presentation on Plug Computers at the local NCLUG. Plug computers are inexpensive, small, and low power computers, about the size of a wall wart.
+They make great home servers, appropriate for file sharing, exporting media files for your devices (DLNA), making backups (backuppc), etc.
+If you would like to check out the slides for my presentation: Plug Computers Presentation
+If you would like to see my wiki notes on plug computers: http://wiki.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Security on xkyle.com</title>
+    <link>/categories/security/</link>
+    <description>Recent content in Security on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 06 Jan 2013 23:16:33 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/security/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cool Things to Do After Installing OpenWrt</title>
+      <link>/cool-things-to-do-after-installing-openwrt/</link>
+      <pubDate>Sun, 06 Jan 2013 23:16:33 +0000</pubDate>
+      
+      <guid>/cool-things-to-do-after-installing-openwrt/</guid>
+      <description>OpenWrt is the bomb. Think all the power of a full Linux distro on your tiny home router or plug computer.
+Install an External Root Overlay What the heck does that mean? OpenWrt uses an ingenious system were the root filesystem is a super compressed squashfs, merged with a read/write jffs2 filesystem called the overlay. This maximizes your available space on the device. Instead of using part of your remaining flash for read/write, you can use a larger, external device for the overlay.</description>
+    </item>
+    
+    <item>
+      <title>My Wireless Cracking Tool</title>
+      <link>/my-wireless-cracking-tool/</link>
+      <pubDate>Mon, 01 Jun 2009 08:00:51 +0000</pubDate>
+      
+      <guid>/my-wireless-cracking-tool/</guid>
+      <description>I&amp;rsquo;ve become a semi-expert on wireless networking and their security features.. and how to get around them. Before I continue I want to emphasize:
+ The act of cracking encryption is not illegal just like picking a lock is not illegal. It is the unauthorized access of that network which is illegal, just like breaking and entering is illegal.
+ So. To sum it up, there are two types of encryption.</description>
+    </item>
+    
+    <item>
+      <title>Myspace Phishing Analysis</title>
+      <link>/myspace-phishing-analysis/</link>
+      <pubDate>Wed, 11 Feb 2009 22:40:10 +0000</pubDate>
+      
+      <guid>/myspace-phishing-analysis/</guid>
+      <description>A couple of years ago, a large list of phished Myspace accounts was leaked on the internet. I stumpled upon them and ran a very simple analysis. Check it out:
+root@a:/# cat myspace.hackedlist | cut -f 2 -d : | sort | uniq -c | sort -n | tail -n 20 14 qwerty1 15 123456a 15 babygirl1 15 blink182 16 123456 16 123abc 16 iloveyou2 17 football1 17 nicole1 18 number1 19 password 23 myspace1 24 fuckyou1 28 iloveyou1 28 monkey1 29 fuckyou 54 abc123 74 password1  The file was in the form of &amp;ldquo;Username:password&amp;rdquo;, so the first part of that command &amp;ldquo;cuts&amp;rdquo; the second column, with the colon as the delimiter.</description>
+    </item>
+    
+    <item>
+      <title>My Home-Made Laptop Security Program </title>
+      <link>/my-home-made-laptop-security-program/</link>
+      <pubDate>Fri, 05 Dec 2008 17:17:50 +0000</pubDate>
+      
+      <guid>/my-home-made-laptop-security-program/</guid>
+      <description>The NetworkManager program in linux has a create feature called a dispatcher, which can run arbitrary programs when certian things about the network change. For instance it can turn on a firewall or notify a user when the network comes up, or start up an arp alert program!
+I wanted a program that would alert me of my laptop&amp;rsquo;s where-a-bouts, as well as use the webcam to take a picture, in order to aid me in tracking it down if it got stolen.</description>
+    </item>
+    
+    <item>
+      <title>n2n - Peer to peer VPN?</title>
+      <link>/n2n-peer-to-peer-vpn/</link>
+      <pubDate>Sat, 15 Nov 2008 02:17:33 +0000</pubDate>
+      
+      <guid>/n2n-peer-to-peer-vpn/</guid>
+      <description>Most vpns&amp;hellip; in fact&amp;hellip; all of them, are based on a client/server model. This means that all vpn clients call home to one vpn server and connect. All traffic goes through that vpn server and then gets passed on to its original destination. But what if you could have the benefits of VPN, but be able to communicate directly to other VPN peers, so without the latency and bandwidth limitations?</description>
+    </item>
+    
+    <item>
+      <title>Ettercap&#39;s Author&#39;s Birthday!</title>
+      <link>/ettercaps-authors-birthday/</link>
+      <pubDate>Sat, 15 Nov 2008 02:04:41 +0000</pubDate>
+      
+      <guid>/ettercaps-authors-birthday/</guid>
+      <description>Today is the Birthday of AloR, the author of the amazing tool, ettercap.
+
+You can see that because it is his birthday, he asks that you email him. I happily obliged.
+Ettercap is an amazing tool. Not only does it have a console, curses, and graphical versions, it can be scripted, hacked, used with plugins, and the list goes on. Here is a screen shot of it in progress:</description>
+    </item>
+    
+    <item>
+      <title>Custom Arp Alerts II!</title>
+      <link>/custom-arp-alerts-ii/</link>
+      <pubDate>Thu, 21 Aug 2008 11:59:57 +0000</pubDate>
+      
+      <guid>/custom-arp-alerts-ii/</guid>
+      <description>So I&amp;rsquo;ve found a better way to do what I did in the previous post. Instead of running a separate script to parse the arp alert logs, I have arp alert itself send the alerts! The key is this line in the arpalert.conf
+action on detect = &amp;quot;/etc/scripts/arp-alert&amp;quot;  Its so simple, it just runs that script sending the information about the alert as certain arguments. With this I have more control over the formatting of arpalert messages:</description>
+    </item>
+    
+    <item>
+      <title>Custom Arp-Alerts</title>
+      <link>/custom-arp-alerts/</link>
+      <pubDate>Wed, 20 Aug 2008 23:17:05 +0000</pubDate>
+      
+      <guid>/custom-arp-alerts/</guid>
+      <description>So I was looking around, and I wanted some sort of tool to allow me to be more aware about what was happening in the lower &amp;ldquo;bowels&amp;rdquo; of the network that I&amp;rsquo;m on with my laptop. So what is it that I want&amp;hellip;
+What I really want is some sort of mac-address based buddy list. One that would show my a list of the mac addresses talking on my network, and allow me to alias them.</description>
+    </item>
+    
+    <item>
+      <title>DNS Cache Poisoning </title>
+      <link>/dns-cache-poisoning/</link>
+      <pubDate>Thu, 31 Jul 2008 12:00:10 +0000</pubDate>
+      
+      <guid>/dns-cache-poisoning/</guid>
+      <description>Recently a DNS expert found a flaw in the way that DNS servers talk to other DNS servers to get records that allows interested parties (hackers) to insert their own records. If you need a primer: the Wikipedia link.
+Well&amp;hellip; a DNS flaw is no fun without a tool to use it. So this guy &amp;ldquo;HD Moore&amp;rdquo; wrote a program (script) that takes advantage of this and makes it relatively easy for someone to use something called Metasploit to tinker with it.</description>
+    </item>
+    
+  </channel>
+</rss>

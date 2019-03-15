@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="en">
+  <head>
+	<meta name="generator" content="Hugo 0.47.1" />
+    <meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="xkyle.com" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/" />
+<meta property="og:updated_time" content="2013-05-12T21:29:09&#43;00:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="xkyle.com"/>
+<meta name="twitter:description" content=""/>
+
+
+    <meta name="description" content="">
+    <link rel="canonical" href="../../">
+
+    
+    <title>xkyle.com &middot; xkyle.com</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <link href="css/style.css" rel="stylesheet">
+
+    
+      <link href="../../index.xml" rel="alternate" type="application/rss+xml" title="xkyle.com &middot; xkyle.com" />
+      <link href="../../index.xml" rel="feed" type="application/rss+xml" title="xkyle.com &middot; xkyle.com" />
+    
+
+    
+
+    
+  </head>
+  <body>
+    
+      
+
+
+
+<nav class="white" role="navigation">
+    <div class="row max-width">
+        <div class="col s12 l10 offset-l1">
+            
+            <a href="#" data-activates="nav-mobile" class="button-collapse black-text">
+                <i class="material-icons">menu</i>
+            </a>
+
+            
+            <ul id="nav-mobile" class="side-nav">
+                
+                
+    
+    
+
+            </ul>
+
+            
+            <a href="../../" class="brand-logo grey-text text-darken-3">xkyle.com</a>
+
+            
+            <div class="nav-wrapper">
+
+                
+                <ul class="right hide-on-med-and-down">
+                    
+                    
+    
+    
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</nav>
+    
+
+    
+
+
+
+
+    
+        <article class="row max-width">
+    <div class="col s12 l10 offset-l1">
+        <h3>
+            <a class="grey-text text-darken-3" href="../../getting-started-with-spdy-on-nginx/">Getting Started With SPDY on Nginx</a>
+        </h3>
+        <div>
+
+<p class="article-meta">
+    <div class="article-meta-container">
+        <div class="article-meta-author-name">admin</div>
+        <div class="article-meta-description"></div>
+    </div>
+    <span class="article-meta-published-at grey-text text-darken-1">May 12, 2013</span>
+</p></div>
+        <div>SPDY is a fancy new way to do HTTP, pioneered by Google. Pretty much all modern browsers support it now, except for of course, IE.
+If you have SSL enabled and are using nginx, they you are pretty close to running your sites with SPDY. What how easy it is!
+Step 1: Get a version of nginx with spdy enabled. Ubuntu Get some packages. The Ubuntu packages have &ldquo;&ndash;with-http_spdy_module&rdquo; compiled, so you can install them with no problem:</div>
+    </div>
+</article>
+    
+
+
+
+    
+        <article class="row max-width">
+    <div class="col s12 l10 offset-l1">
+        <h3>
+            <a class="grey-text text-darken-3" href="../../disabling-microphone-auto-gain-sensitivity-for-google-plus-hangouts/">Disabling Microphone Auto-Gain (Sensitivity) For Google Plus Hangouts</a>
+        </h3>
+        <div>
+
+<p class="article-meta">
+    <div class="article-meta-container">
+        <div class="article-meta-author-name">admin</div>
+        <div class="article-meta-description"></div>
+    </div>
+    <span class="article-meta-published-at grey-text text-darken-1">Apr 17, 2013</span>
+</p></div>
+        <div>Google&rsquo;s Google Plus Hangout / Gtalk plugin automatically adjust your volume to account for varying noise conditions by default. Sometimes this is an undesired behavior, but there is no button to turn it off. Here is how you do it:
+Linux: Run this in a terminal:
+echo &quot;audio-flags=1&quot; &gt; ~/.config/google-googletalkplugin/options  Windows: Set the registry Key:
+HKEY_CURRENT_USER\&lt;wbr&gt;&lt;/wbr&gt;Software\Google\Google Talk Plugin\options\audio-flags = 1  Mac OSX: Edit the plist:
+~/Library/Preferences/com.&lt;wbr&gt;&lt;/wbr&gt;google.GoogleTalkPluginD.plist  and set &ldquo;Audio Flags&rdquo; = 1</div>
+    </div>
+</article>
+    
+
+
+
+    
+        <article class="row max-width">
+    <div class="col s12 l10 offset-l1">
+        <h3>
+            <a class="grey-text text-darken-3" href="../../my-first-published-puppet-module-bios/">My First Published Puppet Module: bios</a>
+        </h3>
+        <div>
+
+<p class="article-meta">
+    <div class="article-meta-container">
+        <div class="article-meta-author-name">admin</div>
+        <div class="article-meta-description"></div>
+    </div>
+    <span class="article-meta-published-at grey-text text-darken-1">Apr 15, 2013</span>
+</p></div>
+        <div>What? I&rsquo;ve written lots of crappy Puppet modules. Here is a slightly less crappy module that can help you configure BIOS settings on your servers for you.
+It works on Dell C class servers and Intel platforms. Please pull request or email me if you want to have it work on something else too!
+Why? BIOS settings should be considered configuration just like any other configuration, and hence managed by your configuration management tool, if possible.</div>
+    </div>
+</article>
+    
+
+
+
+    
+        <article class="row max-width">
+    <div class="col s12 l10 offset-l1">
+        <h3>
+            <a class="grey-text text-darken-3" href="../../puppet-on-openwrt/">Puppet on OpenWrt!</a>
+        </h3>
+        <div>
+
+<p class="article-meta">
+    <div class="article-meta-container">
+        <div class="article-meta-author-name">admin</div>
+        <div class="article-meta-description"></div>
+    </div>
+    <span class="article-meta-published-at grey-text text-darken-1">Mar 31, 2013</span>
+</p></div>
+        <div>Status:  Github Repo is here: https://github.com/solarkennedy/puppet-on-openwrt/
+ OpenWrt package files are submitted for inclusion
+ Puppet/facter patches have been included in Trunk for inclusion in puppet 3.2
+ Binary packages have been made for early adopters (and me)
+  Why? To scratch my own itch, and for Fun!
+How? Downloads are here: http://download.xkyle.com/openwrt/
+Because of the dependencies, it is probably easier to add the repo:
+. /etc/openwrt_release VERSION=`echo $DISTRIB_RELEASE | cut -f 1 -d -` TARGET=`echo $DISTRIB_TARGET | cut -f 1 -d /` LINE=&quot;src/gz puppet-packages http://download.</div>
+    </div>
+</article>
+    
+
+
+
+    
+        <article class="row max-width">
+    <div class="col s12 l10 offset-l1">
+        <h3>
+            <a class="grey-text text-darken-3" href="../../picking-server-hostnames-worstest-worser-worst-better-betterer-bestest/">Picking Server Hostnames: Worstest, Worser, Worst&hellip; Better, Betterer, Bestest</a>
+        </h3>
+        <div>
+
+<p class="article-meta">
+    <div class="article-meta-container">
+        <div class="article-meta-author-name">admin</div>
+        <div class="article-meta-description"></div>
+    </div>
+    <span class="article-meta-published-at grey-text text-darken-1">Mar 27, 2013</span>
+</p></div>
+        <div>Picking a server hostname is abig deal. I&rsquo;ve seen quite a few, lets traverse the hostname-awesomeness-continuum and see if we can learn something.
+Worsest  morpheous trinity alf  Why do these suck? These names have no information what-so-ever. If you see a server alert, you have no clue what services are actually down. It might as well be a random string. IT is a random string.
+ Pro Tip: Don&rsquo;t give make server hostnames random strings.</div>
+    </div>
+</article>
+    
+
+
+
+    
+        <article class="row max-width">
+    <div class="col s12 l10 offset-l1">
+        <h3>
+            <a class="grey-text text-darken-3" href="../../decoding-balanced-payments-puzzle-1/">Decoding Balanced Payments Puzzle 1</a>
+        </h3>
+        <div>
+
+<p class="article-meta">
+    <div class="article-meta-container">
+        <div class="article-meta-author-name">admin</div>
+        <div class="article-meta-description"></div>
+    </div>
+    <span class="article-meta-published-at grey-text text-darken-1">Mar 21, 2013</span>
+</p></div>
+        <div>A strange string appeared at the bottom of a Balanced Payments blog post:
+ NmQ2ZjYzMmU3Mzc0NmU2NTZkNzk2MTcwNjQ2NTYzNm U2MTZjNjE2MjQwNjU2MzZlNjU3MjY1NjY2NjY5NjQ2MTY1N mI2MTZkNmY3NDc0NmU2MTc3Njk=
+ One of those puzzles to attract coders I guess. The guys at Hacker News spilled the beans, so lets spill them some more.
+First though,** Mad Props** to the Balanced team for thinking &ldquo;outside&rdquo; the unit-test-box. Plus Jenkins rocks. The world needs more Jenkins. Bash? I&rsquo;m not a developer, so my first instinct was to use the existing set of tools that people have already written to solve this puzzle:</div>
+    </div>
+</article>
+    
+
+
+
+    
+        <article class="row max-width">
+    <div class="col s12 l10 offset-l1">
+        <h3>
+            <a class="grey-text text-darken-3" href="../../hacking-a-hallmark-text-band-first-attempt/">Hacking a Hallmark Text Band: First Attempt</a>
+        </h3>
+        <div>
+
+<p class="article-meta">
+    <div class="article-meta-container">
+        <div class="article-meta-author-name">admin</div>
+        <div class="article-meta-description"></div>
+    </div>
+    <span class="article-meta-published-at grey-text text-darken-1">Mar 14, 2013</span>
+</p></div>
+        <div>The Hallmark Text Band is a strange thing:
+
+Doesn&rsquo;t Hallmark know kids have cell phones now? Anyway, it is an extremely simple micro-controller driving a led matrix and a C-Max CMM-9201. You get 10 characters, and a small reed-switch? triggers a hardware interrupt, and broadcasts your 10 characters to a friend, and you swap messages. The devices holds 24 messages, FIFO. Memory is volatile. Profanity filter included.
+Oh well.</div>
+    </div>
+</article>
+    
+
+
+
+    
+        <article class="row max-width">
+    <div class="col s12 l10 offset-l1">
+        <h3>
+            <a class="grey-text text-darken-3" href="../../validating-graphite-metrics-with-bash/">Validating Graphite Metrics With Bash!</a>
+        </h3>
+        <div>
+
+<p class="article-meta">
+    <div class="article-meta-container">
+        <div class="article-meta-author-name">admin</div>
+        <div class="article-meta-description"></div>
+    </div>
+    <span class="article-meta-published-at grey-text text-darken-1">Mar 7, 2013</span>
+</p></div>
+        <div>At my dayjob I get to work with Graphite and power meters. It is cool:
+
+To make it easy for my clients to get power information, I&rsquo;ve written a command line tool called &ldquo;power&rdquo; that they can run to get the power usage for a server when running their program. Here is an example:
+power METER-NAME sleep 10s  Pretty handy. The &ldquo;METER-NAME&rdquo; is pretty important, as it lets the script know which system&rsquo;s power you are interested in.</div>
+    </div>
+</article>
+    
+
+
+
+    
+        <article class="row max-width">
+    <div class="col s12 l10 offset-l1">
+        <h3>
+            <a class="grey-text text-darken-3" href="../../an-ipmi-sel-viewing-shootout/">An IPMI SEL Viewing Shootout!</a>
+        </h3>
+        <div>
+
+<p class="article-meta">
+    <div class="article-meta-container">
+        <div class="article-meta-author-name">admin</div>
+        <div class="article-meta-description"></div>
+    </div>
+    <span class="article-meta-published-at grey-text text-darken-1">Feb 13, 2013</span>
+</p></div>
+        <div>UPDATE (2015-02-18) Albert Chu from FreeIPMI commented that FreeIPMI does NOT attempt to decode OEM events by default. These are events that are OEM specific, so each motherboard may require a different interpretation.
+FreeIPMI has a --interpret-oem-data option and possibly in conjunction with the -W assumesystemevent option, to attempt to decode these.
+Unfortunately I no longer have the motherboard I originally ran these on. I might do a followup post with a new motherboard with similar &ldquo;issues&rdquo; and see how FreeIPMI compares to the other tools with these options.</div>
+    </div>
+</article>
+    
+
+
+
+    
+        <article class="row max-width">
+    <div class="col s12 l10 offset-l1">
+        <h3>
+            <a class="grey-text text-darken-3" href="../../configuring-bios-settings-with-puppet/">Configuring BIOS Settings With Puppet!</a>
+        </h3>
+        <div>
+
+<p class="article-meta">
+    <div class="article-meta-container">
+        <div class="article-meta-author-name">admin</div>
+        <div class="article-meta-description"></div>
+    </div>
+    <span class="article-meta-published-at grey-text text-darken-1">Feb 12, 2013</span>
+</p></div>
+        <div>You know what it is like to spend time configuring the BIOS on a a server. You reboot the server, and wait for it to take its sweet time to come back up, frantically push its button, hope that you didn&rsquo;t miss your chance. Then spend some one-on-one alone time with the interface, making sure you do all the right keystrokes to get the settings you want. Sounds like a bad date.</div>
+    </div>
+</article>
+    
+
+
+
+
+
+<ul class="pagination center-align">
+    <li class="waves-effect">
+        <a href="../../page/3/" aria-label="Previous"><i class="material-icons">chevron_left</i></a>
+    </li>
+    
+    
+        
+        
+        
+        
+            
+            
+        
+        
+            <li class="waves-effect ">
+                <a href="../../">1</a>
+            </li>
+        
+    
+        
+        
+        
+        
+            
+            
+        
+        
+            <li class="waves-effect ">
+                <a href="../../page/2/">2</a>
+            </li>
+        
+    
+        
+        
+        
+        
+            
+            
+        
+        
+            <li class="waves-effect ">
+                <a href="../../page/3/">3</a>
+            </li>
+        
+    
+        
+        
+        
+        
+            
+            
+        
+        
+            <li class="waves-effect active grey darken-4 ">
+                <a href="../../page/4/">4</a>
+            </li>
+        
+    
+        
+        
+        
+        
+            
+            
+        
+        
+            <li class="waves-effect ">
+                <a href="../../page/5/">5</a>
+            </li>
+        
+    
+        
+        
+        
+        
+            
+            
+        
+        
+            <li class="waves-effect disabled">
+                <a aria-hidden="true">&hellip;</a>
+            </li>
+        
+    
+        
+        
+        
+        
+            
+            
+        
+        
+    
+        
+        
+        
+        
+            
+            
+        
+        
+    
+        
+        
+        
+        
+            
+            
+        
+        
+    
+        
+        
+        
+        
+            
+            
+        
+        
+    
+        
+        
+        
+        
+            
+            
+        
+        
+    
+        
+        
+        
+        
+            
+            
+        
+        
+    
+        
+        
+        
+        
+            
+            
+        
+        
+            <li class="waves-effect ">
+                <a href="../../page/13/">13</a>
+            </li>
+        
+    
+    <li class="waves-effect">
+        <a href="../../page/5/" aria-label="Next"><i class="material-icons">chevron_right</i></a>
+    </li>
+</ul>
+
+
+
+
+    
+      <footer class="page-footer grey lighten-5">
+    <div class="row max-width">
+        <div class="col s12 l10 offset-l1 clear-padding">
+            <div class="row">
+    
+        
+    
+
+    
+    
+    <div class="col s12 l12">
+        <h5 class="black-text"></h5>
+<p class="grey-text text-darken-4"></p>
+
+    </div>
+
+    
+</div>
+
+
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="row max-width" style="width: 100%;">
+            <div class="col s12 l10 offset-l1">
+                <span class="grey-text text-darken-4"></span>
+<div class="right">
+    
+</div>
+            </div>
+        </div>
+    </div>
+</footer>
+    
+
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

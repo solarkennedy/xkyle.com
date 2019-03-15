@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hard Drives on xkyle.com</title>
+    <link>/categories/hard-drives/</link>
+    <description>Recent content in Hard Drives on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 21 May 2011 03:02:47 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/hard-drives/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to Benchmark Harddrives in Linux</title>
+      <link>/how-to-benchmark-harddrives-in-linux/</link>
+      <pubDate>Sat, 21 May 2011 03:02:47 +0000</pubDate>
+      
+      <guid>/how-to-benchmark-harddrives-in-linux/</guid>
+      <description>So you have some new harddrives. Maybe you are thinking about building a DIY storage server? Maybe some Raid? Maybe you just want to know if your drives are performing as well as when you bought them? How can you know? Measurement is Knowing.
+The thing about benchmarks is that you always must be skeptical. Each system&amp;rsquo;s particular disks, controller, raid level and settings, cpu, ram, filesystem, operating system, etc can GREATLY affect the performance of a system.</description>
+    </item>
+    
+  </channel>
+</rss>

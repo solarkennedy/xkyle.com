@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Metawork on xkyle.com</title>
+    <link>/categories/metawork/</link>
+    <description>Recent content in Metawork on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 16 Apr 2012 02:25:27 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/metawork/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Lose the Metawork and Get on with Your Life!</title>
+      <link>/lose-the-metawork-and-get-on-with-your-life/</link>
+      <pubDate>Mon, 16 Apr 2012 02:25:27 +0000</pubDate>
+      
+      <guid>/lose-the-metawork-and-get-on-with-your-life/</guid>
+      <description>Every job has metawork. Sometimes it becomes so commonplace that we just forget about it. We should never forget about it. I hope this blog post reminds you of what your metawork is. For the purposes of this blog post it will focus on code-centric stuff, but could apply to anything.
+Different jobs have different types of metawork. Sometimes it is just paperwork. Other times it is called &amp;ldquo;overhead&amp;rdquo;. Commonly it is referred to as &amp;ldquo;Process&amp;rdquo;.</description>
+    </item>
+    
+  </channel>
+</rss>

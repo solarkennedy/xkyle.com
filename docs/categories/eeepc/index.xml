@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Eeepc on xkyle.com</title>
+    <link>/categories/eeepc/</link>
+    <description>Recent content in Eeepc on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 08 Apr 2010 02:52:53 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/eeepc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to Fix a Power Plug with Sugru!</title>
+      <link>/how-to-fix-a-power-plug-with-sugru/</link>
+      <pubDate>Thu, 08 Apr 2010 02:52:53 +0000</pubDate>
+      
+      <guid>/how-to-fix-a-power-plug-with-sugru/</guid>
+      <description>I have a first generation Asus Eeepc, but the power plug is failing. All plugs do this eventually. Lots of tiny wires, bending back and forth all the time&amp;hellip; It just happens.
+So should I throw it away and buy a new one? No! It can be easily fixed. Here is what you need:
+ Soldering Iron + Solder Flux helps if you have it (If you have not soldered with flux, you are missing out big time) Heat shrink or electrical tape Sugru can add a nice touch  Start by using a sharp blade to cut off the plastic molding around the connector to expose the raw barrel connector and wires:</description>
+    </item>
+    
+    <item>
+      <title>My Home-Made Laptop Security Program </title>
+      <link>/my-home-made-laptop-security-program/</link>
+      <pubDate>Fri, 05 Dec 2008 17:17:50 +0000</pubDate>
+      
+      <guid>/my-home-made-laptop-security-program/</guid>
+      <description>The NetworkManager program in linux has a create feature called a dispatcher, which can run arbitrary programs when certian things about the network change. For instance it can turn on a firewall or notify a user when the network comes up, or start up an arp alert program!
+I wanted a program that would alert me of my laptop&amp;rsquo;s where-a-bouts, as well as use the webcam to take a picture, in order to aid me in tracking it down if it got stolen.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kernel Modules on xkyle.com</title>
+    <link>/categories/kernel-modules/</link>
+    <description>Recent content in Kernel Modules on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 20 Jan 2013 03:39:48 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/kernel-modules/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Building Linux Packages For Kernel Drivers! (dkms howto)</title>
+      <link>/building-linux-packages-for-kernel-drivers/</link>
+      <pubDate>Sun, 20 Jan 2013 03:39:48 +0000</pubDate>
+      
+      <guid>/building-linux-packages-for-kernel-drivers/</guid>
+      <description>Background Most of the time the Linux kernel does a great job of having drivers you need, but sometimes you need to install a special driver or update an existing module.
+Running make; make install is all fine and dandy for testing, but for production you want a repeatable process. For me, this means OS packages. (deb/rpms)
+
+So, how do you go from kernel module source code =&amp;gt; Debian package?</description>
+    </item>
+    
+  </channel>
+</rss>

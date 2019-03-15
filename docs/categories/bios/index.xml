@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bios on xkyle.com</title>
+    <link>/categories/bios/</link>
+    <description>Recent content in Bios on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 26 Jun 2013 02:34:43 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/bios/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Goodbye Intel - My Favorite Commands</title>
+      <link>/goodbye-intel-my-favorite-commands/</link>
+      <pubDate>Wed, 26 Jun 2013 02:34:43 +0000</pubDate>
+      
+      <guid>/goodbye-intel-my-favorite-commands/</guid>
+      <description>Working at Intel has been a great experience. I wish I could have stayed longer, but in the end we decided to part ways.
+During my stay I learned lots of stuff. I would like to boil my experience down to my top Linux commands.
+The List  git: Lots of git. syscfg: Managing bios settings from within Linux. Nice. (Intel platforms) setupbios: More bios settings from within Linux. (Dell platforms) puppet: I actually enjoy manually running puppet.</description>
+    </item>
+    
+    <item>
+      <title>My First Published Puppet Module: bios</title>
+      <link>/my-first-published-puppet-module-bios/</link>
+      <pubDate>Mon, 15 Apr 2013 21:06:09 +0000</pubDate>
+      
+      <guid>/my-first-published-puppet-module-bios/</guid>
+      <description>What? I&amp;rsquo;ve written lots of crappy Puppet modules. Here is a slightly less crappy module that can help you configure BIOS settings on your servers for you.
+It works on Dell C class servers and Intel platforms. Please pull request or email me if you want to have it work on something else too!
+Why? BIOS settings should be considered configuration just like any other configuration, and hence managed by your configuration management tool, if possible.</description>
+    </item>
+    
+    <item>
+      <title>Configuring BIOS Settings With Puppet!</title>
+      <link>/configuring-bios-settings-with-puppet/</link>
+      <pubDate>Tue, 12 Feb 2013 03:35:01 +0000</pubDate>
+      
+      <guid>/configuring-bios-settings-with-puppet/</guid>
+      <description>You know what it is like to spend time configuring the BIOS on a a server. You reboot the server, and wait for it to take its sweet time to come back up, frantically push its button, hope that you didn&amp;rsquo;t miss your chance. Then spend some one-on-one alone time with the interface, making sure you do all the right keystrokes to get the settings you want. Sounds like a bad date.</description>
+    </item>
+    
+    <item>
+      <title>7 Underused IPMItool Commands</title>
+      <link>/7-underused-ipmitool-commands/</link>
+      <pubDate>Thu, 20 Dec 2012 03:55:02 +0000</pubDate>
+      
+      <guid>/7-underused-ipmitool-commands/</guid>
+      <description>IPMI is Awesome. But, it is underused. Most sysadmins don&amp;rsquo;t even enable it. If they do enable it, they probably enable it by manually going into the BIOS, and then probably only using the Web interface. LAME.
+There is no need to go to the BIOS to configure ipmi. You can use IPMItool to configure it in-band. This is my first underused command:
+(disclaimer: not all IPMI interfaces / bios versions / hardware platforms are equal.</description>
+    </item>
+    
+  </channel>
+</rss>

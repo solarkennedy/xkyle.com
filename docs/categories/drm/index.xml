@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Drm on xkyle.com</title>
+    <link>/categories/drm/</link>
+    <description>Recent content in Drm on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 11 Jun 2009 20:23:43 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/drm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Decrypting an eBook to make it Searchable</title>
+      <link>/decrypting-an-ebook-to-make-it-searchable/</link>
+      <pubDate>Thu, 11 Jun 2009 20:23:43 +0000</pubDate>
+      
+      <guid>/decrypting-an-ebook-to-make-it-searchable/</guid>
+      <description>So I spent $22 on an ebook for school.
+It has this crappy DRM that only lets me view the pdf on one computer using only &amp;ldquo;Adobe Digital Editions&amp;rdquo;.
+If that wasn&amp;rsquo;t so bad, only a small subset of the text is OCR&amp;rsquo;d, so most of it isn&amp;rsquo;t even searchable!
+Now I&amp;rsquo;m pissed, but wait, what do you say? These files are just RSA encrypted, and I have the key?</description>
+    </item>
+    
+  </channel>
+</rss>

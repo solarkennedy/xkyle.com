@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Openwrt on xkyle.com</title>
+    <link>/categories/openwrt/</link>
+    <description>Recent content in Openwrt on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 31 May 2013 01:45:13 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/openwrt/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>An Overdrive Pro Connecting on OpenWrt</title>
+      <link>/an-overdrive-pro-connecting-on-openwrt/</link>
+      <pubDate>Fri, 31 May 2013 01:45:13 +0000</pubDate>
+      
+      <guid>/an-overdrive-pro-connecting-on-openwrt/</guid>
+      <description>Have a fancy FreedomPop Overdrive Pro? Want to hook it up to your OpenWrt based router to use as a backup (or primary?) internet connection? Lets do it.
+Plug it into your router via USB. Then run:
+opkg install kmod-usb-net-cdc-ether  Run dmesg and it will report which eth device came up. Mine shows up as &amp;ldquo;eth1&amp;rdquo;. Now make eth1 your &amp;ldquo;wan&amp;rdquo; interface:
+uci set network.wan.ifname=eth1 uci commit reboot  Whoa.</description>
+    </item>
+    
+    <item>
+      <title>Cool Things to Do After Installing OpenWrt</title>
+      <link>/cool-things-to-do-after-installing-openwrt/</link>
+      <pubDate>Sun, 06 Jan 2013 23:16:33 +0000</pubDate>
+      
+      <guid>/cool-things-to-do-after-installing-openwrt/</guid>
+      <description>OpenWrt is the bomb. Think all the power of a full Linux distro on your tiny home router or plug computer.
+Install an External Root Overlay What the heck does that mean? OpenWrt uses an ingenious system were the root filesystem is a super compressed squashfs, merged with a read/write jffs2 filesystem called the overlay. This maximizes your available space on the device. Instead of using part of your remaining flash for read/write, you can use a larger, external device for the overlay.</description>
+    </item>
+    
+    <item>
+      <title>The Seagate Dockstar: A Very Cool Linux Device</title>
+      <link>/the-seagate-dockstar-a-very-cool-linux-device/</link>
+      <pubDate>Tue, 20 Jul 2010 05:35:25 +0000</pubDate>
+      
+      <guid>/the-seagate-dockstar-a-very-cool-linux-device/</guid>
+      <description>What if I told you there was a computer out there, a small one, with gigabit ethernet, 4 USB 2.0 ports, runs on 5 watts, and serves as a great NAS (network attached storage) for your home. It can share files, serve media, be a router, make backups for you, host a lamp stack, be a mail server, etc. It can do whatever you can think up.
+
+How much would you pay for such a neat little device?</description>
+    </item>
+    
+    <item>
+      <title>Giving My WRT54GL a 2G Drive</title>
+      <link>/giving-my-wrt54gl-a-2g-drive/</link>
+      <pubDate>Sat, 06 Dec 2008 22:05:55 +0000</pubDate>
+      
+      <guid>/giving-my-wrt54gl-a-2g-drive/</guid>
+      <description>The WRT54GL is a pretty cool little toy. Yes it is a router with a cheezy web interface for grandmas with ESSID&amp;rsquo;s named &amp;ldquo;linksys&amp;rdquo;. But you can flash it with your own linux and solder in your own SD card to turn it from a 4MB machine to a 2GB machine&amp;hellip; far out!
+
+Above it the bare board that I&amp;rsquo;ve unscrewed out of the thing. Some solder + a card&amp;hellip;.</description>
+    </item>
+    
+  </channel>
+</rss>

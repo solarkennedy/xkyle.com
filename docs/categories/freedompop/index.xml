@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Freedompop on xkyle.com</title>
+    <link>/categories/freedompop/</link>
+    <description>Recent content in Freedompop on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 31 May 2013 01:45:13 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/freedompop/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>An Overdrive Pro Connecting on OpenWrt</title>
+      <link>/an-overdrive-pro-connecting-on-openwrt/</link>
+      <pubDate>Fri, 31 May 2013 01:45:13 +0000</pubDate>
+      
+      <guid>/an-overdrive-pro-connecting-on-openwrt/</guid>
+      <description>Have a fancy FreedomPop Overdrive Pro? Want to hook it up to your OpenWrt based router to use as a backup (or primary?) internet connection? Lets do it.
+Plug it into your router via USB. Then run:
+opkg install kmod-usb-net-cdc-ether  Run dmesg and it will report which eth device came up. Mine shows up as &amp;ldquo;eth1&amp;rdquo;. Now make eth1 your &amp;ldquo;wan&amp;rdquo; interface:
+uci set network.wan.ifname=eth1 uci commit reboot  Whoa.</description>
+    </item>
+    
+  </channel>
+</rss>

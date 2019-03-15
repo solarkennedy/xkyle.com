@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Intel on xkyle.com</title>
+    <link>/categories/intel/</link>
+    <description>Recent content in Intel on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 26 Jun 2013 02:34:43 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/intel/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Goodbye Intel - My Favorite Commands</title>
+      <link>/goodbye-intel-my-favorite-commands/</link>
+      <pubDate>Wed, 26 Jun 2013 02:34:43 +0000</pubDate>
+      
+      <guid>/goodbye-intel-my-favorite-commands/</guid>
+      <description>Working at Intel has been a great experience. I wish I could have stayed longer, but in the end we decided to part ways.
+During my stay I learned lots of stuff. I would like to boil my experience down to my top Linux commands.
+The List  git: Lots of git. syscfg: Managing bios settings from within Linux. Nice. (Intel platforms) setupbios: More bios settings from within Linux. (Dell platforms) puppet: I actually enjoy manually running puppet.</description>
+    </item>
+    
+    <item>
+      <title>My First Published Puppet Module: bios</title>
+      <link>/my-first-published-puppet-module-bios/</link>
+      <pubDate>Mon, 15 Apr 2013 21:06:09 +0000</pubDate>
+      
+      <guid>/my-first-published-puppet-module-bios/</guid>
+      <description>What? I&amp;rsquo;ve written lots of crappy Puppet modules. Here is a slightly less crappy module that can help you configure BIOS settings on your servers for you.
+It works on Dell C class servers and Intel platforms. Please pull request or email me if you want to have it work on something else too!
+Why? BIOS settings should be considered configuration just like any other configuration, and hence managed by your configuration management tool, if possible.</description>
+    </item>
+    
+    <item>
+      <title>An IPMI SEL Viewing Shootout!</title>
+      <link>/an-ipmi-sel-viewing-shootout/</link>
+      <pubDate>Wed, 13 Feb 2013 06:08:18 +0000</pubDate>
+      
+      <guid>/an-ipmi-sel-viewing-shootout/</guid>
+      <description>UPDATE (2015-02-18) Albert Chu from FreeIPMI commented that FreeIPMI does NOT attempt to decode OEM events by default. These are events that are OEM specific, so each motherboard may require a different interpretation.
+FreeIPMI has a --interpret-oem-data option and possibly in conjunction with the -W assumesystemevent option, to attempt to decode these.
+Unfortunately I no longer have the motherboard I originally ran these on. I might do a followup post with a new motherboard with similar &amp;ldquo;issues&amp;rdquo; and see how FreeIPMI compares to the other tools with these options.</description>
+    </item>
+    
+  </channel>
+</rss>

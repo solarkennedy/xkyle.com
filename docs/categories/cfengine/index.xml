@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cfengine on xkyle.com</title>
+    <link>/categories/cfengine/</link>
+    <description>Recent content in Cfengine on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 26 Jan 2012 01:46:30 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/cfengine/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Puppet versus CFEngine 2: Editing Files</title>
+      <link>/puppet-versus-cfengine-editing-files/</link>
+      <pubDate>Thu, 26 Jan 2012 01:46:30 +0000</pubDate>
+      
+      <guid>/puppet-versus-cfengine-editing-files/</guid>
+      <description>Update: I wrote this article when I was young and stupid. It is obsolete. Puppet wins, just use Augeas. Both Puppet and CFEngine are formidable configuration management systems. Let&amp;rsquo;s compare the two to see how the match up on the common task of editing files. Feel free to jump straight to the conclusion if you are impatient.
+Why would you need this? What is the use-case here? These are some common tasks I do that involve editing files:</description>
+    </item>
+    
+    <item>
+      <title>4 Philosophies For Building Systems To Be Proud Of</title>
+      <link>/4-philosophies-for-building-systems-to-be-proud-of/</link>
+      <pubDate>Mon, 08 Aug 2011 02:21:32 +0000</pubDate>
+      
+      <guid>/4-philosophies-for-building-systems-to-be-proud-of/</guid>
+      <description>Below are a few philosophical guidelines that I use when thinking about systems. Everyone has systems that they are not proud of, even me. But I hope to someday say that I am proud of all of my systems, and I believe that these philosophies will get me there.
+1. Try to endeavor to build systems with as few dependencies as possible. Sometimes systems can sprawl and get out of hand.</description>
+    </item>
+    
+  </channel>
+</rss>

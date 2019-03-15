@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="Hacking a Hallmark Text Band: First Attempt" />
+<meta property="og:description" content="The Hallmark Text Band is a strange thing:
+
+Doesn&rsquo;t Hallmark know kids have cell phones now? Anyway, it is an extremely simple micro-controller driving a led matrix and a C-Max CMM-9201. You get 10 characters, and a small reed-switch? triggers a hardware interrupt, and broadcasts your 10 characters to a friend, and you swap messages. The devices holds 24 messages, FIFO. Memory is volatile. Profanity filter included.
+Oh well." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/hacking-a-hallmark-text-band-first-attempt/" /><meta property="article:published_time" content="2013-03-14T04:08:20&#43;00:00"/>
+<meta property="article:modified_time" content="2013-03-14T04:08:20&#43;00:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hacking a Hallmark Text Band: First Attempt"/>
+<meta name="twitter:description" content="The Hallmark Text Band is a strange thing:
+
+Doesn&rsquo;t Hallmark know kids have cell phones now? Anyway, it is an extremely simple micro-controller driving a led matrix and a C-Max CMM-9201. You get 10 characters, and a small reed-switch? triggers a hardware interrupt, and broadcasts your 10 characters to a friend, and you swap messages. The devices holds 24 messages, FIFO. Memory is volatile. Profanity filter included.
+Oh well."/>
+
+
+    <meta name="description" content="">
+    <link rel="canonical" href="../hacking-a-hallmark-text-band-first-attempt/">
+
+    
+    <title>Hacking a Hallmark Text Band: First Attempt &middot; xkyle.com</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <link href="css/style.css" rel="stylesheet">
+
+    
+
+    
+
+    
+  </head>
+  <body>
+    
+      
+
+
+
+<nav class="white" role="navigation">
+    <div class="row max-width">
+        <div class="col s12 l10 offset-l1">
+            
+            <a href="#" data-activates="nav-mobile" class="button-collapse black-text">
+                <i class="material-icons">menu</i>
+            </a>
+
+            
+            <ul id="nav-mobile" class="side-nav">
+                
+                
+    
+    
+
+            </ul>
+
+            
+            <a href="../" class="brand-logo grey-text text-darken-3">xkyle.com</a>
+
+            
+            <div class="nav-wrapper">
+
+                
+                <ul class="right hide-on-med-and-down">
+                    
+                    
+    
+    
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</nav>
+    
+
+    
+
+<article class="max-width">
+    
+    <section class="row">
+        <div class="col s12 m10 offset-m1 l10 offset-l1">
+            <h1>Hacking a Hallmark Text Band: First Attempt</h1>
+        </div>
+    </section>
+
+    
+    
+
+    
+    <section class="row">
+        <div class="col s12 m8 offset-m2 l2 offset-l1">
+            
+
+<p class="article-meta">
+    <div class="article-meta-container">
+        <div class="article-meta-author-name">admin</div>
+        <div class="article-meta-description"></div>
+    </div>
+    <span class="article-meta-published-at grey-text text-darken-1">Mar 14, 2013</span>
+</p>
+        </div>
+        <div class="col s12 m8 offset-m2 l6">
+            
+
+<p>The <a href="http://www.textbands.com/">Hallmark Text Band</a> is a strange thing:</p>
+
+<p><a href="../uploads/P3130076.jpg"><img src="../uploads/P3130076-300x235.jpg" alt="Hallmark Text Band" /></a></p>
+
+<p>Doesn&rsquo;t Hallmark know kids have cell phones now?
+Anyway, it is an extremely simple micro-controller driving a led matrix and a <a href="http://www.c-max.com.hk/en/technology/rfcomm/2_4g_trans_ic">C-Max CMM-9201</a>. You get 10 characters, and a small reed-switch? triggers a hardware interrupt, and broadcasts your 10 characters to a friend, and you swap messages. The devices holds 24 messages, FIFO. Memory is volatile. Profanity filter included.</p>
+
+<p>Oh well. Lets hack it.</p>
+
+<p>I don&rsquo;t have any fancy hardware to listen to the RF. I decided to sniff the SPI bus with a <a href="http://dangerousprototypes.com/docs/Bus_Pirate">Bus Pirate</a> (Sparkfun version).</p>
+
+<p><a href="../uploads/P3130078.jpg"><img src="../uploads/P3130078-300x224.jpg" alt="" /></a><a href="../uploads/P3130081.jpg"><img src="../uploads/P3130081-300x300.jpg" alt="" /></a></p>
+
+<p>With the Bus Pirate I&rsquo;ve tried using the SPISniffer and the text interface in SPI monitor mode. I&rsquo;ve tried all sorts of variations of speed, etc, and I can&rsquo;t get a reliable output.</p>
+
+<p>I should be able to use the bus pirate in SPI monitor mode and tap it right in the middle of the bus, right? (between the controller and the wireless modules)</p>
+
+<p>Setting the Bus Pirate to only give me data when CS goes low (according to the datasheet) should give me data only when it transmits, but it doesn&rsquo;t. I get lots of strange output:</p>
+
+<pre><code>[0x08(0x28)0x00(0x29)0x00(0x28)0x00(0x29)0x0A(0x28)0x00(0x29)]
+[0x08(0x28)0x00(0x29)]
+[0x08(0x28)0x00(0x29)0x00(0x28)0x00(0x29)0x0A(0x28)0x00(0x29)]
+[0x08(0x28)0x00(0x29)]
+[0x08(0x28)0x00(0x29)0x00(0x28)0x00(0x29)0x0A(0x28)0x00(0x29)]
+[0x08(0x28)0x00(0x29)]
+[0x08(0x28)0x00(0x29)]
+[0x14(0x28)0x00(0x29)]
+[0x08(0x28)0x00(0x29)]
+[0x08(0x28)0x00(0x29)]
+[0x14(0x28)0x00(0x29)]
+</code></pre>
+
+<p>When the device does transmit, I get some sort of data, but it just looks like more of this randomness:</p>
+
+<pre><code>[0x6E(0x28)0x00(0x29)0x6C(0x28)0x00(0x29)0x9C(0x28)0x00(0x29)0xB8(0x28)0x00(0x29)0x10(0x28)0x00(0x29)]
+[0x81(0x28)0x00(0x29)0x1F(0x28)0x00(0x29)0x7E(0x28)0x00(0x29)0x9E(0x28)0x00(0x29)0x9E(0x28)0x00(0x29)0x3F(0x28)0x00(0x29)0x1B(0x28)0x00(0x29)0xB8(0x28)0x00(0x29)0xAA(0x28)0x00(0x29)0xAA(0x28)0x00(0x29)0xAB(0x28)0x00(0x29)0xFE(0x28)0x00(0x29)0xAB(0x28)0x00(0x29)0xF8(0x28)0x00(0x29)0xAB(0x28)0x00(0x29)0x55(0x28)0x00(0x29)0x55(0x28)0x00(0x29)0x55(0x28)0x00(0x29)0x55(0x28)0x00(0x29)0x55(0x28)0x00(0x29)0x55(0x28)0x00(0x29)0x55(0x28)0x00(0x29)0x55(0x28)0x00(0x29)0x55(0x28)0x00(0x29)0x55(0x28)0x00(0x29)0x55(0x28)0x00(0x29)0x55(0x28)0x00(0x29)0x55(0x28)0x00(0x29)0x55(0x28)0x00(0x29)0x55(0x28)0x00(0x29)0x55(0x28)0x00(0x29)0x55(0x28)0x00(0x29)]
+[0x9C(0x28)0x00(0x29)]
+[0xC0(0x28)0x00(0x29)0x00(0x28)0x00(0x29)0x00(0x28)0x00(0x29)0x00(0x28)0x00(0x29)0x00(0x28)0x00(0x29)0x00(0x28)0x00(0x29)0x00(0x28)0x00(0x29)0x00(0x28)0x00(0x29)0x00(0x28)0x00(0x29)0x00(0x28)0x00(0x29)0x00(0x28)0x00(0x29)0x00(0x28)0x00(0x29)0x00(0x28)0x00(0x29)0x00(0x28)0x00(0x29)]
+</code></pre>
+
+<p>Is this the message? I&rsquo;m a hardware hacking noob. Criticism welcome.</p>
+
+<h2 id="things-to-discover">Things to Discover</h2>
+
+<ul>
+<li><p>Does the profanity filter get applied on sending, receiving, or both?</p></li>
+
+<li><p>How is the 10 character limit imposed? Could I buffer overrun it?</p></li>
+
+<li><p>There could be more uses for this if I could come up with a USB interface for one, and a high gain 2.4ghz antenna&hellip;</p></li>
+</ul>
+
+        </div>
+    </section>
+</article>
+
+
+
+    
+      <footer class="page-footer grey lighten-5">
+    <div class="row max-width">
+        <div class="col s12 l10 offset-l1 clear-padding">
+            <div class="row">
+    
+        
+    
+
+    
+    
+    <div class="col s12 l12">
+        <h5 class="black-text"></h5>
+<p class="grey-text text-darken-4"></p>
+
+    </div>
+
+    
+</div>
+
+
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="row max-width" style="width: 100%;">
+            <div class="col s12 l10 offset-l1">
+                <span class="grey-text text-darken-4"></span>
+<div class="right">
+    
+</div>
+            </div>
+        </div>
+    </div>
+</footer>
+    
+
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

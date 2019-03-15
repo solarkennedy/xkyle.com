@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sugru on xkyle.com</title>
+    <link>/categories/sugru/</link>
+    <description>Recent content in Sugru on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 08 Apr 2010 02:52:53 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/sugru/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to Fix a Power Plug with Sugru!</title>
+      <link>/how-to-fix-a-power-plug-with-sugru/</link>
+      <pubDate>Thu, 08 Apr 2010 02:52:53 +0000</pubDate>
+      
+      <guid>/how-to-fix-a-power-plug-with-sugru/</guid>
+      <description>I have a first generation Asus Eeepc, but the power plug is failing. All plugs do this eventually. Lots of tiny wires, bending back and forth all the time&amp;hellip; It just happens.
+So should I throw it away and buy a new one? No! It can be easily fixed. Here is what you need:
+ Soldering Iron + Solder Flux helps if you have it (If you have not soldered with flux, you are missing out big time) Heat shrink or electrical tape Sugru can add a nice touch  Start by using a sharp blade to cut off the plastic molding around the connector to expose the raw barrel connector and wires:</description>
+    </item>
+    
+  </channel>
+</rss>

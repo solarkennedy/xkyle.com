@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wifi on xkyle.com</title>
+    <link>/categories/wifi/</link>
+    <description>Recent content in Wifi on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jun 2009 08:00:51 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/wifi/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>My Wireless Cracking Tool</title>
+      <link>/my-wireless-cracking-tool/</link>
+      <pubDate>Mon, 01 Jun 2009 08:00:51 +0000</pubDate>
+      
+      <guid>/my-wireless-cracking-tool/</guid>
+      <description>I&amp;rsquo;ve become a semi-expert on wireless networking and their security features.. and how to get around them. Before I continue I want to emphasize:
+ The act of cracking encryption is not illegal just like picking a lock is not illegal. It is the unauthorized access of that network which is illegal, just like breaking and entering is illegal.
+ So. To sum it up, there are two types of encryption.</description>
+    </item>
+    
+  </channel>
+</rss>

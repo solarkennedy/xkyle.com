@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hardware on xkyle.com</title>
+    <link>/categories/hardware/</link>
+    <description>Recent content in Hardware on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 14 Mar 2013 04:08:20 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/hardware/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hacking a Hallmark Text Band: First Attempt</title>
+      <link>/hacking-a-hallmark-text-band-first-attempt/</link>
+      <pubDate>Thu, 14 Mar 2013 04:08:20 +0000</pubDate>
+      
+      <guid>/hacking-a-hallmark-text-band-first-attempt/</guid>
+      <description>The Hallmark Text Band is a strange thing:
+
+Doesn&amp;rsquo;t Hallmark know kids have cell phones now? Anyway, it is an extremely simple micro-controller driving a led matrix and a C-Max CMM-9201. You get 10 characters, and a small reed-switch? triggers a hardware interrupt, and broadcasts your 10 characters to a friend, and you swap messages. The devices holds 24 messages, FIFO. Memory is volatile. Profanity filter included.
+Oh well.</description>
+    </item>
+    
+    <item>
+      <title>Giving My WRT54GL a 2G Drive</title>
+      <link>/giving-my-wrt54gl-a-2g-drive/</link>
+      <pubDate>Sat, 06 Dec 2008 22:05:55 +0000</pubDate>
+      
+      <guid>/giving-my-wrt54gl-a-2g-drive/</guid>
+      <description>The WRT54GL is a pretty cool little toy. Yes it is a router with a cheezy web interface for grandmas with ESSID&amp;rsquo;s named &amp;ldquo;linksys&amp;rdquo;. But you can flash it with your own linux and solder in your own SD card to turn it from a 4MB machine to a 2GB machine&amp;hellip; far out!
+
+Above it the bare board that I&amp;rsquo;ve unscrewed out of the thing. Some solder + a card&amp;hellip;.</description>
+    </item>
+    
+    <item>
+      <title>New/Old Laptop: Ubuntu Montage </title>
+      <link>/newold-laptop-ubuntu-montage/</link>
+      <pubDate>Tue, 18 Nov 2008 01:20:49 +0000</pubDate>
+      
+      <guid>/newold-laptop-ubuntu-montage/</guid>
+      <description>You may remember my old laptop from such posts as this.
+Well it broke, so I bought another one!
+
+It even has the original stickers. But.. Its slower than I remember. So I&amp;rsquo;m trying out different Ubuntu versions to see what boots the fastest. Here are my methodology and results.
+Methodology: The first number is the ammount of seconds from the 0 in the grub countdown till the X in the initial X-server.</description>
+    </item>
+    
+    <item>
+      <title>Failing Hard Drives</title>
+      <link>/failing-hard-drives/</link>
+      <pubDate>Wed, 26 Mar 2008 14:14:12 +0000</pubDate>
+      
+      <guid>/failing-hard-drives/</guid>
+      <description>So lots of people use computers, and lots of people have harddrives.
+At my work I deal with lots and lots of computers and lots and lots of drives. So during a week I see plenty of failing drives, just because of the statistics.
+So now-a-days I run a &amp;ldquo;smart test&amp;rdquo; on the drive to see how it is. Unfortunately most drive testers and smart tests are crap. So I made my own and I want to share it with you&amp;hellip;.</description>
+    </item>
+    
+    <item>
+      <title>Putting the Clock Together</title>
+      <link>/putting-the-clock-together/</link>
+      <pubDate>Fri, 14 Dec 2007 14:22:12 +0000</pubDate>
+      
+      <guid>/putting-the-clock-together/</guid>
+      <description>We have finally built enough pieces of the clock together to get some digits! It basically comes down to a white wooden box, a piece of cardboard with the LEDs wired, running to a RJ45 jack. Then a stryofoam cutout painted black, with a white piece of paper and plexyglass on top for a face.
+Here is the template with wired LEDS: 
+A multitude of completed digits (still missing the blank faceplate).</description>
+    </item>
+    
+    <item>
+      <title>Clock Primer</title>
+      <link>/clock-primer/</link>
+      <pubDate>Wed, 02 May 2007 02:08:51 +0000</pubDate>
+      
+      <guid>/clock-primer/</guid>
+      <description>Here is the intro to the clock project:
+ We start with a template made at a sign shop, and the cover the edges with aluminum tape to protect them from the heat from the hot wire.
+ I&amp;rsquo;ve pushed out holes with a strait wire and a blow torch to give my entry points for my hot wires. Its going to be a plunge and cut job.
+ The laserpointer helps guide the hot wire because it inevitably bends and makes crooked cuts.</description>
+    </item>
+    
+  </channel>
+</rss>

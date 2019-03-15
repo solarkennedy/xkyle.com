@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="Compact Flash Replacement" />
+<meta property="og:description" content="My laptop is a Sharp MM20, which I knew I was going to spraypaint eventually, I just needed a reason to. After about a year of wear and scratches from abuse, it was time.
+I&rsquo;m replacing the harddrive in my laptop with a 4GB flash card. It should be faster:
+/dev/sdb: Timing cached reads: 3532 MB in 2.00 seconds = 1766.79 MB/sec Timing buffered disk reads: 58 MB in 3.10 seconds = 18." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/compact-flash-replacement/" /><meta property="article:published_time" content="2007-01-20T16:38:32&#43;00:00"/>
+<meta property="article:modified_time" content="2007-01-20T16:38:32&#43;00:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Compact Flash Replacement"/>
+<meta name="twitter:description" content="My laptop is a Sharp MM20, which I knew I was going to spraypaint eventually, I just needed a reason to. After about a year of wear and scratches from abuse, it was time.
+I&rsquo;m replacing the harddrive in my laptop with a 4GB flash card. It should be faster:
+/dev/sdb: Timing cached reads: 3532 MB in 2.00 seconds = 1766.79 MB/sec Timing buffered disk reads: 58 MB in 3.10 seconds = 18."/>
+
+
+    <meta name="description" content="">
+    <link rel="canonical" href="../compact-flash-replacement/">
+
+    
+    <title>Compact Flash Replacement &middot; xkyle.com</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <link href="css/style.css" rel="stylesheet">
+
+    
+
+    
+
+    
+  </head>
+  <body>
+    
+      
+
+
+
+<nav class="white" role="navigation">
+    <div class="row max-width">
+        <div class="col s12 l10 offset-l1">
+            
+            <a href="#" data-activates="nav-mobile" class="button-collapse black-text">
+                <i class="material-icons">menu</i>
+            </a>
+
+            
+            <ul id="nav-mobile" class="side-nav">
+                
+                
+    
+    
+
+            </ul>
+
+            
+            <a href="../" class="brand-logo grey-text text-darken-3">xkyle.com</a>
+
+            
+            <div class="nav-wrapper">
+
+                
+                <ul class="right hide-on-med-and-down">
+                    
+                    
+    
+    
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</nav>
+    
+
+    
+
+<article class="max-width">
+    
+    <section class="row">
+        <div class="col s12 m10 offset-m1 l10 offset-l1">
+            <h1>Compact Flash Replacement</h1>
+        </div>
+    </section>
+
+    
+    
+
+    
+    <section class="row">
+        <div class="col s12 m8 offset-m2 l2 offset-l1">
+            
+
+<p class="article-meta">
+    <div class="article-meta-container">
+        <div class="article-meta-author-name">admin</div>
+        <div class="article-meta-description"></div>
+    </div>
+    <span class="article-meta-published-at grey-text text-darken-1">Jan 20, 2007</span>
+</p>
+        </div>
+        <div class="col s12 m8 offset-m2 l6">
+            <p>My laptop is a Sharp MM20, which I knew I was going to spraypaint eventually, I just needed a reason to. After about a year of wear and scratches from abuse, it was time.</p>
+
+<p>I&rsquo;m replacing the harddrive in my laptop with a 4GB flash card.
+It should be faster:</p>
+
+<p>/dev/sdb:
+Timing cached reads:   3532 MB in  2.00 seconds = 1766.79 MB/sec
+Timing buffered disk reads:   58 MB in  3.10 seconds =  18.69 MB/sec
+root@kyle-desktop:~# hdparm -tT /dev/sda</p>
+
+<p>/dev/sda:
+Timing cached reads:   3532 MB in  2.00 seconds = 1766.13 MB/sec
+Timing buffered disk reads:   78 MB in  3.04 seconds =  25.67 MB/sec</p>
+
+<p>Pros: Faster seeks and sustained I/O. Lifetime Warranty.
+Cons: Expensive. 25% Disk Space. Bad blocks over time.</p>
+
+<p>So lets do it! I started with instructions from <a href="http://www.evilblobbie.com/mm20.php">this guy.</a></p>
+
+<p>First step, disassembling the laptop:
+<a href="../uploads/dcam0093.JPG"><img src="../uploads/dcam0093.thumbnail.JPG" alt="Opened up" /></a><a href="../uploads/dcam0100.JPG"><img src="../uploads/dcam0100.thumbnail.JPG" alt="Antenna" /></a><a href="../uploads/dcam0098.JPG"><img src="../uploads/dcam0098.thumbnail.JPG" alt="Drive" /></a>
+You can see that this is not a normal size laptop hard drive. This is a 1.8&rdquo; drive. So I bought this card and a cheap laptop IDE to flash converter off of ebay. (Sorry I don&rsquo;t have a picture.)</p>
+
+<p>We used containers with numbers and a legend to keep track of small screws and parts. When we were done, these were left over:
+<a href="../uploads/dcam0106.JPG"><img src="../uploads/dcam0106.thumbnail.JPG" alt="Leftovers" /></a>
+(Don&rsquo;t ask me whats in compartment 8, I really don&rsquo;t know what it goes to. But there is the leftover drive and screws)</p>
+
+<p>Second step,  spray paint it! Oh, and don&rsquo;t forget to put in the flash card when you put it back together.
+<a href="../uploads/dcam0118.JPG"><img src="../uploads/dcam0118.thumbnail.JPG" alt="Closed1" /></a><a href="../uploads/dcam0108.JPG"><img src="../uploads/dcam0108.thumbnail.JPG" alt="Finished1" /></a>
+Can you spot the laptop?
+<a href="../uploads/dcam0119.JPG"><img src="../uploads/dcam0119.thumbnail.JPG" alt="Woods1" /></a><a href="../uploads/dcam0120.JPG"><img src="../uploads/dcam0120.thumbnail.JPG" alt="Woods2" /></a></p>
+
+<p>Of course, with only a 4GB drive, I will be running my favorite operating system of course, <a href="http://www.ubuntu.com">Ubuntu</a>!</p>
+
+<p><a href="../uploads/screenshot.png"><img src="../uploads/screenshot.thumbnail.png" alt="Screenshot" /></a></p>
+
+<p>And the obligatory screen shot!</p>
+
+<p>Want more? <a href="../other/laptopproject.zip">Click here to download every picture we took.</a>
+Closing thoughts:
+I&rsquo;m extremely impressed. The camo-finish is beautiful and feels great thanks to the clear coat. Nothing broke, and everything went back together correctly thanks to good documentation and pictures for reference. If you have any questions about what I did, post a comment and I&rsquo;ll come back and answer them.</p>
+
+        </div>
+    </section>
+</article>
+
+
+
+    
+      <footer class="page-footer grey lighten-5">
+    <div class="row max-width">
+        <div class="col s12 l10 offset-l1 clear-padding">
+            <div class="row">
+    
+        
+    
+
+    
+    
+    <div class="col s12 l12">
+        <h5 class="black-text"></h5>
+<p class="grey-text text-darken-4"></p>
+
+    </div>
+
+    
+</div>
+
+
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="row max-width" style="width: 100%;">
+            <div class="col s12 l10 offset-l1">
+                <span class="grey-text text-darken-4"></span>
+<div class="right">
+    
+</div>
+            </div>
+        </div>
+    </div>
+</footer>
+    
+
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

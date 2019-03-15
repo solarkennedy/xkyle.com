@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wiki on xkyle.com</title>
+    <link>/categories/wiki/</link>
+    <description>Recent content in Wiki on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 16 Nov 2008 18:51:02 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/wiki/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Its a Wiki-Wiki-World</title>
+      <link>/its-a-wiki-wiki-world/</link>
+      <pubDate>Sun, 16 Nov 2008 18:51:02 +0000</pubDate>
+      
+      <guid>/its-a-wiki-wiki-world/</guid>
+      <description>You may not know, but I used to work for Wikipedia! (here if you don&amp;rsquo;t believe me)
+You also may not know that all Wikimedia Foundation projects (like Wikipedia) run off of a opensource piece of software called Mediawiki.
+The software is the bomb, and I&amp;rsquo;ve had my own for a number of years to keep track of my own project documentation (like a notebook.) But I&amp;rsquo;ve never made it public.</description>
+    </item>
+    
+    <item>
+      <title>Great American Teach In - Wikipedia</title>
+      <link>/great-american-teach-in-wikipedia/</link>
+      <pubDate>Thu, 15 Nov 2007 22:07:44 +0000</pubDate>
+      
+      <guid>/great-american-teach-in-wikipedia/</guid>
+      <description>This is a video that I made for some fourth graders in an attempt to explain what Wikipedia is, how it works, and why it is neat. We made a new article together, and they all went home with a piece of fiber optic to remind them of the event. This is the video I showed them for historical purposes:
+Get the Flash Player to see this player.</description>
+    </item>
+    
+  </channel>
+</rss>

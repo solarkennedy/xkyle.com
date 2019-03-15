@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="Configuring BIOS Settings With Puppet!" />
+<meta property="og:description" content="You know what it is like to spend time configuring the BIOS on a a server. You reboot the server, and wait for it to take its sweet time to come back up, frantically push its button, hope that you didn&rsquo;t miss your chance. Then spend some one-on-one alone time with the interface, making sure you do all the right keystrokes to get the settings you want. Sounds like a bad date." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/configuring-bios-settings-with-puppet/" /><meta property="article:published_time" content="2013-02-12T03:35:01&#43;00:00"/>
+<meta property="article:modified_time" content="2013-02-12T03:35:01&#43;00:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Configuring BIOS Settings With Puppet!"/>
+<meta name="twitter:description" content="You know what it is like to spend time configuring the BIOS on a a server. You reboot the server, and wait for it to take its sweet time to come back up, frantically push its button, hope that you didn&rsquo;t miss your chance. Then spend some one-on-one alone time with the interface, making sure you do all the right keystrokes to get the settings you want. Sounds like a bad date."/>
+
+
+    <meta name="description" content="">
+    <link rel="canonical" href="../configuring-bios-settings-with-puppet/">
+
+    
+    <title>Configuring BIOS Settings With Puppet! &middot; xkyle.com</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <link href="css/style.css" rel="stylesheet">
+
+    
+
+    
+
+    
+  </head>
+  <body>
+    
+      
+
+
+
+<nav class="white" role="navigation">
+    <div class="row max-width">
+        <div class="col s12 l10 offset-l1">
+            
+            <a href="#" data-activates="nav-mobile" class="button-collapse black-text">
+                <i class="material-icons">menu</i>
+            </a>
+
+            
+            <ul id="nav-mobile" class="side-nav">
+                
+                
+    
+    
+
+            </ul>
+
+            
+            <a href="../" class="brand-logo grey-text text-darken-3">xkyle.com</a>
+
+            
+            <div class="nav-wrapper">
+
+                
+                <ul class="right hide-on-med-and-down">
+                    
+                    
+    
+    
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</nav>
+    
+
+    
+
+<article class="max-width">
+    
+    <section class="row">
+        <div class="col s12 m10 offset-m1 l10 offset-l1">
+            <h1>Configuring BIOS Settings With Puppet!</h1>
+        </div>
+    </section>
+
+    
+    
+
+    
+    <section class="row">
+        <div class="col s12 m8 offset-m2 l2 offset-l1">
+            
+
+<p class="article-meta">
+    <div class="article-meta-container">
+        <div class="article-meta-author-name">admin</div>
+        <div class="article-meta-description"></div>
+    </div>
+    <span class="article-meta-published-at grey-text text-darken-1">Feb 12, 2013</span>
+</p>
+        </div>
+        <div class="col s12 m8 offset-m2 l6">
+            
+
+<p>You know what it is like to spend time configuring the BIOS on a a server. You reboot the server, and wait for it to take its sweet time to come back up, frantically push its button, hope that you didn&rsquo;t miss your chance. Then spend some one-on-one alone time with the interface, making sure you do all the right keystrokes to get the settings you want. Sounds like a bad date.</p>
+
+<h2 id="the-problem">The Problem</h2>
+
+<p>If you are good then you don&rsquo;t play the waiting game:</p>
+
+<pre><code>[root@server ~]$ ipmitool -H 192.168.0.120 -U root -P root  chassis bootparam set bootflag force_bios
+Set Boot Device to force_bios
+[root@server ~]$ ipmitool -H 192.168.0.120 -U root -P root chassis power reset
+Chassis Power Control: Reset
+</code></pre>
+
+<p>But even still, this doesn&rsquo;t get you around having to manually choose the bios settings you want. Human interaction leads to mistakes, and more importantly, servers are <strong>NOT</strong> snowflakes:
+<a href="../uploads/bios-meme.jpg"><img src="../uploads/bios-meme.jpg" alt="bios-meme" /></a></p>
+
+<h2 id="the-solution">The Solution</h2>
+
+<p>Configuration Management = The Solution. I use puppet. Here is how I manage my BIOS settings with Puppet.
+However, the underlying tools are very vendor specific:</p>
+
+<ul>
+<li><p>Intel Servers / Motherboards: <a href="http://downloadcenter.intel.com/Detail_Desc.aspx?DwnldID=16921">syscfg</a></p></li>
+
+<li><p>Dell C-class Servers: <a href="http://poweredgec.com/files/">setupbios</a></p></li>
+
+<li><p>HP Proliant Servers: <a href="http://h18004.www1.hp.com/products/servers/management/toolkit/stk/index.html">conrep</a></p></li>
+</ul>
+
+<p>I&rsquo;m not releasing my module yet due to IP junk, but here is the general overview to get you going for your particular needs:</p>
+
+<pre><code>class bios::setting::turbo($enable=true) {
+ case $enable {
+   true, '1', 'enable','on', 'true': { $set_value=1 $expect_value='Enabled' }
+   false, '0', 'disable', 'off', 'false': { $set_value=0 $expect_value='Disabled' }
+ }
+ exec { &quot;$bios::syscfg_command /bcs 'Processor Configuration' 'Intel(R) Turbo Boost Technology' $set_value&quot;:
+   unless =&gt; &quot;$bios::syscfg_command /d biossettings 'Intel(R) Turbo Boost Technology' | grep 'Current Value' | grep $expect_value&quot;,
+   provider =&gt; [ shell =&gt; 'sh' ]
+ }
+}
+</code></pre>
+
+<p>This is just a skeleton example. I have to leave the installation of your vendor-specific tool as an exercise to the reader. For example here would be the same function for a Dell server:</p>
+
+<pre><code>case $enable {
+  true, '1', 'enable','on', 'true':      { $set_value='enabled'  }
+  false, '0', 'disable', 'off', 'false': { $set_value='disabled' }
+}
+exec { &quot;$bios::setupbios_command setting set turbo_mode $set_value&quot;:
+  unless =&gt; &quot;$bios::setupbios_command setting get turbo_mode | grep $set_value&quot;,
+  provider =&gt; [ shell =&gt; 'sh' ]
+}
+</code></pre>
+
+<p>You are only limited by your Imagination&hellip; and whatever BIOS settings your vendor tool exports.</p>
+
+<p>References:</p>
+
+<ul>
+<li><p><a href="https://wiki.xkyle.com/Configuing_BIOS_From_Linux">Personal wiki on vendor tools</a></p></li>
+
+<li><p><a href="http://docs.puppetlabs.com/guides/parameterized_classes.html">Puppet parameterized classes</a></p></li>
+</ul>
+
+        </div>
+    </section>
+</article>
+
+
+
+    
+      <footer class="page-footer grey lighten-5">
+    <div class="row max-width">
+        <div class="col s12 l10 offset-l1 clear-padding">
+            <div class="row">
+    
+        
+    
+
+    
+    
+    <div class="col s12 l12">
+        <h5 class="black-text"></h5>
+<p class="grey-text text-darken-4"></p>
+
+    </div>
+
+    
+</div>
+
+
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="row max-width" style="width: 100%;">
+            <div class="col s12 l10 offset-l1">
+                <span class="grey-text text-darken-4"></span>
+<div class="right">
+    
+</div>
+            </div>
+        </div>
+    </div>
+</footer>
+    
+
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

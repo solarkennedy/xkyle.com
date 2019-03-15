@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Uav on xkyle.com</title>
+    <link>/categories/uav/</link>
+    <description>Recent content in Uav on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 18 Apr 2010 03:50:33 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/uav/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Sparkfun&#39;s Autonomous Vehicle Competition</title>
+      <link>/sparkfuns-autonomous-vehicle-competition/</link>
+      <pubDate>Sun, 18 Apr 2010 03:50:33 +0000</pubDate>
+      
+      <guid>/sparkfuns-autonomous-vehicle-competition/</guid>
+      <description>The Sparkfun Autonomous Vehicle Competition (AVC) was a smash! You can watch some footage of the event at Sparkfun&amp;rsquo;s Ustream page.
+Here is what the starting / finishing line looked like:
+
+And some judges on the roof watching to make sure the Flying robots do not cut corners.
+[](/uploads/startingline.jpg)
+I was very impressed by the UAVs (unmanned aerial vehicles). Most of them were able to complete the course in record time.</description>
+    </item>
+    
+    <item>
+      <title>Sugru Covered Joysticks</title>
+      <link>/sugru-covered-joystick/</link>
+      <pubDate>Thu, 25 Feb 2010 03:30:06 +0000</pubDate>
+      
+      <guid>/sugru-covered-joystick/</guid>
+      <description>A shout out and big thanks to my friend DangerJim who gave me some sugru to help coat the joysticks of my RC trainsmitter so they don&amp;rsquo;t hurt my thumbs. The results look pretty nice:</description>
+    </item>
+    
+    <item>
+      <title>DIYDrone: IMU First steps</title>
+      <link>/diydrone-imu-first-steps/</link>
+      <pubDate>Fri, 15 Jan 2010 16:45:54 +0000</pubDate>
+      
+      <guid>/diydrone-imu-first-steps/</guid>
+      <description>This is my first step towards building a UAV, it is a Inertial Measurement Unit.</description>
+    </item>
+    
+  </channel>
+</rss>

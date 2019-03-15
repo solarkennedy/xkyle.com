@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bus Pirate on xkyle.com</title>
+    <link>/categories/bus-pirate/</link>
+    <description>Recent content in Bus Pirate on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 14 Mar 2013 04:08:20 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/bus-pirate/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hacking a Hallmark Text Band: First Attempt</title>
+      <link>/hacking-a-hallmark-text-band-first-attempt/</link>
+      <pubDate>Thu, 14 Mar 2013 04:08:20 +0000</pubDate>
+      
+      <guid>/hacking-a-hallmark-text-band-first-attempt/</guid>
+      <description>The Hallmark Text Band is a strange thing:
+
+Doesn&amp;rsquo;t Hallmark know kids have cell phones now? Anyway, it is an extremely simple micro-controller driving a led matrix and a C-Max CMM-9201. You get 10 characters, and a small reed-switch? triggers a hardware interrupt, and broadcasts your 10 characters to a friend, and you swap messages. The devices holds 24 messages, FIFO. Memory is volatile. Profanity filter included.
+Oh well.</description>
+    </item>
+    
+  </channel>
+</rss>

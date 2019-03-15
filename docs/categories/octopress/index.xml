@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Octopress on xkyle.com</title>
+    <link>/categories/octopress/</link>
+    <description>Recent content in Octopress on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 Dec 2013 21:40:42 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/octopress/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Saying Goodbye to Wordpress</title>
+      <link>/Saying-Goodbye-to-Wordpress/</link>
+      <pubDate>Sun, 01 Dec 2013 21:40:42 +0000</pubDate>
+      
+      <guid>/Saying-Goodbye-to-Wordpress/</guid>
+      <description>It&amp;rsquo;s Been a Great Ride There is no doubt that Wordpress is a great piece of software. As much as people love to hate on PHP, it runs a lot of the internet.
+I&amp;rsquo;ve been running Wordpress personally and professionally for years. It only gets better. I was only hacked once :)
+Rethinking What I Need Since moving to a Low End Box, my resources have been tight. Even on a tuned system, I can&amp;rsquo;t run much more interesting things than my Nginx+PHPfpm+MySQL.</description>
+    </item>
+    
+  </channel>
+</rss>

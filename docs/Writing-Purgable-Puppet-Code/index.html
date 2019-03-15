@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="Writing Purgable Puppet Code" />
+<meta property="og:description" content="Whenever possible, I try to write Puppet code that is purgable and &ldquo;Comment Safe&rdquo;. That is not a very good description. What I mean is, Puppet code that removes resources from a system when the corresponding Puppet code is &ldquo;Commented&rdquo; out of a manifest. Lets look at a few examples.
+Example: Managed Sudo Lets say you used this popular sudo module with the following params:
+class { &#39;sudo&#39;: purge =&gt; true, }  Great start." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/Writing-Purgable-Puppet-Code/" /><meta property="article:published_time" content="2014-01-29T05:33:58&#43;00:00"/>
+<meta property="article:modified_time" content="2014-01-29T05:33:58&#43;00:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Writing Purgable Puppet Code"/>
+<meta name="twitter:description" content="Whenever possible, I try to write Puppet code that is purgable and &ldquo;Comment Safe&rdquo;. That is not a very good description. What I mean is, Puppet code that removes resources from a system when the corresponding Puppet code is &ldquo;Commented&rdquo; out of a manifest. Lets look at a few examples.
+Example: Managed Sudo Lets say you used this popular sudo module with the following params:
+class { &#39;sudo&#39;: purge =&gt; true, }  Great start."/>
+
+
+    <meta name="description" content="">
+    <link rel="canonical" href="../Writing-Purgable-Puppet-Code/">
+
+    
+    <title>Writing Purgable Puppet Code &middot; xkyle.com</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <link href="css/style.css" rel="stylesheet">
+
+    
+
+    
+
+    
+  </head>
+  <body>
+    
+      
+
+
+
+<nav class="white" role="navigation">
+    <div class="row max-width">
+        <div class="col s12 l10 offset-l1">
+            
+            <a href="#" data-activates="nav-mobile" class="button-collapse black-text">
+                <i class="material-icons">menu</i>
+            </a>
+
+            
+            <ul id="nav-mobile" class="side-nav">
+                
+                
+    
+    
+
+            </ul>
+
+            
+            <a href="../" class="brand-logo grey-text text-darken-3">xkyle.com</a>
+
+            
+            <div class="nav-wrapper">
+
+                
+                <ul class="right hide-on-med-and-down">
+                    
+                    
+    
+    
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</nav>
+    
+
+    
+
+<article class="max-width">
+    
+    <section class="row">
+        <div class="col s12 m10 offset-m1 l10 offset-l1">
+            <h1>Writing Purgable Puppet Code</h1>
+        </div>
+    </section>
+
+    
+    
+
+    
+    <section class="row">
+        <div class="col s12 m8 offset-m2 l2 offset-l1">
+            
+
+<p class="article-meta">
+    <div class="article-meta-container">
+        <div class="article-meta-author-name"></div>
+        <div class="article-meta-description"></div>
+    </div>
+    <span class="article-meta-published-at grey-text text-darken-1">Jan 29, 2014</span>
+</p>
+        </div>
+        <div class="col s12 m8 offset-m2 l6">
+            
+
+<p>Whenever possible, I try to write Puppet code that is purgable and
+&ldquo;Comment Safe&rdquo;. That is not a very good description. What I mean is, Puppet
+code that removes resources from a system when the corresponding Puppet
+code is &ldquo;Commented&rdquo; out of a manifest. Lets look at a few examples.</p>
+
+<h3 id="example-managed-sudo">Example: Managed Sudo</h3>
+
+<p>Lets say you used this <a href="https://forge.puppetlabs.com/saz/sudo">popular sudo module</a>
+with the following params:</p>
+
+<pre><code class="language-ruby">class { 'sudo':
+  purge =&gt; true,
+}
+</code></pre>
+
+<p>Great start. All future <code>sudo::conf</code> blocks you write will <em>automatically</em> disappear
+from the host:</p>
+
+<pre><code class="language-ruby">sudo::conf { 'web':
+   source =&gt; 'puppet:///files/etc/sudoers.d/web',
+ }
+ 
+# Commenting out for now. Automatically is purged from the server
+# sudo::conf { 'admins':
+#   priority =&gt; 10,
+#   content  =&gt; &quot;%admins ALL=(ALL) NOPASSWD: ALL&quot;,
+# }
+</code></pre>
+
+<p>Good stuff. Do this.</p>
+
+<h3 id="example-managed-firewall">Example: Managed Firewall</h3>
+
+<p>How about another example with the
+<a href="https://forge.puppetlabs.com/puppetlabs/firewall">Puppetlabs Firewall module</a>?</p>
+
+<pre><code class="language-ruby"># Automatically remove rules that are not declared
+resources { &quot;firewall&quot;:
+  purge =&gt; true
+} 
+
+# Production needs 111 open
+firewall { '111 open port 111':
+  dport =&gt; 111
+}
+# Tried this but didn't work. Commenting out for now
+# Automatically removed from the server when I commented it out
+# firewall { '112 open port 112':
+#   dport =&gt; 112
+# }
+</code></pre>
+
+<h3 id="the-point">The Point?</h3>
+
+<p>The point here is that we should encourage a culture of purging. Having
+resources get automatically purged when you comment them out from puppet
+is great.</p>
+
+<p>Of course, this is obsoleted in the short-lived world of docker or possibly
+Amazon EC2. But for those engineers who work on long lived servers, this
+prevents cruft.</p>
+
+<h3 id="going-further-purging-packages">Going Further: Purging Packages</h3>
+
+<p>I want to purge packages. If someone installs a package not controlled by
+Puppet, I want puppet to purge it. Crazy I know.</p>
+
+<pre><code class="language-ruby">package { 'apache': ensure =&gt; installed }
+
+# No longer using php
+# But puppet leaves this behind!
+# package { 'php5': ensure =&gt; installed }
+</code></pre>
+
+<p>Of course puppet will leave the package behind. I should be doing <code>ensure =&gt; purged</code>
+right?</p>
+
+<p>But what if the package is deep within nested classes or simply manually installed?</p>
+
+<p>Some day I would like to get to the point where I at least get notified when
+puppet detects packages that don&rsquo;t need to be there. I&rsquo;m open to suggestions on
+how to do this.</p>
+
+<h3 id="going-further-purging-etc">Going Further: Purging /etc/</h3>
+
+<p>Most of the time stale configuration leftover in /etc/ causes no harm.</p>
+
+<p>But what about cron jobs in <code>/etc/cron.d</code>? I would love to purge them, but there
+are non-puppet controlled things installed by system packages. If <em>everything</em> was
+a puppet module this could eventually be achieved, but it would be too hard
+to keep in sync with upstream package changes.</p>
+
+<p>Purgin on a per-app basis with things like <a href="https://github.com/sensu/sensu-puppet">sensu</a>,
+<a href="https://forge.puppetlabs.com/puppetlabs/apache">apache</a>, and <a href="https://forge.puppetlabs.com/saz/sudo">sudo</a>
+are a great start.</p>
+
+<h3 id="crossing-the-line-purging-var-lib-mysql">Crossing the Line: Purging /var/lib/mysql</h3>
+
+<p>Seems like if you asked puppet to install mysql databases, and then
+commented them out, you would <em>not</em> want puppet to purge them.</p>
+
+<p>The subtle difference here might be the difference between <strong>configuration</strong> and
+<strong>data</strong>.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>Whenever possible I try to <code>purge =&gt; true</code> on whatever I can. I would like to see
+this as the <strong>default</strong> in new puppet modules.</p>
+
+<p>Someday I would like us to purge more than just files and iptables rules.</p>
+
+        </div>
+    </section>
+</article>
+
+
+
+    
+      <footer class="page-footer grey lighten-5">
+    <div class="row max-width">
+        <div class="col s12 l10 offset-l1 clear-padding">
+            <div class="row">
+    
+        
+    
+
+    
+    
+    <div class="col s12 l12">
+        <h5 class="black-text"></h5>
+<p class="grey-text text-darken-4"></p>
+
+    </div>
+
+    
+</div>
+
+
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="row max-width" style="width: 100%;">
+            <div class="col s12 l10 offset-l1">
+                <span class="grey-text text-darken-4"></span>
+<div class="right">
+    
+</div>
+            </div>
+        </div>
+    </div>
+</footer>
+    
+
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

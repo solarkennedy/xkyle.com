@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sparkfun on xkyle.com</title>
+    <link>/categories/sparkfun/</link>
+    <description>Recent content in Sparkfun on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 18 Apr 2010 03:50:33 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/sparkfun/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Sparkfun&#39;s Autonomous Vehicle Competition</title>
+      <link>/sparkfuns-autonomous-vehicle-competition/</link>
+      <pubDate>Sun, 18 Apr 2010 03:50:33 +0000</pubDate>
+      
+      <guid>/sparkfuns-autonomous-vehicle-competition/</guid>
+      <description>The Sparkfun Autonomous Vehicle Competition (AVC) was a smash! You can watch some footage of the event at Sparkfun&amp;rsquo;s Ustream page.
+Here is what the starting / finishing line looked like:
+
+And some judges on the roof watching to make sure the Flying robots do not cut corners.
+[](/uploads/startingline.jpg)
+I was very impressed by the UAVs (unmanned aerial vehicles). Most of them were able to complete the course in record time.</description>
+    </item>
+    
+  </channel>
+</rss>

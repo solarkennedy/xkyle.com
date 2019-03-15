@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="Build Systems out of Poured Concrete, not Bricks" />
+<meta property="og:description" content="Personally, I don&rsquo;t have any kind of battle-hardened wisdom. Most of what I know comes from the wisdom of others. In particular I would like to acknowledge the real geniuses up front:
+ My First Petabyte: Now What? (Jacob Farmer from Cambridge Computer)
+ Google Platforms Rant (Steve Yegge of Google)
+ http://perspectives.mvdirona.com/ (James Hamilton of Amazon)
+ Ted Dzuiba
+ Tons of blogs posts, LISA talks, that I can&rsquo;t site specifically." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/build-systems-out-of-poured-concrete-not-bricks/" /><meta property="article:published_time" content="2012-06-24T17:05:04&#43;00:00"/>
+<meta property="article:modified_time" content="2012-06-24T17:05:04&#43;00:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Build Systems out of Poured Concrete, not Bricks"/>
+<meta name="twitter:description" content="Personally, I don&rsquo;t have any kind of battle-hardened wisdom. Most of what I know comes from the wisdom of others. In particular I would like to acknowledge the real geniuses up front:
+ My First Petabyte: Now What? (Jacob Farmer from Cambridge Computer)
+ Google Platforms Rant (Steve Yegge of Google)
+ http://perspectives.mvdirona.com/ (James Hamilton of Amazon)
+ Ted Dzuiba
+ Tons of blogs posts, LISA talks, that I can&rsquo;t site specifically."/>
+
+
+    <meta name="description" content="">
+    <link rel="canonical" href="../build-systems-out-of-poured-concrete-not-bricks/">
+
+    
+    <title>Build Systems out of Poured Concrete, not Bricks &middot; xkyle.com</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <link href="css/style.css" rel="stylesheet">
+
+    
+
+    
+
+    
+  </head>
+  <body>
+    
+      
+
+
+
+<nav class="white" role="navigation">
+    <div class="row max-width">
+        <div class="col s12 l10 offset-l1">
+            
+            <a href="#" data-activates="nav-mobile" class="button-collapse black-text">
+                <i class="material-icons">menu</i>
+            </a>
+
+            
+            <ul id="nav-mobile" class="side-nav">
+                
+                
+    
+    
+
+            </ul>
+
+            
+            <a href="../" class="brand-logo grey-text text-darken-3">xkyle.com</a>
+
+            
+            <div class="nav-wrapper">
+
+                
+                <ul class="right hide-on-med-and-down">
+                    
+                    
+    
+    
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</nav>
+    
+
+    
+
+<article class="max-width">
+    
+    <section class="row">
+        <div class="col s12 m10 offset-m1 l10 offset-l1">
+            <h1>Build Systems out of Poured Concrete, not Bricks</h1>
+        </div>
+    </section>
+
+    
+    
+
+    
+    <section class="row">
+        <div class="col s12 m8 offset-m2 l2 offset-l1">
+            
+
+<p class="article-meta">
+    <div class="article-meta-container">
+        <div class="article-meta-author-name">admin</div>
+        <div class="article-meta-description"></div>
+    </div>
+    <span class="article-meta-published-at grey-text text-darken-1">Jun 24, 2012</span>
+</p>
+        </div>
+        <div class="col s12 m8 offset-m2 l6">
+            
+
+<p>Personally, I don&rsquo;t have any kind of battle-hardened wisdom. Most of what I know comes from the wisdom of others. In particular I would like to acknowledge the real geniuses up front:</p>
+
+<ul>
+<li><p><a href="http://www.youtube.com/watch?v=Eu430bqbK5w">My First Petabyte: Now What?</a> (<a href="http://www.cambridgecomputer.com/management.cfm">Jacob Farmer</a> from <a href="http://www.cambridgecomputer.com">Cambridge Computer</a>)</p></li>
+
+<li><p><a href="https://plus.google.com/112678702228711889851/posts/eVeouesvaVX">Google Platforms Rant</a> (<a href="https://plus.google.com/110981030061712822816/posts">Steve Yegge</a> of Google)</p></li>
+
+<li><p><a href="http://perspectives.mvdirona.com/">http://perspectives.mvdirona.com/</a> (<a href="http://perspectives.mvdirona.com/">James Hamilton</a> of Amazon)</p></li>
+
+<li><p><a href="https://github.com/teddziuba/teddziuba.github.com">Ted Dzuiba</a></p></li>
+
+<li><p>Tons of blogs posts, LISA talks, that I can&rsquo;t site specifically.</p></li>
+
+<li><p>Seriously, we are all a product of the RSS feeds we read?</p></li>
+</ul>
+
+<p>I&rsquo;m not saying <a href="https://www.networkworld.com/news/2008/010908-carr-wrong.html">IT is dead</a>. But IT is changing.</p>
+
+<p>Look at how building houses has changed over time:
+<a href="../uploads/brick.jpg"><img src="../uploads/brick.jpg" alt="" /></a><a href="../uploads/cinderblock.jpg"><img src="../uploads/cinderblock.jpg" alt="" /></a><a href="../uploads/concrete.jpg"><img src="../uploads/concrete-1024x731.jpg" alt="" /></a><a href="../uploads/Prefabricated_house_construction.jpg"><img src="../uploads/Prefabricated_house_construction-300x225.jpg" alt="" /></a></p>
+
+<ul>
+<li><p>Brick - small pieces, one at a time</p></li>
+
+<li><p>Cinder Block - Big pieces, one at a time</p></li>
+
+<li><p><strong>Poured Concrete - continuous pieces, poured continuously</strong></p></li>
+
+<li><p><strong>Prefab Houses - one house at a time?</strong></p></li>
+</ul>
+
+<blockquote>
+<p>I don&rsquo;t have book to sell, I have a job to do. That job it to help build systems, and I will <strong>not</strong> be doing it one at a time.</p>
+</blockquote>
+
+<p>You might think that I&rsquo;m talking about &ldquo;The Cloud&rdquo;. Well, I don&rsquo;t know what you are talking about. You might think I&rsquo;m talking about things like Amazon&rsquo;s EC2. While that is part of the puzzle, Amazon is just making it easier for us to rent bricks from them. <a href="https://aws.amazon.com/dynamodb/">Amazon DynamoDB</a> however is more like poured concrete&hellip;</p>
+
+<p>In the end, there is so much work to be done on internal stuff. Like it or not, lots and lots of computing just can&rsquo;t be run on public infrastructure. (Utility Computing?) For that, we need private infrastructure. A &ldquo;Private Cloud&rdquo; you might say? Yes, but that is only the beginning of the story.  It is certainly a good start: get really good a supplying bricks. (Or prefab houses)</p>
+
+<p>The rest of the infrastructure story (I believe) has to do with simplifying and unifying our bricks, or concrete. It is not enough to be able to spin up VM&rsquo;s on demand. A big scalable SAN is not enough. Who cares how fast you can provision, what is it that you are provisioning?</p>
+
+<p>Here is what we need to make it happen:</p>
+
+<h2 id="1-blur-the-lines-of-storage-compute-networking">1. Blur the lines of Storage / Compute / Networking</h2>
+
+<p>You system engineers should be <a href="http://puppetlabs.com/blog/puppet-network-device-management/">configuring your networking</a>. Your network should be <a href="https://en.wikipedia.org/wiki/Software_Defined_Networking">configuring itself</a>. The Storage should not just be salable, but agile and dynamic. The data should migrate to where it can be served the most efficiently. IaaS can enable this to happen as the apps are abstracted from the hardware. <em>Imagine a setup where every server node has internal SSDs and an agile filesystem automatically moves the most requested objects to its local storage (for the lowest latency)</em>.</p>
+
+<h2 id="2-devops">2. Devops</h2>
+
+<p>Destroy the Silos! There should be no difference between development and ops. Make your developers keep their apps running. This gives them an incentive to build them better. The trick is of course to have the infrastructure in place for them to use. <em>Imagine a place where Developers own the end-to-end lifecycle of their application</em>.</p>
+
+<h2 id="3-forward-thinking-business-people">3. Forward thinking business-people</h2>
+
+<p>&ldquo;IT&rdquo; provides a huge competitive advantage for business, even more than it has in the past. There is no industry where IT is not a critical business component. Evolving IT helps lift up everything. <em>Imagine a world where the CTO can see the vision and imagine how cutting edge infrastructure provides real value to the business</em>.</p>
+
+<h2 id="4-apps-that-assume-they-are-distributed">4. Apps that assume they are distributed</h2>
+
+<p>We can&rsquo;t keep building our systems with single points of failure, whether they are in a &ldquo;cloud&rdquo; or not. Think about the pain of going from one MySQL server to two. How about the three? It is too hard. We need a more Mongodb-like approach. <em>Imagine a world where every app can be &ldquo;poured&rdquo; to one node or a hundred nodes</em>.</p>
+
+<h2 id="5-design-apps-to-use-objects-instead-of-files">5. Design Apps to use Objects instead of Files</h2>
+
+<p>The S3 approach is good. We need to learn from this. Web-apps are not the only things that can benefit from the transition from file to objects. HTTP based object stores are much easier to scale and can keep a higher availability than traditional filesystems. <em>Imagine a world where applications can take advantage of distributed object stores as easily as they can use local filesystems</em>.</p>
+
+<p>Those are my predictions for the future. I&rsquo;m excited to be a part of it!</p>
+
+        </div>
+    </section>
+</article>
+
+
+
+    
+      <footer class="page-footer grey lighten-5">
+    <div class="row max-width">
+        <div class="col s12 l10 offset-l1 clear-padding">
+            <div class="row">
+    
+        
+    
+
+    
+    
+    <div class="col s12 l12">
+        <h5 class="black-text"></h5>
+<p class="grey-text text-darken-4"></p>
+
+    </div>
+
+    
+</div>
+
+
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="row max-width" style="width: 100%;">
+            <div class="col s12 l10 offset-l1">
+                <span class="grey-text text-darken-4"></span>
+<div class="right">
+    
+</div>
+            </div>
+        </div>
+    </div>
+</footer>
+    
+
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

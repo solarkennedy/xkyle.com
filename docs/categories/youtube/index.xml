@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Youtube on xkyle.com</title>
+    <link>/categories/youtube/</link>
+    <description>Recent content in Youtube on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 17 May 2010 03:20:20 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/youtube/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Stream of Conciousness Youtube Videos on Linux</title>
+      <link>/stream-of-conciousness-youtube-videos-on-linux/</link>
+      <pubDate>Mon, 17 May 2010 03:20:20 +0000</pubDate>
+      
+      <guid>/stream-of-conciousness-youtube-videos-on-linux/</guid>
+      <description>While sitting watching TV I yearned for a more stream-of-consciousness experience. Youtube was the answer.
+However, Youtube requires too much interaction. I wanted to vege out and let it just feed me the stream of random images and sound. Selecting purely random youtube videos sounded like a bad idea though&amp;hellip;
+I decided to do a twitter search for anything with a youtube link, and then let a script just enqueue them into totem, ad-infinitum.</description>
+    </item>
+    
+  </channel>
+</rss>

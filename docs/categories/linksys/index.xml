@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linksys on xkyle.com</title>
+    <link>/categories/linksys/</link>
+    <description>Recent content in Linksys on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 06 Dec 2008 22:05:55 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/linksys/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Giving My WRT54GL a 2G Drive</title>
+      <link>/giving-my-wrt54gl-a-2g-drive/</link>
+      <pubDate>Sat, 06 Dec 2008 22:05:55 +0000</pubDate>
+      
+      <guid>/giving-my-wrt54gl-a-2g-drive/</guid>
+      <description>The WRT54GL is a pretty cool little toy. Yes it is a router with a cheezy web interface for grandmas with ESSID&amp;rsquo;s named &amp;ldquo;linksys&amp;rdquo;. But you can flash it with your own linux and solder in your own SD card to turn it from a 4MB machine to a 2GB machine&amp;hellip; far out!
+
+Above it the bare board that I&amp;rsquo;ve unscrewed out of the thing. Some solder + a card&amp;hellip;.</description>
+    </item>
+    
+  </channel>
+</rss>

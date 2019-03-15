@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Munin on xkyle.com</title>
+    <link>/categories/munin/</link>
+    <description>Recent content in Munin on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 29 Apr 2012 19:46:17 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/munin/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Graph EVERYTHING with Graphite!</title>
+      <link>/graph-everything-with-graphite/</link>
+      <pubDate>Sun, 29 Apr 2012 19:46:17 +0000</pubDate>
+      
+      <guid>/graph-everything-with-graphite/</guid>
+      <description>I believe that a graphing tool should be flexible enough for the user to decide what metrics are important to their environment, and it should be able to accept metric data from any source.
+ There are pretty good graphing tools out there for the Linux engineer: Munin, Ganglia, Cacti, Zabbix, Collectd, etc.
+I call these &amp;ldquo;graphing&amp;rdquo; tools, because I don&amp;rsquo;t consider them &amp;ldquo;monitoring&amp;rdquo; tools, like Nagios, WhatsUp, or Zabbix.</description>
+    </item>
+    
+  </channel>
+</rss>

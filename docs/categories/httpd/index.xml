@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Httpd on xkyle.com</title>
+    <link>/categories/httpd/</link>
+    <description>Recent content in Httpd on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 12 May 2013 21:29:09 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/httpd/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Getting Started With SPDY on Nginx</title>
+      <link>/getting-started-with-spdy-on-nginx/</link>
+      <pubDate>Sun, 12 May 2013 21:29:09 +0000</pubDate>
+      
+      <guid>/getting-started-with-spdy-on-nginx/</guid>
+      <description>SPDY is a fancy new way to do HTTP, pioneered by Google. Pretty much all modern browsers support it now, except for of course, IE.
+If you have SSL enabled and are using nginx, they you are pretty close to running your sites with SPDY. What how easy it is!
+Step 1: Get a version of nginx with spdy enabled. Ubuntu Get some packages. The Ubuntu packages have &amp;ldquo;&amp;ndash;with-http_spdy_module&amp;rdquo; compiled, so you can install them with no problem:</description>
+    </item>
+    
+  </channel>
+</rss>

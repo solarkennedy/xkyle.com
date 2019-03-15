@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Desktop on xkyle.com</title>
+    <link>/categories/desktop/</link>
+    <description>Recent content in Desktop on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 20 Feb 2009 23:06:21 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/desktop/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>My Desktop</title>
+      <link>/my-desktop/</link>
+      <pubDate>Fri, 20 Feb 2009 23:06:21 +0000</pubDate>
+      
+      <guid>/my-desktop/</guid>
+      <description>Posting a screenshot of your desktop is the cool thing for geeks to do apparently.
+
+It&amp;rsquo;s Ubuntu 8.10, no big surprise there. I&amp;rsquo;m using the &amp;ldquo;Dusk&amp;rdquo; theme with the proposed background for the next Ubuntu. I really like it.</description>
+    </item>
+    
+  </channel>
+</rss>

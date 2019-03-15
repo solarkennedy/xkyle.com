@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="7 Underused IPMItool Commands" />
+<meta property="og:description" content="IPMI is Awesome. But, it is underused. Most sysadmins don&rsquo;t even enable it. If they do enable it, they probably enable it by manually going into the BIOS, and then probably only using the Web interface. LAME.
+There is no need to go to the BIOS to configure ipmi. You can use IPMItool to configure it in-band. This is my first underused command:
+(disclaimer: not all IPMI interfaces / bios versions / hardware platforms are equal." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/7-underused-ipmitool-commands/" /><meta property="article:published_time" content="2012-12-20T03:55:02&#43;00:00"/>
+<meta property="article:modified_time" content="2012-12-20T03:55:02&#43;00:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="7 Underused IPMItool Commands"/>
+<meta name="twitter:description" content="IPMI is Awesome. But, it is underused. Most sysadmins don&rsquo;t even enable it. If they do enable it, they probably enable it by manually going into the BIOS, and then probably only using the Web interface. LAME.
+There is no need to go to the BIOS to configure ipmi. You can use IPMItool to configure it in-band. This is my first underused command:
+(disclaimer: not all IPMI interfaces / bios versions / hardware platforms are equal."/>
+
+
+    <meta name="description" content="">
+    <link rel="canonical" href="../7-underused-ipmitool-commands/">
+
+    
+    <title>7 Underused IPMItool Commands &middot; xkyle.com</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <link href="css/style.css" rel="stylesheet">
+
+    
+
+    
+
+    
+  </head>
+  <body>
+    
+      
+
+
+
+<nav class="white" role="navigation">
+    <div class="row max-width">
+        <div class="col s12 l10 offset-l1">
+            
+            <a href="#" data-activates="nav-mobile" class="button-collapse black-text">
+                <i class="material-icons">menu</i>
+            </a>
+
+            
+            <ul id="nav-mobile" class="side-nav">
+                
+                
+    
+    
+
+            </ul>
+
+            
+            <a href="../" class="brand-logo grey-text text-darken-3">xkyle.com</a>
+
+            
+            <div class="nav-wrapper">
+
+                
+                <ul class="right hide-on-med-and-down">
+                    
+                    
+    
+    
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</nav>
+    
+
+    
+
+<article class="max-width">
+    
+    <section class="row">
+        <div class="col s12 m10 offset-m1 l10 offset-l1">
+            <h1>7 Underused IPMItool Commands</h1>
+        </div>
+    </section>
+
+    
+    
+
+    
+    <section class="row">
+        <div class="col s12 m8 offset-m2 l2 offset-l1">
+            
+
+<p class="article-meta">
+    <div class="article-meta-container">
+        <div class="article-meta-author-name">admin</div>
+        <div class="article-meta-description"></div>
+    </div>
+    <span class="article-meta-published-at grey-text text-darken-1">Dec 20, 2012</span>
+</p>
+        </div>
+        <div class="col s12 m8 offset-m2 l6">
+            
+
+<p><img src="../uploads/interesting-ipmi-239x300.jpg" alt="" />
+<a href="http://en.wikipedia.org/wiki/Intelligent_Platform_Management_Interface">IPMI</a> is Awesome. But, it is underused. Most sysadmins don&rsquo;t even enable it. If they do enable it, they probably enable it by manually going into the BIOS, and then probably only using the Web interface. LAME.</p>
+
+<p>There is no need to go to the BIOS to configure ipmi. You can use IPMItool to configure it in-band. This is my first underused command:</p>
+
+<p>(disclaimer: not all IPMI interfaces / bios versions / hardware platforms are equal. Don&rsquo;t complain in a comment that your hardware doesn&rsquo;t support all of these cool things)</p>
+
+<h1 id="1-ipmitool-lan-set-1-ipsrc-dhcp">1. ipmitool lan set 1 ipsrc dhcp</h1>
+
+<h2 id="set-your-ipmi-interface-to-grab-an-ip-via-dhcp">(Set your ipmi interface to grab an IP via DHCP)</h2>
+
+<p>Do it. Script it. Make a <a href="https://github.com/zoide/puppet-ipmi/">puppet module</a>. There is no reason not to have IPMI configured on every server that supports it. Except laziness.  Don&rsquo;t forget to set a password and enable at least one user. Seriously, this is probably the #1 under-utilized command, just configuring the darn thing.</p>
+
+<h1 id="2-ipmitool-h-server-ipmi-u-root-p-root-chassis-power-reset">2. ipmitool -H server-ipmi -U root -P root chassis power reset</h1>
+
+<h2 id="remote-reboot-via-ipmi">(Remote reboot via IPMI)</h2>
+
+<p>Once you have IPMI configured, doing a remote reboot is the next cool thing. Seriously, never press the power button, bother a noc tech, telnet to an APC, again. Notice that you need -H, -U, -P, etc. as this command must be run over the lan interface to a remote server.</p>
+
+<h1 id="3-ipmitool-h-server-ipmi-u-root-p-root-chassis-identify-1">3. ipmitool -H server-ipmi -U root -p root chassis identify 1</h1>
+
+<h2 id="blink-the-chassis-led">(Blink the chassis LED)</h2>
+
+<p>Freak out a NOC tech by running this command on all your servers as soon as they replace a harddrive. Make a special Christmas youtube video with your server farm&rsquo;s chassis LEDs.</p>
+
+<h1 id="4-ipmitool-h-server-ipmi-u-root-p-root-chassis-bootparam-set-bootflag-force-bios">4. ipmitool -H server-ipmi -U root -P root  chassis bootparam set bootflag force_bios</h1>
+
+<h2 id="make-your-server-go-directly-into-bios-on-next-reboot">(Make your server go directly into bios on next reboot)</h2>
+
+<p><a href="../uploads/morpheus-ipmi.jpg"><img src="../uploads/morpheus-ipmi-300x300.jpg" alt="" /></a>Now we are getting fancy! We&rsquo;ve all been there. Waiting for a slow-ass HP super server to boot, waiting and waiting for the signal to start frantically pounding the F2 key to enter the bios. Then missing it because the VGA didn&rsquo;t show up in time. Reboot again. Repeat.</p>
+
+<p>Fuck that noise. I don&rsquo;t wait for servers. The servers wait for me! Also works for EFI shell, PXE, disk, etc.</p>
+
+<p>Maybe someday I&rsquo;ll combine this command with the next command (SOL) and generate bios setting macros, sending perfect sequences of keystrokes to set the BIOS like some sort of tool-assisted-server-configuring-speed-run (<a href="https://www.youtube.com/watch?v=L_AerCVhoTM">YES. THIS IS HOW WE SHOULD CONFIGURE SERVERS</a>). Or if I&rsquo;m lucky, just <a href="https://wiki.xkyle.com/Configuing_BIOS_From_Linux">configure the bios from Linux itself</a>.</p>
+
+<h1 id="5-ipmitool-h-server01-ipmi-i-lanplus-u-root-p-root-sol-activate">5. ipmitool -H server01-ipmi -I lanplus -U root -P root sol activate</h1>
+
+<h2 id="connect-to-the-remote-server-s-serial-console">(Connect to the remote server&rsquo;s serial console)</h2>
+
+<p>You know that fancy KVM over IP you have? The one that probably works like crap, needs to be rebooted all the time, lots of extra cables, special dongles, bla bla bla? You don&rsquo;t need it man. All a server needs is power, and network.</p>
+
+<p>SOL or serial-over-lan allows you to use the server&rsquo;s serial console over ipmi. Configure the bios to do serial console redirection, configure your boot loader and OS to do the same, and you are set. Then load up a screen full of them and use the serial console <a href="https://wiki.xkyle.com/IPMI_Serial_Over_Lan#Like_a_Boss">like a boss</a>. Special props for using the magic-sysrq over SOL.</p>
+
+<h1 id="6-ipmitool-h-ipmihost-u-root-p-root-delloem-powermonitor">6. ipmitool -H ipmihost -U root -P root delloem powermonitor</h1>
+
+<h2 id="get-server-power-measurements">(Get server power measurements)</h2>
+
+<p><a href="../uploads/already-killawatt.jpg"><img src="../uploads/already-killawatt-300x300.jpg" alt="" /></a>
+Yes. On some platforms you can actually measure how much power your server is using. Scrape that shit and pump it to graphite man! I&rsquo;m trying to <a href="https://wiki.xkyle.com/IPMI_Power_Measurement">collect the different ways</a> to do this, as there are different vendor specific implementations.</p>
+
+<h1 id="7-ipmitool-h-ipmihost-u-root-p-root-sensor-list">7. ipmitool -H ipmihost -U root -P root sensor list</h1>
+
+<h2 id="retrieve-low-level-hardware-sensor-output">(Retrieve low level hardware sensor output)</h2>
+
+<p>If you suspect you are having hardware issues, this can be super valuable. Combined with <a href="http://exchange.nagios.org/directory/Plugins/Hardware/Server-Hardware/IPMI-Sensor-Monitoring-Plugin/details">automatic sensor monitoring via nagios</a>, and you are an IPMI pro.</p>
+
+        </div>
+    </section>
+</article>
+
+
+
+    
+      <footer class="page-footer grey lighten-5">
+    <div class="row max-width">
+        <div class="col s12 l10 offset-l1 clear-padding">
+            <div class="row">
+    
+        
+    
+
+    
+    
+    <div class="col s12 l12">
+        <h5 class="black-text"></h5>
+<p class="grey-text text-darken-4"></p>
+
+    </div>
+
+    
+</div>
+
+
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="row max-width" style="width: 100%;">
+            <div class="col s12 l10 offset-l1">
+                <span class="grey-text text-darken-4"></span>
+<div class="right">
+    
+</div>
+            </div>
+        </div>
+    </div>
+</footer>
+    
+
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bash on xkyle.com</title>
+    <link>/categories/bash/</link>
+    <description>Recent content in Bash on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 21 Mar 2013 02:04:43 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/bash/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Decoding Balanced Payments Puzzle 1</title>
+      <link>/decoding-balanced-payments-puzzle-1/</link>
+      <pubDate>Thu, 21 Mar 2013 02:04:43 +0000</pubDate>
+      
+      <guid>/decoding-balanced-payments-puzzle-1/</guid>
+      <description>A strange string appeared at the bottom of a Balanced Payments blog post:
+ NmQ2ZjYzMmU3Mzc0NmU2NTZkNzk2MTcwNjQ2NTYzNm U2MTZjNjE2MjQwNjU2MzZlNjU3MjY1NjY2NjY5NjQ2MTY1N mI2MTZkNmY3NDc0NmU2MTc3Njk=
+ One of those puzzles to attract coders I guess. The guys at Hacker News spilled the beans, so lets spill them some more.
+First though,** Mad Props** to the Balanced team for thinking &amp;ldquo;outside&amp;rdquo; the unit-test-box. Plus Jenkins rocks. The world needs more Jenkins. Bash? I&amp;rsquo;m not a developer, so my first instinct was to use the existing set of tools that people have already written to solve this puzzle:</description>
+    </item>
+    
+    <item>
+      <title>Validating Graphite Metrics With Bash!</title>
+      <link>/validating-graphite-metrics-with-bash/</link>
+      <pubDate>Thu, 07 Mar 2013 05:35:49 +0000</pubDate>
+      
+      <guid>/validating-graphite-metrics-with-bash/</guid>
+      <description>At my dayjob I get to work with Graphite and power meters. It is cool:
+
+To make it easy for my clients to get power information, I&amp;rsquo;ve written a command line tool called &amp;ldquo;power&amp;rdquo; that they can run to get the power usage for a server when running their program. Here is an example:
+power METER-NAME sleep 10s  Pretty handy. The &amp;ldquo;METER-NAME&amp;rdquo; is pretty important, as it lets the script know which system&amp;rsquo;s power you are interested in.</description>
+    </item>
+    
+    <item>
+      <title>Bash Boggle - A Boggle Solver Written in Bash!</title>
+      <link>/bash-boggle-a-boggle-solver-written-in-bash/</link>
+      <pubDate>Sun, 22 Aug 2010 07:24:10 +0000</pubDate>
+      
+      <guid>/bash-boggle-a-boggle-solver-written-in-bash/</guid>
+      <description>Bash is my favorite computer language. I also love writing programs to help human problems.
+Inspired by this online Boggle solver, I decided to write my own solver while my friends were too busy playing the game and having fun :)
+If you would like to test my work, here is the code:
+https://dev.xkyle.com/bashboggle/
+You will need the linux &amp;ldquo;words&amp;rdquo; dictionary, which is installable on Ubuntu by running &amp;ldquo;sudo apt-get install wamerican&amp;rdquo;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="Playing with IPv6 Over Bluetooth Low Energy (6LoWPAN)" />
+<meta property="og:description" content="I like Bluetooth Low Energy (BTLE). I also like IPv6. Did you know you could but both together?
+Technically 6LoWPAN
+Requirements modprobe bluetooth_6lowpan echo &#39;bluetooth_6lowpan&#39; &gt;&gt; /etc/modules  Establishing the Connection Set the Bluetooth L2CAP PSM First you need to set the Protocol/Service Multiplexer value on both sides to &ldquo;62&rdquo; (0x3E) on both sides:
+echo 62 &gt; /sys/kernel/debug/bluetooth/6lowpan_psm  This PSM value lets the driver know that you are going to multiplex this special new protocol on top of whatever your bluetooth device mith also be doing." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/Playing-with-IPv6-Over-Bluetooth-Low-Energy-6LoWPAN/" /><meta property="article:published_time" content="2015-06-14T18:18:03&#43;00:00"/>
+<meta property="article:modified_time" content="2015-06-14T18:18:03&#43;00:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Playing with IPv6 Over Bluetooth Low Energy (6LoWPAN)"/>
+<meta name="twitter:description" content="I like Bluetooth Low Energy (BTLE). I also like IPv6. Did you know you could but both together?
+Technically 6LoWPAN
+Requirements modprobe bluetooth_6lowpan echo &#39;bluetooth_6lowpan&#39; &gt;&gt; /etc/modules  Establishing the Connection Set the Bluetooth L2CAP PSM First you need to set the Protocol/Service Multiplexer value on both sides to &ldquo;62&rdquo; (0x3E) on both sides:
+echo 62 &gt; /sys/kernel/debug/bluetooth/6lowpan_psm  This PSM value lets the driver know that you are going to multiplex this special new protocol on top of whatever your bluetooth device mith also be doing."/>
+
+
+    <meta name="description" content="">
+    <link rel="canonical" href="../Playing-with-IPv6-Over-Bluetooth-Low-Energy-6LoWPAN/">
+
+    
+    <title>Playing with IPv6 Over Bluetooth Low Energy (6LoWPAN) &middot; xkyle.com</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <link href="css/style.css" rel="stylesheet">
+
+    
+
+    
+
+    
+  </head>
+  <body>
+    
+      
+
+
+
+<nav class="white" role="navigation">
+    <div class="row max-width">
+        <div class="col s12 l10 offset-l1">
+            
+            <a href="#" data-activates="nav-mobile" class="button-collapse black-text">
+                <i class="material-icons">menu</i>
+            </a>
+
+            
+            <ul id="nav-mobile" class="side-nav">
+                
+                
+    
+    
+
+            </ul>
+
+            
+            <a href="../" class="brand-logo grey-text text-darken-3">xkyle.com</a>
+
+            
+            <div class="nav-wrapper">
+
+                
+                <ul class="right hide-on-med-and-down">
+                    
+                    
+    
+    
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</nav>
+    
+
+    
+
+<article class="max-width">
+    
+    <section class="row">
+        <div class="col s12 m10 offset-m1 l10 offset-l1">
+            <h1>Playing with IPv6 Over Bluetooth Low Energy (6LoWPAN)</h1>
+        </div>
+    </section>
+
+    
+    
+
+    
+    <section class="row">
+        <div class="col s12 m8 offset-m2 l2 offset-l1">
+            
+
+<p class="article-meta">
+    <div class="article-meta-container">
+        <div class="article-meta-author-name"></div>
+        <div class="article-meta-description"></div>
+    </div>
+    <span class="article-meta-published-at grey-text text-darken-1">Jun 14, 2015</span>
+</p>
+        </div>
+        <div class="col s12 m8 offset-m2 l6">
+            
+
+<p>I like Bluetooth Low Energy (BTLE). I also like IPv6. Did you know you could but both together?</p>
+
+<p>Technically 6LoWPAN</p>
+
+<h2 id="requirements">Requirements</h2>
+
+<pre><code>modprobe bluetooth_6lowpan
+echo 'bluetooth_6lowpan' &gt;&gt; /etc/modules
+</code></pre>
+
+<h2 id="establishing-the-connection">Establishing the Connection</h2>
+
+<h3 id="set-the-bluetooth-l2cap-psm">Set the Bluetooth L2CAP PSM</h3>
+
+<p>First you need to set the Protocol/Service Multiplexer value on both sides to &ldquo;62&rdquo; (0x3E) on both sides:</p>
+
+<pre><code>echo 62 &gt; /sys/kernel/debug/bluetooth/6lowpan_psm
+</code></pre>
+
+<p>This PSM value lets the driver know that you are going to multiplex this special
+new protocol on top of whatever your bluetooth device mith also be doing.</p>
+
+<p>0x25 is the magic value for &ldquo;Internet Protocol Support Profile&rdquo;
+<a href="https://www.bluetooth.org/en-us/specification/assigned-numbers/logical-link-control">https://www.bluetooth.org/en-us/specification/assigned-numbers/logical-link-control</a>
+which I think is supposed to be the correct value?</p>
+
+<p>0x3E is some sort of temporary value I had to use to get this working, as 0x25 ended up
+as a being not supported per the messages in my wireshark dump.</p>
+
+<p>I&rsquo;m not aware of any other way to set it other than this kernel debug setting.</p>
+
+<h3 id="making-the-slave-advertise">Making the slave advertise</h3>
+
+<p>The slave must be doing Low-Energy advertisements in order for the master to connect to it.</p>
+
+<pre><code>hciconfig hci0 leadv
+</code></pre>
+
+<h3 id="connect">Connect</h3>
+
+<p>On the master you should be able to watch the slave advertise:</p>
+
+<pre><code>⮀hcitool lescan
+LE Scan ...
+C4:85:08:31:XX:XX (unknown)
+C4:85:08:31:XX:XX ubuntu-0
+</code></pre>
+
+<p>Establish a connection from the master to the slave:</p>
+
+<pre><code>echo &quot;connect C4:85:08:31:XX:XX 1&quot; &gt;/sys/kernel/debug/bluetooth/6lowpan_control
+</code></pre>
+
+<p>Afterwards a bt0 device should show up in ifconfig. Run <code>hcitool conn</code> to verify
+a connection is actually established. Use wireshark on bluetooth mon mode on the
+hci device to confirm commands are being sent.</p>
+
+<p>The proof is in the ping:</p>
+
+<pre><code>~ ⮀ # ⮀ping6 fe80::1610:9fff:fee0:1432%bt0
+PING fe80::1610:9fff:fee0:1432%bt0(fe80::1610:9fff:fee0:1432) 56 data bytes
+64 bytes from fe80::1610:9fff:fee0:1432: icmp_seq=1 ttl=64 time=158 ms
+64 bytes from fe80::1610:9fff:fee0:1432: icmp_seq=2 ttl=64 time=236 ms
+64 bytes from fe80::1610:9fff:fee0:1432: icmp_seq=3 ttl=64 time=113 ms
+</code></pre>
+
+<h2 id="problems">Problems</h2>
+
+<p>After a small number of packets, the connection seems to drop, and on the master side
+I get:</p>
+
+<pre><code>[  368.947193] Bluetooth: hci0 link tx timeout
+[  368.947202] Bluetooth: hci0 killing stalled connection c4:85:08:31:XX:XX
+</code></pre>
+
+<p>No matter what rmmod or stopping I tried, a reboot was the only thing I could to
+rebuild the connection. Obviously this is pretty new stuff, hopefully it will
+stabilize in later versions of the kernel.</p>
+
+<p>At this time though, on 3.19.0-21-generic (Ubuntu Vivid), this feature is not
+yet usable.</p>
+
+        </div>
+    </section>
+</article>
+
+
+
+    
+      <footer class="page-footer grey lighten-5">
+    <div class="row max-width">
+        <div class="col s12 l10 offset-l1 clear-padding">
+            <div class="row">
+    
+        
+    
+
+    
+    
+    <div class="col s12 l12">
+        <h5 class="black-text"></h5>
+<p class="grey-text text-darken-4"></p>
+
+    </div>
+
+    
+</div>
+
+
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="row max-width" style="width: 100%;">
+            <div class="col s12 l10 offset-l1">
+                <span class="grey-text text-darken-4"></span>
+<div class="right">
+    
+</div>
+            </div>
+        </div>
+    </div>
+</footer>
+    
+
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

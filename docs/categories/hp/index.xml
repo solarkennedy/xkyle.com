@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hp on xkyle.com</title>
+    <link>/categories/hp/</link>
+    <description>Recent content in Hp on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 15 Apr 2013 21:06:09 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/hp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>My First Published Puppet Module: bios</title>
+      <link>/my-first-published-puppet-module-bios/</link>
+      <pubDate>Mon, 15 Apr 2013 21:06:09 +0000</pubDate>
+      
+      <guid>/my-first-published-puppet-module-bios/</guid>
+      <description>What? I&amp;rsquo;ve written lots of crappy Puppet modules. Here is a slightly less crappy module that can help you configure BIOS settings on your servers for you.
+It works on Dell C class servers and Intel platforms. Please pull request or email me if you want to have it work on something else too!
+Why? BIOS settings should be considered configuration just like any other configuration, and hence managed by your configuration management tool, if possible.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="DNS Cache Poisoning " />
+<meta property="og:description" content="Recently a DNS expert found a flaw in the way that DNS servers talk to other DNS servers to get records that allows interested parties (hackers) to insert their own records. If you need a primer: the Wikipedia link.
+Well&hellip; a DNS flaw is no fun without a tool to use it. So this guy &ldquo;HD Moore&rdquo; wrote a program (script) that takes advantage of this and makes it relatively easy for someone to use something called Metasploit to tinker with it." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/dns-cache-poisoning/" /><meta property="article:published_time" content="2008-07-31T12:00:10&#43;00:00"/>
+<meta property="article:modified_time" content="2008-07-31T12:00:10&#43;00:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="DNS Cache Poisoning "/>
+<meta name="twitter:description" content="Recently a DNS expert found a flaw in the way that DNS servers talk to other DNS servers to get records that allows interested parties (hackers) to insert their own records. If you need a primer: the Wikipedia link.
+Well&hellip; a DNS flaw is no fun without a tool to use it. So this guy &ldquo;HD Moore&rdquo; wrote a program (script) that takes advantage of this and makes it relatively easy for someone to use something called Metasploit to tinker with it."/>
+
+
+    <meta name="description" content="">
+    <link rel="canonical" href="../dns-cache-poisoning/">
+
+    
+    <title>DNS Cache Poisoning  &middot; xkyle.com</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <link href="css/style.css" rel="stylesheet">
+
+    
+
+    
+
+    
+  </head>
+  <body>
+    
+      
+
+
+
+<nav class="white" role="navigation">
+    <div class="row max-width">
+        <div class="col s12 l10 offset-l1">
+            
+            <a href="#" data-activates="nav-mobile" class="button-collapse black-text">
+                <i class="material-icons">menu</i>
+            </a>
+
+            
+            <ul id="nav-mobile" class="side-nav">
+                
+                
+    
+    
+
+            </ul>
+
+            
+            <a href="../" class="brand-logo grey-text text-darken-3">xkyle.com</a>
+
+            
+            <div class="nav-wrapper">
+
+                
+                <ul class="right hide-on-med-and-down">
+                    
+                    
+    
+    
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</nav>
+    
+
+    
+
+<article class="max-width">
+    
+    <section class="row">
+        <div class="col s12 m10 offset-m1 l10 offset-l1">
+            <h1>DNS Cache Poisoning </h1>
+        </div>
+    </section>
+
+    
+    
+
+    
+    <section class="row">
+        <div class="col s12 m8 offset-m2 l2 offset-l1">
+            
+
+<p class="article-meta">
+    <div class="article-meta-container">
+        <div class="article-meta-author-name">admin</div>
+        <div class="article-meta-description"></div>
+    </div>
+    <span class="article-meta-published-at grey-text text-darken-1">Jul 31, 2008</span>
+</p>
+        </div>
+        <div class="col s12 m8 offset-m2 l6">
+            <p>Recently a DNS expert found a flaw in the way that DNS servers talk to other DNS servers to get records that allows interested parties (hackers) to insert their own records. If you need a primer: the <a href="http://en.wikipedia.org/wiki/DNS_cache_poisoning">Wikipedia link</a>.</p>
+
+<p>Well&hellip; a DNS flaw is no fun without a tool to use it. So this guy &ldquo;HD Moore&rdquo; wrote a program (script) that takes advantage of this and makes it relatively easy for someone to use something called <a href="http://www.metasploit.com/framework/">Metasploit</a> to tinker with it. Cool!</p>
+
+<p>Turns out that it works, and people are fixing their DNS servers so that this can&rsquo;t happen. (I fixed mine as soon as the fix was out.) But not everyone can fix their own, often they are at the mercy of their ISP&rsquo;s. (Have you ever called up your ISP&rsquo;s help desk and told them they need to upgrade their DNS servers to protect them against cache poisoning? Heheheh.. right)</p>
+
+<p>So one day, Mr. Moore goes to google.com on his computer at work, and guess what, its not the real google.com&hellip;</p>
+
+<p><a href="http://www.networkworld.com/news/2008/073008-dns-attack-writer-a-victim.html">The news article</a></p>
+
+<p>Well played sir. Well played.</p>
+
+        </div>
+    </section>
+</article>
+
+
+
+    
+      <footer class="page-footer grey lighten-5">
+    <div class="row max-width">
+        <div class="col s12 l10 offset-l1 clear-padding">
+            <div class="row">
+    
+        
+    
+
+    
+    
+    <div class="col s12 l12">
+        <h5 class="black-text"></h5>
+<p class="grey-text text-darken-4"></p>
+
+    </div>
+
+    
+</div>
+
+
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="row max-width" style="width: 100%;">
+            <div class="col s12 l10 offset-l1">
+                <span class="grey-text text-darken-4"></span>
+<div class="right">
+    
+</div>
+            </div>
+        </div>
+    </div>
+</footer>
+    
+
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

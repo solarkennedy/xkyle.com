@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dropbear on xkyle.com</title>
+    <link>/categories/dropbear/</link>
+    <description>Recent content in Dropbear on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 03 Oct 2013 05:07:55 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/dropbear/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Dropbear with Mosh on a Low End Server</title>
+      <link>/dropbear-with-mosh-on-a-low-end-server/</link>
+      <pubDate>Thu, 03 Oct 2013 05:07:55 +0000</pubDate>
+      
+      <guid>/dropbear-with-mosh-on-a-low-end-server/</guid>
+      <description>I love my low end boxes. I also love mosh.
+Low end boxes usually are tight on resources, so Dropbear is often used as a lightweight ssh server. Mosh is mostly tested with openssh-client/server, so I think there are some bugs.
+But it can work, just make sure:
+ You are using the same version of mosh on the server as you are on your client. (otherwise they may not support the same command line options)</description>
+    </item>
+    
+  </channel>
+</rss>

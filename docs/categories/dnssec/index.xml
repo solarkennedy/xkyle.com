@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dnssec on xkyle.com</title>
+    <link>/categories/dnssec/</link>
+    <description>Recent content in Dnssec on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 10 Jan 2011 02:33:49 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/dnssec/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>New Technologies for a New Year</title>
+      <link>/new-technologies-for-a-new-year/</link>
+      <pubDate>Mon, 10 Jan 2011 02:33:49 +0000</pubDate>
+      
+      <guid>/new-technologies-for-a-new-year/</guid>
+      <description>Starting with the new year, I decided to move my xkyle.com domain and related stuff away from my account at Dreamhost, a shared hosting server, to my virtual machine at Tummy.com. I have nothing but good things to say about Dreamhost though, they are excellent at what they do. However, I wanted to do more than what a shared hosting provider could do for me, I needed Root!
+Moving my websites and dns to a dedicated server grants me the ability to implement a few technologies to usher in the new year.</description>
+    </item>
+    
+  </channel>
+</rss>

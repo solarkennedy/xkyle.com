@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ettercap on xkyle.com</title>
+    <link>/categories/ettercap/</link>
+    <description>Recent content in Ettercap on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 15 Nov 2008 02:04:41 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/ettercap/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ettercap&#39;s Author&#39;s Birthday!</title>
+      <link>/ettercaps-authors-birthday/</link>
+      <pubDate>Sat, 15 Nov 2008 02:04:41 +0000</pubDate>
+      
+      <guid>/ettercaps-authors-birthday/</guid>
+      <description>Today is the Birthday of AloR, the author of the amazing tool, ettercap.
+
+You can see that because it is his birthday, he asks that you email him. I happily obliged.
+Ettercap is an amazing tool. Not only does it have a console, curses, and graphical versions, it can be scripted, hacked, used with plugins, and the list goes on. Here is a screen shot of it in progress:</description>
+    </item>
+    
+  </channel>
+</rss>

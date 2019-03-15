@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="A Comparison of Image to ASCII Conversion Tools" />
+<meta property="og:description" content="Inspired by ponysay, I think wicked ascii/ansi artwork on the terminal is great.
+I decided to survey all the tools I could find that aid in this conversion to see if there were any dramatic differences in results.
+Methodology For these tests I used an image with a 160px width, twice that of a standard terminal. Then I cat&rsquo;d the image in plain xterm and took a screenshot of the results." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/A-Comparison-of-Image-to-ASCII-Conversion-Tools/" /><meta property="article:published_time" content="2015-09-26T19:35:56&#43;00:00"/>
+<meta property="article:modified_time" content="2015-09-26T19:35:56&#43;00:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="A Comparison of Image to ASCII Conversion Tools"/>
+<meta name="twitter:description" content="Inspired by ponysay, I think wicked ascii/ansi artwork on the terminal is great.
+I decided to survey all the tools I could find that aid in this conversion to see if there were any dramatic differences in results.
+Methodology For these tests I used an image with a 160px width, twice that of a standard terminal. Then I cat&rsquo;d the image in plain xterm and took a screenshot of the results."/>
+
+
+    <meta name="description" content="">
+    <link rel="canonical" href="../A-Comparison-of-Image-to-ASCII-Conversion-Tools/">
+
+    
+    <title>A Comparison of Image to ASCII Conversion Tools &middot; xkyle.com</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <link href="css/style.css" rel="stylesheet">
+
+    
+
+    
+
+    
+  </head>
+  <body>
+    
+      
+
+
+
+<nav class="white" role="navigation">
+    <div class="row max-width">
+        <div class="col s12 l10 offset-l1">
+            
+            <a href="#" data-activates="nav-mobile" class="button-collapse black-text">
+                <i class="material-icons">menu</i>
+            </a>
+
+            
+            <ul id="nav-mobile" class="side-nav">
+                
+                
+    
+    
+
+            </ul>
+
+            
+            <a href="../" class="brand-logo grey-text text-darken-3">xkyle.com</a>
+
+            
+            <div class="nav-wrapper">
+
+                
+                <ul class="right hide-on-med-and-down">
+                    
+                    
+    
+    
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</nav>
+    
+
+    
+
+<article class="max-width">
+    
+    <section class="row">
+        <div class="col s12 m10 offset-m1 l10 offset-l1">
+            <h1>A Comparison of Image to ASCII Conversion Tools</h1>
+        </div>
+    </section>
+
+    
+    
+
+    
+    <section class="row">
+        <div class="col s12 m8 offset-m2 l2 offset-l1">
+            
+
+<p class="article-meta">
+    <div class="article-meta-container">
+        <div class="article-meta-author-name"></div>
+        <div class="article-meta-description"></div>
+    </div>
+    <span class="article-meta-published-at grey-text text-darken-1">Sep 26, 2015</span>
+</p>
+        </div>
+        <div class="col s12 m8 offset-m2 l6">
+            
+
+<p>Inspired by <a href="https://github.com/erkin/ponysay">ponysay</a>, I think wicked
+ascii/ansi artwork on the terminal is great.</p>
+
+<p>I decided to survey all the tools I could find that aid in this conversion
+to see if there were any dramatic differences in results.</p>
+
+<h2 id="methodology">Methodology</h2>
+
+<p>For these tests I used an image with a 160px width, twice that of
+a standard terminal. Then I <code>cat</code>&rsquo;d the image in plain xterm and
+took a screenshot of the results.</p>
+
+<p>The original has been scaled up (6X) to be the same relative size as
+the resulting screenshots.</p>
+
+<p>My entire methodology is on <a href="https://github.com/solarkennedy/ascii-art-converter-comparison">github</a>
+if you wish to see exactly how I made these images. In theory
+it is 100% reproducible from <code>make</code>. (assuming on a linux desktop)</p>
+
+<h2 id="tools-compared">Tools Compared</h2>
+
+<ul>
+<li><a href="https://github.com/rossy/img2xterm">img2xterm</a></li>
+<li><a href="https://github.com/maandree/util-say/">util-say</a></li>
+<li><a href="https://github.com/posva/catimg">catimg</a> (C and Bash versions)</li>
+<li><a href="https://github.com/saikobee/img-cat/">img-cat</a></li>
+<li><a href="http://manpages.ubuntu.com/manpages/hardy/man1/img2txt.1.html">img2txt</a></li>
+<li><a href="https://csl.name/jp2a/">jp2a</a></li>
+</ul>
+
+<h2 id="results">Results</h2>
+
+<h3 id="bender-png">bender.png</h3>
+
+<p><img src="../uploads/bender.original.png" alt="bender.png converted using original" title="bender.png converted using original" />
+<img src="../uploads/bender.img2xterm.png" alt="bender.png converted using img2xterm" title="bender.png converted using img2xterm" />
+<img src="../uploads/bender.util-say.png" alt="bender.png converted using util-say" title="bender.png converted using util-say" />
+<img src="../uploads/bender.catimg.png" alt="bender.png converted using catimg" title="bender.png converted using catimg" />
+<img src="../uploads/bender.catimg-bash.png" alt="bender.png converted using catimg-bash" title="bender.png converted using catimg-bash" />
+<img src="../uploads/bender.img-cat.png" alt="bender.png converted using img-cat" title="bender.png converted using img-cat" />
+<img src="../uploads/bender.img2txt.png" alt="bender.png converted using img2txt" title="bender.png converted using img2txt" />
+<img src="../uploads/bender.jp2a.png" alt="bender.png converted using jp2a" title="bender.png converted using jp2a" /></p>
+
+<h3 id="lenna-png">lenna.png</h3>
+
+<p><img src="../uploads/lenna.original.png" alt="lenna.png converted using original" title="lenna.png converted using original" />
+<img src="../uploads/lenna.img2xterm.png" alt="lenna.png converted using img2xterm" title="lenna.png converted using img2xterm" />
+<img src="../uploads/lenna.util-say.png" alt="lenna.png converted using util-say" title="lenna.png converted using util-say" />
+<img src="../uploads/lenna.catimg.png" alt="lenna.png converted using catimg" title="lenna.png converted using catimg" />
+<img src="../uploads/lenna.catimg-bash.png" alt="lenna.png converted using catimg-bash" title="lenna.png converted using catimg-bash" />
+<img src="../uploads/lenna.img-cat.png" alt="lenna.png converted using img-cat" title="lenna.png converted using img-cat" />
+<img src="../uploads/lenna.img2txt.png" alt="lenna.png converted using img2txt" title="lenna.png converted using img2txt" />
+<img src="../uploads/lenna.jp2a.png" alt="lenna.png converted using jp2a" title="lenna.png converted using jp2a" /></p>
+
+<h3 id="nyan-png">nyan.png</h3>
+
+<p><img src="../uploads/nyan.original.png" alt="nyan.png converted using original" title="nyan.png converted using original" />
+<img src="../uploads/nyan.img2xterm.png" alt="nyan.png converted using img2xterm" title="nyan.png converted using img2xterm" />
+<img src="../uploads/nyan.util-say.png" alt="nyan.png converted using util-say" title="nyan.png converted using util-say" />
+<img src="../uploads/nyan.catimg.png" alt="nyan.png converted using catimg" title="nyan.png converted using catimg" />
+<img src="../uploads/nyan.catimg-bash.png" alt="nyan.png converted using catimg-bash" title="nyan.png converted using catimg-bash" />
+<img src="../uploads/nyan.img-cat.png" alt="nyan.png converted using img-cat" title="nyan.png converted using img-cat" />
+<img src="../uploads/nyan.img2txt.png" alt="nyan.png converted using img2txt" title="nyan.png converted using img2txt" />
+<img src="../uploads/nyan.jp2a.png" alt="nyan.png converted using jp2a" title="nyan.png converted using jp2a" /></p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p><a href="https://github.com/rossy/img2xterm">img2xterm</a> stands out to me as the most
+accurate and true to the original, with <a href="https://github.com/maandree/util-say/">util-say</a>
+as a close second. Both of these tools understand &ldquo;<a href="http://www.theasciicode.com.ar/extended-ascii-code/bottom-half-block-ascii-code-220.html">half-block</a>&ldquo;
+characters with two colors, effectively doubling the horizontal resolution of the resulting
+characters. (two colors per &ldquo;pixel&rdquo;)</p>
+
+<p><a href="https://github.com/posva/catimg">catimg</a> and <a href="https://github.com/saikobee/img-cat/">img-cat</a>
+both have good color representation, but lack the additional resolution compared to the
+other tools, giving it a more &ldquo;pixelated&rdquo; look.</p>
+
+<p><a href="http://manpages.ubuntu.com/manpages/hardy/man1/img2txt.1.html">img2txt</a> and <a href="https://csl.name/jp2a/">jp2a</a>
+are &ldquo;true ascii&rdquo; tools, they are really not in the same league as the others. I included them
+here for completeness.</p>
+
+        </div>
+    </section>
+</article>
+
+
+
+    
+      <footer class="page-footer grey lighten-5">
+    <div class="row max-width">
+        <div class="col s12 l10 offset-l1 clear-padding">
+            <div class="row">
+    
+        
+    
+
+    
+    
+    <div class="col s12 l12">
+        <h5 class="black-text"></h5>
+<p class="grey-text text-darken-4"></p>
+
+    </div>
+
+    
+</div>
+
+
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="row max-width" style="width: 100%;">
+            <div class="col s12 l10 offset-l1">
+                <span class="grey-text text-darken-4"></span>
+<div class="right">
+    
+</div>
+            </div>
+        </div>
+    </div>
+</footer>
+    
+
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

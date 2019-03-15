@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Serf on xkyle.com</title>
+    <link>/categories/serf/</link>
+    <description>Recent content in Serf on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 06 Apr 2014 05:33:58 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/serf/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Managing Ssh Known Hosts With-Serf</title>
+      <link>/Managing-Ssh-Known-Hosts-With-Serf/</link>
+      <pubDate>Sun, 06 Apr 2014 05:33:58 +0000</pubDate>
+      
+      <guid>/Managing-Ssh-Known-Hosts-With-Serf/</guid>
+      <description>Serf is a very interesting service discovery mechanism. Its dynamic membership and tags capability make it very flexible. Can we use it to generate a centralized ssh_known_hosts file?
+Installing and Configuring Serf I like to use configuration management to manage servers. Here I use a Puppet module to install and configure Serf:
+class { &#39;serf&#39;: config_hash =&amp;gt; { &#39;node_name&#39; =&amp;gt; $::fqdn, &#39;tags&#39; =&amp;gt; { &#39;sshrsakey&#39; =&amp;gt; $::sshrsakey }, &#39;discover&#39; =&amp;gt; &#39;cluster&#39;, } }  This particular module uses a hash to translate directly into the config.</description>
+    </item>
+    
+  </channel>
+</rss>

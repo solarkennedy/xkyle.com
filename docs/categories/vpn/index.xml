@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vpn on xkyle.com</title>
+    <link>/categories/vpn/</link>
+    <description>Recent content in Vpn on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 15 Nov 2008 02:17:33 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/vpn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>n2n - Peer to peer VPN?</title>
+      <link>/n2n-peer-to-peer-vpn/</link>
+      <pubDate>Sat, 15 Nov 2008 02:17:33 +0000</pubDate>
+      
+      <guid>/n2n-peer-to-peer-vpn/</guid>
+      <description>Most vpns&amp;hellip; in fact&amp;hellip; all of them, are based on a client/server model. This means that all vpn clients call home to one vpn server and connect. All traffic goes through that vpn server and then gets passed on to its original destination. But what if you could have the benefits of VPN, but be able to communicate directly to other VPN peers, so without the latency and bandwidth limitations?</description>
+    </item>
+    
+  </channel>
+</rss>

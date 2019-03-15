@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Diydrone on xkyle.com</title>
+    <link>/categories/diydrone/</link>
+    <description>Recent content in Diydrone on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 15 Jan 2010 16:45:54 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/diydrone/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>DIYDrone: IMU First steps</title>
+      <link>/diydrone-imu-first-steps/</link>
+      <pubDate>Fri, 15 Jan 2010 16:45:54 +0000</pubDate>
+      
+      <guid>/diydrone-imu-first-steps/</guid>
+      <description>This is my first step towards building a UAV, it is a Inertial Measurement Unit.</description>
+    </item>
+    
+  </channel>
+</rss>

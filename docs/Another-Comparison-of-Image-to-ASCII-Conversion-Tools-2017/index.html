@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="Another Comparison of Image to ASCII Conversion Tools (2017)" />
+<meta property="og:description" content="Time for another round of terminal-based ascii/ansi art image conversion tools. Check out my last post from 2015 with more comparisons of more tools.
+This year I compare the best tool from 2015, img2xterm, against a new set of tools that I&rsquo;ve stumbled across. email me with other tools if you would like to be included in the next round.
+Methodology For these tests I used an image with a 160px width, twice that of a standard terminal." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/Another-Comparison-of-Image-to-ASCII-Conversion-Tools-2017/" /><meta property="article:published_time" content="2017-11-25T19:35:56&#43;00:00"/>
+<meta property="article:modified_time" content="2017-11-25T19:35:56&#43;00:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Another Comparison of Image to ASCII Conversion Tools (2017)"/>
+<meta name="twitter:description" content="Time for another round of terminal-based ascii/ansi art image conversion tools. Check out my last post from 2015 with more comparisons of more tools.
+This year I compare the best tool from 2015, img2xterm, against a new set of tools that I&rsquo;ve stumbled across. email me with other tools if you would like to be included in the next round.
+Methodology For these tests I used an image with a 160px width, twice that of a standard terminal."/>
+
+
+    <meta name="description" content="">
+    <link rel="canonical" href="../Another-Comparison-of-Image-to-ASCII-Conversion-Tools-2017/">
+
+    
+    <title>Another Comparison of Image to ASCII Conversion Tools (2017) &middot; xkyle.com</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <link href="css/style.css" rel="stylesheet">
+
+    
+
+    
+
+    
+  </head>
+  <body>
+    
+      
+
+
+
+<nav class="white" role="navigation">
+    <div class="row max-width">
+        <div class="col s12 l10 offset-l1">
+            
+            <a href="#" data-activates="nav-mobile" class="button-collapse black-text">
+                <i class="material-icons">menu</i>
+            </a>
+
+            
+            <ul id="nav-mobile" class="side-nav">
+                
+                
+    
+    
+
+            </ul>
+
+            
+            <a href="../" class="brand-logo grey-text text-darken-3">xkyle.com</a>
+
+            
+            <div class="nav-wrapper">
+
+                
+                <ul class="right hide-on-med-and-down">
+                    
+                    
+    
+    
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</nav>
+    
+
+    
+
+<article class="max-width">
+    
+    <section class="row">
+        <div class="col s12 m10 offset-m1 l10 offset-l1">
+            <h1>Another Comparison of Image to ASCII Conversion Tools (2017)</h1>
+        </div>
+    </section>
+
+    
+    
+
+    
+    <section class="row">
+        <div class="col s12 m8 offset-m2 l2 offset-l1">
+            
+
+<p class="article-meta">
+    <div class="article-meta-container">
+        <div class="article-meta-author-name"></div>
+        <div class="article-meta-description"></div>
+    </div>
+    <span class="article-meta-published-at grey-text text-darken-1">Nov 25, 2017</span>
+</p>
+        </div>
+        <div class="col s12 m8 offset-m2 l6">
+            
+
+<p>Time for another round of terminal-based ascii/ansi art image conversion
+tools. Check out my <a href="./a-comparison-of-image-to-ascii-conversion-tools/">last post from 2015</a>
+with more comparisons of more tools.</p>
+
+<p>This year I compare the best tool from 2015, img2xterm, against
+a new set of tools that I&rsquo;ve stumbled across. <a href="mailto:kyle@xkyle.com">email me</a>
+with other tools if you would like to be included in the <em>next</em> round.</p>
+
+<h2 id="methodology">Methodology</h2>
+
+<p>For these tests I used an image with a 160px width, twice that of
+a standard terminal. Then I <code>cat</code>&rsquo;d the image in plain xterm and
+took a screenshot of the results.</p>
+
+<p>The original has been scaled up (6X) to be the same relative size as
+the resulting screenshots.</p>
+
+<p>My entire methodology is on <a href="https://github.com/solarkennedy/ascii-art-converter-comparison">github</a>
+if you wish to see exactly how I made these images. In theory
+it is 100% reproducible from <code>make</code>. (assuming on a linux desktop)</p>
+
+<h2 id="tools-compared">Tools Compared</h2>
+
+<ul>
+<li><a href="https://github.com/rossy/img2xterm">img2xterm</a></li>
+<li><a href="https://github.com/jD91mZM2/termplay">termplay</a></li>
+<li><a href="https://github.com/stefanhaustein/TerminalImageViewer">TerminalImageViewer</a></li>
+<li><a href="https://github.com/eliukblau/pixterm">pixterm</a></li>
+<li><a href="https://github.com/hzeller/timg">timg</a></li>
+</ul>
+
+<h2 id="results">Results</h2>
+
+<h2 id="bender-png">bender.png</h2>
+
+<p><img src="../uploads/bender.original.png" alt="bender.png converted using original" title="bender.png converted using original" />
+<img src="../uploads/bender.img2xterm.png" alt="bender.png converted using img2xterm" title="bender.png converted using img2xterm" />
+<img src="../uploads/bender.termplay.png" alt="bender.png converted using termplay" title="bender.png converted using termplay" />
+<img src="../uploads/bender.TerminalImageViewer.png" alt="bender.png converted using TerminalImageViewer" title="bender.png converted using TerminalImageViewer" />
+<img src="../uploads/bender.pixterm.png" alt="bender.png converted using pixterm" title="bender.png converted using pixterm" />
+<img src="../uploads/bender.timg.png" alt="bender.png converted using timg" title="bender.png converted using timg" /></p>
+
+<h2 id="lenna-png">lenna.png</h2>
+
+<p><img src="../uploads/lenna.original.png" alt="lenna.png converted using original" title="lenna.png converted using original" />
+<img src="../uploads/lenna.img2xterm.png" alt="lenna.png converted using img2xterm" title="lenna.png converted using img2xterm" />
+<img src="../uploads/lenna.termplay.png" alt="lenna.png converted using termplay" title="lenna.png converted using termplay" />
+<img src="../uploads/lenna.TerminalImageViewer.png" alt="lenna.png converted using TerminalImageViewer" title="lenna.png converted using TerminalImageViewer" />
+<img src="../uploads/lenna.pixterm.png" alt="lenna.png converted using pixterm" title="lenna.png converted using pixterm" />
+<img src="../uploads/lenna.timg.png" alt="lenna.png converted using timg" title="lenna.png converted using timg" /></p>
+
+<h2 id="nyan-png">nyan.png</h2>
+
+<p><img src="../uploads/nyan.original.png" alt="nyan.png converted using original" title="nyan.png converted using original" />
+<img src="../uploads/nyan.img2xterm.png" alt="nyan.png converted using img2xterm" title="nyan.png converted using img2xterm" />
+<img src="../uploads/nyan.termplay.png" alt="nyan.png converted using termplay" title="nyan.png converted using termplay" />
+<img src="../uploads/nyan.TerminalImageViewer.png" alt="nyan.png converted using TerminalImageViewer" title="nyan.png converted using TerminalImageViewer" />
+<img src="../uploads/nyan.pixterm.png" alt="nyan.png converted using pixterm" title="nyan.png converted using pixterm" />
+<img src="../uploads/nyan.timg.png" alt="nyan.png converted using timg" title="nyan.png converted using timg" /></p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p><a href="https://github.com/rossy/img2xterm">img2xterm</a> is the contender from the last
+comparison. Compared to this second wave of tools, its lack of 24bit color
+shows. It does have the most advanced colorspace conversion capabilities.
+If you want true-color, look elsewhere.</p>
+
+<p><a href="https://github.com/jD91mZM2/termplay">termplay</a> is a converter written in
+Rust, capable of converting static images as well as videos. It has native
+youtube-dl support. It also has a unique feature to mirror an X11 window in
+real time in the terminal. This converter had the highest performance of all
+the tools. It probably has extra performance optimizations in order to support
+video. The lack of half-block character support show when put side-by-side with
+other converters.</p>
+
+<p><a href="https://github.com/stefanhaustein/TerminalImageViewer">TerminalImageViewer</a> (tiv)
+has the unique feature of being able to use many different block formats, more
+than the half-block character, to create an interesting output. Look at the
+list of <a href="https://github.com/stefanhaustein/TerminalImageViewer/blob/65ebc0a59e58ba5ba2f3d4dc54ced5e468317277/src/main/java/TerminalImageViewer.java#L248-L345">unique unicode characters</a>
+available for use. Due to this feature, I had to provide an <strong>upscaled</strong>
+version of the source images in order to produce the the desired output.</p>
+
+<p><a href="https://github.com/eliukblau/pixterm">pixterm</a>&rsquo;s most prominent feature is its
+speed. Taking advantage of Go&rsquo;s concurrency features, it can convert images
+quickly using all available cores. It can also support a wide range of input
+formats.</p>
+
+<p><a href="https://github.com/hzeller/timg">timg</a>&rsquo;s unique feature is that it can show
+animated gifs directly in the terminal. It can handle true color using the
+half-block character for double the vertical resolution.</p>
+
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Color</th>
+<th>Block Type</th>
+<th>Language</th>
+<th>Performance Overall, data</th>
+<th>Extra</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>img2xterm</td>
+<td>256</td>
+<td>Half-Block</td>
+<td>C</td>
+<td>Medium (20, 13, 11)</td>
+<td>Bash version available</td>
+</tr>
+
+<tr>
+<td>termplay</td>
+<td>True or 256</td>
+<td>Single Block</td>
+<td>Rust</td>
+<td>High (6, 5, 4)</td>
+<td>Video support</td>
+</tr>
+
+<tr>
+<td>TerminalImageViewer</td>
+<td>True or 256</td>
+<td>4x8 Unicode</td>
+<td>C++ and Java</td>
+<td>Low (48, 46, 45)</td>
+<td>Extra unicode characters for multi-pixel matching</td>
+</tr>
+
+<tr>
+<td>pixterm</td>
+<td>True</td>
+<td>Half-Block</td>
+<td>Go</td>
+<td>Medium (17, 17, 17)</td>
+<td>multi-core processing</td>
+</tr>
+
+<tr>
+<td>timg</td>
+<td>True</td>
+<td>Half-Block</td>
+<td>C++</td>
+<td>High (10, 8, 7)</td>
+<td>Animated gif support</td>
+</tr>
+</tbody>
+</table>
+
+<p>(Performance data is real time in ms for rendering bender, lenna, and nyan)</p>
+
+<h3 id="winner-terminalimageviewer">Winner: TerminalImageViewer</h3>
+
+<p>Even though it has relativly slow performance, its unique unicode rendering can
+give the highest &ldquo;resolution&rdquo; images available on a terminal. It does look a
+little weird on some images, so I&rsquo;m glad it has the -0 option to force it back
+into half-block mode. In this mode it is just as good as pixterm or timg.</p>
+
+<h3 id="runner-up-timg">Runner up: timg</h3>
+
+<p>With true color and half-block support, timg creates very high quality versions
+of images in terminials. Combine this with its high performance and animated
+gif support, it is this year&rsquo;s runner up.</p>
+
+        </div>
+    </section>
+</article>
+
+
+
+    
+      <footer class="page-footer grey lighten-5">
+    <div class="row max-width">
+        <div class="col s12 l10 offset-l1 clear-padding">
+            <div class="row">
+    
+        
+    
+
+    
+    
+    <div class="col s12 l12">
+        <h5 class="black-text"></h5>
+<p class="grey-text text-darken-4"></p>
+
+    </div>
+
+    
+</div>
+
+
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="row max-width" style="width: 100%;">
+            <div class="col s12 l10 offset-l1">
+                <span class="grey-text text-darken-4"></span>
+<div class="right">
+    
+</div>
+            </div>
+        </div>
+    </div>
+</footer>
+    
+
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pxe on xkyle.com</title>
+    <link>/categories/pxe/</link>
+    <description>Recent content in Pxe on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 06 Jan 2013 23:16:33 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/pxe/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cool Things to Do After Installing OpenWrt</title>
+      <link>/cool-things-to-do-after-installing-openwrt/</link>
+      <pubDate>Sun, 06 Jan 2013 23:16:33 +0000</pubDate>
+      
+      <guid>/cool-things-to-do-after-installing-openwrt/</guid>
+      <description>OpenWrt is the bomb. Think all the power of a full Linux distro on your tiny home router or plug computer.
+Install an External Root Overlay What the heck does that mean? OpenWrt uses an ingenious system were the root filesystem is a super compressed squashfs, merged with a read/write jffs2 filesystem called the overlay. This maximizes your available space on the device. Instead of using part of your remaining flash for read/write, you can use a larger, external device for the overlay.</description>
+    </item>
+    
+    <item>
+      <title>Setting Up Your Very Own PXE Server!</title>
+      <link>/setting-up-your-very-own-pxe-server/</link>
+      <pubDate>Fri, 16 Jul 2010 22:42:46 +0000</pubDate>
+      
+      <guid>/setting-up-your-very-own-pxe-server/</guid>
+      <description>Ever fumbled around your house looking for a Linux CD, but you can&amp;rsquo;t find it? Ever suspected that your ram was going bad, but you didn&amp;rsquo;t have a way to test it? Ever needed to backup files on a computer that had a dead and broken operating system? A solution to all these problems is a super cool tool called PXE booting. PXE booting allows you to load alternative operating systems over the network, without the need for cds, cdroms, etc!</description>
+    </item>
+    
+  </channel>
+</rss>

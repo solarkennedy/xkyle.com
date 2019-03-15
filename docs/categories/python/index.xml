@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on xkyle.com</title>
+    <link>/categories/python/</link>
+    <description>Recent content in Python on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 21 Mar 2013 02:04:43 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Decoding Balanced Payments Puzzle 1</title>
+      <link>/decoding-balanced-payments-puzzle-1/</link>
+      <pubDate>Thu, 21 Mar 2013 02:04:43 +0000</pubDate>
+      
+      <guid>/decoding-balanced-payments-puzzle-1/</guid>
+      <description>A strange string appeared at the bottom of a Balanced Payments blog post:
+ NmQ2ZjYzMmU3Mzc0NmU2NTZkNzk2MTcwNjQ2NTYzNm U2MTZjNjE2MjQwNjU2MzZlNjU3MjY1NjY2NjY5NjQ2MTY1N mI2MTZkNmY3NDc0NmU2MTc3Njk=
+ One of those puzzles to attract coders I guess. The guys at Hacker News spilled the beans, so lets spill them some more.
+First though,** Mad Props** to the Balanced team for thinking &amp;ldquo;outside&amp;rdquo; the unit-test-box. Plus Jenkins rocks. The world needs more Jenkins. Bash? I&amp;rsquo;m not a developer, so my first instinct was to use the existing set of tools that people have already written to solve this puzzle:</description>
+    </item>
+    
+    <item>
+      <title>Solving &#34;Role Playing 4&#34;</title>
+      <link>/solving-role-playing-4/</link>
+      <pubDate>Tue, 05 Oct 2010 20:25:06 +0000</pubDate>
+      
+      <guid>/solving-role-playing-4/</guid>
+      <description>Last month Games Magazine published their Online Contest 29 - Role Playing 4. Here is the puzzle:
+
+The circles represent actors, the diamonds represent movies they have been in. Pink is for actresses and blue is for actors. The numbers represent the numbers in their name: First, Last. Question marks indicate the number in their name is 3,4,6, or 9 letters. The center actress is what we are after. Note there are no clues for her name, but she has been in 13 movies.</description>
+    </item>
+    
+    <item>
+      <title>Computer Assisted Jenga with the Wii Balance Board and Linux</title>
+      <link>/computer-assisted-jenga-with-the-wii-balance-board-and-linux/</link>
+      <pubDate>Sun, 01 Aug 2010 05:07:57 +0000</pubDate>
+      
+      <guid>/computer-assisted-jenga-with-the-wii-balance-board-and-linux/</guid>
+      <description>I like to think about how games work, in the case of Jenga, it is just physics!
+But don&amp;rsquo;t you wish you could peel back reality and see what is happening with the physics from the inside? Well now you can, with the help of a Wii Balance Board.
+
+For the setup you need these ingredients:
+ Wii Balance Board
+ Computer with Bluetooth
+ Linux, preferably Ubuntu
+ Jenga Set, alternatively &amp;ldquo;Tension Tower&amp;ldquo;</description>
+    </item>
+    
+  </channel>
+</rss>
