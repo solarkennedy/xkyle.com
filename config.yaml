@@ -5,3 +5,4 @@ theme: hugo-material-blog
 permalinks:
   post: /:slug/
 relativeURLs: true
+publishDir: docs
