@@ -6,3 +6,4 @@ permalinks:
   post: /:slug/
 relativeURLs: true
 publishDir: docs
+pygmentsCodeFences: true
