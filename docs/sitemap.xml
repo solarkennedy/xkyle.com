@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/Build-Versus-Buy-You-Are-Always-Building-Always-Buying/</loc>
+    <lastmod>2019-05-25T19:35:56+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/Configuration-as-Code-Is-It-That-Good-of-an-Idea/</loc>
     <lastmod>2019-04-23T19:35:56+00:00</lastmod>
   </url>
@@ -1275,7 +1280,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-04-23T19:35:56+00:00</lastmod>
+    <lastmod>2019-05-25T19:35:56+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1610,7 +1615,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-04-23T19:35:56+00:00</lastmod>
+    <lastmod>2019-05-25T19:35:56+00:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/post/" />
-<meta property="og:updated_time" content="2013-05-18T21:12:21&#43;00:00"/>
+<meta property="og:updated_time" content="2013-05-31T01:45:13&#43;00:00"/>
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Posts"/>
@@ -81,6 +81,31 @@
 
     
 
+
+
+
+    
+        <article class="row max-width">
+    <div class="col s12 l10 offset-l1">
+        <h3>
+            <a class="grey-text text-darken-3" href="../../../an-overdrive-pro-connecting-on-openwrt/">An Overdrive Pro Connecting on OpenWrt</a>
+        </h3>
+        <div>
+
+<p class="article-meta">
+    <div class="article-meta-container">
+        <div class="article-meta-author-name">admin</div>
+        <div class="article-meta-description"></div>
+    </div>
+    <span class="article-meta-published-at grey-text text-darken-1">May 31, 2013</span>
+</p></div>
+        <div>Have a fancy FreedomPop Overdrive Pro? Want to hook it up to your OpenWrt based router to use as a backup (or primary?) internet connection? Lets do it.
+Plug it into your router via USB. Then run:
+opkg install kmod-usb-net-cdc-ether  Run dmesg and it will report which eth device came up. Mine shows up as &ldquo;eth1&rdquo;. Now make eth1 your &ldquo;wan&rdquo; interface:
+uci set network.wan.ifname=eth1 uci commit reboot  Whoa.</div>
+    </div>
+</article>
+    
 
 
 
@@ -308,30 +333,6 @@ Oh well.</div>
 
 To make it easy for my clients to get power information, I&rsquo;ve written a command line tool called &ldquo;power&rdquo; that they can run to get the power usage for a server when running their program. Here is an example:
 power METER-NAME sleep 10s  Pretty handy. The &ldquo;METER-NAME&rdquo; is pretty important, as it lets the script know which system&rsquo;s power you are interested in.</div>
-    </div>
-</article>
-    
-
-
-
-    
-        <article class="row max-width">
-    <div class="col s12 l10 offset-l1">
-        <h3>
-            <a class="grey-text text-darken-3" href="../../../an-ipmi-sel-viewing-shootout/">An IPMI SEL Viewing Shootout!</a>
-        </h3>
-        <div>
-
-<p class="article-meta">
-    <div class="article-meta-container">
-        <div class="article-meta-author-name">admin</div>
-        <div class="article-meta-description"></div>
-    </div>
-    <span class="article-meta-published-at grey-text text-darken-1">Feb 13, 2013</span>
-</p></div>
-        <div>UPDATE (2015-02-18) Albert Chu from FreeIPMI commented that FreeIPMI does NOT attempt to decode OEM events by default. These are events that are OEM specific, so each motherboard may require a different interpretation.
-FreeIPMI has a --interpret-oem-data option and possibly in conjunction with the -W assumesystemevent option, to attempt to decode these.
-Unfortunately I no longer have the motherboard I originally ran these on. I might do a followup post with a new motherboard with similar &ldquo;issues&rdquo; and see how FreeIPMI compares to the other tools with these options.</div>
     </div>
 </article>
     

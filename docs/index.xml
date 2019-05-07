@@ -6,10 +6,19 @@
     <description>Recent content on xkyle.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Apr 2019 19:35:56 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 25 May 2019 19:35:56 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Build Versus Buy: You Are Always Building, Always Buying</title>
+      <link>/Build-Versus-Buy-You-Are-Always-Building-Always-Buying/</link>
+      <pubDate>Sat, 25 May 2019 19:35:56 +0000</pubDate>
+      
+      <guid>/Build-Versus-Buy-You-Are-Always-Building-Always-Buying/</guid>
+      <description>TL;DR:  &amp;ldquo;Build-vs-Buy&amp;rdquo; is a false dichotomy, you are always building, always buying &amp;ldquo;This is not your &amp;lsquo;Core Competency&amp;rsquo;&amp;rdquo; is a faux trump-card, everything is a spectrum Past experience is overrated, what matters for hiring is your ability to learn  Understanding The Trade-Off Fully understanding the build-versus-buy trade-off requires a bunch of different context to really get right. At first glance you might think that you only need to really understand:</description>
+    </item>
     
     <item>
       <title>Configuration as Code - Is It That Good of an Idea?</title>
