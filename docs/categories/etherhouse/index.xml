@@ -13,10 +13,10 @@
     
     <item>
       <title>Etherhouse Part 2 - Software</title>
-      <link>/Etherhouse-Part-2---Software/</link>
+      <link>/Etherhouse-Part-2-Software/</link>
       <pubDate>Sun, 16 Nov 2014 16:28:24 +0000</pubDate>
       
-      <guid>/Etherhouse-Part-2---Software/</guid>
+      <guid>/Etherhouse-Part-2-Software/</guid>
       <description>The software that powers the Etherhouse project is open source. This blog post describes that software and how it interacts with all the pieces.
 Client You can see the Client software that runs on the Arduino. This uses one external library and is in the native Arduino C++.
 The Arduino runs a limited TCP/IP stack and interacts with the http api.
@@ -25,10 +25,10 @@ The code plenty of defensive code in place to ensure the client continues to run
     
     <item>
       <title>Etherhouse Part 1 - Hardware</title>
-      <link>/Etherhouse-Part-1---Hardware/</link>
+      <link>/Etherhouse-Part-1-Hardware/</link>
       <pubDate>Sun, 16 Nov 2014 15:59:56 +0000</pubDate>
       
-      <guid>/Etherhouse-Part-1---Hardware/</guid>
+      <guid>/Etherhouse-Part-1-Hardware/</guid>
       <description>Etherhouse a project of mine involving eight Christmas gifts. Each gift involved a display of some model houses made from folded paper, each representing the home of a friend or family member.
 The houses light up, depending on whether that family member is home or not. Their presence is detected based on if their smartphone is on the same network the etherhouse is on.
 See the GitHub page for more details.</description>

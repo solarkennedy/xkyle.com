@@ -6,10 +6,20 @@
     <description>Recent content on xkyle.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 08 Mar 2019 19:35:56 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 23 Apr 2019 19:35:56 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Configuration as Code - Is It That Good of an Idea?</title>
+      <link>/Configuration-as-Code-Is-It-That-Good-of-an-Idea/</link>
+      <pubDate>Tue, 23 Apr 2019 19:35:56 +0000</pubDate>
+      
+      <guid>/Configuration-as-Code-Is-It-That-Good-of-an-Idea/</guid>
+      <description>Kyle&amp;rsquo;s Conclusions:  If possible, make your users not care about the intermediate form &amp;ldquo;Code as Configuration&amp;rdquo; is not worth it YAML isn&amp;rsquo;t so bad if you can be strict  A Brief History of Configuration as Code Configuration as Code is not new. There are a few subtle distinctions that are worth pointing out:
+   Thing Historic Example Modern Example     Config as Config Apache2 (.</description>
+    </item>
     
     <item>
       <title>Layers</title>
@@ -48,8 +58,8 @@ The &amp;ldquo;source code&amp;rdquo; of this project is on github and is in the
       <pubDate>Mon, 18 Jun 2018 07:48:18 +0000</pubDate>
       
       <guid>/Cross-Country-Motorcycle-Road-Trip-2018/</guid>
-      <description>I have finished a month long road trip totaling 8741 miles:    I rode a 2014 Kawasaki Ninja 300
-       </description>
+      <description>I have finished a month long road trip totaling 8741 miles:   I rode a 2014 Kawasaki Ninja 300
+    </description>
     </item>
     
     <item>
@@ -71,7 +81,7 @@ For this survey I&amp;rsquo;ll look at a few open-source technologies to give co
       <guid>/Adding-Electric-Motors-to-a-Gemini-105m/</guid>
       <description>I recently added a pair of electric motors to my Gemini 105m catamaran.
   Haul out   Although I don&amp;rsquo;t have any photos of the actual installation, here is what they look like:
-   motors     wake   These are a pair of Caroutte S400&amp;rsquo;s.
+  motors     wake   These are a pair of Caroutte S400&amp;rsquo;s.
 In theory they have a thrust of 180lbs each and a peak power consumption of 2.7kw each. Although it cannot be directly compared, the onboard diesel is a 20kw (27 Horsepower) engine.</description>
     </item>
     
@@ -162,10 +172,10 @@ echo 62 &amp;gt; /sys/kernel/debug/bluetooth/6lowpan_psm  This PSM value lets th
     
     <item>
       <title>Etherhouse Part 2 - Software</title>
-      <link>/Etherhouse-Part-2---Software/</link>
+      <link>/Etherhouse-Part-2-Software/</link>
       <pubDate>Sun, 16 Nov 2014 16:28:24 +0000</pubDate>
       
-      <guid>/Etherhouse-Part-2---Software/</guid>
+      <guid>/Etherhouse-Part-2-Software/</guid>
       <description>The software that powers the Etherhouse project is open source. This blog post describes that software and how it interacts with all the pieces.
 Client You can see the Client software that runs on the Arduino. This uses one external library and is in the native Arduino C++.
 The Arduino runs a limited TCP/IP stack and interacts with the http api.
@@ -174,10 +184,10 @@ The code plenty of defensive code in place to ensure the client continues to run
     
     <item>
       <title>Etherhouse Part 1 - Hardware</title>
-      <link>/Etherhouse-Part-1---Hardware/</link>
+      <link>/Etherhouse-Part-1-Hardware/</link>
       <pubDate>Sun, 16 Nov 2014 15:59:56 +0000</pubDate>
       
-      <guid>/Etherhouse-Part-1---Hardware/</guid>
+      <guid>/Etherhouse-Part-1-Hardware/</guid>
       <description>Etherhouse a project of mine involving eight Christmas gifts. Each gift involved a display of some model houses made from folded paper, each representing the home of a friend or family member.
 The houses light up, depending on whether that family member is home or not. Their presence is detected based on if their smartphone is on the same network the etherhouse is on.
 See the GitHub page for more details.</description>

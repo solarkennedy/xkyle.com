@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="Configuration as Code - Is It That Good of an Idea?" />
+<meta property="og:description" content="Kyle&rsquo;s Conclusions:  If possible, make your users not care about the intermediate form &ldquo;Code as Configuration&rdquo; is not worth it YAML isn&rsquo;t so bad if you can be strict  A Brief History of Configuration as Code Configuration as Code is not new. There are a few subtle distinctions that are worth pointing out:
+   Thing Historic Example Modern Example     Config as Config Apache2 (." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/Configuration-as-Code-Is-It-That-Good-of-an-Idea/" /><meta property="article:published_time" content="2019-04-23T19:35:56&#43;00:00"/>
+<meta property="article:modified_time" content="2019-04-23T19:35:56&#43;00:00"/>
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Configuration as Code - Is It That Good of an Idea?"/>
+<meta name="twitter:description" content="Kyle&rsquo;s Conclusions:  If possible, make your users not care about the intermediate form &ldquo;Code as Configuration&rdquo; is not worth it YAML isn&rsquo;t so bad if you can be strict  A Brief History of Configuration as Code Configuration as Code is not new. There are a few subtle distinctions that are worth pointing out:
+   Thing Historic Example Modern Example     Config as Config Apache2 (."/>
+
+
+    <meta name="description" content="">
+    <link rel="canonical" href="../Configuration-as-Code-Is-It-That-Good-of-an-Idea/">
+
+    
+    <title>Configuration as Code - Is It That Good of an Idea? &middot; xkyle.com</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="css/style.css" rel="stylesheet">
+
+    
+
+    
+
+    
+  </head>
+  <body>
+    
+      
+
+
+
+<nav class="white" role="navigation">
+    <div class="row max-width">
+        <div class="col s12 l10 offset-l1">
+            
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger black-text">
+                <i class="material-icons">menu</i>
+            </a>
+
+            
+            <ul id="nav-mobile" class="sidenav">
+                
+                
+    
+    
+
+            </ul>
+
+            
+            <a href="../" class="brand-logo grey-text text-darken-3">xkyle.com</a>
+
+            
+            <div class="nav-wrapper">
+
+                
+                <ul class="right hide-on-med-and-down">
+                    
+                    
+    
+    
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</nav>
+    
+
+    
+
+<article class="max-width">
+    
+    <section class="row">
+        <div class="col s12 m10 offset-m1 l10 offset-l1">
+            <h1>Configuration as Code - Is It That Good of an Idea?</h1>
+        </div>
+    </section>
+
+    
+    
+
+    
+    <section class="row">
+        <div class="col s12 m8 offset-m2 l2 offset-l1">
+            
+
+<p class="article-meta">
+    <div class="article-meta-container">
+        <div class="article-meta-author-name"></div>
+        <div class="article-meta-description"></div>
+    </div>
+    <span class="article-meta-published-at grey-text text-darken-1">Apr 23, 2019</span>
+</p>
+        </div>
+        <div class="col s12 m8 offset-m2 l6">
+            
+
+<h2 id="kyle-s-conclusions">Kyle&rsquo;s Conclusions:</h2>
+
+<ul>
+<li>If possible, make your users <em>not care</em> about the intermediate form</li>
+<li>&ldquo;Code as Configuration&rdquo; is <strong>not</strong> worth it</li>
+<li>YAML isn&rsquo;t so bad if you can be strict</li>
+</ul>
+
+<h2 id="a-brief-history-of-configuration-as-code">A Brief History of Configuration as Code</h2>
+
+<p>Configuration as Code is not new. There are a few subtle distinctions that are worth pointing out:</p>
+
+<table>
+<thead>
+<tr>
+<th>Thing</th>
+<th>Historic Example</th>
+<th>Modern Example</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Config as Config</td>
+<td>Apache2 (.conf)</td>
+<td>Sensu (.json)</td>
+</tr>
+
+<tr>
+<td>Config as Code</td>
+<td>Sendmail (.cf)</td>
+<td>Skycfg (.cfg)</td>
+</tr>
+
+<tr>
+<td>Code as Config</td>
+<td>C (config.h)</td>
+<td>Aurora (.aurora)</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li>Config as Config: Config files which is never &ldquo;run&rdquo;, but is interpreted
+as-is by the consuming program.</li>
+<li>Config as Code: Config files which are executed in way, which output an
+intermediate config language, which is then consumed by the program.</li>
+<li>Code as Config: Config files which are executed directly by the program.
+There is no intermediate representation, it just <em>is</em> code.</li>
+</ul>
+
+<p>This blog post is about the last two.</p>
+
+<h3 id="an-example-case-study-nagios-versus-sensu">An Example Case Study: Nagios Versus Sensu</h3>
+
+<p><a href="https://en.wikipedia.org/wiki/Nagios">Nagios</a> is a monitoring tool built in
+2002. <a href="https://docs.sensu.io/sensu-core/1.7/">Sensu</a> is also a monitoring tool,
+built around 2011. There are plenty of differences, but for this case
+study I&rsquo;m going to focus on how these tools are configured by their users.</p>
+
+<p>Nagios&rsquo;s configuration file format is bespoke, but you can use the <code>nagios</code>
+binary to verify its correctness. It has a everything from <a href="https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/3/en/objectdefinitions.html#host">low-level resource
+definitions</a>
+to object <a href="https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/3/en/objectinheritance.html">templating and
+inheritance</a>
+as well as <a href="https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/3/en/macros.html">macros and variable
+expressions</a>.
+Its configuration language is designed to be currated by humans. This hasn&rsquo;t
+stopped engineers from writing parsers ([<a href="http://pynag.org/#manipulate">1</a>],
+[<a href="https://github.com/sous-chefs/nagios/wiki/hosts.cfg">2</a>],
+[<a href="https://puppet.com/docs/puppet/5.3/types/nagios_host.html">3</a>]) so they can
+write Nagios config <em>as</em> code.</p>
+
+<p>Sensu&rsquo;s configuration file format is JSON. It has very limited <a href="https://docs.sensu.io/sensu-core/0.29/reference/filters/#reference-documentation">variable
+expression</a>.
+Its configuration language is designed to be deployed with machines
+(configuration management tools). The Sensu JSON files were never intended to
+be written by humans. It was always intended to be a
+&ldquo;configuration-management-native&rdquo; system.</p>
+
+<p>To put it another way, the <a href="http://portertech.ca/2011/11/01/sensu-a-monitoring-framework/">original Sensu
+authors</a> wanted
+the JSON to be an &ldquo;intermediate form&rdquo; (where the human readable form was the
+users&rsquo; choice (chef code), then deployed to JSON for sensu to read, eventually
+ending up as internal Sensu (ruby) objects).</p>
+
+<p>Why? Why would the Sensu authors make their system use configuration format
+that is hostile to humans (JSON)? I think they were building it this way for two reasons:</p>
+
+<ol>
+<li><p>They were building this tool for the long haul. Humans will be editing their
+monitoring config (Sensu or Nagios) for years, so they wanted to meet them
+where they are at, and make it as easy as possible for their users to use the
+<em>common language</em> of their environment (configuration management tools).</p></li>
+
+<li><p>As a reaction to the &ldquo;complexity&rdquo; of the nagios configuration model, the
+authors wanted to leave room for programmatic and dynamic configuration. In
+the modern error, hosts come and go at will, checks need to be redefined based
+on other programmatic events, and in general the world is not a static set of
+hosts and checks per the Nagios model. Configuration as Code is one way to make
+room for this dynamic.</p></li>
+</ol>
+
+<h2 id="dsls-or-making-your-users-not-care">DSLs or Making Your Users Not Care</h2>
+
+<p><a href="https://en.wikipedia.org/wiki/Domain-specific_language">DSLs</a> are a mixed bag.
+Evaluating a DSL for its usefulness comes down to one key thing:</p>
+
+<blockquote>
+<p>How much intellectual effort does this DSL save me, compared to the
+intellectual cost of understanding and working with the intermediate form
+directly?</p>
+</blockquote>
+
+<p>Upon initial inspection, DSLs can look like they provide no immediate benefits,
+and instead look like they just add a layer of obfuscation:</p>
+
+<pre><code class="language-generic"># Native Sensu                         | # Puppet Sensu
+{                                      | sensu_check { 'check_www':
+  &quot;check_www&quot;: {                       |   command  =&gt; 'check_http --port 80',
+    &quot;command&quot;: &quot;check_http --port 80&quot;, |   interval =&gt; 60,
+    &quot;interval&quot;: 60                     | }
+  }                                    |
+}                                      |
+</code></pre>
+
+<p>It is naive to think that all this is is some alternative way to make JSON. The
+real power comes from building abstractions on top, and allowing it to live in
+the surrounding ecosystem of configuration:</p>
+
+<pre><code class="language-puppet">$port = 80
+class { 'apache':
+  listen_port =&gt; $port
+} -&gt;
+sensu_check { 'check_apache':
+  command  =&gt; &quot;check_http --port $port&quot;,
+  interval =&gt; 60,
+}
+</code></pre>
+
+<p>This kind of integration was never possible with Nagios&rsquo;s configuration
+language, even with all its templates, inheritance, and variable
+interpolation.</p>
+
+<p>But for these users of Sensu, they never hand-made the JSON in the first place.
+To them, the configuration management language they use <em>is</em> the config
+language they use, they don&rsquo;t care about the JSON intermediate form (for all
+they care, it doesn&rsquo;t even exist and is an implementation detail).</p>
+
+<h3 id="what-about-k8s-dsls">What About k8s DSLs?</h3>
+
+<p>Kubernetes&rsquo; (k8s) popularity, combined with it&rsquo;s &ldquo;almost human readable api&rdquo;
+format (when you look at it in YAML form), have created a <a href="https://www.merriam-webster.com/dictionary/cottage%20industry">cottage
+industry</a> of
+tools built to deal with k8s&rsquo;s &ldquo;intermediate form YAML&rdquo;.</p>
+
+<p>There is a subtle difference though between all these tools and the Sensu
+example above: people care about the intermediate form with k8s. For k8s, the
+YAML <strong><em>is</em></strong> the k8s configuration language, so any tool that &ldquo;compiles&rdquo; to
+k8s YAML <strong>must</strong> have the ability to allow users to inspect that intermediate
+form.</p>
+
+<p>For some reason (probably the fact that YAML is human readable and the <code>kubectl
+apply</code> command exists), we see it as the &ldquo;primary&rdquo; form, and not the
+intermediate. We don&rsquo;t see the same sort of standard held against Terraform.
+Nobody really cares about the intermediate JSON that flows between Terraform
+and cloud APIs, to Terraform users, the Terraform DSL is what matters.</p>
+
+<h2 id="yaml-a-beast-that-can-be-tamed">YAML: A Beast That Can Be Tamed</h2>
+
+<p><img src="../uploads/yaml.jpg" alt="Credit: https://www.reddit.com/user/DoNDaPo" width="500px"></p>
+
+<p>The question to me is:</p>
+
+<blockquote>
+<p>Is YAML the input format or is YAML the output format?</p>
+</blockquote>
+
+<p>I think YAML is a fine input format for humans for DSLs and such. I think it
+does not need to be an output format for computers to read, and gives a false
+impression that humans should be meeting computers where they are at.</p>
+
+<p>When YAML is used as an input format only, then humans can decide what the
+inputs are, not the machines. When the YAML generated by humans is intended to
+be used directly by an API (k8s in these examples), then there will be an
+impedance mismatch.</p>
+
+<p>I see a couple of paths for infrastructure developers to potentially take:</p>
+
+<ol>
+<li>Say &ldquo;no&rdquo; to layers of obfuscation and &ldquo;climb mount YAML&rdquo;.</li>
+<li>Decide that the amount of YAML is too much for a human to handle, and resort
+to a &ldquo;real&rdquo; programming language to generate it (&ldquo;Code as Configuration&rdquo;).</li>
+<li>Take a hybrid approach and template out the YAML (the &ldquo;Helm&rdquo; approach).</li>
+<li>Make a DSL that can take in your format of choice, and output to an
+intermediate form, and make your users not care what that is (the &ldquo;Sensu
+approach&rdquo; in the example above).</li>
+</ol>
+
+<p>For the record, I&rsquo;m in favor of approach #4.</p>
+
+<h2 id="is-it-code-as-configuration-worth-it">Is It &ldquo;Code as Configuration&rdquo; Worth It?</h2>
+
+<p>Some of the industry is pushing things in favor of approach #2. It usually
+starts with a look at how much duplication there is in the YAML files, and the
+urge to <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY</a> out the
+configs takes hold. Although YAML does have
+<a href="https://gist.github.com/bowsersenior/979804">built-in</a> functions to help
+reduce some duplication, they only operate on hashes.</p>
+
+<p>When that is not enough, someone usually says &ldquo;why don&rsquo;t we just us Python?&rdquo;
+Well, you certainly can! At this point you are getting into &ldquo;Code as Configuration&rdquo; territory. Although I don&rsquo;t think this is a good idea, if you think this is a good idea, then you might like some of these:</p>
+
+<ul>
+<li><a href="https://dhall-lang.org/#">Dhall</a>: Haskell-inspired general purpose language
+for outputting config.</li>
+<li><a href="https://pulumi.io/">Pulumi</a>: &ldquo;Just Python&rdquo; library for building cloud
+resources with Terraform-esq declarative semantics.</li>
+<li><a href="https://github.com/stripe/skycfg/blob/master/_examples/k8s/app.cfg">Skycfg</a>:
+k8s-specific python library that outputs YAML for k8s consumption.</li>
+<li><a href="https://ksonnet.io/tour/welcome/">Ksonnet</a>: A k8s-specific way of
+templating/patching k8s manifests</li>
+<li><a href="https://cue.googlesource.com/cue">Cue</a>: General-purpose config language, superset of JSON for</li>
+</ul>
+
+<p>Some day I&rsquo;ll do a comprehensive blog post comparing all these tools.</p>
+
+<p>Why do these tools exist? My best guess is:</p>
+
+<ul>
+<li>The allure of DRY is very strong, and often we&rsquo;ll trade extra complexity for the chance to not repeat themselves</li>
+<li>The tool expecting all this config was never intended for humans to provide the input</li>
+<li>The problem domain really is too complex to define with static configuration</li>
+</ul>
+
+<p>When the problem domain hits that level of complexity, then the answer is not
+config generation, the answer is a new level of abstraction and automation.
+When you live in a dynamic environment when hosts come and go, do not write a
+nagios hosts configuration generator and turn a static tool into a dynamic one.</p>
+
+<h3 id="code-as-config-it-make-building-seams-harder">Code As Config: It Make Building Seams Harder</h3>
+
+<p>Infrastructure changes, and the true &ldquo;data gravity&rdquo; is in configuration.</p>
+
+<p>Having configuration in declarative config formats allows change, validation, and linting. It allows infrastructure developers to easily build &ldquo;seams&rdquo; around that configuration, adding new features, refactoring old ones, and upgrading configuration en-masse, without having to &ldquo;refactor&rdquo; a codebase.</p>
+
+<p>Which of these DAG configurations do you think would be easier to transition to a new platform?</p>
+
+<pre><code class="language-yaml">name: my-dag-1
+
+default_task_args:
+  start_date: '2018-10-01'
+
+operators:
+- name: print-hello
+  type: bash
+  properties:
+    bash_command: &quot;echo hello&quot;
+- name: print-world
+  type: bash
+  upstream_dependencies:
+  - print-hello
+  properties:
+    bash_command: &quot;echo world&quot;
+</code></pre>
+
+<p>Or</p>
+
+<pre><code class="language-python">import os
+from airflow import DAG
+
+import datetime
+
+from airflow.operators.bash_operator import BashOperator
+
+DEFAULT_TASK_ARGS = {
+        'start_date': '2018-10-01',
+    }
+
+dag = DAG(
+        dag_id = 'my_dag_1',
+        default_args = DEFAULT_TASK_ARGS,
+    )
+
+print_hello = BashOperator(
+        dag = (dag),
+        bash_command = 'echo hello',
+        start_date = (datetime.datetime(2018, 10, 1, 0, 0)),
+        task_id = 'print_hello',
+    )
+
+
+print_world = BashOperator(
+        dag = (dag),
+        bash_command = 'echo world',
+        start_date = (datetime.datetime(2018, 10, 1, 0, 0)),
+        task_id = 'print_world',
+    )
+
+print_world.set_upstream(print_hello)
+</code></pre>
+
+<p>See Ety&rsquo;s <a href="https://github.com/etsy/boundary-layer/">boundary-layer</a> and <a href="https://codeascraft.com/2018/11/14/boundary-layer%e2%80%89-declarative-airflow-workflows/">blog post</a> for an example where it was worth it to them to define jobs in a declarative YAML format, instead of allowing developers to &ldquo;just write python&rdquo;.</p>
+
+<h2 id="yaml-be-strict-in-what-you-accept">YAML: Be Strict In What You Accept</h2>
+
+<p>YAML is a very flexible input language for humans, but in my opinion, too flexible. There are:</p>
+
+<ol>
+<li><a href="https://yaml-multiline.info/">Many different ways to do multiline strings</a></li>
+<li><a href="https://gist.github.com/solarkennedy/297a48b9ac372feee7e25b48f792c610">22 ways to represent a boolean</a></li>
+<li>A <a href="https://yaml.org/type/timestamp.html">timestamp format</a> (at least it is inspired by ISO8601)</li>
+</ol>
+
+<p>I&rsquo;ve seen mistakes with the above in production many times. Want more, check out some other weird <a href="https://gist.github.com/solarkennedy/2b826a6b90128a58c9f7f360cb87d1a8">YAML gotchas</a>.</p>
+
+<p>After spending years of working with YAML, I&rsquo;ve come to accept the good with the bad, BY NOT ALLOWING IN THE BAD.</p>
+
+<p>My best advice is to look at <a href="https://pre-commit.com/">pre-commit</a>, <a href="https://github.com/adrienverge/yamllint">yamllint</a>, and <a href="https://github.com/crdoconnor/strictyaml">strictyaml</a>.</p>
+
+<p>Just like any other flexible language, your organization will save time and avoid mistakes with a machine-enforced style guide.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>You can come to your own conclusions, but I&rsquo;ll tell you what I&rsquo;ll continue to
+do for the users around me:</p>
+
+<ul>
+<li>I&rsquo;m going to protect them from YAML gotchas, while making it a pleasure to
+write the minimum amount of configuration they need to address their problem
+domain</li>
+<li>I&rsquo;m going to build tools that protect users from the intermediate form, and
+make it so they don&rsquo;t care (a true abstraction)</li>
+<li>I&rsquo;m going to advocate against config-as-code or code-as-config, as I believe
+it adds a new dimension of complexity where it is rarely needed. The best
+code is no code.</li>
+</ul>
+
+        </div>
+    </section>
+</article>
+
+
+
+    
+      <footer class="page-footer grey lighten-5">
+    <div class="row max-width">
+        <div class="col s12 l10 offset-l1 clear-padding">
+            <div class="row">
+    
+        
+    
+
+    
+    
+    <div class="col s12 l12">
+        <h5 class="black-text"></h5>
+<p class="grey-text text-darken-4"></p>
+
+    </div>
+
+    
+</div>
+
+
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="row max-width" style="width: 100%;">
+            <div class="col s12 l10 offset-l1">
+                <span class="grey-text text-darken-4"></span>
+<div class="right">
+    
+</div>
+            </div>
+        </div>
+    </div>
+</footer>
+    
+
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

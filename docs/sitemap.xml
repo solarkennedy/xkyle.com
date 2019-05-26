@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/Configuration-as-Code-Is-It-That-Good-of-an-Idea/</loc>
+    <lastmod>2019-04-23T19:35:56+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/Layers/</loc>
     <lastmod>2019-03-08T19:35:56+00:00</lastmod>
   </url>
@@ -73,12 +78,12 @@
   </url>
   
   <url>
-    <loc>/Etherhouse-Part-2---Software/</loc>
+    <loc>/Etherhouse-Part-2-Software/</loc>
     <lastmod>2014-11-16T16:28:24+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/Etherhouse-Part-1---Hardware/</loc>
+    <loc>/Etherhouse-Part-1-Hardware/</loc>
     <lastmod>2014-11-16T15:59:56+00:00</lastmod>
   </url>
   
@@ -1270,7 +1275,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-03-08T19:35:56+00:00</lastmod>
+    <lastmod>2019-04-23T19:35:56+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1605,7 +1610,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-03-08T19:35:56+00:00</lastmod>
+    <lastmod>2019-04-23T19:35:56+00:00</lastmod>
     <priority>0</priority>
   </url>
   

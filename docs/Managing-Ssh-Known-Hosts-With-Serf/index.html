@@ -12,6 +12,7 @@ class { &#39;serf&#39;: config_hash =&gt; { &#39;node_name&#39; =&gt; $::fqdn, &
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/Managing-Ssh-Known-Hosts-With-Serf/" /><meta property="article:published_time" content="2014-04-06T05:33:58&#43;00:00"/>
 <meta property="article:modified_time" content="2014-04-06T05:33:58&#43;00:00"/>
+
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Managing Ssh Known Hosts With-Serf"/>
 <meta name="twitter:description" content="Serf is a very interesting service discovery mechanism. Its dynamic membership and tags capability make it very flexible. Can we use it to generate a centralized ssh_known_hosts file?
@@ -26,8 +27,7 @@ class { &#39;serf&#39;: config_hash =&gt; { &#39;node_name&#39; =&gt; $::fqdn, &
     <title>Managing Ssh Known Hosts With-Serf &middot; xkyle.com</title>
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="css/style.css" rel="stylesheet">
 
     
@@ -46,12 +46,12 @@ class { &#39;serf&#39;: config_hash =&gt; { &#39;node_name&#39; =&gt; $::fqdn, &
     <div class="row max-width">
         <div class="col s12 l10 offset-l1">
             
-            <a href="#" data-activates="nav-mobile" class="button-collapse black-text">
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger black-text">
                 <i class="material-icons">menu</i>
             </a>
 
             
-            <ul id="nav-mobile" class="side-nav">
+            <ul id="nav-mobile" class="sidenav">
                 
                 
     
@@ -232,7 +232,7 @@ and orchistration system, then Serf could be a foundation for building great thi
 
     
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

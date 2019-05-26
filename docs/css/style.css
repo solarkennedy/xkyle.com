@@ -38,6 +38,13 @@ body {
     margin-bottom: 16px;
 }
 
+ul {
+  list-style-type: circle !important;
+}
+li {
+  list-style-type: circle !important;
+}
+
 /* Figure */
 
 figure>img {
