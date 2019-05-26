@@ -212,7 +212,7 @@ The Gem The first thing you need to do is install beaker.</description>
       <guid>/Managing-Ssh-Known-Hosts-With-Serf/</guid>
       <description>Serf is a very interesting service discovery mechanism. Its dynamic membership and tags capability make it very flexible. Can we use it to generate a centralized ssh_known_hosts file?
 Installing and Configuring Serf I like to use configuration management to manage servers. Here I use a Puppet module to install and configure Serf:
-class { &#39;serf&#39;: config_hash =&amp;gt; { &#39;node_name&#39; =&amp;gt; $::fqdn, &#39;tags&#39; =&amp;gt; { &#39;sshrsakey&#39; =&amp;gt; $::sshrsakey }, &#39;discover&#39; =&amp;gt; &#39;cluster&#39;, } }  This particular module uses a hash to translate directly into the config.</description>
+class { &amp;#39;serf&amp;#39;: config_hash =&amp;gt; { &amp;#39;node_name&amp;#39; =&amp;gt; $::fqdn, &amp;#39;tags&amp;#39; =&amp;gt; { &amp;#39;sshrsakey&amp;#39; =&amp;gt; $::sshrsakey }, &amp;#39;discover&amp;#39; =&amp;gt; &amp;#39;cluster&amp;#39;, } } This particular module uses a hash to translate directly into the config.</description>
     </item>
     
     <item>
@@ -222,7 +222,7 @@ class { &#39;serf&#39;: config_hash =&amp;gt; { &#39;node_name&#39; =&amp;gt; $:
       
       <guid>/What-Happens-When-You-Run-Puppet-Tests/</guid>
       <description>Breaking down bundle exec rake spec What is happening when you run:
-bundle exec rake spec  Bundle The first command you are running is bundle. Bundle is kinda like virtualenv for Ruby. It makes sure that you use the same ruby libraries that you, everyone, and puppetmasters use.
+bundle exec rake spec Bundle The first command you are running is bundle. Bundle is kinda like virtualenv for Ruby. It makes sure that you use the same ruby libraries that you, everyone, and puppetmasters use.
 Bundle uses a Gemfile, and searches downwards. As long as you have the Gemfile in the puppet repo, it will work.</description>
     </item>
     
@@ -234,7 +234,7 @@ Bundle uses a Gemfile, and searches downwards. As long as you have the Gemfile i
       <guid>/Writing-Purgable-Puppet-Code/</guid>
       <description>Whenever possible, I try to write Puppet code that is purgable and &amp;ldquo;Comment Safe&amp;rdquo;. That is not a very good description. What I mean is, Puppet code that removes resources from a system when the corresponding Puppet code is &amp;ldquo;Commented&amp;rdquo; out of a manifest. Lets look at a few examples.
 Example: Managed Sudo Lets say you used this popular sudo module with the following params:
-class { &#39;sudo&#39;: purge =&amp;gt; true, }  Great start.</description>
+class { &amp;#39;sudo&amp;#39;: purge =&amp;gt; true, } Great start.</description>
     </item>
     
     <item>

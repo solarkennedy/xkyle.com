@@ -223,30 +223,24 @@ directly?</p>
 
 <p>Upon initial inspection, DSLs can look like they provide no immediate benefits,
 and instead look like they just add a layer of obfuscation:</p>
-
-<pre><code class="language-generic"># Native Sensu                         | # Puppet Sensu
-{                                      | sensu_check { 'check_www':
-  &quot;check_www&quot;: {                       |   command  =&gt; 'check_http --port 80',
-    &quot;command&quot;: &quot;check_http --port 80&quot;, |   interval =&gt; 60,
-    &quot;interval&quot;: 60                     | }
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-generic" data-lang="generic"># Native Sensu                         | # Puppet Sensu
+{                                      | sensu_check { &#39;check_www&#39;:
+  &#34;check_www&#34;: {                       |   command  =&gt; &#39;check_http --port 80&#39;,
+    &#34;command&#34;: &#34;check_http --port 80&#34;, |   interval =&gt; 60,
+    &#34;interval&#34;: 60                     | }
   }                                    |
-}                                      |
-</code></pre>
-
+}                                      |</code></pre></div>
 <p>It is naive to think that all this is is some alternative way to make JSON. The
 real power comes from building abstractions on top, and allowing it to live in
 the surrounding ecosystem of configuration:</p>
-
-<pre><code class="language-puppet">$port = 80
-class { 'apache':
-  listen_port =&gt; $port
-} -&gt;
-sensu_check { 'check_apache':
-  command  =&gt; &quot;check_http --port $port&quot;,
-  interval =&gt; 60,
-}
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-puppet" data-lang="puppet">$port <span style="color:#f92672">=</span> <span style="color:#ae81ff">80</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">class</span> { <span style="color:#e6db74">&#39;apache&#39;</span>:<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#a6e22e">listen_port</span> <span style="color:#f92672">=&gt;</span> $port<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>} <span style="color:#f92672">-&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">sensu_check</span> { <span style="color:#e6db74">&#39;check_apache&#39;</span>:<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#a6e22e">command</span>  <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;check_http --port $port&#34;</span>,<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#a6e22e">interval</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">60</span>,<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>}</code></pre></div>
 <p>This kind of integration was never possible with Nagios&rsquo;s configuration
 language, even with all its templates, inheritance, and variable
 interpolation.</p>
@@ -354,61 +348,55 @@ nagios hosts configuration generator and turn a static tool into a dynamic one.<
 <p>Having configuration in declarative config formats allows change, validation, and linting. It allows infrastructure developers to easily build &ldquo;seams&rdquo; around that configuration, adding new features, refactoring old ones, and upgrading configuration en-masse, without having to &ldquo;refactor&rdquo; a codebase.</p>
 
 <p>Which of these DAG configurations do you think would be easier to transition to a new platform?</p>
-
-<pre><code class="language-yaml">name: my-dag-1
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">name: my-dag-<span style="color:#ae81ff">1</span>
 
 default_task_args:
-  start_date: '2018-10-01'
+  start_date: <span style="color:#e6db74">&#39;2018-10-01&#39;</span>
 
 operators:
 - name: print-hello
   type: bash
   properties:
-    bash_command: &quot;echo hello&quot;
+    bash_command: <span style="color:#e6db74">&#34;echo hello&#34;</span>
 - name: print-world
   type: bash
   upstream_dependencies:
   - print-hello
   properties:
-    bash_command: &quot;echo world&quot;
-</code></pre>
-
+    bash_command: <span style="color:#e6db74">&#34;echo world&#34;</span></code></pre></div>
 <p>Or</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> os
+<span style="color:#f92672">from</span> airflow <span style="color:#f92672">import</span> DAG
 
-<pre><code class="language-python">import os
-from airflow import DAG
+<span style="color:#f92672">import</span> datetime
 
-import datetime
+<span style="color:#f92672">from</span> airflow.operators.bash_operator <span style="color:#f92672">import</span> BashOperator
 
-from airflow.operators.bash_operator import BashOperator
-
-DEFAULT_TASK_ARGS = {
-        'start_date': '2018-10-01',
+DEFAULT_TASK_ARGS <span style="color:#f92672">=</span> {
+        <span style="color:#e6db74">&#39;start_date&#39;</span>: <span style="color:#e6db74">&#39;2018-10-01&#39;</span>,
     }
 
-dag = DAG(
-        dag_id = 'my_dag_1',
-        default_args = DEFAULT_TASK_ARGS,
+dag <span style="color:#f92672">=</span> DAG(
+        dag_id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;my_dag_1&#39;</span>,
+        default_args <span style="color:#f92672">=</span> DEFAULT_TASK_ARGS,
     )
 
-print_hello = BashOperator(
-        dag = (dag),
-        bash_command = 'echo hello',
-        start_date = (datetime.datetime(2018, 10, 1, 0, 0)),
-        task_id = 'print_hello',
+print_hello <span style="color:#f92672">=</span> BashOperator(
+        dag <span style="color:#f92672">=</span> (dag),
+        bash_command <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;echo hello&#39;</span>,
+        start_date <span style="color:#f92672">=</span> (datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2018</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>)),
+        task_id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;print_hello&#39;</span>,
     )
 
 
-print_world = BashOperator(
-        dag = (dag),
-        bash_command = 'echo world',
-        start_date = (datetime.datetime(2018, 10, 1, 0, 0)),
-        task_id = 'print_world',
+print_world <span style="color:#f92672">=</span> BashOperator(
+        dag <span style="color:#f92672">=</span> (dag),
+        bash_command <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;echo world&#39;</span>,
+        start_date <span style="color:#f92672">=</span> (datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2018</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>)),
+        task_id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;print_world&#39;</span>,
     )
 
-print_world.set_upstream(print_hello)
-</code></pre>
-
+print_world<span style="color:#f92672">.</span>set_upstream(print_hello)</code></pre></div>
 <p>See Ety&rsquo;s <a href="https://github.com/etsy/boundary-layer/">boundary-layer</a> and <a href="https://codeascraft.com/2018/11/14/boundary-layer%e2%80%89-declarative-airflow-workflows/">blog post</a> for an example where it was worth it to them to define jobs in a declarative YAML format, instead of allowing developers to &ldquo;just write python&rdquo;.</p>
 
 <h2 id="yaml-be-strict-in-what-you-accept">YAML: Be Strict In What You Accept</h2>

@@ -111,21 +111,18 @@ So I wrote a quick bash script to generate the approrpiate links for graphviz to
 <p>Well I don&rsquo;t know if your friends will stop calling your or not, but I was curious about what the graph would actually look like. The graph in the comic looks like it was created with Graphviz, one of my favorite programs!</p>
 
 <p>So I wrote a quick bash script to generate the approrpiate links for graphviz to interpret:</p>
-
-<pre><code class="language-bash">    #!/bin/bash
-    echo &quot;digraph \&quot;xkcd\&quot; {&quot;
-    for NUMBER in `seq 1 100`
-    do
-      if [ $[$NUMBER % 2] -eq 0 ]; then #We are even
-        let OUTPUT=$NUMBER/2
-      else  #Odd
-        let OUTPUT=$NUMBER*3+1
-      fi
-      echo &quot;$NUMBER -&gt; $OUTPUT&quot;
-    done
-    echo &quot;}&quot;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    <span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>    echo <span style="color:#e6db74">&#34;digraph \&#34;xkcd\&#34; {&#34;</span>
+    <span style="color:#66d9ef">for</span> NUMBER in <span style="color:#e6db74">`</span>seq <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">100</span><span style="color:#e6db74">`</span>
+    <span style="color:#66d9ef">do</span>
+      <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $<span style="color:#f92672">[</span>$NUMBER % <span style="color:#ae81ff">2</span><span style="color:#f92672">]</span> -eq <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span> <span style="color:#75715e">#We are even</span>
+        let OUTPUT<span style="color:#f92672">=</span>$NUMBER/2
+      <span style="color:#66d9ef">else</span>  <span style="color:#75715e">#Odd</span>
+        let OUTPUT<span style="color:#f92672">=</span>$NUMBER*3+1
+      <span style="color:#66d9ef">fi</span>
+      echo <span style="color:#e6db74">&#34;</span>$NUMBER<span style="color:#e6db74"> -&gt; </span>$OUTPUT<span style="color:#e6db74">&#34;</span>
+    <span style="color:#66d9ef">done</span>
+    echo <span style="color:#e6db74">&#34;}&#34;</span></code></pre></div>
 <p>So what does it really look like? Here:</p>
 
 <p><a href="../uploads/xkcd-collatz.png"><img src="../uploads/xkcd-collatz-672x1024.png" alt="" /></a></p>
@@ -135,10 +132,7 @@ So I wrote a quick bash script to generate the approrpiate links for graphviz to
 <p>Turns out with even more numbers we end up with even more isolated links, no big super chain.</p>
 
 <p>If you would like to run this code for yourself, first make sure you have the graphviz package installed in your linux system. Then copy that code above into a script, say called xkcd.sh. Then run like so:</p>
-
-<pre><code class="language-bash">./xkcd.sh | neato -Tpng | display
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./xkcd.sh | neato -Tpng | display</code></pre></div>
 <p>Adjust as necessary.</p>
 
         </div>

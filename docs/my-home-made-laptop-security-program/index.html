@@ -110,17 +110,14 @@ I wanted a program that would alert me of my laptop&rsquo;s where-a-bouts, as we
 <p>I wanted a program that would alert me of my laptop&rsquo;s where-a-bouts, as well as use the webcam to take a picture, in order to aid me in tracking it down if it got stolen. I wanted something simple and didn&rsquo;t way to pay for anything&hellip; I know I&rsquo;m cheap :)</p>
 
 <p>The code is pretty simple:</p>
-
-<pre><code class="language-bash">    fswebcam -F 2 -S 1 -r 640x480 --jpeg 60 --save /tmp/capture.jpg
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    fswebcam -F <span style="color:#ae81ff">2</span> -S <span style="color:#ae81ff">1</span> -r 640x480 --jpeg <span style="color:#ae81ff">60</span> --save /tmp/capture.jpg
     ifconfig &gt; /tmp/ifconfig.txt
     wget -q -O - checkip.dyndns.org &gt;&gt; /tmp/ifconfig.txt
-    FILENAME=`date +%F-%H-%M-%S`
+    FILENAME<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>date +%F-%H-%M-%S<span style="color:#e6db74">`</span>
     mv /tmp/ifconfig.txt /tmp/$FILENAME.txt
     mv /tmp/capture.jpg /tmp/$FILENAME.jpg
     scp /tmp/$FILENAME.jpg /tmp/$FILENAME.txt root@X.0.0.0:OBSCURED FOR SECURITY REASONS
-    rm /tmp/$FILENAME.jpg /tmp/$FILENAME.txt
-</code></pre>
-
+    rm /tmp/$FILENAME.jpg /tmp/$FILENAME.txt</code></pre></div>
 <p>You can see that it takes a picture, grabs my ifconfig and public ip, then ships it all to my server.  I just saved it in my /usr/local/bin/ and added the program to my /etc/network/if-up.d/openvpn program. This program is called whenever the interface comes up, so it will also run this program too when it&rsquo;s ready.</p>
 
 <p><a href="../uploads/2008-12-05-11-51-571.jpg"><img src="../uploads/2008-12-05-11-51-571-300x225.jpg" alt="" /></a></p>

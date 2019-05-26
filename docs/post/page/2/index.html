@@ -294,7 +294,7 @@ The Gem The first thing you need to do is install beaker.</div>
 </p></div>
         <div>Serf is a very interesting service discovery mechanism. Its dynamic membership and tags capability make it very flexible. Can we use it to generate a centralized ssh_known_hosts file?
 Installing and Configuring Serf I like to use configuration management to manage servers. Here I use a Puppet module to install and configure Serf:
-class { 'serf': config_hash =&gt; { 'node_name' =&gt; $::fqdn, 'tags' =&gt; { 'sshrsakey' =&gt; $::sshrsakey }, 'discover' =&gt; 'cluster', } }  This particular module uses a hash to translate directly into the config.</div>
+class { &#39;serf&#39;: config_hash =&gt; { &#39;node_name&#39; =&gt; $::fqdn, &#39;tags&#39; =&gt; { &#39;sshrsakey&#39; =&gt; $::sshrsakey }, &#39;discover&#39; =&gt; &#39;cluster&#39;, } } This particular module uses a hash to translate directly into the config.</div>
     </div>
 </article>
     
@@ -317,7 +317,7 @@ class { 'serf': config_hash =&gt; { 'node_name' =&gt; $::fqdn, 'tags' =&gt; { 's
     <span class="article-meta-published-at grey-text text-darken-1">Mar 31, 2014</span>
 </p></div>
         <div>Breaking down bundle exec rake spec What is happening when you run:
-bundle exec rake spec  Bundle The first command you are running is bundle. Bundle is kinda like virtualenv for Ruby. It makes sure that you use the same ruby libraries that you, everyone, and puppetmasters use.
+bundle exec rake spec Bundle The first command you are running is bundle. Bundle is kinda like virtualenv for Ruby. It makes sure that you use the same ruby libraries that you, everyone, and puppetmasters use.
 Bundle uses a Gemfile, and searches downwards. As long as you have the Gemfile in the puppet repo, it will work.</div>
     </div>
 </article>
