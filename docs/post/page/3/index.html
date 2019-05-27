@@ -9,7 +9,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/post/" />
-<meta property="og:updated_time" content="2014-03-31T05:33:58&#43;00:00"/>
+<meta property="og:updated_time" content="2014-04-06T05:33:58&#43;00:00"/>
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Posts"/>
@@ -81,6 +81,30 @@
 
     
 
+
+
+
+    
+        <article class="row max-width">
+    <div class="col s12 l10 offset-l1">
+        <h3>
+            <a class="grey-text text-darken-3" href="../../../Managing-Ssh-Known-Hosts-With-Serf/">Managing Ssh Known Hosts With-Serf</a>
+        </h3>
+        <div>
+
+<p class="article-meta">
+    <div class="article-meta-container">
+        <div class="article-meta-author-name"></div>
+        <div class="article-meta-description"></div>
+    </div>
+    <span class="article-meta-published-at grey-text text-darken-1">Apr 6, 2014</span>
+</p></div>
+        <div>Serf is a very interesting service discovery mechanism. Its dynamic membership and tags capability make it very flexible. Can we use it to generate a centralized ssh_known_hosts file?
+Installing and Configuring Serf I like to use configuration management to manage servers. Here I use a Puppet module to install and configure Serf:
+class { &#39;serf&#39;: config_hash =&gt; { &#39;node_name&#39; =&gt; $::fqdn, &#39;tags&#39; =&gt; { &#39;sshrsakey&#39; =&gt; $::sshrsakey }, &#39;discover&#39; =&gt; &#39;cluster&#39;, } } This particular module uses a hash to translate directly into the config.</div>
+    </div>
+</article>
+    
 
 
 
@@ -294,29 +318,6 @@ But it can work, just make sure:
         <div>Working at Intel has been a great experience. I wish I could have stayed longer, but in the end we decided to part ways.
 During my stay I learned lots of stuff. I would like to boil my experience down to my top Linux commands.
 The List  git: Lots of git. syscfg: Managing bios settings from within Linux. Nice. (Intel platforms) setupbios: More bios settings from within Linux. (Dell platforms) puppet: I actually enjoy manually running puppet.</div>
-    </div>
-</article>
-    
-
-
-
-    
-        <article class="row max-width">
-    <div class="col s12 l10 offset-l1">
-        <h3>
-            <a class="grey-text text-darken-3" href="../../../rebuilding-packages-for-arm-or-any-other-arch/">Rebuilding Packages for ARM (or any other arch)</a>
-        </h3>
-        <div>
-
-<p class="article-meta">
-    <div class="article-meta-container">
-        <div class="article-meta-author-name">admin</div>
-        <div class="article-meta-description"></div>
-    </div>
-    <span class="article-meta-published-at grey-text text-darken-1">Jun 21, 2013</span>
-</p></div>
-        <div>Sometimes there are packages out there that don&rsquo;t come in your cool new Architecture. In my case it is ARM, and the package I wanted was Puppet. Here is how to rebuild source packages the cool way.
-Add the Puppet repo so you can get fresh source packages cd /tmp # Add the repo, even though it may not have arm binaries... wget http://apt.puppetlabs.com/puppetlabs-release-precise.deb dpkg -i puppetlabs-release-precise.deb # Get dependencies.</div>
     </div>
 </article>
     

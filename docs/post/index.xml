@@ -6,10 +6,23 @@
     <description>Recent content in Posts on xkyle.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 25 May 2019 19:35:56 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 27 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>epaper-watch: Cleaning the Literary Quotes Database</title>
+      <link>/epaper-watch-Cleaning-the-Literary-Quotes-Database/</link>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/epaper-watch-Cleaning-the-Literary-Quotes-Database/</guid>
+      <description>paper-watch intro My epaper-watch is an attempt to build a watch with an epaper display.
+It tells time by displaying a quote from a book:
+(don&amp;rsquo;t mind the graphical glitches)
+The dataset with all the quotes needs some data cleaning love though.
+Cleaning The Dataset The CSV has over 1,400 quotes in it. For every minute, there may be multiple quotes (&amp;ldquo;Midnight&amp;rdquo; has 26 unique quotes). Some minutes of the day do not have any quotes.</description>
+    </item>
     
     <item>
       <title>Build Versus Buy: You Are Always Building, Always Buying</title>
