@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/Kubernetes-as-a-Universal-Infrastructure-API/</loc>
+    <lastmod>2019-06-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/epaper-watch-Cleaning-the-Literary-Quotes-Database/</loc>
     <lastmod>2019-05-27T00:00:00+00:00</lastmod>
   </url>
@@ -1285,7 +1290,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-05-27T00:00:00+00:00</lastmod>
+    <lastmod>2019-06-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1620,7 +1625,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-05-27T00:00:00+00:00</lastmod>
+    <lastmod>2019-06-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
