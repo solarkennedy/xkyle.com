@@ -16,6 +16,6 @@ When I first arrived at toor camp, I was issued a Hardhat and a kit of electroni
 
 What a cool start! Combined with the already cool scenery:
 
-[![DCAM0001](/uploads/DCAM0001-150x150.jpg)](/uploads/DCAM0001.jpg)[![DCAM0005](/uploads/DCAM0005-150x150.jpg)](/uploads/DCAM0005.jpg)[![DCAM0012](/uploads/DCAM0012-150x150.jpg)](/uploads/DCAM0012-toorcamp.jpg)[![DCAM0016](/uploads/DCAM0016-150x150.jpg)](/uploads/DCAM0016.jpg)
+[![DCAM0001](/uploads/DCAM0001-150x150.jpg)](/uploads/DCAM0001.jpg)[![DCAM0005](/uploads/DCAM0005-150x150.jpg)](/uploads/DCAM0005-toorcamp.jpg)[![DCAM0012](/uploads/DCAM0012-150x150.jpg)](/uploads/DCAM0012-toorcamp.jpg)[![DCAM0016](/uploads/DCAM0016-150x150.jpg)](/uploads/DCAM0016.jpg)
 
 Only one problem: no silo access. We'll see if that changes for day two...
