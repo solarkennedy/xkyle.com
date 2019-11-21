@@ -11,4 +11,4 @@ wordpress_id: 386
 
 The clock is almost finished, I'm just sanding the rough edges and putting on the final coat of paint. All schematics and code will be on my wiki when I'm finished.
 
-[![DCAM0005](/uploads/DCAM0005-300x225.jpg)](/uploads/DCAM0005.JPG)
+[![DCAM0005](/uploads/DCAM0005-300x225.jpg)](/uploads/DCAM0005-clock.JPG)
