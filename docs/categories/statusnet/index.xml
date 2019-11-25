@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Statusnet on xkyle.com</title>
+    <title>statusnet on xkyle.com</title>
     <link>/categories/statusnet/</link>
-    <description>Recent content in Statusnet on xkyle.com</description>
+    <description>Recent content in statusnet on xkyle.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 18 Mar 2010 01:25:37 +0000</lastBuildDate>

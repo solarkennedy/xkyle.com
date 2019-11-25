@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Laptop on xkyle.com</title>
+    <link>/categories/Laptop/</link>
+    <description>Recent content in Laptop on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 18 Nov 2008 01:20:49 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/Laptop/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>New/Old Laptop: Ubuntu Montage </title>
+      <link>/newold-laptop-ubuntu-montage/</link>
+      <pubDate>Tue, 18 Nov 2008 01:20:49 +0000</pubDate>
+      
+      <guid>/newold-laptop-ubuntu-montage/</guid>
+      <description>You may remember my old laptop from such posts as this.
+Well it broke, so I bought another one!
+
+It even has the original stickers. But.. Its slower than I remember. So I&amp;rsquo;m trying out different Ubuntu versions to see what boots the fastest. Here are my methodology and results.
+Methodology: The first number is the ammount of seconds from the 0 in the grub countdown till the X in the initial X-server.</description>
+    </item>
+    
+    <item>
+      <title>Compact Flash Replacement</title>
+      <link>/compact-flash-replacement/</link>
+      <pubDate>Sat, 20 Jan 2007 16:38:32 +0000</pubDate>
+      
+      <guid>/compact-flash-replacement/</guid>
+      <description>My laptop is a Sharp MM20, which I knew I was going to spraypaint eventually, I just needed a reason to. After about a year of wear and scratches from abuse, it was time.
+I&amp;rsquo;m replacing the harddrive in my laptop with a 4GB flash card. It should be faster:
+/dev/sdb: Timing cached reads: 3532 MB in 2.00 seconds = 1766.79 MB/sec Timing buffered disk reads: 58 MB in 3.10 seconds = 18.</description>
+    </item>
+    
+  </channel>
+</rss>

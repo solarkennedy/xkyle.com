@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ubuntu on xkyle.com</title>
+    <title>ubuntu on xkyle.com</title>
     <link>/categories/ubuntu/</link>
-    <description>Recent content in Ubuntu on xkyle.com</description>
+    <description>Recent content in ubuntu on xkyle.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 20 Feb 2009 23:06:21 +0000</lastBuildDate>

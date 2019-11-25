@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cfengine on xkyle.com</title>
+    <title>cfengine on xkyle.com</title>
     <link>/categories/cfengine/</link>
-    <description>Recent content in Cfengine on xkyle.com</description>
+    <description>Recent content in cfengine on xkyle.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 26 Jan 2012 01:46:30 +0000</lastBuildDate>

@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Scripting on xkyle.com</title>
+    <title>scripting on xkyle.com</title>
     <link>/categories/scripting/</link>
-    <description>Recent content in Scripting on xkyle.com</description>
+    <description>Recent content in scripting on xkyle.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 22 Aug 2010 07:24:10 +0000</lastBuildDate>

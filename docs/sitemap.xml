@@ -1,6 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2019-11-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/What-Kubernetes-Got-Right-and-Mesos-Got-Wrong/</loc>
+    <lastmod>2019-11-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2019-11-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/Can-Infrastructure-Teams-Do-Better-Than-AWS-Yes-Sometimes./</loc>
+    <lastmod>2019-06-23T00:00:00+00:00</lastmod>
+  </url>
   
   <url>
     <loc>/Kubernetes-as-a-Universal-Infrastructure-API/</loc>
@@ -58,7 +78,22 @@
   </url>
   
   <url>
+    <loc>/categories/</loc>
+    <lastmod>2017-07-09T18:55:14+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/Cruising-from-Port-San-Luis-to-San-Francisco-in-a-Gemini-105m/</loc>
+    <lastmod>2017-07-09T18:55:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/personal/</loc>
+    <lastmod>2017-07-09T18:55:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/sailing/</loc>
     <lastmod>2017-07-09T18:55:14+00:00</lastmod>
   </url>
   
@@ -83,6 +118,31 @@
   </url>
   
   <url>
+    <loc>/categories/ansible/</loc>
+    <lastmod>2015-10-11T18:21:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/chef/</loc>
+    <lastmod>2015-10-11T18:21:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/puppet/</loc>
+    <lastmod>2015-10-11T18:21:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/salt/</loc>
+    <lastmod>2015-10-11T18:21:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/sensu/</loc>
+    <lastmod>2015-10-11T18:21:14+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/A-Comparison-of-Image-to-ASCII-Conversion-Tools/</loc>
     <lastmod>2015-09-26T19:35:56+00:00</lastmod>
   </url>
@@ -90,6 +150,11 @@
   <url>
     <loc>/Playing-with-IPv6-Over-Bluetooth-Low-Energy-6LoWPAN/</loc>
     <lastmod>2015-06-14T18:18:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/etherhouse/</loc>
+    <lastmod>2014-11-16T16:28:24+00:00</lastmod>
   </url>
   
   <url>
@@ -113,6 +178,11 @@
   </url>
   
   <url>
+    <loc>/categories/serf/</loc>
+    <lastmod>2014-04-06T05:33:58+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/What-Happens-When-You-Run-Puppet-Tests/</loc>
     <lastmod>2014-03-31T05:33:58+00:00</lastmod>
   </url>
@@ -128,7 +198,22 @@
   </url>
   
   <url>
+    <loc>/categories/git/</loc>
+    <lastmod>2013-12-01T21:40:42+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/octopress/</loc>
+    <lastmod>2013-12-01T21:40:42+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/Saying-Goodbye-to-Wordpress/</loc>
+    <lastmod>2013-12-01T21:40:42+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/wordpress/</loc>
     <lastmod>2013-12-01T21:40:42+00:00</lastmod>
   </url>
   
@@ -138,7 +223,22 @@
   </url>
   
   <url>
+    <loc>/categories/dns/</loc>
+    <lastmod>2013-10-19T23:05:02+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/managing-dns-automatically-with-puppet/</loc>
+    <lastmod>2013-10-19T23:05:02+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/puppetdb/</loc>
+    <lastmod>2013-10-19T23:05:02+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/stored-configs/</loc>
     <lastmod>2013-10-19T23:05:02+00:00</lastmod>
   </url>
   
@@ -148,12 +248,62 @@
   </url>
   
   <url>
+    <loc>/categories/nagios/</loc>
+    <lastmod>2013-10-13T01:55:41+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/dropbear/</loc>
+    <lastmod>2013-10-03T05:07:55+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/dropbear-with-mosh-on-a-low-end-server/</loc>
     <lastmod>2013-10-03T05:07:55+00:00</lastmod>
   </url>
   
   <url>
+    <loc>/categories/mosh/</loc>
+    <lastmod>2013-10-03T05:07:55+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/bios/</loc>
+    <lastmod>2013-06-26T02:34:43+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/goodbye-intel-my-favorite-commands/</loc>
+    <lastmod>2013-06-26T02:34:43+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/icc/</loc>
+    <lastmod>2013-06-26T02:34:43+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/intel/</loc>
+    <lastmod>2013-06-26T02:34:43+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/ipmi/</loc>
+    <lastmod>2013-06-26T02:34:43+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/ipmitool/</loc>
+    <lastmod>2013-06-26T02:34:43+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/linux/</loc>
+    <lastmod>2013-06-26T02:34:43+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/syscfg/</loc>
     <lastmod>2013-06-26T02:34:43+00:00</lastmod>
   </url>
   
@@ -168,7 +318,32 @@
   </url>
   
   <url>
+    <loc>/categories/freedompop/</loc>
+    <lastmod>2013-05-31T01:45:13+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/openwrt/</loc>
+    <lastmod>2013-05-31T01:45:13+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/a-team-fortress-2-see-n-say/</loc>
+    <lastmod>2013-05-18T21:12:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/arduino/</loc>
+    <lastmod>2013-05-18T21:12:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/See-N-Say/</loc>
+    <lastmod>2013-05-18T21:12:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/Team-Fortress-2/</loc>
     <lastmod>2013-05-18T21:12:21+00:00</lastmod>
   </url>
   
@@ -178,8 +353,48 @@
   </url>
   
   <url>
+    <loc>/categories/httpd/</loc>
+    <lastmod>2013-05-12T21:29:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/nginx/</loc>
+    <lastmod>2013-05-12T21:29:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/SPDY/</loc>
+    <lastmod>2013-05-12T21:29:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/audio/</loc>
+    <lastmod>2013-04-17T01:14:56+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/disabling-microphone-auto-gain-sensitivity-for-google-plus-hangouts/</loc>
     <lastmod>2013-04-17T01:14:56+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/google/</loc>
+    <lastmod>2013-04-17T01:14:56+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/google-plus/</loc>
+    <lastmod>2013-04-17T01:14:56+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/dell/</loc>
+    <lastmod>2013-04-15T21:06:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/hp/</loc>
+    <lastmod>2013-04-15T21:06:09+00:00</lastmod>
   </url>
   
   <url>
@@ -193,8 +408,23 @@
   </url>
   
   <url>
+    <loc>/categories/hostnames/</loc>
+    <lastmod>2013-03-27T23:58:32+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/picking-server-hostnames-worstest-worser-worst-better-betterer-bestest/</loc>
     <lastmod>2013-03-27T23:58:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/rant/</loc>
+    <lastmod>2013-03-27T23:58:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/bash/</loc>
+    <lastmod>2013-03-21T02:04:43+00:00</lastmod>
   </url>
   
   <url>
@@ -203,8 +433,53 @@
   </url>
   
   <url>
+    <loc>/categories/programming/</loc>
+    <lastmod>2013-03-21T02:04:43+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/python/</loc>
+    <lastmod>2013-03-21T02:04:43+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/ruby/</loc>
+    <lastmod>2013-03-21T02:04:43+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/bus-pirate/</loc>
+    <lastmod>2013-03-14T04:08:20+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/hacking-a-hallmark-text-band-first-attempt/</loc>
     <lastmod>2013-03-14T04:08:20+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/hardware/</loc>
+    <lastmod>2013-03-14T04:08:20+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/spi/</loc>
+    <lastmod>2013-03-14T04:08:20+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/text-band/</loc>
+    <lastmod>2013-03-14T04:08:20+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/graphite/</loc>
+    <lastmod>2013-03-07T05:35:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/power/</loc>
+    <lastmod>2013-03-07T05:35:49+00:00</lastmod>
   </url>
   
   <url>
@@ -214,6 +489,11 @@
   
   <url>
     <loc>/an-ipmi-sel-viewing-shootout/</loc>
+    <lastmod>2013-02-13T06:08:18+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/sel/</loc>
     <lastmod>2013-02-13T06:08:18+00:00</lastmod>
   </url>
   
@@ -228,7 +508,42 @@
   </url>
   
   <url>
+    <loc>/categories/debs/</loc>
+    <lastmod>2013-01-20T03:39:48+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/dkms/</loc>
+    <lastmod>2013-01-20T03:39:48+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/kernel-modules/</loc>
+    <lastmod>2013-01-20T03:39:48+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/packages/</loc>
+    <lastmod>2013-01-20T03:39:48+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/cool-things-to-do-after-installing-openwrt/</loc>
+    <lastmod>2013-01-06T23:16:33+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/plug-computers/</loc>
+    <lastmod>2013-01-06T23:16:33+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/pxe/</loc>
+    <lastmod>2013-01-06T23:16:33+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/security/</loc>
     <lastmod>2013-01-06T23:16:33+00:00</lastmod>
   </url>
   
@@ -238,12 +553,22 @@
   </url>
   
   <url>
+    <loc>/categories/carbon-fiber/</loc>
+    <lastmod>2012-12-15T21:17:29+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/carbon-fiber-table/</loc>
     <lastmod>2012-12-15T21:17:29+00:00</lastmod>
   </url>
   
   <url>
     <loc>/carbon-fiber-copper-solar-light/</loc>
+    <lastmod>2012-12-02T18:39:02+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/copper/</loc>
     <lastmod>2012-12-02T18:39:02+00:00</lastmod>
   </url>
   
@@ -263,8 +588,48 @@
   </url>
   
   <url>
+    <loc>/categories/it/</loc>
+    <lastmod>2012-06-24T17:05:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/platforms/</loc>
+    <lastmod>2012-06-24T17:05:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/devops/</loc>
+    <lastmod>2012-04-29T19:46:17+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/ganglia/</loc>
+    <lastmod>2012-04-29T19:46:17+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/graph-everything-with-graphite/</loc>
     <lastmod>2012-04-29T19:46:17+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/metrics/</loc>
+    <lastmod>2012-04-29T19:46:17+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/monitoring/</loc>
+    <lastmod>2012-04-29T19:46:17+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/munin/</loc>
+    <lastmod>2012-04-29T19:46:17+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/code/</loc>
+    <lastmod>2012-04-16T02:25:27+00:00</lastmod>
   </url>
   
   <url>
@@ -273,12 +638,57 @@
   </url>
   
   <url>
+    <loc>/categories/management/</loc>
+    <lastmod>2012-04-16T02:25:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/metawork/</loc>
+    <lastmod>2012-04-16T02:25:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/work/</loc>
+    <lastmod>2012-04-16T02:25:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/cfengine/</loc>
+    <lastmod>2012-01-26T01:46:30+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/puppet-versus-cfengine-editing-files/</loc>
     <lastmod>2012-01-26T01:46:30+00:00</lastmod>
   </url>
   
   <url>
+    <loc>/categories/10g/</loc>
+    <lastmod>2012-01-04T14:19:10+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/achieving-awesome-single-stream-performance-over-bonded-ethernet/</loc>
+    <lastmod>2012-01-04T14:19:10+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/Bonding/</loc>
+    <lastmod>2012-01-04T14:19:10+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/High-Availability/</loc>
+    <lastmod>2012-01-04T14:19:10+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/iperf/</loc>
+    <lastmod>2012-01-04T14:19:10+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/Network/</loc>
     <lastmod>2012-01-04T14:19:10+00:00</lastmod>
   </url>
   
@@ -288,8 +698,38 @@
   </url>
   
   <url>
+    <loc>/categories/postmodern/</loc>
+    <lastmod>2011-08-08T02:21:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/sysadmin/</loc>
+    <lastmod>2011-08-08T02:21:32+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/a-drbd-configuration-options-shootout/</loc>
     <lastmod>2011-07-24T20:41:55+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/benchmarks/</loc>
+    <lastmod>2011-07-24T20:41:55+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/drdb/</loc>
+    <lastmod>2011-07-24T20:41:55+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/acls/</loc>
+    <lastmod>2011-07-10T22:28:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/nfs/</loc>
+    <lastmod>2011-07-10T22:28:22+00:00</lastmod>
   </url>
   
   <url>
@@ -298,12 +738,42 @@
   </url>
   
   <url>
+    <loc>/categories/hard-drives/</loc>
+    <lastmod>2011-05-21T03:02:47+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/how-to-benchmark-harddrives-in-linux/</loc>
     <lastmod>2011-05-21T03:02:47+00:00</lastmod>
   </url>
   
   <url>
+    <loc>/categories/raid/</loc>
+    <lastmod>2011-05-21T03:02:47+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/dnssec/</loc>
+    <lastmod>2011-01-10T02:33:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/ipv6/</loc>
+    <lastmod>2011-01-10T02:33:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/nclug/</loc>
+    <lastmod>2011-01-10T02:33:49+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/new-technologies-for-a-new-year/</loc>
+    <lastmod>2011-01-10T02:33:49+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/ssl/</loc>
     <lastmod>2011-01-10T02:33:49+00:00</lastmod>
   </url>
   
@@ -313,8 +783,48 @@
   </url>
   
   <url>
+    <loc>/categories/IR/</loc>
+    <lastmod>2010-10-07T01:21:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/Leds/</loc>
+    <lastmod>2010-10-07T01:21:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/Sensor-Bar/</loc>
+    <lastmod>2010-10-07T01:21:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/TV/</loc>
+    <lastmod>2010-10-07T01:21:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/wii/</loc>
+    <lastmod>2010-10-07T01:21:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/Games-Magazine/</loc>
+    <lastmod>2010-10-05T20:25:06+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/imdb/</loc>
+    <lastmod>2010-10-05T20:25:06+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/solving-role-playing-4/</loc>
     <lastmod>2010-10-05T20:25:06+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/backuppc/</loc>
+    <lastmod>2010-09-15T22:27:30+00:00</lastmod>
   </url>
   
   <url>
@@ -328,8 +838,28 @@
   </url>
   
   <url>
+    <loc>/categories/scripting/</loc>
+    <lastmod>2010-08-22T07:24:10+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/computer-assisted-jenga-with-the-wii-balance-board-and-linux/</loc>
     <lastmod>2010-08-01T05:07:57+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/cwiid/</loc>
+    <lastmod>2010-08-01T05:07:57+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/pygame/</loc>
+    <lastmod>2010-08-01T05:07:57+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/dockstar/</loc>
+    <lastmod>2010-07-20T05:35:25+00:00</lastmod>
   </url>
   
   <url>
@@ -353,8 +883,33 @@
   </url>
   
   <url>
+    <loc>/categories/totem/</loc>
+    <lastmod>2010-05-17T03:20:20+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/youtube/</loc>
+    <lastmod>2010-05-17T03:20:20+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/sparkfun/</loc>
+    <lastmod>2010-04-18T03:50:33+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/sparkfuns-autonomous-vehicle-competition/</loc>
     <lastmod>2010-04-18T03:50:33+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/UAV/</loc>
+    <lastmod>2010-04-18T03:50:33+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/windows/</loc>
+    <lastmod>2010-04-11T00:42:25+00:00</lastmod>
   </url>
   
   <url>
@@ -363,7 +918,17 @@
   </url>
   
   <url>
+    <loc>/categories/eeepc/</loc>
+    <lastmod>2010-04-08T02:52:53+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/how-to-fix-a-power-plug-with-sugru/</loc>
+    <lastmod>2010-04-08T02:52:53+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/sugru/</loc>
     <lastmod>2010-04-08T02:52:53+00:00</lastmod>
   </url>
   
@@ -373,8 +938,43 @@
   </url>
   
   <url>
+    <loc>/categories/wep/</loc>
+    <lastmod>2010-04-02T18:40:56+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/wireless/</loc>
+    <lastmod>2010-04-02T18:40:56+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/microblogging/</loc>
+    <lastmod>2010-03-18T01:25:37+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/status-net-the-future-hopefully-of-microblogging/</loc>
     <lastmod>2010-03-18T01:25:37+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/statusnet/</loc>
+    <lastmod>2010-03-18T01:25:37+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/twitter/</loc>
+    <lastmod>2010-03-18T01:25:37+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/graphviz/</loc>
+    <lastmod>2010-03-05T05:44:25+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/xkcd/</loc>
+    <lastmod>2010-03-05T05:44:25+00:00</lastmod>
   </url>
   
   <url>
@@ -390,6 +990,11 @@
   <url>
     <loc>/super-paper-mario-graph/</loc>
     <lastmod>2010-01-24T19:15:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/diydrone/</loc>
+    <lastmod>2010-01-15T16:45:54+00:00</lastmod>
   </url>
   
   <url>
@@ -413,13 +1018,28 @@
   </url>
   
   <url>
+    <loc>/categories/Clock/</loc>
+    <lastmod>2009-09-16T01:43:46+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/final-clock-post/</loc>
+    <lastmod>2009-09-16T01:43:46+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/wrt54gl/</loc>
     <lastmod>2009-09-16T01:43:46+00:00</lastmod>
   </url>
   
   <url>
     <loc>/finishing-clock-teaser/</loc>
     <lastmod>2009-07-30T00:09:55+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/toorcamp/</loc>
+    <lastmod>2009-07-05T02:14:13+00:00</lastmod>
   </url>
   
   <url>
@@ -438,8 +1058,38 @@
   </url>
   
   <url>
+    <loc>/categories/drm/</loc>
+    <lastmod>2009-06-11T20:23:43+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/ebook/</loc>
+    <lastmod>2009-06-11T20:23:43+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/hacking/</loc>
+    <lastmod>2009-06-11T20:23:43+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/imagemagick/</loc>
+    <lastmod>2009-06-11T20:23:43+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/my-wireless-cracking-tool/</loc>
     <lastmod>2009-06-01T08:00:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/wifi/</loc>
+    <lastmod>2009-06-01T08:00:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/captcha/</loc>
+    <lastmod>2009-05-01T17:17:02+00:00</lastmod>
   </url>
   
   <url>
@@ -448,8 +1098,38 @@
   </url>
   
   <url>
+    <loc>/categories/mathematica/</loc>
+    <lastmod>2009-05-01T17:17:02+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/School/</loc>
+    <lastmod>2009-05-01T17:17:02+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/camping/</loc>
+    <lastmod>2009-03-21T22:49:40+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/camping-at-rocky-bayou-state-park/</loc>
     <lastmod>2009-03-21T22:49:40+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/cody/</loc>
+    <lastmod>2009-03-21T22:49:40+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/vacation/</loc>
+    <lastmod>2009-03-21T22:49:40+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/aircrack/</loc>
+    <lastmod>2009-03-03T18:58:33+00:00</lastmod>
   </url>
   
   <url>
@@ -458,7 +1138,17 @@
   </url>
   
   <url>
+    <loc>/categories/desktop/</loc>
+    <lastmod>2009-02-20T23:06:21+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/my-desktop/</loc>
+    <lastmod>2009-02-20T23:06:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/ubuntu/</loc>
     <lastmod>2009-02-20T23:06:21+00:00</lastmod>
   </url>
   
@@ -468,12 +1158,37 @@
   </url>
   
   <url>
+    <loc>/categories/kayak/</loc>
+    <lastmod>2009-02-15T22:17:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/dad/</loc>
+    <lastmod>2009-02-12T19:40:06+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/my-dads-terminal-patent/</loc>
     <lastmod>2009-02-12T19:40:06+00:00</lastmod>
   </url>
   
   <url>
+    <loc>/categories/patent/</loc>
+    <lastmod>2009-02-12T19:40:06+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/Myspace/</loc>
+    <lastmod>2009-02-11T22:40:10+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/myspace-phishing-analysis/</loc>
+    <lastmod>2009-02-11T22:40:10+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/passwords/</loc>
     <lastmod>2009-02-11T22:40:10+00:00</lastmod>
   </url>
   
@@ -484,6 +1199,11 @@
   
   <url>
     <loc>/amazing-breakfasts-with-cody/</loc>
+    <lastmod>2009-01-10T15:31:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/cooking/</loc>
     <lastmod>2009-01-10T15:31:52+00:00</lastmod>
   </url>
   
@@ -513,6 +1233,11 @@
   </url>
   
   <url>
+    <loc>/categories/linksys/</loc>
+    <lastmod>2008-12-06T22:05:55+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/my-home-made-laptop-security-program/</loc>
     <lastmod>2008-12-05T17:17:50+00:00</lastmod>
   </url>
@@ -528,6 +1253,11 @@
   </url>
   
   <url>
+    <loc>/categories/Laptop/</loc>
+    <lastmod>2008-11-18T01:20:49+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/newold-laptop-ubuntu-montage/</loc>
     <lastmod>2008-11-18T01:20:49+00:00</lastmod>
   </url>
@@ -538,13 +1268,43 @@
   </url>
   
   <url>
+    <loc>/categories/notebook/</loc>
+    <lastmod>2008-11-16T18:51:02+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/wiki/</loc>
+    <lastmod>2008-11-16T18:51:02+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/n2n-peer-to-peer-vpn/</loc>
     <lastmod>2008-11-15T02:17:33+00:00</lastmod>
   </url>
   
   <url>
+    <loc>/categories/vpn/</loc>
+    <lastmod>2008-11-15T02:17:33+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/ettercap/</loc>
+    <lastmod>2008-11-15T02:04:41+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/ettercaps-authors-birthday/</loc>
     <lastmod>2008-11-15T02:04:41+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/sniffing/</loc>
+    <lastmod>2008-11-15T02:04:41+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/games/</loc>
+    <lastmod>2008-09-30T03:11:20+00:00</lastmod>
   </url>
   
   <url>
@@ -559,6 +1319,11 @@
   
   <url>
     <loc>/dns-training-at-sago/</loc>
+    <lastmod>2008-09-25T02:14:57+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/learning/</loc>
     <lastmod>2008-09-25T02:14:57+00:00</lastmod>
   </url>
   
@@ -578,6 +1343,11 @@
   </url>
   
   <url>
+    <loc>/categories/drives/</loc>
+    <lastmod>2008-03-26T14:14:12+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/failing-hard-drives/</loc>
     <lastmod>2008-03-26T14:14:12+00:00</lastmod>
   </url>
@@ -593,13 +1363,33 @@
   </url>
   
   <url>
+    <loc>/categories/blogging/</loc>
+    <lastmod>2007-10-09T19:27:24+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/blogging-human-salvation/</loc>
+    <lastmod>2007-10-09T19:27:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/humanity/</loc>
+    <lastmod>2007-10-09T19:27:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/philosophy/</loc>
     <lastmod>2007-10-09T19:27:24+00:00</lastmod>
   </url>
   
   <url>
     <loc>/clock-primer/</loc>
     <lastmod>2007-05-02T02:08:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/whiteboard/</loc>
+    <lastmod>2007-01-27T21:12:26+00:00</lastmod>
   </url>
   
   <url>
@@ -610,6 +1400,21 @@
   <url>
     <loc>/compact-flash-replacement/</loc>
     <lastmod>2007-01-20T16:38:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/flash/</loc>
+    <lastmod>2007-01-20T16:38:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/gun/</loc>
+    <lastmod>2007-01-10T06:34:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/LaserTag/</loc>
+    <lastmod>2007-01-10T06:34:04+00:00</lastmod>
   </url>
   
   <url>
@@ -638,7 +1443,22 @@
   </url>
   
   <url>
+    <loc>/categories/backpack/</loc>
+    <lastmod>2006-09-25T01:52:41+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/help-expose-scientology/</loc>
+    <lastmod>2006-07-01T17:56:59+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/scientology/</loc>
+    <lastmod>2006-07-01T17:56:59+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/ytmnd.com/</loc>
     <lastmod>2006-07-01T17:56:59+00:00</lastmod>
   </url>
   
@@ -653,980 +1473,7 @@
   </url>
   
   <url>
-    <loc>/categories/10g/</loc>
-    <lastmod>2012-01-04T14:19:10+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/acls/</loc>
-    <lastmod>2011-07-10T22:28:22+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/aircrack/</loc>
-    <lastmod>2009-03-03T18:58:33+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/ansible/</loc>
-    <lastmod>2015-10-11T18:21:14+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/arduino/</loc>
-    <lastmod>2013-05-18T21:12:21+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/audio/</loc>
-    <lastmod>2013-04-17T01:14:56+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/backpack/</loc>
-    <lastmod>2006-09-25T01:52:41+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/backuppc/</loc>
-    <lastmod>2010-09-15T22:27:30+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/bash/</loc>
-    <lastmod>2013-03-21T02:04:43+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/benchmarks/</loc>
-    <lastmod>2011-07-24T20:41:55+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/bios/</loc>
-    <lastmod>2013-06-26T02:34:43+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/blogging/</loc>
-    <lastmod>2007-10-09T19:27:24+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/bonding/</loc>
-    <lastmod>2012-01-04T14:19:10+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/bus-pirate/</loc>
-    <lastmod>2013-03-14T04:08:20+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/camping/</loc>
-    <lastmod>2009-03-21T22:49:40+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/captcha/</loc>
-    <lastmod>2009-05-01T17:17:02+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/carbon-fiber/</loc>
-    <lastmod>2012-12-15T21:17:29+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/</loc>
-    <lastmod>2012-01-04T14:19:10+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/cfengine/</loc>
-    <lastmod>2012-01-26T01:46:30+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/chef/</loc>
-    <lastmod>2015-10-11T18:21:14+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/clock/</loc>
-    <lastmod>2009-09-16T01:43:46+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/code/</loc>
-    <lastmod>2012-04-16T02:25:27+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/cody/</loc>
-    <lastmod>2009-03-21T22:49:40+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/cooking/</loc>
-    <lastmod>2009-01-10T15:31:52+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/copper/</loc>
-    <lastmod>2012-12-02T18:39:02+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/cwiid/</loc>
-    <lastmod>2010-08-01T05:07:57+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/dad/</loc>
-    <lastmod>2009-02-12T19:40:06+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/debs/</loc>
-    <lastmod>2013-01-20T03:39:48+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/dell/</loc>
-    <lastmod>2013-04-15T21:06:09+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/desktop/</loc>
-    <lastmod>2009-02-20T23:06:21+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/devops/</loc>
-    <lastmod>2012-04-29T19:46:17+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/diydrone/</loc>
-    <lastmod>2010-01-15T16:45:54+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/dkms/</loc>
-    <lastmod>2013-01-20T03:39:48+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/dns/</loc>
-    <lastmod>2013-10-19T23:05:02+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/dnssec/</loc>
-    <lastmod>2011-01-10T02:33:49+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/dockstar/</loc>
-    <lastmod>2010-07-20T05:35:25+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/drdb/</loc>
-    <lastmod>2011-07-24T20:41:55+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/drives/</loc>
-    <lastmod>2008-03-26T14:14:12+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/drm/</loc>
-    <lastmod>2009-06-11T20:23:43+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/dropbear/</loc>
-    <lastmod>2013-10-03T05:07:55+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/ebook/</loc>
-    <lastmod>2009-06-11T20:23:43+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/eeepc/</loc>
-    <lastmod>2010-04-08T02:52:53+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/etherhouse/</loc>
-    <lastmod>2014-11-16T16:28:24+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/ettercap/</loc>
-    <lastmod>2008-11-15T02:04:41+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/flash/</loc>
-    <lastmod>2007-01-20T16:38:32+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/freedompop/</loc>
-    <lastmod>2013-05-31T01:45:13+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/games/</loc>
-    <lastmod>2008-09-30T03:11:20+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/games-magazine/</loc>
-    <lastmod>2010-10-05T20:25:06+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/ganglia/</loc>
-    <lastmod>2012-04-29T19:46:17+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/git/</loc>
-    <lastmod>2013-12-01T21:40:42+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/google/</loc>
-    <lastmod>2013-04-17T01:14:56+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/google-plus/</loc>
-    <lastmod>2013-04-17T01:14:56+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/graphite/</loc>
-    <lastmod>2013-03-07T05:35:49+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/graphviz/</loc>
-    <lastmod>2010-03-05T05:44:25+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/gun/</loc>
-    <lastmod>2007-01-10T06:34:04+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/hacking/</loc>
-    <lastmod>2009-06-11T20:23:43+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/hard-drives/</loc>
-    <lastmod>2011-05-21T03:02:47+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/hardware/</loc>
-    <lastmod>2013-03-14T04:08:20+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/high-availability/</loc>
-    <lastmod>2012-01-04T14:19:10+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/hostnames/</loc>
-    <lastmod>2013-03-27T23:58:32+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/hp/</loc>
-    <lastmod>2013-04-15T21:06:09+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/httpd/</loc>
-    <lastmod>2013-05-12T21:29:09+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/humanity/</loc>
-    <lastmod>2007-10-09T19:27:24+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/icc/</loc>
-    <lastmod>2013-06-26T02:34:43+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/imagemagick/</loc>
-    <lastmod>2009-06-11T20:23:43+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/imdb/</loc>
-    <lastmod>2010-10-05T20:25:06+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/intel/</loc>
-    <lastmod>2013-06-26T02:34:43+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/iperf/</loc>
-    <lastmod>2012-01-04T14:19:10+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/ipmi/</loc>
-    <lastmod>2013-06-26T02:34:43+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/ipmitool/</loc>
-    <lastmod>2013-06-26T02:34:43+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/ipv6/</loc>
-    <lastmod>2011-01-10T02:33:49+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/ir/</loc>
-    <lastmod>2010-10-07T01:21:22+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/it/</loc>
-    <lastmod>2012-06-24T17:05:04+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/kayak/</loc>
-    <lastmod>2009-02-15T22:17:09+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/kernel-modules/</loc>
-    <lastmod>2013-01-20T03:39:48+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/laptop/</loc>
-    <lastmod>2008-11-18T01:20:49+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/lasertag/</loc>
-    <lastmod>2007-01-10T06:34:04+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/learning/</loc>
-    <lastmod>2008-09-25T02:14:57+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/leds/</loc>
-    <lastmod>2010-10-07T01:21:22+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/linksys/</loc>
-    <lastmod>2008-12-06T22:05:55+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/linux/</loc>
-    <lastmod>2013-06-26T02:34:43+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/management/</loc>
-    <lastmod>2012-04-16T02:25:27+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/mathematica/</loc>
-    <lastmod>2009-05-01T17:17:02+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/metawork/</loc>
-    <lastmod>2012-04-16T02:25:27+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/metrics/</loc>
-    <lastmod>2012-04-29T19:46:17+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/microblogging/</loc>
-    <lastmod>2010-03-18T01:25:37+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/monitoring/</loc>
-    <lastmod>2012-04-29T19:46:17+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/mosh/</loc>
-    <lastmod>2013-10-03T05:07:55+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/munin/</loc>
-    <lastmod>2012-04-29T19:46:17+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/myspace/</loc>
-    <lastmod>2009-02-11T22:40:10+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/nagios/</loc>
-    <lastmod>2013-10-13T01:55:41+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/nclug/</loc>
-    <lastmod>2011-01-10T02:33:49+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/network/</loc>
-    <lastmod>2012-01-04T14:19:10+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/nfs/</loc>
-    <lastmod>2011-07-10T22:28:22+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/nginx/</loc>
-    <lastmod>2013-05-12T21:29:09+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/notebook/</loc>
-    <lastmod>2008-11-16T18:51:02+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/octopress/</loc>
-    <lastmod>2013-12-01T21:40:42+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/openwrt/</loc>
-    <lastmod>2013-05-31T01:45:13+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/packages/</loc>
-    <lastmod>2013-01-20T03:39:48+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/passwords/</loc>
-    <lastmod>2009-02-11T22:40:10+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/patent/</loc>
-    <lastmod>2009-02-12T19:40:06+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/personal/</loc>
-    <lastmod>2017-07-09T18:55:14+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/philosophy/</loc>
-    <lastmod>2007-10-09T19:27:24+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/platforms/</loc>
-    <lastmod>2012-06-24T17:05:04+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/plug-computers/</loc>
-    <lastmod>2013-01-06T23:16:33+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/postmodern/</loc>
-    <lastmod>2011-08-08T02:21:32+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
-    <lastmod>2019-06-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/power/</loc>
-    <lastmod>2013-03-07T05:35:49+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/programming/</loc>
-    <lastmod>2013-03-21T02:04:43+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/puppet/</loc>
-    <lastmod>2015-10-11T18:21:14+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/puppetdb/</loc>
-    <lastmod>2013-10-19T23:05:02+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/pxe/</loc>
-    <lastmod>2013-01-06T23:16:33+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/pygame/</loc>
-    <lastmod>2010-08-01T05:07:57+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/python/</loc>
-    <lastmod>2013-03-21T02:04:43+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/raid/</loc>
-    <lastmod>2011-05-21T03:02:47+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/rant/</loc>
-    <lastmod>2013-03-27T23:58:32+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/ruby/</loc>
-    <lastmod>2013-03-21T02:04:43+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/sailing/</loc>
-    <lastmod>2017-07-09T18:55:14+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/salt/</loc>
-    <lastmod>2015-10-11T18:21:14+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/school/</loc>
-    <lastmod>2009-05-01T17:17:02+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/scientology/</loc>
-    <lastmod>2006-07-01T17:56:59+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/scripting/</loc>
-    <lastmod>2010-08-22T07:24:10+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/security/</loc>
-    <lastmod>2013-01-06T23:16:33+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/see-n-say/</loc>
-    <lastmod>2013-05-18T21:12:21+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/sel/</loc>
-    <lastmod>2013-02-13T06:08:18+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/sensor-bar/</loc>
-    <lastmod>2010-10-07T01:21:22+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/sensu/</loc>
-    <lastmod>2015-10-11T18:21:14+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/serf/</loc>
-    <lastmod>2014-04-06T05:33:58+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/sniffing/</loc>
-    <lastmod>2008-11-15T02:04:41+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/sparkfun/</loc>
-    <lastmod>2010-04-18T03:50:33+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/spdy/</loc>
-    <lastmod>2013-05-12T21:29:09+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/spi/</loc>
-    <lastmod>2013-03-14T04:08:20+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/ssl/</loc>
-    <lastmod>2011-01-10T02:33:49+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/statusnet/</loc>
-    <lastmod>2010-03-18T01:25:37+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/stored-configs/</loc>
-    <lastmod>2013-10-19T23:05:02+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/sugru/</loc>
-    <lastmod>2010-04-08T02:52:53+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/sysadmin/</loc>
-    <lastmod>2011-08-08T02:21:32+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/syscfg/</loc>
-    <lastmod>2013-06-26T02:34:43+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/tags/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/team-fortress-2/</loc>
-    <lastmod>2013-05-18T21:12:21+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/text-band/</loc>
-    <lastmod>2013-03-14T04:08:20+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/toorcamp/</loc>
-    <lastmod>2009-07-05T02:14:13+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/totem/</loc>
-    <lastmod>2010-05-17T03:20:20+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/tv/</loc>
-    <lastmod>2010-10-07T01:21:22+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/twitter/</loc>
-    <lastmod>2010-03-18T01:25:37+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/uav/</loc>
-    <lastmod>2010-04-18T03:50:33+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/ubuntu/</loc>
-    <lastmod>2009-02-20T23:06:21+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/vacation/</loc>
-    <lastmod>2009-03-21T22:49:40+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/vpn/</loc>
-    <lastmod>2008-11-15T02:17:33+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/wep/</loc>
-    <lastmod>2010-04-02T18:40:56+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/whiteboard/</loc>
-    <lastmod>2007-01-27T21:12:26+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/wifi/</loc>
-    <lastmod>2009-06-01T08:00:51+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/wii/</loc>
-    <lastmod>2010-10-07T01:21:22+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/wiki/</loc>
-    <lastmod>2008-11-16T18:51:02+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/windows/</loc>
-    <lastmod>2010-04-11T00:42:25+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/wireless/</loc>
-    <lastmod>2010-04-02T18:40:56+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/wordpress/</loc>
-    <lastmod>2013-12-01T21:40:42+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/work/</loc>
-    <lastmod>2012-04-16T02:25:27+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/wrt54gl/</loc>
-    <lastmod>2009-09-16T01:43:46+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/xkcd/</loc>
-    <lastmod>2010-03-05T05:44:25+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/youtube/</loc>
-    <lastmod>2010-05-17T03:20:20+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/ytmnd.com/</loc>
-    <lastmod>2006-07-01T17:56:59+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2019-06-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
 </urlset>

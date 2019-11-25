@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Personal on xkyle.com</title>
+    <title>personal on xkyle.com</title>
     <link>/categories/personal/</link>
-    <description>Recent content in Personal on xkyle.com</description>
+    <description>Recent content in personal on xkyle.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 09 Jul 2017 18:55:14 +0000</lastBuildDate>
@@ -18,95 +18,6 @@
       
       <guid>/Cruising-from-Port-San-Luis-to-San-Francisco-in-a-Gemini-105m/</guid>
       <description>Over the last 5 days my wife and I cruised from Port San Luis to San Francisco. The total distance was 228 Nautical Miles (nm). We recently purchased the boat and decided to relocate it to a Marina closer to where we live. We knew the trip would relatively difficult. The majority of the journey would be against the wind and waves. For this reason we decided to motor the entire distance up North.</description>
-    </item>
-    
-    <item>
-      <title>A Team Fortress 2 See &#39;n Say!</title>
-      <link>/a-team-fortress-2-see-n-say/</link>
-      <pubDate>Sat, 18 May 2013 21:12:21 +0000</pubDate>
-      
-      <guid>/a-team-fortress-2-see-n-say/</guid>
-      <description>Hopefully Valve will offer me a job instead of suing me? :)
-Teardown [gallery ids=&amp;ldquo;991,992,993,994,995,996,999,1001,1002,1000,1003,997&amp;rdquo;] Parts  Many See N&amp;rsquo; Says to destroy (I burned through 3)
- An Arduino (yes, because I&amp;rsquo;m a lazy noob)
- Wave shield
- Some sort of ISP programmer
- Speaker / Switch / Hot-glue / Resistors / etc
-  How It Works  A user pulls the handle, activating the normally-open switch and powering the arduino</description>
-    </item>
-    
-    <item>
-      <title>A Car Wreck</title>
-      <link>/a-car-wreck/</link>
-      <pubDate>Wed, 25 Nov 2009 01:33:01 +0000</pubDate>
-      
-      <guid>/a-car-wreck/</guid>
-      <description>This is mostly for my archival purposes.</description>
-    </item>
-    
-    <item>
-      <title>Boom-Boom Classes?</title>
-      <link>/boom-boom-classes/</link>
-      <pubDate>Sat, 22 Nov 2008 19:19:26 +0000</pubDate>
-      
-      <guid>/boom-boom-classes/</guid>
-      <description>I was talking with my girlfriend recently, and I told her that her &amp;ldquo;RA Class&amp;rdquo; (RA is short for resident assistant, someone who lives on campus to assist other residents) is a &amp;ldquo;Boom Boom&amp;rdquo; class. She is from Niceville and had never heard of the term. I knew it as a slang term for a low level class that required no effort, taken simply for credit.
-In an effort to locate some sort of source for my definition besides anecdotes of the people I knew, I was only able to find other personal references (myspace, facebook) coincidentally from people in Tampa.</description>
-    </item>
-    
-    <item>
-      <title>Blogging = Human Salvation</title>
-      <link>/blogging-human-salvation/</link>
-      <pubDate>Tue, 09 Oct 2007 19:27:24 +0000</pubDate>
-      
-      <guid>/blogging-human-salvation/</guid>
-      <description>Now hear me out, I used to be a hater. It seems that the more people blog, the more the internet is loaded up with wasted bandwidth and ad space. The truth is that blogging has a very small marginal cost, and usually blogging occupies time that would not otherwise be spent doing &amp;ldquo;productive&amp;rdquo; things.
-But! What if all of humanity blogged, and then we could aggregate all blogs on the internet.</description>
-    </item>
-    
-    <item>
-      <title>Whiteboard Whiteboard Interactions</title>
-      <link>/whiteboard-whiteboard-interactions/</link>
-      <pubDate>Sat, 27 Jan 2007 21:12:26 +0000</pubDate>
-      
-      <guid>/whiteboard-whiteboard-interactions/</guid>
-      <description>Here are some of the messages that are passed back and forth between my roommate and I&amp;hellip;
-Sometimes we make up silly things&amp;hellip; late at night&amp;hellip;
- Sometimes we borrow each others things&amp;hellip;
- And we get the better of each other with our antics&amp;hellip;
- Our true feelings for each other?
- To do list&amp;hellip;
- Sometimes we DON&amp;rsquo;T let each other borrow things&amp;hellip;</description>
-    </item>
-    
-    <item>
-      <title>Compact Flash Replacement</title>
-      <link>/compact-flash-replacement/</link>
-      <pubDate>Sat, 20 Jan 2007 16:38:32 +0000</pubDate>
-      
-      <guid>/compact-flash-replacement/</guid>
-      <description>My laptop is a Sharp MM20, which I knew I was going to spraypaint eventually, I just needed a reason to. After about a year of wear and scratches from abuse, it was time.
-I&amp;rsquo;m replacing the harddrive in my laptop with a 4GB flash card. It should be faster:
-/dev/sdb: Timing cached reads: 3532 MB in 2.00 seconds = 1766.79 MB/sec Timing buffered disk reads: 58 MB in 3.10 seconds = 18.</description>
-    </item>
-    
-    <item>
-      <title>Help Expose Scientology</title>
-      <link>/help-expose-scientology/</link>
-      <pubDate>Sat, 01 Jul 2006 17:56:59 +0000</pubDate>
-      
-      <guid>/help-expose-scientology/</guid>
-      <description>One of my personally favorite websites is YoureTheManNowDog.com. (You may have noticed the cameo in episode 1.) Founded in 2001, an uncountable number of spoofs have been made, and are stored at the sister site, ytmnd.com. There you can setup your own account and create your own YoureTheManNowDog&amp;rsquo;s! I love it.
-Also, being in Tampa, I live close to the Scientology headquarters in Clearwater. Recently a YoureTheManNowDog has been created that exposes some of the terrible things that the church of Scientology has done.</description>
-    </item>
-    
-    <item>
-      <title>Myspace Friend Maps</title>
-      <link>/myspace-friend-maps/</link>
-      <pubDate>Mon, 22 May 2006 21:54:02 +0000</pubDate>
-      
-      <guid>/myspace-friend-maps/</guid>
-      <description>Ok, I have a seceret: I am a Myspace sellout. Everyone around me was like ooh yea, check out my myspace! Or Ooo, your myspace is sooo cool. Or, Wow, your myspace cures cancer. Well, so I made one, and added friends. I soon realized that Myspace.com is interesting. (Although it sucks too. Ads everywhere, people&amp;rsquo;s pages are often littered with cpu sucking garbage and animated gifs and crappy css.)</description>
     </item>
     
   </channel>

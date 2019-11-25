@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Puppet on xkyle.com</title>
+    <title>puppet on xkyle.com</title>
     <link>/categories/puppet/</link>
-    <description>Recent content in Puppet on xkyle.com</description>
+    <description>Recent content in puppet on xkyle.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 11 Oct 2015 18:21:14 +0000</lastBuildDate>
@@ -63,103 +63,6 @@ Bundle uses a Gemfile, and searches downwards. As long as you have the Gemfile i
       <description>Whenever possible, I try to write Puppet code that is purgable and &amp;ldquo;Comment Safe&amp;rdquo;. That is not a very good description. What I mean is, Puppet code that removes resources from a system when the corresponding Puppet code is &amp;ldquo;Commented&amp;rdquo; out of a manifest. Lets look at a few examples.
 Example: Managed Sudo Lets say you used this popular sudo module with the following params:
 class { &amp;#39;sudo&amp;#39;: purge =&amp;gt; true, } Great start.</description>
-    </item>
-    
-    <item>
-      <title>Sensu Reports in your Motd with Puppet!</title>
-      <link>/sensu-reports-in-your-motd-with-puppet/</link>
-      <pubDate>Sat, 30 Nov 2013 00:19:24 +0000</pubDate>
-      
-      <guid>/sensu-reports-in-your-motd-with-puppet/</guid>
-      <description>Intro Sensu is a pretty cool monitoring framework. The authors designed it to be configured by a configuration management system from the beginning. Check out how easily I can make it put a report in my motd with a little bit of python and puppet.
-The Report Script Sensu&amp;rsquo;s API is super easy to work with. For this I will be using the Events endpoint. Here is a quick script to get the events for a host (gist):</description>
-    </item>
-    
-    <item>
-      <title>Managing DNS Automatically with Puppet</title>
-      <link>/managing-dns-automatically-with-puppet/</link>
-      <pubDate>Sat, 19 Oct 2013 23:05:02 +0000</pubDate>
-      
-      <guid>/managing-dns-automatically-with-puppet/</guid>
-      <description>Why So you have a decent amount of things configured in Puppet. Great!
-Are you finding that you have to manually update your DNS entries when things change, like when new hosts or added, or additional services are created?
-Why? Your DNS zone files will forever be out of date, waiting for humans to update them. Just say no. Puppet already knows what the ip addresses and hostnames of your servers, why not take advantage of that existing data?</description>
-    </item>
-    
-    <item>
-      <title>Getting Started With Sensu Using Puppet. For Real. </title>
-      <link>/getting-started-with-sensu-using-puppet-for-real/</link>
-      <pubDate>Sun, 13 Oct 2013 01:55:41 +0000</pubDate>
-      
-      <guid>/getting-started-with-sensu-using-puppet-for-real/</guid>
-      <description>Nagios. So familiar. I feel like I&amp;rsquo;ve run Nagios at every job I have ever had.
-Talk to most ops people, even at really big places, and they will probably admit to using it.
-Puppet&amp;rsquo;s exported resources takes away some of the pain, but sometimes I think to myself, there must be a better way to do this. Sensu might be that better way.
-Let&amp;rsquo;s try it out, but gosh, I am SO lazy.</description>
-    </item>
-    
-    <item>
-      <title>Dropbear with Mosh on a Low End Server</title>
-      <link>/dropbear-with-mosh-on-a-low-end-server/</link>
-      <pubDate>Thu, 03 Oct 2013 05:07:55 +0000</pubDate>
-      
-      <guid>/dropbear-with-mosh-on-a-low-end-server/</guid>
-      <description>I love my low end boxes. I also love mosh.
-Low end boxes usually are tight on resources, so Dropbear is often used as a lightweight ssh server. Mosh is mostly tested with openssh-client/server, so I think there are some bugs.
-But it can work, just make sure:
- You are using the same version of mosh on the server as you are on your client. (otherwise they may not support the same command line options)</description>
-    </item>
-    
-    <item>
-      <title>Goodbye Intel - My Favorite Commands</title>
-      <link>/goodbye-intel-my-favorite-commands/</link>
-      <pubDate>Wed, 26 Jun 2013 02:34:43 +0000</pubDate>
-      
-      <guid>/goodbye-intel-my-favorite-commands/</guid>
-      <description>Working at Intel has been a great experience. I wish I could have stayed longer, but in the end we decided to part ways.
-During my stay I learned lots of stuff. I would like to boil my experience down to my top Linux commands.
-The List  git: Lots of git. syscfg: Managing bios settings from within Linux. Nice. (Intel platforms) setupbios: More bios settings from within Linux. (Dell platforms) puppet: I actually enjoy manually running puppet.</description>
-    </item>
-    
-    <item>
-      <title>My First Published Puppet Module: bios</title>
-      <link>/my-first-published-puppet-module-bios/</link>
-      <pubDate>Mon, 15 Apr 2013 21:06:09 +0000</pubDate>
-      
-      <guid>/my-first-published-puppet-module-bios/</guid>
-      <description>What? I&amp;rsquo;ve written lots of crappy Puppet modules. Here is a slightly less crappy module that can help you configure BIOS settings on your servers for you.
-It works on Dell C class servers and Intel platforms. Please pull request or email me if you want to have it work on something else too!
-Why? BIOS settings should be considered configuration just like any other configuration, and hence managed by your configuration management tool, if possible.</description>
-    </item>
-    
-    <item>
-      <title>Configuring BIOS Settings With Puppet!</title>
-      <link>/configuring-bios-settings-with-puppet/</link>
-      <pubDate>Tue, 12 Feb 2013 03:35:01 +0000</pubDate>
-      
-      <guid>/configuring-bios-settings-with-puppet/</guid>
-      <description>You know what it is like to spend time configuring the BIOS on a a server. You reboot the server, and wait for it to take its sweet time to come back up, frantically push its button, hope that you didn&amp;rsquo;t miss your chance. Then spend some one-on-one alone time with the interface, making sure you do all the right keystrokes to get the settings you want. Sounds like a bad date.</description>
-    </item>
-    
-    <item>
-      <title>Configuring Nagios Like a Boss!</title>
-      <link>/configuring-nagios-like-a-boss/</link>
-      <pubDate>Mon, 19 Nov 2012 05:41:17 +0000</pubDate>
-      
-      <guid>/configuring-nagios-like-a-boss/</guid>
-      <description>I&amp;rsquo;m tired of configuring Nagios by hand. Just tired. I always forget to do stuff. I&amp;rsquo;ll add a new host, or stick in a raid card, add a new website, whatever, and forget to add a nagios check for it.
-
-So it happened. You setup a server, put critical infrastructure on it, but forgot to monitor it. It goes down, bad stuff happens. Your boss asks, why weren&amp;rsquo;t we monitoring this?</description>
-    </item>
-    
-    <item>
-      <title>Puppet versus CFEngine 2: Editing Files</title>
-      <link>/puppet-versus-cfengine-editing-files/</link>
-      <pubDate>Thu, 26 Jan 2012 01:46:30 +0000</pubDate>
-      
-      <guid>/puppet-versus-cfengine-editing-files/</guid>
-      <description>Update: I wrote this article when I was young and stupid. It is obsolete. Puppet wins, just use Augeas. Both Puppet and CFEngine are formidable configuration management systems. Let&amp;rsquo;s compare the two to see how the match up on the common task of editing files. Feel free to jump straight to the conclusion if you are impatient.
-Why would you need this? What is the use-case here? These are some common tasks I do that involve editing files:</description>
     </item>
     
   </channel>

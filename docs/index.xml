@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>xkyle.com</title>
@@ -6,10 +6,30 @@
     <description>Recent content on xkyle.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Jun 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 23 Nov 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>What Kubernetes Got Right, and Mesos Got Wrong</title>
+      <link>/What-Kubernetes-Got-Right-and-Mesos-Got-Wrong/</link>
+      <pubDate>Sat, 23 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/What-Kubernetes-Got-Right-and-Mesos-Got-Wrong/</guid>
+      <description>I&amp;rsquo;ve worked at Yelp for about six years, and working with our Mesos-based container platform in production for about four of those years.</description>
+    </item>
+    
+    <item>
+      <title>Can Infrastructure Teams Do Better Than AWS? Yes, Sometimes.</title>
+      <link>/Can-Infrastructure-Teams-Do-Better-Than-AWS-Yes-Sometimes./</link>
+      <pubDate>Sun, 23 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/Can-Infrastructure-Teams-Do-Better-Than-AWS-Yes-Sometimes./</guid>
+      <description>AWS likes to use the pharse &amp;ldquo;undifferentiated heavy lifting&amp;ldquo; to describe
+In the world of &amp;ldquo;Cloud&amp;rdquo; providers, who&amp;rsquo;s mission is to provide &amp;ldquo;undifferentiated heavy lifting&amp;rdquo; for other companies, is there even room for infrastructure teams to provide value to their organizations?
+Some firmly believe the answer is unequivocally &amp;ldquo;No.&amp;rdquo; They believe that developers should be given an AWS account or kubectl and then let loose, given all the freedom, flexibility, and power to do their thing.</description>
+    </item>
     
     <item>
       <title>Kubernetes as a Universal Infrastructure API</title>

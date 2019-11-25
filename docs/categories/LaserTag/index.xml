@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LaserTag on xkyle.com</title>
+    <link>/categories/LaserTag/</link>
+    <description>Recent content in LaserTag on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 10 Jan 2007 06:34:04 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/LaserTag/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Next Piece: Armband</title>
+      <link>/next-piece-armband/</link>
+      <pubDate>Wed, 10 Jan 2007 06:34:04 +0000</pubDate>
+      
+      <guid>/next-piece-armband/</guid>
+      <description>We were thinking it would be cool to have the LCD display be on the arm, instead of the side of the gun.
+So we have modified roller-blading wrist-guards for the purpose:
+
+Watch Karl Show It Off!
+Karl&amp;rsquo;s Mom helped with the sewing. Next we&amp;rsquo;ll add buttons for mode and backlight. I think they will be very thin and unobtrusive.</description>
+    </item>
+    
+    <item>
+      <title>Our First Real Gun</title>
+      <link>/our-first-real-gun/</link>
+      <pubDate>Sat, 06 Jan 2007 06:26:25 +0000</pubDate>
+      
+      <guid>/our-first-real-gun/</guid>
+      <description>Here it is, the big milestone: our first real gun!
+From this: 
+To this!
+You can see how we have gutted an air-soft gun, and inserted our led&amp;rsquo;s and switches to turn it into a lasertag gun. All of our guns will be interchangeable as they will all have the same Cat-5 Pinout. Eventually we will have an array of guns and we can change their properties in software. (Reload times, shots per clip, damage per shot, etc.</description>
+    </item>
+    
+    <item>
+      <title>Prototype #1</title>
+      <link>/prototype-1/</link>
+      <pubDate>Sun, 31 Dec 2006 15:33:53 +0000</pubDate>
+      
+      <guid>/prototype-1/</guid>
+      <description>Here are some pictures and some short video of our first prototype gun!
+A more or less finished backpack.
+2x4 Gun and LCD wristbandI love having good tools, and this $40 soldering iron is the best $40 I ever spent.
+Nicd battery pack! With velcro! 
+And Kyle explains it all! Sort of&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Lasertag Camo</title>
+      <link>/lasertag-camo/</link>
+      <pubDate>Sat, 18 Nov 2006 23:10:34 +0000</pubDate>
+      
+      <guid>/lasertag-camo/</guid>
+      <description>Karl and I have taken our backpacks and spraypainted them camo! And we have installed a few components for two test boxes. (Radio, Mainboard, and ISD) 
+You can see me wiring the usb port for the usb key thing. (It stores your personal stats)
+More to come as we prototype our first two boxes!</description>
+    </item>
+    
+    <item>
+      <title>Ahoy! Holes!</title>
+      <link>/ahoy-holes/</link>
+      <pubDate>Mon, 25 Sep 2006 01:52:41 +0000</pubDate>
+      
+      <guid>/ahoy-holes/</guid>
+      <description>The next step in our Lasertag construction project is the preperation of the boxes for our components. We have decided to put all of the electronics in a backpack. But the backpack will need some I/O. We need a rj-45 for the gun, two for the arm-band, a usb for the key, and a hole for the power switch and power plug. How do we do it? We need square holes&amp;hellip; Well, the best and nicest way I can think to do it is to use a little thing called a roto-zip bit.</description>
+    </item>
+    
+    <item>
+      <title>LaserTag!</title>
+      <link>/lasertag/</link>
+      <pubDate>Mon, 22 May 2006 21:39:16 +0000</pubDate>
+      
+      <guid>/lasertag/</guid>
+      <description>My friends and I are currently constructing our own lasertag guns using this as a base.
+Here is our checklist:
+ Construct electronic components using the above milestag components.
+ Get and modify vests to hold components
+ Melt aluminum and pour guns into molds! Rock on!
+ Connect it all together and play!
+  We&amp;rsquo;ve go the electronics together. The vests are on their way via UPS, and my friend Karl and I have the furnace ready and we can melt aluminum!</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -12,8 +12,9 @@ It tells time by displaying a quote from a book:
 The dataset with all the quotes needs some data cleaning love though.
 Cleaning The Dataset The CSV has over 1,400 quotes in it. For every minute, there may be multiple quotes (&ldquo;Midnight&rdquo; has 26 unique quotes). Some minutes of the day do not have any quotes." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/epaper-watch-Cleaning-the-Literary-Quotes-Database/" /><meta property="article:published_time" content="2019-05-27T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-05-27T00:00:00&#43;00:00"/>
+<meta property="og:url" content="/epaper-watch-Cleaning-the-Literary-Quotes-Database/" />
+<meta property="article:published_time" content="2019-05-27T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-05-27T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="epaper-watch: Cleaning the Literary Quotes Database"/>
@@ -152,9 +153,9 @@ version of this clock.</p>
 </span><span style="color:#f92672"></span><span style="color:#a6e22e">+&#34;I am going to lock you in. It is-&#34; he consulted his watch,
 </span><span style="color:#a6e22e">+&#34;five minutes to midnight. Miss Granger, three turns should do it.
 </span><span style="color:#a6e22e">+Good luck.&#34;|Harry Potter and the Prisoner of Azkaban|J. K.  Rowling
-</span><span style="color:#a6e22e"></span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff"><span style="color:#f92672">-&#34;We have heard the chimes at midnight.&#34;|Henry IV
+</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff"><span style="color:#f92672">-&#34;We have heard the chimes at midnight.&#34;|Henry IV
 </span><span style="color:#f92672"></span><span style="color:#a6e22e">+We have heard the chimes at midnight.|Henry IV
-</span><span style="color:#a6e22e"></span></code></pre></div>
+</span></code></pre></div>
 <h2 id="duplicates">Duplicates</h2>
 
 <p>By sorting the dataset, duplicate quotes become more visible. Literally identical quotes can be removed programmatically:</p>
@@ -177,7 +178,7 @@ version of this clock.</p>
 </span><span style="color:#f92672"></span><span style="color:#a6e22e">+It was eight minutes to midnight. Just nice time, I said to myself.
 </span><span style="color:#a6e22e">+Indoors, everything was quiet and in darkness.
 </span><span style="color:#a6e22e">+|The Green Man|Kingsley Amis
-</span><span style="color:#a6e22e"></span></code></pre></div>
+</span></code></pre></div>
 <p>I tried to keep the time string located somewhere in the middle of the quote, with context around it. I took some artistic license in shortening the quotes and replacing the missing text with <code>...</code>.</p>
 
 <h2 id="removing-non-ascii-characters">Removing Non-ASCII Characters</h2>
