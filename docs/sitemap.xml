@@ -3,27 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/post/</loc>
-    <lastmod>2019-11-23T00:00:00+00:00</lastmod>
+    <loc>/Kubernetes-as-a-Universal-Infrastructure-API/</loc>
+    <lastmod>2019-06-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/What-Kubernetes-Got-Right-and-Mesos-Got-Wrong/</loc>
-    <lastmod>2019-11-23T00:00:00+00:00</lastmod>
+    <loc>/post/</loc>
+    <lastmod>2019-06-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-11-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/Can-Infrastructure-Teams-Do-Better-Than-AWS-Yes-Sometimes./</loc>
-    <lastmod>2019-06-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/Kubernetes-as-a-Universal-Infrastructure-API/</loc>
     <lastmod>2019-06-02T00:00:00+00:00</lastmod>
   </url>
   
@@ -138,11 +128,6 @@
   </url>
   
   <url>
-    <loc>/categories/sensu/</loc>
-    <lastmod>2015-10-11T18:21:14+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/A-Comparison-of-Image-to-ASCII-Conversion-Tools/</loc>
     <lastmod>2015-09-26T19:35:56+00:00</lastmod>
   </url>
@@ -194,6 +179,11 @@
   
   <url>
     <loc>/Introducing-sensu-shell-helper/</loc>
+    <lastmod>2013-12-15T09:12:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/Sensu/</loc>
     <lastmod>2013-12-15T09:12:26+00:00</lastmod>
   </url>
   

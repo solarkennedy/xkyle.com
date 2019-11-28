@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sensu on xkyle.com</title>
+    <link>/categories/Sensu/</link>
+    <description>Recent content in Sensu on xkyle.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 Dec 2013 09:12:26 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/Sensu/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Introducing sensu-shell-helper!</title>
+      <link>/Introducing-sensu-shell-helper/</link>
+      <pubDate>Sun, 15 Dec 2013 09:12:26 +0000</pubDate>
+      
+      <guid>/Introducing-sensu-shell-helper/</guid>
+      <description>The Problem The barrier to writing Nagios checks is high. I dare say very high. You have to think about check intervals, host groups, service groups, config files, etc.
+But, I know my servers are not behaving, if only there was a way to check them! They run commands for me all the time. In the worst case they fail and no one knows. The best case is that they end up in my cron spam folder&amp;hellip;.</description>
+    </item>
+    
+  </channel>
+</rss>
