@@ -17,7 +17,7 @@
       <pubDate>Mon, 15 Apr 2013 21:06:09 +0000</pubDate>
       
       <guid>/my-first-published-puppet-module-bios/</guid>
-      <description>What? I&amp;rsquo;ve written lots of crappy Puppet modules. Here is a slightly less crappy module that can help you configure BIOS settings on your servers for you.
+      <description>What? I&#39;ve written lots of crappy Puppet modules. Here is a slightly less crappy module that can help you configure BIOS settings on your servers for you.
 It works on Dell C class servers and Intel platforms. Please pull request or email me if you want to have it work on something else too!
 Why? BIOS settings should be considered configuration just like any other configuration, and hence managed by your configuration management tool, if possible.</description>
     </item>

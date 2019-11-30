@@ -17,7 +17,7 @@
       <pubDate>Sat, 30 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>/Can-Infrastructure-Teams-Do-Better-Than-AWS-Yes-Sometimes./</guid>
-      <description>AWS likes to use the pharse &amp;ldquo;undifferentiated heavy lifting&amp;ldquo; to describe what AWS does best: all the things that everyone hast to do anyway with computers. Commonly these are things like running servers for you, hosting files, and managing a network. Let AWS handle the boring things so that you can focus on what matters most for your business. Sounds great! I certainly do not want a job that could otherwise be commonditized and turned into an API.</description>
+      <description>AWS likes to use the pharse &amp;ldquo;undifferentiated heavy lifting&amp;rdquo; to describe what AWS does best: all the things that everyone hast to do anyway with computers. Commonly these are things like running servers for you, hosting files, and managing a network. Let AWS handle the boring things so that you can focus on what matters most for your business. Sounds great! I certainly do not want a job that could otherwise be commonditized and turned into an API.</description>
     </item>
     
     <item>
@@ -27,7 +27,7 @@
       
       <guid>/Kubernetes-as-a-Universal-Infrastructure-API/</guid>
       <description>Recently the Kubernetes (k8s) Cluster Lifecycle Special Interest Group (SIG) release their first Alpha of their Cluster API.
-What does this thing do? It is kinda like a k8s operator (it&amp;rsquo;s a controller) that has custom resource definitions for things to launch another k8s cluster, with a bunch of cloud providers. It is kinda like if Terraform was re-imagined as a k8s operator, but only for launching other k8s clusters, and not general purpose.</description>
+What does this thing do? It is kinda like a k8s operator (it&#39;s a controller) that has custom resource definitions for things to launch another k8s cluster, with a bunch of cloud providers. It is kinda like if Terraform was re-imagined as a k8s operator, but only for launching other k8s clusters, and not general purpose.</description>
     </item>
     
     <item>
@@ -38,7 +38,7 @@ What does this thing do? It is kinda like a k8s operator (it&amp;rsquo;s a contr
       <guid>/epaper-watch-Cleaning-the-Literary-Quotes-Database/</guid>
       <description>paper-watch intro My epaper-watch is an attempt to build a watch with an epaper display.
 It tells time by displaying a quote from a book:
-(don&amp;rsquo;t mind the graphical glitches)
+(don&#39;t mind the graphical glitches)
 The dataset with all the quotes needs some data cleaning love though.
 Cleaning The Dataset The CSV has over 1,400 quotes in it. For every minute, there may be multiple quotes (&amp;ldquo;Midnight&amp;rdquo; has 26 unique quotes). Some minutes of the day do not have any quotes.</description>
     </item>
@@ -58,7 +58,7 @@ Cleaning The Dataset The CSV has over 1,400 quotes in it. For every minute, ther
       <pubDate>Tue, 23 Apr 2019 19:35:56 +0000</pubDate>
       
       <guid>/Configuration-as-Code-Is-It-That-Good-of-an-Idea/</guid>
-      <description>Kyle&amp;rsquo;s Conclusions:  If possible, make your users not care about the intermediate form &amp;ldquo;Code as Configuration&amp;rdquo; is not worth it YAML isn&amp;rsquo;t so bad if you can be strict  A Brief History of Configuration as Code Configuration as Code is not new. There are a few subtle distinctions that are worth pointing out:
+      <description>Kyle&#39;s Conclusions:  If possible, make your users not care about the intermediate form &amp;ldquo;Code as Configuration&amp;rdquo; is not worth it YAML isn&#39;t so bad if you can be strict  A Brief History of Configuration as Code Configuration as Code is not new. There are a few subtle distinctions that are worth pointing out:
    Thing Historic Example Modern Example     Config as Config Apache2 (.</description>
     </item>
     
@@ -79,7 +79,7 @@ Warning: The audio and video quality are horrendous:
       <pubDate>Sat, 12 Jan 2019 19:35:56 +0000</pubDate>
       
       <guid>/Being-a-Great-Engineering-Mentor/</guid>
-      <description>Here are some thoughts how I think about being a great engineering mentor. To me the most important thing is remembering &amp;ldquo;who to be&amp;rdquo;, and not as much as &amp;ldquo;how to act&amp;rdquo;. You won&amp;rsquo;t remember how to act. You can look up all the listicles you want on tips on what to do as a mentor, but if you can just &amp;ldquo;be&amp;rdquo; the right person, the choices you make and the things you say might just come naturally.</description>
+      <description>Here are some thoughts how I think about being a great engineering mentor. To me the most important thing is remembering &amp;ldquo;who to be&amp;rdquo;, and not as much as &amp;ldquo;how to act&amp;rdquo;. You won&#39;t remember how to act. You can look up all the listicles you want on tips on what to do as a mentor, but if you can just &amp;ldquo;be&amp;rdquo; the right person, the choices you make and the things you say might just come naturally.</description>
     </item>
     
     <item>
@@ -89,7 +89,6 @@ Warning: The audio and video quality are horrendous:
       
       <guid>/Sutro-Tower-Vinyl-Art/</guid>
       <description>I recently finished a project to make a vinyl mural of Sutro tower:
-   
 The &amp;ldquo;source code&amp;rdquo; of this project is on github and is in the public domain.</description>
     </item>
     
@@ -109,9 +108,9 @@ The &amp;ldquo;source code&amp;rdquo; of this project is on github and is in the
       <pubDate>Fri, 23 Feb 2018 07:48:18 +0000</pubDate>
       
       <guid>/The-Evolution-of-Distributed-Systems-Management/</guid>
-      <description>Let&amp;rsquo;s survey the past and present of how we manage distributed systems, and then maybe try to predict the future.
-For this survey I&amp;rsquo;ll look at a few open-source technologies to give concrete examples (in Kardashev style.
- Type 0: Manually Deployed and Configured Type 1: Host-Centric Configuration Management Type 2A: Infrastructure-scoped Orchestration Tooling Type 2B: Application-specific Orchestration Tooling Type 3: Compute-Platform-Native Application-Specific Frameworks * Type 3A: Mesos Frameworks * Type 3B: Kubernetes (k8s) Operators Type 4: Hybrid?</description>
+      <description>Let&#39;s survey the past and present of how we manage distributed systems, and then maybe try to predict the future.
+For this survey I&#39;ll look at a few open-source technologies to give concrete examples (in Kardashev style.
+ Type 0: Manually Deployed and Configured Type 1: Host-Centric Configuration Management Type 2A: Infrastructure-scoped Orchestration Tooling Type 2B: Application-specific Orchestration Tooling Type 3: Compute-Platform-Native Application-Specific Frameworks   Type 3A: Mesos Frameworks     Type 3B: Kubernetes (k8s) Operators   Type 4: Hybrid?</description>
     </item>
     
     <item>
@@ -121,8 +120,8 @@ For this survey I&amp;rsquo;ll look at a few open-source technologies to give co
       
       <guid>/Adding-Electric-Motors-to-a-Gemini-105m/</guid>
       <description>I recently added a pair of electric motors to my Gemini 105m catamaran.
-  Haul out   Although I don&amp;rsquo;t have any photos of the actual installation, here is what they look like:
-  motors     wake   These are a pair of Caroutte S400&amp;rsquo;s.
+  Haul out   Although I don&#39;t have any photos of the actual installation, here is what they look like:
+  motors     wake   These are a pair of Caroutte S400&#39;s.
 In theory they have a thrust of 180lbs each and a peak power consumption of 2.7kw each. Although it cannot be directly compared, the onboard diesel is a 20kw (27 Horsepower) engine.</description>
     </item>
     
@@ -133,7 +132,7 @@ In theory they have a thrust of 180lbs each and a peak power consumption of 2.7k
       
       <guid>/Another-Comparison-of-Image-to-ASCII-Conversion-Tools-2017/</guid>
       <description>Time for another round of terminal-based ascii/ansi art image conversion tools. Check out my last post from 2015 with more comparisons of more tools.
-This year I compare the best tool from 2015, img2xterm, against a new set of tools that I&amp;rsquo;ve stumbled across. email me with other tools if you would like to be included in the next round.
+This year I compare the best tool from 2015, img2xterm, against a new set of tools that I&#39;ve stumbled across. email me with other tools if you would like to be included in the next round.
 Methodology For these tests I used an image with a 160px width, twice that of a standard terminal.</description>
     </item>
     
@@ -173,9 +172,9 @@ Methodology All browsers were set to use xterm with TERM=xterm-256color.</descri
       <pubDate>Sat, 23 Jan 2016 16:24:01 +0000</pubDate>
       
       <guid>/Kyles-Fashion-Style-Guide/</guid>
-      <description>I recently read &amp;ldquo;Why Are SO Many Millennials SO Uncool?&amp;rdquo;. Let&amp;rsquo;s start with a quote:
+      <description>I recently read &amp;ldquo;Why Are SO Many Millennials SO Uncool?&amp;quot;. Let&#39;s start with a quote:
  *For the purpose of this writing, I’m defining “cool” as those who don’t conform, who don’t always fit in nor do they try to, and who follow their own path; and “uncool” as those who dress, act, and have the same tastes as the masses and are vulnerable to corporate influences.
- Now, I&amp;rsquo;m by no means some sort of authority on coolness.</description>
+ Now, I&#39;m by no means some sort of authority on coolness.</description>
     </item>
     
     <item>
@@ -184,7 +183,7 @@ Methodology All browsers were set to use xterm with TERM=xterm-256color.</descri
       <pubDate>Sun, 11 Oct 2015 18:21:14 +0000</pubDate>
       
       <guid>/configuration-management-rosetta-stone-configuring-sensu-with-puppet-chef-ansible-and-salt/</guid>
-      <description>I recently finished my Intermediate Sensu Training on Udemy. It was a ton of work but I&amp;rsquo;m glad I got it all together. Part of that training includes how to deploy and configure Sensu with four of the most popular open-source configuration management tools: Puppet, Chef, Ansible, and Salt.
+      <description>I recently finished my Intermediate Sensu Training on Udemy. It was a ton of work but I&#39;m glad I got it all together. Part of that training includes how to deploy and configure Sensu with four of the most popular open-source configuration management tools: Puppet, Chef, Ansible, and Salt.
  TOC {:toc}  The Sensu Decree In order to do the training I had to learn each of these tools enough so I could install a baseline Sensu installation.</description>
     </item>
     
@@ -196,7 +195,7 @@ Methodology All browsers were set to use xterm with TERM=xterm-256color.</descri
       <guid>/A-Comparison-of-Image-to-ASCII-Conversion-Tools/</guid>
       <description>Inspired by ponysay, I think wicked ascii/ansi artwork on the terminal is great.
 I decided to survey all the tools I could find that aid in this conversion to see if there were any dramatic differences in results.
-Methodology For these tests I used an image with a 160px width, twice that of a standard terminal. Then I cat&amp;rsquo;d the image in plain xterm and took a screenshot of the results.</description>
+Methodology For these tests I used an image with a 160px width, twice that of a standard terminal. Then I cat&#39;d the image in plain xterm and took a screenshot of the results.</description>
     </item>
     
     <item>
@@ -242,7 +241,7 @@ See the GitHub page for more details.</description>
       <guid>/Getting-Started-Puppet-Acceptance-Tests-With-Beaker/</guid>
       <description>Beaker is a test framework created by Puppetlabs to run tests against puppet modules on real servers (vm, containers whatever) and test that they do what they say they should do.
 This is a quick tutorial on how to use this framework. At the time of this writing, Beaker is under heavy development, so this could all change.
-The Gem The first thing you need to do is install beaker.</description>
+The Gem The first thing you need to do is install beaker. Usually this is as simple as adding it to your Gemfile and running bundle install.</description>
     </item>
     
     <item>
@@ -264,7 +263,8 @@ class { &amp;#39;serf&amp;#39;: config_hash =&amp;gt; { &amp;#39;node_name&amp;#
       <guid>/What-Happens-When-You-Run-Puppet-Tests/</guid>
       <description>Breaking down bundle exec rake spec What is happening when you run:
 bundle exec rake spec Bundle The first command you are running is bundle. Bundle is kinda like virtualenv for Ruby. It makes sure that you use the same ruby libraries that you, everyone, and puppetmasters use.
-Bundle uses a Gemfile, and searches downwards. As long as you have the Gemfile in the puppet repo, it will work.</description>
+Bundle uses a Gemfile, and searches downwards. As long as you have the Gemfile in the puppet repo, it will work.
+Exec The second part is exec.</description>
     </item>
     
     <item>
@@ -294,9 +294,9 @@ But, I know my servers are not behaving, if only there was a way to check them! 
       <pubDate>Sun, 01 Dec 2013 21:40:42 +0000</pubDate>
       
       <guid>/Saying-Goodbye-to-Wordpress/</guid>
-      <description>It&amp;rsquo;s Been a Great Ride There is no doubt that Wordpress is a great piece of software. As much as people love to hate on PHP, it runs a lot of the internet.
-I&amp;rsquo;ve been running Wordpress personally and professionally for years. It only gets better. I was only hacked once :)
-Rethinking What I Need Since moving to a Low End Box, my resources have been tight. Even on a tuned system, I can&amp;rsquo;t run much more interesting things than my Nginx+PHPfpm+MySQL.</description>
+      <description>It&#39;s Been a Great Ride There is no doubt that Wordpress is a great piece of software. As much as people love to hate on PHP, it runs a lot of the internet.
+I&#39;ve been running Wordpress personally and professionally for years. It only gets better. I was only hacked once :)
+Rethinking What I Need Since moving to a Low End Box, my resources have been tight. Even on a tuned system, I can&#39;t run much more interesting things than my Nginx+PHPfpm+MySQL.</description>
     </item>
     
     <item>
@@ -306,7 +306,7 @@ Rethinking What I Need Since moving to a Low End Box, my resources have been tig
       
       <guid>/sensu-reports-in-your-motd-with-puppet/</guid>
       <description>Intro Sensu is a pretty cool monitoring framework. The authors designed it to be configured by a configuration management system from the beginning. Check out how easily I can make it put a report in my motd with a little bit of python and puppet.
-The Report Script Sensu&amp;rsquo;s API is super easy to work with. For this I will be using the Events endpoint. Here is a quick script to get the events for a host (gist):</description>
+The Report Script Sensu&#39;s API is super easy to work with. For this I will be using the Events endpoint. Here is a quick script to get the events for a host (gist):</description>
     </item>
     
     <item>
@@ -326,10 +326,10 @@ Why? Your DNS zone files will forever be out of date, waiting for humans to upda
       <pubDate>Sun, 13 Oct 2013 01:55:41 +0000</pubDate>
       
       <guid>/getting-started-with-sensu-using-puppet-for-real/</guid>
-      <description>Nagios. So familiar. I feel like I&amp;rsquo;ve run Nagios at every job I have ever had.
+      <description>Nagios. So familiar. I feel like I&#39;ve run Nagios at every job I have ever had.
 Talk to most ops people, even at really big places, and they will probably admit to using it.
-Puppet&amp;rsquo;s exported resources takes away some of the pain, but sometimes I think to myself, there must be a better way to do this. Sensu might be that better way.
-Let&amp;rsquo;s try it out, but gosh, I am SO lazy.</description>
+Puppet&#39;s exported resources takes away some of the pain, but sometimes I think to myself, there must be a better way to do this. Sensu might be that better way.
+Let&#39;s try it out, but gosh, I am SO lazy.</description>
     </item>
     
     <item>
@@ -341,7 +341,7 @@ Let&amp;rsquo;s try it out, but gosh, I am SO lazy.</description>
       <description>I love my low end boxes. I also love mosh.
 Low end boxes usually are tight on resources, so Dropbear is often used as a lightweight ssh server. Mosh is mostly tested with openssh-client/server, so I think there are some bugs.
 But it can work, just make sure:
- You are using the same version of mosh on the server as you are on your client. (otherwise they may not support the same command line options)</description>
+  You are using the same version of mosh on the server as you are on your client. (otherwise they may not support the same command line options)</description>
     </item>
     
     <item>
@@ -361,8 +361,8 @@ The List  git: Lots of git. syscfg: Managing bios settings from within Linux. Ni
       <pubDate>Fri, 21 Jun 2013 04:46:58 +0000</pubDate>
       
       <guid>/rebuilding-packages-for-arm-or-any-other-arch/</guid>
-      <description>Sometimes there are packages out there that don&amp;rsquo;t come in your cool new Architecture. In my case it is ARM, and the package I wanted was Puppet. Here is how to rebuild source packages the cool way.
-Add the Puppet repo so you can get fresh source packages cd /tmp # Add the repo, even though it may not have arm binaries... wget http://apt.puppetlabs.com/puppetlabs-release-precise.deb dpkg -i puppetlabs-release-precise.deb # Get dependencies.</description>
+      <description>Sometimes there are packages out there that don&#39;t come in your cool new Architecture. In my case it is ARM, and the package I wanted was Puppet. Here is how to rebuild source packages the cool way.
+Add the Puppet repo so you can get fresh source packages cd /tmp # Add the repo, even though it may not have arm binaries... wget http://apt.puppetlabs.com/puppetlabs-release-precise.deb dpkg -i puppetlabs-release-precise.deb # Get dependencies... apt-get update apt-get build-dep puppet facter  Build / Install # Get sources.</description>
     </item>
     
     <item>
@@ -384,12 +384,12 @@ uci set network.wan.ifname=eth1 uci commit reboot  Whoa.</description>
       
       <guid>/a-team-fortress-2-see-n-say/</guid>
       <description>Hopefully Valve will offer me a job instead of suing me? :)
-Teardown [gallery ids=&amp;ldquo;991,992,993,994,995,996,999,1001,1002,1000,1003,997&amp;rdquo;] Parts  Many See N&amp;rsquo; Says to destroy (I burned through 3)
- An Arduino (yes, because I&amp;rsquo;m a lazy noob)
- Wave shield
- Some sort of ISP programmer
- Speaker / Switch / Hot-glue / Resistors / etc
-  How It Works  A user pulls the handle, activating the normally-open switch and powering the arduino</description>
+Teardown [gallery ids=&amp;quot;991,992,993,994,995,996,999,1001,1002,1000,1003,997&amp;rdquo;] Parts   Many See N&amp;rsquo; Says to destroy (I burned through 3)
+  An Arduino (yes, because I&#39;m a lazy noob)
+  Wave shield
+  Some sort of ISP programmer
+  Speaker / Switch / Hot-glue / Resistors / etc
+  How It Works   A user pulls the handle, activating the normally-open switch and powering the arduino</description>
     </item>
     
     <item>
@@ -409,7 +409,7 @@ Step 1: Get a version of nginx with spdy enabled. Ubuntu Get some packages. The 
       <pubDate>Wed, 17 Apr 2013 01:14:56 +0000</pubDate>
       
       <guid>/disabling-microphone-auto-gain-sensitivity-for-google-plus-hangouts/</guid>
-      <description>Google&amp;rsquo;s Google Plus Hangout / Gtalk plugin automatically adjust your volume to account for varying noise conditions by default. Sometimes this is an undesired behavior, but there is no button to turn it off. Here is how you do it:
+      <description>Google&#39;s Google Plus Hangout / Gtalk plugin automatically adjust your volume to account for varying noise conditions by default. Sometimes this is an undesired behavior, but there is no button to turn it off. Here is how you do it:
 Linux: Run this in a terminal:
 echo &amp;quot;audio-flags=1&amp;quot; &amp;gt; ~/.config/google-googletalkplugin/options  Windows: Set the registry Key:
 HKEY_CURRENT_USER\&amp;lt;wbr&amp;gt;&amp;lt;/wbr&amp;gt;Software\Google\Google Talk Plugin\options\audio-flags = 1  Mac OSX: Edit the plist:
@@ -422,7 +422,7 @@ HKEY_CURRENT_USER\&amp;lt;wbr&amp;gt;&amp;lt;/wbr&amp;gt;Software\Google\Google 
       <pubDate>Mon, 15 Apr 2013 21:06:09 +0000</pubDate>
       
       <guid>/my-first-published-puppet-module-bios/</guid>
-      <description>What? I&amp;rsquo;ve written lots of crappy Puppet modules. Here is a slightly less crappy module that can help you configure BIOS settings on your servers for you.
+      <description>What? I&#39;ve written lots of crappy Puppet modules. Here is a slightly less crappy module that can help you configure BIOS settings on your servers for you.
 It works on Dell C class servers and Intel platforms. Please pull request or email me if you want to have it work on something else too!
 Why? BIOS settings should be considered configuration just like any other configuration, and hence managed by your configuration management tool, if possible.</description>
     </item>
@@ -433,14 +433,13 @@ Why? BIOS settings should be considered configuration just like any other config
       <pubDate>Sun, 31 Mar 2013 19:38:28 +0000</pubDate>
       
       <guid>/puppet-on-openwrt/</guid>
-      <description>Status:  Github Repo is here: https://github.com/solarkennedy/puppet-on-openwrt/
- OpenWrt package files are submitted for inclusion
- Puppet/facter patches have been included in Trunk for inclusion in puppet 3.2
- Binary packages have been made for early adopters (and me)
+      <description>Status:   Github Repo is here: https://github.com/solarkennedy/puppet-on-openwrt/
+  OpenWrt package files are submitted for inclusion
+  Puppet/facter patches have been included in Trunk for inclusion in puppet 3.2
+  Binary packages have been made for early adopters (and me)
   Why? To scratch my own itch, and for Fun!
 How? Downloads are here: http://download.xkyle.com/openwrt/
-Because of the dependencies, it is probably easier to add the repo:
-. /etc/openwrt_release VERSION=`echo $DISTRIB_RELEASE | cut -f 1 -d -` TARGET=`echo $DISTRIB_TARGET | cut -f 1 -d /` LINE=&amp;quot;src/gz puppet-packages http://download.</description>
+Because of the dependencies, it is probably easier to add the repo:</description>
     </item>
     
     <item>
@@ -449,9 +448,9 @@ Because of the dependencies, it is probably easier to add the repo:
       <pubDate>Wed, 27 Mar 2013 23:58:32 +0000</pubDate>
       
       <guid>/picking-server-hostnames-worstest-worser-worst-better-betterer-bestest/</guid>
-      <description>Picking a server hostname is abig deal. I&amp;rsquo;ve seen quite a few, lets traverse the hostname-awesomeness-continuum and see if we can learn something.
+      <description>Picking a server hostname is abig deal. I&#39;ve seen quite a few, lets traverse the hostname-awesomeness-continuum and see if we can learn something.
 Worsest  morpheous trinity alf  Why do these suck? These names have no information what-so-ever. If you see a server alert, you have no clue what services are actually down. It might as well be a random string. IT is a random string.
- Pro Tip: Don&amp;rsquo;t give make server hostnames random strings.</description>
+ Pro Tip: Don&#39;t give make server hostnames random strings.</description>
     </item>
     
     <item>
@@ -463,7 +462,7 @@ Worsest  morpheous trinity alf  Why do these suck? These names have no informati
       <description>A strange string appeared at the bottom of a Balanced Payments blog post:
  NmQ2ZjYzMmU3Mzc0NmU2NTZkNzk2MTcwNjQ2NTYzNm U2MTZjNjE2MjQwNjU2MzZlNjU3MjY1NjY2NjY5NjQ2MTY1N mI2MTZkNmY3NDc0NmU2MTc3Njk=
  One of those puzzles to attract coders I guess. The guys at Hacker News spilled the beans, so lets spill them some more.
-First though,** Mad Props** to the Balanced team for thinking &amp;ldquo;outside&amp;rdquo; the unit-test-box. Plus Jenkins rocks. The world needs more Jenkins. Bash? I&amp;rsquo;m not a developer, so my first instinct was to use the existing set of tools that people have already written to solve this puzzle:</description>
+First though,** Mad Props** to the Balanced team for thinking &amp;ldquo;outside&amp;rdquo; the unit-test-box. Plus Jenkins rocks. The world needs more Jenkins. Bash? I&#39;m not a developer, so my first instinct was to use the existing set of tools that people have already written to solve this puzzle:</description>
     </item>
     
     <item>
@@ -474,8 +473,8 @@ First though,** Mad Props** to the Balanced team for thinking &amp;ldquo;outside
       <guid>/hacking-a-hallmark-text-band-first-attempt/</guid>
       <description>The Hallmark Text Band is a strange thing:
 
-Doesn&amp;rsquo;t Hallmark know kids have cell phones now? Anyway, it is an extremely simple micro-controller driving a led matrix and a C-Max CMM-9201. You get 10 characters, and a small reed-switch? triggers a hardware interrupt, and broadcasts your 10 characters to a friend, and you swap messages. The devices holds 24 messages, FIFO. Memory is volatile. Profanity filter included.
-Oh well.</description>
+Doesn&#39;t Hallmark know kids have cell phones now? Anyway, it is an extremely simple micro-controller driving a led matrix and a C-Max CMM-9201. You get 10 characters, and a small reed-switch? triggers a hardware interrupt, and broadcasts your 10 characters to a friend, and you swap messages. The devices holds 24 messages, FIFO. Memory is volatile. Profanity filter included.
+Oh well. Lets hack it.</description>
     </item>
     
     <item>
@@ -486,8 +485,8 @@ Oh well.</description>
       <guid>/validating-graphite-metrics-with-bash/</guid>
       <description>At my dayjob I get to work with Graphite and power meters. It is cool:
 
-To make it easy for my clients to get power information, I&amp;rsquo;ve written a command line tool called &amp;ldquo;power&amp;rdquo; that they can run to get the power usage for a server when running their program. Here is an example:
-power METER-NAME sleep 10s  Pretty handy. The &amp;ldquo;METER-NAME&amp;rdquo; is pretty important, as it lets the script know which system&amp;rsquo;s power you are interested in.</description>
+To make it easy for my clients to get power information, I&#39;ve written a command line tool called &amp;ldquo;power&amp;rdquo; that they can run to get the power usage for a server when running their program. Here is an example:
+power METER-NAME sleep 10s  Pretty handy. The &amp;ldquo;METER-NAME&amp;rdquo; is pretty important, as it lets the script know which system&#39;s power you are interested in.</description>
     </item>
     
     <item>
@@ -507,7 +506,7 @@ Unfortunately I no longer have the motherboard I originally ran these on. I migh
       <pubDate>Tue, 12 Feb 2013 03:35:01 +0000</pubDate>
       
       <guid>/configuring-bios-settings-with-puppet/</guid>
-      <description>You know what it is like to spend time configuring the BIOS on a a server. You reboot the server, and wait for it to take its sweet time to come back up, frantically push its button, hope that you didn&amp;rsquo;t miss your chance. Then spend some one-on-one alone time with the interface, making sure you do all the right keystrokes to get the settings you want. Sounds like a bad date.</description>
+      <description>You know what it is like to spend time configuring the BIOS on a a server. You reboot the server, and wait for it to take its sweet time to come back up, frantically push its button, hope that you didn&#39;t miss your chance. Then spend some one-on-one alone time with the interface, making sure you do all the right keystrokes to get the settings you want. Sounds like a bad date.</description>
     </item>
     
     <item>
@@ -538,7 +537,7 @@ Install an External Root Overlay What the heck does that mean? OpenWrt uses an i
       <pubDate>Thu, 20 Dec 2012 03:55:02 +0000</pubDate>
       
       <guid>/7-underused-ipmitool-commands/</guid>
-      <description>IPMI is Awesome. But, it is underused. Most sysadmins don&amp;rsquo;t even enable it. If they do enable it, they probably enable it by manually going into the BIOS, and then probably only using the Web interface. LAME.
+      <description>IPMI is Awesome. But, it is underused. Most sysadmins don&#39;t even enable it. If they do enable it, they probably enable it by manually going into the BIOS, and then probably only using the Web interface. LAME.
 There is no need to go to the BIOS to configure ipmi. You can use IPMItool to configure it in-band. This is my first underused command:
 (disclaimer: not all IPMI interfaces / bios versions / hardware platforms are equal.</description>
     </item>
@@ -549,7 +548,7 @@ There is no need to go to the BIOS to configure ipmi. You can use IPMItool to co
       <pubDate>Sat, 15 Dec 2012 21:17:29 +0000</pubDate>
       
       <guid>/carbon-fiber-table/</guid>
-      <description>It kinda sucks. No matter how much sanding and polish I do, I can&amp;rsquo;t get it to look great. It is smooth, however. Corners are hard. Just posting these pics for archival purposes, not to show off here.</description>
+      <description>It kinda sucks. No matter how much sanding and polish I do, I can&#39;t get it to look great. It is smooth, however. Corners are hard. Just posting these pics for archival purposes, not to show off here.</description>
     </item>
     
     <item>
@@ -558,7 +557,7 @@ There is no need to go to the BIOS to configure ipmi. You can use IPMItool to co
       <pubDate>Sun, 02 Dec 2012 18:39:02 +0000</pubDate>
       
       <guid>/carbon-fiber-copper-solar-light/</guid>
-      <description>A copper tube sculptural with carbon fiber leaves. One of the carbon fiber leaves is a solar panel from a deconstructed solar lamp. The tips of the small copper tubes have the white LEDs. The larger copper tube stores the battery and charge circuitry. I would show pictures of them at night but the sun doesn&amp;rsquo;t shine much here anymore&amp;hellip;</description>
+      <description>A copper tube sculptural with carbon fiber leaves. One of the carbon fiber leaves is a solar panel from a deconstructed solar lamp. The tips of the small copper tubes have the white LEDs. The larger copper tube stores the battery and charge circuitry. I would show pictures of them at night but the sun doesn&#39;t shine much here anymore&amp;hellip;</description>
     </item>
     
     <item>
@@ -567,9 +566,9 @@ There is no need to go to the BIOS to configure ipmi. You can use IPMItool to co
       <pubDate>Mon, 19 Nov 2012 05:41:17 +0000</pubDate>
       
       <guid>/configuring-nagios-like-a-boss/</guid>
-      <description>I&amp;rsquo;m tired of configuring Nagios by hand. Just tired. I always forget to do stuff. I&amp;rsquo;ll add a new host, or stick in a raid card, add a new website, whatever, and forget to add a nagios check for it.
+      <description>I&#39;m tired of configuring Nagios by hand. Just tired. I always forget to do stuff. I&#39;ll add a new host, or stick in a raid card, add a new website, whatever, and forget to add a nagios check for it.
 
-So it happened. You setup a server, put critical infrastructure on it, but forgot to monitor it. It goes down, bad stuff happens. Your boss asks, why weren&amp;rsquo;t we monitoring this?</description>
+So it happened. You setup a server, put critical infrastructure on it, but forgot to monitor it. It goes down, bad stuff happens. Your boss asks, why weren&#39;t we monitoring this?</description>
     </item>
     
     <item>
@@ -587,12 +586,12 @@ So it happened. You setup a server, put critical infrastructure on it, but forgo
       <pubDate>Sun, 24 Jun 2012 17:05:04 +0000</pubDate>
       
       <guid>/build-systems-out-of-poured-concrete-not-bricks/</guid>
-      <description>Personally, I don&amp;rsquo;t have any kind of battle-hardened wisdom. Most of what I know comes from the wisdom of others. In particular I would like to acknowledge the real geniuses up front:
- My First Petabyte: Now What? (Jacob Farmer from Cambridge Computer)
- Google Platforms Rant (Steve Yegge of Google)
- http://perspectives.mvdirona.com/ (James Hamilton of Amazon)
- Ted Dzuiba
- Tons of blogs posts, LISA talks, that I can&amp;rsquo;t site specifically.</description>
+      <description>Personally, I don&#39;t have any kind of battle-hardened wisdom. Most of what I know comes from the wisdom of others. In particular I would like to acknowledge the real geniuses up front:
+  My First Petabyte: Now What? (Jacob Farmer from Cambridge Computer)
+  Google Platforms Rant (Steve Yegge of Google)
+  http://perspectives.mvdirona.com/ (James Hamilton of Amazon)
+  Ted Dzuiba
+  Tons of blogs posts, LISA talks, that I can&#39;t site specifically.</description>
     </item>
     
     <item>
@@ -603,7 +602,7 @@ So it happened. You setup a server, put critical infrastructure on it, but forgo
       <guid>/graph-everything-with-graphite/</guid>
       <description>I believe that a graphing tool should be flexible enough for the user to decide what metrics are important to their environment, and it should be able to accept metric data from any source.
  There are pretty good graphing tools out there for the Linux engineer: Munin, Ganglia, Cacti, Zabbix, Collectd, etc.
-I call these &amp;ldquo;graphing&amp;rdquo; tools, because I don&amp;rsquo;t consider them &amp;ldquo;monitoring&amp;rdquo; tools, like Nagios, WhatsUp, or Zabbix.</description>
+I call these &amp;ldquo;graphing&amp;rdquo; tools, because I don&#39;t consider them &amp;ldquo;monitoring&amp;rdquo; tools, like Nagios, WhatsUp, or Zabbix.</description>
     </item>
     
     <item>
@@ -622,7 +621,7 @@ Different jobs have different types of metawork. Sometimes it is just paperwork.
       <pubDate>Thu, 26 Jan 2012 01:46:30 +0000</pubDate>
       
       <guid>/puppet-versus-cfengine-editing-files/</guid>
-      <description>Update: I wrote this article when I was young and stupid. It is obsolete. Puppet wins, just use Augeas. Both Puppet and CFEngine are formidable configuration management systems. Let&amp;rsquo;s compare the two to see how the match up on the common task of editing files. Feel free to jump straight to the conclusion if you are impatient.
+      <description>Update: I wrote this article when I was young and stupid. It is obsolete. Puppet wins, just use Augeas.  Both Puppet and CFEngine are formidable configuration management systems. Let&#39;s compare the two to see how the match up on the common task of editing files. Feel free to jump straight to the conclusion if you are impatient.
 Why would you need this? What is the use-case here? These are some common tasks I do that involve editing files:</description>
     </item>
     
@@ -654,7 +653,7 @@ A good start. If you can spare the ports and cables to make this work, you shoul
       
       <guid>/a-drbd-configuration-options-shootout/</guid>
       <description>DRBD is the bomb. Think Raid 1 over the network between two servers. It enables sysadmins (in combination with heartbeat) to increase service uptime, while enabling server downtime. This means you can do kernel updates, do hardware maintenance, upgrade ram, move the server to another rack, etc, all while keeping the service up.
-Because DRBD is often used in high availability scenario, there isn&amp;rsquo;t much room for experimentation with in-production systems.</description>
+Because DRBD is often used in high availability scenario, there isn&#39;t much room for experimentation with in-production systems.</description>
     </item>
     
     <item>
@@ -664,7 +663,7 @@ Because DRBD is often used in high availability scenario, there isn&amp;rsquo;
       
       <guid>/solving-the-nfs-16-group-limit-problem/</guid>
       <description>I apologize for the verbose post. This is a complicated problem and it merits full explanation. If you are experiencing this problem I advise you to avoid skimming and read it very carefully :)
-Sometimes you come across a problem that is a little more complex than average. Sometimes it is problem that is rare enough that there isn&amp;rsquo;t an obvious answer in the first google hint. Sometimes a problem may seem unavoidable, which leads to work-arounds, and before you know it you have a mess.</description>
+Sometimes you come across a problem that is a little more complex than average. Sometimes it is problem that is rare enough that there isn&#39;t an obvious answer in the first google hint. Sometimes a problem may seem unavoidable, which leads to work-arounds, and before you know it you have a mess.</description>
     </item>
     
     <item>
@@ -674,7 +673,7 @@ Sometimes you come across a problem that is a little more complex than average. 
       
       <guid>/how-to-benchmark-harddrives-in-linux/</guid>
       <description>So you have some new harddrives. Maybe you are thinking about building a DIY storage server? Maybe some Raid? Maybe you just want to know if your drives are performing as well as when you bought them? How can you know? Measurement is Knowing.
-The thing about benchmarks is that you always must be skeptical. Each system&amp;rsquo;s particular disks, controller, raid level and settings, cpu, ram, filesystem, operating system, etc can GREATLY affect the performance of a system.</description>
+The thing about benchmarks is that you always must be skeptical. Each system&#39;s particular disks, controller, raid level and settings, cpu, ram, filesystem, operating system, etc can GREATLY affect the performance of a system.</description>
     </item>
     
     <item>
@@ -743,13 +742,12 @@ You will need the linux &amp;ldquo;words&amp;rdquo; dictionary, which is install
       
       <guid>/computer-assisted-jenga-with-the-wii-balance-board-and-linux/</guid>
       <description>I like to think about how games work, in the case of Jenga, it is just physics!
-But don&amp;rsquo;t you wish you could peel back reality and see what is happening with the physics from the inside? Well now you can, with the help of a Wii Balance Board.
+But don&#39;t you wish you could peel back reality and see what is happening with the physics from the inside? Well now you can, with the help of a Wii Balance Board.
 
 For the setup you need these ingredients:
- Wii Balance Board
- Computer with Bluetooth
- Linux, preferably Ubuntu
- Jenga Set, alternatively &amp;ldquo;Tension Tower&amp;ldquo;</description>
+  Wii Balance Board
+  Computer with Bluetooth
+  Linux, preferably Ubuntu</description>
     </item>
     
     <item>
@@ -769,7 +767,7 @@ How much would you pay for such a neat little device?</description>
       <pubDate>Fri, 16 Jul 2010 22:42:46 +0000</pubDate>
       
       <guid>/setting-up-your-very-own-pxe-server/</guid>
-      <description>Ever fumbled around your house looking for a Linux CD, but you can&amp;rsquo;t find it? Ever suspected that your ram was going bad, but you didn&amp;rsquo;t have a way to test it? Ever needed to backup files on a computer that had a dead and broken operating system? A solution to all these problems is a super cool tool called PXE booting. PXE booting allows you to load alternative operating systems over the network, without the need for cds, cdroms, etc!</description>
+      <description>Ever fumbled around your house looking for a Linux CD, but you can&#39;t find it? Ever suspected that your ram was going bad, but you didn&#39;t have a way to test it? Ever needed to backup files on a computer that had a dead and broken operating system? A solution to all these problems is a super cool tool called PXE booting. PXE booting allows you to load alternative operating systems over the network, without the need for cds, cdroms, etc!</description>
     </item>
     
     <item>
@@ -778,7 +776,7 @@ How much would you pay for such a neat little device?</description>
       <pubDate>Wed, 19 May 2010 01:20:39 +0000</pubDate>
       
       <guid>/isps-should-capitalize-on-their-reverse-dns/</guid>
-      <description>Actually&amp;hellip; no they shouldn&amp;rsquo;t. Here is what it would look like:
+      <description>Actually&amp;hellip; no they shouldn&#39;t. Here is what it would look like:
  My traceroute [v0.75] kyle (0.0.0.0) Tue May 18 15:14:52 2010 Keys: Help Display mode Restart statistics Order of fields quit Host Loss% Snt Last Avg Best Wrst StDev 1. 192.168.0.1 0.0% 10 12.0 15.6 11.3 33.6 6.7 2 UPGRADE-YOUR-CONNECTION-1800-COMCAST.res.comcast.net 0.0% 10 13.1 15.8 11.5 31.1 5.9 3. TURBOBOOST-UP-TO-50MBS.car1.Den.core.comcast.net 44.4% 10 15.3 17.7 11.8 23.1 4.5 4. LIKE-WHAT-YOU-SEE?-GET-WITH-LEVEL3!.Level3.net 0.0% 10 27.</description>
     </item>
     
@@ -799,7 +797,7 @@ I decided to do a twitter search for anything with a youtube link, and then let 
       <pubDate>Sun, 18 Apr 2010 03:50:33 +0000</pubDate>
       
       <guid>/sparkfuns-autonomous-vehicle-competition/</guid>
-      <description>The Sparkfun Autonomous Vehicle Competition (AVC) was a smash! You can watch some footage of the event at Sparkfun&amp;rsquo;s Ustream page.
+      <description>The Sparkfun Autonomous Vehicle Competition (AVC) was a smash! You can watch some footage of the event at Sparkfun&#39;s Ustream page.
 Here is what the starting / finishing line looked like:
 
 And some judges on the roof watching to make sure the Flying robots do not cut corners.
@@ -813,7 +811,7 @@ I was very impressed by the UAVs (unmanned aerial vehicles). Most of them were a
       <pubDate>Sun, 11 Apr 2010 00:42:25 +0000</pubDate>
       
       <guid>/yes-yes-very-professional/</guid>
-      <description>I&amp;rsquo;m not saying that all OS&amp;rsquo;s don&amp;rsquo;t have problems, but it would be nice if you didn&amp;rsquo;t plaster the problems all over the store :)</description>
+      <description>I&#39;m not saying that all OS&#39;s don&#39;t have problems, but it would be nice if you didn&#39;t plaster the problems all over the store :)</description>
     </item>
     
     <item>
@@ -835,7 +833,7 @@ So should I throw it away and buy a new one? No! It can be easily fixed. Here is
       <guid>/help-wanted-what-is-the-pattern-in-these-new-wep-keys/</guid>
       <description>Can you see the pattern?
 ESSID ESSID in Hex BSSID KEY MCFVC 23CB158 0021636A7177 F8AA1AABA2 H47MD 1B6B095 001D19E2A557 BFD896F9D4 Q36G7 29C9D67 0021632D31E3 BCD77B3755 UX78G 31880E0 0024d2682944 18DD3AB249  These key pairs were graciously provided by Eric Betts. They do not conform to my existing WEP key calculator.
-Maybe Verizon wised up and made them random? The previous correlation was dead obvious, but this one I can&amp;rsquo;t see.
+Maybe Verizon wised up and made them random? The previous correlation was dead obvious, but this one I can&#39;t see.
 Of course, I am only a wannabe cryptologist :)</description>
     </item>
     
@@ -855,7 +853,7 @@ For those of you who believe that &amp;ldquo;microblogging&amp;rdquo; is a new f
       <pubDate>Fri, 05 Mar 2010 05:44:25 +0000</pubDate>
       
       <guid>/xkcds-collatz-conjecture/</guid>
-      <description>In the XKCD comic dated 3/4/2010, the Collatz Conjecture presents the following scenario: Well I don&amp;rsquo;t know if your friends will stop calling your or not, but I was curious about what the graph would actually look like. The graph in the comic looks like it was created with Graphviz, one of my favorite programs!
+      <description>In the XKCD comic dated 3/4/2010, the Collatz Conjecture presents the following scenario: Well I don&#39;t know if your friends will stop calling your or not, but I was curious about what the graph would actually look like. The graph in the comic looks like it was created with Graphviz, one of my favorite programs!
 So I wrote a quick bash script to generate the approrpiate links for graphviz to interpret:</description>
     </item>
     
@@ -865,7 +863,7 @@ So I wrote a quick bash script to generate the approrpiate links for graphviz to
       <pubDate>Thu, 25 Feb 2010 03:30:06 +0000</pubDate>
       
       <guid>/sugru-covered-joystick/</guid>
-      <description>A shout out and big thanks to my friend DangerJim who gave me some sugru to help coat the joysticks of my RC trainsmitter so they don&amp;rsquo;t hurt my thumbs. The results look pretty nice:</description>
+      <description>A shout out and big thanks to my friend DangerJim who gave me some sugru to help coat the joysticks of my RC trainsmitter so they don&#39;t hurt my thumbs. The results look pretty nice:</description>
     </item>
     
     <item>
@@ -912,7 +910,7 @@ If you play any of these games, feel free to ally with me :) If aftershock bans 
       <pubDate>Wed, 30 Sep 2009 20:12:35 +0000</pubDate>
       
       <guid>/my-jar-of-fireflies/</guid>
-      <description>I&amp;rsquo;ve seen a lot of electronic fireflies on the internet. Here, here, and probably others. The theory is simple, just small LED&amp;rsquo;s charlieplexed with a microcontroller. I wanted to take it a step futher, with a light sensor, solar panel, and more complex firmware.
+      <description>I&#39;ve seen a lot of electronic fireflies on the internet. Here, here, and probably others. The theory is simple, just small LED&#39;s charlieplexed with a microcontroller. I wanted to take it a step futher, with a light sensor, solar panel, and more complex firmware.
 This is my first microcontroller project from scratch, and I got to learn all sorts of interesting things like SPI programming, Watchdog Timers, Sleep states, and many other things&amp;hellip;</description>
     </item>
     
@@ -922,7 +920,7 @@ This is my first microcontroller project from scratch, and I got to learn all so
       <pubDate>Wed, 16 Sep 2009 01:43:46 +0000</pubDate>
       
       <guid>/final-clock-post/</guid>
-      <description>I&amp;rsquo;ve finally moved to Colorado, and I had to leave the big clock behind, and luckily I had finished it:
+      <description>I&#39;ve finally moved to Colorado, and I had to leave the big clock behind, and luckily I had finished it:
 
 I finilized the code, installed the clock in my church, and programmed it for there needs. The code is stored here if someone want to see it. If you want to check it out run:
 git clone https://github.com/solarkennedy/clock.git  I have a little more technical info on my wiki, but it basically goes like this:</description>
@@ -934,7 +932,7 @@ git clone https://github.com/solarkennedy/clock.git  I have a little more techni
       <pubDate>Thu, 30 Jul 2009 00:09:55 +0000</pubDate>
       
       <guid>/finishing-clock-teaser/</guid>
-      <description>The clock is almost finished, I&amp;rsquo;m just sanding the rough edges and putting on the final coat of paint. All schematics and code will be on my wiki when I&amp;rsquo;m finished.</description>
+      <description>The clock is almost finished, I&#39;m just sanding the rough edges and putting on the final coat of paint. All schematics and code will be on my wiki when I&#39;m finished.</description>
     </item>
     
     <item>
@@ -956,10 +954,10 @@ Afterwards there was free beer, and let me tell you, geeks can party hardy all n
       
       <guid>/toorcamp-day-1/</guid>
       <description>When I first arrived at toor camp, I was issued a Hardhat and a kit of electronics to construct my own badge:
-
+[](/uploads/DCAM0007-toorcamp.jpg)
 What a cool start! Combined with the already cool scenery:
 
-Only one problem: no silo access. We&amp;rsquo;ll see if that changes for day two&amp;hellip;</description>
+Only one problem: no silo access. We&#39;ll see if that changes for day two&amp;hellip;</description>
     </item>
     
     <item>
@@ -970,8 +968,8 @@ Only one problem: no silo access. We&amp;rsquo;ll see if that changes for day tw
       <guid>/decrypting-an-ebook-to-make-it-searchable/</guid>
       <description>So I spent $22 on an ebook for school.
 It has this crappy DRM that only lets me view the pdf on one computer using only &amp;ldquo;Adobe Digital Editions&amp;rdquo;.
-If that wasn&amp;rsquo;t so bad, only a small subset of the text is OCR&amp;rsquo;d, so most of it isn&amp;rsquo;t even searchable!
-Now I&amp;rsquo;m pissed, but wait, what do you say? These files are just RSA encrypted, and I have the key?</description>
+If that wasn&#39;t so bad, only a small subset of the text is OCR&#39;d, so most of it isn&#39;t even searchable!
+Now I&#39;m pissed, but wait, what do you say? These files are just RSA encrypted, and I have the key?</description>
     </item>
     
     <item>
@@ -980,7 +978,7 @@ Now I&amp;rsquo;m pissed, but wait, what do you say? These files are just RSA en
       <pubDate>Mon, 01 Jun 2009 08:00:51 +0000</pubDate>
       
       <guid>/my-wireless-cracking-tool/</guid>
-      <description>I&amp;rsquo;ve become a semi-expert on wireless networking and their security features.. and how to get around them. Before I continue I want to emphasize:
+      <description>I&#39;ve become a semi-expert on wireless networking and their security features.. and how to get around them. Before I continue I want to emphasize:
  The act of cracking encryption is not illegal just like picking a lock is not illegal. It is the unauthorized access of that network which is illegal, just like breaking and entering is illegal.
  So. To sum it up, there are two types of encryption.</description>
     </item>
@@ -993,7 +991,7 @@ Now I&amp;rsquo;m pissed, but wait, what do you say? These files are just RSA en
       <guid>/discrete-wavelets-final-project-decaptcha/</guid>
       <description>This semester I took a class on Discrete Wavelets. It was awesome. The coolest part was our group final project. My group had the best topic by far: Decoding a Captcha! (Click on any of the following images to view them full size)
 [](/uploads/file_captcha.jpg)
-We&amp;rsquo;ve all seen Captchas before. They are used on websites to make sure that the person on the website is a real human, not a computer program.</description>
+We&#39;ve all seen Captchas before. They are used on websites to make sure that the person on the website is a real human, not a computer program.</description>
     </item>
     
     <item>
@@ -1004,9 +1002,9 @@ We&amp;rsquo;ve all seen Captchas before. They are used on websites to make sure
       <guid>/camping-at-rocky-bayou-state-park/</guid>
       <description>Cody and I camped two nights at Rocky Bayou State Park!
 
-Yea she doesn&amp;rsquo;t look very happy. Yes, we are camping on concrete&amp;hellip;.
+Yea she doesn&#39;t look very happy. Yes, we are camping on concrete&amp;hellip;.
 
-Day 2. That&amp;rsquo;s better!
+Day 2. That&#39;s better!
 NEXT: Our previous vacation was a Cruise!</description>
     </item>
     
@@ -1016,7 +1014,7 @@ NEXT: Our previous vacation was a Cruise!</description>
       <pubDate>Tue, 03 Mar 2009 18:58:33 +0000</pubDate>
       
       <guid>/verizon-fios-wireless-key-calculator/</guid>
-      <description>More Update: There are new AP&amp;rsquo;s that don&amp;rsquo;t conform to this pattern. If the calculator doesn&amp;rsquo;t work on yours, maybe it is like these non-conforming-wep keys
+      <description>More Update: There are new AP&#39;s that don&#39;t conform to this pattern. If the calculator doesn&#39;t work on yours, maybe it is like these non-conforming-wep keys
 Update: A cool cool guy named Dylan Taylor wrote a java implementation of this script: http://www.fwc.dylanmtaylor.com/ if you need an offline version
 Update: I wrote a bash implementation to make it easy to script, and for offline usage
 In my previous post I showed a correlation between the WEP key of a Verizon FiOS install and the MAC address of the access point.</description>
@@ -1030,7 +1028,7 @@ In my previous post I showed a correlation between the WEP key of a Verizon FiOS
       <guid>/my-desktop/</guid>
       <description>Posting a screenshot of your desktop is the cool thing for geeks to do apparently.
 
-It&amp;rsquo;s Ubuntu 8.10, no big surprise there. I&amp;rsquo;m using the &amp;ldquo;Dusk&amp;rdquo; theme with the proposed background for the next Ubuntu. I really like it.</description>
+It&#39;s Ubuntu 8.10, no big surprise there. I&#39;m using the &amp;ldquo;Dusk&amp;rdquo; theme with the proposed background for the next Ubuntu. I really like it.</description>
     </item>
     
     <item>
@@ -1056,7 +1054,7 @@ And if you have Google Earth, here is a link to a path I made of the trip: anclo
       
       <guid>/my-dads-terminal-patent/</guid>
       <description>I suppose I come from a&amp;hellip; short line of engineers. My father used to work for Paradyne which was gobbled up by At&amp;amp;t, and is now owned by Zhone.
-But back in the day they worked on &amp;ldquo;Terminals&amp;rdquo;. You know, back when &amp;ldquo;Computers&amp;rdquo; has a gazillion serial ports and the &amp;ldquo;Terminal&amp;rdquo; was the box that had a monitor and keyboard which parsed the 300baud green text? Yea neither do I&amp;hellip;</description>
+But back in the day they worked on &amp;ldquo;Terminals&amp;quot;. You know, back when &amp;ldquo;Computers&amp;rdquo; has a gazillion serial ports and the &amp;ldquo;Terminal&amp;rdquo; was the box that had a monitor and keyboard which parsed the 300baud green text? Yea neither do I&amp;hellip;</description>
     </item>
     
     <item>
@@ -1075,10 +1073,10 @@ root@a:/# cat myspace.hackedlist | cut -f 2 -d : | sort | uniq -c | sort -n | ta
       <pubDate>Sat, 07 Feb 2009 18:29:04 +0000</pubDate>
       
       <guid>/verizon-fios-wireless-security-analysis/</guid>
-      <description>Take a look at some wireless keys that I&amp;rsquo;ve collected from some Verizon FiOS installs around Tampa:
+      <description>Take a look at some wireless keys that I&#39;ve collected from some Verizon FiOS installs around Tampa:
  00-18-01-EA-3D-99,E3X12,6,WEP,1801349FCA 00-18-01-F0-6D-C4,NAMX2,1,WEP,18014B311F 00-18-01-F0-95-78,MWXV2,11,WEP,180149FF66 00-18-01-FD-4F-0E,R0LC7,1,WEP,1801BC5C6B 00-18-01-FE-15-46,JE2K7,1,WEP,1801C1B02B 00-18-01-FF-DF-DD,HH150,1,WEP,1F900396C5 00-1F-90-E0-B1-F8,3RA18,6,WEP,1801CDF4AF 00-1F-90-E0-B5-AC,OQ838,6,WEP,1801CF5700 00-1F-90-E2-7E-61,7WY20,6,WEP,1F90021D27 00-1F-90-E3-1E-90,C7WA0,6,WEP,1F9007C188 00-1F-90-E3-2E-07,DJP80,6,WEP,1F90063349 00-1F-90-E6-A7-D5,BJ2Z0,11,WEP,1F9018F797 00-1F-90-E6-D4-E3,RSHZ0,4,WEP,1F901944DB
  What you are looking at here is MAC, SSID, Channel, Encryption, Key.
-Notice that they are all WEP, 64bit, with 5 Alpha numeric SSID&amp;rsquo;s.
+Notice that they are all WEP, 64bit, with 5 Alpha numeric SSID&#39;s.
 I want to emphasize that these are the defaults, and only geeks, nerds and the like change the defaults.</description>
     </item>
     
@@ -1090,7 +1088,7 @@ I want to emphasize that these are the defaults, and only geeks, nerds and the l
       <guid>/amazing-breakfasts-with-cody/</guid>
       <description>Often I get to enjoy wonderful mornings with my girlfriend Cody. She is a great cook, and one of her best concoctions are these AMAZING breakfast burritos:
 
-Sorry for the bad picture, I took it with the webcam on my eeepc. I don&amp;rsquo;t apologize for her cleavage. I did that intentionally without her knowing :)</description>
+Sorry for the bad picture, I took it with the webcam on my eeepc. I don&#39;t apologize for her cleavage. I did that intentionally without her knowing :)</description>
     </item>
     
     <item>
@@ -1103,7 +1101,7 @@ Sorry for the bad picture, I took it with the webcam on my eeepc. I don&amp;rsqu
 
 Crowd Control?
 
-I&amp;rsquo;m sure this family had fun. I wonder what the personality is like of whoever made the door decorations:</description>
+I&#39;m sure this family had fun. I wonder what the personality is like of whoever made the door decorations:</description>
     </item>
     
     <item>
@@ -1127,7 +1125,7 @@ I&amp;rsquo;m sure this family had fun. I wonder what the personality is like of
 
 Myspace shot:
 
-And for the geek in everyone, hacked someone&amp;rsquo;s WEP key and used their wireless while on the land. The ip I used was 63.136.113.229 which is hosted by Cable and Wireless. Here is an MTR to it:
+And for the geek in everyone, hacked someone&#39;s WEP key and used their wireless while on the land. The ip I used was 63.136.113.229 which is hosted by Cable and Wireless. Here is an MTR to it:
 
 Yea..maybe not so interesting to others. Our shore excursions to go snorkeling with sting rays got canceled because of the weather&amp;hellip;.</description>
     </item>
@@ -1151,9 +1149,9 @@ And the cool Radars!</description>
       <pubDate>Sat, 06 Dec 2008 22:05:55 +0000</pubDate>
       
       <guid>/giving-my-wrt54gl-a-2g-drive/</guid>
-      <description>The WRT54GL is a pretty cool little toy. Yes it is a router with a cheezy web interface for grandmas with ESSID&amp;rsquo;s named &amp;ldquo;linksys&amp;rdquo;. But you can flash it with your own linux and solder in your own SD card to turn it from a 4MB machine to a 2GB machine&amp;hellip; far out!
+      <description>The WRT54GL is a pretty cool little toy. Yes it is a router with a cheezy web interface for grandmas with ESSID&#39;s named &amp;ldquo;linksys&amp;rdquo;. But you can flash it with your own linux and solder in your own SD card to turn it from a 4MB machine to a 2GB machine&amp;hellip; far out!
 
-Above it the bare board that I&amp;rsquo;ve unscrewed out of the thing. Some solder + a card&amp;hellip;.</description>
+Above it the bare board that I&#39;ve unscrewed out of the thing. Some solder + a card&amp;hellip;.</description>
     </item>
     
     <item>
@@ -1163,7 +1161,7 @@ Above it the bare board that I&amp;rsquo;ve unscrewed out of the thing. Some sol
       
       <guid>/my-home-made-laptop-security-program/</guid>
       <description>The NetworkManager program in linux has a create feature called a dispatcher, which can run arbitrary programs when certian things about the network change. For instance it can turn on a firewall or notify a user when the network comes up, or start up an arp alert program!
-I wanted a program that would alert me of my laptop&amp;rsquo;s where-a-bouts, as well as use the webcam to take a picture, in order to aid me in tracking it down if it got stolen.</description>
+I wanted a program that would alert me of my laptop&#39;s where-a-bouts, as well as use the webcam to take a picture, in order to aid me in tracking it down if it got stolen.</description>
     </item>
     
     <item>
@@ -1182,7 +1180,7 @@ In an effort to locate some sort of source for my definition besides anecdotes o
       <pubDate>Tue, 18 Nov 2008 03:01:04 +0000</pubDate>
       
       <guid>/vnc-surpirse/</guid>
-      <description>Don&amp;rsquo;t you just love it when co-workers communicate with you in the most interesting ways???
+      <description>Don&#39;t you just love it when co-workers communicate with you in the most interesting ways???
 
 Sorry it is so small. Click on it!</description>
     </item>
@@ -1196,7 +1194,7 @@ Sorry it is so small. Click on it!</description>
       <description>You may remember my old laptop from such posts as this.
 Well it broke, so I bought another one!
 
-It even has the original stickers. But.. Its slower than I remember. So I&amp;rsquo;m trying out different Ubuntu versions to see what boots the fastest. Here are my methodology and results.
+It even has the original stickers. But.. Its slower than I remember. So I&#39;m trying out different Ubuntu versions to see what boots the fastest. Here are my methodology and results.
 Methodology: The first number is the ammount of seconds from the 0 in the grub countdown till the X in the initial X-server.</description>
     </item>
     
@@ -1206,9 +1204,9 @@ Methodology: The first number is the ammount of seconds from the 0 in the grub c
       <pubDate>Sun, 16 Nov 2008 18:51:02 +0000</pubDate>
       
       <guid>/its-a-wiki-wiki-world/</guid>
-      <description>You may not know, but I used to work for Wikipedia! (here if you don&amp;rsquo;t believe me)
+      <description>You may not know, but I used to work for Wikipedia! (here if you don&#39;t believe me)
 You also may not know that all Wikimedia Foundation projects (like Wikipedia) run off of a opensource piece of software called Mediawiki.
-The software is the bomb, and I&amp;rsquo;ve had my own for a number of years to keep track of my own project documentation (like a notebook.) But I&amp;rsquo;ve never made it public.</description>
+The software is the bomb, and I&#39;ve had my own for a number of years to keep track of my own project documentation (like a notebook.) But I&#39;ve never made it public.</description>
     </item>
     
     <item>
@@ -1240,10 +1238,10 @@ Ettercap is an amazing tool. Not only does it have a console, curses, and graphi
       <guid>/operation-lan-party-success/</guid>
       <description>On Saturday we celebrated a my belated birthday by having a LAN party at my work Sago Networks.
 Games we played:
- Gate 88
- Halo
- Open Arena
- Nexuiz</description>
+  Gate 88
+  Halo
+  Open Arena
+  Nexuiz</description>
     </item>
     
     <item>
@@ -1252,7 +1250,7 @@ Games we played:
       <pubDate>Mon, 29 Sep 2008 17:19:35 +0000</pubDate>
       
       <guid>/pap-solutions-hack/</guid>
-      <description>My girlfirend likes to do these puzzles called Pic-A-Pix from ConceptisPuzzles. They use a matrix of numbers to hint the puzzler to to filling in pixels to create pixel art. Sometimes there is color. Every week four new PAP&amp;rsquo;s are pushed out, and I&amp;rsquo;ve been told that the answers are somewhere on the website&amp;hellip;. but that would be cheating. :)
+      <description>My girlfirend likes to do these puzzles called Pic-A-Pix from ConceptisPuzzles. They use a matrix of numbers to hint the puzzler to to filling in pixels to create pixel art. Sometimes there is color. Every week four new PAP&#39;s are pushed out, and I&#39;ve been told that the answers are somewhere on the website&amp;hellip;. but that would be cheating. :)
 So I wrote my own program to decode these and make images using html tables.</description>
     </item>
     
@@ -1272,7 +1270,7 @@ So I wrote my own program to decode these and make images using html tables.</de
       <pubDate>Thu, 21 Aug 2008 11:59:57 +0000</pubDate>
       
       <guid>/custom-arp-alerts-ii/</guid>
-      <description>So I&amp;rsquo;ve found a better way to do what I did in the previous post. Instead of running a separate script to parse the arp alert logs, I have arp alert itself send the alerts! The key is this line in the arpalert.conf
+      <description>So I&#39;ve found a better way to do what I did in the previous post. Instead of running a separate script to parse the arp alert logs, I have arp alert itself send the alerts! The key is this line in the arpalert.conf
 action on detect = &amp;quot;/etc/scripts/arp-alert&amp;quot;  Its so simple, it just runs that script sending the information about the alert as certain arguments. With this I have more control over the formatting of arpalert messages:</description>
     </item>
     
@@ -1282,7 +1280,7 @@ action on detect = &amp;quot;/etc/scripts/arp-alert&amp;quot;  Its so simple, it
       <pubDate>Wed, 20 Aug 2008 23:17:05 +0000</pubDate>
       
       <guid>/custom-arp-alerts/</guid>
-      <description>So I was looking around, and I wanted some sort of tool to allow me to be more aware about what was happening in the lower &amp;ldquo;bowels&amp;rdquo; of the network that I&amp;rsquo;m on with my laptop. So what is it that I want&amp;hellip;
+      <description>So I was looking around, and I wanted some sort of tool to allow me to be more aware about what was happening in the lower &amp;ldquo;bowels&amp;rdquo; of the network that I&#39;m on with my laptop. So what is it that I want&amp;hellip;
 What I really want is some sort of mac-address based buddy list. One that would show my a list of the mac addresses talking on my network, and allow me to alias them.</description>
     </item>
     
@@ -1346,7 +1344,7 @@ But! What if all of humanity blogged, and then we could aggregate all blogs on t
       <guid>/clock-primer/</guid>
       <description>Here is the intro to the clock project:
  We start with a template made at a sign shop, and the cover the edges with aluminum tape to protect them from the heat from the hot wire.
- I&amp;rsquo;ve pushed out holes with a strait wire and a blow torch to give my entry points for my hot wires. Its going to be a plunge and cut job.
+ I&#39;ve pushed out holes with a strait wire and a blow torch to give my entry points for my hot wires. Its going to be a plunge and cut job.
  The laserpointer helps guide the hot wire because it inevitably bends and makes crooked cuts.</description>
     </item>
     
@@ -1362,7 +1360,7 @@ Sometimes we make up silly things&amp;hellip; late at night&amp;hellip;
  And we get the better of each other with our antics&amp;hellip;
  Our true feelings for each other?
  To do list&amp;hellip;
- Sometimes we DON&amp;rsquo;T let each other borrow things&amp;hellip;</description>
+ Sometimes we DON&#39;T let each other borrow things&amp;hellip;</description>
     </item>
     
     <item>
@@ -1372,7 +1370,7 @@ Sometimes we make up silly things&amp;hellip; late at night&amp;hellip;
       
       <guid>/compact-flash-replacement/</guid>
       <description>My laptop is a Sharp MM20, which I knew I was going to spraypaint eventually, I just needed a reason to. After about a year of wear and scratches from abuse, it was time.
-I&amp;rsquo;m replacing the harddrive in my laptop with a 4GB flash card. It should be faster:
+I&#39;m replacing the harddrive in my laptop with a 4GB flash card. It should be faster:
 /dev/sdb: Timing cached reads: 3532 MB in 2.00 seconds = 1766.79 MB/sec Timing buffered disk reads: 58 MB in 3.10 seconds = 18.</description>
     </item>
     
@@ -1386,7 +1384,7 @@ I&amp;rsquo;m replacing the harddrive in my laptop with a 4GB flash card. It sho
 So we have modified roller-blading wrist-guards for the purpose:
 
 Watch Karl Show It Off!
-Karl&amp;rsquo;s Mom helped with the sewing. Next we&amp;rsquo;ll add buttons for mode and backlight. I think they will be very thin and unobtrusive.</description>
+Karl&#39;s Mom helped with the sewing. Next we&#39;ll add buttons for mode and backlight. I think they will be very thin and unobtrusive.</description>
     </item>
     
     <item>
@@ -1398,7 +1396,7 @@ Karl&amp;rsquo;s Mom helped with the sewing. Next we&amp;rsquo;ll add buttons fo
       <description>Here it is, the big milestone: our first real gun!
 From this: 
 To this!
-You can see how we have gutted an air-soft gun, and inserted our led&amp;rsquo;s and switches to turn it into a lasertag gun. All of our guns will be interchangeable as they will all have the same Cat-5 Pinout. Eventually we will have an array of guns and we can change their properties in software. (Reload times, shots per clip, damage per shot, etc.</description>
+You can see how we have gutted an air-soft gun, and inserted our led&#39;s and switches to turn it into a lasertag gun. All of our guns will be interchangeable as they will all have the same Cat-5 Pinout. Eventually we will have an array of guns and we can change their properties in software. (Reload times, shots per clip, damage per shot, etc.</description>
     </item>
     
     <item>
@@ -1440,7 +1438,7 @@ More to come as we prototype our first two boxes!</description>
       <pubDate>Sat, 01 Jul 2006 17:56:59 +0000</pubDate>
       
       <guid>/help-expose-scientology/</guid>
-      <description>One of my personally favorite websites is YoureTheManNowDog.com. (You may have noticed the cameo in episode 1.) Founded in 2001, an uncountable number of spoofs have been made, and are stored at the sister site, ytmnd.com. There you can setup your own account and create your own YoureTheManNowDog&amp;rsquo;s! I love it.
+      <description>One of my personally favorite websites is YoureTheManNowDog.com. (You may have noticed the cameo in episode 1.) Founded in 2001, an uncountable number of spoofs have been made, and are stored at the sister site, ytmnd.com. There you can setup your own account and create your own YoureTheManNowDog&#39;s! I love it.
 Also, being in Tampa, I live close to the Scientology headquarters in Clearwater. Recently a YoureTheManNowDog has been created that exposes some of the terrible things that the church of Scientology has done.</description>
     </item>
     
@@ -1450,7 +1448,7 @@ Also, being in Tampa, I live close to the Scientology headquarters in Clearwater
       <pubDate>Mon, 22 May 2006 21:54:02 +0000</pubDate>
       
       <guid>/myspace-friend-maps/</guid>
-      <description>Ok, I have a seceret: I am a Myspace sellout. Everyone around me was like ooh yea, check out my myspace! Or Ooo, your myspace is sooo cool. Or, Wow, your myspace cures cancer. Well, so I made one, and added friends. I soon realized that Myspace.com is interesting. (Although it sucks too. Ads everywhere, people&amp;rsquo;s pages are often littered with cpu sucking garbage and animated gifs and crappy css.)</description>
+      <description>Ok, I have a seceret: I am a Myspace sellout. Everyone around me was like ooh yea, check out my myspace! Or Ooo, your myspace is sooo cool. Or, Wow, your myspace cures cancer. Well, so I made one, and added friends. I soon realized that Myspace.com is interesting. (Although it sucks too. Ads everywhere, people&#39;s pages are often littered with cpu sucking garbage and animated gifs and crappy css.)</description>
     </item>
     
     <item>
@@ -1461,11 +1459,11 @@ Also, being in Tampa, I live close to the Scientology headquarters in Clearwater
       <guid>/lasertag/</guid>
       <description>My friends and I are currently constructing our own lasertag guns using this as a base.
 Here is our checklist:
- Construct electronic components using the above milestag components.
- Get and modify vests to hold components
- Melt aluminum and pour guns into molds! Rock on!
- Connect it all together and play!
-  We&amp;rsquo;ve go the electronics together. The vests are on their way via UPS, and my friend Karl and I have the furnace ready and we can melt aluminum!</description>
+  Construct electronic components using the above milestag components.
+  Get and modify vests to hold components
+  Melt aluminum and pour guns into molds! Rock on!
+  Connect it all together and play!
+  We&#39;ve go the electronics together. The vests are on their way via UPS, and my friend Karl and I have the furnace ready and we can melt aluminum!</description>
     </item>
     
   </channel>

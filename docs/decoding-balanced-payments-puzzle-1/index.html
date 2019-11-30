@@ -9,7 +9,7 @@
 <meta property="og:description" content="A strange string appeared at the bottom of a Balanced Payments blog post:
  NmQ2ZjYzMmU3Mzc0NmU2NTZkNzk2MTcwNjQ2NTYzNm U2MTZjNjE2MjQwNjU2MzZlNjU3MjY1NjY2NjY5NjQ2MTY1N mI2MTZkNmY3NDc0NmU2MTc3Njk=
  One of those puzzles to attract coders I guess. The guys at Hacker News spilled the beans, so lets spill them some more.
-First though,** Mad Props** to the Balanced team for thinking &ldquo;outside&rdquo; the unit-test-box. Plus Jenkins rocks. The world needs more Jenkins. Bash? I&rsquo;m not a developer, so my first instinct was to use the existing set of tools that people have already written to solve this puzzle:" />
+First though,** Mad Props** to the Balanced team for thinking &ldquo;outside&rdquo; the unit-test-box. Plus Jenkins rocks. The world needs more Jenkins. Bash? I&#39;m not a developer, so my first instinct was to use the existing set of tools that people have already written to solve this puzzle:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/decoding-balanced-payments-puzzle-1/" />
 <meta property="article:published_time" content="2013-03-21T02:04:43+00:00" />
@@ -20,7 +20,7 @@ First though,** Mad Props** to the Balanced team for thinking &ldquo;outside&rdq
 <meta name="twitter:description" content="A strange string appeared at the bottom of a Balanced Payments blog post:
  NmQ2ZjYzMmU3Mzc0NmU2NTZkNzk2MTcwNjQ2NTYzNm U2MTZjNjE2MjQwNjU2MzZlNjU3MjY1NjY2NjY5NjQ2MTY1N mI2MTZkNmY3NDc0NmU2MTc3Njk=
  One of those puzzles to attract coders I guess. The guys at Hacker News spilled the beans, so lets spill them some more.
-First though,** Mad Props** to the Balanced team for thinking &ldquo;outside&rdquo; the unit-test-box. Plus Jenkins rocks. The world needs more Jenkins. Bash? I&rsquo;m not a developer, so my first instinct was to use the existing set of tools that people have already written to solve this puzzle:"/>
+First though,** Mad Props** to the Balanced team for thinking &ldquo;outside&rdquo; the unit-test-box. Plus Jenkins rocks. The world needs more Jenkins. Bash? I&#39;m not a developer, so my first instinct was to use the existing set of tools that people have already written to solve this puzzle:"/>
 
 
     <meta name="description" content="">
@@ -110,35 +110,23 @@ First though,** Mad Props** to the Balanced team for thinking &ldquo;outside&rdq
 </p>
         </div>
         <div class="col s12 m8 offset-m2 l6">
-            
-
-<p>A strange string appeared at the bottom of a Balanced <a href="http://blog.balancedpayments.com/balanced-payments-operations-automated-testing-continuous-deployment-jenkins/">Payments blog post</a>:</p>
-
+            <p>A strange string appeared at the bottom of a Balanced <a href="http://blog.balancedpayments.com/balanced-payments-operations-automated-testing-continuous-deployment-jenkins/">Payments blog post</a>:</p>
 <blockquote>
 <p>NmQ2ZjYzMmU3Mzc0NmU2NTZkNzk2MTcwNjQ2NTYzNm
 U2MTZjNjE2MjQwNjU2MzZlNjU3MjY1NjY2NjY5NjQ2MTY1N
 mI2MTZkNmY3NDc0NmU2MTc3Njk=</p>
 </blockquote>
-
 <p>One of those puzzles to attract coders I guess. The guys at <a href="https://news.ycombinator.com/item?id=5409062">Hacker News</a> spilled the beans, so lets spill them some more.</p>
-
 <p>First though,** Mad Props** to the Balanced team for thinking &ldquo;outside&rdquo; the unit-test-box. Plus Jenkins rocks. The world needs more Jenkins. </p>
-
 <h1 id="bash">Bash?</h1>
-
-<p>I&rsquo;m not a developer, so my first instinct was to use the existing set of tools that people have <em>already written</em> to solve this puzzle:</p>
-
+<p>I'm not a developer, so my first instinct was to use the existing set of tools that people have <em>already written</em> to solve this puzzle:</p>
 <pre><code>curl -s http://blog.balancedpayments.com/balanced-payments-operations-automated-testing-continuous-deployment-jenkins/ \
 | html2text | grep -P '[^.*]=$' | head -n 1 | base64 -d \
 | sed 's/../0x&amp; /g' | xxd -r -c 100 | rev
 </code></pre>
-
 <p>I love the command line.</p>
-
 <h1 id="python">Python?</h1>
-
-<p>The Balanced guys look like they are Python people. That&rsquo;s cool. <a href="http://www.crummy.com/software/BeautifulSoup/">BeautifulSoup</a> is the only Python html parser I&rsquo;ve used:</p>
-
+<p>The Balanced guys look like they are Python people. That's cool. <a href="http://www.crummy.com/software/BeautifulSoup/">BeautifulSoup</a> is the only Python html parser I've used:</p>
 <pre><code>import urllib2
 import BeautifulSoup
 import re, base64
@@ -148,11 +136,8 @@ soup = BeautifulSoup.BeautifulSoup(content)
 string = soup.findAll('pre')[-1].getText()
 print base64.b64decode(string).decode('hex')[::-1]
 </code></pre>
-
 <h1 id="ruby">Ruby?</h1>
-
-<p><a href="https://github.com/hpricot/hpricot">Hpricot</a> is the only Ruby html parser I&rsquo;ve used. Also, I love<strong>_ .map_</strong>:</p>
-
+<p><a href="https://github.com/hpricot/hpricot">Hpricot</a> is the only Ruby html parser I've used. Also, I love**_ .map_**:</p>
 <pre><code>require 'hpricot'
 require 'open-uri'
 require 'base64'
@@ -160,9 +145,7 @@ thehtml = open('http://blog.balancedpayments.com/balanced-payments-operations-au
 string = thehtml.search(&quot;//pre&quot;)[1].to_plain_text
 puts Base64.decode64(string).scan(/../).map {|a| a.to_i(16).chr}.join.reverse
 </code></pre>
-
 <h1 id="conclusion">Conclusion</h1>
-
 <p>Solving puzzles is a fun way to learn new things! If you are hungry for more excuses to learn how to use languages, check out <a href="https://projecteuler.net/">Project Euler</a>.</p>
 
         </div>

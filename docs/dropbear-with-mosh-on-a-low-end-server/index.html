@@ -9,7 +9,7 @@
 <meta property="og:description" content="I love my low end boxes. I also love mosh.
 Low end boxes usually are tight on resources, so Dropbear is often used as a lightweight ssh server. Mosh is mostly tested with openssh-client/server, so I think there are some bugs.
 But it can work, just make sure:
- You are using the same version of mosh on the server as you are on your client. (otherwise they may not support the same command line options)" />
+  You are using the same version of mosh on the server as you are on your client. (otherwise they may not support the same command line options)" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/dropbear-with-mosh-on-a-low-end-server/" />
 <meta property="article:published_time" content="2013-10-03T05:07:55+00:00" />
@@ -20,7 +20,7 @@ But it can work, just make sure:
 <meta name="twitter:description" content="I love my low end boxes. I also love mosh.
 Low end boxes usually are tight on resources, so Dropbear is often used as a lightweight ssh server. Mosh is mostly tested with openssh-client/server, so I think there are some bugs.
 But it can work, just make sure:
- You are using the same version of mosh on the server as you are on your client. (otherwise they may not support the same command line options)"/>
+  You are using the same version of mosh on the server as you are on your client. (otherwise they may not support the same command line options)"/>
 
 
     <meta name="description" content="">
@@ -111,30 +111,27 @@ But it can work, just make sure:
         </div>
         <div class="col s12 m8 offset-m2 l6">
             <p>I love my <a href="http://lowendbox.com/">low end boxes</a>. I also love <a href="http://mosh.mit.edu/">mosh</a>.</p>
-
 <p>Low end boxes usually are tight on resources, so Dropbear is often used as a lightweight ssh server. Mosh is mostly tested with openssh-client/server, so I think there are some bugs.</p>
-
 <p>But it can work, just make sure:</p>
-
 <ol>
-<li><p>You are using the same version of mosh on the <strong>server</strong> as you are on your <strong>client</strong>. (otherwise they may not support the same command line options)</p></li>
-
-<li><p>Make sure you have have a en_US.UTF-8. Mosh requires UTF8, and low end boxes usually have a bare install without this local. Run:</p>
-
-<p>locale-gen &ndash;no-archive en_US.UTF-8</p></li>
+<li>
+<p>You are using the same version of mosh on the <strong>server</strong> as you are on your <strong>client</strong>. (otherwise they may not support the same command line options)</p>
+</li>
+<li>
+<p>Make sure you have have a en_US.UTF-8. Mosh requires UTF8, and low end boxes usually have a bare install without this local. Run:</p>
+</li>
 </ol>
-
+<pre><code>locale-gen --no-archive en_US.UTF-8
+</code></pre>
 <p>For a reproducible puppet snipped:</p>
-
 <pre><code>package { 'mosh': ensure =&gt; latest }
 ensure_packages(['locales'])
 exec { &quot;/usr/sbin/locale-gen --no-archive en_US.UTF-8&quot;:
  creates =&gt; '/usr/lib/locale/en_US.utf8',
 }
 </code></pre>
-
-<ol>
-<li>Run mosh more than once. There is some sort of race condition or bug which prevents mosh from grabbing a tty. Running it multiple times will get it to work eventually. I haven&rsquo;t tracked down the root cause.</li>
+<ol start="3">
+<li>Run mosh more than once. There is some sort of race condition or bug which prevents mosh from grabbing a tty. Running it multiple times will get it to work eventually. I haven't tracked down the root cause.</li>
 </ol>
 
         </div>

@@ -9,7 +9,6 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/post/" />
-
 <meta property="og:updated_time" content="2019-11-30T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
@@ -126,7 +125,7 @@ See the GitHub page for more details.</div>
 </p></div>
         <div>Beaker is a test framework created by Puppetlabs to run tests against puppet modules on real servers (vm, containers whatever) and test that they do what they say they should do.
 This is a quick tutorial on how to use this framework. At the time of this writing, Beaker is under heavy development, so this could all change.
-The Gem The first thing you need to do is install beaker.</div>
+The Gem The first thing you need to do is install beaker. Usually this is as simple as adding it to your Gemfile and running bundle install.</div>
     </div>
 </article>
     
@@ -174,7 +173,8 @@ class { &#39;serf&#39;: config_hash =&gt; { &#39;node_name&#39; =&gt; $::fqdn, &
 </p></div>
         <div>Breaking down bundle exec rake spec What is happening when you run:
 bundle exec rake spec Bundle The first command you are running is bundle. Bundle is kinda like virtualenv for Ruby. It makes sure that you use the same ruby libraries that you, everyone, and puppetmasters use.
-Bundle uses a Gemfile, and searches downwards. As long as you have the Gemfile in the puppet repo, it will work.</div>
+Bundle uses a Gemfile, and searches downwards. As long as you have the Gemfile in the puppet repo, it will work.
+Exec The second part is exec.</div>
     </div>
 </article>
     
@@ -243,9 +243,9 @@ But, I know my servers are not behaving, if only there was a way to check them! 
     </div>
     <span class="article-meta-published-at grey-text text-darken-1">Dec 1, 2013</span>
 </p></div>
-        <div>It&rsquo;s Been a Great Ride There is no doubt that Wordpress is a great piece of software. As much as people love to hate on PHP, it runs a lot of the internet.
-I&rsquo;ve been running Wordpress personally and professionally for years. It only gets better. I was only hacked once :)
-Rethinking What I Need Since moving to a Low End Box, my resources have been tight. Even on a tuned system, I can&rsquo;t run much more interesting things than my Nginx+PHPfpm+MySQL.</div>
+        <div>It's Been a Great Ride There is no doubt that Wordpress is a great piece of software. As much as people love to hate on PHP, it runs a lot of the internet.
+I've been running Wordpress personally and professionally for years. It only gets better. I was only hacked once :)
+Rethinking What I Need Since moving to a Low End Box, my resources have been tight. Even on a tuned system, I can't run much more interesting things than my Nginx+PHPfpm+MySQL.</div>
     </div>
 </article>
     
@@ -268,7 +268,7 @@ Rethinking What I Need Since moving to a Low End Box, my resources have been tig
     <span class="article-meta-published-at grey-text text-darken-1">Nov 30, 2013</span>
 </p></div>
         <div>Intro Sensu is a pretty cool monitoring framework. The authors designed it to be configured by a configuration management system from the beginning. Check out how easily I can make it put a report in my motd with a little bit of python and puppet.
-The Report Script Sensu&rsquo;s API is super easy to work with. For this I will be using the Events endpoint. Here is a quick script to get the events for a host (gist):</div>
+The Report Script Sensu's API is super easy to work with. For this I will be using the Events endpoint. Here is a quick script to get the events for a host (gist):</div>
     </div>
 </article>
     
@@ -314,10 +314,10 @@ Why? Your DNS zone files will forever be out of date, waiting for humans to upda
     </div>
     <span class="article-meta-published-at grey-text text-darken-1">Oct 13, 2013</span>
 </p></div>
-        <div>Nagios. So familiar. I feel like I&rsquo;ve run Nagios at every job I have ever had.
+        <div>Nagios. So familiar. I feel like I've run Nagios at every job I have ever had.
 Talk to most ops people, even at really big places, and they will probably admit to using it.
-Puppet&rsquo;s exported resources takes away some of the pain, but sometimes I think to myself, there must be a better way to do this. Sensu might be that better way.
-Let&rsquo;s try it out, but gosh, I am SO lazy.</div>
+Puppet's exported resources takes away some of the pain, but sometimes I think to myself, there must be a better way to do this. Sensu might be that better way.
+Let's try it out, but gosh, I am SO lazy.</div>
     </div>
 </article>
     

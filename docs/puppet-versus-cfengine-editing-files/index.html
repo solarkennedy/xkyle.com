@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <meta property="og:title" content="Puppet versus CFEngine 2: Editing Files" />
-<meta property="og:description" content="Update: I wrote this article when I was young and stupid. It is obsolete. Puppet wins, just use Augeas. Both Puppet and CFEngine are formidable configuration management systems. Let&rsquo;s compare the two to see how the match up on the common task of editing files. Feel free to jump straight to the conclusion if you are impatient.
+<meta property="og:description" content="Update: I wrote this article when I was young and stupid. It is obsolete. Puppet wins, just use Augeas.  Both Puppet and CFEngine are formidable configuration management systems. Let&#39;s compare the two to see how the match up on the common task of editing files. Feel free to jump straight to the conclusion if you are impatient.
 Why would you need this? What is the use-case here? These are some common tasks I do that involve editing files:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/puppet-versus-cfengine-editing-files/" />
@@ -15,7 +15,7 @@ Why would you need this? What is the use-case here? These are some common tasks 
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Puppet versus CFEngine 2: Editing Files"/>
-<meta name="twitter:description" content="Update: I wrote this article when I was young and stupid. It is obsolete. Puppet wins, just use Augeas. Both Puppet and CFEngine are formidable configuration management systems. Let&rsquo;s compare the two to see how the match up on the common task of editing files. Feel free to jump straight to the conclusion if you are impatient.
+<meta name="twitter:description" content="Update: I wrote this article when I was young and stupid. It is obsolete. Puppet wins, just use Augeas.  Both Puppet and CFEngine are formidable configuration management systems. Let&#39;s compare the two to see how the match up on the common task of editing files. Feel free to jump straight to the conclusion if you are impatient.
 Why would you need this? What is the use-case here? These are some common tasks I do that involve editing files:"/>
 
 
@@ -106,171 +106,214 @@ Why would you need this? What is the use-case here? These are some common tasks 
 </p>
         </div>
         <div class="col s12 m8 offset-m2 l6">
-            
-
-<h2 id="update-i-wrote-this-article-when-i-was-young-and-stupid-it-is-obsolete-puppet-wins-just-use-augeas-http-projects-puppetlabs-com-projects-1-wiki-puppet-augeas">Update: I wrote this article when I was young and stupid. It is obsolete. Puppet wins, just use <a href="http://projects.puppetlabs.com/projects/1/wiki/puppet_augeas">Augeas</a>.</h2>
-
-<hr />
-
-<p>Both <a href="http://puppetlabs.com/">Puppet</a> and <a href="http://cfengine.com/">CFEngine</a> are formidable configuration management systems. Let&rsquo;s compare the two to see how the match up on the common task of editing files. Feel free to jump straight to the conclusion if you are impatient.</p>
-
+            <h2 id="update-i-wrote-this-article-when-i-was-young-and-stupid-it-is-obsolete-puppet-wins-just-use-augeashttpprojectspuppetlabscomprojects1wikipuppetaugeas">Update: I wrote this article when I was young and stupid. It is obsolete. Puppet wins, just use <a href="http://projects.puppetlabs.com/projects/1/wiki/puppet_augeas">Augeas</a>.</h2>
+<hr>
+<p>Both <a href="http://puppetlabs.com/">Puppet</a> and <a href="http://cfengine.com/">CFEngine</a> are formidable configuration management systems. Let's compare the two to see how the match up on the common task of editing files. Feel free to jump straight to the conclusion if you are impatient.</p>
 <h2 id="why-would-you-need-this">Why would you need this?</h2>
-
 <p>What is the use-case here? These are some common tasks I do that involve editing files:</p>
-
 <ul>
-<li><p>Managing lines in /etc/fstab</p></li>
-
-<li><p>Adding and revoking ssh keys in authorized_keys</p></li>
-
-<li><p>Editing hosts in /etc/hosts</p></li>
-
-<li><p>Setting root passwords in /etc/shadow</p></li>
-
-<li><p>Adding users in /etc/passwd</p></li>
-
-<li><p>Adding lines to /etc/sudoers</p></li>
+<li>
+<p>Managing lines in /etc/fstab</p>
+</li>
+<li>
+<p>Adding and revoking ssh keys in authorized_keys</p>
+</li>
+<li>
+<p>Editing hosts in /etc/hosts</p>
+</li>
+<li>
+<p>Setting root passwords in /etc/shadow</p>
+</li>
+<li>
+<p>Adding users in /etc/passwd</p>
+</li>
+<li>
+<p>Adding lines to /etc/sudoers</p>
+</li>
 </ul>
-
 <h2 id="cfengine-2-capabilities">CFEngine 2 Capabilities</h2>
-
 <p>Starting with CFEngine 2, here are the built in functions for editing files:</p>
-
 <ul>
-<li><p>Append</p></li>
-
-<li><p>AppendIfNoLineMatching</p></li>
-
-<li><p>AppendIfNoSuchLine</p></li>
-
-<li><p>AppendIfNoSuchLinesFromFile</p></li>
-
-<li><p>AppendToLineIfNotContains</p></li>
-
-<li><p>CommentLinesMatching</p></li>
-
-<li><p>CommentLinesStarting</p></li>
-
-<li><p>CommentNLines</p></li>
-
-<li><p>CommentToLineMatching</p></li>
-
-<li><p>DeleteLinesAfterThisMatching</p></li>
-
-<li><p>DeleteLinesContaining</p></li>
-
-<li><p>DeleteLinesMatching</p></li>
-
-<li><p>DeleteLinesStarting</p></li>
-
-<li><p>DeleteLinesNotContaining</p></li>
-
-<li><p>DeleteLinesNotMatchingFileItems</p></li>
-
-<li><p>DeleteLinesNotStartingFileItems</p></li>
-
-<li><p>DeleteNLines</p></li>
-
-<li><p>DeleteToLineMatching</p></li>
-
-<li><p>EmptyEntireFilePlease</p></li>
-
-<li><p>FixEndOfLine</p></li>
-
-<li><p>ForEachLineIn</p></li>
-
-<li><p>GotoLastLine</p></li>
-
-<li><p>HashCommentLinesContaining</p></li>
-
-<li><p>HashCommentLinesMatching</p></li>
-
-<li><p>HashCommentLinesStarting</p></li>
-
-<li><p>InsertFile</p></li>
-
-<li><p>InsertLine</p></li>
-
-<li><p>LocateLineMatching</p></li>
-
-<li><p>PercentCommentLinesContaining</p></li>
-
-<li><p>PercentCommentLinesMatching</p></li>
-
-<li><p>PercentCommentLinesStarting</p></li>
-
-<li><p>Prepend</p></li>
-
-<li><p>PrependIfNoLineMatching</p></li>
-
-<li><p>PrependIfNoSuchLine</p></li>
-
-<li><p>ReplaceLineWith</p></li>
-
-<li><p>ReplaceAll With</p></li>
-
-<li><p>ReplaceFirst</p></li>
-
-<li><p>ReplaceLinesMatchingField</p></li>
-
-<li><p>RunScriptIfLineMatching</p></li>
-
-<li><p>RunScriptIfNoLineMatching</p></li>
-
-<li><p>SlashCommentLinesContaining</p></li>
-
-<li><p>SlashCommentLinesMatching</p></li>
-
-<li><p>SlashCommentLinesStarting</p></li>
-
-<li><p>UnCommentLinesContaining</p></li>
-
-<li><p>UnCommentLinesMatching</p></li>
-
-<li><p>UnCommentsNLines</p></li>
-
-<li><p>UnCommentToLineMatching</p></li>
-
-<li><p>WarnIfFileMissing</p></li>
-
-<li><p>WarnIfLineContaining</p></li>
-
-<li><p>WarnIfLineMatching</p></li>
-
-<li><p>WarnIfLineStarting</p></li>
-
-<li><p>WarnIfNoLineContaining</p></li>
-
-<li><p>WarnIfNoLineMatching</p></li>
-
-<li><p>WarnIfNoLineStarting</p></li>
-
-<li><p>WarnIfNoSuchLine</p></li>
+<li>
+<p>Append</p>
+</li>
+<li>
+<p>AppendIfNoLineMatching</p>
+</li>
+<li>
+<p>AppendIfNoSuchLine</p>
+</li>
+<li>
+<p>AppendIfNoSuchLinesFromFile</p>
+</li>
+<li>
+<p>AppendToLineIfNotContains</p>
+</li>
+<li>
+<p>CommentLinesMatching</p>
+</li>
+<li>
+<p>CommentLinesStarting</p>
+</li>
+<li>
+<p>CommentNLines</p>
+</li>
+<li>
+<p>CommentToLineMatching</p>
+</li>
+<li>
+<p>DeleteLinesAfterThisMatching</p>
+</li>
+<li>
+<p>DeleteLinesContaining</p>
+</li>
+<li>
+<p>DeleteLinesMatching</p>
+</li>
+<li>
+<p>DeleteLinesStarting</p>
+</li>
+<li>
+<p>DeleteLinesNotContaining</p>
+</li>
+<li>
+<p>DeleteLinesNotMatchingFileItems</p>
+</li>
+<li>
+<p>DeleteLinesNotStartingFileItems</p>
+</li>
+<li>
+<p>DeleteNLines</p>
+</li>
+<li>
+<p>DeleteToLineMatching</p>
+</li>
+<li>
+<p>EmptyEntireFilePlease</p>
+</li>
+<li>
+<p>FixEndOfLine</p>
+</li>
+<li>
+<p>ForEachLineIn</p>
+</li>
+<li>
+<p>GotoLastLine</p>
+</li>
+<li>
+<p>HashCommentLinesContaining</p>
+</li>
+<li>
+<p>HashCommentLinesMatching</p>
+</li>
+<li>
+<p>HashCommentLinesStarting</p>
+</li>
+<li>
+<p>InsertFile</p>
+</li>
+<li>
+<p>InsertLine</p>
+</li>
+<li>
+<p>LocateLineMatching</p>
+</li>
+<li>
+<p>PercentCommentLinesContaining</p>
+</li>
+<li>
+<p>PercentCommentLinesMatching</p>
+</li>
+<li>
+<p>PercentCommentLinesStarting</p>
+</li>
+<li>
+<p>Prepend</p>
+</li>
+<li>
+<p>PrependIfNoLineMatching</p>
+</li>
+<li>
+<p>PrependIfNoSuchLine</p>
+</li>
+<li>
+<p>ReplaceLineWith</p>
+</li>
+<li>
+<p>ReplaceAll With</p>
+</li>
+<li>
+<p>ReplaceFirst</p>
+</li>
+<li>
+<p>ReplaceLinesMatchingField</p>
+</li>
+<li>
+<p>RunScriptIfLineMatching</p>
+</li>
+<li>
+<p>RunScriptIfNoLineMatching</p>
+</li>
+<li>
+<p>SlashCommentLinesContaining</p>
+</li>
+<li>
+<p>SlashCommentLinesMatching</p>
+</li>
+<li>
+<p>SlashCommentLinesStarting</p>
+</li>
+<li>
+<p>UnCommentLinesContaining</p>
+</li>
+<li>
+<p>UnCommentLinesMatching</p>
+</li>
+<li>
+<p>UnCommentsNLines</p>
+</li>
+<li>
+<p>UnCommentToLineMatching</p>
+</li>
+<li>
+<p>WarnIfFileMissing</p>
+</li>
+<li>
+<p>WarnIfLineContaining</p>
+</li>
+<li>
+<p>WarnIfLineMatching</p>
+</li>
+<li>
+<p>WarnIfLineStarting</p>
+</li>
+<li>
+<p>WarnIfNoLineContaining</p>
+</li>
+<li>
+<p>WarnIfNoLineMatching</p>
+</li>
+<li>
+<p>WarnIfNoLineStarting</p>
+</li>
+<li>
+<p>WarnIfNoSuchLine</p>
+</li>
 </ul>
-
 <p>So, lots of options for manipulating text files. Basically you can Append, Delete, Replace, Comment, or Uncomment (with various types of comment characters) any regex or normal string.</p>
-
-<h3 id="example-etc-hosts">Example:  /etc/hosts</h3>
-
+<h3 id="example-etchosts">Example:  /etc/hosts</h3>
 <pre><code>editfiles:
  { /etc/hosts
    AppendIfNoSuchLine  &quot;192.168.0.1   router&quot;
    DeleteLinesMatching &quot;192.168.0.254 laptop&quot;
  }
 </code></pre>
-
-<p>CFEngine 3 has a more <a href="https://cfengine.com/manuals/cf3-reference.html#files-in-agent-promises">refined edit_files bundle</a>, but I have yet to dig into it and learn it. (I&rsquo;m still stuck on CFEngine 2)</p>
-
+<p>CFEngine 3 has a more <a href="https://cfengine.com/manuals/cf3-reference.html#files-in-agent-promises">refined edit_files bundle</a>, but I have yet to dig into it and learn it. (I'm still stuck on CFEngine 2)</p>
 <h2 id="puppet-capabilities">Puppet Capabilities</h2>
-
-<p>How about Puppet? Well, it doesn&rsquo;t have (at the time of this writing) built-in file editing capabilities. (See <a href="http://projects.puppetlabs.com/projects/puppet/wiki/Pattern_Requests">http://projects.puppetlabs.com/projects/puppet/wiki/Pattern_Requests</a>)</p>
-
+<p>How about Puppet? Well, it doesn't have (at the time of this writing) built-in file editing capabilities. (See <a href="http://projects.puppetlabs.com/projects/puppet/wiki/Pattern_Requests"><a href="http://projects.puppetlabs.com/projects/puppet/wiki/Pattern_Requests">http://projects.puppetlabs.com/projects/puppet/wiki/Pattern_Requests</a></a>)</p>
 <p>You can write your own definition if you feel so inclined, or copy and paste from the contributed <a href="http://projects.puppetlabs.com/projects/1/wiki/Simple_Text_Patterns">Simple Text Patterns</a>.</p>
-
-<p>For particular jobs there are existing modules for <a href="http://projects.puppetlabs.com/projects/1/wiki/Module_Ssh_Auth_Patterns">ssh key management</a>, <a href="http://docs.puppetlabs.com/references/stable/type.html#mount">fstab mounts</a>, <a href="http://docs.puppetlabs.com/references/stable/type.html#host">/etc/hosts entries</a>, etc. However there isn&rsquo;t a built in generic file editing procedure. Why not? Reading about the controversy might make you think differently about this seemingly &rdquo;lack&rdquo; of functionality in Puppet.</p>
-
-<h3 id="example-etc-hosts-1">EXAMPLE:  /ETC/HOSTS</h3>
-
+<p>For particular jobs there are existing modules for <a href="http://projects.puppetlabs.com/projects/1/wiki/Module_Ssh_Auth_Patterns">ssh key management</a>, <a href="http://docs.puppetlabs.com/references/stable/type.html#mount">fstab mounts</a>, <a href="http://docs.puppetlabs.com/references/stable/type.html#host">/etc/hosts entries</a>, etc. However there isn't a built in generic file editing procedure. Why not? Reading about the controversy might make you think differently about this seemingly &ldquo;lack&rdquo; of functionality in Puppet.</p>
+<h3 id="example-etchosts1">EXAMPLE:  /ETC/HOSTS</h3>
 <pre><code>host { 'router':
  ensure =&gt; 'present',
  target =&gt; '/etc/hosts',
@@ -284,24 +327,15 @@ host { 'laptop':
  host_aliases =&gt; 'laptop' 
 }
 </code></pre>
-
 <h2 id="the-controversy">The Controversy</h2>
-
 <p>Even in the CFEngine world there is disagreement about the editfiles functions. Some people believe that simply manipulating the text file is not the correct way to approach the problem, in fact some believe that it <a href="http://web.archive.org/web/20100710052745/http://www.cfwiki.org/cfwiki/index.php/Editfiles_Considered_Harmful">makes more problems</a> than it solves.</p>
-
 <p>In the Puppet world, it seems that their model of system management is designed to be more atomic, with settings being either <strong>absent</strong> or <strong>present</strong>. The edit files functions have a more script-like mentality, leading to configurations that end up being un-maintainable. (<a href="https://groups.google.com/group/puppet-users/browse_thread/thread/c64ba5017516b46f">See this discussion</a>)</p>
-
-<p>One might say that the solution to this problem is to use Puppet <a href="http://docs.puppetlabs.com/guides/templating.html">templates</a>, or CFEngine&rsquo;s copy functions. I agree that in some situations, like apache configs, sshd_config, or sudoers you want to have a predictable end result. Templates seem like a better solution than editing files for this end.</p>
-
-<p>On the other hand, there are some files that don&rsquo;t really fit into templates, like fstab, /etc/hosts, or /etc/passwd. This may be especially true if the client computers are not fully controlled by the Puppet/CFEngine admin. (Say in a compliance situation, were you may not even know what is in /etc/passwd, all you know is that youneed your line appended to it.)</p>
-
+<p>One might say that the solution to this problem is to use Puppet <a href="http://docs.puppetlabs.com/guides/templating.html">templates</a>, or CFEngine's copy functions. I agree that in some situations, like apache configs, sshd_config, or sudoers you want to have a predictable end result. Templates seem like a better solution than editing files for this end.</p>
+<p>On the other hand, there are some files that don't really fit into templates, like fstab, /etc/hosts, or /etc/passwd. This may be especially true if the client computers are not fully controlled by the Puppet/CFEngine admin. (Say in a compliance situation, were you may not even know what is in /etc/passwd, all you know is that youneed your line appended to it.)</p>
 <h2 id="conclusion">Conclusion</h2>
-
-<p>If your environment involves keeping workstation and servers in compliance, where you do not have full control over the servers and need to keep the breakage to a minimum, CFEngine is probably the tool. Puppet certainly could be used, but CFEngine provides a richer set of pre-made tools. (You don&rsquo;t have to write your own sed and greps)</p>
-
+<p>If your environment involves keeping workstation and servers in compliance, where you do not have full control over the servers and need to keep the breakage to a minimum, CFEngine is probably the tool. Puppet certainly could be used, but CFEngine provides a richer set of pre-made tools. (You don't have to write your own sed and greps)</p>
 <p>If your environment is fully under your control, you are probably better off following the more atomic and template based model of Puppet. In the end that style of configuration management should lead to more predictable outcomes and less cleanup.</p>
-
-<p>Honestly I&rsquo;m still a CFEngine / Puppet noob. Feel free to disagree or correct me in the comments.</p>
+<p>Honestly I'm still a CFEngine / Puppet noob. Feel free to disagree or correct me in the comments.</p>
 
         </div>
     </section>

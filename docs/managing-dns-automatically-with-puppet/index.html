@@ -108,53 +108,35 @@ Why? Your DNS zone files will forever be out of date, waiting for humans to upda
 </p>
         </div>
         <div class="col s12 m8 offset-m2 l6">
-            
-
-<h1 id="why">Why</h1>
-
+            <h1 id="why">Why</h1>
 <p>So you have a decent amount of things configured in Puppet. Great!</p>
-
 <p>Are you finding that you have to manually update your DNS entries when things change, like when new hosts or added, or additional services are created?</p>
-
 <p>Why? Your DNS zone files will forever be out of date, waiting for humans to update them. Just say no. Puppet already knows what the ip addresses and hostnames of your servers, why not take advantage of that existing data?</p>
-
 <h1 id="how">How</h1>
-
-<p>Most of the credit for this has to go do <a href="https://github.com/ajjahn">Adam Jahn</a> for his <a href="https://github.com/ajjahn/puppet-dns">original work</a>. But there is a lot of work to be done and many outstanding pull requests. Until things are more unified, I&rsquo;m going to recommend installing my version of the module:</p>
-
+<p>Most of the credit for this has to go do <a href="https://github.com/ajjahn">Adam Jahn</a> for his <a href="https://github.com/ajjahn/puppet-dns">original work</a>. But there is a lot of work to be done and many outstanding pull requests. Until things are more unified, I'm going to recommend installing my version of the module:</p>
 <pre><code>puppet module install KyleAnderson/dns
 </code></pre>
-
 <p>Once the module is installed, you can setup bind on your nameserver:</p>
-
 <pre><code>node 'ns1.example.com' {
   include dns::server
   ...
 </code></pre>
-
-<p>Warning: Don&rsquo;t try to use this on top of an existing configuration, Puppet will take control and break your existing stuff.</p>
-
+<p>Warning: Don't try to use this on top of an existing configuration, Puppet will take control and break your existing stuff.</p>
 <p>You can also create zones, right from puppet:</p>
-
 <pre><code> dns::zone { 'example.com':
     soa         =&gt; $::fqdn,
     soa_email   =&gt; &quot;admin.${::domain}&quot;,
     nameservers =&gt; [&quot;${::hostname&quot;]
   }
 </code></pre>
-
 <p>Now you can add A records:</p>
-
 <pre><code>dns::record::a { $hostname:
    zone =&gt; 'example.com',
    data =&gt; $::ipaddress, 
 }
 </code></pre>
-
 <h1 id="going-further">Going Further</h1>
-
 <p>Using the <a href="http://docs.puppetlabs.com/guides/exported_resources.html">exported resources pattern</a> and stored configs with say, <a href="https://docs.puppetlabs.com/puppetdb/latest/">PuppetDB</a>, you can create records on different hosts and then collect them on your name server. For example:</p>
-
 <pre><code>node 'mycoolserver.example.com' {
   @@dns::record::a { $hostname: zone =&gt; $::domain, data =&gt; $::ipaddress, }
 }
@@ -169,25 +151,26 @@ node 'ns1.example.com' {
   Dns::Record::A &lt;&lt;||&gt;&gt;
 }
 </code></pre>
-
-<p>In this example, an A record was requested on the mycoolserver node, but it could have been included on any class that includes lots of servers. In the end they show up on the ns1.example.com node with the &lt;&lt;||&gt;&gt; operator.</p>
-
+<p>In this example, an A record was requested on the mycoolserver node, but it could have been included on any class that includes lots of servers. In the end they show up on the ns1.example.com node with the &laquo;||&raquo; operator.</p>
 <h1 id="other-possibilities">Other Possibilities</h1>
-
 <ul>
-<li><p>Have your <a href="https://forge.puppetlabs.com/puppetlabs/haproxy">HAProxy</a> or <a href="https://forge.puppetlabs.com/puppetlabs/f5">F5 load balancer</a> configs automatically generate the new CNAMEs and A records they need to operate.</p></li>
-
-<li><p>Setup your <a href="https://github.com/puppetlabs/puppetlabs-apache#configure-a-virtual-host">Apache vhosts</a> to automatically point to the right server.</p></li>
-
-<li><p>Never have to remember to update IPMI addresses by using the combining this with the <a href="https://github.com/logicminds/bmclib">BMCLib</a> module.</p></li>
-
-<li><p>Setup new hosts in <a href="https://forge.puppetlabs.com/zleslie/dhcp">DHCP</a>, and have them automatically get an A record to go with them.</p></li>
-
-<li><p>Have <a href="http://forge.puppetlabs.com/puppetlabs/ntp">NTP</a> servers? Did you remember to update their DNS records? Oh wait, puppet does that for you.</p></li>
+<li>
+<p>Have your <a href="https://forge.puppetlabs.com/puppetlabs/haproxy">HAProxy</a> or <a href="https://forge.puppetlabs.com/puppetlabs/f5">F5 load balancer</a> configs automatically generate the new CNAMEs and A records they need to operate.</p>
+</li>
+<li>
+<p>Setup your <a href="https://github.com/puppetlabs/puppetlabs-apache#configure-a-virtual-host">Apache vhosts</a> to automatically point to the right server.</p>
+</li>
+<li>
+<p>Never have to remember to update IPMI addresses by using the combining this with the <a href="https://github.com/logicminds/bmclib">BMCLib</a> module.</p>
+</li>
+<li>
+<p>Setup new hosts in <a href="https://forge.puppetlabs.com/zleslie/dhcp">DHCP</a>, and have them automatically get an A record to go with them.</p>
+</li>
+<li>
+<p>Have <a href="http://forge.puppetlabs.com/puppetlabs/ntp">NTP</a> servers? Did you remember to update their DNS records? Oh wait, puppet does that for you.</p>
+</li>
 </ul>
-
 <h1 id="future-work">Future Work</h1>
-
 <p>I will continue to send my pull requests and maintaining my own fork. <a href="https://github.com/solarkennedy/puppet-dns">Join the fun</a>!</p>
 
         </div>

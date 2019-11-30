@@ -108,96 +108,70 @@ Unfortunately I no longer have the motherboard I originally ran these on. I migh
 </p>
         </div>
         <div class="col s12 m8 offset-m2 l6">
-            
-
-<h1 id="update-2015-02-18">UPDATE (2015-02-18)</h1>
-
+            <h1 id="update-20150218">UPDATE (2015-02-18)</h1>
 <p>Albert Chu from FreeIPMI <a href="https://github.com/solarkennedy/ipmi-sel-comparison/issues/1">commented</a>
 that FreeIPMI does <em>NOT</em> attempt to decode OEM events by default. These are events that
- are OEM specific, so each motherboard may require a different interpretation.</p>
-
+are OEM specific, so each motherboard may require a different interpretation.</p>
 <p>FreeIPMI has a <code>--interpret-oem-data</code> option and possibly in conjunction with
 the <code>-W assumesystemevent</code> option, to attempt to decode these.</p>
-
 <p>Unfortunately I no longer have the motherboard I originally ran these on.
 I might do a followup post with a new motherboard with similar &ldquo;issues&rdquo; and
 see how FreeIPMI compares to the other tools with these options.</p>
-
 <h2 id="intro">Intro</h2>
-
 <p>Servers are like women. You are supposed to know their needs.
-<a href="../uploads/server_meme.png"><img src="../uploads/server_meme.png" alt="Server Says: If you don't know what's wrong, I'm not going to tell you" /></a></p>
-
-<p>So how do you know what is wrong with your server when it isn&rsquo;t giving you any hints? <strong>IPMI Server Event Logs (SEL).</strong></p>
-
+<a href="../uploads/server_meme.png"><img src="../uploads/server_meme.png" alt="Server Says: If you don't know what's wrong, I'm not going to tell you"></a></p>
+<p>So how do you know what is wrong with your server when it isn't giving you any hints? <strong>IPMI Server Event Logs (SEL).</strong></p>
 <h2 id="the-problem">The Problem</h2>
-
-<p>There are four different tools I&rsquo;m going to look at that can examine the SEL. Let&rsquo;s take the same server and events and run them through the tools to see how it looks. Unfairly I will also be using a vendor-specific tool, Intel SELVIEW on an Intel server.</p>
-
+<p>There are four different tools I'm going to look at that can examine the SEL. Let's take the same server and events and run them through the tools to see how it looks. Unfairly I will also be using a vendor-specific tool, Intel SELVIEW on an Intel server.</p>
 <h2 id="procedure">Procedure</h2>
-
-<p>Check out <a href="https://github.com/solarkennedy/ipmi-sel-comparison">https://github.com/solarkennedy/ipmi-sel-comparison</a> up-to-date code on my procedure. It may get updated with more tools and output. For this blog post I&rsquo;m comparing the following utilities:</p>
-
+<p>Check out <a href="https://github.com/solarkennedy/ipmi-sel-comparison"><a href="https://github.com/solarkennedy/ipmi-sel-comparison">https://github.com/solarkennedy/ipmi-sel-comparison</a></a> up-to-date code on my procedure. It may get updated with more tools and output. For this blog post I'm comparing the following utilities:</p>
 <ul>
-<li><p><a href="http://ipmiutil.sourceforge.net/">ipmiutil</a> 2.82</p></li>
-
-<li><p><a href="http://www.gnu.org/software/freeipmi/">freeipmi</a> 1.2.1</p></li>
-
-<li><p><a href="http://ipmitool.sourceforge.net/">ipmitool</a> 1.8.11</p></li>
-
-<li><p><a href="http://www.intel.com/support/motherboards/server/sb/CS-031911.htm">SELVIEWER</a> 11.0 Build 5</p></li>
+<li>
+<p><a href="http://ipmiutil.sourceforge.net/">ipmiutil</a> 2.82</p>
+</li>
+<li>
+<p><a href="http://www.gnu.org/software/freeipmi/">freeipmi</a> 1.2.1</p>
+</li>
+<li>
+<p><a href="http://ipmitool.sourceforge.net/">ipmitool</a> 1.8.11</p>
+</li>
+<li>
+<p><a href="http://www.intel.com/support/motherboards/server/sb/CS-031911.htm">SELVIEWER</a> 11.0 Build 5</p>
+</li>
 </ul>
-
 <h2 id="comparison">Comparison</h2>
-
-<p>Hopefully I got it all correlated correctly. Please feel free to check my code. Let&rsquo;s see some events and how each utility decodes them.</p>
-
+<p>Hopefully I got it all correlated correctly. Please feel free to check my code. Let's see some events and how each utility decodes them.</p>
 <h3 id="event-88-some-sort-of-bios-update"> Event 88: Some sort of BIOS Update?</h3>
-
 <pre><code>freeipmi: Unknown SEL Record Type: 3h
 ipmitool: Version Change #0x12 | 
 ipmiutil: 0 4e 20 00 04 2b 12 70 00 10 ff 
 selview : Version Change,FW Update Status (#0x12) Informational event: FW Update Status reports BIOS Update started with version 99.99.x038. Integrated BMC - LUN#0 (Channel#0)
 </code></pre>
-
-<p><strong>Freeipmi</strong> doesn&rsquo;t know what to say. <strong>ipmitool</strong> at least knows there was a version change. <strong>Ipmiutil</strong> spits out the raw hex. <strong>Selview</strong> the most descriptive output, including the actual version number, with the next event reporting the version it was updated to.</p>
-
-<h3 id="event-117-non-critial-low-voltage">Event 117: Non-critial low voltage</h3>
-
+<p><strong>Freeipmi</strong> doesn't know what to say. <strong>ipmitool</strong> at least knows there was a version change. <strong>Ipmiutil</strong> spits out the raw hex. <strong>Selview</strong> the most descriptive output, including the actual version number, with the next event reporting the version it was updated to.</p>
+<h3 id="event-117-noncritial-low-voltage">Event 117: Non-critial low voltage</h3>
 <pre><code>freeipmi: BB +1.1V STBY | Voltage | Lower Non-critical - going low ; Sensor Reading = -0.01 V ; Threshold = 0.96 V
 ipmitool: Voltage #0xdd | Lower Non-critical going low 
 ipmiutil: MIN BMC Voltage #dd Lo Noncrit thresh act=00 thr=bf
 selview : Voltage,BB +1.1V STBY (#0xDD) Warning event: BB +1.1V STBY reports the sensor is in a low, but non-critical, and going lower state. Sensor reading: -0.0122 Volts. Threshold value: 0.96381 Volts. Integrated BMC - LUN#0 (Channel#0)
 </code></pre>
-
-<p><strong>Freeipmi</strong> and <strong>selview</strong> get props here for letting us know what the values of the voltage and what the threshold is. <strong>Selview</strong> gives us the most human-readable output. <strong>ipmitool</strong> and <strong>ipmiutil</strong> are not super helpful, as I don&rsquo;t know what dd or bf mean.</p>
-
+<p><strong>Freeipmi</strong> and <strong>selview</strong> get props here for letting us know what the values of the voltage and what the threshold is. <strong>Selview</strong> gives us the most human-readable output. <strong>ipmitool</strong> and <strong>ipmiutil</strong> are not super helpful, as I don't know what dd or bf mean.</p>
 <h3 id="event-346-bad-ram">Event 346: Bad RAM</h3>
-
 <pre><code>freeipmi: POST Err Sensor | System Firmware Progress | System Firmware Error ; OEM Event Data2 code = 23h ; OEM Event Data3 code = 85h
 ipmitool: System Firmware Error #0x06 | Unknown Error | Asserted
 ipmiutil: MAJ EFI System Firmware #06 DIMM_B1 failed test/initialization 6f [a0 23 85]
 selview : System Firmware Progress,POST Err Sensor (#0x06) Warning event: POST Err Sensor reports DIMM_B1 failed test/initialization. BIOS - LUN#0 (Channel#0)
 </code></pre>
-
 <p><strong>ipmiutil</strong> and <strong>selview</strong> win here for telling me which slot is bad (DIMM_B1). <strong>ipmitool</strong> and <strong>freeipmi</strong> lose, as they do not give us this crucial piece of information.</p>
-
 <h3 id="event-857-server-cooling-down-from-overheating">Event 857: Server Cooling Down from overheating</h3>
-
 <pre><code>freeipmi: Exit Air Temp    | Temperature                 | Upper Critical - going high ; Sensor Reading = 73.00 C ; Threshold = 85.00 C
 ipmitool: Temperature #0x2e | Upper Critical going high
 ipmiutil: INF BMC  Temperature #2e HiC thresh OK now act=49 thr=55
 selview : Temperature,Exit Air Temp (#0x2E)     CRITICAL event: Exit Air Temp reports the sensor is no longer in a critically high state.  Sensor reading: 73 degrees C.  Threshold value: 85 degrees C.        Integrated BMC - LUN#0 (Channel#0)
 </code></pre>
-
-<p><strong>Freeipmi</strong> and <strong>ipmitool</strong> are a tad misleading, as this event is the server cooling down, not heating up. <strong>ipmiutil</strong> at least says that it is now &ldquo;OK&rdquo;, but doesn&rsquo;t give the actual temperature and threshold. <strong>Selview</strong> comes out on top with an exact description of what is happening.</p>
-
-<h2 id="conclusion-summary">Conclusion / Summary</h2>
-
+<p><strong>Freeipmi</strong> and <strong>ipmitool</strong> are a tad misleading, as this event is the server cooling down, not heating up. <strong>ipmiutil</strong> at least says that it is now &ldquo;OK&rdquo;, but doesn't give the actual temperature and threshold. <strong>Selview</strong> comes out on top with an exact description of what is happening.</p>
+<h2 id="conclusion--summary">Conclusion / Summary</h2>
 <p>Of course <strong>Selview</strong>, being a vendor-specific tool, gives the most accurate and detailed event information. Intel has all the special, but not proprietary, information. In many cases <strong>ipmiutil</strong> had the important information, but in an abbreviated form. In general <strong>freeipmi</strong> and <strong>ipmitool</strong> had less information in critical areas, and unable to decode some of the more esoteric events entirely. In general though, it is kinda a mixed bag. If you are serious about discovering what is wrong with your server, get all the info you can get.</p>
-
 <h2 id="problems-questions">Problems? Questions?</h2>
-
 <p>Think I used the wrong command line arguments? Think I used the wrong version? Have another command to get the SEL output? <a href="https://github.com/solarkennedy/ipmi-sel-comparison">Fork my code on github and send me a pull reques</a>t or make a github <a href="https://github.com/solarkennedy/ipmi-sel-comparison/issues">issue</a>.</p>
 
         </div>

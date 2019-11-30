@@ -29,7 +29,7 @@ So should I throw it away and buy a new one? No! It can be easily fixed. Here is
       
       <guid>/my-home-made-laptop-security-program/</guid>
       <description>The NetworkManager program in linux has a create feature called a dispatcher, which can run arbitrary programs when certian things about the network change. For instance it can turn on a firewall or notify a user when the network comes up, or start up an arp alert program!
-I wanted a program that would alert me of my laptop&amp;rsquo;s where-a-bouts, as well as use the webcam to take a picture, in order to aid me in tracking it down if it got stolen.</description>
+I wanted a program that would alert me of my laptop&#39;s where-a-bouts, as well as use the webcam to take a picture, in order to aid me in tracking it down if it got stolen.</description>
     </item>
     
   </channel>

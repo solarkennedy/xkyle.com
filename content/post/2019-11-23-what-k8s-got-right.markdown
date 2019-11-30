@@ -36,3 +36,7 @@ I remember being at Mesoscon 2015 and being excited at the handful of new framew
 
 "What a great design", "such great separation of concerns", were thoughts I had at the time.
 I even felt a tinge of smugness. It kinda felt like when I first understood the "reversed" server/client model of [X](https://en.wikipedia.org/wiki/X_Window_System#Client%E2%80%93server_separation).
+
+But why do I consider this model a failure?
+
+The limit

@@ -27,7 +27,7 @@ root@a:/# cat myspace.hackedlist | cut -f 2 -d : | sort | uniq -c | sort -n | ta
       <pubDate>Mon, 22 May 2006 21:54:02 +0000</pubDate>
       
       <guid>/myspace-friend-maps/</guid>
-      <description>Ok, I have a seceret: I am a Myspace sellout. Everyone around me was like ooh yea, check out my myspace! Or Ooo, your myspace is sooo cool. Or, Wow, your myspace cures cancer. Well, so I made one, and added friends. I soon realized that Myspace.com is interesting. (Although it sucks too. Ads everywhere, people&amp;rsquo;s pages are often littered with cpu sucking garbage and animated gifs and crappy css.)</description>
+      <description>Ok, I have a seceret: I am a Myspace sellout. Everyone around me was like ooh yea, check out my myspace! Or Ooo, your myspace is sooo cool. Or, Wow, your myspace cures cancer. Well, so I made one, and added friends. I soon realized that Myspace.com is interesting. (Although it sucks too. Ads everywhere, people&#39;s pages are often littered with cpu sucking garbage and animated gifs and crappy css.)</description>
     </item>
     
   </channel>

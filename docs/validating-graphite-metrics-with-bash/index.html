@@ -8,8 +8,8 @@
 <meta property="og:title" content="Validating Graphite Metrics With Bash!" />
 <meta property="og:description" content="At my dayjob I get to work with Graphite and power meters. It is cool:
 
-To make it easy for my clients to get power information, I&rsquo;ve written a command line tool called &ldquo;power&rdquo; that they can run to get the power usage for a server when running their program. Here is an example:
-power METER-NAME sleep 10s  Pretty handy. The &ldquo;METER-NAME&rdquo; is pretty important, as it lets the script know which system&rsquo;s power you are interested in." />
+To make it easy for my clients to get power information, I&#39;ve written a command line tool called &ldquo;power&rdquo; that they can run to get the power usage for a server when running their program. Here is an example:
+power METER-NAME sleep 10s  Pretty handy. The &ldquo;METER-NAME&rdquo; is pretty important, as it lets the script know which system&#39;s power you are interested in." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/validating-graphite-metrics-with-bash/" />
 <meta property="article:published_time" content="2013-03-07T05:35:49+00:00" />
@@ -19,8 +19,8 @@ power METER-NAME sleep 10s  Pretty handy. The &ldquo;METER-NAME&rdquo; is pretty
 <meta name="twitter:title" content="Validating Graphite Metrics With Bash!"/>
 <meta name="twitter:description" content="At my dayjob I get to work with Graphite and power meters. It is cool:
 
-To make it easy for my clients to get power information, I&rsquo;ve written a command line tool called &ldquo;power&rdquo; that they can run to get the power usage for a server when running their program. Here is an example:
-power METER-NAME sleep 10s  Pretty handy. The &ldquo;METER-NAME&rdquo; is pretty important, as it lets the script know which system&rsquo;s power you are interested in."/>
+To make it easy for my clients to get power information, I&#39;ve written a command line tool called &ldquo;power&rdquo; that they can run to get the power usage for a server when running their program. Here is an example:
+power METER-NAME sleep 10s  Pretty handy. The &ldquo;METER-NAME&rdquo; is pretty important, as it lets the script know which system&#39;s power you are interested in."/>
 
 
     <meta name="description" content="">
@@ -110,65 +110,37 @@ power METER-NAME sleep 10s  Pretty handy. The &ldquo;METER-NAME&rdquo; is pretty
 </p>
         </div>
         <div class="col s12 m8 offset-m2 l6">
-            
-
-<p>At my dayjob I get to work with <a href="http://graphite.wikidot.com/">Graphite</a> and power meters. It is cool:</p>
-
-<p><a href="../uploads/power-breakdown.png"><img src="../uploads/power-breakdown.png" alt="power-breakdown" /></a></p>
-
-<p>To make it easy for my clients to get power information, I&rsquo;ve written a command line tool called &ldquo;power&rdquo; that they can run to get the power usage for a server when running their program. Here is an example:</p>
-
+            <p>At my dayjob I get to work with <a href="http://graphite.wikidot.com/">Graphite</a> and power meters. It is cool:</p>
+<p><a href="../uploads/power-breakdown.png"><img src="../uploads/power-breakdown.png" alt="power-breakdown"></a></p>
+<p>To make it easy for my clients to get power information, I've written a command line tool called &ldquo;power&rdquo; that they can run to get the power usage for a server when running their program. Here is an example:</p>
 <pre><code>power METER-NAME sleep 10s
 </code></pre>
-
-<p>Pretty handy. The &ldquo;METER-NAME&rdquo; is pretty important, as it lets the script know which system&rsquo;s power you are interested in. (It is optional, by default I let it return the power of the server that you are currently on, but this isn&rsquo;t always true for all workloads)</p>
-
+<p>Pretty handy. The &ldquo;METER-NAME&rdquo; is pretty important, as it lets the script know which system's power you are interested in. (It is optional, by default I let it return the power of the server that you are currently on, but this isn't always true for all workloads)</p>
 <h2 id="problem">Problem</h2>
-
-<p>The thing is, my power meters and lab environment change often. I&rsquo;m tired of updating the script to reflect the state of my lab. Can&rsquo;t the script figure itself out on it&rsquo;s own? Yes. Yes it can.</p>
-
-<h2 id="s-p-o-t">S.P.O.T.</h2>
-
-<p>I believe in a <a href="https://github.com/teddziuba/teddziuba.github.com/blob/master/_posts/2011-06-30-most-important-concept-systems-design.html">Single Point Of Truth</a>. Where is my SPOT regarding power data in my system? I can tell you where it isn&rsquo;t: it** isn&rsquo;t** in my script. It is in the Graphite database ya dingus.</p>
-
+<p>The thing is, my power meters and lab environment change often. I'm tired of updating the script to reflect the state of my lab. Can't the script figure itself out on it's own? Yes. Yes it can.</p>
+<h2 id="spot">S.P.O.T.</h2>
+<p>I believe in a <a href="https://github.com/teddziuba/teddziuba.github.com/blob/master/_posts/2011-06-30-most-important-concept-systems-design.html">Single Point Of Truth</a>. Where is my SPOT regarding power data in my system? I can tell you where it isn't: it** isn't** in my script. It is in the Graphite database ya dingus.</p>
 <p>When my users run power -l, I want it to list valid power meters, but not some hand-curated list. I want a real list, straight from the source. Lets do that, and I will never have to update the script again.</p>
-
 <h2 id="list-those-metrics">List Those Metrics</h2>
-
 <p>So how can we get a list of all metrics with similar names? Easy:</p>
-
 <pre><code>wget -q -O - &quot;http://$GRAPHITEHOST/render/?target=power.*.watts&amp;format=json&amp;from=-5second&quot;
 </code></pre>
-
-<p>As far as I can tell, there isn&rsquo;t really a way to get just a list of metrics without data too, but that is ok. We need the data for the next validation step&hellip;</p>
-
+<p>As far as I can tell, there isn't really a way to get just a list of metrics without data too, but that is ok. We need the data for the next validation step&hellip;</p>
 <h2 id="validate-those-metrics">Validate Those Metrics</h2>
-
-<p>I crank my power metrics to the second, and the above api query will even return stale metrics, metrics that have old data, typo&rsquo;ed metrics, etc. They will just have null data in the json.</p>
-
+<p>I crank my power metrics to the second, and the above api query will even return stale metrics, metrics that have old data, typo'ed metrics, etc. They will just have null data in the json.</p>
 <p>Heck man, we can just grep that out:</p>
-
 <pre><code>| egrep -v 'null.*null.*null.*null.*null'
 </code></pre>
-
-<p>This will filter out any metric that doesn&rsquo;t have up-to-the second data. Great! Side note: some of my meters might run a little behind, so they might have some null&rsquo;s. I only grep out meters that are missing the last 5 seconds of data, that indicates that they really are stale.</p>
-
+<p>This will filter out any metric that doesn't have up-to-the second data. Great! Side note: some of my meters might run a little behind, so they might have some null's. I only grep out meters that are missing the last 5 seconds of data, that indicates that they really are stale.</p>
 <p>Full line:</p>
-
 <pre><code>wget -q -O - &quot;http://$GRAPHITEHOST/render/?target=power.*.watts&amp;target=power.*.ipmi_power&amp;format=json&amp;from=-5second&quot; | sed 's/target/\n/'g | egrep -v 'null.*null.*null.*null.*null' \
 | tr '&quot;' &quot;\n&quot; | grep &quot;^power&quot; | cut -f 2 -d &quot;.&quot; | sort -u
 </code></pre>
-
 <p>Obviously this is specific to my environment. You young whipper-snappers will probably have fancy json parsers and junk to validate your own metrics.</p>
-
 <h2 id="bonus-points-bash-tab-completion">Bonus Points: Bash Tab Completion</h2>
-
 <p>So that is cool. Now the script will only let your run against metrics that have fresh data.</p>
-
-<p>Now, I&rsquo;m super lazy. Not only do I <strong>not</strong> want to keep my script up to date with valid metrics, I also cannot be bothered to remember which ones are active, and I certainly don&rsquo;t want to <strong>fully type them out</strong>.</p>
-
+<p>Now, I'm super lazy. Not only do I <strong>not</strong> want to keep my script up to date with valid metrics, I also cannot be bothered to remember which ones are active, and I certainly don't want to <strong>fully type them out</strong>.</p>
 <p>Bash completion to the rescue. My script responds to &ldquo;power -l&rdquo; to report the list. Here is some code to go in bash_completion.d to help users discover the meters and enable them to be lazy:</p>
-
 <pre><code>_power() {
   local cur
   cur=${COMP_WORDS[COMP_CWORD]}
@@ -184,8 +156,7 @@ power METER-NAME sleep 10s  Pretty handy. The &ldquo;METER-NAME&rdquo; is pretty
   fi
 complete -F _power power
 </code></pre>
-
-<p>All of the <a href="https://wiki.xkyle.com/Bash_Completion">bash completion code</a> I&rsquo;ve written in my life is <a href="https://en.wikipedia.org/wiki/Cargo_cult_programming">cargo-cultish</a>. It sure is nice to have good tools though.</p>
+<p>All of the <a href="https://wiki.xkyle.com/Bash_Completion">bash completion code</a> I've written in my life is <a href="https://en.wikipedia.org/wiki/Cargo_cult_programming">cargo-cultish</a>. It sure is nice to have good tools though.</p>
 
         </div>
     </section>

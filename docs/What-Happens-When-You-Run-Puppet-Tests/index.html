@@ -8,7 +8,8 @@
 <meta property="og:title" content="What Happens When You Run Puppet Tests" />
 <meta property="og:description" content="Breaking down bundle exec rake spec What is happening when you run:
 bundle exec rake spec Bundle The first command you are running is bundle. Bundle is kinda like virtualenv for Ruby. It makes sure that you use the same ruby libraries that you, everyone, and puppetmasters use.
-Bundle uses a Gemfile, and searches downwards. As long as you have the Gemfile in the puppet repo, it will work." />
+Bundle uses a Gemfile, and searches downwards. As long as you have the Gemfile in the puppet repo, it will work.
+Exec The second part is exec." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/What-Happens-When-You-Run-Puppet-Tests/" />
 <meta property="article:published_time" content="2014-03-31T05:33:58+00:00" />
@@ -18,7 +19,8 @@ Bundle uses a Gemfile, and searches downwards. As long as you have the Gemfile i
 <meta name="twitter:title" content="What Happens When You Run Puppet Tests"/>
 <meta name="twitter:description" content="Breaking down bundle exec rake spec What is happening when you run:
 bundle exec rake spec Bundle The first command you are running is bundle. Bundle is kinda like virtualenv for Ruby. It makes sure that you use the same ruby libraries that you, everyone, and puppetmasters use.
-Bundle uses a Gemfile, and searches downwards. As long as you have the Gemfile in the puppet repo, it will work."/>
+Bundle uses a Gemfile, and searches downwards. As long as you have the Gemfile in the puppet repo, it will work.
+Exec The second part is exec."/>
 
 
     <meta name="description" content="">
@@ -108,60 +110,42 @@ Bundle uses a Gemfile, and searches downwards. As long as you have the Gemfile i
 </p>
         </div>
         <div class="col s12 m8 offset-m2 l6">
-            
-
-<h2 id="breaking-down-bundle-exec-rake-spec">Breaking down bundle exec rake spec</h2>
-
+            <h2 id="breaking-down-bundle-exec-rake-spec">Breaking down bundle exec rake spec</h2>
 <p>What is happening when you run:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bundle exec rake spec</code></pre></div>
-<h4 id="bundle">Bundle</h4>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bundle exec rake spec
+</code></pre></div><h4 id="bundle">Bundle</h4>
 <p>The first command you are running is <a href="http://bundler.io/">bundle</a>. Bundle is
 kinda like virtualenv for Ruby. It makes sure that you use the same ruby
 libraries that you, everyone, and puppetmasters use.</p>
-
 <p>Bundle uses a Gemfile, and searches downwards. As long as you have the Gemfile
 in the puppet repo, it will work.</p>
-
 <h4 id="exec">Exec</h4>
-
 <p>The second part is exec. Exec is an argument to bundle, it simply means run a
 command. Because you are running it in a “bundled” environment, it runs the
 next command that is part of your bundle, with the ruby libraries in your
 Gemfile.</p>
-
 <h4 id="rake">Rake</h4>
-
 <p>The third part is rake.  Rake is like Make for Ruby. It requires a Rakefile.
 Each puppet module needs a Rakefile.</p>
-
 <p>You don’t need to re-invent the Rakefile, simply have this in it:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">require <span style="color:#e6db74">&#39;puppetlabs_spec_helper/rake_tasks&#39;</span></code></pre></div>
-<p>This ensures that we are all running tests in the same way.</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">require <span style="color:#e6db74">&#39;puppetlabs_spec_helper/rake_tasks&#39;</span>
+</code></pre></div><p>This ensures that we are all running tests in the same way.</p>
 <h4 id="spec">Spec</h4>
-
 <p>Spec is a “rake task” that runs Rspec. Rspec is a ruby testing framework.
 Rspec + puppet-rspec is a whole other thing described Next Section.</p>
-
 <h2 id="how-does-rspec-test-puppet-code">How does Rspec Test Puppet Code?</h2>
-
 <p>If you are running bundle exec rake spec, rspec takes over in the environment
- provided by bundler. It gives you all the gems necissary to do the job, but
+provided by bundler. It gives you all the gems necissary to do the job, but
 how does Rspec know about Puppet Code?</p>
-
 <p>If you are including the puppetlabs_spec_helper/rake_tasks, your
 <a href="https://github.com/puppetlabs/puppetlabs_spec_helper/blob/master/lib/puppetlabs_spec_helper/rake_tasks.rb#L106">exact task</a>
 includes the prep/test/clean stuff.</p>
-
 <p>You need some boilerplate files in place for rspec-puppet tests to run. You can
 either run</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rspec-puppet-init</code></pre></div>
-<p>Or you can <a href="http://rspec-puppet.com/setup/">manually setup</a> the files and folders.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rspec-puppet-init
+</code></pre></div><p>Or you can <a href="http://rspec-puppet.com/setup/">manually setup</a> the files and folders.
 Here I will describe the minimal set of files you need:</p>
-
-<h3 id="fixtures-yml">.fixtures.yml</h3>
-
+<h3 id="fixturesyml">.fixtures.yml</h3>
 <p>.fixtures.yml is a puppet_spec_helper construct that allows you to symlink in
 other modules that might be required to test your code. For example you might
 require functions from the stdlib. How does Rspec know where stdlib is?</p>
@@ -169,19 +153,16 @@ require functions from the stdlib. How does Rspec know where stdlib is?</p>
   repositories:
     stdlib: <span style="color:#e6db74">&#34;git://github.com/puppetlabs/puppetlabs-stdlib.git&#34;</span>
   symlinks:
-    your_module: <span style="color:#e6db74">&#34;#{source_dir}&#34;</span></code></pre></div>
-<p>When rspec runs the preparation parts, the spec_helper will create symlinks,
+    your_module: <span style="color:#e6db74">&#34;#{source_dir}&#34;</span>
+</code></pre></div><p>When rspec runs the preparation parts, the spec_helper will create symlinks,
 or <a href="https://github.com/puppetlabs/puppetlabs_spec_helper#fixtures-examples">clone repos, or whatever.</a></p>
-
-<h3 id="spec-spec-helper-rb">spec/spec_helper.rb</h3>
-
+<h3 id="specspechelperrb">spec/spec_helper.rb</h3>
 <p>spec/spec_helper.rb is a file you need in place for your rspec tests to reference.
 If you are using the puppetlabs_spec_helper gem, it is only one line:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">require <span style="color:#e6db74">&#39;puppetlabs_spec_helper/module_spec_helper&#39;</span></code></pre></div>
-<p>This spec_helper.rb file can now be referenced, and by doing so will
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">require <span style="color:#e6db74">&#39;puppetlabs_spec_helper/module_spec_helper&#39;</span>
+</code></pre></div><p>This spec_helper.rb file can now be referenced, and by doing so will
 allow Ruby to import all of the puppet-specific Rspec matchers it needs to
 function.</p>
-
 <p>For example, at the top of every Rspec ruby file you should see something like this:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">require <span style="color:#e6db74">&#39;spec_helper&#39;</span>
 
@@ -189,15 +170,12 @@ describe <span style="color:#e6db74">&#39;my_module&#39;</span> <span style="col
 
   it { should compile }
 
-<span style="color:#66d9ef">end</span></code></pre></div>
-<h3 id="directory-structure">Directory structure</h3>
-
+<span style="color:#66d9ef">end</span>
+</code></pre></div><h3 id="directory-structure">Directory structure</h3>
 <p>Putting files in the right places allows Rspec to autodetect them. Giving them a
 conventional name allows rspec to glob them.</p>
-
 <p>As the scope of your testing increases, a well-organized directory structure is
 essential:</p>
-
 <pre><code>├── spec
 │   ├── classes
 │   │   └── example_spec.rb
@@ -208,15 +186,10 @@ essential:</p>
 │   ├── spec_helper_system.rb
 │   └── system
 │       └── basic_spec.rb
-</code></pre>
-
-<h3 id="the-tests">The Tests</h3>
-
+</code></pre><h3 id="the-tests">The Tests</h3>
 <p>How to write puppet tests is outside the scope of this particular blog post.</p>
-
 <p>I recommend looking at solid examples from puppetlabs&rsquo; github, or right from the
 <a href="http://rspec-puppet.com/tutorial/">offical documentation</a>.</p>
-
 <p>But essentially, Rspec runs puppet in a noop mode, only generating a catelog
 of what it would do. Then the rspec tests use <a href="http://rspec-puppet.com/matchers/">matchers</a>
 to describe assertions against the catelog.</p>

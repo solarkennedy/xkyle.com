@@ -20,7 +20,7 @@
       <description>I love my low end boxes. I also love mosh.
 Low end boxes usually are tight on resources, so Dropbear is often used as a lightweight ssh server. Mosh is mostly tested with openssh-client/server, so I think there are some bugs.
 But it can work, just make sure:
- You are using the same version of mosh on the server as you are on your client. (otherwise they may not support the same command line options)</description>
+  You are using the same version of mosh on the server as you are on your client. (otherwise they may not support the same command line options)</description>
     </item>
     
   </channel>

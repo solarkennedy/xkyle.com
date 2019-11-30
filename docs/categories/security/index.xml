@@ -27,7 +27,7 @@ Install an External Root Overlay What the heck does that mean? OpenWrt uses an i
       <pubDate>Mon, 01 Jun 2009 08:00:51 +0000</pubDate>
       
       <guid>/my-wireless-cracking-tool/</guid>
-      <description>I&amp;rsquo;ve become a semi-expert on wireless networking and their security features.. and how to get around them. Before I continue I want to emphasize:
+      <description>I&#39;ve become a semi-expert on wireless networking and their security features.. and how to get around them. Before I continue I want to emphasize:
  The act of cracking encryption is not illegal just like picking a lock is not illegal. It is the unauthorized access of that network which is illegal, just like breaking and entering is illegal.
  So. To sum it up, there are two types of encryption.</description>
     </item>
@@ -49,7 +49,7 @@ root@a:/# cat myspace.hackedlist | cut -f 2 -d : | sort | uniq -c | sort -n | ta
       
       <guid>/my-home-made-laptop-security-program/</guid>
       <description>The NetworkManager program in linux has a create feature called a dispatcher, which can run arbitrary programs when certian things about the network change. For instance it can turn on a firewall or notify a user when the network comes up, or start up an arp alert program!
-I wanted a program that would alert me of my laptop&amp;rsquo;s where-a-bouts, as well as use the webcam to take a picture, in order to aid me in tracking it down if it got stolen.</description>
+I wanted a program that would alert me of my laptop&#39;s where-a-bouts, as well as use the webcam to take a picture, in order to aid me in tracking it down if it got stolen.</description>
     </item>
     
     <item>
@@ -79,7 +79,7 @@ Ettercap is an amazing tool. Not only does it have a console, curses, and graphi
       <pubDate>Thu, 21 Aug 2008 11:59:57 +0000</pubDate>
       
       <guid>/custom-arp-alerts-ii/</guid>
-      <description>So I&amp;rsquo;ve found a better way to do what I did in the previous post. Instead of running a separate script to parse the arp alert logs, I have arp alert itself send the alerts! The key is this line in the arpalert.conf
+      <description>So I&#39;ve found a better way to do what I did in the previous post. Instead of running a separate script to parse the arp alert logs, I have arp alert itself send the alerts! The key is this line in the arpalert.conf
 action on detect = &amp;quot;/etc/scripts/arp-alert&amp;quot;  Its so simple, it just runs that script sending the information about the alert as certain arguments. With this I have more control over the formatting of arpalert messages:</description>
     </item>
     
@@ -89,7 +89,7 @@ action on detect = &amp;quot;/etc/scripts/arp-alert&amp;quot;  Its so simple, it
       <pubDate>Wed, 20 Aug 2008 23:17:05 +0000</pubDate>
       
       <guid>/custom-arp-alerts/</guid>
-      <description>So I was looking around, and I wanted some sort of tool to allow me to be more aware about what was happening in the lower &amp;ldquo;bowels&amp;rdquo; of the network that I&amp;rsquo;m on with my laptop. So what is it that I want&amp;hellip;
+      <description>So I was looking around, and I wanted some sort of tool to allow me to be more aware about what was happening in the lower &amp;ldquo;bowels&amp;rdquo; of the network that I&#39;m on with my laptop. So what is it that I want&amp;hellip;
 What I really want is some sort of mac-address based buddy list. One that would show my a list of the mac addresses talking on my network, and allow me to alias them.</description>
     </item>
     

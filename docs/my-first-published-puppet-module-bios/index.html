@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <meta property="og:title" content="My First Published Puppet Module: bios" />
-<meta property="og:description" content="What? I&rsquo;ve written lots of crappy Puppet modules. Here is a slightly less crappy module that can help you configure BIOS settings on your servers for you.
+<meta property="og:description" content="What? I&#39;ve written lots of crappy Puppet modules. Here is a slightly less crappy module that can help you configure BIOS settings on your servers for you.
 It works on Dell C class servers and Intel platforms. Please pull request or email me if you want to have it work on something else too!
 Why? BIOS settings should be considered configuration just like any other configuration, and hence managed by your configuration management tool, if possible." />
 <meta property="og:type" content="article" />
@@ -16,7 +16,7 @@ Why? BIOS settings should be considered configuration just like any other config
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="My First Published Puppet Module: bios"/>
-<meta name="twitter:description" content="What? I&rsquo;ve written lots of crappy Puppet modules. Here is a slightly less crappy module that can help you configure BIOS settings on your servers for you.
+<meta name="twitter:description" content="What? I&#39;ve written lots of crappy Puppet modules. Here is a slightly less crappy module that can help you configure BIOS settings on your servers for you.
 It works on Dell C class servers and Intel platforms. Please pull request or email me if you want to have it work on something else too!
 Why? BIOS settings should be considered configuration just like any other configuration, and hence managed by your configuration management tool, if possible."/>
 
@@ -108,31 +108,18 @@ Why? BIOS settings should be considered configuration just like any other config
 </p>
         </div>
         <div class="col s12 m8 offset-m2 l6">
-            
-
-<h1 id="what">What?</h1>
-
-<p>I&rsquo;ve written lots of crappy Puppet modules. Here is a slightly less crappy module that can help you configure BIOS settings on your servers for you.</p>
-
+            <h1 id="what">What?</h1>
+<p>I've written lots of crappy Puppet modules. Here is a slightly less crappy module that can help you configure BIOS settings on your servers for you.</p>
 <p>It works on Dell C class servers and Intel platforms. Please pull request or email me if you want to have it work on something else too!</p>
-
 <h1 id="why">Why?</h1>
-
 <p>BIOS settings should be considered configuration just like any other configuration, and hence managed by your configuration management tool, if possible.</p>
-
-<p><a href="http://forge.puppetlabs.com/KyleAnderson/bios">http://forge.puppetlabs.com/KyleAnderson/bios</a></p>
-
-<p><a href="https://github.com/solarkennedy/puppet-bios">https://github.com/solarkennedy/puppet-bios</a></p>
-
+<p><a href="http://forge.puppetlabs.com/KyleAnderson/bios"><a href="http://forge.puppetlabs.com/KyleAnderson/bios">http://forge.puppetlabs.com/KyleAnderson/bios</a></a></p>
+<p><a href="https://github.com/solarkennedy/puppet-bios"><a href="https://github.com/solarkennedy/puppet-bios">https://github.com/solarkennedy/puppet-bios</a></a></p>
 <h1 id="how"> How?</h1>
-
 <p>Install it:</p>
-
 <pre><code>puppet module install KyleAnderson/bios
 </code></pre>
-
 <p>Here are some examples on how to use it:</p>
-
 <pre><code># Easy to set turbo on a dell 
 bios::setting {'turbo_mode': value =&gt; 'disabled' } 
 

@@ -20,7 +20,7 @@
       <description>A strange string appeared at the bottom of a Balanced Payments blog post:
  NmQ2ZjYzMmU3Mzc0NmU2NTZkNzk2MTcwNjQ2NTYzNm U2MTZjNjE2MjQwNjU2MzZlNjU3MjY1NjY2NjY5NjQ2MTY1N mI2MTZkNmY3NDc0NmU2MTc3Njk=
  One of those puzzles to attract coders I guess. The guys at Hacker News spilled the beans, so lets spill them some more.
-First though,** Mad Props** to the Balanced team for thinking &amp;ldquo;outside&amp;rdquo; the unit-test-box. Plus Jenkins rocks. The world needs more Jenkins. Bash? I&amp;rsquo;m not a developer, so my first instinct was to use the existing set of tools that people have already written to solve this puzzle:</description>
+First though,** Mad Props** to the Balanced team for thinking &amp;ldquo;outside&amp;rdquo; the unit-test-box. Plus Jenkins rocks. The world needs more Jenkins. Bash? I&#39;m not a developer, so my first instinct was to use the existing set of tools that people have already written to solve this puzzle:</description>
     </item>
     
     <item>
@@ -31,7 +31,7 @@ First though,** Mad Props** to the Balanced team for thinking &amp;ldquo;outside
       <guid>/discrete-wavelets-final-project-decaptcha/</guid>
       <description>This semester I took a class on Discrete Wavelets. It was awesome. The coolest part was our group final project. My group had the best topic by far: Decoding a Captcha! (Click on any of the following images to view them full size)
 [](/uploads/file_captcha.jpg)
-We&amp;rsquo;ve all seen Captchas before. They are used on websites to make sure that the person on the website is a real human, not a computer program.</description>
+We&#39;ve all seen Captchas before. They are used on websites to make sure that the person on the website is a real human, not a computer program.</description>
     </item>
     
     <item>
@@ -40,7 +40,7 @@ We&amp;rsquo;ve all seen Captchas before. They are used on websites to make sure
       <pubDate>Mon, 29 Sep 2008 17:19:35 +0000</pubDate>
       
       <guid>/pap-solutions-hack/</guid>
-      <description>My girlfirend likes to do these puzzles called Pic-A-Pix from ConceptisPuzzles. They use a matrix of numbers to hint the puzzler to to filling in pixels to create pixel art. Sometimes there is color. Every week four new PAP&amp;rsquo;s are pushed out, and I&amp;rsquo;ve been told that the answers are somewhere on the website&amp;hellip;. but that would be cheating. :)
+      <description>My girlfirend likes to do these puzzles called Pic-A-Pix from ConceptisPuzzles. They use a matrix of numbers to hint the puzzler to to filling in pixels to create pixel art. Sometimes there is color. Every week four new PAP&#39;s are pushed out, and I&#39;ve been told that the answers are somewhere on the website&amp;hellip;. but that would be cheating. :)
 So I wrote my own program to decode these and make images using html tables.</description>
     </item>
     
@@ -50,7 +50,7 @@ So I wrote my own program to decode these and make images using html tables.</de
       <pubDate>Thu, 21 Aug 2008 11:59:57 +0000</pubDate>
       
       <guid>/custom-arp-alerts-ii/</guid>
-      <description>So I&amp;rsquo;ve found a better way to do what I did in the previous post. Instead of running a separate script to parse the arp alert logs, I have arp alert itself send the alerts! The key is this line in the arpalert.conf
+      <description>So I&#39;ve found a better way to do what I did in the previous post. Instead of running a separate script to parse the arp alert logs, I have arp alert itself send the alerts! The key is this line in the arpalert.conf
 action on detect = &amp;quot;/etc/scripts/arp-alert&amp;quot;  Its so simple, it just runs that script sending the information about the alert as certain arguments. With this I have more control over the formatting of arpalert messages:</description>
     </item>
     
@@ -60,7 +60,7 @@ action on detect = &amp;quot;/etc/scripts/arp-alert&amp;quot;  Its so simple, it
       <pubDate>Wed, 20 Aug 2008 23:17:05 +0000</pubDate>
       
       <guid>/custom-arp-alerts/</guid>
-      <description>So I was looking around, and I wanted some sort of tool to allow me to be more aware about what was happening in the lower &amp;ldquo;bowels&amp;rdquo; of the network that I&amp;rsquo;m on with my laptop. So what is it that I want&amp;hellip;
+      <description>So I was looking around, and I wanted some sort of tool to allow me to be more aware about what was happening in the lower &amp;ldquo;bowels&amp;rdquo; of the network that I&#39;m on with my laptop. So what is it that I want&amp;hellip;
 What I really want is some sort of mac-address based buddy list. One that would show my a list of the mac addresses talking on my network, and allow me to alias them.</description>
     </item>
     

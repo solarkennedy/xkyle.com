@@ -111,30 +111,22 @@ uci set network.wan.ifname=eth1 uci commit reboot  Whoa."/>
         </div>
         <div class="col s12 m8 offset-m2 l6">
             <p>Have a fancy <a href="http://www.freedompop.com/">FreedomPop</a> Overdrive Pro? Want to hook it up to your OpenWrt based router to use as a backup (or primary?) internet connection? Lets do it.</p>
-
 <p>Plug it into your router via USB. Then run:</p>
-
 <pre><code>opkg install kmod-usb-net-cdc-ether
 </code></pre>
-
 <p>Run dmesg and it will report which eth device came up. Mine shows up as &ldquo;eth1&rdquo;. Now make eth1 your &ldquo;wan&rdquo; interface:</p>
-
 <pre><code>uci set network.wan.ifname=eth1
 uci commit
 reboot
 </code></pre>
-
 <p>Whoa.</p>
-
 <p>Or, set it up as a second wan interface and use <a href="http://wiki.openwrt.org/doc/uci/multiwan">Multiwan</a>:</p>
-
 <pre><code>uci set network.wan2=interface
 uci set network.wan2.proto=dhcp
 uci set network.wan2.ifname=eth1
 uci set network.wan2.dns=8.8.4.4, 8.8.8.8
 uci commit
 </code></pre>
-
 <p>Alternatively you could add it to your main bridge with a static ip and use it as an alternate gateway on a per-client basis. Or just plug it into a pc. Or just use the built-in wifi of the device itself, but who would want to do that?</p>
 
         </div>

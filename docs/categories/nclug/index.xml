@@ -64,13 +64,12 @@ You will need the linux &amp;ldquo;words&amp;rdquo; dictionary, which is install
       
       <guid>/computer-assisted-jenga-with-the-wii-balance-board-and-linux/</guid>
       <description>I like to think about how games work, in the case of Jenga, it is just physics!
-But don&amp;rsquo;t you wish you could peel back reality and see what is happening with the physics from the inside? Well now you can, with the help of a Wii Balance Board.
+But don&#39;t you wish you could peel back reality and see what is happening with the physics from the inside? Well now you can, with the help of a Wii Balance Board.
 
 For the setup you need these ingredients:
- Wii Balance Board
- Computer with Bluetooth
- Linux, preferably Ubuntu
- Jenga Set, alternatively &amp;ldquo;Tension Tower&amp;ldquo;</description>
+  Wii Balance Board
+  Computer with Bluetooth
+  Linux, preferably Ubuntu</description>
     </item>
     
     <item>
@@ -90,7 +89,7 @@ How much would you pay for such a neat little device?</description>
       <pubDate>Fri, 16 Jul 2010 22:42:46 +0000</pubDate>
       
       <guid>/setting-up-your-very-own-pxe-server/</guid>
-      <description>Ever fumbled around your house looking for a Linux CD, but you can&amp;rsquo;t find it? Ever suspected that your ram was going bad, but you didn&amp;rsquo;t have a way to test it? Ever needed to backup files on a computer that had a dead and broken operating system? A solution to all these problems is a super cool tool called PXE booting. PXE booting allows you to load alternative operating systems over the network, without the need for cds, cdroms, etc!</description>
+      <description>Ever fumbled around your house looking for a Linux CD, but you can&#39;t find it? Ever suspected that your ram was going bad, but you didn&#39;t have a way to test it? Ever needed to backup files on a computer that had a dead and broken operating system? A solution to all these problems is a super cool tool called PXE booting. PXE booting allows you to load alternative operating systems over the network, without the need for cds, cdroms, etc!</description>
     </item>
     
     <item>
@@ -99,7 +98,7 @@ How much would you pay for such a neat little device?</description>
       <pubDate>Wed, 19 May 2010 01:20:39 +0000</pubDate>
       
       <guid>/isps-should-capitalize-on-their-reverse-dns/</guid>
-      <description>Actually&amp;hellip; no they shouldn&amp;rsquo;t. Here is what it would look like:
+      <description>Actually&amp;hellip; no they shouldn&#39;t. Here is what it would look like:
  My traceroute [v0.75] kyle (0.0.0.0) Tue May 18 15:14:52 2010 Keys: Help Display mode Restart statistics Order of fields quit Host Loss% Snt Last Avg Best Wrst StDev 1. 192.168.0.1 0.0% 10 12.0 15.6 11.3 33.6 6.7 2 UPGRADE-YOUR-CONNECTION-1800-COMCAST.res.comcast.net 0.0% 10 13.1 15.8 11.5 31.1 5.9 3. TURBOBOOST-UP-TO-50MBS.car1.Den.core.comcast.net 44.4% 10 15.3 17.7 11.8 23.1 4.5 4. LIKE-WHAT-YOU-SEE?-GET-WITH-LEVEL3!.Level3.net 0.0% 10 27.</description>
     </item>
     
@@ -120,7 +119,7 @@ I decided to do a twitter search for anything with a youtube link, and then let 
       <pubDate>Sun, 18 Apr 2010 03:50:33 +0000</pubDate>
       
       <guid>/sparkfuns-autonomous-vehicle-competition/</guid>
-      <description>The Sparkfun Autonomous Vehicle Competition (AVC) was a smash! You can watch some footage of the event at Sparkfun&amp;rsquo;s Ustream page.
+      <description>The Sparkfun Autonomous Vehicle Competition (AVC) was a smash! You can watch some footage of the event at Sparkfun&#39;s Ustream page.
 Here is what the starting / finishing line looked like:
 
 And some judges on the roof watching to make sure the Flying robots do not cut corners.
@@ -134,7 +133,7 @@ I was very impressed by the UAVs (unmanned aerial vehicles). Most of them were a
       <pubDate>Sun, 11 Apr 2010 00:42:25 +0000</pubDate>
       
       <guid>/yes-yes-very-professional/</guid>
-      <description>I&amp;rsquo;m not saying that all OS&amp;rsquo;s don&amp;rsquo;t have problems, but it would be nice if you didn&amp;rsquo;t plaster the problems all over the store :)</description>
+      <description>I&#39;m not saying that all OS&#39;s don&#39;t have problems, but it would be nice if you didn&#39;t plaster the problems all over the store :)</description>
     </item>
     
     <item>
@@ -153,7 +152,7 @@ For those of you who believe that &amp;ldquo;microblogging&amp;rdquo; is a new f
       <pubDate>Fri, 05 Mar 2010 05:44:25 +0000</pubDate>
       
       <guid>/xkcds-collatz-conjecture/</guid>
-      <description>In the XKCD comic dated 3/4/2010, the Collatz Conjecture presents the following scenario: Well I don&amp;rsquo;t know if your friends will stop calling your or not, but I was curious about what the graph would actually look like. The graph in the comic looks like it was created with Graphviz, one of my favorite programs!
+      <description>In the XKCD comic dated 3/4/2010, the Collatz Conjecture presents the following scenario: Well I don&#39;t know if your friends will stop calling your or not, but I was curious about what the graph would actually look like. The graph in the comic looks like it was created with Graphviz, one of my favorite programs!
 So I wrote a quick bash script to generate the approrpiate links for graphviz to interpret:</description>
     </item>
     
@@ -192,7 +191,7 @@ If you play any of these games, feel free to ally with me :) If aftershock bans 
       <pubDate>Wed, 16 Sep 2009 01:43:46 +0000</pubDate>
       
       <guid>/final-clock-post/</guid>
-      <description>I&amp;rsquo;ve finally moved to Colorado, and I had to leave the big clock behind, and luckily I had finished it:
+      <description>I&#39;ve finally moved to Colorado, and I had to leave the big clock behind, and luckily I had finished it:
 
 I finilized the code, installed the clock in my church, and programmed it for there needs. The code is stored here if someone want to see it. If you want to check it out run:
 git clone https://github.com/solarkennedy/clock.git  I have a little more technical info on my wiki, but it basically goes like this:</description>
@@ -205,10 +204,10 @@ git clone https://github.com/solarkennedy/clock.git  I have a little more techni
       
       <guid>/toorcamp-day-1/</guid>
       <description>When I first arrived at toor camp, I was issued a Hardhat and a kit of electronics to construct my own badge:
-
+[](/uploads/DCAM0007-toorcamp.jpg)
 What a cool start! Combined with the already cool scenery:
 
-Only one problem: no silo access. We&amp;rsquo;ll see if that changes for day two&amp;hellip;</description>
+Only one problem: no silo access. We&#39;ll see if that changes for day two&amp;hellip;</description>
     </item>
     
     <item>
@@ -219,7 +218,7 @@ Only one problem: no silo access. We&amp;rsquo;ll see if that changes for day tw
       <guid>/discrete-wavelets-final-project-decaptcha/</guid>
       <description>This semester I took a class on Discrete Wavelets. It was awesome. The coolest part was our group final project. My group had the best topic by far: Decoding a Captcha! (Click on any of the following images to view them full size)
 [](/uploads/file_captcha.jpg)
-We&amp;rsquo;ve all seen Captchas before. They are used on websites to make sure that the person on the website is a real human, not a computer program.</description>
+We&#39;ve all seen Captchas before. They are used on websites to make sure that the person on the website is a real human, not a computer program.</description>
     </item>
     
     <item>
@@ -228,7 +227,7 @@ We&amp;rsquo;ve all seen Captchas before. They are used on websites to make sure
       <pubDate>Tue, 03 Mar 2009 18:58:33 +0000</pubDate>
       
       <guid>/verizon-fios-wireless-key-calculator/</guid>
-      <description>More Update: There are new AP&amp;rsquo;s that don&amp;rsquo;t conform to this pattern. If the calculator doesn&amp;rsquo;t work on yours, maybe it is like these non-conforming-wep keys
+      <description>More Update: There are new AP&#39;s that don&#39;t conform to this pattern. If the calculator doesn&#39;t work on yours, maybe it is like these non-conforming-wep keys
 Update: A cool cool guy named Dylan Taylor wrote a java implementation of this script: http://www.fwc.dylanmtaylor.com/ if you need an offline version
 Update: I wrote a bash implementation to make it easy to script, and for offline usage
 In my previous post I showed a correlation between the WEP key of a Verizon FiOS install and the MAC address of the access point.</description>
@@ -240,10 +239,10 @@ In my previous post I showed a correlation between the WEP key of a Verizon FiOS
       <pubDate>Sat, 07 Feb 2009 18:29:04 +0000</pubDate>
       
       <guid>/verizon-fios-wireless-security-analysis/</guid>
-      <description>Take a look at some wireless keys that I&amp;rsquo;ve collected from some Verizon FiOS installs around Tampa:
+      <description>Take a look at some wireless keys that I&#39;ve collected from some Verizon FiOS installs around Tampa:
  00-18-01-EA-3D-99,E3X12,6,WEP,1801349FCA 00-18-01-F0-6D-C4,NAMX2,1,WEP,18014B311F 00-18-01-F0-95-78,MWXV2,11,WEP,180149FF66 00-18-01-FD-4F-0E,R0LC7,1,WEP,1801BC5C6B 00-18-01-FE-15-46,JE2K7,1,WEP,1801C1B02B 00-18-01-FF-DF-DD,HH150,1,WEP,1F900396C5 00-1F-90-E0-B1-F8,3RA18,6,WEP,1801CDF4AF 00-1F-90-E0-B5-AC,OQ838,6,WEP,1801CF5700 00-1F-90-E2-7E-61,7WY20,6,WEP,1F90021D27 00-1F-90-E3-1E-90,C7WA0,6,WEP,1F9007C188 00-1F-90-E3-2E-07,DJP80,6,WEP,1F90063349 00-1F-90-E6-A7-D5,BJ2Z0,11,WEP,1F9018F797 00-1F-90-E6-D4-E3,RSHZ0,4,WEP,1F901944DB
  What you are looking at here is MAC, SSID, Channel, Encryption, Key.
-Notice that they are all WEP, 64bit, with 5 Alpha numeric SSID&amp;rsquo;s.
+Notice that they are all WEP, 64bit, with 5 Alpha numeric SSID&#39;s.
 I want to emphasize that these are the defaults, and only geeks, nerds and the like change the defaults.</description>
     </item>
     
@@ -253,9 +252,9 @@ I want to emphasize that these are the defaults, and only geeks, nerds and the l
       <pubDate>Sat, 06 Dec 2008 22:05:55 +0000</pubDate>
       
       <guid>/giving-my-wrt54gl-a-2g-drive/</guid>
-      <description>The WRT54GL is a pretty cool little toy. Yes it is a router with a cheezy web interface for grandmas with ESSID&amp;rsquo;s named &amp;ldquo;linksys&amp;rdquo;. But you can flash it with your own linux and solder in your own SD card to turn it from a 4MB machine to a 2GB machine&amp;hellip; far out!
+      <description>The WRT54GL is a pretty cool little toy. Yes it is a router with a cheezy web interface for grandmas with ESSID&#39;s named &amp;ldquo;linksys&amp;rdquo;. But you can flash it with your own linux and solder in your own SD card to turn it from a 4MB machine to a 2GB machine&amp;hellip; far out!
 
-Above it the bare board that I&amp;rsquo;ve unscrewed out of the thing. Some solder + a card&amp;hellip;.</description>
+Above it the bare board that I&#39;ve unscrewed out of the thing. Some solder + a card&amp;hellip;.</description>
     </item>
     
     <item>
@@ -265,7 +264,7 @@ Above it the bare board that I&amp;rsquo;ve unscrewed out of the thing. Some sol
       
       <guid>/my-home-made-laptop-security-program/</guid>
       <description>The NetworkManager program in linux has a create feature called a dispatcher, which can run arbitrary programs when certian things about the network change. For instance it can turn on a firewall or notify a user when the network comes up, or start up an arp alert program!
-I wanted a program that would alert me of my laptop&amp;rsquo;s where-a-bouts, as well as use the webcam to take a picture, in order to aid me in tracking it down if it got stolen.</description>
+I wanted a program that would alert me of my laptop&#39;s where-a-bouts, as well as use the webcam to take a picture, in order to aid me in tracking it down if it got stolen.</description>
     </item>
     
     <item>
@@ -274,7 +273,7 @@ I wanted a program that would alert me of my laptop&amp;rsquo;s where-a-bouts, a
       <pubDate>Tue, 18 Nov 2008 03:01:04 +0000</pubDate>
       
       <guid>/vnc-surpirse/</guid>
-      <description>Don&amp;rsquo;t you just love it when co-workers communicate with you in the most interesting ways???
+      <description>Don&#39;t you just love it when co-workers communicate with you in the most interesting ways???
 
 Sorry it is so small. Click on it!</description>
     </item>
@@ -288,7 +287,7 @@ Sorry it is so small. Click on it!</description>
       <description>You may remember my old laptop from such posts as this.
 Well it broke, so I bought another one!
 
-It even has the original stickers. But.. Its slower than I remember. So I&amp;rsquo;m trying out different Ubuntu versions to see what boots the fastest. Here are my methodology and results.
+It even has the original stickers. But.. Its slower than I remember. So I&#39;m trying out different Ubuntu versions to see what boots the fastest. Here are my methodology and results.
 Methodology: The first number is the ammount of seconds from the 0 in the grub countdown till the X in the initial X-server.</description>
     </item>
     
@@ -319,7 +318,7 @@ Ettercap is an amazing tool. Not only does it have a console, curses, and graphi
       <pubDate>Mon, 29 Sep 2008 17:19:35 +0000</pubDate>
       
       <guid>/pap-solutions-hack/</guid>
-      <description>My girlfirend likes to do these puzzles called Pic-A-Pix from ConceptisPuzzles. They use a matrix of numbers to hint the puzzler to to filling in pixels to create pixel art. Sometimes there is color. Every week four new PAP&amp;rsquo;s are pushed out, and I&amp;rsquo;ve been told that the answers are somewhere on the website&amp;hellip;. but that would be cheating. :)
+      <description>My girlfirend likes to do these puzzles called Pic-A-Pix from ConceptisPuzzles. They use a matrix of numbers to hint the puzzler to to filling in pixels to create pixel art. Sometimes there is color. Every week four new PAP&#39;s are pushed out, and I&#39;ve been told that the answers are somewhere on the website&amp;hellip;. but that would be cheating. :)
 So I wrote my own program to decode these and make images using html tables.</description>
     </item>
     
@@ -339,7 +338,7 @@ So I wrote my own program to decode these and make images using html tables.</de
       <pubDate>Thu, 21 Aug 2008 11:59:57 +0000</pubDate>
       
       <guid>/custom-arp-alerts-ii/</guid>
-      <description>So I&amp;rsquo;ve found a better way to do what I did in the previous post. Instead of running a separate script to parse the arp alert logs, I have arp alert itself send the alerts! The key is this line in the arpalert.conf
+      <description>So I&#39;ve found a better way to do what I did in the previous post. Instead of running a separate script to parse the arp alert logs, I have arp alert itself send the alerts! The key is this line in the arpalert.conf
 action on detect = &amp;quot;/etc/scripts/arp-alert&amp;quot;  Its so simple, it just runs that script sending the information about the alert as certain arguments. With this I have more control over the formatting of arpalert messages:</description>
     </item>
     

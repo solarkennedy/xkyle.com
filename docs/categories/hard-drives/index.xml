@@ -18,7 +18,7 @@
       
       <guid>/how-to-benchmark-harddrives-in-linux/</guid>
       <description>So you have some new harddrives. Maybe you are thinking about building a DIY storage server? Maybe some Raid? Maybe you just want to know if your drives are performing as well as when you bought them? How can you know? Measurement is Knowing.
-The thing about benchmarks is that you always must be skeptical. Each system&amp;rsquo;s particular disks, controller, raid level and settings, cpu, ram, filesystem, operating system, etc can GREATLY affect the performance of a system.</description>
+The thing about benchmarks is that you always must be skeptical. Each system&#39;s particular disks, controller, raid level and settings, cpu, ram, filesystem, operating system, etc can GREATLY affect the performance of a system.</description>
     </item>
     
   </channel>

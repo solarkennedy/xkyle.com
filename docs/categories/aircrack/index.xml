@@ -17,7 +17,7 @@
       <pubDate>Tue, 03 Mar 2009 18:58:33 +0000</pubDate>
       
       <guid>/verizon-fios-wireless-key-calculator/</guid>
-      <description>More Update: There are new AP&amp;rsquo;s that don&amp;rsquo;t conform to this pattern. If the calculator doesn&amp;rsquo;t work on yours, maybe it is like these non-conforming-wep keys
+      <description>More Update: There are new AP&#39;s that don&#39;t conform to this pattern. If the calculator doesn&#39;t work on yours, maybe it is like these non-conforming-wep keys
 Update: A cool cool guy named Dylan Taylor wrote a java implementation of this script: http://www.fwc.dylanmtaylor.com/ if you need an offline version
 Update: I wrote a bash implementation to make it easy to script, and for offline usage
 In my previous post I showed a correlation between the WEP key of a Verizon FiOS install and the MAC address of the access point.</description>
@@ -29,10 +29,10 @@ In my previous post I showed a correlation between the WEP key of a Verizon FiOS
       <pubDate>Sat, 07 Feb 2009 18:29:04 +0000</pubDate>
       
       <guid>/verizon-fios-wireless-security-analysis/</guid>
-      <description>Take a look at some wireless keys that I&amp;rsquo;ve collected from some Verizon FiOS installs around Tampa:
+      <description>Take a look at some wireless keys that I&#39;ve collected from some Verizon FiOS installs around Tampa:
  00-18-01-EA-3D-99,E3X12,6,WEP,1801349FCA 00-18-01-F0-6D-C4,NAMX2,1,WEP,18014B311F 00-18-01-F0-95-78,MWXV2,11,WEP,180149FF66 00-18-01-FD-4F-0E,R0LC7,1,WEP,1801BC5C6B 00-18-01-FE-15-46,JE2K7,1,WEP,1801C1B02B 00-18-01-FF-DF-DD,HH150,1,WEP,1F900396C5 00-1F-90-E0-B1-F8,3RA18,6,WEP,1801CDF4AF 00-1F-90-E0-B5-AC,OQ838,6,WEP,1801CF5700 00-1F-90-E2-7E-61,7WY20,6,WEP,1F90021D27 00-1F-90-E3-1E-90,C7WA0,6,WEP,1F9007C188 00-1F-90-E3-2E-07,DJP80,6,WEP,1F90063349 00-1F-90-E6-A7-D5,BJ2Z0,11,WEP,1F9018F797 00-1F-90-E6-D4-E3,RSHZ0,4,WEP,1F901944DB
  What you are looking at here is MAC, SSID, Channel, Encryption, Key.
-Notice that they are all WEP, 64bit, with 5 Alpha numeric SSID&amp;rsquo;s.
+Notice that they are all WEP, 64bit, with 5 Alpha numeric SSID&#39;s.
 I want to emphasize that these are the defaults, and only geeks, nerds and the like change the defaults.</description>
     </item>
     

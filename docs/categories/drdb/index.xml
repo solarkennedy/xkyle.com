@@ -18,7 +18,7 @@
       
       <guid>/a-drbd-configuration-options-shootout/</guid>
       <description>DRBD is the bomb. Think Raid 1 over the network between two servers. It enables sysadmins (in combination with heartbeat) to increase service uptime, while enabling server downtime. This means you can do kernel updates, do hardware maintenance, upgrade ram, move the server to another rack, etc, all while keeping the service up.
-Because DRBD is often used in high availability scenario, there isn&amp;rsquo;t much room for experimentation with in-production systems.</description>
+Because DRBD is often used in high availability scenario, there isn&#39;t much room for experimentation with in-production systems.</description>
     </item>
     
   </channel>

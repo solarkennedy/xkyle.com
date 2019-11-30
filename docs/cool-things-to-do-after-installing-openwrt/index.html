@@ -106,38 +106,22 @@ Install an External Root Overlay What the heck does that mean? OpenWrt uses an i
 </p>
         </div>
         <div class="col s12 m8 offset-m2 l6">
-            
-
-<p><a href="https://openwrt.org/">OpenWrt</a> is the bomb. Think all the power of a full Linux distro on your tiny home router or plug computer.</p>
-
+            <p><a href="https://openwrt.org/">OpenWrt</a> is the bomb. Think all the power of a full Linux distro on your tiny home router or plug computer.</p>
 <h1 id="install-an-external-root-overlay">Install an External Root Overlay</h1>
-
 <p>What the heck does that mean? OpenWrt uses an ingenious system were the root filesystem is a super compressed squashfs, merged with a read/write jffs2 filesystem called the overlay. This maximizes your available space on the device. Instead of using part of your remaining flash for read/write, you can use a larger, external device for the overlay.</p>
-
 <p>Lots of modern routers have USB ports. Special bonus points if you hack on an SD card mod to a device using only GPIO, like the venerable <a href="http://wiki.openwrt.org/toh/linksys/wrt54g#adding.an.mmcsd.card">WRT54G</a>.</p>
-
-<p>Instructions: <a href="http://wiki.openwrt.org/doc/howto/extroot">http://wiki.openwrt.org/doc/howto/extroot</a></p>
-
+<p>Instructions: <a href="http://wiki.openwrt.org/doc/howto/extroot"><a href="http://wiki.openwrt.org/doc/howto/extroot">http://wiki.openwrt.org/doc/howto/extroot</a></a></p>
 <h1 id="security-tools">Security Tools</h1>
-
 <p>A classic thing to do with any linux device, install every security tool there is. Apparently there are people out there who make a killing pre-installing security tools on small linux devices and selling them back to people who are ignorant of the ways of &ldquo;opkg install nmap&rdquo;</p>
-
 <p>You are smarter than that. If you know if a security tool, there is probably a package for it for you to &ldquo;opkg install&rdquo;. If not, do the world a favor and port it and upload your makefile to the OpenWrt devel mailing list.</p>
-
-<p>Instructions: <a href="http://wiki.openwrt.org/doc/howto/wireless.overview">http://wiki.openwrt.org/doc/howto/wireless.overview</a></p>
-
+<p>Instructions: <a href="http://wiki.openwrt.org/doc/howto/wireless.overview"><a href="http://wiki.openwrt.org/doc/howto/wireless.overview">http://wiki.openwrt.org/doc/howto/wireless.overview</a></a></p>
 <h1 id="make-a-pxe-boot-server">Make a PXE Boot Server</h1>
-
 <p>Believe it or not, a stock OpenWrt install has all the pieces necessary to be a PXE boot server, out of the box. Dnsmasq is awesome.</p>
-
-<p>My Instructions: <a href="https://wiki.xkyle.com/OpenWrt_PXE_Server">https://wiki.xkyle.com/OpenWrt_PXE_Server
-</a>Official Documentation: <a href="http://wiki.openwrt.org/doc/uci/dhcp">http://wiki.openwrt.org/doc/uci/dhcp</a></p>
-
-<h1 id="https-wiki-xkyle-com-openwrt-pxe-server-make-a-guest-hotspot"><a href="https://wiki.xkyle.com/OpenWrt_PXE_Server"> </a>Make a Guest Hotspot</h1>
-
+<p>My Instructions: <a href="https://wiki.xkyle.com/OpenWrt_PXE_Server"><a href="https://wiki.xkyle.com/OpenWrt_PXE_Server">https://wiki.xkyle.com/OpenWrt_PXE_Server</a>
+</a>Official Documentation: <a href="http://wiki.openwrt.org/doc/uci/dhcp"><a href="http://wiki.openwrt.org/doc/uci/dhcp">http://wiki.openwrt.org/doc/uci/dhcp</a></a></p>
+<h1 id="httpswikixkylecomopenwrtpxeservermake-a-guest-hotspot"><a href="https://wiki.xkyle.com/OpenWrt_PXE_Server"> </a>Make a Guest Hotspot</h1>
 <p>This is a cool thing to do. Once only a feature the highest end wireless routers, now possible with almost any router with OpenWrt.</p>
-
-<p>Instructions: <a href="http://wiki.openwrt.org/doc/recipes/guest-wlan">http://wiki.openwrt.org/doc/recipes/guest-wlan</a></p>
+<p>Instructions: <a href="http://wiki.openwrt.org/doc/recipes/guest-wlan"><a href="http://wiki.openwrt.org/doc/recipes/guest-wlan">http://wiki.openwrt.org/doc/recipes/guest-wlan</a></a></p>
 
         </div>
     </section>

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <meta property="og:title" content="XKCD&#39;s Collatz Conjecture" />
-<meta property="og:description" content="In the XKCD comic dated 3/4/2010, the Collatz Conjecture presents the following scenario: Well I don&rsquo;t know if your friends will stop calling your or not, but I was curious about what the graph would actually look like. The graph in the comic looks like it was created with Graphviz, one of my favorite programs!
+<meta property="og:description" content="In the XKCD comic dated 3/4/2010, the Collatz Conjecture presents the following scenario: Well I don&#39;t know if your friends will stop calling your or not, but I was curious about what the graph would actually look like. The graph in the comic looks like it was created with Graphviz, one of my favorite programs!
 So I wrote a quick bash script to generate the approrpiate links for graphviz to interpret:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/xkcds-collatz-conjecture/" />
@@ -15,7 +15,7 @@ So I wrote a quick bash script to generate the approrpiate links for graphviz to
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="XKCD&#39;s Collatz Conjecture"/>
-<meta name="twitter:description" content="In the XKCD comic dated 3/4/2010, the Collatz Conjecture presents the following scenario: Well I don&rsquo;t know if your friends will stop calling your or not, but I was curious about what the graph would actually look like. The graph in the comic looks like it was created with Graphviz, one of my favorite programs!
+<meta name="twitter:description" content="In the XKCD comic dated 3/4/2010, the Collatz Conjecture presents the following scenario: Well I don&#39;t know if your friends will stop calling your or not, but I was curious about what the graph would actually look like. The graph in the comic looks like it was created with Graphviz, one of my favorite programs!
 So I wrote a quick bash script to generate the approrpiate links for graphviz to interpret:"/>
 
 
@@ -107,34 +107,28 @@ So I wrote a quick bash script to generate the approrpiate links for graphviz to
         </div>
         <div class="col s12 m8 offset-m2 l6">
             <p>In the <a href="http://xkcd.com">XKCD</a> comic dated 3/4/2010, the <a href="http://xkcd.com/710/">Collatz Conjecture</a> presents the following scenario:
-<img src="http://imgs.xkcd.com/comics/collatz_conjecture.png" alt="" /></p>
-
-<p>Well I don&rsquo;t know if your friends will stop calling your or not, but I was curious about what the graph would actually look like. The graph in the comic looks like it was created with Graphviz, one of my favorite programs!</p>
-
+<img src="http://imgs.xkcd.com/comics/collatz_conjecture.png" alt=""></p>
+<p>Well I don't know if your friends will stop calling your or not, but I was curious about what the graph would actually look like. The graph in the comic looks like it was created with Graphviz, one of my favorite programs!</p>
 <p>So I wrote a quick bash script to generate the approrpiate links for graphviz to interpret:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    <span style="color:#75715e">#!/bin/bash</span>
     echo <span style="color:#e6db74">&#34;digraph \&#34;xkcd\&#34; {&#34;</span>
-    <span style="color:#66d9ef">for</span> NUMBER in <span style="color:#e6db74">`</span>seq <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">100</span><span style="color:#e6db74">`</span>
+    <span style="color:#66d9ef">for</span> NUMBER in <span style="color:#e6db74">`</span>seq <span style="color:#ae81ff">1</span> 100<span style="color:#e6db74">`</span>
     <span style="color:#66d9ef">do</span>
-      <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $<span style="color:#f92672">[</span>$NUMBER % <span style="color:#ae81ff">2</span><span style="color:#f92672">]</span> -eq <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span> <span style="color:#75715e">#We are even</span>
+      <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $<span style="color:#f92672">[</span>$NUMBER % 2<span style="color:#f92672">]</span> -eq <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span> <span style="color:#75715e">#We are even</span>
         let OUTPUT<span style="color:#f92672">=</span>$NUMBER/2
       <span style="color:#66d9ef">else</span>  <span style="color:#75715e">#Odd</span>
         let OUTPUT<span style="color:#f92672">=</span>$NUMBER*3+1
       <span style="color:#66d9ef">fi</span>
       echo <span style="color:#e6db74">&#34;</span>$NUMBER<span style="color:#e6db74"> -&gt; </span>$OUTPUT<span style="color:#e6db74">&#34;</span>
     <span style="color:#66d9ef">done</span>
-    echo <span style="color:#e6db74">&#34;}&#34;</span></code></pre></div>
-<p>So what does it really look like? Here:</p>
-
-<p><a href="../uploads/xkcd-collatz.png"><img src="../uploads/xkcd-collatz-672x1024.png" alt="" /></a></p>
-
+    echo <span style="color:#e6db74">&#34;}&#34;</span>
+</code></pre></div><p>So what does it really look like? Here:</p>
+<p><a href="../uploads/xkcd-collatz.png"><img src="../uploads/xkcd-collatz-672x1024.png" alt=""></a></p>
 <p>There are lots of straggling links. This is of course only because I went to 100. Why not 1000? It is a little big&hellip; click <a href="../uploads/xkcd-collatz2.jpg">Here</a>.</p>
-
 <p>Turns out with even more numbers we end up with even more isolated links, no big super chain.</p>
-
 <p>If you would like to run this code for yourself, first make sure you have the graphviz package installed in your linux system. Then copy that code above into a script, say called xkcd.sh. Then run like so:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./xkcd.sh | neato -Tpng | display</code></pre></div>
-<p>Adjust as necessary.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./xkcd.sh | neato -Tpng | display
+</code></pre></div><p>Adjust as necessary.</p>
 
         </div>
     </section>

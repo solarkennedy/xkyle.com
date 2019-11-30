@@ -17,7 +17,7 @@
       <pubDate>Thu, 26 Jan 2012 01:46:30 +0000</pubDate>
       
       <guid>/puppet-versus-cfengine-editing-files/</guid>
-      <description>Update: I wrote this article when I was young and stupid. It is obsolete. Puppet wins, just use Augeas. Both Puppet and CFEngine are formidable configuration management systems. Let&amp;rsquo;s compare the two to see how the match up on the common task of editing files. Feel free to jump straight to the conclusion if you are impatient.
+      <description>Update: I wrote this article when I was young and stupid. It is obsolete. Puppet wins, just use Augeas.  Both Puppet and CFEngine are formidable configuration management systems. Let&#39;s compare the two to see how the match up on the common task of editing files. Feel free to jump straight to the conclusion if you are impatient.
 Why would you need this? What is the use-case here? These are some common tasks I do that involve editing files:</description>
     </item>
     

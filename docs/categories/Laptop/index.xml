@@ -20,7 +20,7 @@
       <description>You may remember my old laptop from such posts as this.
 Well it broke, so I bought another one!
 
-It even has the original stickers. But.. Its slower than I remember. So I&amp;rsquo;m trying out different Ubuntu versions to see what boots the fastest. Here are my methodology and results.
+It even has the original stickers. But.. Its slower than I remember. So I&#39;m trying out different Ubuntu versions to see what boots the fastest. Here are my methodology and results.
 Methodology: The first number is the ammount of seconds from the 0 in the grub countdown till the X in the initial X-server.</description>
     </item>
     
@@ -31,7 +31,7 @@ Methodology: The first number is the ammount of seconds from the 0 in the grub c
       
       <guid>/compact-flash-replacement/</guid>
       <description>My laptop is a Sharp MM20, which I knew I was going to spraypaint eventually, I just needed a reason to. After about a year of wear and scratches from abuse, it was time.
-I&amp;rsquo;m replacing the harddrive in my laptop with a 4GB flash card. It should be faster:
+I&#39;m replacing the harddrive in my laptop with a 4GB flash card. It should be faster:
 /dev/sdb: Timing cached reads: 3532 MB in 2.00 seconds = 1766.79 MB/sec Timing buffered disk reads: 58 MB in 3.10 seconds = 18.</description>
     </item>
     

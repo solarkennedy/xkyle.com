@@ -28,7 +28,7 @@ The List  git: Lots of git. syscfg: Managing bios settings from within Linux. Ni
       <pubDate>Mon, 15 Apr 2013 21:06:09 +0000</pubDate>
       
       <guid>/my-first-published-puppet-module-bios/</guid>
-      <description>What? I&amp;rsquo;ve written lots of crappy Puppet modules. Here is a slightly less crappy module that can help you configure BIOS settings on your servers for you.
+      <description>What? I&#39;ve written lots of crappy Puppet modules. Here is a slightly less crappy module that can help you configure BIOS settings on your servers for you.
 It works on Dell C class servers and Intel platforms. Please pull request or email me if you want to have it work on something else too!
 Why? BIOS settings should be considered configuration just like any other configuration, and hence managed by your configuration management tool, if possible.</description>
     </item>
@@ -39,7 +39,7 @@ Why? BIOS settings should be considered configuration just like any other config
       <pubDate>Tue, 12 Feb 2013 03:35:01 +0000</pubDate>
       
       <guid>/configuring-bios-settings-with-puppet/</guid>
-      <description>You know what it is like to spend time configuring the BIOS on a a server. You reboot the server, and wait for it to take its sweet time to come back up, frantically push its button, hope that you didn&amp;rsquo;t miss your chance. Then spend some one-on-one alone time with the interface, making sure you do all the right keystrokes to get the settings you want. Sounds like a bad date.</description>
+      <description>You know what it is like to spend time configuring the BIOS on a a server. You reboot the server, and wait for it to take its sweet time to come back up, frantically push its button, hope that you didn&#39;t miss your chance. Then spend some one-on-one alone time with the interface, making sure you do all the right keystrokes to get the settings you want. Sounds like a bad date.</description>
     </item>
     
     <item>
@@ -48,7 +48,7 @@ Why? BIOS settings should be considered configuration just like any other config
       <pubDate>Thu, 20 Dec 2012 03:55:02 +0000</pubDate>
       
       <guid>/7-underused-ipmitool-commands/</guid>
-      <description>IPMI is Awesome. But, it is underused. Most sysadmins don&amp;rsquo;t even enable it. If they do enable it, they probably enable it by manually going into the BIOS, and then probably only using the Web interface. LAME.
+      <description>IPMI is Awesome. But, it is underused. Most sysadmins don&#39;t even enable it. If they do enable it, they probably enable it by manually going into the BIOS, and then probably only using the Web interface. LAME.
 There is no need to go to the BIOS to configure ipmi. You can use IPMItool to configure it in-band. This is my first underused command:
 (disclaimer: not all IPMI interfaces / bios versions / hardware platforms are equal.</description>
     </item>

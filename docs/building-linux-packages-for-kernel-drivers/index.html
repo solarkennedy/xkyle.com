@@ -110,140 +110,135 @@ So, how do you go from kernel module source code =&gt; Debian package?"/>
 </p>
         </div>
         <div class="col s12 m8 offset-m2 l6">
-            
-
-<h2 id="background">Background</h2>
-
+            <h2 id="background">Background</h2>
 <p>Most of the time the Linux kernel does a great job of having drivers you need, but sometimes you need to install a special driver or update an existing module.</p>
-
 <p>Running make; make install is all fine and dandy for testing, but for production you want a repeatable process. For me, this means OS packages. (deb/rpms)</p>
-
-<p><a href="../uploads/morpheus-ipmi.jpg"><img src="../uploads/33657094-300x181.jpg" alt="33657094" /></a></p>
-
+<p><a href="../uploads/morpheus-ipmi.jpg"><img src="../uploads/33657094-300x181.jpg" alt="33657094"></a></p>
 <p>So, how do you go from kernel module source code =&gt; Debian package? DKMS. DKMS will automatically build your kernel module for you, even if your kernel gets updated.</p>
-
 <h2 id="example-ixgbe">Example: ixgbe</h2>
-
-<p>Lets build something. In this example I&rsquo;m on an Ubuntu machine building the latest ixgbe driver.</p>
-
+<p>Lets build something. In this example I'm on an Ubuntu machine building the latest ixgbe driver.</p>
 <ol>
-<li><p>Get apt-get your stuff</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    apt-get install debhelper dkms kernel-headers</code></pre></div></li>
-
-<li><p>Untar your source code into /usr/src/$modulename-$version, like /usr/src/ixgbe-3.12.6/</p></li>
-
-<li><p>Normally here you would run &ldquo;make&rdquo;, but instead we will make a dkms.conf file to describe how to build it. Like this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    MAKE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;make -C src/ KERNELDIR=/lib/modules/</span><span style="color:#e6db74">${</span>kernelver<span style="color:#e6db74">}</span><span style="color:#e6db74">/build&#34;</span>
-    CLEAN<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;make -C src/ clean&#34;</span>
-    BUILT_MODULE_NAME<span style="color:#f92672">=</span>ixgbe
-    BUILT_MODULE_LOCATION<span style="color:#f92672">=</span>src/
-    DEST_MODULE_LOCATION<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/updates&#34;</span>
-    PACKAGE_NAME<span style="color:#f92672">=</span>ixgbe-dkms
-    PACKAGE_VERSION<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>.12.6
-    REMAKE_INITRD<span style="color:#f92672">=</span>no</code></pre></div></li>
-
-<li><p>Next we need to register that module with dkms:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    root@server:/usr/src/ixgbe-3.12.6# dkms add -m ixgbe -v <span style="color:#ae81ff">3</span>.12.6
-    Creating symlink /var/lib/dkms/ixgbe/3.12.6/source -&gt;
-     /usr/src/ixgbe-3.12.6
-    DKMS: add completed.</code></pre></div></li>
-
-<li><p>Next we will build the module, but using the dkms build command instead of make:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    root@server:/usr/src/ixgbe-3.12.6# dkms build -m ixgbe -v <span style="color:#ae81ff">3</span>.12.6
-    Kernel preparation unnecessary <span style="color:#66d9ef">for</span> this kernel. Skipping...
-    Building module:
-    cleaning build area....
-    make KERNELRELEASE<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>.2.0-23-generic -C src/ KERNELDIR<span style="color:#f92672">=</span>/lib/modules/3.2.0-23-generic/build....................
-    cleaning build area....
-    DKMS: build completed.</code></pre></div></li>
-
-<li><p>Great! Next we will make a debian src package.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    root@server:/usr/src/ixgbe-3.12.6# dkms mkdsc -m ixgbe -v <span style="color:#ae81ff">3</span>.12.6 --source-only
-    Using /etc/dkms/template-dkms-mkdsc
-    copying template...
-    modifying debian/changelog...
-    modifying debian/compat...
-    modifying debian/control...
-    modifying debian/copyright...
-    modifying debian/dirs...
-    modifying debian/postinst...
-    modifying debian/prerm...
-    modifying debian/README.Debian...
-    modifying debian/rules...
-    copying legacy postinstall template...
-    Copying source tree...
-    Building source package... dpkg-source --before-build ixgbe-dkms-3.12.6
-     debian/rules clean
-     dpkg-source -b ixgbe-dkms-3.12.6
-    dpkg-source: warning: no source format specified in debian/source/format, see dpkg-source<span style="color:#f92672">(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">)</span>
-     dpkg-genchanges -S &gt;../ixgbe-dkms_3.12.6_source.changes
-    dpkg-genchanges: including full source code in upload
-     dpkg-source --after-build ixgbe-dkms-3.12.6
-    DKMS: mkdsc completed.
-    Moving built files to /var/lib/dkms/ixgbe/3.12.6/dsc...
-    Cleaning up temporary files...</code></pre></div></li>
-
-<li><p>Now we will build the &ldquo;binary&rdquo; debian package. In reality with &ndash;source-only this binary package just contains the source code in the module with a post install script to build the module for each kernel you are using. Its magic:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    root@server:/usr/src/ixgbe-3.12.6# dkms mkdeb -m ixgbe -v <span style="color:#ae81ff">3</span>.12.6 --source-only
-    Using /etc/dkms/template-dkms-mkdeb
-    copying template...
-    modifying debian/changelog...
-    modifying debian/compat...
-    modifying debian/control...
-    modifying debian/copyright...
-    modifying debian/dirs...
-    modifying debian/postinst...
-    modifying debian/prerm...
-    modifying debian/README.Debian...
-    modifying debian/rules...
-    copying legacy postinstall template...
-    Copying source tree...
-    Building binary package...dpkg-buildpackage: warning: using a gain-root-command <span style="color:#66d9ef">while</span> being root
-     dpkg-source --before-build ixgbe-dkms-3.12.6
-     fakeroot debian/rules clean
-     debian/rules build
-     fakeroot debian/rules binary
-     dpkg-genchanges -b &gt;../ixgbe-dkms_3.12.6_amd64.changes
-    dpkg-genchanges: binary-only upload - not including any source code
-     dpkg-source --after-build ixgbe-dkms-3.12.6
-    DKMS: mkdeb completed.
-    Moving built files to /var/lib/dkms/ixgbe/3.12.6/deb...
-    Cleaning up temporary files...</code></pre></div></li>
-
-<li><p>We have a deb! Lets put it in ~</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    root@server:/usr/src/ixgbe-3.12.6# cp /var/lib/dkms/ixgbe/3.12.6/deb/ixgbe-dkms_3.12.6_all.deb ~</code></pre></div></li>
-
-<li><p>So we have a deb. I would like to install it, but we have to get rid of the build files so they will not conflict with the deb we just built:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    root@server:/usr/src/ixgbe-3.12.6# rm -r /var/lib/dkms/ixgbe/</code></pre></div></li>
-
-<li><p>Now we have a deb that you can install locally, distribute wherever, install across a cluster:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    root@server:/usr/src/ixgbe-3.12.6# dpkg -i /root/ixgbe-dkms_3.12.6_all.deb
-    Selecting previously unselected package ixgbe-dkms.
-    <span style="color:#f92672">(</span>Reading database ... <span style="color:#ae81ff">56500</span> files and directories currently installed.<span style="color:#f92672">)</span>
-    Unpacking ixgbe-dkms <span style="color:#f92672">(</span>from .../root/ixgbe-dkms_3.12.6_all.deb<span style="color:#f92672">)</span> ...
-    Setting up ixgbe-dkms <span style="color:#f92672">(</span><span style="color:#ae81ff">3</span>.12.6<span style="color:#f92672">)</span> ...
-    Loading new ixgbe-3.12.6 DKMS files...
-    First Installation: checking all kernels...
-    Building only <span style="color:#66d9ef">for</span> <span style="color:#ae81ff">3</span>.2.0-23-generic
-    Building <span style="color:#66d9ef">for</span> architecture x86_64
-    Building initial module <span style="color:#66d9ef">for</span> <span style="color:#ae81ff">3</span>.2.0-23-generic
-    Done.
-    ixgbe:
-    Running module version sanity check.
-    - Original module
-    - Installation
-    - Installing to /lib/modules/3.2.0-23-generic/updates/dkms/
-    depmod....
-    DKMS: install completed.</code></pre></div></li>
+<li>Get apt-get your stuff</li>
 </ol>
-
-<h2 id="33657298-uploads-33657298-jpg-uploads-33657298-jpg"><a href="../uploads/33657298.jpg"><img src="../uploads/33657298.jpg" alt="33657298" /></a></h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">        apt-get install debhelper dkms kernel-headers
+</code></pre></div><ol start="2">
+<li>Untar your source code into /usr/src/$modulename-$version, like /usr/src/ixgbe-3.12.6/</li>
+<li>Normally here you would run &ldquo;make&rdquo;, but instead we will make a dkms.conf file to describe how to build it. Like this:</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">        MAKE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">make -C src/ KERNELDIR=/lib/modules/</span><span style="color:#e6db74">${</span>kernelver<span style="color:#e6db74">}</span><span style="color:#e6db74">/build</span><span style="color:#e6db74">&#34;</span>
+        CLEAN<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;make -C src/ clean&#34;</span>
+        BUILT_MODULE_NAME<span style="color:#f92672">=</span>ixgbe
+        BUILT_MODULE_LOCATION<span style="color:#f92672">=</span>src/
+        DEST_MODULE_LOCATION<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/updates&#34;</span>
+        PACKAGE_NAME<span style="color:#f92672">=</span>ixgbe-dkms
+        PACKAGE_VERSION<span style="color:#f92672">=</span>3.12.6
+        REMAKE_INITRD<span style="color:#f92672">=</span>no
+</code></pre></div><ol start="4">
+<li>Next we need to register that module with dkms:</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">        root@server:/usr/src/ixgbe-3.12.6# dkms add -m ixgbe -v 3.12.6
+        Creating symlink /var/lib/dkms/ixgbe/3.12.6/source -&gt;
+         /usr/src/ixgbe-3.12.6
+        DKMS: add completed.
+</code></pre></div><ol start="5">
+<li>Next we will build the module, but using the dkms build command instead of make:</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">        root@server:/usr/src/ixgbe-3.12.6# dkms build -m ixgbe -v 3.12.6
+        Kernel preparation unnecessary <span style="color:#66d9ef">for</span> this kernel. Skipping...
+        Building module:
+        cleaning build area....
+        make KERNELRELEASE<span style="color:#f92672">=</span>3.2.0-23-generic -C src/ KERNELDIR<span style="color:#f92672">=</span>/lib/modules/3.2.0-23-generic/build....................
+        cleaning build area....
+        DKMS: build completed.
+</code></pre></div><ol start="6">
+<li>Great! Next we will make a debian src package.</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">        root@server:/usr/src/ixgbe-3.12.6# dkms mkdsc -m ixgbe -v 3.12.6 --source-only
+        Using /etc/dkms/template-dkms-mkdsc
+        copying template...
+        modifying debian/changelog...
+        modifying debian/compat...
+        modifying debian/control...
+        modifying debian/copyright...
+        modifying debian/dirs...
+        modifying debian/postinst...
+        modifying debian/prerm...
+        modifying debian/README.Debian...
+        modifying debian/rules...
+        copying legacy postinstall template...
+        Copying source tree...
+        Building source package... dpkg-source --before-build ixgbe-dkms-3.12.6
+         debian/rules clean
+         dpkg-source -b ixgbe-dkms-3.12.6
+        dpkg-source: warning: no source format specified in debian/source/format, see dpkg-source<span style="color:#f92672">(</span>1<span style="color:#f92672">)</span>
+         dpkg-genchanges -S &gt;../ixgbe-dkms_3.12.6_source.changes
+        dpkg-genchanges: including full source code in upload
+         dpkg-source --after-build ixgbe-dkms-3.12.6
+        DKMS: mkdsc completed.
+        Moving built files to /var/lib/dkms/ixgbe/3.12.6/dsc...
+        Cleaning up temporary files...
+</code></pre></div><ol start="7">
+<li>Now we will build the &ldquo;binary&rdquo; debian package. In reality with &ndash;source-only this binary package just contains the source code in the module with a post install script to build the module for each kernel you are using. Its magic:</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">        root@server:/usr/src/ixgbe-3.12.6# dkms mkdeb -m ixgbe -v 3.12.6 --source-only
+        Using /etc/dkms/template-dkms-mkdeb
+        copying template...
+        modifying debian/changelog...
+        modifying debian/compat...
+        modifying debian/control...
+        modifying debian/copyright...
+        modifying debian/dirs...
+        modifying debian/postinst...
+        modifying debian/prerm...
+        modifying debian/README.Debian...
+        modifying debian/rules...
+        copying legacy postinstall template...
+        Copying source tree...
+        Building binary package...dpkg-buildpackage: warning: using a gain-root-command <span style="color:#66d9ef">while</span> being root
+         dpkg-source --before-build ixgbe-dkms-3.12.6
+         fakeroot debian/rules clean
+         debian/rules build
+         fakeroot debian/rules binary
+         dpkg-genchanges -b &gt;../ixgbe-dkms_3.12.6_amd64.changes
+        dpkg-genchanges: binary-only upload - not including any source code
+         dpkg-source --after-build ixgbe-dkms-3.12.6
+        DKMS: mkdeb completed.
+        Moving built files to /var/lib/dkms/ixgbe/3.12.6/deb...
+        Cleaning up temporary files...
+</code></pre></div><ol start="8">
+<li>We have a deb! Lets put it in ~</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">        root@server:/usr/src/ixgbe-3.12.6# cp /var/lib/dkms/ixgbe/3.12.6/deb/ixgbe-dkms_3.12.6_all.deb ~
+</code></pre></div><ol start="9">
+<li>So we have a deb. I would like to install it, but we have to get rid of the build files so they will not conflict with the deb we just built:</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">        root@server:/usr/src/ixgbe-3.12.6# rm -r /var/lib/dkms/ixgbe/
+</code></pre></div><ol start="10">
+<li>Now we have a deb that you can install locally, distribute wherever, install across a cluster:</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">        root@server:/usr/src/ixgbe-3.12.6# dpkg -i /root/ixgbe-dkms_3.12.6_all.deb
+        Selecting previously unselected package ixgbe-dkms.
+        <span style="color:#f92672">(</span>Reading database ... <span style="color:#ae81ff">56500</span> files and directories currently installed.<span style="color:#f92672">)</span>
+        Unpacking ixgbe-dkms <span style="color:#f92672">(</span>from .../root/ixgbe-dkms_3.12.6_all.deb<span style="color:#f92672">)</span> ...
+        Setting up ixgbe-dkms <span style="color:#f92672">(</span>3.12.6<span style="color:#f92672">)</span> ...
+        Loading new ixgbe-3.12.6 DKMS files...
+        First Installation: checking all kernels...
+        Building only <span style="color:#66d9ef">for</span> 3.2.0-23-generic
+        Building <span style="color:#66d9ef">for</span> architecture x86_64
+        Building initial module <span style="color:#66d9ef">for</span> 3.2.0-23-generic
+        Done.
+        ixgbe:
+        Running module version sanity check.
+        - Original module
+        - Installation
+        - Installing to /lib/modules/3.2.0-23-generic/updates/dkms/
+        depmod....
+        DKMS: install completed.
+</code></pre></div><h2 id="33657298uploads33657298jpguploads33657298jpg"><a href="../uploads/33657298.jpg"><img src="../uploads/33657298.jpg" alt="33657298"></a></h2>
 <h2 id="reading-more">Reading More:</h2>
-
 <ul>
-<li><a href="https://wiki.xkyle.com/DKMS_Howto">https://wiki.xkyle.com/DKMS_Howto</a></li>
-<li><a href="http://en.wikipedia.org/wiki/Dynamic_Kernel_Module_Support">http://en.wikipedia.org/wiki/Dynamic_Kernel_Module_Support</a></li>
+<li><a href="https://wiki.xkyle.com/DKMS_Howto"><a href="https://wiki.xkyle.com/DKMS_Howto">https://wiki.xkyle.com/DKMS_Howto</a></a></li>
+<li><a href="http://en.wikipedia.org/wiki/Dynamic_Kernel_Module_Support"><a href="http://en.wikipedia.org/wiki/Dynamic_Kernel_Module_Support">http://en.wikipedia.org/wiki/Dynamic_Kernel_Module_Support</a></a></li>
 </ul>
 
         </div>

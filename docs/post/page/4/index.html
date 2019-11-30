@@ -9,7 +9,6 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/post/" />
-
 <meta property="og:updated_time" content="2019-11-30T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
@@ -103,7 +102,7 @@
         <div>I love my low end boxes. I also love mosh.
 Low end boxes usually are tight on resources, so Dropbear is often used as a lightweight ssh server. Mosh is mostly tested with openssh-client/server, so I think there are some bugs.
 But it can work, just make sure:
- You are using the same version of mosh on the server as you are on your client. (otherwise they may not support the same command line options)</div>
+  You are using the same version of mosh on the server as you are on your client. (otherwise they may not support the same command line options)</div>
     </div>
 </article>
     
@@ -149,8 +148,8 @@ The List  git: Lots of git. syscfg: Managing bios settings from within Linux. Ni
     </div>
     <span class="article-meta-published-at grey-text text-darken-1">Jun 21, 2013</span>
 </p></div>
-        <div>Sometimes there are packages out there that don&rsquo;t come in your cool new Architecture. In my case it is ARM, and the package I wanted was Puppet. Here is how to rebuild source packages the cool way.
-Add the Puppet repo so you can get fresh source packages cd /tmp # Add the repo, even though it may not have arm binaries... wget http://apt.puppetlabs.com/puppetlabs-release-precise.deb dpkg -i puppetlabs-release-precise.deb # Get dependencies.</div>
+        <div>Sometimes there are packages out there that don't come in your cool new Architecture. In my case it is ARM, and the package I wanted was Puppet. Here is how to rebuild source packages the cool way.
+Add the Puppet repo so you can get fresh source packages cd /tmp # Add the repo, even though it may not have arm binaries... wget http://apt.puppetlabs.com/puppetlabs-release-precise.deb dpkg -i puppetlabs-release-precise.deb # Get dependencies... apt-get update apt-get build-dep puppet facter  Build / Install # Get sources.</div>
     </div>
 </article>
     
@@ -198,12 +197,12 @@ uci set network.wan.ifname=eth1 uci commit reboot  Whoa.</div>
     <span class="article-meta-published-at grey-text text-darken-1">May 18, 2013</span>
 </p></div>
         <div>Hopefully Valve will offer me a job instead of suing me? :)
-Teardown [gallery ids=&ldquo;991,992,993,994,995,996,999,1001,1002,1000,1003,997&rdquo;] Parts  Many See N&rsquo; Says to destroy (I burned through 3)
- An Arduino (yes, because I&rsquo;m a lazy noob)
- Wave shield
- Some sort of ISP programmer
- Speaker / Switch / Hot-glue / Resistors / etc
-  How It Works  A user pulls the handle, activating the normally-open switch and powering the arduino</div>
+Teardown [gallery ids=&quot;991,992,993,994,995,996,999,1001,1002,1000,1003,997&rdquo;] Parts   Many See N&rsquo; Says to destroy (I burned through 3)
+  An Arduino (yes, because I'm a lazy noob)
+  Wave shield
+  Some sort of ISP programmer
+  Speaker / Switch / Hot-glue / Resistors / etc
+  How It Works   A user pulls the handle, activating the normally-open switch and powering the arduino</div>
     </div>
 </article>
     
@@ -249,7 +248,7 @@ Step 1: Get a version of nginx with spdy enabled. Ubuntu Get some packages. The 
     </div>
     <span class="article-meta-published-at grey-text text-darken-1">Apr 17, 2013</span>
 </p></div>
-        <div>Google&rsquo;s Google Plus Hangout / Gtalk plugin automatically adjust your volume to account for varying noise conditions by default. Sometimes this is an undesired behavior, but there is no button to turn it off. Here is how you do it:
+        <div>Google's Google Plus Hangout / Gtalk plugin automatically adjust your volume to account for varying noise conditions by default. Sometimes this is an undesired behavior, but there is no button to turn it off. Here is how you do it:
 Linux: Run this in a terminal:
 echo &quot;audio-flags=1&quot; &gt; ~/.config/google-googletalkplugin/options  Windows: Set the registry Key:
 HKEY_CURRENT_USER\&lt;wbr&gt;&lt;/wbr&gt;Software\Google\Google Talk Plugin\options\audio-flags = 1  Mac OSX: Edit the plist:
@@ -275,7 +274,7 @@ HKEY_CURRENT_USER\&lt;wbr&gt;&lt;/wbr&gt;Software\Google\Google Talk Plugin\opti
     </div>
     <span class="article-meta-published-at grey-text text-darken-1">Apr 15, 2013</span>
 </p></div>
-        <div>What? I&rsquo;ve written lots of crappy Puppet modules. Here is a slightly less crappy module that can help you configure BIOS settings on your servers for you.
+        <div>What? I've written lots of crappy Puppet modules. Here is a slightly less crappy module that can help you configure BIOS settings on your servers for you.
 It works on Dell C class servers and Intel platforms. Please pull request or email me if you want to have it work on something else too!
 Why? BIOS settings should be considered configuration just like any other configuration, and hence managed by your configuration management tool, if possible.</div>
     </div>
@@ -299,14 +298,13 @@ Why? BIOS settings should be considered configuration just like any other config
     </div>
     <span class="article-meta-published-at grey-text text-darken-1">Mar 31, 2013</span>
 </p></div>
-        <div>Status:  Github Repo is here: https://github.com/solarkennedy/puppet-on-openwrt/
- OpenWrt package files are submitted for inclusion
- Puppet/facter patches have been included in Trunk for inclusion in puppet 3.2
- Binary packages have been made for early adopters (and me)
+        <div>Status:   Github Repo is here: https://github.com/solarkennedy/puppet-on-openwrt/
+  OpenWrt package files are submitted for inclusion
+  Puppet/facter patches have been included in Trunk for inclusion in puppet 3.2
+  Binary packages have been made for early adopters (and me)
   Why? To scratch my own itch, and for Fun!
 How? Downloads are here: http://download.xkyle.com/openwrt/
-Because of the dependencies, it is probably easier to add the repo:
-. /etc/openwrt_release VERSION=`echo $DISTRIB_RELEASE | cut -f 1 -d -` TARGET=`echo $DISTRIB_TARGET | cut -f 1 -d /` LINE=&quot;src/gz puppet-packages http://download.</div>
+Because of the dependencies, it is probably easier to add the repo:</div>
     </div>
 </article>
     
@@ -328,9 +326,9 @@ Because of the dependencies, it is probably easier to add the repo:
     </div>
     <span class="article-meta-published-at grey-text text-darken-1">Mar 27, 2013</span>
 </p></div>
-        <div>Picking a server hostname is abig deal. I&rsquo;ve seen quite a few, lets traverse the hostname-awesomeness-continuum and see if we can learn something.
+        <div>Picking a server hostname is abig deal. I've seen quite a few, lets traverse the hostname-awesomeness-continuum and see if we can learn something.
 Worsest  morpheous trinity alf  Why do these suck? These names have no information what-so-ever. If you see a server alert, you have no clue what services are actually down. It might as well be a random string. IT is a random string.
- Pro Tip: Don&rsquo;t give make server hostnames random strings.</div>
+ Pro Tip: Don't give make server hostnames random strings.</div>
     </div>
 </article>
     

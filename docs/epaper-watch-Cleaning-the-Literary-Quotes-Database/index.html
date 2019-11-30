@@ -8,7 +8,7 @@
 <meta property="og:title" content="epaper-watch: Cleaning the Literary Quotes Database" />
 <meta property="og:description" content="paper-watch intro My epaper-watch is an attempt to build a watch with an epaper display.
 It tells time by displaying a quote from a book:
-(don&rsquo;t mind the graphical glitches)
+(don&#39;t mind the graphical glitches)
 The dataset with all the quotes needs some data cleaning love though.
 Cleaning The Dataset The CSV has over 1,400 quotes in it. For every minute, there may be multiple quotes (&ldquo;Midnight&rdquo; has 26 unique quotes). Some minutes of the day do not have any quotes." />
 <meta property="og:type" content="article" />
@@ -20,7 +20,7 @@ Cleaning The Dataset The CSV has over 1,400 quotes in it. For every minute, ther
 <meta name="twitter:title" content="epaper-watch: Cleaning the Literary Quotes Database"/>
 <meta name="twitter:description" content="paper-watch intro My epaper-watch is an attempt to build a watch with an epaper display.
 It tells time by displaying a quote from a book:
-(don&rsquo;t mind the graphical glitches)
+(don&#39;t mind the graphical glitches)
 The dataset with all the quotes needs some data cleaning love though.
 Cleaning The Dataset The CSV has over 1,400 quotes in it. For every minute, there may be multiple quotes (&ldquo;Midnight&rdquo; has 26 unique quotes). Some minutes of the day do not have any quotes."/>
 
@@ -112,114 +112,79 @@ Cleaning The Dataset The CSV has over 1,400 quotes in it. For every minute, ther
 </p>
         </div>
         <div class="col s12 m8 offset-m2 l6">
-            
-
-<h1 id="paper-watch-intro">paper-watch intro</h1>
-
+            <h1 id="paperwatch-intro">paper-watch intro</h1>
 <p>My <a href="https://github.com/solarkennedy/epaper-watch/">epaper-watch</a> is an attempt to build a watch with an <a href="https://en.wikipedia.org/wiki/Electronic_paper">epaper</a> display.</p>
-
 <p>It tells time by displaying a quote from a book:</p>
-
-<p><img src="../uploads/epaper-watch-alpha1.jpg" alt="Exteremely early epaper-watch output" /></p>
-
-<p>(don&rsquo;t mind the graphical glitches)</p>
-
+<p><img src="../uploads/epaper-watch-alpha1.jpg" alt="Exteremely early epaper-watch output"></p>
+<p>(don't mind the graphical glitches)</p>
 <p>The dataset with all the quotes needs some data cleaning love though.</p>
-
 <h2 id="cleaning-the-dataset">Cleaning The Dataset</h2>
-
 <p>The CSV has over 1,400 quotes in it. For every minute, there may be multiple quotes (&ldquo;Midnight&rdquo; has 26 unique quotes). Some minutes of the day do not have any quotes.</p>
-
 <p>As much as possible I used tools to programmatically clean this data and used <code>git diff</code> to check the output at each step.</p>
-
 <p>The original database of quotes comes from quotes collected by
 <a href="https://www.theguardian.com/books/booksblog/2011/apr/15/christian-marclay-the-clock-literature">The Guardian</a>
 for an art installation.</p>
-
 <p>I used an annotated version from of that database built by Jaap Meijers for a
 <a href="https://www.instructables.com/id/Literary-Clock-Made-From-E-reader/">Kindle-based</a>
 version of this clock.</p>
-
 <p>To fit on my tiny epaper display, I had to clean up the dataset.</p>
-
 <h2 id="quotation-mark-cleaning">Quotation Mark Cleaning</h2>
-
 <p>The database is full of lots of quotes, as in quotation marks. Lots of them. Triple-double quotes, smart quotes, smart single quotes, backticks, etc.</p>
-
-<p>Vim macros help me manually clean up the zoo of quotation marks and strip out all the extra ones. Given the limited number of characters I can display on the watch face, I don&rsquo;t think there is any need to put quotes around the quote itself, just print the thing:</p>
+<p>Vim macros help me manually clean up the zoo of quotation marks and strip out all the extra ones. Given the limited number of characters I can display on the watch face, I don't think there is any need to put quotes around the quote itself, just print the thing:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff"><span style="color:#f92672">-&#34;&#34;&#34;I am going to lock you in. It is-&#34;&#34; he consulted his watch,
-</span><span style="color:#f92672">-&#34;&#34;five minutes to midnight. Miss Granger, three turns should do it.
-</span><span style="color:#f92672">-Good luck.&#34;&#34;&#34;|Harry Potter and the Prisoner of Azkaban|J. K. Rowling
+</span><span style="color:#f92672"></span><span style="color:#f92672">-&#34;&#34;five minutes to midnight. Miss Granger, three turns should do it.
+</span><span style="color:#f92672"></span><span style="color:#f92672">-Good luck.&#34;&#34;&#34;|Harry Potter and the Prisoner of Azkaban|J. K. Rowling
 </span><span style="color:#f92672"></span><span style="color:#a6e22e">+&#34;I am going to lock you in. It is-&#34; he consulted his watch,
-</span><span style="color:#a6e22e">+&#34;five minutes to midnight. Miss Granger, three turns should do it.
-</span><span style="color:#a6e22e">+Good luck.&#34;|Harry Potter and the Prisoner of Azkaban|J. K.  Rowling
+</span><span style="color:#a6e22e"></span><span style="color:#a6e22e">+&#34;five minutes to midnight. Miss Granger, three turns should do it.
+</span><span style="color:#a6e22e"></span><span style="color:#a6e22e">+Good luck.&#34;|Harry Potter and the Prisoner of Azkaban|J. K.  Rowling
 </span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff"><span style="color:#f92672">-&#34;We have heard the chimes at midnight.&#34;|Henry IV
 </span><span style="color:#f92672"></span><span style="color:#a6e22e">+We have heard the chimes at midnight.|Henry IV
-</span></code></pre></div>
-<h2 id="duplicates">Duplicates</h2>
-
+</span></code></pre></div><h2 id="duplicates">Duplicates</h2>
 <p>By sorting the dataset, duplicate quotes become more visible. Literally identical quotes can be removed programmatically:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-generic" data-lang="generic">sort litclock_annotated.csv | uniq &gt; tmp &amp;&amp; mv tmp litclock_annotated.csv</code></pre></div>
-<p>Many quotes are used multiple times for multiple minutes, so it isn&rsquo;t safe to blindly remove any quote that is used more than once.</p>
-
+<pre><code class="language-generic" data-lang="generic">sort litclock_annotated.csv | uniq &gt; tmp &amp;&amp; mv tmp litclock_annotated.csv
+</code></pre><p>Many quotes are used multiple times for multiple minutes, so it isn't safe to blindly remove any quote that is used more than once.</p>
 <h2 id="manually-shrinking-the-text">Manually Shrinking the Text</h2>
-
 <p>Many quotes are very long and contain lots of context. Some quotes are very floral and contain long run-on sentences.</p>
-
-<p>I couldn&rsquo;t think of a programmatic way of reducing the length of the quote to less than 180 characters.</p>
-
+<p>I couldn't think of a programmatic way of reducing the length of the quote to less than 180 characters.</p>
 <p>This step was mostly manual work, tool-assisted by having the code generation python script raise an exception if it parsed a quote longer than 180 chars:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff"><span style="color:#f92672">-It was eight minutes to midnight. Just nice time, I said to myself.
-</span><span style="color:#f92672">-Indoors, everything was quiet and in darkness. Splendid. I went to
-</span><span style="color:#f92672">-the bar and fetched a tumbler, a siphon of soda and a bottle of
-</span><span style="color:#f92672">-Glen Grant, took a weak drink and a pill, and settled down in the
-</span><span style="color:#f92672">-public dining-room to wait the remaining two minutes
-</span><span style="color:#f92672">-|The Green Man|Kingsley Amis
+</span><span style="color:#f92672"></span><span style="color:#f92672">-Indoors, everything was quiet and in darkness. Splendid. I went to
+</span><span style="color:#f92672"></span><span style="color:#f92672">-the bar and fetched a tumbler, a siphon of soda and a bottle of
+</span><span style="color:#f92672"></span><span style="color:#f92672">-Glen Grant, took a weak drink and a pill, and settled down in the
+</span><span style="color:#f92672"></span><span style="color:#f92672">-public dining-room to wait the remaining two minutes
+</span><span style="color:#f92672"></span><span style="color:#f92672">-|The Green Man|Kingsley Amis
 </span><span style="color:#f92672"></span><span style="color:#a6e22e">+It was eight minutes to midnight. Just nice time, I said to myself.
-</span><span style="color:#a6e22e">+Indoors, everything was quiet and in darkness.
-</span><span style="color:#a6e22e">+|The Green Man|Kingsley Amis
-</span></code></pre></div>
-<p>I tried to keep the time string located somewhere in the middle of the quote, with context around it. I took some artistic license in shortening the quotes and replacing the missing text with <code>...</code>.</p>
-
-<h2 id="removing-non-ascii-characters">Removing Non-ASCII Characters</h2>
-
-<p>I didn&rsquo;t bother updating the epaper library to support Unicode characters on
+</span><span style="color:#a6e22e"></span><span style="color:#a6e22e">+Indoors, everything was quiet and in darkness.
+</span><span style="color:#a6e22e"></span><span style="color:#a6e22e">+|The Green Man|Kingsley Amis
+</span></code></pre></div><p>I tried to keep the time string located somewhere in the middle of the quote, with context around it. I took some artistic license in shortening the quotes and replacing the missing text with <code>...</code>.</p>
+<h2 id="removing-nonascii-characters">Removing Non-ASCII Characters</h2>
+<p>I didn't bother updating the epaper library to support Unicode characters on
 custom fonts. That would be a nice addition someday.</p>
-
 <p>Till then I used <code>sed</code> to replace non-ascii characters en-masse with a
 <a href="https://github.com/solarkennedy/epaper-watch/blob/master/replace-non-ascii.sh">script</a>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sed <span style="color:#e6db74">&#39;s/é/e/&#39;</span> $1 | <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  sed <span style="color:#e6db74">&#34;s/’/&#39;/g&#34;</span> | <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  sed <span style="color:#e6db74">&#39;s/—/-/g&#39;</span> | <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>...</code></pre></div>
-<h2 id="duplicating-am-pm-timed-quotes">Duplicating AM / PM Timed Quotes</h2>
-
+</span><span style="color:#ae81ff"></span>...
+</code></pre></div><h2 id="duplicating-am--pm-timed-quotes">Duplicating AM / PM Timed Quotes</h2>
 <p>Many of the quotes in the quote database do not have any indication that they are specific to AM or PM. For example:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-generic" data-lang="generic">&#34;15:23&#34;: &#34;Three twenty-three! Is that all? Doesn&#39;t time - no, I&#39;ve already said that..&#34;</code></pre></div>
-<p>There is no particular reason this quote couldn&rsquo;t also work for <code>03:23</code> as well.</p>
-
+<pre><code class="language-generic" data-lang="generic">&quot;15:23&quot;: &quot;Three twenty-three! Is that all? Doesn't time - no, I've already said that..&quot;
+</code></pre><p>There is no particular reason this quote couldn't also work for <code>03:23</code> as well.</p>
 <p>This procedure is fuzzy, and I required <a href="https://github.com/solarkennedy/epaper-watch/blob/master/Duplicate%20AM%20and%20PM%20Quotes.ipynb">jupyter notebook</a> to accomplish it.</p>
-
 <p>The end result allowed me to add 480 more quotes:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-generic" data-lang="generic">$ wc litclock_expanded_meridiem.csv 
+<pre><code class="language-generic" data-lang="generic">$ wc litclock_expanded_meridiem.csv 
   1886  54488 354781 litclock_expanded_meridiem.csv
 $ wc litclock_annotated.csv 
-  1406  40357 261004 litclock_annotated.csv</code></pre></div>
-<p>And it added 104 new unique minute entries.</p>
-
+  1406  40357 261004 litclock_annotated.csv
+</code></pre><p>And it added 104 new unique minute entries.</p>
 <p>In other words, out of the 1440 unique minutes of the day, before duplicating
 ambiguous AM/PM quotes, I only had quotes for 895 of those minute slots, and
 now I have 999 minutes out of those 1440 unique slots. Now there are only 441
 minutes were I do not have a quote.</p>
-
 <h2 id="analysis">Analysis</h2>
-
 <p>If there are 441 missing slots, then how inaccurate is this watch?</p>
-
 <p>Using the same <a href="https://github.com/solarkennedy/epaper-watch/blob/master/Duplicate%20AM%20and%20PM%20Quotes.ipynb">notebook</a>, we can iterate through the minutes of the day, and find the longest gap between quotes.</p>
-
 <p>After AM/PM duplication, the longest gap is 6(!) minutes, between &ldquo;05:46&rdquo; and &ldquo;05:52&rdquo;.</p>
-
 <pre><code>In [268]:
 print(newbuckets[&quot;05:46&quot;])
 &quot;He wrote a legal-sounding phrase to the effect that the sentence had been
@@ -229,23 +194,16 @@ In [269]:
 print(newbuckets[&quot;05:52&quot;])
 &quot;At 5.52am paramedics from the St. Petersburg Fire Department and SunStar
 Medic One ambulance service responded to a medical emergency call...&quot;
-</code></pre>
-
-<p>But what about the histogram?</p>
-
-<p>If I&rsquo;ve done the math right:</p>
-
-<p><img src="../uploads/epaper-watch-off-by-minute-histogram.png" alt="Histogram of minute errors" /></p>
-
+</code></pre><p>But what about the histogram?</p>
+<p>If I've done the math right:</p>
+<p><img src="../uploads/epaper-watch-off-by-minute-histogram.png" alt="Histogram of minute errors"></p>
 <pre><code>68.7374749498998 of the time is within 1 minutes
 90.08016032064128 of the time is within 2 minutes
 97.59519038076152 of the time is within 3 minutes
 99.49899799599199 of the time is within 4 minutes
 99.8997995991984 of the time is within 5 minutes
 100.0 of the time is within 6 minutes
-</code></pre>
-
-<p>Not the most accurate time-piece?</p>
+</code></pre><p>Not the most accurate time-piece?</p>
 
         </div>
     </section>

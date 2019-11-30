@@ -6,9 +6,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <meta property="og:title" content="Picking Server Hostnames: Worstest, Worser, Worst... Better, Betterer, Bestest" />
-<meta property="og:description" content="Picking a server hostname is abig deal. I&rsquo;ve seen quite a few, lets traverse the hostname-awesomeness-continuum and see if we can learn something.
+<meta property="og:description" content="Picking a server hostname is abig deal. I&#39;ve seen quite a few, lets traverse the hostname-awesomeness-continuum and see if we can learn something.
 Worsest  morpheous trinity alf  Why do these suck? These names have no information what-so-ever. If you see a server alert, you have no clue what services are actually down. It might as well be a random string. IT is a random string.
- Pro Tip: Don&rsquo;t give make server hostnames random strings." />
+ Pro Tip: Don&#39;t give make server hostnames random strings." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/picking-server-hostnames-worstest-worser-worst-better-betterer-bestest/" />
 <meta property="article:published_time" content="2013-03-27T23:58:32+00:00" />
@@ -16,9 +16,9 @@ Worsest  morpheous trinity alf  Why do these suck? These names have no informati
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Picking Server Hostnames: Worstest, Worser, Worst... Better, Betterer, Bestest"/>
-<meta name="twitter:description" content="Picking a server hostname is abig deal. I&rsquo;ve seen quite a few, lets traverse the hostname-awesomeness-continuum and see if we can learn something.
+<meta name="twitter:description" content="Picking a server hostname is abig deal. I&#39;ve seen quite a few, lets traverse the hostname-awesomeness-continuum and see if we can learn something.
 Worsest  morpheous trinity alf  Why do these suck? These names have no information what-so-ever. If you see a server alert, you have no clue what services are actually down. It might as well be a random string. IT is a random string.
- Pro Tip: Don&rsquo;t give make server hostnames random strings."/>
+ Pro Tip: Don&#39;t give make server hostnames random strings."/>
 
 
     <meta name="description" content="">
@@ -108,101 +108,68 @@ Worsest  morpheous trinity alf  Why do these suck? These names have no informati
 </p>
         </div>
         <div class="col s12 m8 offset-m2 l6">
-            
-
-<p>Picking a server hostname is a<a href="http://xkcd.com/910/"> big deal</a>. I&rsquo;ve seen quite a few, lets traverse the hostname-awesomeness-continuum and see if we can learn something.</p>
-
+            <p>Picking a server hostname is a<a href="http://xkcd.com/910/"> big deal</a>. I've seen quite a few, lets traverse the hostname-awesomeness-continuum and see if we can learn something.</p>
 <h1 id="worsest">Worsest</h1>
-
 <ul>
 <li>morpheous</li>
 <li>trinity</li>
 <li>alf</li>
 </ul>
-
 <p>Why do these suck? These names have <strong>no information</strong> what-so-ever. If you see a server alert, you have no clue what services are actually down. It might as well be a random string. IT is a random string.</p>
-
 <blockquote>
-<p><em>Pro Tip: Don&rsquo;t give make server hostnames random strings.</em></p>
+<p><em>Pro Tip: Don't give make server hostnames random strings.</em></p>
 </blockquote>
-
-<p>You wouldn&rsquo;t do this would you?
+<p>You wouldn't do this would you?
 hostname <code>shuf -n 1 /usr/share/dict/words</code></p>
-
-<p><a href="../uploads/bios-meme.jpg"><img src="../uploads/bios-meme-300x225.jpg" alt="bios-meme" /></a>
+<p><a href="../uploads/bios-meme.jpg"><img src="../uploads/bios-meme-300x225.jpg" alt="bios-meme"></a>
 Additionally, the name almost <strong>enables</strong> admins to overload the server with multiple services. &ldquo;What server should we run DNS on? Put it on Alf, it has some spare cycles.&rdquo; That conversation would not happen if the server was called &ldquo;db04&rdquo;. Also we have no way to judge the urgency of a server outage without being very familiar with the services it provides.</p>
-
-<p>Oh, and it doesn&rsquo;t scale. Say it with me here: **Servers are not Precious Snowflakes! **And no, giving your server&rsquo;s custy names does NOT increase your security. Prove me wrong.</p>
-
+<p>Oh, and it doesn't scale. Say it with me here: **Servers are not Precious Snowflakes! **And no, giving your server's custy names does NOT increase your security. Prove me wrong.</p>
 <h1 id="worser">Worser</h1>
-
 <ul>
 <li>msr2</li>
 <li>eln4</li>
 <li>wtf5</li>
 </ul>
-
-<p><a href="../uploads/36743853.jpg"><img src="../uploads/36743853-300x225.jpg" alt="36743853" /></a>These names sometimes come from ancient department abbreviations  or maybe three unrelated words. They also might hint at being part of a collection, but many times they are indicators of server cruft. For example, wtf5 could be the fifth server in a long line of failures. wtf1-4 don&rsquo;t exist anymore, sorry for the confusion.</p>
-
-<p>Don&rsquo;t do this! I appreciate the brevity, but save it for DNS CNAMES. I can understand naming something &ldquo;server2&rdquo; during an upgrade from &ldquo;server&rdquo;, but unless you have good reason, rename it back when you are done. Future employees will thank you and it makes your infrastructure _<strong>feel</strong> _cleaner.</p>
-
+<p><a href="../uploads/36743853.jpg"><img src="../uploads/36743853-300x225.jpg" alt="36743853"></a>These names sometimes come from ancient department abbreviations  or maybe three unrelated words. They also might hint at being part of a collection, but many times they are indicators of server cruft. For example, wtf5 could be the fifth server in a long line of failures. wtf1-4 don't exist anymore, sorry for the confusion.</p>
+<p>Don't do this! I appreciate the brevity, but save it for DNS CNAMES. I can understand naming something &ldquo;server2&rdquo; during an upgrade from &ldquo;server&rdquo;, but unless you have good reason, rename it back when you are done. Future employees will thank you and it makes your infrastructure _<strong>feel</strong> _cleaner.</p>
 <p>And no, incrementing the number on the end of your hostname on every new server rebuild does not make you more secure. Prove me wrong again.</p>
-
 <h1 id="worse">Worse</h1>
-
 <ul>
 <li>srv001-100</li>
 <li>dell01-08</li>
 <li>node01-99</li>
 </ul>
-
 <p>We are getting slightly better here I think. This is another anti-pattern I have seen in the wild: pick a generic name and span it across the range. Fill up the servers as needed.</p>
-
 <p>Whyyy!!? Again, there is no inherent information or context from the hostname. I have no idea what runs on dell07. Sure I know it is a Dell. Or is it?</p>
-
 <blockquote>
 <p>Pro Tip: Bake tribal knowledge into your infrastructure by setting descriptive hostnames.</p>
 </blockquote>
-
 <h1 id="better"><strong>Better</strong></h1>
-
 <ul>
 <li>clientname</li>
 <li>different-client</li>
 <li>legacy-name (that has no relevant meaning today)</li>
 </ul>
-
-<p>The world isn&rsquo;t perfect. Sometimes it does make sense to group services by a client&rsquo;s name, or maybe because you have some legacy that you want self-contained on a single server. Could be as good as it gets.</p>
-
+<p>The world isn't perfect. Sometimes it does make sense to group services by a client's name, or maybe because you have some legacy that you want self-contained on a single server. Could be as good as it gets.</p>
 <h1 id="betterer">Betterer</h1>
-
 <ul>
 <li>dns1-5</li>
 <li>backend01-04</li>
 <li>fe01-99</li>
 </ul>
-
 <p>These are nice. I have a good idea about what these servers do, how important it is if one goes down, what services are impacted, etc. These are pretty much bestest, honestly.</p>
-
-<p>I&rsquo;m conflicted on leading zeros. Future proofing is one thing, but how many dns servers do you honestly anticipate building? Better than this though: [ mail, mail1, mail2, mail3 ]. Ug. Renaming is not nearly as hard as people think. Hostnames are <strong>NOT </strong>permanent.</p>
-
+<p>I'm conflicted on leading zeros. Future proofing is one thing, but how many dns servers do you honestly anticipate building? Better than this though: [ mail, mail1, mail2, mail3 ]. Ug. Renaming is not nearly as hard as people think. Hostnames are **NOT **permanent.</p>
 <h1 id="bestest">Bestest</h1>
-
 <ul>
 <li>db01a</li>
 <li>nfs01-04</li>
 <li>mail</li>
 </ul>
-
-<p><a href="../uploads/36744679.jpg"><img src="../uploads/36744679-300x300.jpg" alt="36744679" /></a>Yes. To me these are perfect. The very name of the server implies what runs on it, and deters admins from running other things on it. We are talking <em>one logical service per server</em>.</p>
-
+<p><a href="../uploads/36744679.jpg"><img src="../uploads/36744679-300x300.jpg" alt="36744679"></a>Yes. To me these are perfect. The very name of the server implies what runs on it, and deters admins from running other things on it. We are talking <em>one logical service per server</em>.</p>
 <p>I like db01a because it implies that there is a pair, db01b. (Bonus points for a db01 floating ip, if applicable)</p>
-
-<p>mail: It is the mail server. Don&rsquo;t let your co-workers tell you that you are un-creative. They don&rsquo;t even <em>know</em>. Not every situation calls out for an HA solution, sometimes it is ok to have a mail server.</p>
-
+<p>mail: It is the mail server. Don't let your co-workers tell you that you are un-creative. They don't even <em>know</em>. Not every situation calls out for an HA solution, sometimes it is ok to have a mail server.</p>
 <h1 id="conclusion">Conclusion</h1>
-
-<p>I have no idea what your situation is, don&rsquo;t listen to me. Picking server hostnames is a <a href="https://en.wikipedia.org/wiki/Parkinson's_law_of_triviality">bikeshed </a>problem. Pick one and move on with your life.</p>
+<p>I have no idea what your situation is, don't listen to me. Picking server hostnames is a <a href="https://en.wikipedia.org/wiki/Parkinson's_law_of_triviality">bikeshed </a>problem. Pick one and move on with your life.</p>
 
         </div>
     </section>

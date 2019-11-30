@@ -7,7 +7,7 @@
 
 <meta property="og:title" content="How to Benchmark Harddrives in Linux" />
 <meta property="og:description" content="So you have some new harddrives. Maybe you are thinking about building a DIY storage server? Maybe some Raid? Maybe you just want to know if your drives are performing as well as when you bought them? How can you know? Measurement is Knowing.
-The thing about benchmarks is that you always must be skeptical. Each system&rsquo;s particular disks, controller, raid level and settings, cpu, ram, filesystem, operating system, etc can GREATLY affect the performance of a system." />
+The thing about benchmarks is that you always must be skeptical. Each system&#39;s particular disks, controller, raid level and settings, cpu, ram, filesystem, operating system, etc can GREATLY affect the performance of a system." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/how-to-benchmark-harddrives-in-linux/" />
 <meta property="article:published_time" content="2011-05-21T03:02:47+00:00" />
@@ -16,7 +16,7 @@ The thing about benchmarks is that you always must be skeptical. Each system&rsq
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="How to Benchmark Harddrives in Linux"/>
 <meta name="twitter:description" content="So you have some new harddrives. Maybe you are thinking about building a DIY storage server? Maybe some Raid? Maybe you just want to know if your drives are performing as well as when you bought them? How can you know? Measurement is Knowing.
-The thing about benchmarks is that you always must be skeptical. Each system&rsquo;s particular disks, controller, raid level and settings, cpu, ram, filesystem, operating system, etc can GREATLY affect the performance of a system."/>
+The thing about benchmarks is that you always must be skeptical. Each system&#39;s particular disks, controller, raid level and settings, cpu, ram, filesystem, operating system, etc can GREATLY affect the performance of a system."/>
 
 
     <meta name="description" content="">
@@ -106,62 +106,38 @@ The thing about benchmarks is that you always must be skeptical. Each system&rsq
 </p>
         </div>
         <div class="col s12 m8 offset-m2 l6">
-            
-
-<p>So you have some new harddrives. Maybe you are thinking about building a DIY storage server? Maybe some Raid? Maybe you just want to know if your drives are performing as well as when you bought them? How can you know? <strong>Measurement is Knowing</strong>.</p>
-
-<p>The thing about benchmarks is that you always must be skeptical. Each system&rsquo;s particular disks, controller, raid level and settings, cpu, ram, filesystem, operating system, etc can GREATLY affect the performance of a system. The only way to know is to <strong>do it yourself</strong>.</p>
-
+            <p>So you have some new harddrives. Maybe you are thinking about building a DIY storage server? Maybe some Raid? Maybe you just want to know if your drives are performing as well as when you bought them? How can you know? <strong>Measurement is Knowing</strong>.</p>
+<p>The thing about benchmarks is that you always must be skeptical. Each system's particular disks, controller, raid level and settings, cpu, ram, filesystem, operating system, etc can GREATLY affect the performance of a system. The only way to know is to <strong>do it yourself</strong>.</p>
 <p><strong>_1. Super Easy Block Level Read Test: hdparm _</strong>
 This particular &ldquo;benchmark&rdquo; is easiest and the least reliable. It does raw reads only, good luck on where it pulls them from. Here is an example:</p>
-
 <pre><code>root@archive:/# hdparm -tT /dev/sda
 /dev/sda:
 Timing cached reads:   1472 MB in  2.00 seconds = 735.81 MB/sec
 Timing buffered disk reads: 360 MB in  3.02 seconds = 119.24 MB/sec
 </code></pre>
-
 <p>Its&hellip; something. Good for just real quick, non-destructive read tests to compare between two disks or arrays.</p>
-
 <p><strong><em>2. Better Block Level Read and Write Tests: palimpsest</em></strong>
 Palimpsest operates on a block device. It has nothing to do with files and filesystems like hdparm. If performed on a whole disk you can see the how the drive slows down as the head approaches the interior of the spindle. It also does seek tests.</p>
-
 <p>You can run &ldquo;palimpsest&rdquo; on the command line, or in a gnome environment go System-&gt;Administration -&gt; Disk Utility. Modern versions of the program can also connect to remote servers which may not have a gui. It can also be X-forwarded from remote servers.</p>
-
 <p>Here is a gallery of some examples:</p>
-
-<p><a href="../uploads/Screenshot-1-10.0-GB-RAID-1-Array-–-Benchmark.png"><img src="../uploads/Screenshot-1-10.0-GB-RAID-1-Array-–-Benchmark-150x150.png" alt="" /></a><a href="../uploads/Screenshot-1-20-GB-RAID-5-Array-–-Benchmark.png"><img src="../uploads/Screenshot-1-20-GB-RAID-5-Array-–-Benchmark-150x150.png" alt="" /></a><a href="../uploads/Screenshot-1-30-GB-RAID-0-Array-–-Benchmark.png"><img src="../uploads/Screenshot-1-30-GB-RAID-0-Array-–-Benchmark-150x150.png" alt="" /></a><a href="../uploads/Screenshot-64-GB-Solid-State-Disk-ATA-Corsair-CSSD-V64GB2-–-Benchmark.png"><img src="../uploads/Screenshot-64-GB-Solid-State-Disk-ATA-Corsair-CSSD-V64GB2-–-Benchmark-150x150.png" alt="" /></a><a href="../uploads/Screenshot-2.0-TB-Hard-Disk-ATA-WDC-WD20EARS-00MVWB0-–-Benchmark.png"><img src="../uploads/Screenshot-2.0-TB-Hard-Disk-ATA-WDC-WD20EARS-00MVWB0-–-Benchmark-150x150.png" alt="" /></a></p>
-
+<p><a href="../uploads/Screenshot-1-10.0-GB-RAID-1-Array-%E2%80%93-Benchmark.png"><img src="../uploads/Screenshot-1-10.0-GB-RAID-1-Array-%E2%80%93-Benchmark-150x150.png" alt=""></a><a href="../uploads/Screenshot-1-20-GB-RAID-5-Array-%E2%80%93-Benchmark.png"><img src="../uploads/Screenshot-1-20-GB-RAID-5-Array-%E2%80%93-Benchmark-150x150.png" alt=""></a><a href="../uploads/Screenshot-1-30-GB-RAID-0-Array-%E2%80%93-Benchmark.png"><img src="../uploads/Screenshot-1-30-GB-RAID-0-Array-%E2%80%93-Benchmark-150x150.png" alt=""></a><a href="../uploads/Screenshot-64-GB-Solid-State-Disk-ATA-Corsair-CSSD-V64GB2-%E2%80%93-Benchmark.png"><img src="../uploads/Screenshot-64-GB-Solid-State-Disk-ATA-Corsair-CSSD-V64GB2-%E2%80%93-Benchmark-150x150.png" alt=""></a><a href="../uploads/Screenshot-2.0-TB-Hard-Disk-ATA-WDC-WD20EARS-00MVWB0-%E2%80%93-Benchmark.png"><img src="../uploads/Screenshot-2.0-TB-Hard-Disk-ATA-WDC-WD20EARS-00MVWB0-%E2%80%93-Benchmark-150x150.png" alt=""></a></p>
 <p>Notice the slow writes on the raid 5 (second picture), and the small deviation on seeks on the SSD (forth picture). Also you can see how spinning disks slow down as the approach the center of the spindle. (fifth picture)</p>
-
 <p><strong><em>3: Real World Filesystem Benchmarks: Bonnie++</em></strong>
 In some way, the above benchmarks are more theoretical than what would be ideal. Unless you have a special application, you are like the rest of us: <strong>you work on files</strong>.</p>
-
 <p>Working with normal files means you interact with a filesystem. Working on a filesystem means you have block sizes, extents, permissions, fragmentation, etc. All of these additional complexities need to be measured.</p>
-
 <p>The solution here is bonnie++, which does what most applications do: write, read, seek, create, and delete files sequentially and randomly.</p>
-
 <p>Here would be a typical invocation:</p>
-
 <pre><code>kyle@archive:/tmp# bonnie++
 </code></pre>
-
 <p>It is better to run it as not root. Run it in the directory where you want it to make files. Its output is&hellip; a little hard to comprehend and outside the scope of this article. One can read the documentation and compile your own spreadsheet and graph with some Libreoffice Calc foo:</p>
-
-<p><a href="../uploads/Bonnie-Graphs.png"><img src="../uploads/Bonnie-Graphs-300x178.png" alt="" /></a></p>
-
+<p><a href="../uploads/Bonnie-Graphs.png"><img src="../uploads/Bonnie-Graphs-300x178.png" alt=""></a></p>
 <p>Nothing too fancy. It has a lot of output, so you have to pick the numbers that are important to you. Another option is to use the bon_csv2html to output a slightly more readable output:</p>
-
 <pre><code>cat benchmarks.csv | bon_csv2html  &gt; bench.html
 firefox bench.html
 </code></pre>
-
-<p><a href="../uploads/bonnie-html.png"><img src="../uploads/bonnie-html-300x62.png" alt="" /></a></p>
-
+<p><a href="../uploads/bonnie-html.png"><img src="../uploads/bonnie-html-300x62.png" alt=""></a></p>
 <p>Bonnie benchmarks are the hardest to read, but are they closest to the <em>reality</em> of the performance of your disk in your environment.</p>
-
 <h2 id="conclusion">Conclusion</h2>
-
 <p>So that is it. Try out different raid configurations and filesystems, but benchmark them to <strong><em>know</em></strong> if it improves or degrades your performance instead of depending on hunches and superstition!</p>
 
         </div>

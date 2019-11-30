@@ -8,8 +8,8 @@
 <meta property="og:title" content="Hacking a Hallmark Text Band: First Attempt" />
 <meta property="og:description" content="The Hallmark Text Band is a strange thing:
 
-Doesn&rsquo;t Hallmark know kids have cell phones now? Anyway, it is an extremely simple micro-controller driving a led matrix and a C-Max CMM-9201. You get 10 characters, and a small reed-switch? triggers a hardware interrupt, and broadcasts your 10 characters to a friend, and you swap messages. The devices holds 24 messages, FIFO. Memory is volatile. Profanity filter included.
-Oh well." />
+Doesn&#39;t Hallmark know kids have cell phones now? Anyway, it is an extremely simple micro-controller driving a led matrix and a C-Max CMM-9201. You get 10 characters, and a small reed-switch? triggers a hardware interrupt, and broadcasts your 10 characters to a friend, and you swap messages. The devices holds 24 messages, FIFO. Memory is volatile. Profanity filter included.
+Oh well. Lets hack it." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/hacking-a-hallmark-text-band-first-attempt/" />
 <meta property="article:published_time" content="2013-03-14T04:08:20+00:00" />
@@ -19,8 +19,8 @@ Oh well." />
 <meta name="twitter:title" content="Hacking a Hallmark Text Band: First Attempt"/>
 <meta name="twitter:description" content="The Hallmark Text Band is a strange thing:
 
-Doesn&rsquo;t Hallmark know kids have cell phones now? Anyway, it is an extremely simple micro-controller driving a led matrix and a C-Max CMM-9201. You get 10 characters, and a small reed-switch? triggers a hardware interrupt, and broadcasts your 10 characters to a friend, and you swap messages. The devices holds 24 messages, FIFO. Memory is volatile. Profanity filter included.
-Oh well."/>
+Doesn&#39;t Hallmark know kids have cell phones now? Anyway, it is an extremely simple micro-controller driving a led matrix and a C-Max CMM-9201. You get 10 characters, and a small reed-switch? triggers a hardware interrupt, and broadcasts your 10 characters to a friend, and you swap messages. The devices holds 24 messages, FIFO. Memory is volatile. Profanity filter included.
+Oh well. Lets hack it."/>
 
 
     <meta name="description" content="">
@@ -110,27 +110,16 @@ Oh well."/>
 </p>
         </div>
         <div class="col s12 m8 offset-m2 l6">
-            
-
-<p>The <a href="http://www.textbands.com/">Hallmark Text Band</a> is a strange thing:</p>
-
-<p><a href="../uploads/P3130076.jpg"><img src="../uploads/P3130076-300x235.jpg" alt="Hallmark Text Band" /></a></p>
-
-<p>Doesn&rsquo;t Hallmark know kids have cell phones now?
+            <p>The <a href="http://www.textbands.com/">Hallmark Text Band</a> is a strange thing:</p>
+<p><a href="../uploads/P3130076.jpg"><img src="../uploads/P3130076-300x235.jpg" alt="Hallmark Text Band"></a></p>
+<p>Doesn't Hallmark know kids have cell phones now?
 Anyway, it is an extremely simple micro-controller driving a led matrix and a <a href="http://www.c-max.com.hk/en/technology/rfcomm/2_4g_trans_ic">C-Max CMM-9201</a>. You get 10 characters, and a small reed-switch? triggers a hardware interrupt, and broadcasts your 10 characters to a friend, and you swap messages. The devices holds 24 messages, FIFO. Memory is volatile. Profanity filter included.</p>
-
 <p>Oh well. Lets hack it.</p>
-
-<p>I don&rsquo;t have any fancy hardware to listen to the RF. I decided to sniff the SPI bus with a <a href="http://dangerousprototypes.com/docs/Bus_Pirate">Bus Pirate</a> (Sparkfun version).</p>
-
-<p><a href="../uploads/P3130078.jpg"><img src="../uploads/P3130078-300x224.jpg" alt="" /></a><a href="../uploads/P3130081.jpg"><img src="../uploads/P3130081-300x300.jpg" alt="" /></a></p>
-
-<p>With the Bus Pirate I&rsquo;ve tried using the SPISniffer and the text interface in SPI monitor mode. I&rsquo;ve tried all sorts of variations of speed, etc, and I can&rsquo;t get a reliable output.</p>
-
+<p>I don't have any fancy hardware to listen to the RF. I decided to sniff the SPI bus with a <a href="http://dangerousprototypes.com/docs/Bus_Pirate">Bus Pirate</a> (Sparkfun version).</p>
+<p><a href="../uploads/P3130078.jpg"><img src="../uploads/P3130078-300x224.jpg" alt=""></a><a href="../uploads/P3130081.jpg"><img src="../uploads/P3130081-300x300.jpg" alt=""></a></p>
+<p>With the Bus Pirate I've tried using the SPISniffer and the text interface in SPI monitor mode. I've tried all sorts of variations of speed, etc, and I can't get a reliable output.</p>
 <p>I should be able to use the bus pirate in SPI monitor mode and tap it right in the middle of the bus, right? (between the controller and the wireless modules)</p>
-
-<p>Setting the Bus Pirate to only give me data when CS goes low (according to the datasheet) should give me data only when it transmits, but it doesn&rsquo;t. I get lots of strange output:</p>
-
+<p>Setting the Bus Pirate to only give me data when CS goes low (according to the datasheet) should give me data only when it transmits, but it doesn't. I get lots of strange output:</p>
 <pre><code>[0x08(0x28)0x00(0x29)0x00(0x28)0x00(0x29)0x0A(0x28)0x00(0x29)]
 [0x08(0x28)0x00(0x29)]
 [0x08(0x28)0x00(0x29)0x00(0x28)0x00(0x29)0x0A(0x28)0x00(0x29)]
@@ -143,25 +132,24 @@ Anyway, it is an extremely simple micro-controller driving a led matrix and a <a
 [0x08(0x28)0x00(0x29)]
 [0x14(0x28)0x00(0x29)]
 </code></pre>
-
 <p>When the device does transmit, I get some sort of data, but it just looks like more of this randomness:</p>
-
 <pre><code>[0x6E(0x28)0x00(0x29)0x6C(0x28)0x00(0x29)0x9C(0x28)0x00(0x29)0xB8(0x28)0x00(0x29)0x10(0x28)0x00(0x29)]
 [0x81(0x28)0x00(0x29)0x1F(0x28)0x00(0x29)0x7E(0x28)0x00(0x29)0x9E(0x28)0x00(0x29)0x9E(0x28)0x00(0x29)0x3F(0x28)0x00(0x29)0x1B(0x28)0x00(0x29)0xB8(0x28)0x00(0x29)0xAA(0x28)0x00(0x29)0xAA(0x28)0x00(0x29)0xAB(0x28)0x00(0x29)0xFE(0x28)0x00(0x29)0xAB(0x28)0x00(0x29)0xF8(0x28)0x00(0x29)0xAB(0x28)0x00(0x29)0x55(0x28)0x00(0x29)0x55(0x28)0x00(0x29)0x55(0x28)0x00(0x29)0x55(0x28)0x00(0x29)0x55(0x28)0x00(0x29)0x55(0x28)0x00(0x29)0x55(0x28)0x00(0x29)0x55(0x28)0x00(0x29)0x55(0x28)0x00(0x29)0x55(0x28)0x00(0x29)0x55(0x28)0x00(0x29)0x55(0x28)0x00(0x29)0x55(0x28)0x00(0x29)0x55(0x28)0x00(0x29)0x55(0x28)0x00(0x29)0x55(0x28)0x00(0x29)0x55(0x28)0x00(0x29)]
 [0x9C(0x28)0x00(0x29)]
 [0xC0(0x28)0x00(0x29)0x00(0x28)0x00(0x29)0x00(0x28)0x00(0x29)0x00(0x28)0x00(0x29)0x00(0x28)0x00(0x29)0x00(0x28)0x00(0x29)0x00(0x28)0x00(0x29)0x00(0x28)0x00(0x29)0x00(0x28)0x00(0x29)0x00(0x28)0x00(0x29)0x00(0x28)0x00(0x29)0x00(0x28)0x00(0x29)0x00(0x28)0x00(0x29)0x00(0x28)0x00(0x29)]
 </code></pre>
-
-<p>Is this the message? I&rsquo;m a hardware hacking noob. Criticism welcome.</p>
-
+<p>Is this the message? I'm a hardware hacking noob. Criticism welcome.</p>
 <h2 id="things-to-discover">Things to Discover</h2>
-
 <ul>
-<li><p>Does the profanity filter get applied on sending, receiving, or both?</p></li>
-
-<li><p>How is the 10 character limit imposed? Could I buffer overrun it?</p></li>
-
-<li><p>There could be more uses for this if I could come up with a USB interface for one, and a high gain 2.4ghz antenna&hellip;</p></li>
+<li>
+<p>Does the profanity filter get applied on sending, receiving, or both?</p>
+</li>
+<li>
+<p>How is the 10 character limit imposed? Could I buffer overrun it?</p>
+</li>
+<li>
+<p>There could be more uses for this if I could come up with a USB interface for one, and a high gain 2.4ghz antenna&hellip;</p>
+</li>
 </ul>
 
         </div>

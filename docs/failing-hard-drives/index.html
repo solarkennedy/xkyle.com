@@ -109,34 +109,24 @@ So now-a-days I run a &ldquo;smart test&rdquo; on the drive to see how it is. Un
         </div>
         <div class="col s12 m8 offset-m2 l6">
             <p>So lots of people use computers, and lots of people have harddrives.</p>
-
 <p>At my work I deal with lots and lots of computers and lots and lots of drives. So during a week I see plenty of failing drives, just because of the statistics.</p>
-
-<p><img src="http://www.techchee.com/wp-content/uploads/2007/11/double-boil-your-failed-hard-drive-to-recover-its-precious-data-271107.jpg" alt="" /></p>
-
+<p><img src="http://www.techchee.com/wp-content/uploads/2007/11/double-boil-your-failed-hard-drive-to-recover-its-precious-data-271107.jpg" alt=""></p>
 <p>So now-a-days I run a &ldquo;smart test&rdquo; on the drive to see how it is. Unfortunately most drive testers and smart tests are crap. So I made my own and I want to share it with you&hellip;.</p>
-
-<p>It runs in Linux of course, and all it needs is a program called smartctl. (If you don&rsquo;t have it and you are running Ubuntu, just run &ldquo;apt-get install smartmontools&rdquo; )</p>
-
+<p>It runs in Linux of course, and all it needs is a program called smartctl. (If you don't have it and you are running Ubuntu, just run &ldquo;apt-get install smartmontools&rdquo; )</p>
 <p>Here is how you can get it and run it:</p>
-
 <blockquote>
 <p>$ wget a.xkyle.com/smarttest
 $ bash smarttest</p>
 </blockquote>
-
 <p>Thats it! Just give it about 2 minutes to run.  Here is an example output:</p>
-
 <blockquote>
 <p>Hours: 27519
 SMART Errors: 0
 Reallocated / Pending: 2 / 0
 Read Speed: 41 MB/s</p>
 </blockquote>
-
 <p>WARNING: This drive has over 26,280 (3 years) hours on it and should not be used as a Primary
-WARNING: This drive has some reallocated sectors, this shouldn&rsquo;t be used as a primary and requires judgment if it is to be used for a secondary</p>
-
+WARNING: This drive has some reallocated sectors, this shouldn't be used as a primary and requires judgment if it is to be used for a secondary</p>
 <p>Its  pretty self explainitory if you know about drives. If you want to know more about smart paramaters, check out the <a href="http://en.wikipedia.org/wiki/Self-Monitoring,_Analysis,_and_Reporting_Technology">wikipedia article.</a></p>
 
         </div>

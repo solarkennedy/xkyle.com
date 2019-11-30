@@ -108,105 +108,83 @@ class { &#39;sudo&#39;: purge =&gt; true, } Great start."/>
 </p>
         </div>
         <div class="col s12 m8 offset-m2 l6">
-            
-
-<p>Whenever possible, I try to write Puppet code that is purgable and
+            <p>Whenever possible, I try to write Puppet code that is purgable and
 &ldquo;Comment Safe&rdquo;. That is not a very good description. What I mean is, Puppet
 code that removes resources from a system when the corresponding Puppet
 code is &ldquo;Commented&rdquo; out of a manifest. Lets look at a few examples.</p>
-
 <h3 id="example-managed-sudo">Example: Managed Sudo</h3>
-
 <p>Lets say you used this <a href="https://forge.puppetlabs.com/saz/sudo">popular sudo module</a>
 with the following params:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">class</span> { <span style="color:#e6db74">&#39;sudo&#39;</span>:
-  purge <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">true</span>,
-}</code></pre></div>
-<p>Great start. All future <code>sudo::conf</code> blocks you write will <em>automatically</em> disappear
+  purge <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">true</span>,
+}
+</code></pre></div><p>Great start. All future <code>sudo::conf</code> blocks you write will <em>automatically</em> disappear
 from the host:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">sudo<span style="color:#f92672">::</span>conf { <span style="color:#e6db74">&#39;web&#39;</span>:
-   source <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;puppet:///files/etc/sudoers.d/web&#39;</span>,
+   source <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;puppet:///files/etc/sudoers.d/web&#39;</span>,
  }
  
 <span style="color:#75715e"># Commenting out for now. Automatically is purged from the server</span>
 <span style="color:#75715e"># sudo::conf { &#39;admins&#39;:</span>
 <span style="color:#75715e">#   priority =&gt; 10,</span>
 <span style="color:#75715e">#   content  =&gt; &#34;%admins ALL=(ALL) NOPASSWD: ALL&#34;,</span>
-<span style="color:#75715e"># }</span></code></pre></div>
-<p>Good stuff. Do this.</p>
-
+<span style="color:#75715e"># }</span>
+</code></pre></div><p>Good stuff. Do this.</p>
 <h3 id="example-managed-firewall">Example: Managed Firewall</h3>
-
 <p>How about another example with the
 <a href="https://forge.puppetlabs.com/puppetlabs/firewall">Puppetlabs Firewall module</a>?</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e"># Automatically remove rules that are not declared</span>
-resources { <span style="color:#e6db74">&#34;firewall&#34;</span>:
-  purge <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">true</span>
+resources { <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">firewall</span><span style="color:#e6db74">&#34;</span>:
+  purge <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">true</span>
 } 
 
 <span style="color:#75715e"># Production needs 111 open</span>
 firewall { <span style="color:#e6db74">&#39;111 open port 111&#39;</span>:
-  dport <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">111</span>
-}
+  dport <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">111</span>
+<span style="color:#f92672"></span>}
 <span style="color:#75715e"># Tried this but didn&#39;t work. Commenting out for now</span>
 <span style="color:#75715e"># Automatically removed from the server when I commented it out</span>
 <span style="color:#75715e"># firewall { &#39;112 open port 112&#39;:</span>
 <span style="color:#75715e">#   dport =&gt; 112</span>
-<span style="color:#75715e"># }</span></code></pre></div>
-<h3 id="the-point">The Point?</h3>
-
+<span style="color:#75715e"># }</span>
+</code></pre></div><h3 id="the-point">The Point?</h3>
 <p>The point here is that we should encourage a culture of purging. Having
 resources get automatically purged when you comment them out from puppet
 is great.</p>
-
 <p>Of course, this is obsoleted in the short-lived world of docker or possibly
 Amazon EC2. But for those engineers who work on long lived servers, this
 prevents cruft.</p>
-
 <h3 id="going-further-purging-packages">Going Further: Purging Packages</h3>
-
 <p>I want to purge packages. If someone installs a package not controlled by
 Puppet, I want puppet to purge it. Crazy I know.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">package { <span style="color:#e6db74">&#39;apache&#39;</span>: <span style="color:#66d9ef">ensure</span> <span style="color:#f92672">=&gt;</span> installed }
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">package { <span style="color:#e6db74">&#39;apache&#39;</span>: <span style="color:#66d9ef">ensure</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> installed }
 
 <span style="color:#75715e"># No longer using php</span>
 <span style="color:#75715e"># But puppet leaves this behind!</span>
-<span style="color:#75715e"># package { &#39;php5&#39;: ensure =&gt; installed }</span></code></pre></div>
-<p>Of course puppet will leave the package behind. I should be doing <code>ensure =&gt; purged</code>
+<span style="color:#75715e"># package { &#39;php5&#39;: ensure =&gt; installed }</span>
+</code></pre></div><p>Of course puppet will leave the package behind. I should be doing <code>ensure =&gt; purged</code>
 right?</p>
-
 <p>But what if the package is deep within nested classes or simply manually installed?</p>
-
 <p>Some day I would like to get to the point where I at least get notified when
-puppet detects packages that don&rsquo;t need to be there. I&rsquo;m open to suggestions on
+puppet detects packages that don't need to be there. I'm open to suggestions on
 how to do this.</p>
-
 <h3 id="going-further-purging-etc">Going Further: Purging /etc/</h3>
-
 <p>Most of the time stale configuration leftover in /etc/ causes no harm.</p>
-
 <p>But what about cron jobs in <code>/etc/cron.d</code>? I would love to purge them, but there
 are non-puppet controlled things installed by system packages. If <em>everything</em> was
 a puppet module this could eventually be achieved, but it would be too hard
 to keep in sync with upstream package changes.</p>
-
 <p>Purgin on a per-app basis with things like <a href="https://github.com/sensu/sensu-puppet">sensu</a>,
 <a href="https://forge.puppetlabs.com/puppetlabs/apache">apache</a>, and <a href="https://forge.puppetlabs.com/saz/sudo">sudo</a>
 are a great start.</p>
-
-<h3 id="crossing-the-line-purging-var-lib-mysql">Crossing the Line: Purging /var/lib/mysql</h3>
-
+<h3 id="crossing-the-line-purging-varlibmysql">Crossing the Line: Purging /var/lib/mysql</h3>
 <p>Seems like if you asked puppet to install mysql databases, and then
 commented them out, you would <em>not</em> want puppet to purge them.</p>
-
 <p>The subtle difference here might be the difference between <strong>configuration</strong> and
 <strong>data</strong>.</p>
-
 <h3 id="conclusion">Conclusion</h3>
-
 <p>Whenever possible I try to <code>purge =&gt; true</code> on whatever I can. I would like to see
 this as the <strong>default</strong> in new puppet modules.</p>
-
 <p>Someday I would like us to purge more than just files and iptables rules.</p>
 
         </div>

@@ -20,7 +20,7 @@
       <description>A strange string appeared at the bottom of a Balanced Payments blog post:
  NmQ2ZjYzMmU3Mzc0NmU2NTZkNzk2MTcwNjQ2NTYzNm U2MTZjNjE2MjQwNjU2MzZlNjU3MjY1NjY2NjY5NjQ2MTY1N mI2MTZkNmY3NDc0NmU2MTc3Njk=
  One of those puzzles to attract coders I guess. The guys at Hacker News spilled the beans, so lets spill them some more.
-First though,** Mad Props** to the Balanced team for thinking &amp;ldquo;outside&amp;rdquo; the unit-test-box. Plus Jenkins rocks. The world needs more Jenkins. Bash? I&amp;rsquo;m not a developer, so my first instinct was to use the existing set of tools that people have already written to solve this puzzle:</description>
+First though,** Mad Props** to the Balanced team for thinking &amp;ldquo;outside&amp;rdquo; the unit-test-box. Plus Jenkins rocks. The world needs more Jenkins. Bash? I&#39;m not a developer, so my first instinct was to use the existing set of tools that people have already written to solve this puzzle:</description>
     </item>
     
     <item>
@@ -41,13 +41,12 @@ The circles represent actors, the diamonds represent movies they have been in. P
       
       <guid>/computer-assisted-jenga-with-the-wii-balance-board-and-linux/</guid>
       <description>I like to think about how games work, in the case of Jenga, it is just physics!
-But don&amp;rsquo;t you wish you could peel back reality and see what is happening with the physics from the inside? Well now you can, with the help of a Wii Balance Board.
+But don&#39;t you wish you could peel back reality and see what is happening with the physics from the inside? Well now you can, with the help of a Wii Balance Board.
 
 For the setup you need these ingredients:
- Wii Balance Board
- Computer with Bluetooth
- Linux, preferably Ubuntu
- Jenga Set, alternatively &amp;ldquo;Tension Tower&amp;ldquo;</description>
+  Wii Balance Board
+  Computer with Bluetooth
+  Linux, preferably Ubuntu</description>
     </item>
     
   </channel>

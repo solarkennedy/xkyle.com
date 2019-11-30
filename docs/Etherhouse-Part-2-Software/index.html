@@ -110,31 +110,21 @@ The code plenty of defensive code in place to ensure the client continues to run
 </p>
         </div>
         <div class="col s12 m8 offset-m2 l6">
-            
-
-<p>The software that powers the Etherhouse project is open source. This blog
+            <p>The software that powers the Etherhouse project is open source. This blog
 post describes that software and how it interacts with all the pieces.</p>
-
 <h2 id="client">Client</h2>
-
 <p>You can see the <a href="https://github.com/solarkennedy/ether_house">Client software</a>
 that runs on the Arduino. This uses one external library and is in the native
 Arduino C++.</p>
-
 <p>The Arduino runs a limited TCP/IP stack and interacts with the http api.</p>
-
 <p>The code plenty of defensive code in place to ensure the client continues to run
 without interruption or interaction. No one should need to &ldquo;turn it off and on
 again.&rdquo;</p>
-
 <h2 id="server">Server</h2>
-
 <p>The <a href="https://github.com/solarkennedy/ether_housed">Server software</a> is also open
 source.</p>
-
 <p>In designing the software, I aimed for longevity. I want the software to
 continue to run for many years without maintenance. I decided to use golang.</p>
-
 <ul>
 <li>Go binaries are statically compiled, which means the same binary I compile now
 will continue to run on new platforms for years to come.</li>

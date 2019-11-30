@@ -7,7 +7,7 @@
 
 <meta property="og:title" content="Kubernetes as a Universal Infrastructure API" />
 <meta property="og:description" content="Recently the Kubernetes (k8s) Cluster Lifecycle Special Interest Group (SIG) release their first Alpha of their Cluster API.
-What does this thing do? It is kinda like a k8s operator (it&rsquo;s a controller) that has custom resource definitions for things to launch another k8s cluster, with a bunch of cloud providers. It is kinda like if Terraform was re-imagined as a k8s operator, but only for launching other k8s clusters, and not general purpose." />
+What does this thing do? It is kinda like a k8s operator (it&#39;s a controller) that has custom resource definitions for things to launch another k8s cluster, with a bunch of cloud providers. It is kinda like if Terraform was re-imagined as a k8s operator, but only for launching other k8s clusters, and not general purpose." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/Kubernetes-as-a-Universal-Infrastructure-API/" />
 <meta property="article:published_time" content="2019-06-02T00:00:00+00:00" />
@@ -16,7 +16,7 @@ What does this thing do? It is kinda like a k8s operator (it&rsquo;s a controlle
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Kubernetes as a Universal Infrastructure API"/>
 <meta name="twitter:description" content="Recently the Kubernetes (k8s) Cluster Lifecycle Special Interest Group (SIG) release their first Alpha of their Cluster API.
-What does this thing do? It is kinda like a k8s operator (it&rsquo;s a controller) that has custom resource definitions for things to launch another k8s cluster, with a bunch of cloud providers. It is kinda like if Terraform was re-imagined as a k8s operator, but only for launching other k8s clusters, and not general purpose."/>
+What does this thing do? It is kinda like a k8s operator (it&#39;s a controller) that has custom resource definitions for things to launch another k8s cluster, with a bunch of cloud providers. It is kinda like if Terraform was re-imagined as a k8s operator, but only for launching other k8s clusters, and not general purpose."/>
 
 
     <meta name="description" content="">
@@ -106,25 +106,20 @@ What does this thing do? It is kinda like a k8s operator (it&rsquo;s a controlle
 </p>
         </div>
         <div class="col s12 m8 offset-m2 l6">
-            
-
-<p>Recently the Kubernetes (k8s) <a href="https://github.com/kubernetes/community/tree/master/sig-cluster-lifecycle">Cluster Lifecycle Special Interest
+            <p>Recently the Kubernetes (k8s) <a href="https://github.com/kubernetes/community/tree/master/sig-cluster-lifecycle">Cluster Lifecycle Special Interest
 Group</a>
 (SIG) release their <a href="https://blogs.vmware.com/cloudnative/2019/05/14/cluster-api-kubernetes-lifecycle-management/">first
 Alpha</a>
 of their Cluster API.</p>
-
 <p>What does this thing do? It is kinda like a k8s
-<a href="https://enterprisersproject.com/article/2019/2/kubernetes-operators-plain-english">operator</a> (it&rsquo;s a controller) that
+<a href="https://enterprisersproject.com/article/2019/2/kubernetes-operators-plain-english">operator</a> (it's a controller) that
 has custom resource definitions for things to launch <strong>another</strong> k8s
 cluster, with a bunch of
 cloud <a href="https://github.com/kubernetes-sigs/cluster-api#provider-implementations">providers</a>.
 It is kinda like if Terraform was re-imagined as a k8s operator, but
 only for launching other k8s clusters, and not general purpose.</p>
-
 <p>It supports a couple of
 <a href="https://kubernetes-sigs.github.io/cluster-api/common_code/architecture.html#cluster-api-resources">resources</a>:</p>
-
 <ul>
 <li>Cluster</li>
 <li>Machine</li>
@@ -132,87 +127,65 @@ only for launching other k8s clusters, and not general purpose.</p>
 <li>MachineDeployment</li>
 <li>MachineClass</li>
 </ul>
-
-<p>If you are already familiar with k8s, these may look familiar! It isn\&rsquo;t
+<p>If you are already familiar with k8s, these may look familiar! It isn't
 a coincidence of course. This is what it looks like when k8s users try
 to make an API for launching machines.</p>
-
 <p>But in general, it provides an k8s API endpoint to launch more k8s
 clusters in a declarative way, just like anything else in k8s.</p>
-
 <h2 id="how-does-the-k8s-cluster-lifecycle-api-solve-this-problem">How Does the k8s Cluster Lifecycle API Solve This Problem?</h2>
-
 <p>The k8s lifecycle thing is very new, and a very specific goal: implement
-enough \&ldquo;cloud\&rdquo; api calls to be able to get a k8s cluster running.</p>
-
+enough &quot;cloud&quot; api calls to be able to get a k8s cluster running.</p>
 <p>They provide a couple of AMIs, but encourage you to bring your
 <a href="https://github.com/kubernetes-sigs/cluster-api-provider-aws#kubernetes-versions-with-published-amis">own</a>.
 They are working on a <code>clusterctl</code> command, analogous to kubectl.</p>
-
-<p>Like Terraform (and any other k8s\&lsquo;y things), the API is declarative; you
+<p>Like Terraform (and any other k8s'y things), the API is declarative; you
 tell k8s what kind of clusters you want to exist, then the controller
 takes over and reconciles that with what is out there.</p>
-
 <p>Also like Terraform, you still have to provide all the details about
 what you want to launch, like AMIs, security groups, vpcs, etc.</p>
-
 <p>Unlike Terraform, the Cluster Lifecycle API will never be a general
 purpose infrastructure thing, it will only ever launch what they need to
 get a k8s cluster up (ec2 nodes).</p>
-
 <h2 id="is-this-a-good-thing">Is This a Good Thing?</h2>
-
 <p>Good for who?</p>
-
-<p>While I do like the pattern of empowering k8s to launch it\&rsquo;s own
+<p>While I do like the pattern of empowering k8s to launch it's own
 infrastructure (a la <a href="https://spotinst.com/products/ocean/">Spotinst Ocean</a>),
-I don\&rsquo;t think this Cluster API is right approach for intermediate-level
+I don't think this Cluster API is right approach for intermediate-level
 infrastructure team.</p>
-
 <p>I think the nuances of what to launch and how to launch are massive.
-I don\&rsquo;t think the Cluster API will ever be nuanced enough to do
+I don't think the Cluster API will ever be nuanced enough to do
 all the things that are required to run all the things.</p>
-
 <p>That is OK. If all you need to do is launch other k8s clusters, then this API
 is for you! If you need to launch any other &ldquo;cloud&rdquo; resource, then you will
 have to end up reaching for another tool. Are you willing to have two different
-ways to launch things? I don&rsquo;t know, maybe I just really like Terraform.</p>
-
-<p>On the other hand, Terraform is flexible, but not dynamic. It doesn\&rsquo;t respond
+ways to launch things? I don't know, maybe I just really like Terraform.</p>
+<p>On the other hand, Terraform is flexible, but not dynamic. It doesn't respond
 to events.  It has the benefit of git-commiting the state and being easier to
-reason about, but it can\&rsquo;t really make new k8s clusters \&ldquo;on the fly\&ldquo;. It has
+reason about, but it can't really make new k8s clusters &quot;on the fly&quot;. It has
 no &ldquo;API&rdquo;.</p>
-
 <p>I think that is OK. Do we need to launch new k8s clusters on
 the fly? I think we need to be able to launch things <em>on</em> k8s
-dynamically, but I don\&rsquo;t think we need whole clusters to exist without
+dynamically, but I don't think we need whole clusters to exist without
 human interaction.</p>
-
 <p>But I do think that the thing that launches k8s nodes should be the same
 thing that is doing the cluster autoscaling control loop, and should be
 empowered to launch instances that it needs.</p>
-
 <h2 id="k8s-as-a-universal-infrastructure-control-plane">K8s as a Universal Infrastructure Control Plane?</h2>
-
 <p>The pattern of using the k8s API machinery and custom resource
-definitions to control things that are not \&ldquo;native\&rdquo; k8s objects, kinda
-reminds me of New Relic\&rsquo;s
+definitions to control things that are not &quot;native&quot; k8s objects, kinda
+reminds me of New Relic's
 <a href="https://www.youtube.com/watch?v=eja7b3tahMg">Inventory Service</a>.</p>
-
 <p>It keeps track of their hosts, and works like a
 <a href="https://en.wikipedia.org/wiki/Configuration_management_database">CMDB</a>,
 using just the k8s api server and custom resource definitions. <strong>They
-don\&rsquo;t even run any kublets!</strong></p>
-
+don't even run any kublets!</strong></p>
 <p>This idea is articulated a bit more in this blog post about k8s being a
 general purpose
-\&rdquo;<a href="https://medium.com/@allingeek/kubernetes-as-a-common-ops-data-plane-f8f2cf40cd59">Ops</a>\&rdquo;
+&quot;<a href="https://medium.com/@allingeek/kubernetes-as-a-common-ops-data-plane-f8f2cf40cd59">Ops</a>&quot;
 control plane.</p>
-
 <p>The k8s pattern provides a bunch of things at once that are opening up
 new ways of thinking about general infrastructure problems. I think
 these things are:</p>
-
 <ul>
 <li>A highly available hosted REST api with validation, schemas, CRUD,
 etc, with custom endpoints, <a href="https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/">hosted by k8s</a></li>
@@ -228,22 +201,19 @@ would need to write this loop efficiently and correctly</li>
 Control (RBAC)</li>
 <li>Secret storage</li>
 </ul>
-
 <p>This is a great pattern to build general purpose infrastructure stuff.
 It is starting with k8s objects now, but as you can see it is expanding
 to store and launch k8s clusters,
 <a href="https://aws.amazon.com/blogs/opensource/aws-service-operator-kubernetes-available/">arbitrary AWS resources</a>,
-<a href="https://github.com/sensu/sensu-operator">Sensu Clusters</a>, New Relic\&rsquo;s
+<a href="https://github.com/sensu/sensu-operator">Sensu Clusters</a>, New Relic's
 inventory data, <a href="https://github.com/sensu/sensu-operator">SSL Certificates</a>, etc.</p>
-
-<p>I predict that we\&rsquo;ll see this as a Universal Infrastructure Control
+<p>I predict that we'll see this as a Universal Infrastructure Control
 Plane, because it is just so convenient, and the declarative pattern is
-so often what you want in infrastructure!<br />
+so often what you want in infrastructure!<br>
 I think many infray things could be re-imagined in the CRD + Operator
 world, and would be way easier to implement.</p>
-
 <p>It will take time though. k8s will have to become ubiquitous first, then
-the operator pattern will have to become well established, <strong>then</strong> we\&rsquo;ll start to
+the operator pattern will have to become well established, <strong>then</strong> we'll start to
 see infrastructure teams want to piggyback on all the goodness and
 extensibility that k8s provides.</p>
 

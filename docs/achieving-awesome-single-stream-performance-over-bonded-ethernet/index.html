@@ -108,15 +108,10 @@ A good start. If you can spare the ports and cables to make this work, you shoul
 </p>
         </div>
         <div class="col s12 m8 offset-m2 l6">
-            
-
-<p>Ethernet Link Aggregation (aka PortChannel, Etherchannel, ethernet bonding, NIC teaming, trunking, link bundling, Smartgroup, Ethertrunk, etc) is a way to combine multiple Ethernet links to a single logical link. This improves redundancy and increases aggregate performance. It is good stuff, especially if you are into <a href="../blog/categories/highavailability/">High Availability</a>.</p>
-
+            <p>Ethernet Link Aggregation (aka PortChannel, Etherchannel, ethernet bonding, NIC teaming, trunking, link bundling, Smartgroup, Ethertrunk, etc) is a way to combine multiple Ethernet links to a single logical link. This improves redundancy and increases aggregate performance. It is good stuff, especially if you are into <a href="../blog/categories/highavailability/">High Availability</a>.</p>
 <p>Here is a typical setup:
-<a href="../uploads/typical.png"><img src="../uploads/typical.png" alt="" /></a></p>
-
+<a href="../uploads/typical.png"><img src="../uploads/typical.png" alt=""></a></p>
 <p>A good start. If you can spare the ports and cables to make this work, you should do it. You get the benefit of very fast fail-over between links if one dies. And you get the aggregated bandwidth. However, you probably will <strong>not</strong> get the combined bandwidth over a **single **tcp stream. The reason for this is that the switch probably does not round-robin the ethernet frames to the source server. Usually switches have a configurable algorithm for switching frames over bonded links. Here are some options on my switch:</p>
-
 <pre><code>10g-nexus(config)# port-channel load-balance ethernet ?
 destination-ip Destination IP address
 destination-mac Destination MAC address
@@ -128,36 +123,26 @@ source-ip Source IP address
 source-mac Source MAC address
 source-port Source TCP/UDP port
 </code></pre>
-
-<p>Yea, no round robin.  As referenced in <a href="http://www.kernel.org/doc/Documentation/networking/bonding.txt">http://www.kernel.org/doc/Documentation/networking/bonding.txt</a> :</p>
-
+<p>Yea, no round robin.  As referenced in <a href="http://www.kernel.org/doc/Documentation/networking/bonding.txt"><a href="http://www.kernel.org/doc/Documentation/networking/bonding.txt">http://www.kernel.org/doc/Documentation/networking/bonding.txt</a></a> :</p>
 <blockquote>
 <p>Many switches do not support any modes that stripe traffic
 (instead choosing a port based upon IP or MAC level addresses);
 for those devices, traffic for a particular connection flowing
 through the switch to a balance-rr bond will not utilize greater
-than one interface&rsquo;s worth of bandwidth.</p>
+than one interface's worth of bandwidth.</p>
 </blockquote>
-
 <p>If you do know of a switch that supports striped frames, please <a href="mailto:kyle@xkyle.com">contact me</a>. But! There is a way to work around this limitation and achieve Awesome performance! It costs an extra switch, but the benefits are double performance and the ability to withstand a switch failure. Here is a crappy diagram:</p>
-
-<p><a href="../uploads/dual.png"><img src="../uploads/dual.png" alt="" /></a></p>
-
-<p>This is what is suggested in Section 12 in <a href="http://www.kernel.org/doc/Documentation/networking/bonding.txt">http://www.kernel.org/doc/Documentation/networking/bonding.txt</a></p>
-
-<p>With this setup, each switch makes its own decision about where to send a frame, but it only has one choice, sort of. In a sense, no matter what aggregation algorithm you have on the switch, it doesn&rsquo;t matter. What matters is the algorithm on the sending server. (round robin in my case)</p>
-
+<p><a href="../uploads/dual.png"><img src="../uploads/dual.png" alt=""></a></p>
+<p>This is what is suggested in Section 12 in <a href="http://www.kernel.org/doc/Documentation/networking/bonding.txt"><a href="http://www.kernel.org/doc/Documentation/networking/bonding.txt">http://www.kernel.org/doc/Documentation/networking/bonding.txt</a></a></p>
+<p>With this setup, each switch makes its own decision about where to send a frame, but it only has one choice, sort of. In a sense, no matter what aggregation algorithm you have on the switch, it doesn't matter. What matters is the algorithm on the sending server. (round robin in my case)</p>
 <p>The end result give you key benefits:</p>
-
 <ul>
 <li>Resiliency for individual links (failure of cables / optics / nics )</li>
 <li>Resiliency for switches (failure of a switch, powersupply, etc?)</li>
 <li>Better than single-link performance on single streams</li>
 <li>iperf bragging rights?</li>
 </ul>
-
 <p>Proof is in the pudding:</p>
-
 <pre><code>root@server1:~# iperf -c server2
 ------------------------------------------------------------
 Client connecting to server2, TCP port 5001
@@ -167,9 +152,7 @@ TCP window size: 27.9 KByte (default)
 [ ID] Interval Transfer Bandwidth
 [ 3] 0.0-10.0 sec 21.1 GBytes 18.1 Gbits/sec
 </code></pre>
-
 <h4 id="exact-components-in-this-setup-if-you-want-to-reproduce-my-work">Exact Components in this setup (if you want to reproduce my work)</h4>
-
 <ul>
 <li>Fast servers from <a href="http://www.siliconmechanics.com/">SiliconMechanics.com</a> (~$10k, high end)</li>
 <li><a href="http://www.myricom.com/products/network-adapters/10g-pcie2-8b2-2s.html">Myricom 10G-PCIE2-8B2-2S</a> Dual Port Nics (Works great, built in kernel support, supports bonding, etc. ~$700 each)</li>
@@ -178,7 +161,6 @@ TCP window size: 27.9 KByte (default)
 <li><a href="https://wiki.xkyle.com/Channel_Bonding">Round Robin Bonding</a> on the Linux server side</li>
 <li><a href="../uploads/10g-switch.txt">Switch Config Setup for Virtual Port Channel</a> by some awesome networking dudes</li>
 </ul>
-
 <p>In the end it breaks down to about $2000 per 20g bond. (taking into account switch ports, nics, cables, etc) If your speed and availability can justify that cost, then it is a cool setup.</p>
 
         </div>

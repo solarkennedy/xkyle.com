@@ -17,7 +17,7 @@
       <pubDate>Sun, 11 Oct 2015 18:21:14 +0000</pubDate>
       
       <guid>/configuration-management-rosetta-stone-configuring-sensu-with-puppet-chef-ansible-and-salt/</guid>
-      <description>I recently finished my Intermediate Sensu Training on Udemy. It was a ton of work but I&amp;rsquo;m glad I got it all together. Part of that training includes how to deploy and configure Sensu with four of the most popular open-source configuration management tools: Puppet, Chef, Ansible, and Salt.
+      <description>I recently finished my Intermediate Sensu Training on Udemy. It was a ton of work but I&#39;m glad I got it all together. Part of that training includes how to deploy and configure Sensu with four of the most popular open-source configuration management tools: Puppet, Chef, Ansible, and Salt.
  TOC {:toc}  The Sensu Decree In order to do the training I had to learn each of these tools enough so I could install a baseline Sensu installation.</description>
     </item>
     
@@ -29,7 +29,7 @@
       <guid>/Getting-Started-Puppet-Acceptance-Tests-With-Beaker/</guid>
       <description>Beaker is a test framework created by Puppetlabs to run tests against puppet modules on real servers (vm, containers whatever) and test that they do what they say they should do.
 This is a quick tutorial on how to use this framework. At the time of this writing, Beaker is under heavy development, so this could all change.
-The Gem The first thing you need to do is install beaker.</description>
+The Gem The first thing you need to do is install beaker. Usually this is as simple as adding it to your Gemfile and running bundle install.</description>
     </item>
     
     <item>
@@ -51,7 +51,8 @@ class { &amp;#39;serf&amp;#39;: config_hash =&amp;gt; { &amp;#39;node_name&amp;#
       <guid>/What-Happens-When-You-Run-Puppet-Tests/</guid>
       <description>Breaking down bundle exec rake spec What is happening when you run:
 bundle exec rake spec Bundle The first command you are running is bundle. Bundle is kinda like virtualenv for Ruby. It makes sure that you use the same ruby libraries that you, everyone, and puppetmasters use.
-Bundle uses a Gemfile, and searches downwards. As long as you have the Gemfile in the puppet repo, it will work.</description>
+Bundle uses a Gemfile, and searches downwards. As long as you have the Gemfile in the puppet repo, it will work.
+Exec The second part is exec.</description>
     </item>
     
     <item>

@@ -108,18 +108,11 @@ Step 1: Get a version of nginx with spdy enabled. Ubuntu Get some packages. The 
 </p>
         </div>
         <div class="col s12 m8 offset-m2 l6">
-            
-
-<p><a href="http://en.wikipedia.org/wiki/SPDY">SPDY</a> is a fancy new way to do HTTP, pioneered by Google. Pretty much all modern browsers support it now, except for of course, IE.</p>
-
+            <p><a href="http://en.wikipedia.org/wiki/SPDY">SPDY</a> is a fancy new way to do HTTP, pioneered by Google. Pretty much all modern browsers support it now, except for of course, IE.</p>
 <p>If you have SSL enabled and are using nginx, they you are pretty close to running your sites with SPDY. What how easy it is!</p>
-
 <h2 id="step-1-get-a-version-of-nginx-with-spdy-enabled">Step 1: Get a version of nginx with spdy enabled.</h2>
-
 <h3 id="ubuntu">Ubuntu</h3>
-
 <p>Get some <a href="http://nginx.org/en/linux_packages.html">packages</a>. The <strong>Ubuntu</strong> packages have &ldquo;&ndash;with-http_spdy_module&rdquo; compiled, so you can install them with no problem:</p>
-
 <pre><code>cd /tmp
 wget http://nginx.org/keys/nginx_signing.key
 apt-key add nginx_signing.key
@@ -132,11 +125,8 @@ apt-get remove nginx
 apt-get autoremove
 apt-get install nginx
 </code></pre>
-
-<h3 id="centos-rhel">Centos / RHEL</h3>
-
+<h3 id="centos--rhel">Centos / RHEL</h3>
 <p>The <strong>Centos</strong> packages need to be rebuilt. And you need a new openssl. (carefully)</p>
-
 <pre><code>yum install yum-utils rpmdevtools
 yum-builddep nginx
 rpm -i http://nginx.org/packages/centos/6/SRPMS/nginx-1.4.1-1.el6.ngx.src.rpm
@@ -145,36 +135,26 @@ cd /tmp
 wget http://www.openssl.org/source/openssl-1.0.1e.tar.gz
 tar xzf openssl-1.0.1e.tar.gz
 </code></pre>
-
 <p>Now add these lines to the two configure commands (one normal, one debug) in the spec file (~/rpmbuild/SPECS/nginx.spec):</p>
-
 <pre><code> --with-http_spdy_module \
  --with-openssl=/tmp/openssl-1.0.1e/ \
 </code></pre>
-
 <p>Now build yourself and RPM:</p>
-
 <pre><code>cd ~/rpmbuild/
 rpmbuild -ba SPECS/nginx.spec
 rpm -e nginx
 rpm -Uvh RPMS/i386/nginx-1.4.1-1.el6.ngx.i386.rpm
 /etc/init.d/nginx restart
 </code></pre>
-
-<h2 id="configuring-nginx"> Configuring nginx</h2>
-
+<h2 id="configuringnginx"> Configuring nginx</h2>
 <p>Take your listen line, and add &ldquo;ssl spdy&rdquo; to it:</p>
-
 <pre><code>server {
       listen 443 ssl spdy;
 </code></pre>
-
 <h2 id="testing">Testing</h2>
-
 <p>Try this <a href="http://spdycheck.org/#xkyle.com">SPDY testing page</a>.
 And try a <a href="https://chrome.google.com/webstore/detail/spdy-indicator/mpbpobfflnpcgagjijhmgnchggcjblin?hl=en">Chrome plugin</a> that will visually indicate if the server you are talking to supports SPDY.</p>
-
-<p><a href="../uploads/Screenshot-from-2013-05-16-174759.png"><img src="../uploads/Screenshot-from-2013-05-16-174759.png" alt="spdy indicator" /></a></p>
+<p><a href="../uploads/Screenshot-from-2013-05-16-174759.png"><img src="../uploads/Screenshot-from-2013-05-16-174759.png" alt="spdy indicator"></a></p>
 
         </div>
     </section>

@@ -8,7 +8,7 @@
 <meta property="og:title" content="Discrete Wavelets Final Project - Decaptcha," />
 <meta property="og:description" content="This semester I took a class on Discrete Wavelets. It was awesome. The coolest part was our group final project. My group had the best topic by far: Decoding a Captcha! (Click on any of the following images to view them full size)
 [](/uploads/file_captcha.jpg)
-We&rsquo;ve all seen Captchas before. They are used on websites to make sure that the person on the website is a real human, not a computer program." />
+We&#39;ve all seen Captchas before. They are used on websites to make sure that the person on the website is a real human, not a computer program." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/discrete-wavelets-final-project-decaptcha/" />
 <meta property="article:published_time" content="2009-05-01T17:17:02+00:00" />
@@ -18,7 +18,7 @@ We&rsquo;ve all seen Captchas before. They are used on websites to make sure tha
 <meta name="twitter:title" content="Discrete Wavelets Final Project - Decaptcha,"/>
 <meta name="twitter:description" content="This semester I took a class on Discrete Wavelets. It was awesome. The coolest part was our group final project. My group had the best topic by far: Decoding a Captcha! (Click on any of the following images to view them full size)
 [](/uploads/file_captcha.jpg)
-We&rsquo;ve all seen Captchas before. They are used on websites to make sure that the person on the website is a real human, not a computer program."/>
+We&#39;ve all seen Captchas before. They are used on websites to make sure that the person on the website is a real human, not a computer program."/>
 
 
     <meta name="description" content="">
@@ -109,55 +109,31 @@ We&rsquo;ve all seen Captchas before. They are used on websites to make sure tha
         </div>
         <div class="col s12 m8 offset-m2 l6">
             <p>This semester I took a class on <a href="http://en.wikipedia.org/wiki/Discrete_wavelet_transform">Discrete Wavelets</a>. It was awesome. The coolest part was our group final project. My group had the best topic by far: Decoding a Captcha! (Click on any of the following images to view them full size)</p>
-
-<p>[](/uploads/file_captcha.jpg)<a href="../uploads/captcha.jpg"><img src="../uploads/captcha.jpg" alt="captcha" /></a></p>
-
-<p>We&rsquo;ve all seen Captchas before. They are used on websites to make sure that the person on the website is a real human, not a computer program. Why do we want to break them? The same reason we want to climb Mount Everest, it&rsquo;s There!</p>
-
-<p><a href="../uploads/input_captcha.jpg"><img src="../uploads/input_captcha-300x108.jpg" alt="input\_captcha" /></a></p>
-
+<p>[](/uploads/file_captcha.jpg)<a href="../uploads/captcha.jpg"><img src="../uploads/captcha.jpg" alt="captcha"></a></p>
+<p>We've all seen Captchas before. They are used on websites to make sure that the person on the website is a real human, not a computer program. Why do we want to break them? The same reason we want to climb Mount Everest, it's There!</p>
+<p><a href="../uploads/input_captcha.jpg"><img src="../uploads/input_captcha-300x108.jpg" alt="input\_captcha"></a></p>
 <p>The above is the captcha we intended to solve. Its not particularly difficult, but this class is an introduction to wavelets and requires no previous experience with the language we had to use: Mathematica. Our real task was to implement the algorithm in <a href="http://faculty.gvsu.edu/aboufade/web/cmj101-108.pdf">this paper</a>.</p>
-
 <p>So how do we do it? First we need to isolate the image without the background.</p>
-
-<p><a href="../uploads/captchab.jpg"><img src="../uploads/captchab-300x108.jpg" alt="captchab" /></a></p>
-
-<p>No problem. The color of the text is different from the background so it is easy to isolate. Next we need to take those pieces of the matrix and turn them into a list of coordinate pairs. Then we can apply a rotation matrix transform to undo the angle. What angle? Well I don&rsquo;t know. How can we figure out how much it was rotate? Of course! Linear regression from Statistics!</p>
-
-<p><a href="../uploads/regression.jpg"><img src="../uploads/regression-300x239.jpg" alt="regression" /></a></p>
-
+<p><a href="../uploads/captchab.jpg"><img src="../uploads/captchab-300x108.jpg" alt="captchab"></a></p>
+<p>No problem. The color of the text is different from the background so it is easy to isolate. Next we need to take those pieces of the matrix and turn them into a list of coordinate pairs. Then we can apply a rotation matrix transform to undo the angle. What angle? Well I don't know. How can we figure out how much it was rotate? Of course! Linear regression from Statistics!</p>
+<p><a href="../uploads/regression.jpg"><img src="../uploads/regression-300x239.jpg" alt="regression"></a></p>
 <p>Fortunately Mathematica has a function for this. This is the easy part. Now we need to take these rotated vectors and &ldquo;Unrotate&rdquo; them, then put them back into a matrix:</p>
-
-<p><a href="../uploads/alligned.jpg"><img src="../uploads/alligned.jpg" alt="alligned" /></a></p>
-
-<p>No problem! Well actually this isn&rsquo;t as easy as it sounds. Arbitrary image rotation is non trivial. But let us press on. Now we must Cut the image into its component letters. This is easy, the columns of the matrix that are all white are the demarcation points.</p>
-
-<p><a href="../uploads/segmented.jpg"><img src="../uploads/segmented.jpg" alt="segmented" /></a></p>
-
+<p><a href="../uploads/alligned.jpg"><img src="../uploads/alligned.jpg" alt="alligned"></a></p>
+<p>No problem! Well actually this isn't as easy as it sounds. Arbitrary image rotation is non trivial. But let us press on. Now we must Cut the image into its component letters. This is easy, the columns of the matrix that are all white are the demarcation points.</p>
+<p><a href="../uploads/segmented.jpg"><img src="../uploads/segmented.jpg" alt="segmented"></a></p>
 <p>Ok now what? Well we have an individual matrix for each unknown letter. Let us resize it to a standard square size (pad it), say 80x80. Oh I forgot to mention, before we stared on this we made a &ldquo;<a href="http://www.merriam-webster.com/dictionary/canon">Canon</a>&rdquo; of letters from A-Z0-9 with the same font into 80x80 squares too. At this point we could compare each letters &ldquo;difference&rdquo; and see which has the least difference. Let me show you:</p>
-
-<p><a href="../uploads/subtract.jpg"><img src="../uploads/subtract.jpg" alt="subtract" /></a></p>
-
+<p><a href="../uploads/subtract.jpg"><img src="../uploads/subtract.jpg" alt="subtract"></a></p>
 <p>Eh so that is a crappy example. When you take two letters and subtract them, you get all black where they are the same, and some white or gray where the &ldquo;differences&rdquo; are (Math terms=2 dimensional norm). The letter with the least difference is most likely to be the original letter.</p>
-
 <p>So all we have to do is iterate through each canonical letter until we get the least difference. Do that for each letter and we can decode (you can see the unknown on the left, and the matching canon on the right):</p>
-
-<p><a href="../uploads/compare.jpg"><img src="../uploads/compare-116x300.jpg" alt="compare" /></a></p>
-
-<p>Seems pretty good. But it gets better with some Discrete Wavelet Magic! Our comparison can get even better if we ignore the errors and wavey crap that was introduced in the align section. The way we do this is with the <a href="http://en.wikipedia.org/wiki/Haar_wavelet">Haar Wavelet Transform</a>. Don&rsquo;t mind the math, we are basically blurring the image:</p>
-
-<p><a href="../uploads/haar.jpg"><img src="../uploads/haar-300x157.jpg" alt="haar" /></a></p>
-
+<p><a href="../uploads/compare.jpg"><img src="../uploads/compare-116x300.jpg" alt="compare"></a></p>
+<p>Seems pretty good. But it gets better with some Discrete Wavelet Magic! Our comparison can get even better if we ignore the errors and wavey crap that was introduced in the align section. The way we do this is with the <a href="http://en.wikipedia.org/wiki/Haar_wavelet">Haar Wavelet Transform</a>. Don't mind the math, we are basically blurring the image:</p>
+<p><a href="../uploads/haar.jpg"><img src="../uploads/haar-300x157.jpg" alt="haar"></a></p>
 <p>The part we want is in the upper most left hand corner, the &ldquo;blur&rdquo;. It turns out that 3 iterations of the HWT gives the best results. By doing this we were able to decode our CAPTCHAs 75% of the time. In the end the major flaws take place in the linear regression and the align function. If we used Mathematica 7 instead of 6 we could have used its built in image processing functions to take the error out of our sloppy rounding.</p>
-
 <p>But of course, the proof is in the code, I mean, the pudding. Here is our notebook:</p>
-
 <p><a href="../uploads/final3.nb">Mathematica Notebook</a>
 To use this you need the <a href="http://cam.mathlab.stthomas.edu/wavelets/packagesmathematica.php">Discrete Wavelets Package</a>. Mathematica 7 comes with a function but this is written for 6.</p>
-
 <p><a href="../uploads/final3.nbp">Notebook for Mathematica Player</a>
 Not everyone has Mathematica, but their <a href="http://www.wolfram.com/products/player/download.cgi">player</a> is cross platform and free as in beer.</p>
-
 <p><a href="../uploads/captcha.ppt">Our Powerpoint Presentation</a>
 Blarg&hellip; If someone can convert this to pdf I will change this.</p>
 

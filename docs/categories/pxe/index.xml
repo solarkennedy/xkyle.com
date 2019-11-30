@@ -27,7 +27,7 @@ Install an External Root Overlay What the heck does that mean? OpenWrt uses an i
       <pubDate>Fri, 16 Jul 2010 22:42:46 +0000</pubDate>
       
       <guid>/setting-up-your-very-own-pxe-server/</guid>
-      <description>Ever fumbled around your house looking for a Linux CD, but you can&amp;rsquo;t find it? Ever suspected that your ram was going bad, but you didn&amp;rsquo;t have a way to test it? Ever needed to backup files on a computer that had a dead and broken operating system? A solution to all these problems is a super cool tool called PXE booting. PXE booting allows you to load alternative operating systems over the network, without the need for cds, cdroms, etc!</description>
+      <description>Ever fumbled around your house looking for a Linux CD, but you can&#39;t find it? Ever suspected that your ram was going bad, but you didn&#39;t have a way to test it? Ever needed to backup files on a computer that had a dead and broken operating system? A solution to all these problems is a super cool tool called PXE booting. PXE booting allows you to load alternative operating systems over the network, without the need for cds, cdroms, etc!</description>
     </item>
     
   </channel>
