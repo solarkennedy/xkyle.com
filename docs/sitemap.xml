@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/Kubernetes-as-a-Universal-Infrastructure-API/</loc>
-    <lastmod>2019-06-02T00:00:00+00:00</lastmod>
+    <loc>/Can-Infrastructure-Teams-Do-Better-Than-AWS-Yes-Sometimes./</loc>
+    <lastmod>2019-11-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-06-02T00:00:00+00:00</lastmod>
+    <lastmod>2019-11-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/</loc>
+    <lastmod>2019-11-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/Kubernetes-as-a-Universal-Infrastructure-API/</loc>
     <lastmod>2019-06-02T00:00:00+00:00</lastmod>
   </url>
   

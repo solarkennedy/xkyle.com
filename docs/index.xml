@@ -6,10 +6,19 @@
     <description>Recent content on xkyle.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Jun 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 30 Nov 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Can Infrastructure Teams Do Better Than AWS? Yes, Sometimes.</title>
+      <link>/Can-Infrastructure-Teams-Do-Better-Than-AWS-Yes-Sometimes./</link>
+      <pubDate>Sat, 30 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/Can-Infrastructure-Teams-Do-Better-Than-AWS-Yes-Sometimes./</guid>
+      <description>AWS likes to use the pharse &amp;ldquo;undifferentiated heavy lifting&amp;ldquo; to describe what AWS does best: all the things that everyone hast to do anyway with computers. Commonly these are things like running servers for you, hosting files, and managing a network. Let AWS handle the boring things so that you can focus on what matters most for your business. Sounds great! I certainly do not want a job that could otherwise be commonditized and turned into an API.</description>
+    </item>
     
     <item>
       <title>Kubernetes as a Universal Infrastructure API</title>

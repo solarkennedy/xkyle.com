@@ -1,8 +1,8 @@
 ---
 categories: null
 comments: true
-date: 2019-11-26
-published: false
+date: 2019-11-30
+published: true
 title: "Can Infrastructure Teams Do Better Than AWS? Yes, Sometimes."
 ---
 
@@ -61,3 +61,27 @@ As a organization, you are ready to make a call: Should we let the ten teams jus
 I don't think I need to make the case that, at a certain scale, some sort of shared-infrastructure-core-compute-platform-devops team is worth it. Infrastructure at scale is complex, and expertise in infra can be a tide that raises all boats. But how do you prevent that tide from drowning your other teams, or even worse, holding them back from the "sunken treasures" that are the native cloud technologies? Where do you draw that infrastructure line boundary?
 
 ## Push That Line Where It Makes The Biggest Impact
+
+As with most things, the answer is nuanced. Where the line is drawn between raw resources and your users will depend on your business, and how much you stand to gain by building abstractions.
+
+The trick is this:
+
+> ***With each abstraction you build, ensure that the users of
+> that abstraction are empowerd to build bigger things on top
+> of it, and not held back by it.***
+
+For example, let's say you built a Terraform module that abstracts away the fact that you deploy to an east and west EC2 region. Is that module empowering your users because now they don't have to be concerned about which region to deploy to (because it is figured out automatically), or does it hold them back, because the design of the module limits the fields they can use, which limits their ability to "beak out" of the module?
+
+Example 2: Your "devops team" builds and supports tooling to do deploys via Ansible using custom playbooks. Is that set of tooling empowering your dev teams by providing a safe experience when deploying, providing for rollbacks, hitless deploys, and standardized tooling? Or is it holding teams back, because the tool isn't actually very good and doesn't deploy things in a way that is conducive to the actual type of application the devs are using?
+
+[![Fight the front where you can provide the most business value](/uploads/bulge.jpg)](/uploads/bulge.jpg)
+
+## Conclusion
+
+The mission of infrastructure teams is to push "against" (work with) infrastructure as a service to make it more useful to their company.
+
+They do this by boiling away the unnecessary parts of "the cloud" till all that is left is exactly what developers need, "getting out of the way" of the business.
+
+At the same time, infrastructure teams need to always be sure that they are not unintentionally preventing developers from doing their jobs through restrictive and crappy tooling.
+
+In the end, the best tooling is the kind where developers don't even know they are restricted in what they can do, because all their actual needs are taken care of. They are not held back by the inability to make custom tags, because all the tags they need are automatically generated for them. They are not held back by the inability to launch a custom EC2 instance, because whatever need they had to launch it in the first place is already met.
