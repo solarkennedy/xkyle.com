@@ -6,10 +6,19 @@
     <description>Recent content on xkyle.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 30 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 04 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>What Kubernetes Got Right, and Mesos Got Wrong</title>
+      <link>/What-Kubernetes-Got-Right-and-Mesos-Got-Wrong/</link>
+      <pubDate>Wed, 04 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/What-Kubernetes-Got-Right-and-Mesos-Got-Wrong/</guid>
+      <description>I&#39;ve worked at Yelp for about six years, working with our container platform in production for about four of those years. The plaform is called &amp;ldquo;PaaSTA&amp;rdquo; and there are a number of public talks about it. It is also open source. When we started PaaSTA, it ran on Mesos, and now we are most of the way through our migration to use Kubernetes (k8s). I&#39;m in a relatively unique position to have production experience with both technologies.</description>
+    </item>
     
     <item>
       <title>Can Infrastructure Teams Do Better Than AWS? Yes, Sometimes.</title>
