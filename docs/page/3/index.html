@@ -10,7 +10,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
-<meta property="og:updated_time" content="2019-12-04T00:00:00+00:00" />
+<meta property="og:updated_time" content="2019-12-24T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="xkyle.com"/>
@@ -82,6 +82,31 @@
 
     
 
+
+
+
+    
+        <article class="row max-width">
+    <div class="col s12 l10 offset-l1">
+        <h3>
+            <a class="grey-text text-darken-3" href="../../Playing-with-IPv6-Over-Bluetooth-Low-Energy-6LoWPAN/">Playing with IPv6 Over Bluetooth Low Energy (6LoWPAN)</a>
+        </h3>
+        <div>
+
+<p class="article-meta">
+    <div class="article-meta-container">
+        <div class="article-meta-author-name"></div>
+        <div class="article-meta-description"></div>
+    </div>
+    <span class="article-meta-published-at grey-text text-darken-1">Jun 14, 2015</span>
+</p></div>
+        <div>I like Bluetooth Low Energy (BTLE). I also like IPv6. Did you know you could but both together?
+Technically 6LoWPAN
+Requirements modprobe bluetooth_6lowpan echo 'bluetooth_6lowpan' &gt;&gt; /etc/modules  Establishing the Connection Set the Bluetooth L2CAP PSM First you need to set the Protocol/Service Multiplexer value on both sides to &ldquo;62&rdquo; (0x3E) on both sides:
+echo 62 &gt; /sys/kernel/debug/bluetooth/6lowpan_psm  This PSM value lets the driver know that you are going to multiplex this special new protocol on top of whatever your bluetooth device mith also be doing.</div>
+    </div>
+</article>
+    
 
 
 
@@ -295,30 +320,6 @@ Rethinking What I Need Since moving to a Low End Box, my resources have been tig
 </p></div>
         <div>Intro Sensu is a pretty cool monitoring framework. The authors designed it to be configured by a configuration management system from the beginning. Check out how easily I can make it put a report in my motd with a little bit of python and puppet.
 The Report Script Sensu's API is super easy to work with. For this I will be using the Events endpoint. Here is a quick script to get the events for a host (gist):</div>
-    </div>
-</article>
-    
-
-
-
-    
-        <article class="row max-width">
-    <div class="col s12 l10 offset-l1">
-        <h3>
-            <a class="grey-text text-darken-3" href="../../managing-dns-automatically-with-puppet/">Managing DNS Automatically with Puppet</a>
-        </h3>
-        <div>
-
-<p class="article-meta">
-    <div class="article-meta-container">
-        <div class="article-meta-author-name">admin</div>
-        <div class="article-meta-description"></div>
-    </div>
-    <span class="article-meta-published-at grey-text text-darken-1">Oct 19, 2013</span>
-</p></div>
-        <div>Why So you have a decent amount of things configured in Puppet. Great!
-Are you finding that you have to manually update your DNS entries when things change, like when new hosts or added, or additional services are created?
-Why? Your DNS zone files will forever be out of date, waiting for humans to update them. Just say no. Puppet already knows what the ip addresses and hostnames of your servers, why not take advantage of that existing data?</div>
     </div>
 </article>
     

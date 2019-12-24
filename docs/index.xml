@@ -6,10 +6,22 @@
     <description>Recent content on xkyle.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 04 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Etched Team Straws</title>
+      <link>/Etched-Team-Straws/</link>
+      <pubDate>Tue, 24 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/Etched-Team-Straws/</guid>
+      <description>I recently etched reusable metal straws for my team at work.
+I used a low-tech procedure to etch the metal using electricity after applying a vinyl mask made with a hobby vinyl cutter.
+The glass straws used food-safe ceramic paint baked in an oven, also using the same vinyl stencil.
+The results are great. Click on any of the images below for a larger version. The last few are videos.</description>
+    </item>
     
     <item>
       <title>What Kubernetes Got Right, and Mesos Got Wrong</title>
