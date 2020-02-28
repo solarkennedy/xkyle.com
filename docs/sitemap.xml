@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/Etched-Team-Straws/</loc>
-    <lastmod>2019-12-24T00:00:00+00:00</lastmod>
+    <loc>/post/</loc>
+    <lastmod>2020-02-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/</loc>
-    <lastmod>2019-12-24T00:00:00+00:00</lastmod>
+    <loc>/The-Case-Against-Kubernetes-Sidecars/</loc>
+    <lastmod>2020-02-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/</loc>
+    <lastmod>2020-02-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/Etched-Team-Straws/</loc>
     <lastmod>2019-12-24T00:00:00+00:00</lastmod>
   </url>
   

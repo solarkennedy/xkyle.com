@@ -6,10 +6,22 @@
     <description>Recent content on xkyle.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 24 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 27 Feb 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The Case Against Kubernetes Sidecars</title>
+      <link>/The-Case-Against-Kubernetes-Sidecars/</link>
+      <pubDate>Thu, 27 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/The-Case-Against-Kubernetes-Sidecars/</guid>
+      <description>Intro The Kubernetes (k8s) ecosystem has gone crazy for sidecar containers.
+
+Sidecar containers (sidecars) are auxiliary containers, not part of your application, that provide additional support to make it work. Along with your application, sidecars can be used to inject secrets, ship logs, or power a service mesh.
+Although there are some advantages to Sidecars over traditional daemons, I would like to make the case that they are actually and inferior solution for a company that has the resources to provide a platform to its developers.</description>
+    </item>
     
     <item>
       <title>Etched Team Straws</title>

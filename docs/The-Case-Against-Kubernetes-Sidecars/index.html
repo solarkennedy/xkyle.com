@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="The Case Against Kubernetes Sidecars" />
+<meta property="og:description" content="Intro The Kubernetes (k8s) ecosystem has gone crazy for sidecar containers.
+
+Sidecar containers (sidecars) are auxiliary containers, not part of your application, that provide additional support to make it work. Along with your application, sidecars can be used to inject secrets, ship logs, or power a service mesh.
+Although there are some advantages to Sidecars over traditional daemons, I would like to make the case that they are actually and inferior solution for a company that has the resources to provide a platform to its developers." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/The-Case-Against-Kubernetes-Sidecars/" />
+<meta property="article:published_time" content="2020-02-27T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-02-27T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="The Case Against Kubernetes Sidecars"/>
+<meta name="twitter:description" content="Intro The Kubernetes (k8s) ecosystem has gone crazy for sidecar containers.
+
+Sidecar containers (sidecars) are auxiliary containers, not part of your application, that provide additional support to make it work. Along with your application, sidecars can be used to inject secrets, ship logs, or power a service mesh.
+Although there are some advantages to Sidecars over traditional daemons, I would like to make the case that they are actually and inferior solution for a company that has the resources to provide a platform to its developers."/>
+
+
+    <meta name="description" content="">
+    <link rel="canonical" href="../The-Case-Against-Kubernetes-Sidecars/">
+
+    
+    <title>The Case Against Kubernetes Sidecars &middot; xkyle.com</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="css/style.css" rel="stylesheet">
+
+    
+
+    
+
+    
+  </head>
+  <body>
+    
+      
+
+
+
+<nav class="white" role="navigation">
+    <div class="row max-width">
+        <div class="col s12 l10 offset-l1">
+            
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger black-text">
+                <i class="material-icons">menu</i>
+            </a>
+
+            
+            <ul id="nav-mobile" class="sidenav">
+                
+                
+    
+    
+
+            </ul>
+
+            
+            <a href="../" class="brand-logo grey-text text-darken-3">xkyle.com</a>
+
+            
+            <div class="nav-wrapper">
+
+                
+                <ul class="right hide-on-med-and-down">
+                    
+                    
+    
+    
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</nav>
+    
+
+    
+
+<article class="max-width">
+    
+    <section class="row">
+        <div class="col s12 m10 offset-m1 l10 offset-l1">
+            <h1>The Case Against Kubernetes Sidecars</h1>
+        </div>
+    </section>
+
+    
+    
+
+    
+    <section class="row">
+        <div class="col s12 m8 offset-m2 l2 offset-l1">
+            
+
+<p class="article-meta">
+    <div class="article-meta-container">
+        <div class="article-meta-author-name"></div>
+        <div class="article-meta-description"></div>
+    </div>
+    <span class="article-meta-published-at grey-text text-darken-1">Feb 27, 2020</span>
+</p>
+        </div>
+        <div class="col s12 m8 offset-m2 l6">
+            <h2 id="intro">Intro</h2>
+<p>The Kubernetes (k8s) ecosystem has gone crazy for sidecar containers.</p>
+<p><a href="../uploads/clowncar.gif"><img src="../uploads/clowncar.gif" alt="clowncar.gif"></a></p>
+<p>Sidecar containers (sidecars) are auxiliary containers, not part of your application, that provide additional support to make it work.
+Along with your application, sidecars can be used to <a href="https://www.hashicorp.com/blog/injecting-vault-secrets-into-kubernetes-pods-via-a-sidecar/">inject secrets</a>, <a href="https://blog.powerupcloud.com/kubernetes-pod-management-using-fluentd-as-a-sidecar-container-and-prestop-lifecycle-hook-part-iv-428b5f4f7fc7?gi=5221437166e4">ship logs</a>, or power a <a href="https://aws.amazon.com/blogs/containers/using-sidecar-injection-on-amazon-eks-with-aws-app-mesh/">service mesh</a>.</p>
+<p>Although there are some advantages to Sidecars over traditional daemons, I would like to make the case that they are actually and inferior solution for a company that has the resources to provide a platform to its developers.
+The alternative is what I will call &ldquo;the daemon pattern&rdquo;.</p>
+<h2 id="background">Background</h2>
+<p>I'm a general believer that strong platform teams at a company are (can be) development multipliers. These platform teams build infrastructure, shared tooling, and heck probably the k8s cluster that these sidecars run on! If you live in a world where this is no separation between an infrastructure team and a application team, then maybe this blog post is not for you.</p>
+<h2 id="sidecars-con-deploying-n-x-m-things">Sidecars Con: Deploying N x M Things</h2>
+<p>The very first thought I had when I heard about the sidecar pattern (as compared to the traditional &ldquo;daemon pattern&rdquo; was: &ldquo;wow, that sounds like a lot more resources required to run the same things!</p>
+<p>Certain compared to the existing platform I worked on, which had daemons for doing all the normal supplemental things (logging, metrics, service discovery, secrets, etc), the sidecar pattern represented a potential <strong>explosion</strong> of processes to get (on the surface of it), the same job done.</p>
+<p>Given a cluster of:</p>
+<ul>
+<li>100 Nodes</li>
+<li>1000 pods</li>
+<li>5 auxiliary processes to run</li>
+</ul>
+<p>Would you rather have 5000 things (sidecars) running, or 500 (daemons)? Don't forget to add sidecars to all your cron jobs, spark executors, and stateful sets too!</p>
+<p>What about configuring, getting the logs of, and monitoring those things?</p>
+<p>With the daemon pattern, the auxiliary processes scale with the number of nodes, and in general goes down as servers get larger over time. With the sidecar pattern, the number of processes scales <strong>up</strong> with the number of pods you want to run, and usually goes up as you add more things.</p>
+<p>Compared to the daemon pattern, the sidecar pattern consumes more compute resources as well as management resources.</p>
+<h2 id="sidecar-con-whose-job-is-it-anyway-to-run-these-things">Sidecar Con: Whose Job is it Anyway to Run These Things?</h2>
+<p>I really do feel bad for those organizations where the &ldquo;platform team&rdquo; provides only a raw k8s base, or maybe a team that &ldquo;just uses {cloud provider's k8s as a service}&quot;. Whose job is it to actually add, upgrade, configure, monitor, and maintain all these sidecars?</p>
+<p>With the daemon pattern it is pretty clear to me that it is <em>not</em> the application developer's job to maintain system daemons. Maybe a logging subteam is responsible for keeping the logging platform up (even if it isn't literally a daemon on the local host). Maybe it is just a big catchall for the &ldquo;ops&rdquo; team.</p>
+<p>With the sidecar pattern, it isn't as clear. On the plus side, it is empowering for a dev team to copy paste some YAML to get a <a href="https://www.hashicorp.com/blog/injecting-vault-secrets-into-kubernetes-pods-via-a-sidecar/">Vault Sidecar</a>, but maybe every app shouldn't need to have them?</p>
+<p>I think the daemon pattern provides better separation between &ldquo;infrastructure versus application&rdquo;, which should unburden application developers and let them provide more business value.</p>
+<h2 id="sidecar-con-the-burden-is-on-the-developer-to-understand-their-lifecycle">Sidecar Con: The Burden is on the Developer to Understand their Lifecycle</h2>
+<p>As noted <a href="https://banzaicloud.com/blog/k8s-sidecars/">elsewhere</a>, at the time of this writing, developers have to be aware of the interaction (lifecycle) of containers in a k8s pod, otherwise weird things happen. Developers cannot safely assume that the sidecars are ready before their application is. They also cannot assume a particular shutdown order. Also for jobs, the main job must kill the sidecars.</p>
+<p>This <a href="https://github.com/kubernetes/enhancements/blob/master/keps/sig-apps/sidecarcontainers.md">kep</a> will fix these things by making &ldquo;sidecar lifecycles&rdquo; a first-class object in the pod spec.</p>
+<p>But you know, what if developers <em>never</em> had to worry about that, and instead could always safely assume that they could emit logs, or that secrets would be available, or that service discovery would be up?
+With the daemon pattern, developers can take for granted that all the necessary daemons are already warm by the time their application starts, and that their application can also shut down gracefully without having to interact with anything else. With the daemon pattern, the only process the application developer needs to worry about is their own.</p>
+<h2 id="sidecar-con-platform-teams-have-less-control-over-the-infrastructure">Sidecar Con: Platform Teams Have Less Control Over the Infrastructure</h2>
+<p>If the company is in a situation where there is Security Team that oversees the Vault containers, sidecars, security best practices, etc, what is their experience like in the sidecar world compared to the daemon world? Likewise with a logging team or a service discovery team.</p>
+<p>In the sidecar world, how do you perform an upgrade of say, the service mesh? Unless you are going to do manual changes, the normal way you would do this is with a <a href="https://istio.io/docs/setup/upgrade/cni-helm-upgrade/#sidecar-upgrade">rolling restart</a>. This sounds straightforward: it uses the existing safety built into k8s, the pods go up and down in a structured way.</p>
+<p>But what if you <em>don't</em> want to roll every application to do an infrastructure upgrade. What if you <em>don't</em> want to restart that 48hour batch job, or your database team doesn't want you to restart their stateful sets (even with pod disruption budget).</p>
+<p>With the daemon pattern, upgrading and managing those daemons is mostly a solved problem (I really like this <a href="https://github.com/facebookincubator/pystemd/blob/master/_docs/daemon.md">hitless systemd fd handoff thing</a>). Upgrading daemons in general doesn't require impacting the application. Infrastructure teams usually don't have to ask permission from the application team to do things. They are much more decoupled, and I think that is a good thing.</p>
+<h2 id="sidecar-pro-dragging-along-exactly-what-you-need">Sidecar Pro: Dragging Along Exactly What you Need</h2>
+<p>On the plus side, sidecars <em>do</em> allow you to deploy auxiliary processes in a much more focused way. This is especially important for service-mesh sidecars: the configuration is tailored to fit the application. The logging daemon only is responsible for your application logs, and can't be overwhelmed by a noisy neighbor, etc.</p>
+<p>Sidecars do make it so that your application is 100% self-contained. You can use any k8s-as-a-service, and deploy your pod as-is (maybe). You can use a k8s node with minimal system services (all you need is the kubelet).</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>I see the appeal of sidecars: they make it simple to add new functionality to your pod. I think they can also <a href="https://youtu.be/XQjOhJtw1wg?t=1239">get out of hand</a>.</p>
+<p>I don't know what the future holds.
+I could easily see the industry double down on more sidecars, or relax and move to more daemon sets with more sophisticated ways of doing calls between the pods and those daemons.</p>
+<p>I know that for at least the things I build, I'll be advocating for as few sidecars as possible, for the sake of the developers and for the sake of the infrastructure engineers.</p>
+<h3 id="appendix-the-linklocal-ip-trick">Appendix: The Link-Local IP Trick</h3>
+<p>The &ldquo;Link-Local&rdquo; IP trick is using an IP from the <a href="https://en.wikipedia.org/wiki/Link-local_address">169.254.0.0/16</a> space to get an IP that can be reached by other local pods.</p>
+<p>Amazon AWS uses <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">169.254.169.254</a> for this, but you can pick your own at your own organization.</p>
+<p>With a little network glue, you can run your local daemons on your nodes using a link-local IP, then all your pods will be able to reach it (you can't use a 127.x IP, because each pod will have its own network namespace and its own localhost). I'll leave it as an exercise to the reader to handle security and proper service attestation for requests to that IP.</p>
+
+        </div>
+    </section>
+</article>
+
+
+
+    
+      <footer class="page-footer grey lighten-5">
+    <div class="row max-width">
+        <div class="col s12 l10 offset-l1 clear-padding">
+            <div class="row">
+    
+        
+    
+
+    
+    
+    <div class="col s12 l12">
+        <h5 class="black-text"></h5>
+<p class="grey-text text-darken-4"></p>
+
+    </div>
+
+    
+</div>
+
+
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="row max-width" style="width: 100%;">
+            <div class="col s12 l10 offset-l1">
+                <span class="grey-text text-darken-4"></span>
+<div class="right">
+    
+</div>
+            </div>
+        </div>
+    </div>
+</footer>
+    
+
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
