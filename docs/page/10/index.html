@@ -90,7 +90,7 @@
 
 
   
-  <link rel="stylesheet" href="../../css/base.min.50883c9e7cc6f561db1dcd2089b6b895c60df8d10b9e71a90cbc10e59c8bfc40.css" integrity="sha256-UIg8nnzG9WHbHc0giba4lcYN&#43;NELnnGpDLwQ5ZyL/EA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/base.min.47def9e9fb53a1b822ec70f6799bb1f010fe9aac5273d8a1192ac9c685262c4f.css" integrity="sha256-R9756ftTobgi7HD2eZux8BD&#43;mqxSc9ihGSrJxoUmLE8=" crossorigin="anonymous">
   
   
 </head>
@@ -146,28 +146,15 @@
 </header>
 
   
-  <p>So I spent $22 on an <a href="http://www.diesel-ebooks.com/cgi-bin/item/0931541611/Voyage-of-Discovery-From-the-Big-Bang-to-the-Ice-Age-eBook.html">ebook</a> for school.</p>
-<p>It has this crappy DRM that only lets me view the pdf on one computer using only &ldquo;Adobe Digital Editions&rdquo;.</p>
-<p>If that wasn&rsquo;t so bad, only a small subset of the text is OCR&rsquo;d, so most of it isn&rsquo;t even searchable!</p>
-<p>Now I&rsquo;m pissed, but wait, what do you say? These files are just RSA encrypted, and I have the key?</p>
-<p>Some cool guy named **<a href="http://i-u2665-cabbages.blogspot.com/2009/02/circumventing-adobe-adept-drm-for-epub.html">i♥cabbages</a> **has released code do extract your key, and then decrypt the file to a good ol&rsquo; plain pdf. If you want to reproduce my steps you will need to use the <a href="http://www.cs.helsinki.fi/u/vahakang/ineptpdf.pyw">PDF decrypter</a> unless you have epubs.</p>
-<p>So I use the tool and get a pdf, now I can use one of the most awesome tools in the world: <a href="http://en.wikipedia.org/wiki/ImageMagick">Imagemagick</a>.</p>
-<p>Imagemagick can whip this pdf into shape. The first thing I&rsquo;m going to do is convert each page into a tiff:</p>
-<pre><code>$ convert -density 200 input.pdf[1-124] -depth 8 -monochrome %05d.tif
-</code></pre>
-<p>Then I&rsquo;m going to run tesseract-ocr on them to get the text:</p>
-<pre><code>$ for i in $(seq --format=%005.f 1 324)
-do
-tesseract $i.tif tesseract-$i -l eng
-done
-</code></pre>
-<p>Now all I have to do is cat all the text together:</p>
-<pre><code>cat *.txt &gt; output.txt
-</code></pre>
-<p>Now I have a fully searchable, plain text file. Exactly what I wanted in the first place!</p>
-<p>For the REAL magic, I use agrep to search for strings similar to provided example test questions to help &ldquo;highlight&rdquo; the answers. More technical details on that magic on <a href="http://wiki.xkyle.com/Answer_Finder">my wiki</a>.</p>
-<p><a href="../../uploads/answer.JPG"><img src="../../uploads/answer-300x25.jpg" alt="answer"></a></p>
-
+  So I spent $22 on an ebook for school.
+It has this crappy DRM that only lets me view the pdf on one computer using only &ldquo;Adobe Digital Editions&rdquo;.
+If that wasn&rsquo;t so bad, only a small subset of the text is OCR&rsquo;d, so most of it isn&rsquo;t even searchable!
+Now I&rsquo;m pissed, but wait, what do you say? These files are just RSA encrypted, and I have the key?
+  
+  <p>
+    <a class="u-clickable" href="../../decrypting-an-ebook-to-make-it-searchable/">Read More…</a>
+  </p>
+  
   
   
 
@@ -229,18 +216,14 @@ done
 </header>
 
   
-  <p>I&rsquo;ve become a semi-expert on wireless networking and their security features.. and how to get around them. Before I continue I want to emphasize:</p>
-<blockquote>
-<p>The act of cracking encryption is not illegal just like picking a lock is not illegal. It is the unauthorized access of that network which is illegal, just like breaking and entering is illegal.</p>
-</blockquote>
-<p>So. To sum it up, there are two types of encryption. There is the weak kind (<a href="http://en.wikipedia.org/wiki/Wired_Equivalent_Privacy">wep</a>) and the strong kind (<a href="http://en.wikipedia.org/wiki/Wi-Fi_Protected_Access">wpa</a>). WEP can be broken in about 5-10 minutes. WPA can be broken in about 24 hours (as long as their password is in your password try-out list).</p>
-<p>The actual process or hacking into a network like this requires a suite of tools called the <a href="http://www.aircrack-ng.org">aircrack-ng suite</a>. You can read their tutorials and such, and I highly recommend you do if you want to get into this sort of thing. It&rsquo;s a lot of FUN! Be prepared to learn linux while you are at it&hellip;.</p>
-<p>But, once you understand what you are doing, you will appreciate the tool I have written. It automates the process of getting the keys. I wrote it as a type of &ldquo;set-it-and-forget-it&rdquo; tool that I could just leave running. It isn&rsquo;t too clean, but if you can read bash scripting you can figure it out.</p>
-<p>[caption id=&quot;attachment_137&rdquo; align=&quot;aligncenter&rdquo; width=&quot;500&rdquo; caption=&quot;Here is a screen shot of my tool cracking wep&rdquo;]<a href="../../uploads/screenshot.jpg"><img src="../../uploads/screenshot.jpg" alt="Here is a screen shot of my tool cracking wep"></a>[/caption]</p>
-<p>Remember! Don&rsquo;t try to just run this tool without understanding what it does and how to read it. If you haven&rsquo;t breaking a wep key manually you don&rsquo;t want to run this. It does WEP and WPA cracking (saving the handshake for later). Good luck! I will provide minimal support via comments on this post. Don&rsquo;t forget to have your radio in monitor mode first, and if you are  going to do wpa you need the <a href="http://homepages.tu-darmstadt.de/~p_larbig/wlan/">mdk3</a> tool.</p>
-<p>Here is the download link to <a href="../../other//superscanner.tgz">Kyle&rsquo;s Wireless Cracking Tool</a>.</p>
-<p>Here is a link to a more updated versio of my <a href="../../other//superscanner2.tgz">Cracking Tool</a>.</p>
-
+  I&rsquo;ve become a semi-expert on wireless networking and their security features.. and how to get around them. Before I continue I want to emphasize:
+ The act of cracking encryption is not illegal just like picking a lock is not illegal. It is the unauthorized access of that network which is illegal, just like breaking and entering is illegal.
+ So. To sum it up, there are two types of encryption.
+  
+  <p>
+    <a class="u-clickable" href="../../my-wireless-cracking-tool/">Read More…</a>
+  </p>
+  
   
   
 
@@ -302,35 +285,14 @@ done
 </header>
 
   
-  <p>This semester I took a class on <a href="http://en.wikipedia.org/wiki/Discrete_wavelet_transform">Discrete Wavelets</a>. It was awesome. The coolest part was our group final project. My group had the best topic by far: Decoding a Captcha! (Click on any of the following images to view them full size)</p>
-<p>[](/uploads/file_captcha.jpg)<a href="../../uploads/captcha.jpg"><img src="../../uploads/captcha.jpg" alt="captcha"></a></p>
-<p>We&rsquo;ve all seen Captchas before. They are used on websites to make sure that the person on the website is a real human, not a computer program. Why do we want to break them? The same reason we want to climb Mount Everest, it&rsquo;s There!</p>
-<p><a href="../../uploads/input_captcha.jpg"><img src="../../uploads/input_captcha-300x108.jpg" alt="input\_captcha"></a></p>
-<p>The above is the captcha we intended to solve. Its not particularly difficult, but this class is an introduction to wavelets and requires no previous experience with the language we had to use: Mathematica. Our real task was to implement the algorithm in <a href="http://faculty.gvsu.edu/aboufade/web/cmj101-108.pdf">this paper</a>.</p>
-<p>So how do we do it? First we need to isolate the image without the background.</p>
-<p><a href="../../uploads/captchab.jpg"><img src="../../uploads/captchab-300x108.jpg" alt="captchab"></a></p>
-<p>No problem. The color of the text is different from the background so it is easy to isolate. Next we need to take those pieces of the matrix and turn them into a list of coordinate pairs. Then we can apply a rotation matrix transform to undo the angle. What angle? Well I don&rsquo;t know. How can we figure out how much it was rotate? Of course! Linear regression from Statistics!</p>
-<p><a href="../../uploads/regression.jpg"><img src="../../uploads/regression-300x239.jpg" alt="regression"></a></p>
-<p>Fortunately Mathematica has a function for this. This is the easy part. Now we need to take these rotated vectors and &ldquo;Unrotate&rdquo; them, then put them back into a matrix:</p>
-<p><a href="../../uploads/alligned.jpg"><img src="../../uploads/alligned.jpg" alt="alligned"></a></p>
-<p>No problem! Well actually this isn&rsquo;t as easy as it sounds. Arbitrary image rotation is non trivial. But let us press on. Now we must Cut the image into its component letters. This is easy, the columns of the matrix that are all white are the demarcation points.</p>
-<p><a href="../../uploads/segmented.jpg"><img src="../../uploads/segmented.jpg" alt="segmented"></a></p>
-<p>Ok now what? Well we have an individual matrix for each unknown letter. Let us resize it to a standard square size (pad it), say 80x80. Oh I forgot to mention, before we stared on this we made a &ldquo;<a href="http://www.merriam-webster.com/dictionary/canon">Canon</a>&rdquo; of letters from A-Z0-9 with the same font into 80x80 squares too. At this point we could compare each letters &ldquo;difference&rdquo; and see which has the least difference. Let me show you:</p>
-<p><a href="../../uploads/subtract.jpg"><img src="../../uploads/subtract.jpg" alt="subtract"></a></p>
-<p>Eh so that is a crappy example. When you take two letters and subtract them, you get all black where they are the same, and some white or gray where the &ldquo;differences&rdquo; are (Math terms=2 dimensional norm). The letter with the least difference is most likely to be the original letter.</p>
-<p>So all we have to do is iterate through each canonical letter until we get the least difference. Do that for each letter and we can decode (you can see the unknown on the left, and the matching canon on the right):</p>
-<p><a href="../../uploads/compare.jpg"><img src="../../uploads/compare-116x300.jpg" alt="compare"></a></p>
-<p>Seems pretty good. But it gets better with some Discrete Wavelet Magic! Our comparison can get even better if we ignore the errors and wavey crap that was introduced in the align section. The way we do this is with the <a href="http://en.wikipedia.org/wiki/Haar_wavelet">Haar Wavelet Transform</a>. Don&rsquo;t mind the math, we are basically blurring the image:</p>
-<p><a href="../../uploads/haar.jpg"><img src="../../uploads/haar-300x157.jpg" alt="haar"></a></p>
-<p>The part we want is in the upper most left hand corner, the &ldquo;blur&rdquo;. It turns out that 3 iterations of the HWT gives the best results. By doing this we were able to decode our CAPTCHAs 75% of the time. In the end the major flaws take place in the linear regression and the align function. If we used Mathematica 7 instead of 6 we could have used its built in image processing functions to take the error out of our sloppy rounding.</p>
-<p>But of course, the proof is in the code, I mean, the pudding. Here is our notebook:</p>
-<p><a href="../../uploads/final3.nb">Mathematica Notebook</a>
-To use this you need the <a href="http://cam.mathlab.stthomas.edu/wavelets/packagesmathematica.php">Discrete Wavelets Package</a>. Mathematica 7 comes with a function but this is written for 6.</p>
-<p><a href="../../uploads/final3.nbp">Notebook for Mathematica Player</a>
-Not everyone has Mathematica, but their <a href="http://www.wolfram.com/products/player/download.cgi">player</a> is cross platform and free as in beer.</p>
-<p><a href="../../uploads/captcha.ppt">Our Powerpoint Presentation</a>
-Blarg&hellip; If someone can convert this to pdf I will change this.</p>
-
+  This semester I took a class on Discrete Wavelets. It was awesome. The coolest part was our group final project. My group had the best topic by far: Decoding a Captcha! (Click on any of the following images to view them full size)
+[](/uploads/file_captcha.jpg)
+We&rsquo;ve all seen Captchas before. They are used on websites to make sure that the person on the website is a real human, not a computer program.
+  
+  <p>
+    <a class="u-clickable" href="../../discrete-wavelets-final-project-decaptcha/">Read More…</a>
+  </p>
+  
   
   
 
@@ -398,13 +360,13 @@ Blarg&hellip; If someone can convert this to pdf I will change this.</p>
 </header>
 
   
-  <p>Cody and I camped two nights at <a href="http://www.floridastateparks.org/rockybayou/">Rocky Bayou State Park</a>!</p>
-<p><a href="../../uploads/imag0007.jpg"><img src="../../uploads/imag0007-300x225.jpg" alt="imag0007"></a></p>
-<p>Yea she doesn&rsquo;t look very happy. Yes, we are camping on concrete&hellip;.</p>
-<p><a href="../../uploads/imag0008.jpg"><img src="../../uploads/imag0008-300x225.jpg" alt="imag0008"></a></p>
-<p>Day 2. That&rsquo;s better!</p>
-<p>NEXT: Our previous vacation was a <a href="../../cruise-day-12/">Cruise!</a></p>
+  Cody and I camped two nights at Rocky Bayou State Park!
 
+Yea she doesn&rsquo;t look very happy. Yes, we are camping on concrete&hellip;.
+
+Day 2. That&rsquo;s better!
+NEXT: Our previous vacation was a Cruise!
+  
   
   
 
@@ -460,56 +422,15 @@ Blarg&hellip; If someone can convert this to pdf I will change this.</p>
 </header>
 
   
-  <p>More Update: There are new AP&rsquo;s that don&rsquo;t conform to this pattern. If the calculator doesn&rsquo;t work on yours, maybe it is like these <a href="../../help-wanted-what-is-the-pattern-in-these-new-wep-keys/">non-conforming-wep</a> keys</p>
-<p>Update:  A cool cool guy named Dylan Taylor wrote a java implementation of this script: <a href="http://www.fwc.dylanmtaylor.com/">http://www.fwc.dylanmtaylor.com/</a> if you need an offline version</p>
-<p>Update: I wrote a bash implementation to make it easy to script, and for <a href="../../other/fioscalc.sh">offline usage</a></p>
-<p>In my <a href="../../verizon-fios-wireless-security-analysis/">previous post</a> I showed a correlation between the WEP key of a Verizon FiOS install and the MAC address of the access point. This was simply a collection of experimental data that I gathered.</p>
-<p>Thanks to <a href="http://www.linkedin.com/pub/dir/Fred/Williams?trk=ppro_find_others">Fred Williams?</a> for pointing out the correlation between the ESSID and the WEP. With these powers combined form:
-<a href="../../uploads/captain-planet.jpeg"><img src="../../uploads/captain-planet-185x300.jpg" alt="captain-planet"></a></p>
-<p>Well.. Not exactly. If there was a super hero with the phrase: &ldquo;Hack the Planet&rdquo; instead of &ldquo;Save the Planet&rdquo; I would have chosen it.</p>
-<p>So what is the deal?</p>
-<p><a href="../../uploads/verizon_fios_250.jpg"><img src="../../uploads/verizon_fios_250.jpg" alt=""></a></p>
-<p>The first part of the key is a combination of the second and third part of the MAC, which is either 1801 or 1F90.</p>
-<p>The second part of the key is this forumula.. hold on to your butts:</p>
-<blockquote>
-<p>The 5-character SSID name is a base-36 number of the lower 48 bits (6 hex digits) of the WEP key. The string is reversed, with the most significant digit on the right.</p>
-</blockquote>
-<p>Base-36 numbers uses 0-9 followed A-Z to represent 36 digits (0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ)
-It maps out like this:</p>
-<pre><code>    0=00, 1=01, 2=02, 3=03, 4=04, 5=05,
-    6=06, 7=07, 8=08, 9=09, A=10, B=11,
-    C=12, D=13, E=14, F=15, G=16, H=17,
-    I=18, J=19, K=20, L=21, M=22, N=23,
-    O=24, P=25, Q=26, R=27, S=28, T=29,
-    U=30, V=31, W=32, X=33, Y=34, Z=35
-</code></pre><p>To go through an example, the SSID name of “E3X12″ comes out as follows.</p>
-<pre><code>    E*(36^0) is 14 * 1 = 14
-    3*(36^1) is 03 * 36 = 108
-    X*(36^2) is 33 * 1296 = 42,768
-    1*(36^3) is 01 * 46656 = 46,656
-    2*(36^4) is 02 * 1679616 = 3,359,232
-</code></pre><p>Add these up, and you get 3,448,778 decimal which is 349FCA in Hexadecimal notation.
-The first 4 hex digits of the WEP key are the 2nd and 3rd byte from the MAC address as indicated in the original post above.</p>
-<p>Thanks again Fred! To math majors this is like a beam of light coming down from the heavens</p>
-<p><a href="http://www.flickr.com/photos/dorowski/456250234/"><img src="../../uploads/lightbeam.jpg" alt="lightbeam"></a></p>
-<p>So I wrote this Javascript calculator (my first javascript program actually) in order to aid the calculation of the keys! Just type in your neighbor&rsquo;s ESSID and out comes the KEY!
-(Sorry about the iframe if that is an issue to you. Goto <a href="../../other/wep.html">here</a> if it is.)
-Your browser does not support iframes.
-Want to try it out? Here is a list of keys I&rsquo;ve collected in my travels. Theres are cracked with Aircrack-ng, not calculated.</p>
-<pre><code>E3X12,1801349FCA
-NAMX2,18014B311F
-MWXV2,180149FF66
-R0LC7,1801BC5C6B
-JE2K7,1801C1B02B
-HH150,1F900396C5
-3RA18,1801CDF4AF
-OQ838,1801CF5700
-7WY20,1F90021D27
-C7WA0,1F9007C188
-DJP80,1F90063349
-BJ2Z0,1F9018F797
-RSHZ0,1F901944DB
-</code></pre>
+  More Update: There are new AP&rsquo;s that don&rsquo;t conform to this pattern. If the calculator doesn&rsquo;t work on yours, maybe it is like these non-conforming-wep keys
+Update: A cool cool guy named Dylan Taylor wrote a java implementation of this script: http://www.fwc.dylanmtaylor.com/ if you need an offline version
+Update: I wrote a bash implementation to make it easy to script, and for offline usage
+In my previous post I showed a correlation between the WEP key of a Verizon FiOS install and the MAC address of the access point.
+  
+  <p>
+    <a class="u-clickable" href="../../verizon-fios-wireless-key-calculator/">Read More…</a>
+  </p>
+  
   
   
 
@@ -571,10 +492,10 @@ RSHZ0,1F901944DB
 </header>
 
   
-  <p>Posting a screenshot of your desktop is the cool thing for geeks to do apparently.</p>
-<p><a href="../../uploads/screenshot3.png"><img src="../../uploads/screenshot3-300x187.png" alt="screenshot3"></a></p>
-<p>It&rsquo;s Ubuntu 8.10, no big surprise there. I&rsquo;m using the &ldquo;Dusk&rdquo; theme with the proposed background for the next Ubuntu. I really like it.</p>
+  Posting a screenshot of your desktop is the cool thing for geeks to do apparently.
 
+It&rsquo;s Ubuntu 8.10, no big surprise there. I&rsquo;m using the &ldquo;Dusk&rdquo; theme with the proposed background for the next Ubuntu. I really like it.
+  
   
   
 
@@ -624,16 +545,19 @@ RSHZ0,1F901944DB
 </header>
 
   
-  <p>The weekend I Kayaked to Anclote Key. Here is a picture of us unloading our Kayaks! (Not me in the picture)</p>
-<p><a href="../../uploads/imag0022.jpg"><img src="../../uploads/imag0022-300x225.jpg" alt=""></a></p>
-<p>We Kayaked 4 hours to the north end of Anclote Key. Here the the google <a href="http://maps.google.com/maps?ll=28.187778,-82.845556&amp;spn=0.3,0.3&amp;t=h&amp;q=28.187778,-82.845556">maps link</a>.</p>
-<p>We camped overnight on the night of Valentines day. How romantic right?</p>
-<p><a href="../../uploads/imag0018.jpg"><img src="../../uploads/imag0018-300x225.jpg" alt=""></a></p>
-<p>And here is Cody inside the tent looking cutsy:</p>
-<p><a href="../../uploads/imag0015.jpg"><img src="../../uploads/imag0015-300x225.jpg" alt=""></a></p>
-<p>And if you have <a href="http://earth.google.com/">Google Earth</a>, here is a link to a path I made of the trip: <a href="../../uploads/anclote-key-trip.kmz">anclote-key-trip</a> <a href="../../uploads/anclote-key-trip.kmz"><img src="http://www.gearthblog.com/images/gelogoicon.gif" alt=""></a></p>
-<p>And if you want to use Google Maps, here is a <a href="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=anclote+key&amp;sll=37.0625,-95.677068&amp;sspn=48.374125,79.101563&amp;ie=UTF8&amp;ll=28.213206,-82.845755&amp;spn=0.013236,0.019312&amp;t=h&amp;z=17">link to the arial photo</a>.</p>
+  The weekend I Kayaked to Anclote Key. Here is a picture of us unloading our Kayaks! (Not me in the picture)
 
+We Kayaked 4 hours to the north end of Anclote Key. Here the the google maps link.
+We camped overnight on the night of Valentines day. How romantic right?
+
+And here is Cody inside the tent looking cutsy:
+
+And if you have Google Earth, here is a link to a path I made of the trip: anclote-key-trip
+  
+  <p>
+    <a class="u-clickable" href="../../couples-kayak-at-anclote-key/">Read More…</a>
+  </p>
+  
   
   
 
@@ -695,13 +619,13 @@ RSHZ0,1F901944DB
 </header>
 
   
-  <p>I suppose I come from a&hellip; short line of engineers. My father used to work for <a href="http://www.paradyne.com/">Paradyne</a> which was gobbled up by At&amp;t, and is now owned by <a href="http://www.zhone.com/">Zhone</a>.</p>
-<p>But back in the day they worked on &ldquo;<a href="http://en.wikipedia.org/wiki/Computer_terminal">Terminals</a>&quot;. You know, back when &ldquo;Computers&rdquo; has a gazillion serial ports and the &ldquo;Terminal&rdquo; was the box that had a monitor and keyboard which parsed the 300baud green text? Yea neither do I&hellip;</p>
-<p>But I&rsquo;ve read about such times, and I know about the history of my <a href="http://en.wikipedia.org/wiki/Xterm">xterm</a> and <a href="http://efault.net/npat/hacks/picocom/">picocom</a> programs. They emulate these devices. Such devices that my Dad (Richard Anderson) designed! It is good to know your roots. Amazing:</p>
-<p><a href="../../uploads/terminal.jpg"><img src="../../uploads/terminal-300x221.jpg" alt=""></a></p>
-<p><a href="../../other/patd273189.pdf">Terminal Design (PDF)</a></p>
-<p><a href="http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&amp;Sect2=HITOFF&amp;d=PALL&amp;p=1&amp;u=%2Fnetahtml%2FPTO%2Fsrchnum.htm&amp;r=1&amp;f=G&amp;l=50&amp;s1=D273,189.PN.&amp;OS=PN/D273,189&amp;RS=PN/D273,189">Link to the Original Patent</a> (uspo.gov)</p>
-
+  I suppose I come from a&hellip; short line of engineers. My father used to work for Paradyne which was gobbled up by At&amp;t, and is now owned by Zhone.
+But back in the day they worked on &ldquo;Terminals&quot;. You know, back when &ldquo;Computers&rdquo; has a gazillion serial ports and the &ldquo;Terminal&rdquo; was the box that had a monitor and keyboard which parsed the 300baud green text? Yea neither do I&hellip;
+  
+  <p>
+    <a class="u-clickable" href="../../my-dads-terminal-patent/">Read More…</a>
+  </p>
+  
   
   
 
@@ -751,32 +675,13 @@ RSHZ0,1F901944DB
 </header>
 
   
-  <p><a href="../../uploads/myspace.jpeg"><img src="../../uploads/myspace.jpeg" alt=""></a></p>
-<p>A couple of years ago, a large list of phished Myspace accounts was leaked on the internet.
-I stumpled upon them and ran a very simple analysis. Check it out:</p>
-<pre><code>root@a:/# cat myspace.hackedlist | cut -f 2 -d : | sort | uniq -c | sort -n | tail -n 20
-14 qwerty1
-15 123456a
-15 babygirl1
-15 blink182
-16 123456
-16 123abc
-16 iloveyou2
-17 football1
-17 nicole1
-18 number1
-19 password
-23 myspace1
-24 fuckyou1
-28 iloveyou1
-28 monkey1
-29 fuckyou
-54 abc123
-74 password1
-</code></pre>
-<p>The file was in the form of &ldquo;Username:password&rdquo;, so the first part of that command &ldquo;cuts&rdquo; the second column, with the colon as the delimiter. Then it is piped through sort, which sorts the list alphabetcially, then the uniq -c command, which counts the number of times that a word shows up, then I sort it again to get the most freqent passwords, and tail the last 20 lines.</p>
-<p>It is interesting to see that a lot of these passwords just tack &ldquo;1&rdquo; on to them. And of course blink182 was all the rage back then aparently&hellip;</p>
-
+  A couple of years ago, a large list of phished Myspace accounts was leaked on the internet. I stumpled upon them and ran a very simple analysis. Check it out:
+root@a:/# cat myspace.hackedlist | cut -f 2 -d : | sort | uniq -c | sort -n | tail -n 20 14 qwerty1 15 123456a 15 babygirl1 15 blink182 16 123456 16 123abc 16 iloveyou2 17 football1 17 nicole1 18 number1 19 password 23 myspace1 24 fuckyou1 28 iloveyou1 28 monkey1 29 fuckyou 54 abc123 74 password1  The file was in the form of &ldquo;Username:password&rdquo;, so the first part of that command &ldquo;cuts&rdquo; the second column, with the colon as the delimiter.
+  
+  <p>
+    <a class="u-clickable" href="../../myspace-phishing-analysis/">Read More…</a>
+  </p>
+  
   
   
 
@@ -832,48 +737,16 @@ I stumpled upon them and ran a very simple analysis. Check it out:</p>
 </header>
 
   
-  <p><a href="../../uploads/verizon_fios_250.jpg"><img src="../../uploads/verizon_fios_250.jpg" alt=""></a></p>
-<p>Take a look at some wireless keys that I&rsquo;ve collected from some Verizon FiOS installs around Tampa:</p>
-<blockquote>
-<p>00-18-01-EA-3D-99,E3X12,6,WEP,1801349FCA
-00-18-01-F0-6D-C4,NAMX2,1,WEP,18014B311F
-00-18-01-F0-95-78,MWXV2,11,WEP,180149FF66
-00-18-01-FD-4F-0E,R0LC7,1,WEP,1801BC5C6B
-00-18-01-FE-15-46,JE2K7,1,WEP,1801C1B02B
-00-18-01-FF-DF-DD,HH150,1,WEP,1F900396C5
-00-1F-90-E0-B1-F8,3RA18,6,WEP,1801CDF4AF
-00-1F-90-E0-B5-AC,OQ838,6,WEP,1801CF5700
-00-1F-90-E2-7E-61,7WY20,6,WEP,1F90021D27
-00-1F-90-E3-1E-90,C7WA0,6,WEP,1F9007C188
-00-1F-90-E3-2E-07,DJP80,6,WEP,1F90063349
-00-1F-90-E6-A7-D5,BJ2Z0,11,WEP,1F9018F797
-00-1F-90-E6-D4-E3,RSHZ0,4,WEP,1F901944DB</p>
-</blockquote>
-<p>What you are looking at here is MAC, SSID, Channel, Encryption, Key.</p>
-<p>Notice that they are all WEP, 64bit, with 5 Alpha numeric SSID&rsquo;s.</p>
-<p>I want to emphasize that these are the defaults, and only geeks, nerds and the like change the defaults. :)</p>
-<p>Here is a typical type of router (actiontec) that does this:</p>
-<p><a href="../../uploads/mi424wr.gif"><img src="../../uploads/mi424wr-300x216.gif" alt=""></a></p>
-<p>Take a real close look at two of the examples:</p>
-<blockquote>
-<p>00-18-01-FE-15-46,JE2K7,1,WEP,1801C1B02B
-00-1F-90-E2-7E-61,7WY20,6,WEP,1F90021D27</p>
-</blockquote>
-<p>Notice the relationship the MAC and the key have. Let me split up the bytes for you:</p>
-<blockquote>
-<p>00:18:01:FE:15:46   -  18:01:C1:B0:2B</p>
-</blockquote>
-<p>Verizon, or Actiontec, or someone is setting the first byte of the 40bit key to the second byte of the MAC of the unit. And then they are setting the second byte of the key to the third byte of the MAC!</p>
-<p>You can look on the list, and this is mostly the case, there is some overlap on the OIDs. (sometimess it is 1801, sometimes 1f90) Why is this useful? Well if you know it is a FiOS install, you have already decreased your &ldquo;64bit&rdquo; key to a real &ldquo;40bit&rdquo; key, and you already know 16 bits of it, so you only have to crack 24 bits. This is insane. This is like guessing 3 letters.</p>
-<p>The way to use this is with the <a href="http://www.aircrack-ng.org">Aircrack-ng</a> program. Capture some packets, and use the -d option to tell it what the key starts with.</p>
-<blockquote>
-<p>aircrack-ng -d 1801 stupid-fios.cap</p>
-</blockquote>
-<p>You will get the key in No time! Silly Verizon, you didn&rsquo;t think we would notice you weren&rsquo;t using constructed (not random) keys?</p>
-<p>Have FiOS yourself? Want to share your MAC and default key in the comments? :)</p>
-<blockquote>
-</blockquote>
-
+  Take a look at some wireless keys that I&rsquo;ve collected from some Verizon FiOS installs around Tampa:
+ 00-18-01-EA-3D-99,E3X12,6,WEP,1801349FCA 00-18-01-F0-6D-C4,NAMX2,1,WEP,18014B311F 00-18-01-F0-95-78,MWXV2,11,WEP,180149FF66 00-18-01-FD-4F-0E,R0LC7,1,WEP,1801BC5C6B 00-18-01-FE-15-46,JE2K7,1,WEP,1801C1B02B 00-18-01-FF-DF-DD,HH150,1,WEP,1F900396C5 00-1F-90-E0-B1-F8,3RA18,6,WEP,1801CDF4AF 00-1F-90-E0-B5-AC,OQ838,6,WEP,1801CF5700 00-1F-90-E2-7E-61,7WY20,6,WEP,1F90021D27 00-1F-90-E3-1E-90,C7WA0,6,WEP,1F9007C188 00-1F-90-E3-2E-07,DJP80,6,WEP,1F90063349 00-1F-90-E6-A7-D5,BJ2Z0,11,WEP,1F9018F797 00-1F-90-E6-D4-E3,RSHZ0,4,WEP,1F901944DB
+ What you are looking at here is MAC, SSID, Channel, Encryption, Key.
+Notice that they are all WEP, 64bit, with 5 Alpha numeric SSID&rsquo;s.
+I want to emphasize that these are the defaults, and only geeks, nerds and the like change the defaults.
+  
+  <p>
+    <a class="u-clickable" href="../../verizon-fios-wireless-security-analysis/">Read More…</a>
+  </p>
+  
   
   
 
@@ -945,14 +818,6 @@ I stumpled upon them and ran a very simple analysis. Check it out:</p>
     </div>
   </main>
   
-<footer class="Footer">
-  <div class="u-wrapper">
-    <div class="u-padding">
-      Except where otherwise noted, content on this site is licensed under a a <a href="http://creativecommons.org/licenses/by/4.0/" rel="license"> Creative Commons Attribution 4.0 International License</a>.
-    </div>
-  </div>
-</footer>
-
 
 </body>
 </html>

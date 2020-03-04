@@ -90,7 +90,7 @@
 
 
   
-  <link rel="stylesheet" href="../../css/base.min.50883c9e7cc6f561db1dcd2089b6b895c60df8d10b9e71a90cbc10e59c8bfc40.css" integrity="sha256-UIg8nnzG9WHbHc0giba4lcYN&#43;NELnnGpDLwQ5ZyL/EA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/base.min.47def9e9fb53a1b822ec70f6799bb1f010fe9aac5273d8a1192ac9c685262c4f.css" integrity="sha256-R9756ftTobgi7HD2eZux8BD&#43;mqxSc9ihGSrJxoUmLE8=" crossorigin="anonymous">
   
   
 </head>
@@ -146,69 +146,14 @@
 </header>
 
   
-  <p>Inspired by <a href="https://github.com/erkin/ponysay">ponysay</a>, I think wicked
-ascii/ansi artwork on the terminal is great.</p>
-<p>I decided to survey all the tools I could find that aid in this conversion
-to see if there were any dramatic differences in results.</p>
-<h2 id="methodology">Methodology</h2>
-<p>For these tests I used an image with a 160px width, twice that of
-a standard terminal. Then I <code>cat</code>'d the image in plain xterm and
-took a screenshot of the results.</p>
-<p>The original has been scaled up (6X) to be the same relative size as
-the resulting screenshots.</p>
-<p>My entire methodology is on <a href="https://github.com/solarkennedy/ascii-art-converter-comparison">github</a>
-if you wish to see exactly how I made these images. In theory
-it is 100% reproducible from <code>make</code>. (assuming on a linux desktop)</p>
-<h2 id="tools-compared">Tools Compared</h2>
-<ul>
-<li><a href="https://github.com/rossy/img2xterm">img2xterm</a></li>
-<li><a href="https://github.com/maandree/util-say/">util-say</a></li>
-<li><a href="https://github.com/posva/catimg">catimg</a> (C and Bash versions)</li>
-<li><a href="https://github.com/saikobee/img-cat/">img-cat</a></li>
-<li><a href="http://manpages.ubuntu.com/manpages/hardy/man1/img2txt.1.html">img2txt</a></li>
-<li><a href="https://csl.name/jp2a/">jp2a</a></li>
-</ul>
-<h2 id="results">Results</h2>
-<h3 id="benderpng">bender.png</h3>
-<p><img src="../../uploads/bender.original.png" alt="bender.png converted using original" title="bender.png converted using original">
-<img src="../../uploads/bender.img2xterm.png" alt="bender.png converted using img2xterm" title="bender.png converted using img2xterm">
-<img src="../../uploads/bender.util-say.png" alt="bender.png converted using util-say" title="bender.png converted using util-say">
-<img src="../../uploads/bender.catimg.png" alt="bender.png converted using catimg" title="bender.png converted using catimg">
-<img src="../../uploads/bender.catimg-bash.png" alt="bender.png converted using catimg-bash" title="bender.png converted using catimg-bash">
-<img src="../../uploads/bender.img-cat.png" alt="bender.png converted using img-cat" title="bender.png converted using img-cat">
-<img src="../../uploads/bender.img2txt.png" alt="bender.png converted using img2txt" title="bender.png converted using img2txt">
-<img src="../../uploads/bender.jp2a.png" alt="bender.png converted using jp2a" title="bender.png converted using jp2a"></p>
-<h3 id="lennapng">lenna.png</h3>
-<p><img src="../../uploads/lenna.original.png" alt="lenna.png converted using original" title="lenna.png converted using original">
-<img src="../../uploads/lenna.img2xterm.png" alt="lenna.png converted using img2xterm" title="lenna.png converted using img2xterm">
-<img src="../../uploads/lenna.util-say.png" alt="lenna.png converted using util-say" title="lenna.png converted using util-say">
-<img src="../../uploads/lenna.catimg.png" alt="lenna.png converted using catimg" title="lenna.png converted using catimg">
-<img src="../../uploads/lenna.catimg-bash.png" alt="lenna.png converted using catimg-bash" title="lenna.png converted using catimg-bash">
-<img src="../../uploads/lenna.img-cat.png" alt="lenna.png converted using img-cat" title="lenna.png converted using img-cat">
-<img src="../../uploads/lenna.img2txt.png" alt="lenna.png converted using img2txt" title="lenna.png converted using img2txt">
-<img src="../../uploads/lenna.jp2a.png" alt="lenna.png converted using jp2a" title="lenna.png converted using jp2a"></p>
-<h3 id="nyanpng">nyan.png</h3>
-<p><img src="../../uploads/nyan.original.png" alt="nyan.png converted using original" title="nyan.png converted using original">
-<img src="../../uploads/nyan.img2xterm.png" alt="nyan.png converted using img2xterm" title="nyan.png converted using img2xterm">
-<img src="../../uploads/nyan.util-say.png" alt="nyan.png converted using util-say" title="nyan.png converted using util-say">
-<img src="../../uploads/nyan.catimg.png" alt="nyan.png converted using catimg" title="nyan.png converted using catimg">
-<img src="../../uploads/nyan.catimg-bash.png" alt="nyan.png converted using catimg-bash" title="nyan.png converted using catimg-bash">
-<img src="../../uploads/nyan.img-cat.png" alt="nyan.png converted using img-cat" title="nyan.png converted using img-cat">
-<img src="../../uploads/nyan.img2txt.png" alt="nyan.png converted using img2txt" title="nyan.png converted using img2txt">
-<img src="../../uploads/nyan.jp2a.png" alt="nyan.png converted using jp2a" title="nyan.png converted using jp2a"></p>
-<h2 id="conclusion">Conclusion</h2>
-<p><a href="https://github.com/rossy/img2xterm">img2xterm</a> stands out to me as the most
-accurate and true to the original, with <a href="https://github.com/maandree/util-say/">util-say</a>
-as a close second. Both of these tools understand &ldquo;<a href="http://www.theasciicode.com.ar/extended-ascii-code/bottom-half-block-ascii-code-220.html">half-block</a>&rdquo;
-characters with two colors, effectively doubling the horizontal resolution of the resulting
-characters. (two colors per &ldquo;pixel&rdquo;)</p>
-<p><a href="https://github.com/posva/catimg">catimg</a> and <a href="https://github.com/saikobee/img-cat/">img-cat</a>
-both have good color representation, but lack the additional resolution compared to the
-other tools, giving it a more &ldquo;pixelated&rdquo; look.</p>
-<p><a href="http://manpages.ubuntu.com/manpages/hardy/man1/img2txt.1.html">img2txt</a> and <a href="https://csl.name/jp2a/">jp2a</a>
-are &ldquo;true ascii&rdquo; tools, they are really not in the same league as the others. I included them
-here for completeness.</p>
-
+  Inspired by ponysay, I think wicked ascii/ansi artwork on the terminal is great.
+I decided to survey all the tools I could find that aid in this conversion to see if there were any dramatic differences in results.
+Methodology For these tests I used an image with a 160px width, twice that of a standard terminal. Then I cat'd the image in plain xterm and took a screenshot of the results.
+  
+  <p>
+    <a class="u-clickable" href="../../A-Comparison-of-Image-to-ASCII-Conversion-Tools/">Read More…</a>
+  </p>
+  
   
   
 
@@ -246,61 +191,15 @@ here for completeness.</p>
 </header>
 
   
-  <p>I like Bluetooth Low Energy (BTLE). I also like IPv6. Did you know you could but both together?</p>
-<p>Technically 6LoWPAN</p>
-<h2 id="requirements">Requirements</h2>
-<pre><code>modprobe bluetooth_6lowpan
-echo 'bluetooth_6lowpan' &gt;&gt; /etc/modules
-</code></pre>
-<h2 id="establishing-the-connection">Establishing the Connection</h2>
-<h3 id="set-the-bluetooth-l2cap-psm">Set the Bluetooth L2CAP PSM</h3>
-<p>First you need to set the Protocol/Service Multiplexer value on both sides to &ldquo;62&rdquo; (0x3E) on both sides:</p>
-<pre><code>echo 62 &gt; /sys/kernel/debug/bluetooth/6lowpan_psm
-</code></pre>
-<p>This PSM value lets the driver know that you are going to multiplex this special
-new protocol on top of whatever your bluetooth device mith also be doing.</p>
-<p>0x25 is the magic value for &ldquo;Internet Protocol Support Profile&rdquo;
-<a href="https://www.bluetooth.org/en-us/specification/assigned-numbers/logical-link-control">https://www.bluetooth.org/en-us/specification/assigned-numbers/logical-link-control</a>
-which I think is supposed to be the correct value?</p>
-<p>0x3E is some sort of temporary value I had to use to get this working, as 0x25 ended up
-as a being not supported per the messages in my wireshark dump.</p>
-<p>I&rsquo;m not aware of any other way to set it other than this kernel debug setting.</p>
-<h3 id="making-the-slave-advertise">Making the slave advertise</h3>
-<p>The slave must be doing Low-Energy advertisements in order for the master to connect to it.</p>
-<pre><code>hciconfig hci0 leadv
-</code></pre>
-<h3 id="connect">Connect</h3>
-<p>On the master you should be able to watch the slave advertise:</p>
-<pre><code>⮀hcitool lescan
-LE Scan ...
-C4:85:08:31:XX:XX (unknown)
-C4:85:08:31:XX:XX ubuntu-0
-</code></pre>
-<p>Establish a connection from the master to the slave:</p>
-<pre><code>echo &quot;connect C4:85:08:31:XX:XX 1&quot; &gt;/sys/kernel/debug/bluetooth/6lowpan_control
-</code></pre>
-<p>Afterwards a bt0 device should show up in ifconfig. Run <code>hcitool conn</code> to verify
-a connection is actually established. Use wireshark on bluetooth mon mode on the
-hci device to confirm commands are being sent.</p>
-<p>The proof is in the ping:</p>
-<pre><code>~ ⮀ # ⮀ping6 fe80::1610:9fff:fee0:1432%bt0
-PING fe80::1610:9fff:fee0:1432%bt0(fe80::1610:9fff:fee0:1432) 56 data bytes
-64 bytes from fe80::1610:9fff:fee0:1432: icmp_seq=1 ttl=64 time=158 ms
-64 bytes from fe80::1610:9fff:fee0:1432: icmp_seq=2 ttl=64 time=236 ms
-64 bytes from fe80::1610:9fff:fee0:1432: icmp_seq=3 ttl=64 time=113 ms
-</code></pre>
-<h2 id="problems">Problems</h2>
-<p>After a small number of packets, the connection seems to drop, and on the master side
-I get:</p>
-<pre><code>[  368.947193] Bluetooth: hci0 link tx timeout
-[  368.947202] Bluetooth: hci0 killing stalled connection c4:85:08:31:XX:XX
-</code></pre>
-<p>No matter what rmmod or stopping I tried, a reboot was the only thing I could to
-rebuild the connection. Obviously this is pretty new stuff, hopefully it will
-stabilize in later versions of the kernel.</p>
-<p>At this time though, on 3.19.0-21-generic (Ubuntu Vivid), this feature is not
-yet usable.</p>
-
+  I like Bluetooth Low Energy (BTLE). I also like IPv6. Did you know you could but both together?
+Technically 6LoWPAN
+Requirements modprobe bluetooth_6lowpan echo 'bluetooth_6lowpan' &gt;&gt; /etc/modules  Establishing the Connection Set the Bluetooth L2CAP PSM First you need to set the Protocol/Service Multiplexer value on both sides to &ldquo;62&rdquo; (0x3E) on both sides:
+echo 62 &gt; /sys/kernel/debug/bluetooth/6lowpan_psm  This PSM value lets the driver know that you are going to multiplex this special new protocol on top of whatever your bluetooth device mith also be doing.
+  
+  <p>
+    <a class="u-clickable" href="../../Playing-with-IPv6-Over-Bluetooth-Low-Energy-6LoWPAN/">Read More…</a>
+  </p>
+  
   
   
 
@@ -338,32 +237,15 @@ yet usable.</p>
 </header>
 
   
-  <p>The software that powers the Etherhouse project is open source. This blog
-post describes that software and how it interacts with all the pieces.</p>
-<h2 id="client">Client</h2>
-<p>You can see the <a href="https://github.com/solarkennedy/ether_house">Client software</a>
-that runs on the Arduino. This uses one external library and is in the native
-Arduino C++.</p>
-<p>The Arduino runs a limited TCP/IP stack and interacts with the http api.</p>
-<p>The code plenty of defensive code in place to ensure the client continues to run
-without interruption or interaction. No one should need to &ldquo;turn it off and on
-again.&rdquo;</p>
-<h2 id="server">Server</h2>
-<p>The <a href="https://github.com/solarkennedy/ether_housed">Server software</a> is also open
-source.</p>
-<p>In designing the software, I aimed for longevity. I want the software to
-continue to run for many years without maintenance. I decided to use golang.</p>
-<ul>
-<li>Go binaries are statically compiled, which means the same binary I compile now
-will continue to run on new platforms for years to come.</li>
-<li>With godeps I can include all compatible libraries together with no external
-dependencies, regardless of their long term state.</li>
-<li>I use Heroku to deploy the code. Heroku is free for small installs and a
-stable platform. They can probably keep this server up better than I can.</li>
-<li>I use a DNS name I can control for service discovery. This gives me the
-flexibility to change platforms over time if necissary.</li>
-</ul>
-
+  The software that powers the Etherhouse project is open source. This blog post describes that software and how it interacts with all the pieces.
+Client You can see the Client software that runs on the Arduino. This uses one external library and is in the native Arduino C++.
+The Arduino runs a limited TCP/IP stack and interacts with the http api.
+The code plenty of defensive code in place to ensure the client continues to run without interruption or interaction.
+  
+  <p>
+    <a class="u-clickable" href="../../Etherhouse-Part-2-Software/">Read More…</a>
+  </p>
+  
   
   
 
@@ -407,15 +289,14 @@ flexibility to change platforms over time if necissary.</li>
 </header>
 
   
-  <p>Etherhouse a project of mine involving eight Christmas gifts. Each gift
-involved a display of some model houses made from folded paper, each
-representing the home of a friend or family member.</p>
-<p>The houses light up, depending on whether that family member is home or not.
-Their presence is detected based on if their smartphone is on the same network
-the etherhouse is on.</p>
-<p>See the <a href="https://github.com/solarkennedy/ether_house#hardware">GitHub</a> page
-for more details.</p>
-
+  Etherhouse a project of mine involving eight Christmas gifts. Each gift involved a display of some model houses made from folded paper, each representing the home of a friend or family member.
+The houses light up, depending on whether that family member is home or not. Their presence is detected based on if their smartphone is on the same network the etherhouse is on.
+See the GitHub page for more details.
+  
+  <p>
+    <a class="u-clickable" href="../../Etherhouse-Part-1-Hardware/">Read More…</a>
+  </p>
+  
   
   
 
@@ -459,150 +340,14 @@ for more details.</p>
 </header>
 
   
-  <p><a href="https://github.com/puppetlabs/beaker">Beaker</a> is a test framework created by
-Puppetlabs to run tests against puppet modules on real servers (vm, containers
-whatever) and test that they do what they say they should do.</p>
-<p>This is a quick tutorial on how to use this framework. At the time of this
-writing, Beaker is under heavy development, so this could all change.</p>
-<h2 id="the-gem">The Gem</h2>
-<p>The first thing you need to do is install beaker. Usually this is as simple as
-adding it to your Gemfile and running <code>bundle install</code>.</p>
-<pre><code>gem 'beaker'
-gem 'beaker-rspec'
-</code></pre>
-<p>I recommend using <a href="http://www.morethanseven.net">grethr</a>&lsquo;s
-<a href="https://github.com/garethr/puppet-module-skeleton/blob/master/skeleton/Gemfile">puppet module skeleton Gemfile</a>
-, which includes Beaker already.</p>
-<p>Now install it:</p>
-<pre><code>bundle install
-</code></pre>
-<h2 id="acceptance-boilerplate">Acceptance Boilerplate</h2>
-<h3 id="rspec-and-the-puppetlabs-helper">Rspec and the Puppetlabs Helper</h3>
-<p>This tutorial assumes you already have the puppetlabs_spec_helper installed,
-rake, rspec, etc.</p>
-<h3 id="folder-for-tests">Folder For Tests</h3>
-<p>You need a place to put acceptance tests. They must go in</p>
-<pre><code>module_root/spec/acceptance/
-</code></pre>
-<p>See <a href="https://github.com/puppetlabs/puppetlabs-mysql/tree/master/spec/acceptance">puppetlabs-mysql</a>
-for an example of what it looks like.</p>
-<h3 id="nodesets">Nodesets</h3>
-<p>You must have at least a default.yml in the nodesets folder inside your
-acceptance folder. Here is an example:</p>
-<pre><code># consul/spec/acceptance/nodesets/default.yml
-HOSTS:
-  ubuntu-12-04:
-    platform: ubuntu-12.04-x64
-    image: solarkennedy/ubuntu-12.04-puppet
-    hypervisor: docker
-CONFIG:
-  type: foss
-</code></pre><p>You can have different yaml files for different platforms you wish to test
-against. The format is described in the
-<a href="https://github.com/puppetlabs/beaker/wiki/Creating-A-Test-Environment">Beaker wiki</a></p>
-<p><strong>Note</strong>: I use my own docker files for speed, as they come preinstalled with the
-the <a href="https://github.com/puppetlabs/beaker/wiki/Creating-A-Test-Environment#host-requirements">Beaker Host Requirements</a></p>
-<p><strong>Warning</strong>: If you use docker, you cannot test service things because there is
-no init running inside the container. For comprehensive testing against things
-like services, firewalls, etc, you must use a true hypervisor with Vagrant.</p>
-<h3 id="acceptance-spec-helper">Acceptance Spec Helper</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e"># consul/spec/spec_helper_acceptance.rb</span>
-require <span style="color:#e6db74">&#39;beaker-rspec&#39;</span>
-
-<span style="color:#75715e"># Not needed for this example as our docker files have puppet installed already</span>
-<span style="color:#75715e">#hosts.each do |host|</span>
-<span style="color:#75715e">#  # Install Puppet #  install_puppet</span>
-<span style="color:#75715e">#end</span>
-
-<span style="color:#66d9ef">RSpec</span><span style="color:#f92672">.</span>configure <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>c<span style="color:#f92672">|</span>
-  <span style="color:#75715e"># Project root</span>
-  proj_root <span style="color:#f92672">=</span> <span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>expand_path(<span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>join(<span style="color:#66d9ef">File</span><span style="color:#f92672">.</span>dirname(__FILE__), <span style="color:#e6db74">&#39;..&#39;</span>))
-
-  <span style="color:#75715e"># Readable test descriptions</span>
-  c<span style="color:#f92672">.</span>formatter <span style="color:#f92672">=</span> <span style="color:#e6db74">:documentation</span>
-
-  <span style="color:#75715e"># Configure all nodes in nodeset</span>
-  c<span style="color:#f92672">.</span>before <span style="color:#e6db74">:suite</span> <span style="color:#66d9ef">do</span>
-    <span style="color:#75715e"># Install module and dependencies</span>
-    puppet_module_install(<span style="color:#e6db74">:source</span> <span style="color:#f92672">=&gt;</span> proj_root, <span style="color:#e6db74">:module_name</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;consul&#39;</span>)
-    hosts<span style="color:#f92672">.</span>each <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>host<span style="color:#f92672">|</span>
-      <span style="color:#75715e"># Needed for the consul module to download the binary per the modulefile</span>
-      on host, puppet(<span style="color:#e6db74">&#39;module&#39;</span>, <span style="color:#e6db74">&#39;install&#39;</span>, <span style="color:#e6db74">&#39;puppetlabs-stdlib&#39;</span>), { <span style="color:#e6db74">:acceptable_exit_codes</span> <span style="color:#f92672">=&gt;</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span><span style="color:#f92672">]</span> }
-      on host, puppet(<span style="color:#e6db74">&#39;module&#39;</span>, <span style="color:#e6db74">&#39;install&#39;</span>, <span style="color:#e6db74">&#39;nanliu/staging&#39;</span>), { <span style="color:#e6db74">:acceptable_exit_codes</span> <span style="color:#f92672">=&gt;</span> <span style="color:#f92672">[</span><span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span><span style="color:#f92672">]</span> }
-    <span style="color:#66d9ef">end</span>
-  <span style="color:#66d9ef">end</span>
-<span style="color:#66d9ef">end</span>
-
-</code></pre></div><p>The spec helper does the tasks needed in order to prepare your SUT (system
-under test). This might include installing puppet, installing your puppet
-module dependencies, etc.</p>
-<h2 id="example-acceptance-test">Example Acceptance Test</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e"># module_root/spec/acceptance/standard_spec.rb</span>
-require <span style="color:#e6db74">&#39;spec_helper_acceptance&#39;</span>
-
-describe <span style="color:#e6db74">&#39;consul class&#39;</span> <span style="color:#66d9ef">do</span>
-
-  context <span style="color:#e6db74">&#39;default parameters&#39;</span> <span style="color:#66d9ef">do</span>
-    <span style="color:#75715e"># Using puppet_apply as a helper</span>
-    it <span style="color:#e6db74">&#39;should work with no errors based on the example&#39;</span> <span style="color:#66d9ef">do</span>
-      pp <span style="color:#f92672">=</span> <span style="color:#e6db74">&lt;&lt;-EOS
-</span><span style="color:#e6db74"></span>        file { <span style="color:#e6db74">&#39;/opt/consul/&#39;</span>:
-          <span style="color:#66d9ef">ensure</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;directory&#39;</span>,
-          owner  <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;consul&#39;</span>,
-          group  <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;root&#39;</span>,
-        } <span style="color:#f92672">-&gt;</span>
-        <span style="color:#66d9ef">class</span> { <span style="color:#e6db74">&#39;consul&#39;</span>:
-          config_hash <span style="color:#f92672">=&gt;</span> {
-              <span style="color:#e6db74">&#39;datacenter&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;east-aws&#39;</span>,
-              <span style="color:#e6db74">&#39;data_dir&#39;</span>   <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;/opt/consul&#39;</span>,
-              <span style="color:#e6db74">&#39;log_level&#39;</span>  <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;INFO&#39;</span>,
-              <span style="color:#e6db74">&#39;node_name&#39;</span>  <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;foobar&#39;</span>,
-              <span style="color:#e6db74">&#39;server&#39;</span>     <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">true</span>
-          }
-        }
-      <span style="color:#66d9ef">EOS</span>
-
-      <span style="color:#75715e"># Run it twice and test for idempotency</span>
-      expect(apply_manifest(pp)<span style="color:#f92672">.</span>exit_code)<span style="color:#f92672">.</span>to_not eq(<span style="color:#ae81ff">1</span>)
-      expect(apply_manifest(pp)<span style="color:#f92672">.</span>exit_code)<span style="color:#f92672">.</span>to eq(<span style="color:#ae81ff">0</span>)
-    <span style="color:#66d9ef">end</span>
-
-    describe service(<span style="color:#e6db74">&#39;consul&#39;</span>) <span style="color:#66d9ef">do</span>
-      it { should be_enabled }
-    <span style="color:#66d9ef">end</span>
-
-    describe command(<span style="color:#e6db74">&#39;consul version&#39;</span>) <span style="color:#66d9ef">do</span>
-      it { should return_stdout <span style="color:#e6db74">/Consul v0\.2\.0/</span> }
-    <span style="color:#66d9ef">end</span>
-
-  <span style="color:#66d9ef">end</span>
-<span style="color:#66d9ef">end</span>
-</code></pre></div><p>The filename is important, it must end in _spec.rb in order for the test
-harness to detect it. You can see that there are many
-<a href="http://serverspec.org/resource_types.html">matchers</a> you can use to run
-pretty much any kind of test you can think of.</p>
-<p>See the <a href="https://github.com/puppetlabs/puppetlabs-mysql/tree/master/spec/acceptance">puppetlabs-mysql</a>
-collection again for some great examples.</p>
-<h2 id="running-them">Running Them</h2>
-<pre><code>bundle exec rake acceptance
-</code></pre>
-<p>This command will spin up your described servers in nodesets, install your
-puppet modules and dependencies, and test your assertions.</p>
-<h2 id="conclusion">Conclusion</h2>
-<p>Acceptance tests should be used sparingly, they are the top of the testing
-<a href="http://martinfowler.com/bliki/TestPyramid.html">testing pyramid</a>.</p>
-<p>They are slow, touch the disks and network, and depend on external resources.
-The example mysql acceptance tests literally install mysql, install and
-configure databases, and assert that they exist.</p>
-<p>They will may be slow, but they can be very helpful, and potentially the
-only way to really test functionality of a puppet module in an end-to-end
-way.</p>
-<p>Puppet is a system configuration management tool. Unit tests can only go
-so far to make sure the compiled catalog is &ldquo;correct&rdquo;. Puppet acceptance
-tests can help you go 100% and ensure that your module literally does
-what it says it does by running tests against actual systems, files,
-packages, and services.</p>
-
+  Beaker is a test framework created by Puppetlabs to run tests against puppet modules on real servers (vm, containers whatever) and test that they do what they say they should do.
+This is a quick tutorial on how to use this framework. At the time of this writing, Beaker is under heavy development, so this could all change.
+The Gem The first thing you need to do is install beaker. Usually this is as simple as adding it to your Gemfile and running bundle install.
+  
+  <p>
+    <a class="u-clickable" href="../../Getting-Started-Puppet-Acceptance-Tests-With-Beaker/">Read More…</a>
+  </p>
+  
   
   
 
@@ -646,62 +391,14 @@ packages, and services.</p>
 </header>
 
   
-  <p><a href="http://www.serfdom.io/">Serf</a> is a very interesting service discovery mechanism.
-Its dynamic membership and tags capability make it very flexible. Can we use it
-to generate a centralized <code>ssh_known_hosts</code> file?</p>
-<h2 id="installing-and-configuring-serf">Installing and Configuring Serf</h2>
-<p>I like to use configuration management to manage servers. Here I use a
-<a href="https://github.com/justinclayton/puppet-module-serf">Puppet module</a> to
-install and configure Serf:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">class</span> { <span style="color:#e6db74">&#39;serf&#39;</span>:
-  config_hash   <span style="color:#f92672">=&gt;</span> {  
-    <span style="color:#e6db74">&#39;node_name&#39;</span>  <span style="color:#f92672">=&gt;</span> $:<span style="color:#e6db74">:fqdn</span>, 
-    <span style="color:#e6db74">&#39;tags&#39;</span>       <span style="color:#f92672">=&gt;</span> {
-      <span style="color:#e6db74">&#39;sshrsakey&#39;</span> <span style="color:#f92672">=&gt;</span> $:<span style="color:#e6db74">:sshrsakey</span>
-    },          
-    <span style="color:#e6db74">&#39;discover&#39;</span>   <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;cluster&#39;</span>,
-  }     
-}
-</code></pre></div><p>This particular module uses a hash to translate directly into the <code>config.json</code>
-file on disk. Notice how I&rsquo;m using the new <code>tags</code> feature, and adding a <code>sshrsakey</code>
-tag, populated by Puppet&rsquo;s facts.</p>
-<h2 id="querying-the-cluster">Querying The Cluster</h2>
-<p>Once the servers have Serf installed and configured, the cluster can be queried
-using the serf command line tool:</p>
-<pre><code>$ serf members
-server1.xkyle.com    192.168.1.67:7946    alive    sshrsakey=AAAA...
-server2.xkyle.com    192.168.1.69:7946    alive    sshrsakey=AAAA...
-</code></pre><h2 id="using-the-data">Using the Data</h2>
-<p>Lets use this data to write out our <code>/etc/ssh/ssh\_known\_hosts</code> file,
-emulating the the functionality of ssh-keyscan:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ serf members -format<span style="color:#f92672">=</span>json | jq -r <span style="color:#e6db74">&#39;.members | .[] | &#34;\(.name) ssh-rsa \(.tags[])&#34; &#39;</span> | tee /etc/ssh/ssh_known_hosts
-server1.xkyle.com ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDTfPpmHhc+LoD05puxC...
-server2.xkyle.com ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCmzk+Chzrq73c5ytU9I...
-</code></pre></div><p>So&hellip; you can see I&rsquo;m using <a href="http://stedolan.github.io/jq/manual/">jq</a> to
-manipulate the JSON ouput of the serf command. I&rsquo;m not super proud of it,
-but it works.</p>
-<p>Lets see if we can use a script instead? Serf provides and
-<a href="http://www.serfdom.io/docs/agent/rpc.html">RPC protocol</a> to interact with
-it programmatically:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e">#!/usr/bin/env ruby</span>
-require <span style="color:#e6db74">&#39;serf/client&#39;</span>
-client <span style="color:#f92672">=</span> <span style="color:#66d9ef">Serf</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Client</span><span style="color:#f92672">.</span>connect <span style="color:#e6db74">address</span>: <span style="color:#e6db74">&#39;127.0.0.1&#39;</span>, <span style="color:#e6db74">port</span>: <span style="color:#ae81ff">7373</span>
-members <span style="color:#f92672">=</span> client<span style="color:#f92672">.</span>members<span style="color:#f92672">.</span>value<span style="color:#f92672">.</span>body<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;Members&#39;</span><span style="color:#f92672">]</span>
-puts members<span style="color:#f92672">.</span>collect { <span style="color:#f92672">|</span>x<span style="color:#f92672">|</span> x<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;Name&#39;</span><span style="color:#f92672">]</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; ssh-rsa &#39;</span> <span style="color:#f92672">+</span>  x<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;Tags&#39;</span><span style="color:#f92672">][</span><span style="color:#e6db74">&#39;sshrsakey&#39;</span><span style="color:#f92672">]</span> }
-</code></pre></div><p>Of course, no error handling or anything. This script achieves the same
-result using the <a href="https://rubygems.org/gems/serf-client">serf-client ruby gem</a>.</p>
-<p>There are libraries to connect to the Serf RPC directly for many languages,
-or you can do it yourself using the <a href="http://msgpack.org/rpc/rdoc/current/MessagePack/RPC.html">msgpack RPC library</a>
-to communicate directly on the tcp socket.</p>
-<h2 id="conclusion">Conclusion</h2>
-<p>This is just the beginning. Serf allows retrieving the status of members, but
-also can spawn programs (handlers) whenever members
-<a href="http://www.serfdom.io/docs/agent/event-handlers.html">join or leave</a>.</p>
-<p>Additionally you can invoke <a href="http://www.serfdom.io/docs/commands/event.html">custom events</a>
-for your own uses, like code deploys.</p>
-<p>If you can deal with an <a href="https://en.wikipedia.org/wiki/CAP_theorem">AP</a> discovery
-and orchistration system, then Serf could be a foundation for building great things!</p>
-
+  Serf is a very interesting service discovery mechanism. Its dynamic membership and tags capability make it very flexible. Can we use it to generate a centralized ssh_known_hosts file?
+Installing and Configuring Serf I like to use configuration management to manage servers. Here I use a Puppet module to install and configure Serf:
+class { &#39;serf&#39;: config_hash =&gt; { &#39;node_name&#39; =&gt; $::fqdn, &#39;tags&#39; =&gt; { &#39;sshrsakey&#39; =&gt; $::sshrsakey }, &#39;discover&#39; =&gt; &#39;cluster&#39;, } } This particular module uses a hash to translate directly into the config.
+  
+  <p>
+    <a class="u-clickable" href="../../Managing-Ssh-Known-Hosts-With-Serf/">Read More…</a>
+  </p>
+  
   
   
 
@@ -751,90 +448,15 @@ and orchistration system, then Serf could be a foundation for building great thi
 </header>
 
   
-  <h2 id="breaking-down-bundle-exec-rake-spec">Breaking down bundle exec rake spec</h2>
-<p>What is happening when you run:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bundle exec rake spec
-</code></pre></div><h4 id="bundle">Bundle</h4>
-<p>The first command you are running is <a href="http://bundler.io/">bundle</a>. Bundle is
-kinda like virtualenv for Ruby. It makes sure that you use the same ruby
-libraries that you, everyone, and puppetmasters use.</p>
-<p>Bundle uses a Gemfile, and searches downwards. As long as you have the Gemfile
-in the puppet repo, it will work.</p>
-<h4 id="exec">Exec</h4>
-<p>The second part is exec. Exec is an argument to bundle, it simply means run a
-command. Because you are running it in a “bundled” environment, it runs the
-next command that is part of your bundle, with the ruby libraries in your
-Gemfile.</p>
-<h4 id="rake">Rake</h4>
-<p>The third part is rake.  Rake is like Make for Ruby. It requires a Rakefile.
-Each puppet module needs a Rakefile.</p>
-<p>You don’t need to re-invent the Rakefile, simply have this in it:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">require <span style="color:#e6db74">&#39;puppetlabs_spec_helper/rake_tasks&#39;</span>
-</code></pre></div><p>This ensures that we are all running tests in the same way.</p>
-<h4 id="spec">Spec</h4>
-<p>Spec is a “rake task” that runs Rspec. Rspec is a ruby testing framework.
-Rspec + puppet-rspec is a whole other thing described Next Section.</p>
-<h2 id="how-does-rspec-test-puppet-code">How does Rspec Test Puppet Code?</h2>
-<p>If you are running bundle exec rake spec, rspec takes over in the environment
-provided by bundler. It gives you all the gems necissary to do the job, but
-how does Rspec know about Puppet Code?</p>
-<p>If you are including the puppetlabs_spec_helper/rake_tasks, your
-<a href="https://github.com/puppetlabs/puppetlabs_spec_helper/blob/master/lib/puppetlabs_spec_helper/rake_tasks.rb#L106">exact task</a>
-includes the prep/test/clean stuff.</p>
-<p>You need some boilerplate files in place for rspec-puppet tests to run. You can
-either run</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rspec-puppet-init
-</code></pre></div><p>Or you can <a href="http://rspec-puppet.com/setup/">manually setup</a> the files and folders.
-Here I will describe the minimal set of files you need:</p>
-<h3 id="fixturesyml">.fixtures.yml</h3>
-<p>.fixtures.yml is a puppet_spec_helper construct that allows you to symlink in
-other modules that might be required to test your code. For example you might
-require functions from the stdlib. How does Rspec know where stdlib is?</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">fixtures</span>:
-  <span style="color:#66d9ef">repositories</span>:
-    <span style="color:#66d9ef">stdlib</span>: <span style="color:#e6db74">&#34;git://github.com/puppetlabs/puppetlabs-stdlib.git&#34;</span>
-  <span style="color:#66d9ef">symlinks</span>:
-    <span style="color:#66d9ef">your_module</span>: <span style="color:#e6db74">&#34;#{source_dir}&#34;</span>
-</code></pre></div><p>When rspec runs the preparation parts, the spec_helper will create symlinks,
-or <a href="https://github.com/puppetlabs/puppetlabs_spec_helper#fixtures-examples">clone repos, or whatever.</a></p>
-<h3 id="specspec_helperrb">spec/spec_helper.rb</h3>
-<p>spec/spec_helper.rb is a file you need in place for your rspec tests to reference.
-If you are using the puppetlabs_spec_helper gem, it is only one line:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">require <span style="color:#e6db74">&#39;puppetlabs_spec_helper/module_spec_helper&#39;</span>
-</code></pre></div><p>This spec_helper.rb file can now be referenced, and by doing so will
-allow Ruby to import all of the puppet-specific Rspec matchers it needs to
-function.</p>
-<p>For example, at the top of every Rspec ruby file you should see something like this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">require <span style="color:#e6db74">&#39;spec_helper&#39;</span>
-
-describe <span style="color:#e6db74">&#39;my_module&#39;</span> <span style="color:#66d9ef">do</span>
-
-  it { should compile }
-
-<span style="color:#66d9ef">end</span>
-</code></pre></div><h3 id="directory-structure">Directory structure</h3>
-<p>Putting files in the right places allows Rspec to autodetect them. Giving them a
-conventional name allows rspec to glob them.</p>
-<p>As the scope of your testing increases, a well-organized directory structure is
-essential:</p>
-<pre><code>├── spec
-│   ├── classes
-│   │   └── example_spec.rb
-│   ├── defines
-│   ├── functions
-│   ├── hosts
-│   ├── spec_helper.rb
-│   ├── spec_helper_system.rb
-│   └── system
-│       └── basic_spec.rb
-</code></pre><h3 id="the-tests">The Tests</h3>
-<p>How to write puppet tests is outside the scope of this particular blog post.</p>
-<p>I recommend looking at solid examples from puppetlabs&rsquo; github, or right from the
-<a href="http://rspec-puppet.com/tutorial/">offical documentation</a>.</p>
-<p>But essentially, Rspec runs puppet in a noop mode, only generating a catelog
-of what it would do. Then the rspec tests use <a href="http://rspec-puppet.com/matchers/">matchers</a>
-to describe assertions against the catelog.</p>
-
+  Breaking down bundle exec rake spec What is happening when you run:
+bundle exec rake spec Bundle The first command you are running is bundle. Bundle is kinda like virtualenv for Ruby. It makes sure that you use the same ruby libraries that you, everyone, and puppetmasters use.
+Bundle uses a Gemfile, and searches downwards. As long as you have the Gemfile in the puppet repo, it will work.
+Exec The second part is exec.
+  
+  <p>
+    <a class="u-clickable" href="../../What-Happens-When-You-Run-Puppet-Tests/">Read More…</a>
+  </p>
+  
   
   
 
@@ -878,85 +500,14 @@ to describe assertions against the catelog.</p>
 </header>
 
   
-  <p>Whenever possible, I try to write Puppet code that is purgable and
-&ldquo;Comment Safe&rdquo;. That is not a very good description. What I mean is, Puppet
-code that removes resources from a system when the corresponding Puppet
-code is &ldquo;Commented&rdquo; out of a manifest. Lets look at a few examples.</p>
-<h3 id="example-managed-sudo">Example: Managed Sudo</h3>
-<p>Lets say you used this <a href="https://forge.puppetlabs.com/saz/sudo">popular sudo module</a>
-with the following params:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">class</span> { <span style="color:#e6db74">&#39;sudo&#39;</span>:
-  purge <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">true</span>,
-}
-</code></pre></div><p>Great start. All future <code>sudo::conf</code> blocks you write will <em>automatically</em> disappear
-from the host:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">sudo<span style="color:#f92672">::</span>conf { <span style="color:#e6db74">&#39;web&#39;</span>:
-   source <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;puppet:///files/etc/sudoers.d/web&#39;</span>,
- }
- 
-<span style="color:#75715e"># Commenting out for now. Automatically is purged from the server</span>
-<span style="color:#75715e"># sudo::conf { &#39;admins&#39;:</span>
-<span style="color:#75715e">#   priority =&gt; 10,</span>
-<span style="color:#75715e">#   content  =&gt; &#34;%admins ALL=(ALL) NOPASSWD: ALL&#34;,</span>
-<span style="color:#75715e"># }</span>
-</code></pre></div><p>Good stuff. Do this.</p>
-<h3 id="example-managed-firewall">Example: Managed Firewall</h3>
-<p>How about another example with the
-<a href="https://forge.puppetlabs.com/puppetlabs/firewall">Puppetlabs Firewall module</a>?</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e"># Automatically remove rules that are not declared</span>
-resources { <span style="color:#e6db74">&#34;firewall&#34;</span>:
-  purge <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">true</span>
-} 
-
-<span style="color:#75715e"># Production needs 111 open</span>
-firewall { <span style="color:#e6db74">&#39;111 open port 111&#39;</span>:
-  dport <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">111</span>
-}
-<span style="color:#75715e"># Tried this but didn&#39;t work. Commenting out for now</span>
-<span style="color:#75715e"># Automatically removed from the server when I commented it out</span>
-<span style="color:#75715e"># firewall { &#39;112 open port 112&#39;:</span>
-<span style="color:#75715e">#   dport =&gt; 112</span>
-<span style="color:#75715e"># }</span>
-</code></pre></div><h3 id="the-point">The Point?</h3>
-<p>The point here is that we should encourage a culture of purging. Having
-resources get automatically purged when you comment them out from puppet
-is great.</p>
-<p>Of course, this is obsoleted in the short-lived world of docker or possibly
-Amazon EC2. But for those engineers who work on long lived servers, this
-prevents cruft.</p>
-<h3 id="going-further-purging-packages">Going Further: Purging Packages</h3>
-<p>I want to purge packages. If someone installs a package not controlled by
-Puppet, I want puppet to purge it. Crazy I know.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">package { <span style="color:#e6db74">&#39;apache&#39;</span>: <span style="color:#66d9ef">ensure</span> <span style="color:#f92672">=&gt;</span> installed }
-
-<span style="color:#75715e"># No longer using php</span>
-<span style="color:#75715e"># But puppet leaves this behind!</span>
-<span style="color:#75715e"># package { &#39;php5&#39;: ensure =&gt; installed }</span>
-</code></pre></div><p>Of course puppet will leave the package behind. I should be doing <code>ensure =&gt; purged</code>
-right?</p>
-<p>But what if the package is deep within nested classes or simply manually installed?</p>
-<p>Some day I would like to get to the point where I at least get notified when
-puppet detects packages that don&rsquo;t need to be there. I&rsquo;m open to suggestions on
-how to do this.</p>
-<h3 id="going-further-purging-etc">Going Further: Purging /etc/</h3>
-<p>Most of the time stale configuration leftover in /etc/ causes no harm.</p>
-<p>But what about cron jobs in <code>/etc/cron.d</code>? I would love to purge them, but there
-are non-puppet controlled things installed by system packages. If <em>everything</em> was
-a puppet module this could eventually be achieved, but it would be too hard
-to keep in sync with upstream package changes.</p>
-<p>Purgin on a per-app basis with things like <a href="https://github.com/sensu/sensu-puppet">sensu</a>,
-<a href="https://forge.puppetlabs.com/puppetlabs/apache">apache</a>, and <a href="https://forge.puppetlabs.com/saz/sudo">sudo</a>
-are a great start.</p>
-<h3 id="crossing-the-line-purging-varlibmysql">Crossing the Line: Purging /var/lib/mysql</h3>
-<p>Seems like if you asked puppet to install mysql databases, and then
-commented them out, you would <em>not</em> want puppet to purge them.</p>
-<p>The subtle difference here might be the difference between <strong>configuration</strong> and
-<strong>data</strong>.</p>
-<h3 id="conclusion">Conclusion</h3>
-<p>Whenever possible I try to <code>purge =&gt; true</code> on whatever I can. I would like to see
-this as the <strong>default</strong> in new puppet modules.</p>
-<p>Someday I would like us to purge more than just files and iptables rules.</p>
-
+  Whenever possible, I try to write Puppet code that is purgable and &ldquo;Comment Safe&rdquo;. That is not a very good description. What I mean is, Puppet code that removes resources from a system when the corresponding Puppet code is &ldquo;Commented&rdquo; out of a manifest. Lets look at a few examples.
+Example: Managed Sudo Lets say you used this popular sudo module with the following params:
+class { &#39;sudo&#39;: purge =&gt; true, } Great start.
+  
+  <p>
+    <a class="u-clickable" href="../../Writing-Purgable-Puppet-Code/">Read More…</a>
+  </p>
+  
   
   
 
@@ -1000,38 +551,13 @@ this as the <strong>default</strong> in new puppet modules.</p>
 </header>
 
   
-  <h2 id="the-problem">The Problem</h2>
-<p>The barrier to writing Nagios checks is high. I dare say <em>very</em> high. You have
-to think about check intervals, host groups, service groups, config files, etc.</p>
-<p>But, I know my servers are not behaving, if only there was a way to check them!
-They run commands for me all the time. In the worst case they fail and no one
-knows. The best case is that they end up in my cron spam folder&hellip;.</p>
-<h2 id="a-solution">A Solution!</h2>
-<p><a href="https://github.com/solarkennedy/sensu-shell-helper">Sensu-shell-helper</a>. It is
-a small script I wrote to make it easier to monitor arbitrary commands with
-Sensu. Here is how you use it</p>
-<pre><code>sensu-shell-helper apt-get update
-</code></pre>
-<p>Yes. That is it. No mandatory config options. Good defaults. Minimal overhead.
-What does this check look like in the dashboard when it fails?</p>
-<p><img src="../../uploads/sensu-helper-screenshot.png" alt=""></p>
-<p>Exactly what I wanted. And of course, when apt-get update begins to work again,
-the check will resolve itself.</p>
-<h2 id="under-the-hood">Under The Hood</h2>
-<p>sensu-shell-helper reall just takes in the output of the command you ask for,
-tail&rsquo;s it, then sends the result to localhost:3030, which the sensu-client
-listens on.</p>
-<p>By default it does not specify any handlers. (But they can be specified on the
-command line with -H) For the check-name it takes the full command and munges
-it to pass the sensu validator. Duplicate instances of the exact same command
-on a particular host will be seen as a single &ldquo;check&rdquo;.</p>
-<p>Most commands do not return 0,1,2,3 according to the
-<a href="http://sensuapp.org/docs/0.12/checks">Sensu</a> /
-<a href="https://www.nagios-plugins.org/doc/guidelines.html#AEN78">Nagios plugin API</a>,
-so the sensu-shell-helper will emit 2 (critical) in the event that the
-shell command returns anything non-zero. This behavior can be overridden
-with -N in the case that your command does conform to the 0,1,2,3 spec.</p>
-
+  The Problem The barrier to writing Nagios checks is high. I dare say very high. You have to think about check intervals, host groups, service groups, config files, etc.
+But, I know my servers are not behaving, if only there was a way to check them! They run commands for me all the time. In the worst case they fail and no one knows. The best case is that they end up in my cron spam folder&hellip;.
+  
+  <p>
+    <a class="u-clickable" href="../../Introducing-sensu-shell-helper/">Read More…</a>
+  </p>
+  
   
   
 
@@ -1075,35 +601,14 @@ with -N in the case that your command does conform to the 0,1,2,3 spec.</p>
 </header>
 
   
-  <h2 id="its-been-a-great-ride">It&rsquo;s Been a Great Ride</h2>
-<p>There is no doubt that Wordpress is a great piece of software. As much as people love to hate on PHP, it runs a lot of the internet.</p>
-<p>I&rsquo;ve been running Wordpress personally and professionally for years. It only gets better. I was only hacked once :)</p>
-<h2 id="rethinking-what-i-need">Rethinking What I Need</h2>
-<p>Since moving to a <a href="http://lowendbox.com/">Low End Box</a>, my resources have been tight. Even on a tuned system, I can&rsquo;t run much more interesting things than my Nginx+PHPfpm+MySQL.</p>
-<p>Right now I also have 32000 spam comments in my queue. <a href="http://codex.wordpress.org/Plugins/Akismet">Akismet</a> does a great job, but I wonder if I even need it. All I really need is a tiny corner of the web, read only is ok.</p>
-<h2 id="what-i-lose">What I Lose</h2>
-<ul>
-<li>Comments</li>
-<li>Cool plugins</li>
-<li>Well trusted codebase</li>
-<li>Easy to use gui</li>
-<li>Familiar Workflow</li>
-</ul>
-<h2 id="what-i-gain">What I Gain</h2>
-<ul>
-<li>Immutability and hackproof deployment</li>
-<li>Entire classes of server maintenance issues disappear</li>
-<li>Git!</li>
-<li>Grep-able blogs</li>
-</ul>
-<h2 id="making-the-change">Making The Change</h2>
-<p><img src="../../uploads/octopress-logo.png" alt=""></p>
-<ul>
-<li>I&rsquo;m thankful for the excellent <a href="http://octopress.org/">Octopress</a> software.</li>
-<li>I used <a href="http://www.ericmichaelstone.com/?p=4607">this XML export script</a> to script my conversion repeatedly.</li>
-<li>I used the <a href="https://github.com/thomasf/exitwp">Exitwp</a> to convert my wordpress XML tump</li>
-</ul>
-
+  It&rsquo;s Been a Great Ride There is no doubt that Wordpress is a great piece of software. As much as people love to hate on PHP, it runs a lot of the internet.
+I&rsquo;ve been running Wordpress personally and professionally for years. It only gets better. I was only hacked once :)
+Rethinking What I Need Since moving to a Low End Box, my resources have been tight. Even on a tuned system, I can&rsquo;t run much more interesting things than my Nginx+PHPfpm+MySQL.
+  
+  <p>
+    <a class="u-clickable" href="../../Saying-Goodbye-to-Wordpress/">Read More…</a>
+  </p>
+  
   
   
 
@@ -1163,14 +668,6 @@ with -N in the case that your command does conform to the 0,1,2,3 spec.</p>
     </div>
   </main>
   
-<footer class="Footer">
-  <div class="u-wrapper">
-    <div class="u-padding">
-      Except where otherwise noted, content on this site is licensed under a a <a href="http://creativecommons.org/licenses/by/4.0/" rel="license"> Creative Commons Attribution 4.0 International License</a>.
-    </div>
-  </div>
-</footer>
-
 
 </body>
 </html>

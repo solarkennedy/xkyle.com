@@ -90,7 +90,7 @@
 
 
   
-  <link rel="stylesheet" href="../../css/base.min.50883c9e7cc6f561db1dcd2089b6b895c60df8d10b9e71a90cbc10e59c8bfc40.css" integrity="sha256-UIg8nnzG9WHbHc0giba4lcYN&#43;NELnnGpDLwQ5ZyL/EA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/base.min.47def9e9fb53a1b822ec70f6799bb1f010fe9aac5273d8a1192ac9c685262c4f.css" integrity="sha256-R9756ftTobgi7HD2eZux8BD&#43;mqxSc9ihGSrJxoUmLE8=" crossorigin="anonymous">
   
   
 </head>
@@ -146,37 +146,13 @@
 </header>
 
   
-  <p>Below are a few philosophical guidelines that I use when thinking about systems. Everyone has systems that they are not proud of, even me. But I hope to someday say that I am proud of all of my systems, and I believe that these philosophies will get me there.</p>
-<h2 id="1-try-toendeavorto-build-systems-with-as-few-dependencies-as-possible">1. Try to endeavor to build systems with as few dependencies as possible.</h2>
-<p>Sometimes systems can sprawl and get out of hand. Before you know if you have all your servers using ldap, which gets looked up by DNS, and the DNS server has a mysql backend, which is stored on an NFS mount. So&hellip; what happens after a power outage and your servers boot from scratch?</p>
-<p><a href="../../uploads/server-dependencies.png"><img src="../../uploads/server-dependencies.png" alt=""></a></p>
-<p>The above example seems obviously broken, but sometimes it is not so obvious with our own systems. (Nobody builds stuff like that&hellip; right? :)) Our own familiarity with our own systems can blind us to their internal fragility. Some tips on how to achieve this:</p>
-<ul>
-<li>
-<p>Use /etc/hosts instead of DNS for critical servers (don&rsquo;t go crazy here). CFEngine can do this easily for you.</p>
-</li>
-<li>
-<p>Use LDAP sparingly, and configure it to allow root to login when the LDAP server is down. Run a test with the ldap server off to confirm that your servers can function at all. (Login, reboot, startup, etc)</p>
-</li>
-<li>
-<p>Don&rsquo;t use network filesystems (samba, nfs, sshfs, etc) when simple rsyncs would do. Mountpoints suck. Keep it local if possible.</p>
-</li>
-<li>
-<p>In smaller systems, try to keep database, application, and web servers on the same server. I know how it sounds, but sometimes everything you read in CIO Magazine isn&rsquo;t what works best for all environments. Sprawling connected services over multiple servers makes the system as a whole less reliable, not more reliable. (Unless you are doing HA specific stuff)</p>
-</li>
-</ul>
-<h2 id="2-if-there-is-a-problem-with-your-system-and-your-monitoring-system-didnt-alert-you-you-have-two-problems">2. If there is a problem with your system and your monitoring system didn&rsquo;t alert you, you have two problems.</h2>
-<p>The second problem, of course, is that your monitoring system isn&rsquo;t monitoring. Sure it may be checking pings or seeing if TCP port 80 is open. Can it detect when the website has a database connection failure? Will it send you a text when visitors can&rsquo;t add things to the shopping cart? Does it go red when the credit card api is failing?</p>
-<p>Most of the time when responding to an urgent problem, the last thing on a sysadmin&rsquo;s mind is writing a nagios plugin. But I suggest it should be the first. If it isn&rsquo;t urgent, include the act of writing the nagios check part of the problem solving process. Use an all green nagios (and a manual verification) to be the final signal for the all-clear. A nagios check is never fully tested unless it shows red under a truly failed condition. Sure, you could write the nagios check later, but you can&rsquo;t be 100% sure it will turn red next time, it might take a couple tries. Turn the failure into an opportunity.</p>
-<h2 id="3-with-bigger-systems-try-to-design-them-so-that-no-single-server-reboot-stops-the-whole-system">3. With bigger systems, try to design them so that no single server reboot stops the whole system.</h2>
-<p>This is a reformulation of the first philosophy, really. All servers need a reboot some day. Be proud of a system were you can reboot any server without asking for permission with minimal impact to your services. This is not achievable in all environments, but it sure is something to be proud of if you can make it happen.</p>
-<h2 id="4-systems-should-be-self-documenting">4. Systems should be self documenting</h2>
-<p>This is a controversial topic. There are some in a particular camp that believe that &ldquo;Documentation&rdquo; means some three ring binder with chapters describing each server, install walkthroughs (with screenshots), and copies of the apache configs on paper. I am not of that camp&hellip;</p>
-<p>I believe the system itself should be self-documenting. What do I mean by this? Take the simple issue of hostnames as an example. Some like to give servers cutesy names based off of Nintendo characters, dog breeds, obscure hacker culture references, etc. These names may be good for some sort of security through obscurity, but they do not encourage a self documenting system. Hostnames like ldap1, ldap2 or mysql, or webserver make it easy for humans to develop models in our heads for how our systems work on a grand scale.</p>
-<p>How about another example: switchport configurations in managed switches. For some switches it is important to know what server is on what port. (vlans, poe, qos, etc) Should we print out our &ldquo;show run&rdquo; in order to be the documentation? I suggest we do not. It will be out of date the instant it was on the dead-tree medium. The only case one could make for having that kind of copy would be for a backup scenario. To that I would ask, &ldquo;are you not making backups of your switch configurations already?&rdquo; No, the switch configuration of a switch itself is the documentation for the switch. There is no need to maintain records of switch configurations in two places.</p>
-<p>Another powerful example of a self-documenting system is the power of <a href="http://www.cfengine.com/community">CFEngine</a>. Remember that hypothetical three ring binder that has the description of how to setup each system in your server room? Yea, the one that is forever out of date and is useless to anyone except for the reason to say that you have &ldquo;documentation?&rdquo; Your CFEngine configs are the living digital version of that three ring binder. CFEngine itself can contain all the recipes, ingredients, workflows, and special sauce to recreate your systems. Need a copy of your documentation? It&rsquo;s /var/cfengine. It is mostly human readable anyway. Print if management requires it, but the digital copy is your golden copy, not the paper.</p>
-<p>For everything else, I keep a <a href="http://wiki.xkyle.com/">wiki</a>. It works for me.</p>
-
+  Below are a few philosophical guidelines that I use when thinking about systems. Everyone has systems that they are not proud of, even me. But I hope to someday say that I am proud of all of my systems, and I believe that these philosophies will get me there.
+1. Try to endeavor to build systems with as few dependencies as possible. Sometimes systems can sprawl and get out of hand.
+  
+  <p>
+    <a class="u-clickable" href="../../4-philosophies-for-building-systems-to-be-proud-of/">Read More…</a>
+  </p>
+  
   
   
 
@@ -238,102 +214,13 @@
 </header>
 
   
-  <p><a href="http://www.drbd.org/">DRBD</a> is the bomb. Think Raid 1 over the network between two servers. It enables sysadmins (in combination with heartbeat) to increase <em><strong>service</strong></em> uptime, while enabling <strong><em>server</em></strong> downtime. This means you can do kernel updates, do hardware maintenance, upgrade ram, move the server to another rack, etc, all while keeping the service up.</p>
-<p>Because DRBD is often used in <a href="http://en.wikipedia.org/wiki/High_availability">high availability</a> scenario, there isn&rsquo;t much room for experimentation with in-production systems. However, recently I had the opportunity configure DRBD on a pair of servers a couple of weeks before they were needed to be in service. I took the opportunity to benchmark different configurations of DRBD. Now, you might look at my graphs and say, &ldquo;Oh, obviously the performance is like that&rdquo;, but I would say it is not so obvious.</p>
-<h2 id="philosophers-corner">Philosopher&rsquo;s Corner</h2>
-<p>A bit of philosophy here, sometimes we are tempted to claim knowledge about a certain subject. For example someone might say that &ldquo;Intel is faster than AMD&rdquo; or &ldquo;Fords are better than Chevy&rsquo;s&rdquo;, or &ldquo;DRBD protocol A (asynchronous replication) is faster than protocol C (fully synchronous replication)&quot;. But when someone makes claims like this, often they do not believe that what they are saying is simply an opinion. They are claiming to have <strong><em>knowledge</em></strong> about the subject.</p>
-<p>In order to claim to have knowledge about something, many philosophers believe that in order to claim to have knowledge you have to have three things:</p>
-<ol>
-<li>
-<p>What you are claiming is <strong><em>actually</em></strong> true.</p>
-</li>
-<li>
-<p>You have to <strong><em>believe</em></strong> what you are saying.</p>
-</li>
-<li>
-<p>You have to have <em><strong>justification</strong></em> for your claim.</p>
-</li>
-</ol>
-<p>For many of us, we don&rsquo;t even get past step 1. Even if we do get past step 1 then we rarely get 3. With the case of DRBD, now that I have done these benchmarks I can feel confident to make claims. Not only will I believe myself, but I&rsquo;m pretty sure they are actually true, and I will be justified as I have actually run tests to back up my claims.</p>
-<h2 id="onto-the-benchmarks">Onto the Benchmarks</h2>
-<p>My test setup is a pair of 2U Silicon Mechanics servers. Here are their specifics:</p>
-<ul>
-<li>
-<p><a href="http://www.siliconmechanics.com/i28696/dual-xeon-server.php">Silicon Mechanics R346</a></p>
-</li>
-<li>
-<p>Single Xeon (quad core) CPU (for storage servers, you don&rsquo;t need tons of cpu, even this is overkill)</p>
-</li>
-<li>
-<p>24 GB Ram (Nice! Ram is cheap and gives an awesome speed boost to repeatedly accessed data)</p>
-</li>
-<li>
-<p>8X 3TB Seagate SAS drives (3T isn&rsquo;t the best $/GB, but it is nice to go high)</p>
-</li>
-<li>
-<p>3ware 9750-4i raid controller with BBU (If I could splurge on anything, this is it. I love 3ware raid cards)</p>
-</li>
-<li>
-<p>10g Ethernet card (only used for testing, not in final production)</p>
-</li>
-<li>
-<p>Raid 6 across all 8 drives. XFS as the filesystem (Right now XFS is the filesystem of choice for large arrays, and raid6 is the only way to go with raid arrays this large if you need the space)</p>
-</li>
-</ul>
-<p>Basically I took these potential variables in a DRBD configuration and permutated all of them:</p>
-<ul>
-<li>
-<p>DRBD replication protocols A, B, C (Which protocol is right for me? Does it matter?)</p>
-</li>
-<li>
-<p>DRBD backing flushes on and off (This makes my computer really fast right?)</p>
-</li>
-<li>
-<p>10G or 1G in a &ldquo;crossover&rdquo; between the two servers (Won&rsquo;t this make my nosql queries return 10x faster?)</p>
-</li>
-<li>
-<p>Paired or in disconnected mode (How does being disconnected impact performance?)</p>
-</li>
-</ul>
-<p>My testing methodology was to configure DRBD in the test configuration, wait for the synchronization to finish, then make one node primary and mount the filesystem. From there I ran the Bonnie++ benchmark program (version 1.03), and then record the results. If you want my raw data, <a href="../../uploads/drbd-shootout-bonnie.csv">here it is</a>. But I will also try to distill the data and share some conclusions.</p>
-<h2 id="drbd-in-stand-alone-mode">DRBD In Stand Alone Mode</h2>
-<h2 id="uploadsdrbd-stand-alonepnguploadsdrbd-stand-alonepng"><a href="../../uploads/drbd-stand-alone.png"><img src="../../uploads/drbd-stand-alone.png" alt=""></a></h2>
-<p>The differences in speed here are within the standard deviation of just running bonnie, the only conclusion I would draw here is that in stand-alone mode the read and write speed of the array is the same as without drbd. (Sorry I don&rsquo;t have the non-drbd on the list). This is mostly expected, but how can we <strong><em>know</em></strong> without testing?</p>
-<h2 id="testing-read-speed">Testing Read Speed</h2>
-<p><a href="../../uploads/drbd-read-speeds1.png"><img src="../../uploads/drbd-read-speeds1.png" alt=""></a></p>
-<p>With Read speeds across every configuration are about the same. There are some high and lows but they are within the standard deviation of Bonnie runs. I wish I had even more time to run many Bonnie runs and average them. The conclusion I take away from this is that DRBD does not impact the read speed performance. Again this is kinda expected, but_ I wasn&rsquo;t about to claim to know this without testing_. As such from now on I will be focusing on write performance. Again, no matter what your DRBD configuration, your disk read speed should be around the same as if you didn&rsquo;t have DRBD.</p>
-<h2 id="10g-versus-1g">10G versus 1G</h2>
-<p><a href="../../uploads/drbd-write-speed.png"><img src="../../uploads/drbd-write-speed.png" alt=""></a></p>
-<p>Here I&rsquo;m comparing paired DRBD configurations with a 1g Ethernet crossover versus a 10g Ethernet crossover. As mentioned before, no matter what your connection is, the read speed is the same. You could have a 16mb Token Ring adapter between the two servers and the read speed would be the same. It is the write speed that changes. Here the 10g Ethernet gives us a tangible speed increase. For about $1.5k (at the time of this writing) you can throw in 2X 10g cards and a copper crossover and get the full potential write speeds out of your disks. Now, of course if these servers are only connected to client computers via 1g and not much disk IO happens on the server itself, this upgrade may not pass the cost/benefit test. But it is good to <strong><em>know</em></strong> what it would be like if you did take the 10g plunge.</p>
-<h2 id="protocol-choice-and-flushes-impact-on-write-speeds">Protocol Choice and Flushes Impact on Write Speeds</h2>
-<h2 id="uploadsdrbd-1g-writespnguploadsdrbd-1g-writespnguploadsdrbd-10g-writespnguploadsdrbd-10g-writespng"><a href="../../uploads/drbd-1g-writes.png"><img src="../../uploads/drbd-1g-writes.png" alt=""></a><a href="../../uploads/drbd-10g-writes.png"><img src="../../uploads/drbd-10g-writes.png" alt=""></a></h2>
-<p>With the write speeds brought up next to each other it is easier to see the speed differences between the different protocols and whether disabling disk flushes matters. Here is a hint: it doesn&rsquo;t matter. Well, at least with my particular situation it doesn&rsquo;t matter. When the servers are linked together in a crossover situation (a very common scenario), the latency is so low that the protocol choice is mostly inconsequential. The bottom line is that most people can afford protocol C (completely synchronous replication).</p>
-<p>Regarding flushes, with my particular raid card with a BBU, the raid card basically lies to Linux when it asks to do a flush anyway. This is because it is &ldquo;OK&rdquo; for the 3ware card has a battery on its cache, so it is &ldquo;safe&rdquo;. If I didn&rsquo;t have a battery or if it was faulty these charts would probably look different. (Maybe my next blog post) In other situations where a battery-backed raid card is not in use, disabling the flushes would bring the write speeds up to this level, but at a cost of a risk of losing data upon a power loss. (serious data, see <a href="http://www.drbd.org/users-guide/s-disable-flushes.html">http://www.drbd.org/users-guide/s-disable-flushes.html</a> for more info). The bottom line here is that you should not disable flushes. Let Linux and your Raid card make the right decision for you.</p>
-<h2 id="conclusions-skip-to-here-for-the-tldr-version">Conclusions (skip to here for the TL;DR version)</h2>
-<ul>
-<li>
-<p>Benchmarks on other people&rsquo;s stuff are worthless, do them yourself to see what happens on <strong>your</strong> OS with <strong>your</strong> raid card and <strong>your</strong> disks, etc.</p>
-</li>
-<li>
-<p>If you DRBD servers are in the same datacenter and not replicating over a WAN, <strong>stick with protocol C</strong>, the performance cost is negligible.</p>
-</li>
-<li>
-<p>If you need <strong>full speed writes</strong>, you must use <strong>10G Ethernet</strong> to do DRBD replication. If your total input to the server is 1G anyway, you probably can get by without it.</p>
-</li>
-<li>
-<p>Don&rsquo;t disable DRBD&rsquo;s flushes. If you need the speed, <strong>use a battery backed raid card</strong> and let it give you the equivalent write speed boost.</p>
-</li>
-<li>
-<p>Do not be confused, <strong>read speeds are not impacted</strong> by DRBD. If your workload is mostly reads, DRBD gives you super uptime for basically the cost of another server.</p>
-</li>
-<li>
-<p>In <strong>disconnected</strong> mode, the write and read <strong>performance is the same</strong> as if you didn&rsquo;t have DRBD in the first place, so it doesn&rsquo;t hurt you. (In fact on 1G it will probably speed up your writes)</p>
-</li>
-<li>
-<p>DRBD involves many facets, the OS, raid cards, disks, networking throughput, latency, etc. It is a <strong>complicated system</strong> and is difficult to draw performance conclusions <strong>without testing</strong>. <strong>Measurement is knowing</strong>. I am by no means immune to inconsistent logic and bad testing methodologies. Please <a href="mailto:kyle@xkyle.com">email me</a> or leave a comment if you know something is wrong so I can fix it and not pollute the internet with false information.</p>
-</li>
-</ul>
-
+  DRBD is the bomb. Think Raid 1 over the network between two servers. It enables sysadmins (in combination with heartbeat) to increase service uptime, while enabling server downtime. This means you can do kernel updates, do hardware maintenance, upgrade ram, move the server to another rack, etc, all while keeping the service up.
+Because DRBD is often used in high availability scenario, there isn&rsquo;t much room for experimentation with in-production systems.
+  
+  <p>
+    <a class="u-clickable" href="../../a-drbd-configuration-options-shootout/">Read More…</a>
+  </p>
+  
   
   
 
@@ -383,109 +270,13 @@
 </header>
 
   
-  <p>I apologize for the verbose post. This is a complicated problem and it merits full explanation. If you are experiencing this problem I advise you to avoid skimming and read it very carefully :)</p>
-<p>Sometimes you come across a problem that is a little more complex than average. Sometimes it is problem that is rare enough that there isn&rsquo;t an obvious answer in the first google hint. Sometimes a problem may seem unavoidable, which leads to work-arounds, and before you know it you have a mess. The NFS 16-group limit problem is like this. The internet is full of outdated and incorrect pieces of information. This blog post is an attempt to bring this problem to the year 2011. Google: Please make this the number 1 hit for &ldquo;NFS 16 group limit&rdquo; in order to save other souls the hours of troubleshooting that I went through to solve this.</p>
-<p>TL;DR version: Use Linux and &ldquo;rpc.mountd &ndash;manage-gids&rdquo; and you are done.</p>
-<h2 id="definingthe-actual-problem">Defining the Actual Problem</h2>
-<p>So what is the actual problem? This problem occurs when a user, who is a member of more than 16 groups, tries to access a file or directory on an nfs mount that depends on his group rights in order to be authorized to see it.  The default authorization mechanism for NFS (auth_sys) will take only a subset of your groups and send it to the nfs server to check if you have rights to read a file. This leads to unpredicatable and intermittent permission problems when it looks like you <em>should</em> have permission. Allow me to demonstrate:</p>
-<p><a href="../../uploads/groups-failure.png"><img src="../../uploads/groups-failure-300x273.png" alt=""></a></p>
-<p>Seems odd right? I <em>should</em> be able to ls those other directories. Still don&rsquo;t believe me? See a wireshark disessction of one of the nfs packet:</p>
-<p><a href="../../uploads/wireshark-groups.png"><img src="../../uploads/wireshark-groups-300x176.png" alt=""></a></p>
-<p>You can see that the nfs client is telling the nfs server what groups you are in. And the protocol only has room for 16 :(</p>
-<h2 id="dispellingmyths-and-superstition">Dispelling Myths and Superstition</h2>
-<ul>
-<li>
-<p>This problem nothing to do with NFSv4, NFSv2, NFSv3, etc. This is a limitation of auth_sys. Going to NFSv4 does not make this problem go away.</p>
-</li>
-<li>
-<p>The problem has nothing to do with the underlying filesystem on the nfs server.</p>
-</li>
-<li>
-<p>This 16 group limit with auth_sys is not tuneable. It is defined in <a href="http://tools.ietf.org/html/rfc5531">RFC 5531</a> and cannot be adjusted or patched.</p>
-</li>
-<li>
-<p>Using group-based ACLs will not solve the problem.</p>
-</li>
-</ul>
-<p>Actually trying to wrap your brain around the problem and trying to solve it turns into a whiteboard that looks like this:</p>
-<p><a href="../../uploads/acl-whiteboard.jpg"><img src="../../uploads/acl-whiteboard-300x131.jpg" alt=""></a></p>
-<h2 id="the-best-solution-ever-a-new-option-for-the-nfs-server">The Best Solution Ever!: A New Option for the NFS Server</h2>
-<p>I hope this is the first thing you read after encountering this problem for the first time. I hope that you don&rsquo;t have to read any of the other &ldquo;solutions&rdquo; on this page. I hope you haven&rsquo;t wasted your time doing other work-arounds. I hope you are in an environment where you are able to use this solution:</p>
-<pre><code>rpc.mountd --manage-gids
-</code></pre>
-<p>rpc.mountd is the program that actually serves nfs. The &ndash;manage-gids option allows the server to just plain ignore the incoming bogus 16 groups from the client, and allow the nfs server to look it up for itself. Straight from the man page:</p>
-<pre><code>       -g  or  --manage-gids
-              Accept requests from the kernel to  map  user  id  numbers  into
-              lists  of  group  id  numbers for use in access control.  An NFS
-              request will normally (except when using Kerberos or other cryp-
-              tographic  authentication)  contains  a  user-id  and  a list of
-              group-ids.  Due to a limitation in the NFS protocol, at most  16
-              groups ids can be listed.  If you use the -g flag, then the list
-              of group ids received from the client will be replaced by a list
-              of  group ids determined by an appropriate lookup on the server.
-</code></pre>
-<p>You must have a modern (past 2007) version ( &gt;1.0.12 ) of the linux nfs server for this option and a recent kernel (&gt;2.6.21) to go with it. Most modern distros can do it, but if you are using Solaris or some sort of embedded NFS appliance, you are probably out of luck.</p>
-<p>On a modern Ubuntu server it has this option on by default. Check with the documentation on your distro on how to turn it on properly. Then party. I can stop writing this blog post because everyone runs modern versions of Linux for their NFS servers right??? :)</p>
-<h2 id="a-crapy-solution-acls">A Crapy Solution: ACLS</h2>
-<p>You might be thinking to yourself that you can get around this group limit by setting acls. You would be kinda right. The problem is, you <strong>cannot</strong> use group based ACLs consistently. You <strong>can</strong> use user-based ACLs and that will work. Why? Because your user id <strong>does</strong> get passed to the NFS server, and it can decide if you should see a file or not based on the ACLs on it.</p>
-<p>So what, are you going to add every user that needs access to any file or folder in the acl? Who is going to maintain these acls? If it is going to be scripted, who is going to maintain the script? Does your filesystem even have enough meta data space to handle all of these user acls? (Hint: probably not. JFS and ZFS are the only ones that can handle lots and lots of acls.)</p>
-<p>You might read somewhere that you can use NFS4 specific acls. While this is true, that they do exist, they do not solve the 16 group limit problem:</p>
-<p><a href="../../uploads/nfs4-acls.png"><img src="../../uploads/nfs4-acls-300x148.png" alt=""></a></p>
-<p>You don&rsquo;t have to believe my screen shots. Just do it for yourself.</p>
-<p>If you are going to go this route the only way is with ZFS or JFS with some sort of script that builds and modifies dozens and dozens of user ACLs recursively. Just say no.</p>
-<h2 id="an-even-more-complicated-solution-kerberos">An Even More Complicated Solution: Kerberos</h2>
-<p>Yea, just in case you didn&rsquo;t think hundreds of ACLs couldn&rsquo;t get any more complicated&hellip;
-Now, I don&rsquo;t have much to say on this subject. This might be a potential solution for you if you have conversations like this:</p>
-<p><strong>Comrade</strong>: Do you have a good recommendation for a text editor?</p>
-<p><strong>You</strong>: I recommend Eclipse or Microsoft Visual Studio.</p>
-<p><strong>Comrade</strong>: Hey dude, what is the key to your wifi?</p>
-<p><strong>You</strong>: You need an active directory account syncronized with the RADIUS server before you can authenticate. What is your MAC address?</p>
-<p>Yes, you can replace auth_sys\ with auth_krb5. Get ready for authentication tickets, backup key servers, crypto exchanges, setting up trust relationships, etc. If you have this many groups you probably have LDAP or Active Directory as well as your NFS server and client machines. What&rsquo;s one more complicated system you don&rsquo;t fully understand thrown into the mix?</p>
-<h2 id="oustide-the-box-solutions">Oustide the Box Solutions</h2>
-<ul>
-<li>
-<p>Use Samba?</p>
-</li>
-<li>
-<p>Enforce everyone to be in fewer than 16 groups?</p>
-</li>
-<li>
-<p>Custom home-brew rsync stuff?</p>
-</li>
-<li>
-<p>Give everyone dropbox accounts? :)</p>
-</li>
-<li>
-<p>Google Docs?</p>
-</li>
-</ul>
-<h2 id="appendix-fully-understanding-what-is-going-on-behind-the-scenes-with---manage-gids">Appendix: Fully Understanding What Is Going On Behind The Scenes With &ndash;manage-gids</h2>
-<p>Ok. If you have come this far and you are using &ndash;manage-gids to elegantly solve this problem. Congratulations. Ready for the behind the scenes look?</p>
-<p>Rpc.mountd is basically ignoring what the nfs client says about your auxiliary group memberships. This does &ldquo;break&rdquo; the RFC, but if you ask me the RFC was broken to begin with.</p>
-<p>When testing this, you may find some odd behavior. Don&rsquo;t jump to conclusions without understanding!</p>
-<p>When the NFS server intercepts the access request, the server must now look up your groups. It will use whatever you have nsswitch.conf setup to look this stuff up. Be sure that the NFS server is reading your groups and user id membership stuff correctly, otherwise you will have permission failures.</p>
-<p>Also, the NFS server will cache group lookups so it doesn&rsquo;t have to continuously make queries. The cache is visible like this:</p>
-<pre><code>root@archive:~# cat /proc/net/rpc/auth.unix.gid/content
-#uid cnt: gids...
-0 9: 0 4 20 24 46 100 112 121 127
-1001 30: 100 4 20 24 46 112 115 121 122 127 1001 1002 1004 1005 1006 1007 1008 1009 1010 1011 1012 1013 1014 1015 1016 1017 1018 1019 1020 1021
-</code></pre>
-<p>You can see the map, and it provides a legend at the top. If you are making changes to group memberships very often, you must flush this cache to get reasonable results. The NFS rpc.mountd program will cache group mappings for <!-- raw HTML omitted -->30 minutes<!-- raw HTML omitted --> (nfs-utils-1.2.2/utils/mountd/cache.c line 157).  Flush it like this:</p>
-<pre><code>root@archive:~# date +%s &gt;  /proc/net/rpc/auth.unix.gid/flush
-root@archive:~# cat /proc/net/rpc/auth.unix.gid/content
-#uid cnt: gids...
-0 9: 0 4 20 24 46 100 112 121 127
-</code></pre>
-<p>Also, you now have a new limit on group membership. It isn&rsquo;t exactly a specific set number as much as a total number of bytes needed to represent your group memberships. In my experimenting it was 1000 bytes (characters). So if you are using group IDs that are 5 digits, +1 for a space separator and you have (1000 / 6) = 166 as your new group limit. This of course may change with time, so I encourage you to test this in your own environment. (I could not verify this with source code. It looks like it should be 100 to me? Experimentation was the only way for me to be sure what the new limit <!-- raw HTML omitted -->actually<!-- raw HTML omitted --> was.)</p>
-<p>When a user hits this limit, that user (and only that user) will have his process hang, and the nfs client kernel will complain that the nfs server isn&rsquo;t responding, which it isn&rsquo;t. The nfs server will not be able to look up the groups for that user, and fails to send back a nfs packet with a response.</p>
-<p>In addition, your gid map cache will have a special entry that will be commented out like this:</p>
-<pre><code>root@archive:~# cat /proc/net/rpc/auth.unix.gid/content
-#uid cnt: gids...
-0 9: 0 4 20 24 46 100 112 121 127
-#1001 0:
-</code></pre>
-<p>This is an indication that the nfs server could not look up the groups for user 1001. I&rsquo;ve setup a nagios check on my nfs servers to detect for this, in order to let us know right away that the problem is occurring. In addition I have nagios checks to alert us if we are approaching the new group limit.</p>
-
+  I apologize for the verbose post. This is a complicated problem and it merits full explanation. If you are experiencing this problem I advise you to avoid skimming and read it very carefully :)
+Sometimes you come across a problem that is a little more complex than average. Sometimes it is problem that is rare enough that there isn&rsquo;t an obvious answer in the first google hint. Sometimes a problem may seem unavoidable, which leads to work-arounds, and before you know it you have a mess.
+  
+  <p>
+    <a class="u-clickable" href="../../solving-the-nfs-16-group-limit-problem/">Read More…</a>
+  </p>
+  
   
   
 
@@ -541,40 +332,13 @@ root@archive:~# cat /proc/net/rpc/auth.unix.gid/content
 </header>
 
   
-  <p>So you have some new harddrives. Maybe you are thinking about building a DIY storage server? Maybe some Raid? Maybe you just want to know if your drives are performing as well as when you bought them? How can you know? <strong>Measurement is Knowing</strong>.</p>
-<p>The thing about benchmarks is that you always must be skeptical. Each system&rsquo;s particular disks, controller, raid level and settings, cpu, ram, filesystem, operating system, etc can GREATLY affect the performance of a system. The only way to know is to <strong>do it yourself</strong>.</p>
-<p><strong>_1. Super Easy Block Level Read Test: hdparm _</strong>
-This particular &ldquo;benchmark&rdquo; is easiest and the least reliable. It does raw reads only, good luck on where it pulls them from. Here is an example:</p>
-<pre><code>root@archive:/# hdparm -tT /dev/sda
-/dev/sda:
-Timing cached reads:   1472 MB in  2.00 seconds = 735.81 MB/sec
-Timing buffered disk reads: 360 MB in  3.02 seconds = 119.24 MB/sec
-</code></pre>
-<p>Its&hellip; something. Good for just real quick, non-destructive read tests to compare between two disks or arrays.</p>
-<p><strong><em>2. Better Block Level Read and Write Tests: palimpsest</em></strong>
-Palimpsest operates on a block device. It has nothing to do with files and filesystems like hdparm. If performed on a whole disk you can see the how the drive slows down as the head approaches the interior of the spindle. It also does seek tests.</p>
-<p>You can run &ldquo;palimpsest&rdquo; on the command line, or in a gnome environment go System-&gt;Administration -&gt; Disk Utility. Modern versions of the program can also connect to remote servers which may not have a gui. It can also be X-forwarded from remote servers.</p>
-<p>Here is a gallery of some examples:</p>
-<p><a href="../../uploads/Screenshot-1-10.0-GB-RAID-1-Array-%E2%80%93-Benchmark.png"><img src="../../uploads/Screenshot-1-10.0-GB-RAID-1-Array-%E2%80%93-Benchmark-150x150.png" alt=""></a><a href="../../uploads/Screenshot-1-20-GB-RAID-5-Array-%E2%80%93-Benchmark.png"><img src="../../uploads/Screenshot-1-20-GB-RAID-5-Array-%E2%80%93-Benchmark-150x150.png" alt=""></a><a href="../../uploads/Screenshot-1-30-GB-RAID-0-Array-%E2%80%93-Benchmark.png"><img src="../../uploads/Screenshot-1-30-GB-RAID-0-Array-%E2%80%93-Benchmark-150x150.png" alt=""></a><a href="../../uploads/Screenshot-64-GB-Solid-State-Disk-ATA-Corsair-CSSD-V64GB2-%E2%80%93-Benchmark.png"><img src="../../uploads/Screenshot-64-GB-Solid-State-Disk-ATA-Corsair-CSSD-V64GB2-%E2%80%93-Benchmark-150x150.png" alt=""></a><a href="../../uploads/Screenshot-2.0-TB-Hard-Disk-ATA-WDC-WD20EARS-00MVWB0-%E2%80%93-Benchmark.png"><img src="../../uploads/Screenshot-2.0-TB-Hard-Disk-ATA-WDC-WD20EARS-00MVWB0-%E2%80%93-Benchmark-150x150.png" alt=""></a></p>
-<p>Notice the slow writes on the raid 5 (second picture), and the small deviation on seeks on the SSD (forth picture). Also you can see how spinning disks slow down as the approach the center of the spindle. (fifth picture)</p>
-<p><strong><em>3: Real World Filesystem Benchmarks: Bonnie++</em></strong>
-In some way, the above benchmarks are more theoretical than what would be ideal. Unless you have a special application, you are like the rest of us: <strong>you work on files</strong>.</p>
-<p>Working with normal files means you interact with a filesystem. Working on a filesystem means you have block sizes, extents, permissions, fragmentation, etc. All of these additional complexities need to be measured.</p>
-<p>The solution here is bonnie++, which does what most applications do: write, read, seek, create, and delete files sequentially and randomly.</p>
-<p>Here would be a typical invocation:</p>
-<pre><code>kyle@archive:/tmp# bonnie++
-</code></pre>
-<p>It is better to run it as not root. Run it in the directory where you want it to make files. Its output is&hellip; a little hard to comprehend and outside the scope of this article. One can read the documentation and compile your own spreadsheet and graph with some Libreoffice Calc foo:</p>
-<p><a href="../../uploads/Bonnie-Graphs.png"><img src="../../uploads/Bonnie-Graphs-300x178.png" alt=""></a></p>
-<p>Nothing too fancy. It has a lot of output, so you have to pick the numbers that are important to you. Another option is to use the bon_csv2html to output a slightly more readable output:</p>
-<pre><code>cat benchmarks.csv | bon_csv2html  &gt; bench.html
-firefox bench.html
-</code></pre>
-<p><a href="../../uploads/bonnie-html.png"><img src="../../uploads/bonnie-html-300x62.png" alt=""></a></p>
-<p>Bonnie benchmarks are the hardest to read, but are they closest to the <em>reality</em> of the performance of your disk in your environment.</p>
-<h2 id="conclusion">Conclusion</h2>
-<p>So that is it. Try out different raid configurations and filesystems, but benchmark them to <strong><em>know</em></strong> if it improves or degrades your performance instead of depending on hunches and superstition!</p>
-
+  So you have some new harddrives. Maybe you are thinking about building a DIY storage server? Maybe some Raid? Maybe you just want to know if your drives are performing as well as when you bought them? How can you know? Measurement is Knowing.
+The thing about benchmarks is that you always must be skeptical. Each system&rsquo;s particular disks, controller, raid level and settings, cpu, ram, filesystem, operating system, etc can GREATLY affect the performance of a system.
+  
+  <p>
+    <a class="u-clickable" href="../../how-to-benchmark-harddrives-in-linux/">Read More…</a>
+  </p>
+  
   
   
 
@@ -630,30 +394,13 @@ firefox bench.html
 </header>
 
   
-  <p>Starting with the new year, I decided to move my xkyle.com domain and related stuff away from my account at <a href="http://www.dreamhost.com/">Dreamhost</a>, a shared hosting server, to my virtual machine at <a href="http://www.tummy.com/">Tummy.com</a>. I have nothing but good things to say about Dreamhost though, they are excellent at what they do. However, I wanted to do more than what a shared hosting provider could do for me, I needed Root!</p>
-<p>Moving my websites and dns to a dedicated server grants me the ability to implement a few technologies to usher in the new year. Here they are:</p>
-<h2 id="ssl-on-everything"><strong>SSL-On-Everything</strong>!</h2>
-<p>I don&rsquo;t like things listening and editing and manipulating traffic in transit between me and a server. Deep packet inspection, proxy servers, tcp monitors, etc all give me the jibblies. There are a couple things that might prevent one from implementing SSL on a site though.Historically websites here hosted with one website per ip address. Then we came out with virtual hosting (vhosts), which allowed multiple websites to be on a single ip address. (See <a href="http://www.myipneighbors.net/">http://www.myipneighbors.net/</a> for a tool to see this in action) The problem was, SSL couldn&rsquo;t do this. Recently, something called <a href="http://en.wikipedia.org/wiki/Server_Name_Indication">SNI</a> (Server Name Identification) enabled this to work. There are some legacy systems that do not support this technology though, so be aware. Of course with IPV6 on the horizon, this will become less of an issue.The other barrier to entry for SSL is getting the cert itself. I am a believer that a self-signed cert is better than no cert at all, but we can do better. <a href="http://www.startcom.org/">Startcom</a> is a SSL provider that provides free Level 1 certificates. Startcom&rsquo;s CA is in almost all browsers. I&rsquo;m a big fan. So now with a combination of some apache rewrite lines:</p>
-<pre><code>&lt;VirtualHost *:80&gt;
-RewriteEngine On
-RewriteCond %{HTTPS} off
-RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
-&lt;/VirtualHost&gt;
-</code></pre>
-<p>And that is my only vhost on :80, everything else is on :443.</p>
-<h2 id="dnssec"><strong>DNSSEC!</strong></h2>
-<p><a href="http://en.wikipedia.org/wiki/Domain_Name_System_Security_Extensions">DNSSEC</a> is a security extension to our DNS infrastructure that sets up a chain of trust, going from the ROOT name servers all the way down, to ensure that the answer you get for a dns query can be cryptographically verified. Kinda like SSL, it makes sure that the DNS server you are talking to is giving good answers. This works by sticking your public keys one level up the chain, and then that chain above you signs them. For example, I would submit my keys to the .com registry, and they would sign them.</p>
-<p>But, .com is not yet participating in this. So as a temporary measure until all the TLDs are signing, ISC has setup a temporary trust anchor called <a href="https://dlv.isc.org/">DLV</a>. I&rsquo;ve generated my keys and submitted to them. Using a great DNSSEC visualization tool, <a href="http://dnsviz.net/">dnsviz.net</a>, you can graphically see how the chain of trust flows (click to make it bigger):</p>
-<p><a href="../../uploads/auth_graph.png"><img src="../../uploads/auth_graph-300x300.png" alt="A Graph Representing the DNSSEC Trust Relationships for xkyle.com"></a>
-At the top right you can see the root, represented with a &ldquo;.&rdquo; You can see the black line means that it is not securely delegating to the .com part. But, the dlv.isc.org is, and it is giving a big blue arrow to my domain. See This for the full <a href="http://dnsviz.net/d/xkyle.com/dnssec/">visualization</a>, including a legend and explanation for all the little things. Its great! I use this <a href="https://addons.mozilla.org/en-US/firefox/addon/64247/">firefox extension</a> to help let me know what sites are signed and which are not. You don&rsquo;t even have to be using actual DNSSEC nameservers for this to work. DNSSEC is a huge topic, probably deserving a dedicated blog post&hellip;</p>
-<h2 id="ipv6"><strong>IPV6!</strong></h2>
-<p>IPv6 is the next generation Internet protocol. It uses 128bit ip addresses instead of 32 bit ones to solve the problem of <a href="http://ipv6.he.net/statistics/">rapidly depleting address space</a>. It is not all doom and gloom, certainly nothing to lose sleep over. But as a system administrator, I like being informed and up to speed on emerging technologies. Honestly though, IPv6 is not exactly new, it has been around in the Linux kernel since 1996&hellip;</p>
-<p>Setting up IPv6 was pretty straightforward. I signed up for a tunnel from <a href="http://tunnelbroker.net/main.php">He.net</a>, ran the provided commands on my server, then initialized AAAA (quad A) records for my domain names. Restart apache and you are done (assuming it is running on *:80)</p>
-<p>This of course is me setting up IPv6 on the server side. To do it on the client side (at my house) I intend to investigate <a href="http://www.comcast6.net/">Comcast&rsquo;s IPv6 trials</a>. Currently I just take that same server side tunnel and use radvd to advertise it as an ipv6 router to my vpn. This is not as efficient as it could be, Comcast&rsquo;s IPv6 should provide lower latency. To give myself a warm fuzzy feeling, I use the <a href="https://addons.mozilla.org/en-US/firefox/addon/590/?id=590">ShowIP Firefox extension</a> so I can see when I&rsquo;m connected to an IPv6 enabled website. If you&rsquo;ve got it all setup, check out <a href="http://xkyle.com">http://xkyle.com</a> directly, and it should show a nice green IPv6 number in the lower right hand corner:
-<a href="../../uploads/xkyle-ipv6.png"><img src="../../uploads/xkyle-ipv6.png" alt=""></a></p>
-<h2 id="conclusion">Conclusion</h2>
-<p>So you might be thinking to yourself, &ldquo;Wow Kyle, that is a lot of new things. I&rsquo;m scared.&rdquo; Don&rsquo;t be scared. Learning about these technologies is a lot of fun, and actually implementing them is even more fun! So now you might be thinking, &ldquo;Ok, this is cool, but I don&rsquo;t have a server or any of this stuff&rdquo;. What would you say if I told you that everything I did here was done for free? (With the exception of actually buying the domain name) If you have a pet domain name to play with already, what else do you need? SSL certs: free at <a href="http://www.startssl.com/">startcom</a>. IPv6 Addresses: Free at <a href="http://tunnelbroker.net/">he.net</a>. DNSSEC: <a href="https://dlv.isc.org/">ISC</a> provides this for free to encourage DNSSEC adoption. Dedicated server: Amazon provides a <a href="http://aws.amazon.com/free/">free micro virtual server</a> for a year for your Linux enjoyment. So lets get cracking! I challenge you to join the cutting edge of the Internet and trace to me with &ldquo;mtr -6 xkyle.com&rdquo; and verify my domain with &ldquo;dig +dnssec xkyle.com&rdquo;!</p>
-
+  Starting with the new year, I decided to move my xkyle.com domain and related stuff away from my account at Dreamhost, a shared hosting server, to my virtual machine at Tummy.com. I have nothing but good things to say about Dreamhost though, they are excellent at what they do. However, I wanted to do more than what a shared hosting provider could do for me, I needed Root!
+Moving my websites and dns to a dedicated server grants me the ability to implement a few technologies to usher in the new year.
+  
+  <p>
+    <a class="u-clickable" href="../../new-technologies-for-a-new-year/">Read More…</a>
+  </p>
+  
   
   
 
@@ -715,18 +462,16 @@ At the top right you can see the root, represented with a &ldquo;.&rdquo; You ca
 </header>
 
   
-  <p>I was thinking about moving my Wii, and relocating it to a more conspicuous place. I was annoyed at my sensor bar getting in the way:</p>
-<p><a href="../../uploads/Wii_sensorbar3_05012-706981.jpg"><img src="../../uploads/Wii_sensorbar3_05012-706981.jpg" alt=""></a></p>
-<p>I knew that the sensor bar was just 2 IR LEDs. So why not just build those LEDs right into the TV? One less cord to lay around. Lets open it up!</p>
-<p><a href="../../uploads/IMG_20101006_145345.jpg"><img src="../../uploads/IMG_20101006_145345-300x224.jpg" alt=""></a><a href="../../uploads/IMG_20101006_150230.jpg"><img src="../../uploads/IMG_20101006_150230-300x224.jpg" alt=""></a></p>
-<p>I used the given board that had 2 White LEDs that lit up the Westinghouse Logo. I simply added my own IR leds and some wires:</p>
-<p><a href="../../uploads/IMG_20101006_151845.jpg"><img src="../../uploads/IMG_20101006_151845-300x224.jpg" alt=""></a><a href="../../uploads/leds.jpg"><img src="../../uploads/leds-300x224.jpg" alt=""></a><a href="../../uploads/leds-in-hand.jpg"><img src="../../uploads/leds-in-hand-267x300.jpg" alt=""></a></p>
-<p>Drill some holes and stick them in! Then put everything back in its place:</p>
-<p><a href="../../uploads/IMG_20101006_154634.jpg"><img src="../../uploads/IMG_20101006_154634-300x118.jpg" alt=""></a></p>
-<p>Works great! More powerful than the stock sensor bar LEDs, so they respond better with my TV next to the window:</p>
-<p><a href="../../uploads/IMG_20101006_170304.jpg"><img src="../../uploads/IMG_20101006_170304-300x224.jpg" alt=""></a><a href="../../uploads/IMG_20101006_170251.jpg"><img src="../../uploads/IMG_20101006_170251-300x195.jpg" alt=""></a></p>
-<p>Of course, our eyes cannot see the infrared, so the TV looks the same!</p>
+  I was thinking about moving my Wii, and relocating it to a more conspicuous place. I was annoyed at my sensor bar getting in the way:
 
+I knew that the sensor bar was just 2 IR LEDs. So why not just build those LEDs right into the TV? One less cord to lay around. Lets open it up!
+
+I used the given board that had 2 White LEDs that lit up the Westinghouse Logo.
+  
+  <p>
+    <a class="u-clickable" href="../../adding-a-built-in-sensor-bar-to-a-tv/">Read More…</a>
+  </p>
+  
   
   
 
@@ -794,85 +539,14 @@ At the top right you can see the root, represented with a &ldquo;.&rdquo; You ca
 </header>
 
   
-  <p>Last month Games Magazine published their <a href="http://www.gamesmagazine-online.com/gameslinks/contest29.html">Online Contest 29 - Role Playing 4</a>. Here is the puzzle:</p>
-<p><a href="../../uploads/GamesMagazineContest29.gif"><img src="../../uploads/GamesMagazineContest29.gif" alt=""></a></p>
-<p>The circles represent actors, the diamonds represent movies they have been in. Pink is for actresses and blue is for actors. The numbers represent the numbers in their name: First, Last. Question marks indicate the number in their name is 3,4,6, or 9 letters. The center actress is what we are after. Note there are no clues for her name, but she has been in 13 movies. All movies in this puzzle are in the last century (2000-now) and are not shorts or documentaries.</p>
-<p>Personally, I can&rsquo;t imagine solving this puzzle without computer aid. Just ask yourself, how many actresses do you know with 7 letters in their last name? Uh&hellip;.</p>
-<p>So how will we go about solving this? Let us start by numbering the nodes to make them easy to reference:
-<a href="../../uploads/GamesMagazineContest29-WithNodes.gif"><img src="../../uploads/GamesMagazineContest29-WithNodes.gif" alt=""></a></p>
-<p>My language of choice to solve this is going to be python. The first thing we will need though, is a copy of the IMDB. Luckily, the IMDB provides alternative interfaces besides their web interface, including <a href="http://www.imdb.com/interfaces#plain">plain text file downloads</a>! And now we need the <a href="http://imdbpy.sourceforge.net/">python-imdbpy</a> package. It comes with a script that will allow you to import these imdb downloads into local mysql tables. For exact commands you can check out my <a href="https://dev.xkyle.com/gamesmagazine/Role%20Playing%204/README">README</a> file, which includes exact wget, mysql, and python commands to import the database locally.</p>
-<p>[caption id=&quot;attachment_539&rdquo; align=&quot;alignnone&rdquo; width=&quot;835&rdquo; caption=&quot;I&rsquo;m hopeless without phpmyadmin. Yes I am a noob.&quot;]<a href="../../uploads/phpmyadmin-rp4.jpg"><img src="../../uploads/phpmyadmin-rp4.jpg" alt=""></a>[/caption]</p>
-<p>So you have a local copy of the imdb? Great! Now how will we go about solving the puzzle? My approach is to start first by narrowing down all of the possibilities for the actors in each node. The center node possibilities are going to be any actress who has been in 13 movies in the last century (only a few hundred). How will we narrow down the other nodes? Regular expressions. For example, node 0 has 5 letters in their first name, and 3,4,6 or 9 letters in their last. Here is a regular expression to find that:</p>
-<blockquote>
-</blockquote>
-<blockquote>
-<pre><code>^(([^- ,]{3})|([^- ,]{4})|([^- ,]{6})|([^- ,]{9})), [^- ,]{5}( |$)
-</code></pre>
-</blockquote>
-<p>Special thanks to <a href="http://www.tummy.com/journals/users/jafo">Jafo</a> and <a href="http://www.wwwdotorg.org/">swarren </a>for helping me create these. If you are wondering, the IMDB stores names as Last, First. We can narrow down these outlining actors (0-7) by only getting those actors/actresses with at least 2 movies in the last century, also if they have at least one record in the person_info table. (To exclude unpopular actors, extras, etc)</p>
-<p>So now we have lists for the possibilities of each actor. In my implementation I actually used two programs, one the create these lists (<a href="https://dev.xkyle.com/gamesmagazine/Role%20Playing%204/find-actorpossibilities.py">find-actorpossibilities.py</a>) and then a second program to utilize these lists to solve the problem (<a href="https://dev.xkyle.com/gamesmagazine/Role%20Playing%204/startatthecenter.py">startatthecenter.py</a>) I will now talk about the second one.</p>
-<p>To solve this, I used a recursive (my favorite kind) function. It basically looks like this:</p>
-<blockquote>
-</blockquote>
-<blockquote>
-<pre><code>def recurse(level, centeractress, placedactors):
-        if level == 8:
-                # Print the solution
-                print [actorname(i) for i in placedactors]
-      print placedactors
-      return
+  Last month Games Magazine published their Online Contest 29 - Role Playing 4. Here is the puzzle:
 
-  for possibleactor in actor[level].possibilities:
-      if possibleactor not in placedactors + [centeractress]:
-          sharedmovies = moviesincommon(centeractress, possibleactor)
-          if len(sharedmovies) &gt;= len(actor[level].links):
-              recurse(level+1, centeractress, copy.copy(placedactors + [possibleactor]))
-</code></pre>
-</blockquote>
-<p>The actor object has a property called links that has a tuple of the movies they are connected to. Most are 2 but one of them is 3. All I do is check how many movies they have been in with the center spoke. I&rsquo;m not even testing what that movie is, or even recording it!  To make it a little faster and cut out false positives, I check between outlining actors at key points where they overlap:</p>
-<blockquote>
-</blockquote>
-<blockquote>
-<pre><code>        if level == 2:
-      if len(moviesincommon3(placedactors[0], placedactors[1], centeractress)) &lt; 1:
-          return
-  elif level == 3:
-      if len(moviesincommon4(placedactors[0], placedactors[1], placedactors[2], centeractress)) &lt; 1:
-          return
-  elif level == 6:
-      if len(moviesincommon3(placedactors[4], placedactors[5], centeractress)) &lt; 1:
-          return
-  elif level == 8:
-                if len(moviesincommon3(placedactors[0], placedactors[7], centeractress)) &lt; 1:
-                        return
-      else:
-          print &quot;I HAZ A SOLUTION:&quot;
-          print [actorname(i) for i in placedactors]
-          print placedactors
-          return
-</code></pre>
-</blockquote>
-<p>These points are on the chart where multiple actors are in the same movie with the center actress. This prunes down quite a bit. All we need now some code to kick use off:</p>
-<blockquote>
-</blockquote>
-<blockquote>
-<pre><code>for actress in actor[8].possibilities:
-  placedactors = []
-  placedmovies = []
-  print &quot;We are recursing with &quot; + actorname(actress) + &quot; (&quot; + str(actress) + &quot;)&quot;
-  recurse(0, actress, copy.copy(placedactors) )
-</code></pre>
-</blockquote>
-<p>Notice we have to send copies of the list into the function because lists are mutable, and we need each branch of the recursive tree to have its own copy of the list. That is pretty much it. Just let it recurse through all the actors for a couple of hours. There are a couple of false positives, which actually may be technically correct (I didn&rsquo;t thoroughly check them) due to foreign films, documentaries, etc.</p>
-<p>If you would like to check out my code and run it for yourself, check it out!:</p>
-<blockquote>
-</blockquote>
-<blockquote>
-<pre><code>svn co https://dev.xkyle.com/gamesmagazine
-</code></pre>
-</blockquote>
-<p>Be sure to read the README for the prerequisites you will need. Also check out my <a href="https://wiki.xkyle.com/Games_Magazine_Online_Contest_29_-_Role_Playing_4">wiki page</a> for one possible complete <a href="https://wiki.xkyle.com/Games_Magazine_Online_Contest_29_-_Role_Playing_4#One_Possible_Solution">solution</a> and more information.</p>
-
+The circles represent actors, the diamonds represent movies they have been in. Pink is for actresses and blue is for actors. The numbers represent the numbers in their name: First, Last. Question marks indicate the number in their name is 3,4,6, or 9 letters. The center actress is what we are after. Note there are no clues for her name, but she has been in 13 movies.
+  
+  <p>
+    <a class="u-clickable" href="../../solving-role-playing-4/">Read More…</a>
+  </p>
+  
   
   
 
@@ -934,11 +608,15 @@ At the top right you can see the root, represented with a &ldquo;.&rdquo; You ca
 </header>
 
   
-  <p>Recently I gave a presentation on <a href="http://en.wikipedia.org/wiki/Plug_computer">Plug Computers</a> at the local <a href="http://nclug.org/">NCLUG</a>.  Plug computers are inexpensive, small, and low power computers, about the size of a wall wart.</p>
-<p>They make great home servers, appropriate for file sharing, exporting media files for your devices (<a href="http://en.wikipedia.org/wiki/Digital_Living_Network_Alliance">DLNA</a>), making backups (<a href="http://backuppc.sourceforge.net/">backuppc</a>), etc.</p>
-<p>If you would like to check out the slides for my presentation: <a href="../../uploads/PlugComputers.odp">Plug Computers Presentation</a></p>
-<p>If you would like to see my wiki notes on plug computers: <a href="http://wiki.xkyle.com/Plugcomputers">http://wiki.xkyle.com/Plugcomputers</a></p>
-
+  Recently I gave a presentation on Plug Computers at the local NCLUG. Plug computers are inexpensive, small, and low power computers, about the size of a wall wart.
+They make great home servers, appropriate for file sharing, exporting media files for your devices (DLNA), making backups (backuppc), etc.
+If you would like to check out the slides for my presentation: Plug Computers Presentation
+If you would like to see my wiki notes on plug computers: http://wiki.
+  
+  <p>
+    <a class="u-clickable" href="../../plug-computers/">Read More…</a>
+  </p>
+  
   
   
 
@@ -994,56 +672,16 @@ At the top right you can see the root, represented with a &ldquo;.&rdquo; You ca
 </header>
 
   
-  <p><a href="../../uploads/boggle.jpg"><img src="../../uploads/boggle-300x239.jpg" alt=""></a></p>
-<p>Bash is my favorite computer language. I also love writing programs to help human problems.</p>
-<p>Inspired by this <a href="http://www.circlemud.org/~jelson/software/netboggle.pl">online Boggle solver</a>, I decided to write my own solver while my friends were too busy playing the game and having fun :)</p>
-<p>If you would like to test my work, here is the code:</p>
-<p><a href="https://dev.xkyle.com/bashboggle/">https://dev.xkyle.com/bashboggle/</a></p>
-<p>You will need the linux &ldquo;words&rdquo; dictionary, which is installable on Ubuntu by running &ldquo;sudo apt-get install wamerican&rdquo;</p>
-<p>Why Bash? Yea it is not as fast as C, not as terse as Perl, not as elegant as Python, bla bla bla. But Bash is Fun, and it is good to keep the skills sharp. I think I will port it to python next just for the practice.</p>
-<p>Here is an example input and output:</p>
-<blockquote>
-</blockquote>
-<blockquote>
-<pre><code>kyle@kyle:~/Projects/bashboggle$ cat board.txt
-E    I    D    A    N
-I    G    S    S    H
-R    R    Qu   D    L
-A    Y    T    E    T
-I    A    O    A    E
-kyle@kyle:~/Projects/bashboggle$ ./boggle.sh board.txt
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
-arty
-dash
-delta
-digs
-diss
-eels
-girt
-girted
-gray
-hassle
-hassled
-rigid
-rigs
-sans
-sash
-shad
-shads
-sled
-sleds
-sleet
-teaed
-teat
-teed
-tels
-toed
-tray
-trig
-</code></pre>
-</blockquote>
-<p>The board format is pretty flexible. As long as there is some sort of whitespace in between the letters, it will work. It is also case insensitive. For test boggle problems I used this <a href="http://www.easysurf.cc/boggle.htm">online Boggle site</a>.</p>
-
+  Bash is my favorite computer language. I also love writing programs to help human problems.
+Inspired by this online Boggle solver, I decided to write my own solver while my friends were too busy playing the game and having fun :)
+If you would like to test my work, here is the code:
+https://dev.xkyle.com/bashboggle/
+You will need the linux &ldquo;words&rdquo; dictionary, which is installable on Ubuntu by running &ldquo;sudo apt-get install wamerican&rdquo;
+  
+  <p>
+    <a class="u-clickable" href="../../bash-boggle-a-boggle-solver-written-in-bash/">Read More…</a>
+  </p>
+  
   
   
 
@@ -1099,37 +737,18 @@ trig
 </header>
 
   
-  <p>I like to think about how games work, in the case of <a href="http://en.wikipedia.org/wiki/Jenga">Jenga</a>, it is just physics!</p>
-<p>But don&rsquo;t you wish you could peel back reality and see what is happening with the physics from the inside? Well now you can, with the help of a Wii Balance Board.</p>
-<p><a href="../../uploads/wii-jengasetup.jpg"><img src="../../uploads/wii-jengasetup-300x224.jpg" alt=""></a></p>
-<p>For the setup you need these ingredients:</p>
-<ul>
-<li>
-<p>Wii Balance Board</p>
-</li>
-<li>
-<p>Computer with Bluetooth</p>
-</li>
-<li>
-<p>Linux, preferably Ubuntu</p>
-</li>
-<li>
-<p>Jenga Set, alternatively &ldquo;<a href="http://www.argos.co.uk/static/Product/partNumber/3904172.htm">Tension Tower</a>&rdquo;</p>
-</li>
-<li>
-<p>Some know-how to compile a trunk version of <a href="http://abstrakraft.org/cwiid/">Cwiid</a></p>
-</li>
-<li>
-<p>Some other python stuff (see the build instructions for details)</p>
-</li>
-<li>
-<p><a href="http://wiki.xkyle.com/WiiJenga">And my code</a></p>
-</li>
-</ul>
-<p>I&rsquo;m going to maintain all instructions on how to setup all the technical details on my wiki: <a href="http://wiki.xkyle.com/WiiJenga">http://wiki.xkyle.com/WiiJenga</a></p>
-<p>Once you have it setup, you can see where the real center of balance is of your game, and you can tell how close it is to toppling over.</p>
-<p>In reality, the balance board isn&rsquo;t quite sensitive enough to very accurately detect the center of balance of the Jenga blocks, or detect how many Jenga blocks there are, but it is fun to watch:</p>
+  I like to think about how games work, in the case of Jenga, it is just physics!
+But don&rsquo;t you wish you could peel back reality and see what is happening with the physics from the inside? Well now you can, with the help of a Wii Balance Board.
 
+For the setup you need these ingredients:
+  Wii Balance Board
+  Computer with Bluetooth
+  Linux, preferably Ubuntu
+  
+  <p>
+    <a class="u-clickable" href="../../computer-assisted-jenga-with-the-wii-balance-board-and-linux/">Read More…</a>
+  </p>
+  
   
   
 
@@ -1201,14 +820,6 @@ trig
     </div>
   </main>
   
-<footer class="Footer">
-  <div class="u-wrapper">
-    <div class="u-padding">
-      Except where otherwise noted, content on this site is licensed under a a <a href="http://creativecommons.org/licenses/by/4.0/" rel="license"> Creative Commons Attribution 4.0 International License</a>.
-    </div>
-  </div>
-</footer>
-
 
 </body>
 </html>

@@ -3,22 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/about/</loc>
-    <lastmod>2020-03-03T13:17:55-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2020-03-03T13:17:55-08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/post/</loc>
     <lastmod>2020-02-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/The-Case-Against-Kubernetes-Sidecars/</loc>
+    <lastmod>2020-02-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
     <lastmod>2020-02-27T00:00:00+00:00</lastmod>
   </url>
   
@@ -1485,6 +1480,10 @@
   <url>
     <loc>/lasertag/</loc>
     <lastmod>2006-05-22T21:39:16+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/about/</loc>
   </url>
   
   <url>

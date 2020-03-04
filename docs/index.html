@@ -90,7 +90,7 @@
 
 
   
-  <link rel="stylesheet" href="./css/base.min.50883c9e7cc6f561db1dcd2089b6b895c60df8d10b9e71a90cbc10e59c8bfc40.css" integrity="sha256-UIg8nnzG9WHbHc0giba4lcYN&#43;NELnnGpDLwQ5ZyL/EA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/base.min.47def9e9fb53a1b822ec70f6799bb1f010fe9aac5273d8a1192ac9c685262c4f.css" integrity="sha256-R9756ftTobgi7HD2eZux8BD&#43;mqxSc9ihGSrJxoUmLE8=" crossorigin="anonymous">
   
   
 </head>
@@ -146,56 +146,15 @@
 </header>
 
   
-  <h2 id="intro">Intro</h2>
-<p>The Kubernetes (k8s) ecosystem has gone crazy for sidecar containers.</p>
-<p><a href="./uploads/clowncar.gif"><img src="./uploads/clowncar.gif" alt="clowncar.gif"></a></p>
-<p>Sidecar containers (sidecars) are auxiliary containers, not part of your application, that provide additional support to make it work.
-Along with your application, sidecars can be used to <a href="https://www.hashicorp.com/blog/injecting-vault-secrets-into-kubernetes-pods-via-a-sidecar/">inject secrets</a>, <a href="https://blog.powerupcloud.com/kubernetes-pod-management-using-fluentd-as-a-sidecar-container-and-prestop-lifecycle-hook-part-iv-428b5f4f7fc7?gi=5221437166e4">ship logs</a>, or power a <a href="https://aws.amazon.com/blogs/containers/using-sidecar-injection-on-amazon-eks-with-aws-app-mesh/">service mesh</a>.</p>
-<p>Although there are some advantages to Sidecars over traditional daemons, I would like to make the case that they are actually and inferior solution for a company that has the resources to provide a platform to its developers.
-The alternative is what I will call &ldquo;the daemon pattern&rdquo;.</p>
-<h2 id="background">Background</h2>
-<p>I&rsquo;m a general believer that strong platform teams at a company are (can be) development multipliers. These platform teams build infrastructure, shared tooling, and heck probably the k8s cluster that these sidecars run on! If you live in a world where this is no separation between an infrastructure team and a application team, then maybe this blog post is not for you.</p>
-<h2 id="sidecars-con-deploying-n-x-m-things">Sidecars Con: Deploying N x M Things</h2>
-<p>The very first thought I had when I heard about the sidecar pattern (as compared to the traditional &ldquo;daemon pattern&rdquo; was: &ldquo;wow, that sounds like a lot more resources required to run the same things!</p>
-<p>Certain compared to the existing platform I worked on, which had daemons for doing all the normal supplemental things (logging, metrics, service discovery, secrets, etc), the sidecar pattern represented a potential <strong>explosion</strong> of processes to get (on the surface of it), the same job done.</p>
-<p>Given a cluster of:</p>
-<ul>
-<li>100 Nodes</li>
-<li>1000 pods</li>
-<li>5 auxiliary processes to run</li>
-</ul>
-<p>Would you rather have 5000 things (sidecars) running, or 500 (daemons)? Don&rsquo;t forget to add sidecars to all your cron jobs, spark executors, and stateful sets too!</p>
-<p>What about configuring, getting the logs of, and monitoring those things?</p>
-<p>With the daemon pattern, the auxiliary processes scale with the number of nodes, and in general goes down as servers get larger over time. With the sidecar pattern, the number of processes scales <strong>up</strong> with the number of pods you want to run, and usually goes up as you add more things.</p>
-<p>Compared to the daemon pattern, the sidecar pattern consumes more compute resources as well as management resources.</p>
-<h2 id="sidecar-con-whose-job-is-it-anyway-to-run-these-things">Sidecar Con: Whose Job is it Anyway to Run These Things?</h2>
-<p>I really do feel bad for those organizations where the &ldquo;platform team&rdquo; provides only a raw k8s base, or maybe a team that &ldquo;just uses {cloud provider&rsquo;s k8s as a service}&quot;. Whose job is it to actually add, upgrade, configure, monitor, and maintain all these sidecars?</p>
-<p>With the daemon pattern it is pretty clear to me that it is <em>not</em> the application developer&rsquo;s job to maintain system daemons. Maybe a logging subteam is responsible for keeping the logging platform up (even if it isn&rsquo;t literally a daemon on the local host). Maybe it is just a big catchall for the &ldquo;ops&rdquo; team.</p>
-<p>With the sidecar pattern, it isn&rsquo;t as clear. On the plus side, it is empowering for a dev team to copy paste some YAML to get a <a href="https://www.hashicorp.com/blog/injecting-vault-secrets-into-kubernetes-pods-via-a-sidecar/">Vault Sidecar</a>, but maybe every app shouldn&rsquo;t need to have them?</p>
-<p>I think the daemon pattern provides better separation between &ldquo;infrastructure versus application&rdquo;, which should unburden application developers and let them provide more business value.</p>
-<h2 id="sidecar-con-the-burden-is-on-the-developer-to-understand-their-lifecycle">Sidecar Con: The Burden is on the Developer to Understand their Lifecycle</h2>
-<p>As noted <a href="https://banzaicloud.com/blog/k8s-sidecars/">elsewhere</a>, at the time of this writing, developers have to be aware of the interaction (lifecycle) of containers in a k8s pod, otherwise weird things happen. Developers cannot safely assume that the sidecars are ready before their application is. They also cannot assume a particular shutdown order. Also for jobs, the main job must kill the sidecars.</p>
-<p>This <a href="https://github.com/kubernetes/enhancements/blob/master/keps/sig-apps/sidecarcontainers.md">kep</a> will fix these things by making &ldquo;sidecar lifecycles&rdquo; a first-class object in the pod spec.</p>
-<p>But you know, what if developers <em>never</em> had to worry about that, and instead could always safely assume that they could emit logs, or that secrets would be available, or that service discovery would be up?
-With the daemon pattern, developers can take for granted that all the necessary daemons are already warm by the time their application starts, and that their application can also shut down gracefully without having to interact with anything else. With the daemon pattern, the only process the application developer needs to worry about is their own.</p>
-<h2 id="sidecar-con-platform-teams-have-less-control-over-the-infrastructure">Sidecar Con: Platform Teams Have Less Control Over the Infrastructure</h2>
-<p>If the company is in a situation where there is Security Team that oversees the Vault containers, sidecars, security best practices, etc, what is their experience like in the sidecar world compared to the daemon world? Likewise with a logging team or a service discovery team.</p>
-<p>In the sidecar world, how do you perform an upgrade of say, the service mesh? Unless you are going to do manual changes, the normal way you would do this is with a <a href="https://istio.io/docs/setup/upgrade/cni-helm-upgrade/#sidecar-upgrade">rolling restart</a>. This sounds straightforward: it uses the existing safety built into k8s, the pods go up and down in a structured way.</p>
-<p>But what if you <em>don&rsquo;t</em> want to roll every application to do an infrastructure upgrade. What if you <em>don&rsquo;t</em> want to restart that 48hour batch job, or your database team doesn&rsquo;t want you to restart their stateful sets (even with pod disruption budget).</p>
-<p>With the daemon pattern, upgrading and managing those daemons is mostly a solved problem (I really like this <a href="https://github.com/facebookincubator/pystemd/blob/master/_docs/daemon.md">hitless systemd fd handoff thing</a>). Upgrading daemons in general doesn&rsquo;t require impacting the application. Infrastructure teams usually don&rsquo;t have to ask permission from the application team to do things. They are much more decoupled, and I think that is a good thing.</p>
-<h2 id="sidecar-pro-dragging-along-exactly-what-you-need">Sidecar Pro: Dragging Along Exactly What you Need</h2>
-<p>On the plus side, sidecars <em>do</em> allow you to deploy auxiliary processes in a much more focused way. This is especially important for service-mesh sidecars: the configuration is tailored to fit the application. The logging daemon only is responsible for your application logs, and can&rsquo;t be overwhelmed by a noisy neighbor, etc.</p>
-<p>Sidecars do make it so that your application is 100% self-contained. You can use any k8s-as-a-service, and deploy your pod as-is (maybe). You can use a k8s node with minimal system services (all you need is the kubelet).</p>
-<h2 id="conclusion">Conclusion</h2>
-<p>I see the appeal of sidecars: they make it simple to add new functionality to your pod. I think they can also <a href="https://youtu.be/XQjOhJtw1wg?t=1239">get out of hand</a>.</p>
-<p>I don&rsquo;t know what the future holds.
-I could easily see the industry double down on more sidecars, or relax and move to more daemon sets with more sophisticated ways of doing calls between the pods and those daemons.</p>
-<p>I know that for at least the things I build, I&rsquo;ll be advocating for as few sidecars as possible, for the sake of the developers and for the sake of the infrastructure engineers.</p>
-<h3 id="appendix-the-link-local-ip-trick">Appendix: The Link-Local IP Trick</h3>
-<p>The &ldquo;Link-Local&rdquo; IP trick is using an IP from the <a href="https://en.wikipedia.org/wiki/Link-local_address">169.254.0.0/16</a> space to get an IP that can be reached by other local pods.</p>
-<p>Amazon AWS uses <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">169.254.169.254</a> for this, but you can pick your own at your own organization.</p>
-<p>With a little network glue, you can run your local daemons on your nodes using a link-local IP, then all your pods will be able to reach it (you can&rsquo;t use a 127.x IP, because each pod will have its own network namespace and its own localhost). I&rsquo;ll leave it as an exercise to the reader to handle security and proper service attestation for requests to that IP.</p>
+  Intro The Kubernetes (k8s) ecosystem has gone crazy for sidecar containers.
 
+Sidecar containers (sidecars) are auxiliary containers, not part of your application, that provide additional support to make it work. Along with your application, sidecars can be used to inject secrets, ship logs, or power a service mesh.
+Although there are some advantages to Sidecars over traditional daemons, I would like to make the case that they are actually and inferior solution for a company that has the resources to provide a platform to its developers.
+  
+  <p>
+    <a class="u-clickable" href="./The-Case-Against-Kubernetes-Sidecars/">Read More…</a>
+  </p>
+  
   
   
 
@@ -233,39 +192,15 @@ I could easily see the industry double down on more sidecars, or relax and move 
 </header>
 
   
-  <p>I recently etched reusable metal straws for my team at work.</p>
-<p>I used a <a href="https://hackaday.com/2015/01/15/etching-steel-with-a-dc-wall-wort/">low-tech</a> procedure to etch the metal using electricity after applying a vinyl mask made with a hobby vinyl cutter.</p>
-<p>The glass straws used food-safe ceramic paint baked in an oven, also using the same vinyl stencil.</p>
-<p>The results are great. Click on any of the images below for a larger version. The last few are videos.</p>
-<p><figure><a href="../uploads/straws//IMG_20191222_162104.jpg">
-    <img src="../uploads/straws/IMG_20191222_162104-thumb.jpg"/> </a>
-</figure>
-
-<figure><a href="../uploads/straws//IMG_20191222_162643.jpg">
-    <img src="../uploads/straws/IMG_20191222_162643-thumb.jpg"/> </a>
-</figure>
-
-<figure><a href="../uploads/straws//IMG_20191223_100055.jpg">
-    <img src="../uploads/straws/IMG_20191223_100055-thumb.jpg"/> </a>
-</figure>
-
-<figure><a href="../uploads/straws/MOV_0001.MP4">
-    <img src="../uploads/straws/MOV_0001-thumb.jpg"/> </a>
-</figure>
-
-<figure><a href="../uploads/straws/MOV_0002.MP4">
-    <img src="../uploads/straws/MOV_0002-thumb.jpg"/> </a>
-</figure>
-
-<figure><a href="../uploads/straws/MOV_0003.MP4">
-    <img src="../uploads/straws/MOV_0003-thumb.jpg"/> </a>
-</figure>
-
-<figure><a href="../uploads/straws/VID_20191222_162215.mp4">
-    <img src="../uploads/straws/VID_20191222_162215-thumb.jpg"/> </a>
-</figure>
-</p>
-
+  I recently etched reusable metal straws for my team at work.
+I used a low-tech procedure to etch the metal using electricity after applying a vinyl mask made with a hobby vinyl cutter.
+The glass straws used food-safe ceramic paint baked in an oven, also using the same vinyl stencil.
+The results are great. Click on any of the images below for a larger version. The last few are videos.
+  
+  <p>
+    <a class="u-clickable" href="./Etched-Team-Straws/">Read More…</a>
+  </p>
+  
   
   
 
@@ -303,80 +238,12 @@ I could easily see the industry double down on more sidecars, or relax and move 
 </header>
 
   
-  <figure>
-    <img src="./uploads/distributed-systems-management/type3.png"/> 
-</figure>
-
-<p>I&rsquo;ve worked at Yelp for about six years, working with our container platform in production for about four of those years.
-The plaform is called &ldquo;PaaSTA&rdquo; and there are a number of public talks about it. It is also <a href="https://github.com/Yelp/paasta">open source</a>.
-When we started PaaSTA, it ran on Mesos, and now we are most of the way through our migration to use Kubernetes (k8s).
-I&rsquo;m in a relatively unique position to have production experience with both technologies.
-This blog post will have some personal opinions on both platforms, which derive from experience, and also just thinking about the two a lot.</p>
-<p>This post is not some sort of feature comparison.
-If you are actually evaluating these schedulers, I recommend reading more about the actual technical differences between the two systems, like <a href="https://www.stratoscale.com/blog/kubernetes/kubernetes-vs-mesos-architects-perspective/">this comparison</a> and <a href="https://platform9.com/blog/kubernetes-vs-mesos-marathon/">this one</a>.
-My blog post, however, is not supposed to &ldquo;inform&rdquo; you about the differences between Mesos and k8s, it is &ldquo;persuade&rdquo; you to use and adopt the same principles that k8s uses, instead of the Mesos &ldquo;approach&rdquo; (where approach here is a combination of community, timing, and lots of tiny decisions along the way).</p>
-<h2 id="mesos-vs-k8s-im-not-actually-not-that-interested-in-the-community-support">Mesos vs k8s: I&rsquo;m not actually not that interested in the Community Support</h2>
-<p>&ldquo;Community&rdquo; is often cited as an important reason for picking a particular technology.
-You want to pick the winning horse! 12,000 Kubecon attendees can&rsquo;t be wrong!</p>
-<p>In this case, I&rsquo;m not suggesting that this is something that Mesos got wrong and k8s got right.
-I think they both got it right.
-My point here is that I don&rsquo;t want you to judge the technical book here by its community cover. You know what has a huge community of users: Microsoft Windows, Openstack, and JQuery.</p>
-<p>It is true that with a large community of users, new feature are developed, bugs get squashed, etc.
-But equally, a project can make a turn into a direction that is not useful for your organization, or its leadership can get diluted with committees, etc.</p>
-<p>Sorry for the mini rant before we actually get started.</p>
-<h2 id="mesos-vs-k8s-the-failure-of-the-two-layer-scheduler-model">Mesos vs k8s: The failure of the two-layer scheduler model</h2>
-<p>I remember being at Mesoscon 2015 and being excited at the handful of new frameworks coming to Mesos, and being enamoured with its <a href="https://stackoverflow.com/questions/47779352/what-are-the-advantages-and-disadvantages-of-two-level-scheduler-like-in-apache">two-level</a> scheduling model.</p>
-<p>&ldquo;What a great design&rdquo;, &ldquo;such great separation of concerns&rdquo;, were thoughts I had at the time.
-I even felt a tinge of smugness. It kinda felt like when I first understood the &ldquo;reversed&rdquo; server/client model of <a href="https://en.wikipedia.org/wiki/X_Window_System#Client%E2%80%93server_separation">X</a>.</p>
-<p>But why do I consider this model a failure?</p>
-<p>The limitations of this model become apparent when you need to do something like:</p>
-<blockquote>
-<p><a href="https://github.com/mesosphere/marathon/issues/846">A &ldquo;*&rdquo; Constraint for unique should exist</a></p>
-</blockquote>
-<p>This is the Mesos equivilant to a <a href="https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/">k8s DaemonSet</a>.</p>
-<p>But this is not possible on Mesos:</p>
-<blockquote>
-<p>We can&rsquo;t ensure that a task is running on all slaves in the cluster for following reasons:</p>
-<ul>
-<li>we can&rsquo;t guarantee that there are enough resources on every machine</li>
-<li>in a multi framework cluster, we don&rsquo;t know if we will ever receive offers for all the machines</li>
-<li>we could never tell if it has been deployed successfully, because we don&rsquo;t know about all the machines in the cluster</li>
-</ul>
-<p>I think this would need direct support from Mesos.</p>
-</blockquote>
-<p>It just isn&rsquo;t possible is Mesos, and will never be. Why? Because the two-layer scheduler model means that schedulers on Mesos <em>are not supposed to know</em> about the nodes that are out there. Separation of concerns of course.</p>
-<p>In k8s, all the schedulers / operators / controllers can see the entire state of the world. They have unrestricted access and are expected to play nice together. This blurring of concerns allows k8s to have much more rich capabilties, like DaemonSets, StatefulSets, etc.
-This is only possible because of this blurring of layers, and is one thing that k8s got right that Mesos got wrong.</p>
-<h2 id="mesos-vs-k8s-client-libraries">Mesos vs k8s: Client Libraries</h2>
-<p>What is the official Mesos Client Library
-? <a href="http://mesos.apache.org/documentation/latest/api-client-libraries/">libmesos</a>, as c++ .so file. There is also an officially supported Java wrapper around libmesos. Everything else is community-contributed. That means &gt;3 golang libraries, &gt;2 python libraries, and at least one Scala one.</p>
-<p>For k8s? <a href="https://kubernetes.io/docs/reference/using-api/client-libraries/">Official</a> libraries for Go, Python, Java, dotnet, JavaScript and Haskell. Sure, they are leveraging the fact that they have OpenAPI specs. There are even more user-contributed ones, but honestly I&rsquo;m not really sure why they exist.</p>
-<p>Mesos never really got this right. Writing <em><strong>good</strong></em> Mesos frameworks was always hard, and continued to be hard because the API and associated client libraries were never great. K8s gets this right by having a solid api <em><strong>and</strong></em> having solid, official, and up-to-date client library languages for the most popular languages in the industry.</p>
-<p>Client libraries should not be left to the community. It create fragmentation and raises the barrier to entry when it comes to integration with your thing. k8s realises the power of good apis and good client libraries, it got this right when Mesos only ever supported libmesos, and the Mesos framework explosion never happened.</p>
-<h2 id="mesos-vs-k8s-providing-the-kernel-versus-providing-the-distro">Mesos vs k8s: Providing the Kernel Versus Providing the Distro</h2>
-<p>Mesos was always touted as &ldquo;the kernel of the datacenter&rdquo;. It is true, in the same sense that the Linux kernel does process scheduling, so does Mesos. Linux was successful in the industry, why not Mesos?</p>
-<p>But wait. In a different sense, &ldquo;Linux&rdquo; isn&rsquo;t successful per-se, but Android is. RedHat is. Ubuntu is. These are Linux distros. Linux (a kernel) by itself is almost useless!</p>
-<p>K8s did this right by providing a Distro, which was useful to real end users. This &ldquo;distro&rdquo; provided:</p>
-<ul>
-<li>A kernel (the k8s scheduler, not the Mesos scheduler)</li>
-<li>A solution for daemons</li>
-<li>A solution for stateful processes</li>
-<li>A way to run cron jobs as well as long-running services</li>
-<li>Service discovery and routing</li>
-<li>Secret handling</li>
-<li>And much much more</li>
-</ul>
-<p><a href="https://dcos.io/">DC/OS</a> is the only Mesos distro I&rsquo;m aware of. Why didn&rsquo;t it take off? My best guess is that it was too targeted towards Enterprise customers first. There was never &ldquo;DC/OS: The Hard Way&rdquo;. Mesosphere&rsquo;s Marathon did get some advanced features, but there was never a great way to provide these kind of useful primitives (load balancing, scheduled jobs, secrets) to be useful to other frameworks too.</p>
-<p>What k8s got right was providing a lot of services you need to get going, even if they are simple implementations of them, and made all those services available to every other k8s&rsquo;y thing via a common API. Everything on k8s could assume there was an etcd cluster available, that there was load balancing and services, and secret handling. On Mesos, no such assumptions were safe.</p>
-<h2 id="mesos-vs-k8s-mesos-framework-libraries-versus-operator-sdks">Mesos vs k8s: Mesos Framework Libraries versus Operator SDKs</h2>
-<p>This is sorta like the client libraries issue, but at the next level. How does one write automation integration with Mesos? You go through the difficult task of writing a framework. Sure it may take seconds to get something running, but it will take a long time before the operator is production ready. Writing a good Mesos Framework isn&rsquo;t easy.</p>
-<p>The <a href="https://mesosphere.github.io/dcos-commons/">DC/OS Commons</a> as the closest thing to a good Mesos Framework SDK. It also never really took off.</p>
-<h2 id="conclusion">Conclusion</h2>
-<p>When this blog post is titled &ldquo;what k8s does &lsquo;right&rsquo;&quot;, you should ask, &ldquo;right for who?&quot;. The answer to me is, right for most infrastructure engineers want a platform to run all their different workloads on. <em>Not</em> a distributed systems SDK (Mesos).</p>
-<p>The next thing you should ask is: &ldquo;Isn&rsquo;t this an unfair comparison? K8s is more like DC/OS, Mesos is more like the k8s-scheduler component.&rdquo; To which I say: Kinda. I think it is more like Mesos is k8s just without the replica-set/deployment controllers and good API (those were left to frameworks like Marathon to implement). But sure, it isn&rsquo;t fair.</p>
-<p>In a sense, Mesos is a tool that does &ldquo;one thing well. In the right circumstance, it can be the right tool for the job.</p>
-<p>Kubernetes do one thing well, it does a lot of stuff &ldquo;ok&rdquo;, but leaves room for infrastructure engineers to replace parts and integrate. It also met developers where they are at, by giving them good client libraries in their native language, primitives to build operators on, and lots of the &ldquo;things you just need to get going&rdquo; (secrets, service discovery, etc) to make things work.</p>
-
+  I&rsquo;ve worked at Yelp for about six years, working with our container platform in production for about four of those years. The plaform is called &ldquo;PaaSTA&rdquo; and there are a number of public talks about it. It is also open source. When we started PaaSTA, it ran on Mesos, and now we are most of the way through our migration to use Kubernetes (k8s). I&rsquo;m in a relatively unique position to have production experience with both technologies.
+  
+  <p>
+    <a class="u-clickable" href="./What-Kubernetes-Got-Right-and-Mesos-Got-Wrong/">Read More…</a>
+  </p>
+  
   
   
 
@@ -414,60 +281,12 @@ This is only possible because of this blurring of layers, and is one thing that 
 </header>
 
   
-  <p>AWS likes to use the pharse
-&ldquo;<a href="https://www.cio.co.nz/article/466635/amazon_cto_stop_spending_money_undifferentiated_heavy_lifting_/">undifferentiated heavy lifting</a>&rdquo;
-to describe what AWS does best: all the things that everyone hast to do anyway with computers. Commonly these are things like running servers for you, hosting files, and managing a network.
-Let AWS handle the boring things so that you can focus on what matters most for your business.
-Sounds great! I certainly do not want a job that could otherwise be commonditized and turned into an API.</p>
-<p>In the world of &ldquo;Cloud&rdquo; providers, who&rsquo;s mission is to provide
-&ldquo;undifferentiated heavy lifting&rdquo; for other companies, is there even room for
-infrastructure teams to provide value to their organizations? Or are they just barriers to the onramp that is the Cloud-computing-dream?</p>
-<p>Some firmly believe the answer is unequivocally &ldquo;No.&rdquo; They believe that
-developers should be given an AWS account and then let loose, given
-all the freedom, flexibility, and power to do their thing.
-Some believe that any &ldquo;wrapper&rdquo; or &ldquo;abstraction&rdquo; or &ldquo;glue&rdquo; on top of AWS is a type of gatekeeping, a relic of old types of beliefs that no longer apply in the new DevOps world.</p>
-<p>Others believe that companies need a &ldquo;platform team&rdquo; to build abstractions on top of cloud providers. Examples of company platforms include Target&rsquo;s <a href="https://www.linkedin.com/pulse/counting-down-zero-time-takes-launch-app-target-tom-kadlec-1/">TAP</a> and Atlassian&rsquo;s <a href="https://blog.developer.atlassian.com/why-atlassian-uses-an-internal-paas-to-regulate-aws-access/">Micros</a>.</p>
-<p>Where do infra teams fit in? Should they be the gatekeepers to all things AWS
-or metal? Should they re-invent all of AWS&rsquo;s wheels? Should they be handing out
-root access to developers? Should developers even need root access?
-Where should the line be drawn when it comes to giving developers the &ldquo;power of the cloud&rdquo; and giving them an abstraction layer? A more famous engineer says that building internal PaaS&rsquo;s is an <a href="https://www.lastweekinaws.com/blog/an-internal-paas-to-manage-aws-dont-do-it/">Anti-pattern</a>, but maybe there is a more nuanced answer.</p>
-<h2 id="start-by-drawing-a-line">Start By Drawing A Line</h2>
-<p>This line represents the abstraction layer over your servers, whether that be physical servers or cloud-provided ones. It also includes the abstraction layer over services, like on-prem load balancers or cloud-provided ones.</p>
-<h3 id="when-the-line-is-null">When The Line is &ldquo;null&rdquo;</h3>
-<p>At first, with no infra team, the line is all the way towards the raw
-resources. Developers are given an AWS account, a <a href="https://aws.amazon.com/aws-cost-management/aws-budgets/">budget</a> and the docs.
-In AWS developers might use <a href="https://aws.amazon.com/codedeploy/">Code Deploy</a> or <a href="https://aws.amazon.com/elasticbeanstalk/">Beanstalk</a> to get their
-code out.
-Great! Sometimes this is called &ldquo;NoOps&rdquo;, because there is no &ldquo;operations&rdquo; or infrastructure teams at all, it is just developers living blissfully in the cloud with no restraints :).</p>
-<p>If there is only one development team, and one application, this is a great way
-to start. No need to setup Kubernetes (k8s), microservices, or install a
-service mesh. Even if there is only one person on the team who setup these AWS
-resources, that can be fine, because there isn&rsquo;t much else to do? Until there
-is.</p>
-<h3 id="when-one-team-grows-into-two">When One Team Grows Into Two</h3>
-<p>With two developer teams, you will have your first opportunity to leverage gains through sharing. Maybe it will be a library you both share for interacting with infrastructure. Maybe it will be shared terraform modules to help reduce boilerplate. Maybe it will be a shared Ansible repo with playbooks.</p>
-<p>Certainly at this stage, it doesn&rsquo;t &ldquo;feel&rdquo; like one team is trying to isolate, hide, or gatekeep them from the underlying infrastructure, right?</p>
-<h3 id="when-two-dev-teams-grow-into-ten">When Two Dev Teams Grow Into Ten</h3>
-<p>With Ten development teams doing their thing, it will become pretty clear that there is shared code or infrastructure components that are now powering your business. Things are spreading and diverging. Maybe one team wants to try out k8s and these new &ldquo;containers&rdquo; that everyone keeps talking about. Maybe one team has found &ldquo;Spinnaker&rdquo; for doing pipelines and thinks the other nine teams should try it.</p>
-<p>As a organization, you are ready to make a call: Should we let the ten teams just do their thing and let things evolve organically, or should there be a dedicated team that is just in charge of building and maintaining the shared stuff?</p>
-<p>I don&rsquo;t think I need to make the case that, at a certain scale, some sort of shared-infrastructure-core-compute-platform-devops team is worth it. Infrastructure at scale is complex, and expertise in infra can be a tide that raises all boats. But how do you prevent that tide from drowning your other teams, or even worse, holding them back from the &ldquo;sunken treasures&rdquo; that are the native cloud technologies? Where do you draw that infrastructure line boundary?</p>
-<h2 id="push-that-line-where-it-makes-the-biggest-impact">Push That Line Where It Makes The Biggest Impact</h2>
-<p>As with most things, the answer is nuanced. Where the line is drawn between raw resources and your users will depend on your business, and how much you stand to gain by building abstractions.</p>
-<p>The trick is this:</p>
-<blockquote>
-<p><em><strong>With each abstraction you build, ensure that the users of
-that abstraction are empowerd to build bigger things on top
-of it, and not held back by it.</strong></em></p>
-</blockquote>
-<p>For example, let&rsquo;s say you built a Terraform module that abstracts away the fact that you deploy to an east and west EC2 region. Is that module empowering your users because now they don&rsquo;t have to be concerned about which region to deploy to (because it is figured out automatically), or does it hold them back, because the design of the module limits the fields they can use, which limits their ability to &ldquo;beak out&rdquo; of the module?</p>
-<p>Example 2: Your &ldquo;devops team&rdquo; builds and supports tooling to do deploys via Ansible using custom playbooks. Is that set of tooling empowering your dev teams by providing a safe experience when deploying, providing for rollbacks, hitless deploys, and standardized tooling? Or is it holding teams back, because the tool isn&rsquo;t actually very good and doesn&rsquo;t deploy things in a way that is conducive to the actual type of application the devs are using?</p>
-<p><a href="./uploads/bulge.jpg"><img src="./uploads/bulge.jpg" alt="Fight the front where you can provide the most business value"></a></p>
-<h2 id="conclusion">Conclusion</h2>
-<p>The mission of infrastructure teams is to push &ldquo;against&rdquo; (work with) infrastructure as a service to make it more useful to their company.</p>
-<p>They do this by boiling away the unnecessary parts of &ldquo;the cloud&rdquo; till all that is left is exactly what developers need, &ldquo;getting out of the way&rdquo; of the business.</p>
-<p>At the same time, infrastructure teams need to always be sure that they are not unintentionally preventing developers from doing their jobs through restrictive and crappy tooling.</p>
-<p>In the end, the best tooling is the kind where developers don&rsquo;t even know they are restricted in what they can do, because all their actual needs are taken care of. They are not held back by the inability to make custom tags, because all the tags they need are automatically generated for them. They are not held back by the inability to launch a custom EC2 instance, because whatever need they had to launch it in the first place is already met.</p>
-
+  AWS likes to use the pharse &ldquo;undifferentiated heavy lifting&rdquo; to describe what AWS does best: all the things that everyone hast to do anyway with computers. Commonly these are things like running servers for you, hosting files, and managing a network. Let AWS handle the boring things so that you can focus on what matters most for your business. Sounds great! I certainly do not want a job that could otherwise be commonditized and turned into an API.
+  
+  <p>
+    <a class="u-clickable" href="./Can-Infrastructure-Teams-Do-Better-Than-AWS-Yes-Sometimes./">Read More…</a>
+  </p>
+  
   
   
 
@@ -505,117 +324,13 @@ of it, and not held back by it.</strong></em></p>
 </header>
 
   
-  <p>Recently the Kubernetes (k8s) <a href="https://github.com/kubernetes/community/tree/master/sig-cluster-lifecycle">Cluster Lifecycle Special Interest
-Group</a>
-(SIG) release their <a href="https://blogs.vmware.com/cloudnative/2019/05/14/cluster-api-kubernetes-lifecycle-management/">first
-Alpha</a>
-of their Cluster API.</p>
-<p>What does this thing do? It is kinda like a k8s
-<a href="https://enterprisersproject.com/article/2019/2/kubernetes-operators-plain-english">operator</a> (it&rsquo;s a controller) that
-has custom resource definitions for things to launch <strong>another</strong> k8s
-cluster, with a bunch of
-cloud <a href="https://github.com/kubernetes-sigs/cluster-api#provider-implementations">providers</a>.
-It is kinda like if Terraform was re-imagined as a k8s operator, but
-only for launching other k8s clusters, and not general purpose.</p>
-<p>It supports a couple of
-<a href="https://kubernetes-sigs.github.io/cluster-api/common_code/architecture.html#cluster-api-resources">resources</a>:</p>
-<ul>
-<li>Cluster</li>
-<li>Machine</li>
-<li>MachineSet</li>
-<li>MachineDeployment</li>
-<li>MachineClass</li>
-</ul>
-<p>If you are already familiar with k8s, these may look familiar! It isn't
-a coincidence of course. This is what it looks like when k8s users try
-to make an API for launching machines.</p>
-<p>But in general, it provides an k8s API endpoint to launch more k8s
-clusters in a declarative way, just like anything else in k8s.</p>
-<h2 id="how-does-the-k8s-cluster-lifecycle-api-solve-this-problem">How Does the k8s Cluster Lifecycle API Solve This Problem?</h2>
-<p>The k8s lifecycle thing is very new, and a very specific goal: implement
-enough &quot;cloud&quot; api calls to be able to get a k8s cluster running.</p>
-<p>They provide a couple of AMIs, but encourage you to bring your
-<a href="https://github.com/kubernetes-sigs/cluster-api-provider-aws#kubernetes-versions-with-published-amis">own</a>.
-They are working on a <code>clusterctl</code> command, analogous to kubectl.</p>
-<p>Like Terraform (and any other k8s'y things), the API is declarative; you
-tell k8s what kind of clusters you want to exist, then the controller
-takes over and reconciles that with what is out there.</p>
-<p>Also like Terraform, you still have to provide all the details about
-what you want to launch, like AMIs, security groups, vpcs, etc.</p>
-<p>Unlike Terraform, the Cluster Lifecycle API will never be a general
-purpose infrastructure thing, it will only ever launch what they need to
-get a k8s cluster up (ec2 nodes).</p>
-<h2 id="is-this-a-good-thing">Is This a Good Thing?</h2>
-<p>Good for who?</p>
-<p>While I do like the pattern of empowering k8s to launch it's own
-infrastructure (a la <a href="https://spotinst.com/products/ocean/">Spotinst Ocean</a>),
-I don't think this Cluster API is right approach for intermediate-level
-infrastructure team.</p>
-<p>I think the nuances of what to launch and how to launch are massive.
-I don't think the Cluster API will ever be nuanced enough to do
-all the things that are required to run all the things.</p>
-<p>That is OK. If all you need to do is launch other k8s clusters, then this API
-is for you! If you need to launch any other &ldquo;cloud&rdquo; resource, then you will
-have to end up reaching for another tool. Are you willing to have two different
-ways to launch things? I don&rsquo;t know, maybe I just really like Terraform.</p>
-<p>On the other hand, Terraform is flexible, but not dynamic. It doesn't respond
-to events.  It has the benefit of git-commiting the state and being easier to
-reason about, but it can't really make new k8s clusters &quot;on the fly&quot;. It has
-no &ldquo;API&rdquo;.</p>
-<p>I think that is OK. Do we need to launch new k8s clusters on
-the fly? I think we need to be able to launch things <em>on</em> k8s
-dynamically, but I don't think we need whole clusters to exist without
-human interaction.</p>
-<p>But I do think that the thing that launches k8s nodes should be the same
-thing that is doing the cluster autoscaling control loop, and should be
-empowered to launch instances that it needs.</p>
-<h2 id="k8s-as-a-universal-infrastructure-control-plane">K8s as a Universal Infrastructure Control Plane?</h2>
-<p>The pattern of using the k8s API machinery and custom resource
-definitions to control things that are not &quot;native&quot; k8s objects, kinda
-reminds me of New Relic's
-<a href="https://www.youtube.com/watch?v=eja7b3tahMg">Inventory Service</a>.</p>
-<p>It keeps track of their hosts, and works like a
-<a href="https://en.wikipedia.org/wiki/Configuration_management_database">CMDB</a>,
-using just the k8s api server and custom resource definitions. <strong>They
-don't even run any kublets!</strong></p>
-<p>This idea is articulated a bit more in this blog post about k8s being a
-general purpose
-&quot;<a href="https://medium.com/@allingeek/kubernetes-as-a-common-ops-data-plane-f8f2cf40cd59">Ops</a>&quot;
-control plane.</p>
-<p>The k8s pattern provides a bunch of things at once that are opening up
-new ways of thinking about general infrastructure problems. I think
-these things are:</p>
-<ul>
-<li>A highly available hosted REST api with validation, schemas, CRUD,
-etc, with custom endpoints, <a href="https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/">hosted by k8s</a></li>
-<li>A pattern of declarative YAML-based resource definitions</li>
-<li>A tight control loop running for these things, reconciling state
-with the world, with watchers, queues, and all the
-<a href="https://github.com/operator-framework/getting-started">things</a> you
-would need to write this loop efficiently and correctly</li>
-<li>A centralized place for that control loop to run, in a singleton way</li>
-<li>A decent key/value store to host stuff</li>
-<li>A free CLI to interact with those resources (<code>kubectl get tronjob</code>)</li>
-<li>Authentication (authn) and Authorization (authz) + Role-based Access
-Control (RBAC)</li>
-<li>Secret storage</li>
-</ul>
-<p>This is a great pattern to build general purpose infrastructure stuff.
-It is starting with k8s objects now, but as you can see it is expanding
-to store and launch k8s clusters,
-<a href="https://aws.amazon.com/blogs/opensource/aws-service-operator-kubernetes-available/">arbitrary AWS resources</a>,
-<a href="https://github.com/sensu/sensu-operator">Sensu Clusters</a>, New Relic's
-inventory data, <a href="https://github.com/sensu/sensu-operator">SSL Certificates</a>, etc.</p>
-<p>I predict that we'll see this as a Universal Infrastructure Control
-Plane, because it is just so convenient, and the declarative pattern is
-so often what you want in infrastructure!<br>
-I think many infray things could be re-imagined in the CRD + Operator
-world, and would be way easier to implement.</p>
-<p>It will take time though. k8s will have to become ubiquitous first, then
-the operator pattern will have to become well established, <strong>then</strong> we'll start to
-see infrastructure teams want to piggyback on all the goodness and
-extensibility that k8s provides.</p>
-
+  Recently the Kubernetes (k8s) Cluster Lifecycle Special Interest Group (SIG) release their first Alpha of their Cluster API.
+What does this thing do? It is kinda like a k8s operator (it&rsquo;s a controller) that has custom resource definitions for things to launch another k8s cluster, with a bunch of cloud providers. It is kinda like if Terraform was re-imagined as a k8s operator, but only for launching other k8s clusters, and not general purpose.
+  
+  <p>
+    <a class="u-clickable" href="./Kubernetes-as-a-Universal-Infrastructure-API/">Read More…</a>
+  </p>
+  
   
   
 
@@ -653,99 +368,16 @@ extensibility that k8s provides.</p>
 </header>
 
   
-  <h1 id="paper-watch-intro">paper-watch intro</h1>
-<p>My <a href="https://github.com/solarkennedy/epaper-watch/">epaper-watch</a> is an attempt to build a watch with an <a href="https://en.wikipedia.org/wiki/Electronic_paper">epaper</a> display.</p>
-<p>It tells time by displaying a quote from a book:</p>
-<p><img src="./uploads/epaper-watch-alpha1.jpg" alt="Exteremely early epaper-watch output"></p>
-<p>(don&rsquo;t mind the graphical glitches)</p>
-<p>The dataset with all the quotes needs some data cleaning love though.</p>
-<h2 id="cleaning-the-dataset">Cleaning The Dataset</h2>
-<p>The CSV has over 1,400 quotes in it. For every minute, there may be multiple quotes (&ldquo;Midnight&rdquo; has 26 unique quotes). Some minutes of the day do not have any quotes.</p>
-<p>As much as possible I used tools to programmatically clean this data and used <code>git diff</code> to check the output at each step.</p>
-<p>The original database of quotes comes from quotes collected by
-<a href="https://www.theguardian.com/books/booksblog/2011/apr/15/christian-marclay-the-clock-literature">The Guardian</a>
-for an art installation.</p>
-<p>I used an annotated version from of that database built by Jaap Meijers for a
-<a href="https://www.instructables.com/id/Literary-Clock-Made-From-E-reader/">Kindle-based</a>
-version of this clock.</p>
-<p>To fit on my tiny epaper display, I had to clean up the dataset.</p>
-<h2 id="quotation-mark-cleaning">Quotation Mark Cleaning</h2>
-<p>The database is full of lots of quotes, as in quotation marks. Lots of them. Triple-double quotes, smart quotes, smart single quotes, backticks, etc.</p>
-<p>Vim macros help me manually clean up the zoo of quotation marks and strip out all the extra ones. Given the limited number of characters I can display on the watch face, I don&rsquo;t think there is any need to put quotes around the quote itself, just print the thing:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff"><span style="color:#f92672">-&#34;&#34;&#34;I am going to lock you in. It is-&#34;&#34; he consulted his watch,
-</span><span style="color:#f92672">-&#34;&#34;five minutes to midnight. Miss Granger, three turns should do it.
-</span><span style="color:#f92672">-Good luck.&#34;&#34;&#34;|Harry Potter and the Prisoner of Azkaban|J. K. Rowling
-</span><span style="color:#f92672"></span><span style="color:#a6e22e">+&#34;I am going to lock you in. It is-&#34; he consulted his watch,
-</span><span style="color:#a6e22e">+&#34;five minutes to midnight. Miss Granger, three turns should do it.
-</span><span style="color:#a6e22e">+Good luck.&#34;|Harry Potter and the Prisoner of Azkaban|J. K.  Rowling
-</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff"><span style="color:#f92672">-&#34;We have heard the chimes at midnight.&#34;|Henry IV
-</span><span style="color:#f92672"></span><span style="color:#a6e22e">+We have heard the chimes at midnight.|Henry IV
-</span></code></pre></div><h2 id="duplicates">Duplicates</h2>
-<p>By sorting the dataset, duplicate quotes become more visible. Literally identical quotes can be removed programmatically:</p>
-<pre><code class="language-generic" data-lang="generic">sort litclock_annotated.csv | uniq &gt; tmp &amp;&amp; mv tmp litclock_annotated.csv
-</code></pre><p>Many quotes are used multiple times for multiple minutes, so it isn&rsquo;t safe to blindly remove any quote that is used more than once.</p>
-<h2 id="manually-shrinking-the-text">Manually Shrinking the Text</h2>
-<p>Many quotes are very long and contain lots of context. Some quotes are very floral and contain long run-on sentences.</p>
-<p>I couldn&rsquo;t think of a programmatic way of reducing the length of the quote to less than 180 characters.</p>
-<p>This step was mostly manual work, tool-assisted by having the code generation python script raise an exception if it parsed a quote longer than 180 chars:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff"><span style="color:#f92672">-It was eight minutes to midnight. Just nice time, I said to myself.
-</span><span style="color:#f92672">-Indoors, everything was quiet and in darkness. Splendid. I went to
-</span><span style="color:#f92672">-the bar and fetched a tumbler, a siphon of soda and a bottle of
-</span><span style="color:#f92672">-Glen Grant, took a weak drink and a pill, and settled down in the
-</span><span style="color:#f92672">-public dining-room to wait the remaining two minutes
-</span><span style="color:#f92672">-|The Green Man|Kingsley Amis
-</span><span style="color:#f92672"></span><span style="color:#a6e22e">+It was eight minutes to midnight. Just nice time, I said to myself.
-</span><span style="color:#a6e22e">+Indoors, everything was quiet and in darkness.
-</span><span style="color:#a6e22e">+|The Green Man|Kingsley Amis
-</span></code></pre></div><p>I tried to keep the time string located somewhere in the middle of the quote, with context around it. I took some artistic license in shortening the quotes and replacing the missing text with <code>...</code>.</p>
-<h2 id="removing-non-ascii-characters">Removing Non-ASCII Characters</h2>
-<p>I didn&rsquo;t bother updating the epaper library to support Unicode characters on
-custom fonts. That would be a nice addition someday.</p>
-<p>Till then I used <code>sed</code> to replace non-ascii characters en-masse with a
-<a href="https://github.com/solarkennedy/epaper-watch/blob/master/replace-non-ascii.sh">script</a>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sed <span style="color:#e6db74">&#39;s/é/e/&#39;</span> $1 | <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  sed <span style="color:#e6db74">&#34;s/’/&#39;/g&#34;</span> | <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  sed <span style="color:#e6db74">&#39;s/—/-/g&#39;</span> | <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>...
-</code></pre></div><h2 id="duplicating-am--pm-timed-quotes">Duplicating AM / PM Timed Quotes</h2>
-<p>Many of the quotes in the quote database do not have any indication that they are specific to AM or PM. For example:</p>
-<pre><code class="language-generic" data-lang="generic">&quot;15:23&quot;: &quot;Three twenty-three! Is that all? Doesn't time - no, I've already said that..&quot;
-</code></pre><p>There is no particular reason this quote couldn&rsquo;t also work for <code>03:23</code> as well.</p>
-<p>This procedure is fuzzy, and I required <a href="https://github.com/solarkennedy/epaper-watch/blob/master/Duplicate%20AM%20and%20PM%20Quotes.ipynb">jupyter notebook</a> to accomplish it.</p>
-<p>The end result allowed me to add 480 more quotes:</p>
-<pre><code class="language-generic" data-lang="generic">$ wc litclock_expanded_meridiem.csv 
-  1886  54488 354781 litclock_expanded_meridiem.csv
-$ wc litclock_annotated.csv 
-  1406  40357 261004 litclock_annotated.csv
-</code></pre><p>And it added 104 new unique minute entries.</p>
-<p>In other words, out of the 1440 unique minutes of the day, before duplicating
-ambiguous AM/PM quotes, I only had quotes for 895 of those minute slots, and
-now I have 999 minutes out of those 1440 unique slots. Now there are only 441
-minutes were I do not have a quote.</p>
-<h2 id="analysis">Analysis</h2>
-<p>If there are 441 missing slots, then how inaccurate is this watch?</p>
-<p>Using the same <a href="https://github.com/solarkennedy/epaper-watch/blob/master/Duplicate%20AM%20and%20PM%20Quotes.ipynb">notebook</a>, we can iterate through the minutes of the day, and find the longest gap between quotes.</p>
-<p>After AM/PM duplication, the longest gap is 6(!) minutes, between &ldquo;05:46&rdquo; and &ldquo;05:52&rdquo;.</p>
-<pre><code>In [268]:
-print(newbuckets[&quot;05:46&quot;])
-&quot;He wrote a legal-sounding phrase to the effect that the sentence had been
-carried out at 5.46am, adding, 'without a snag'.&quot;
-
-In [269]:
-print(newbuckets[&quot;05:52&quot;])
-&quot;At 5.52am paramedics from the St. Petersburg Fire Department and SunStar
-Medic One ambulance service responded to a medical emergency call...&quot;
-</code></pre><p>But what about the histogram?</p>
-<p>If I&rsquo;ve done the math right:</p>
-<p><img src="./uploads/epaper-watch-off-by-minute-histogram.png" alt="Histogram of minute errors"></p>
-<pre><code>68.7374749498998 of the time is within 1 minutes
-90.08016032064128 of the time is within 2 minutes
-97.59519038076152 of the time is within 3 minutes
-99.49899799599199 of the time is within 4 minutes
-99.8997995991984 of the time is within 5 minutes
-100.0 of the time is within 6 minutes
-</code></pre><p>Not the most accurate time-piece?</p>
-
+  paper-watch intro My epaper-watch is an attempt to build a watch with an epaper display.
+It tells time by displaying a quote from a book:
+(don&rsquo;t mind the graphical glitches)
+The dataset with all the quotes needs some data cleaning love though.
+Cleaning The Dataset The CSV has over 1,400 quotes in it. For every minute, there may be multiple quotes (&ldquo;Midnight&rdquo; has 26 unique quotes). Some minutes of the day do not have any quotes.
+  
+  <p>
+    <a class="u-clickable" href="./epaper-watch-Cleaning-the-Literary-Quotes-Database/">Read More…</a>
+  </p>
+  
   
   
 
@@ -783,131 +415,12 @@ Medic One ambulance service responded to a medical emergency call...&quot;
 </header>
 
   
-  <h2 id="tldr">TL;DR:</h2>
-<ul>
-<li>&ldquo;Build-vs-Buy&rdquo; is a false dichotomy, you are always building, always buying</li>
-<li>&ldquo;This is not your &lsquo;Core Competency&rsquo;&rdquo; is a faux trump-card, everything is a spectrum</li>
-<li>Past experience is overrated, what matters for hiring is your ability to learn</li>
-</ul>
-<h2 id="understanding-the-trade-off">Understanding The Trade-Off</h2>
-<p>Fully understanding the <strong>build-versus-buy</strong> trade-off requires a bunch of
-different context to really get right. At first glance you might think that
-you only need to really understand:</p>
-<ul>
-<li>The problem you are trying to solve</li>
-<li>How the thing you are looking to buy solves the problem</li>
-</ul>
-<p>But in reality it is much more nuanced than that. Most of the reading out there
-about the build-versus-buy trade-off is written with &ldquo;enterprise&rdquo; software in
-mind, and evaluate things on a very first-order level. Concerns like:</p>
-<ul>
-<li>How well can this software integrate with other things?</li>
-<li>How much does this software cost?</li>
-<li>How much time will it take to integrate the software and make it meet your
-organizations&rsquo; needs?</li>
-</ul>
-<p>These are all important questions to ask, but there are higher-order concerns
-that take some time to fully appreciate like:</p>
-<ul>
-<li>In the long run, can your developers build a solution that provides more
-long-term value to your organization? (even if in the short-term it costs
-more and takes longer to build?)</li>
-<li>How will your (in-house or external) users &ldquo;feel&rdquo; when they notice that your
-solution is based on an off-the-shelf (bought) product?</li>
-<li>Can you account for the in-house skills and expertise that would be
-simultaneously developed (and required) if the solution was developed
-in-house?</li>
-<li>Will there be any developer or user attrition if you built versus if you bought?</li>
-</ul>
-<p>These are not as easy to answer, but the answers to them may be even more
-significant than the $$$ figures your vendor may come up with.</p>
-<p>I&rsquo;ve never been really satisfied with the &ldquo;build-versus-buy&rdquo; trade-off in
-general, mostly because throughout my entire career, it has never been a
-dichotomy: I was always building, and always buying.</p>
-<h3 id="understanding-the-false-dichotomy">Understanding the False Dichotomy</h3>
-<p>The false-dichotomy comes from the fact that everything &ldquo;bought&rdquo; requires
-integration, and it is <em>building</em> of that integration that actually builds
-the value to your organization.</p>
-<p>At the same time, we are always buying. Even when it seems like we are
-choosing the &ldquo;Build&rdquo; option, are are still buying, it just the we are buying
-libraries, frameworks, and other components to build the solution. Things are
-not built in a vacuum.</p>
-<p>It is all building, and all buying. There is no such thing as a turn-key
-solution, it is just a spectrum between simpler and more complex products.</p>
-<p>It is in the building that you provide value to your organization and to your
-users. It is in the buying that you &ldquo;stand on the shoulders of giants&rdquo; and
-become a more powerful engineer by building on top of existing engineering.</p>
-<h3 id="core-competency-the-ultimate-faux-trump-card">&ldquo;Core Competency&rdquo;: The Ultimate Faux Trump-Card</h3>
-<p>Sometimes it is &ldquo;simple&rdquo; to describe some build-versus-buy decisions by framing
-them in terms of what the organization&rsquo;s &ldquo;core competency&rdquo; is. Sometimes it is
-so simple as &ldquo;if it is within our core competency, then we build, otherwise we
-buy&rdquo;.</p>
-<p>What does &ldquo;core competency&rdquo; really mean? Before software was <a href="https://www.wsj.com/articles/SB10001424053111903480904576512250915629460">eating the
-world</a>,
-&ldquo;core competency&rdquo; could have meant something very different. But now software
-is seen as a universal multiplier for every business, regardless of what they
-do. What does software have to do with <a href="https://engineering.nike.com/">Nike&rsquo;s</a>
-core competency? Are computer servers Amazon&rsquo;s core competency? What would the
-core competency be of any retail organization? How about a game design company?
-What about a high-frequency trading firm?</p>
-<p>The answer is blurry in this world, because software in so fundamental to the
-world we live in. Software is a multiplier for all levels of any business, from
-HR to Product to Manufacturing to Retail, it knows no bounds and powers all the
-things. Discarding an opportunity to build something that enhances your
-business is a mistake.</p>
-<h3 id="case-study-game-design-and-looking-at-game-engines">Case Study: Game Design and Looking at Game Engines</h3>
-<p>Game design, like any other software engineering pursuit, also involves many
-build-versus-buy decisions. From assets, to engines, to voice acting, to motion
-capture, there are many many micro build-versus-buy decisions to make when
-developing a game. In some sense, <em>every one</em> of these decisions fits into
-their &ldquo;core competency&rdquo;. In another sense, building your own game engine for
-example, sounds like a decision that 90% of game studios should choose &ldquo;buy&rdquo;
-over build. Is developing your own game engine in-house included in their &ldquo;Core
-Competency&rdquo;? Who knows.</p>
-<p>The real question is: will buying an existing Game Engine provide more value to
-your game than what your team could bring to the table, or would it hold your
-game back from what you are trying to achieve?</p>
-<p>If the year is 1993 and you are building Doom, then no, buying an engine will not help you achieve your goals. Building an engine will help you build what would make your game unique.</p>
-<p>If the year is 2017 and you are building Fortnite, then yes, buying an engine will help you build your game faster by focusing on what makes it unique.</p>
-<p>This doesn&rsquo;t imply that we should not still be building new game engines in 2020. Just that fewer people should.</p>
-<h3 id="on-personal-engineering-capital">On Personal Engineering Capital</h3>
-<p>As an engineer, how should one look at the build-vs-buy trade-off in terms of
-building personal engineering capital? That is, how does career advancement
-come into play when deciding when to build versus when to buy?</p>
-<p>I see this as a trick question. With two years of <em>building</em> on a codebase
-written in an
-<a href="https://thedailywtf.com/articles/A_Case_of_the_MUMPS">obscure language</a>,
-there is still room to gain new skills, and level-up the state of the
-environment you are in, leaving it better than when you got there.</p>
-<p>On the other hand, does <em>buying</em> an existing
-<a href="https://thedailywtf.com/articles/the-enterprise-axe">software package</a>
-mean you won&rsquo;t be creating any &ldquo;personal engineering capital&rdquo; for yourself?</p>
-<p>What does this really mean? Is this just a fancy way of saying &ldquo;I want to work
-on something that will look good on my resume.&quot;? Or is it even simpler than
-that: &ldquo;I want to work on something that is different (or in a different
-language) than what the company needs.&quot;?</p>
-<p>Although this comes from a position of privilege, I don&rsquo;t think that it is my
-current employer&rsquo;s job to set me up for my next job. Not only that, I see the
-both the opportunity to buy and the opportunity to build <em>both</em> as ways to
-better my skills and be a useful engineer.</p>
-<p><em>Buying</em> an off-the-shelf <a href="https://kubernetes.io/">container orchestration system</a>
-allows me to <em>build</em> amazing things on top of it. Things that would be impossible to build without help from such a product. Likewise, <em>building</em> a company-specific
-<a href="https://en.wikipedia.org/wiki/Extract,_transform,_load">ETL</a> platform allows me to understand a problem more deeply, but I would still need to &ldquo;<em>buy</em>&rdquo; other
-<a href="https://kafka.apache.org/intro">software</a> to make it work.</p>
-<p>I&rsquo;m personally not in it for the glamour, I&rsquo;m in it for the problem-solving and the tech.</p>
-<p>I can also say, coming from a person who interviews a lot of candidates for my
-own job, past experience has much less of an impact as you might think. In a
-world where Javascript frameworks come in and out of vogue over the course of
-months, <strong>your number one hireable quality is the ability to learn new
-things</strong>.</p>
-<h2 id="conclusion">Conclusion</h2>
-<p>I don&rsquo;t think the key to a fulfilling software engineering career involves
-building everything out of Rust or whatever is the hottest language out there
-right now. Likewise, if you feel like your job is &ldquo;just&rdquo; gluing pre-built
-things together, well guess what, <strong><a href="https://www.networkcomputing.com/data-centers/diy-devops-build-buy-or-yes">the value comes from that
-glue</a></strong>,
-and the thing you are <em>building</em> is an even bigger platform on top.</p>
-
+  TL;DR:  &ldquo;Build-vs-Buy&rdquo; is a false dichotomy, you are always building, always buying &ldquo;This is not your &lsquo;Core Competency&rsquo;&rdquo; is a faux trump-card, everything is a spectrum Past experience is overrated, what matters for hiring is your ability to learn  Understanding The Trade-Off Fully understanding the build-versus-buy trade-off requires a bunch of different context to really get right. At first glance you might think that you only need to really understand:
+  
+  <p>
+    <a class="u-clickable" href="./Build-Versus-Buy-You-Are-Always-Building-Always-Buying/">Read More…</a>
+  </p>
+  
   
   
 
@@ -945,278 +458,13 @@ and the thing you are <em>building</em> is an even bigger platform on top.</p>
 </header>
 
   
-  <h2 id="kyles-conclusions">Kyle&rsquo;s Conclusions:</h2>
-<ul>
-<li>If possible, make your users <em>not care</em> about the intermediate form</li>
-<li>&ldquo;Code as Configuration&rdquo; is <strong>not</strong> worth it</li>
-<li>YAML isn&rsquo;t so bad if you can be strict</li>
-</ul>
-<h2 id="a-brief-history-of-configuration-as-code">A Brief History of Configuration as Code</h2>
-<p>Configuration as Code is not new. There are a few subtle distinctions that are worth pointing out:</p>
-<table>
-<thead>
-<tr>
-<th>Thing</th>
-<th>Historic Example</th>
-<th>Modern Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Config as Config</td>
-<td>Apache2 (.conf)</td>
-<td>Sensu (.json)</td>
-</tr>
-<tr>
-<td>Config as Code</td>
-<td>Sendmail (.cf)</td>
-<td>Skycfg (.cfg)</td>
-</tr>
-<tr>
-<td>Code as Config</td>
-<td>C (config.h)</td>
-<td>Aurora (.aurora)</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>Config as Config: Config files which is never &ldquo;run&rdquo;, but is interpreted
-as-is by the consuming program.</li>
-<li>Config as Code: Config files which are executed in way, which output an
-intermediate config language, which is then consumed by the program.</li>
-<li>Code as Config: Config files which are executed directly by the program.
-There is no intermediate representation, it just <em>is</em> code.</li>
-</ul>
-<p>This blog post is about the last two.</p>
-<h3 id="an-example-case-study-nagios-versus-sensu">An Example Case Study: Nagios Versus Sensu</h3>
-<p><a href="https://en.wikipedia.org/wiki/Nagios">Nagios</a> is a monitoring tool built in
-2002. <a href="https://docs.sensu.io/sensu-core/1.7/">Sensu</a> is also a monitoring tool,
-built around 2011. There are plenty of differences, but for this case
-study I&rsquo;m going to focus on how these tools are configured by their users.</p>
-<p>Nagios&rsquo;s configuration file format is bespoke, but you can use the <code>nagios</code>
-binary to verify its correctness. It has a everything from <a href="https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/3/en/objectdefinitions.html#host">low-level resource
-definitions</a>
-to object <a href="https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/3/en/objectinheritance.html">templating and
-inheritance</a>
-as well as <a href="https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/3/en/macros.html">macros and variable
-expressions</a>.
-Its configuration language is designed to be currated by humans. This hasn&rsquo;t
-stopped engineers from writing parsers ([<a href="http://pynag.org/#manipulate">1</a>],
-[<a href="https://github.com/sous-chefs/nagios/wiki/hosts.cfg">2</a>],
-[<a href="https://puppet.com/docs/puppet/5.3/types/nagios_host.html">3</a>]) so they can
-write Nagios config <em>as</em> code.</p>
-<p>Sensu&rsquo;s configuration file format is JSON. It has very limited <a href="https://docs.sensu.io/sensu-core/0.29/reference/filters/#reference-documentation">variable
-expression</a>.
-Its configuration language is designed to be deployed with machines
-(configuration management tools). The Sensu JSON files were never intended to
-be written by humans. It was always intended to be a
-&ldquo;configuration-management-native&rdquo; system.</p>
-<p>To put it another way, the <a href="http://portertech.ca/2011/11/01/sensu-a-monitoring-framework/">original Sensu
-authors</a> wanted
-the JSON to be an &ldquo;intermediate form&rdquo; (where the human readable form was the
-users&rsquo; choice (chef code), then deployed to JSON for sensu to read, eventually
-ending up as internal Sensu (ruby) objects).</p>
-<p>Why? Why would the Sensu authors make their system use configuration format
-that is hostile to humans (JSON)? I think they were building it this way for two reasons:</p>
-<ol>
-<li>
-<p>They were building this tool for the long haul. Humans will be editing their
-monitoring config (Sensu or Nagios) for years, so they wanted to meet them
-where they are at, and make it as easy as possible for their users to use the
-<em>common language</em> of their environment (configuration management tools).</p>
-</li>
-<li>
-<p>As a reaction to the &ldquo;complexity&rdquo; of the nagios configuration model, the
-authors wanted to leave room for programmatic and dynamic configuration. In
-the modern error, hosts come and go at will, checks need to be redefined based
-on other programmatic events, and in general the world is not a static set of
-hosts and checks per the Nagios model. Configuration as Code is one way to make
-room for this dynamic.</p>
-</li>
-</ol>
-<h2 id="dsls-or-making-your-users-not-care">DSLs or Making Your Users Not Care</h2>
-<p><a href="https://en.wikipedia.org/wiki/Domain-specific_language">DSLs</a> are a mixed bag.
-Evaluating a DSL for its usefulness comes down to one key thing:</p>
-<blockquote>
-<p>How much intellectual effort does this DSL save me, compared to the
-intellectual cost of understanding and working with the intermediate form
-directly?</p>
-</blockquote>
-<p>Upon initial inspection, DSLs can look like they provide no immediate benefits,
-and instead look like they just add a layer of obfuscation:</p>
-<pre><code class="language-generic" data-lang="generic"># Native Sensu                         | # Puppet Sensu
-{                                      | sensu_check { 'check_www':
-  &quot;check_www&quot;: {                       |   command  =&gt; 'check_http --port 80',
-    &quot;command&quot;: &quot;check_http --port 80&quot;, |   interval =&gt; 60,
-    &quot;interval&quot;: 60                     | }
-  }                                    |
-}                                      |
-</code></pre><p>It is naive to think that all this is is some alternative way to make JSON. The
-real power comes from building abstractions on top, and allowing it to live in
-the surrounding ecosystem of configuration:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-puppet" data-lang="puppet">$port <span style="color:#f92672">=</span> <span style="color:#ae81ff">80</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">class</span> { <span style="color:#e6db74">&#39;apache&#39;</span>:<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#a6e22e">listen_port</span> <span style="color:#f92672">=&gt;</span> $port<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>} <span style="color:#f92672">-&gt;</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">sensu_check</span> { <span style="color:#e6db74">&#39;check_apache&#39;</span>:<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#a6e22e">command</span>  <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;check_http --port $port&#34;</span>,<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#a6e22e">interval</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">60</span>,<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>}<span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><p>This kind of integration was never possible with Nagios&rsquo;s configuration
-language, even with all its templates, inheritance, and variable
-interpolation.</p>
-<p>But for these users of Sensu, they never hand-made the JSON in the first place.
-To them, the configuration management language they use <em>is</em> the config
-language they use, they don&rsquo;t care about the JSON intermediate form (for all
-they care, it doesn&rsquo;t even exist and is an implementation detail).</p>
-<h3 id="what-about-k8s-dsls">What About k8s DSLs?</h3>
-<p>Kubernetes&rsquo; (k8s) popularity, combined with it&rsquo;s &ldquo;almost human readable api&rdquo;
-format (when you look at it in YAML form), have created a <a href="https://www.merriam-webster.com/dictionary/cottage%20industry">cottage
-industry</a> of
-tools built to deal with k8s&rsquo;s &ldquo;intermediate form YAML&rdquo;.</p>
-<p>There is a subtle difference though between all these tools and the Sensu
-example above: people care about the intermediate form with k8s. For k8s, the
-YAML <em><strong>is</strong></em> the k8s configuration language, so any tool that &ldquo;compiles&rdquo; to
-k8s YAML <strong>must</strong> have the ability to allow users to inspect that intermediate
-form.</p>
-<p>For some reason (probably the fact that YAML is human readable and the <code>kubectl apply</code> command exists), we see it as the &ldquo;primary&rdquo; form, and not the
-intermediate. We don&rsquo;t see the same sort of standard held against Terraform.
-Nobody really cares about the intermediate JSON that flows between Terraform
-and cloud APIs, to Terraform users, the Terraform DSL is what matters.</p>
-<h2 id="yaml-a-beast-that-can-be-tamed">YAML: A Beast That Can Be Tamed</h2>
-<!-- raw HTML omitted -->
-<p>The question to me is:</p>
-<blockquote>
-<p>Is YAML the input format or is YAML the output format?</p>
-</blockquote>
-<p>I think YAML is a fine input format for humans for DSLs and such. I think it
-does not need to be an output format for computers to read, and gives a false
-impression that humans should be meeting computers where they are at.</p>
-<p>When YAML is used as an input format only, then humans can decide what the
-inputs are, not the machines. When the YAML generated by humans is intended to
-be used directly by an API (k8s in these examples), then there will be an
-impedance mismatch.</p>
-<p>I see a couple of paths for infrastructure developers to potentially take:</p>
-<ol>
-<li>Say &ldquo;no&rdquo; to layers of obfuscation and &ldquo;climb mount YAML&rdquo;.</li>
-<li>Decide that the amount of YAML is too much for a human to handle, and resort
-to a &ldquo;real&rdquo; programming language to generate it (&ldquo;Code as Configuration&rdquo;).</li>
-<li>Take a hybrid approach and template out the YAML (the &ldquo;Helm&rdquo; approach).</li>
-<li>Make a DSL that can take in your format of choice, and output to an
-intermediate form, and make your users not care what that is (the &ldquo;Sensu
-approach&rdquo; in the example above).</li>
-</ol>
-<p>For the record, I&rsquo;m in favor of approach #4.</p>
-<h2 id="is-it-code-as-configuration-worth-it">Is It &ldquo;Code as Configuration&rdquo; Worth It?</h2>
-<p>Some of the industry is pushing things in favor of approach #2. It usually
-starts with a look at how much duplication there is in the YAML files, and the
-urge to <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY</a> out the
-configs takes hold. Although YAML does have
-<a href="https://gist.github.com/bowsersenior/979804">built-in</a> functions to help
-reduce some duplication, they only operate on hashes.</p>
-<p>When that is not enough, someone usually says &ldquo;why don&rsquo;t we just us Python?&rdquo;
-Well, you certainly can! At this point you are getting into &ldquo;Code as Configuration&rdquo; territory. Although I don&rsquo;t think this is a good idea, if you think this is a good idea, then you might like some of these:</p>
-<ul>
-<li><a href="https://dhall-lang.org/#">Dhall</a>: Haskell-inspired general purpose language
-for outputting config.</li>
-<li><a href="https://pulumi.io/">Pulumi</a>: &ldquo;Just Python&rdquo; library for building cloud
-resources with Terraform-esq declarative semantics.</li>
-<li><a href="https://github.com/stripe/skycfg/blob/master/_examples/k8s/app.cfg">Skycfg</a>:
-k8s-specific python library that outputs YAML for k8s consumption.</li>
-<li><a href="https://ksonnet.io/tour/welcome/">Ksonnet</a>: A k8s-specific way of
-templating/patching k8s manifests</li>
-<li><a href="https://cue.googlesource.com/cue">Cue</a>: General-purpose config language, superset of JSON for</li>
-</ul>
-<p>Some day I&rsquo;ll do a comprehensive blog post comparing all these tools.</p>
-<p>Why do these tools exist? My best guess is:</p>
-<ul>
-<li>The allure of DRY is very strong, and often we&rsquo;ll trade extra complexity for the chance to not repeat themselves</li>
-<li>The tool expecting all this config was never intended for humans to provide the input</li>
-<li>The problem domain really is too complex to define with static configuration</li>
-</ul>
-<p>When the problem domain hits that level of complexity, then the answer is not
-config generation, the answer is a new level of abstraction and automation.
-When you live in a dynamic environment when hosts come and go, do not write a
-nagios hosts configuration generator and turn a static tool into a dynamic one.</p>
-<h3 id="code-as-config-it-make-building-seams-harder">Code As Config: It Make Building Seams Harder</h3>
-<p>Infrastructure changes, and the true &ldquo;data gravity&rdquo; is in configuration.</p>
-<p>Having configuration in declarative config formats allows change, validation, and linting. It allows infrastructure developers to easily build &ldquo;seams&rdquo; around that configuration, adding new features, refactoring old ones, and upgrading configuration en-masse, without having to &ldquo;refactor&rdquo; a codebase.</p>
-<p>Which of these DAG configurations do you think would be easier to transition to a new platform?</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">name</span>: my-dag<span style="color:#ae81ff">-1</span>
-
-<span style="color:#66d9ef">default_task_args</span>:
-  <span style="color:#66d9ef">start_date</span>: <span style="color:#e6db74">&#39;2018-10-01&#39;</span>
-
-<span style="color:#66d9ef">operators</span>:
-- <span style="color:#66d9ef">name</span>: print-hello
-  <span style="color:#66d9ef">type</span>: bash
-  <span style="color:#66d9ef">properties</span>:
-    <span style="color:#66d9ef">bash_command</span>: <span style="color:#e6db74">&#34;echo hello&#34;</span>
-- <span style="color:#66d9ef">name</span>: print-world
-  <span style="color:#66d9ef">type</span>: bash
-  <span style="color:#66d9ef">upstream_dependencies</span>:
-  - print-hello
-  <span style="color:#66d9ef">properties</span>:
-    <span style="color:#66d9ef">bash_command</span>: <span style="color:#e6db74">&#34;echo world&#34;</span>
-</code></pre></div><p>Or</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> os
-<span style="color:#f92672">from</span> airflow <span style="color:#f92672">import</span> DAG
-
-<span style="color:#f92672">import</span> datetime
-
-<span style="color:#f92672">from</span> airflow.operators.bash_operator <span style="color:#f92672">import</span> BashOperator
-
-DEFAULT_TASK_ARGS <span style="color:#f92672">=</span> {
-        <span style="color:#e6db74">&#39;start_date&#39;</span>: <span style="color:#e6db74">&#39;2018-10-01&#39;</span>,
-    }
-
-dag <span style="color:#f92672">=</span> DAG(
-        dag_id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;my_dag_1&#39;</span>,
-        default_args <span style="color:#f92672">=</span> DEFAULT_TASK_ARGS,
-    )
-
-print_hello <span style="color:#f92672">=</span> BashOperator(
-        dag <span style="color:#f92672">=</span> (dag),
-        bash_command <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;echo hello&#39;</span>,
-        start_date <span style="color:#f92672">=</span> (datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2018</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>)),
-        task_id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;print_hello&#39;</span>,
-    )
-
-
-print_world <span style="color:#f92672">=</span> BashOperator(
-        dag <span style="color:#f92672">=</span> (dag),
-        bash_command <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;echo world&#39;</span>,
-        start_date <span style="color:#f92672">=</span> (datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2018</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>)),
-        task_id <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;print_world&#39;</span>,
-    )
-
-print_world<span style="color:#f92672">.</span>set_upstream(print_hello)
-</code></pre></div><p>See Ety&rsquo;s <a href="https://github.com/etsy/boundary-layer/">boundary-layer</a> and <a href="https://codeascraft.com/2018/11/14/boundary-layer%e2%80%89-declarative-airflow-workflows/">blog post</a> for an example where it was worth it to them to define jobs in a declarative YAML format, instead of allowing developers to &ldquo;just write python&rdquo;.</p>
-<h2 id="yaml-be-strict-in-what-you-accept">YAML: Be Strict In What You Accept</h2>
-<p>YAML is a very flexible input language for humans, but in my opinion, too flexible. There are:</p>
-<ol>
-<li><a href="https://yaml-multiline.info/">Many different ways to do multiline strings</a></li>
-<li><a href="https://gist.github.com/solarkennedy/297a48b9ac372feee7e25b48f792c610">22 ways to represent a boolean</a></li>
-<li>A <a href="https://yaml.org/type/timestamp.html">timestamp format</a> (at least it is inspired by ISO8601)</li>
-</ol>
-<p>I&rsquo;ve seen mistakes with the above in production many times. Want more, check out some other weird <a href="https://gist.github.com/solarkennedy/2b826a6b90128a58c9f7f360cb87d1a8">YAML gotchas</a>.</p>
-<p>After spending years of working with YAML, I&rsquo;ve come to accept the good with the bad, BY NOT ALLOWING IN THE BAD.</p>
-<p>My best advice is to look at <a href="https://pre-commit.com/">pre-commit</a>, <a href="https://github.com/adrienverge/yamllint">yamllint</a>, and <a href="https://github.com/crdoconnor/strictyaml">strictyaml</a>.</p>
-<p>Just like any other flexible language, your organization will save time and avoid mistakes with a machine-enforced style guide.</p>
-<h2 id="conclusion">Conclusion</h2>
-<p>You can come to your own conclusions, but I&rsquo;ll tell you what I&rsquo;ll continue to
-do for the users around me:</p>
-<ul>
-<li>I&rsquo;m going to protect them from YAML gotchas, while making it a pleasure to
-write the minimum amount of configuration they need to address their problem
-domain</li>
-<li>I&rsquo;m going to build tools that protect users from the intermediate form, and
-make it so they don&rsquo;t care (a true abstraction)</li>
-<li>I&rsquo;m going to advocate against config-as-code or code-as-config, as I believe
-it adds a new dimension of complexity where it is rarely needed. The best
-code is no code.</li>
-</ul>
-
+  Kyle&rsquo;s Conclusions:  If possible, make your users not care about the intermediate form &ldquo;Code as Configuration&rdquo; is not worth it YAML isn&rsquo;t so bad if you can be strict  A Brief History of Configuration as Code Configuration as Code is not new. There are a few subtle distinctions that are worth pointing out:
+   Thing Historic Example Modern Example     Config as Config Apache2 (.
+  
+  <p>
+    <a class="u-clickable" href="./Configuration-as-Code-Is-It-That-Good-of-an-Idea/">Read More…</a>
+  </p>
+  
   
   
 
@@ -1254,14 +502,10 @@ code is no code.</li>
 </header>
 
   
-  <p>I recently gave a talk called &ldquo;<a href="https://youtu.be/hC4wkchMbBs?t=386">Layers</a>&rdquo; (~35min).</p>
-<p>Warning: The audio and video quality are horrendous:</p>
-
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/hC4wkchMbBs?start=386" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
-
-
+  I recently gave a talk called &ldquo;Layers&rdquo; (~35min).
+Warning: The audio and video quality are horrendous:
+  
+  
   
   
 
@@ -1299,203 +543,12 @@ code is no code.</li>
 </header>
 
   
-  <p>Here are some thoughts how I think about being a great engineering mentor. To
-me the most important thing is remembering &ldquo;who to be&rdquo;, and not as much as &ldquo;how
-to act&rdquo;. You won&rsquo;t remember how to act. You can look up all the listicles you
-want on tips on what to do as a mentor, but if you can just &ldquo;be&rdquo; the right
-person, the choices you make and the things you say might just come naturally.</p>
-<p>When it comes down to it though, people remember you in an amalgamation of
-things you say, facial expressions, body language, and the emotions you
-project. Often I think a small set of key moments solidify your mental model
-into a mentors brain (and likewise, first impressions with everyone else).
-Saying the right thing at the right moment, or being supportive of them for the
-right thing, or challenging them to do better at a receptive moment, can make
-all the different to a mentee.</p>
-<p>Unless otherwise specified this advice applies to mentees, regardless of
-whether they are interns, new graduates on their first jobs, or industry hires.</p>
-<p>I&rsquo;m going to describe things in the first person, and if you are welcome to
-internalize it as &ldquo;advice&rdquo;.</p>
-<h2 id="being-available">Being Available</h2>
-<p><strong>Who to &ldquo;be&rdquo;: A Level 1 Cache</strong></p>
-<p>I always sit literally next to whoever I&rsquo;m mentoring, no exceptions. It is so
-clear to me: how can I be a great mentor to this person if I&rsquo;m not within
-earshot? Speaking of which, I don&rsquo;t wear headphones either. It is one more
-barrier for them to ask me a question, and I want them to ask me questions.</p>
-<p>I constantly remind them that it is my &ldquo;job&rdquo; to be &ldquo;bothered&rdquo; by them, and that
-they are not a bother. They can ask me any question, any time. This is
-especially important during the first few weeks of being onboarded. Asking a
-simple question early on that takes 1 minute to answer can save them 1 hour of
-effort. Doubly so if that effort leads them down the wrong path.</p>
-<h2 id="being-friendly">Being Friendly</h2>
-<p><strong>Who to &ldquo;be&rdquo;: A New Friend</strong></p>
-<p>Of course, being a friendly person sounds like good general advice, but it is
-especially important to be extra friendly to a mentee. It is likely they have
-been relocated to be at this new job, so they probably already have plenty of
-anxiety. Being that local friend that is sitting literally right next to them
-every day can go a long way towards reducing that anxiety.</p>
-<p>How do I do this? Well, I start by asking them to lunch, all the time. Lunch is
-so easy, and everyone has to eat anyway. Even if they say no or they don&rsquo;t
-actually want to have lunch with you, it actually doesn&rsquo;t matter. The important
-part is being inviting and reminding them that they are welcome to be with you.</p>
-<p>At the very least, carving out a particular time, like a Wednesday team lunch,
-is an easy way to anchor the ritual and get everyone in sync plan-wise.</p>
-<p>I go the extra mile and try to organize small other events, &ldquo;unofficial
-offsites&rdquo; that add a tiny bit to the team culture. This could be things like
-going out for afternoon boba or ice cream for someones&rsquo; birthday. Even fancier
-might be a poker night at someones house, or going to a bar after work. It
-doesn&rsquo;t have to be a big deal, but to the new hire who has moved to a new city,
-it could be a huge deal. It can go a long way towards making your mentee feel
-like they are part of your team.</p>
-<h2 id="make-them-feel-safe">Make Them Feel Safe</h2>
-<p><strong>Who to &ldquo;be&rdquo;: An Assuring Parent</strong></p>
-<p>Being a good engineer involves judging risks and rewards. Even if your mentee
-has more experience than you do, they may not know how to evaluate risks within
-the context of your organization and team. Maybe they don&rsquo;t know how many
-safeguards you have in place to prevent them from pushing bad code to
-production. Maybe they don&rsquo;t know how brittle a particular subsystem is.</p>
-<p>But you don&rsquo;t want your mentee to live in fear, you want them to feel safe.
-When they are safe, they can explore novel solutions. Maybe they can be more
-productive because they will push code more often. In general, a larger portion
-of their brain can be dedicated to solving problems and to pure creation when
-they are not afraid to change things.</p>
-<p>How do I make mentees feel safe? First, I&rsquo;m explicit about the technical
-safeguards. I&rsquo;ll say things like:</p>
-<blockquote>
-<p>&ldquo;If the tests pass on this thing, you are probably good to go.&rdquo;</p>
-</blockquote>
-<p>or</p>
-<blockquote>
-<p>&ldquo;Jenkins won&rsquo;t let you go to production if the integration tests don&rsquo;t pass,
-and this thing has plenty of coverage. It basically won&rsquo;t let you break
-production.&rdquo;</p>
-</blockquote>
-<p>But then I&rsquo;ll also assure them from a non-technical perspective. I&rsquo;ll say
-things like:</p>
-<blockquote>
-<p>&ldquo;This codebase doesn&rsquo;t have much test coverage, but I&rsquo;ve worked on it a bunch
-and I understand it. If it breaks, we&rsquo;ll look at it, and I&rsquo;m sure we can
-figure it out together.&rdquo;</p>
-</blockquote>
-<p>or</p>
-<blockquote>
-<p>&ldquo;This change is iffy, but you&rsquo;ve got the rollback instructions, and I&rsquo;ll
-literally be sitting right here next to you watching the deploy. The worst
-that can happen is that it doesn&rsquo;t work and we rollback quickly, no big deal.&rdquo;</p>
-</blockquote>
-<p>The nature of the consequences of taking risks at your organization may vary.
-Adjust as necessary.</p>
-<h2 id="encouraging--challenging-them-technically">Encouraging / Challenging Them Technically</h2>
-<p><strong>Who to &ldquo;be&rdquo;: A Dungeon Master</strong></p>
-<p>Being a really good &ldquo;<a href="https://en.wikipedia.org/wiki/Dungeon_Master">dungeon
-master</a>&rdquo; for the game that is
-&ldquo;being a software engineer&rdquo; requires understanding your mentee&rsquo;s strength and
-weaknesses. Your job is to help them &ldquo;level up&rdquo; by giving them appropriately
-challenging tasks. There is some degree of &ldquo;fun&rdquo; as well. A game that is too
-easy isn&rsquo;t very fun, and likewise a game that is brutally hard is also no fun.</p>
-<p>Sometimes things are difficult because they are simply unfamiliar. Sometimes
-&ldquo;simple&rdquo; things seem easy only because they are &ldquo;<a href="https://www.infoq.com/presentations/Simple-Made-Easy">at
-hand</a>&quot;. I try to balance
-steering mentees towards tasks that are easy for them (even if they are not
-necessarily easy for me), to get their confidence up early, and then slowly add
-in more challenging and unfamiliar tasks.</p>
-<p>Sometimes though, a mentee can surprise you at their abilities. Sometimes
-things <em>you</em> think are hard are not actually hard. Sometimes tasks become
-difficult, simply because we (mentors) prime the mentee&rsquo;s thoughts
-unnecessarily. Instead of saying:</p>
-<blockquote>
-<p>&ldquo;This is going to be a hard ticket, it has 5 story points and involves an old
-part of the codebase.&rdquo;</p>
-</blockquote>
-<p>Say:</p>
-<blockquote>
-<p>&ldquo;I&rsquo;m not sure how hard this ticket is, someone probably just gave it 5 story
-points because they were unfamiliar with that part of the code. Why don&rsquo;t you
-take a look at it, spend maybe an hour thinking about how to solve it, and
-check in with me and we&rsquo;ll pair up and talk about it together.&rdquo;</p>
-</blockquote>
-<p>Give them the opportunity to surprise you.</p>
-<p>The other thing I do that really makes tasks much easier than they seem is
-&ldquo;code hints&rdquo;. Giving them jumpstart into the codebase can turn
-easily change their mind from an intimidated &ldquo;gosh, I don&rsquo;t even know where to
-begin with this&rdquo; to &ldquo;oh, there is the code, looks straightforward&rdquo;. An example
-might be in a ticket:</p>
-<blockquote>
-<p>&ldquo;BUG - we ping authors of a changeset twice: Looks like we ping authors twice
-on slack for some reason. We should only ping them once. Code hint is
-somewhere around
-<a href="https://github.com/Yelp/paasta/blob/e976953d6e04bcad8460ad84b3682462241465ce/paasta_tools/cli/cmds/mark_for_deployment.py#L305">here</a>&rdquo;</p>
-</blockquote>
-<p>By giving a code hint, you give the illusion of familiarity, and allow the
-mentee to focus on the problem itself.</p>
-<p>Giving mentees &ldquo;stretch goals&rdquo; or &ldquo;extra credit&rdquo; is another way of giving them
-room to show off, gain confidence, and in general give them a chance to impress
-you. You can encourage this in tickets as well:</p>
-<blockquote>
-<p>&ldquo;BUG - Off by one error in the pagination code &hellip;. Code hint: &hellip; Extra
-Credit: replace the custom pagination code with a library to solve this class
-of bug permanently.&rdquo;</p>
-</blockquote>
-<p>Don&rsquo;t forget to praise them for going the extra mile. I frequently do this at
-standup when a ticket is closed or referenced:</p>
-<blockquote>
-<p>&ldquo;Great job by the way on fixing that bug. That was a hard one, and you are
-going to make a small but important class of users a lot less frustrated with
-our product&rdquo;</p>
-</blockquote>
-<p>or</p>
-<blockquote>
-<p>&ldquo;Great job on finally closing that ticket. I know that was a tough one but
-you stuck with it to the end. I could tell you spent a lot of brainpower
-figuring that out, so thank you.&rdquo;</p>
-</blockquote>
-<p>Don&rsquo;t let that kind of effort go unacknowledged. Share in their successes,
-mourn with them in their defeats.</p>
-<h2 id="be-a-context-sharing-machine">Be a Context-Sharing-Machine</h2>
-<p><strong>Who to &ldquo;be&rdquo;: A Manager?</strong></p>
-<p>Although I am not a manager, I do have 1:1s with others, including anyone I&rsquo;m
-mentoring. This is a dedicated time for them to bring up things that they are
-concerned about, or proud of, or confused about.</p>
-<p>But really, I use this time to reinforce all the things that I do during the
-non-1:1 time, but in a private and powerful setting. Words you say in a 1:1 can
-mean a lot, no matter how many years of experience they have under their belt.</p>
-<p>It is all the same stuff, just repeating yourself and reinforcing things.</p>
-<p><strong>Reminding them that they are doing a good job, and that you notice their work.</strong></p>
-<blockquote>
-<p>&ldquo;You are doing a great job on this sprint. Thanks for chiming in on that code
-review, you didn&rsquo;t have to do that but you had insightful commentary. You are
-really beginning to spread your &ldquo;Ruby Wings&rdquo; on this Rails codebase, it&rsquo;s
-cool.&rdquo;</p>
-</blockquote>
-<p><strong>Challenging them to do better</strong></p>
-<blockquote>
-<p>&ldquo;Your recent code has been fine, but your code coverage has been spotty. I
-want you to really focus on writing tests this next week. I know you are
-capable and I think it will stretch you as a software engineer.&rdquo;</p>
-</blockquote>
-<p><strong>Sharing business context that would be hard to see</strong></p>
-<blockquote>
-<p>&ldquo;Since you started working here, you really have accelerated our Ruby-&gt;Golang
-migration in a big way. I know it may seem like you are not making new
-features or anything, but you are actually helping us make progress on a long
-term business goal of significantly increasing the speed of the site. We
-think that making the site faster overall will give us an advantage over our
-competitors. So keep that in mind as you push this migration.&rdquo;</p>
-</blockquote>
-<p><strong>Sharing engineering context</strong></p>
-<blockquote>
-<p>&ldquo;Thanks for finishing off that last Docker migration ticket. Believe it or
-not, that represents a year long effort to get everything into Docker, and we
-are now in that glorious future thanks to you and thanks to the Docker
-expertise you brought with you.&rdquo;</p>
-</blockquote>
-<h2 id="conclusion">Conclusion</h2>
-<p>That is a lot of words.</p>
-<p>The key here is being the right person and letting the actions come naturally.</p>
-<p>There is no &ldquo;simple&rdquo; solution. There is no checklist or onboarding walkthrough
-that magically makes this happen. It takes an investment of emotional energy to
-be a great mentor. Hopefully that investment is rewarded in the long run, but
-that is only a nice to have.</p>
-
+  Here are some thoughts how I think about being a great engineering mentor. To me the most important thing is remembering &ldquo;who to be&rdquo;, and not as much as &ldquo;how to act&rdquo;. You won&rsquo;t remember how to act. You can look up all the listicles you want on tips on what to do as a mentor, but if you can just &ldquo;be&rdquo; the right person, the choices you make and the things you say might just come naturally.
+  
+  <p>
+    <a class="u-clickable" href="./Being-a-Great-Engineering-Mentor/">Read More…</a>
+  </p>
+  
   
   
 
@@ -1535,14 +588,6 @@ that is only a nice to have.</p>
     </div>
   </main>
   
-<footer class="Footer">
-  <div class="u-wrapper">
-    <div class="u-padding">
-      Except where otherwise noted, content on this site is licensed under a a <a href="http://creativecommons.org/licenses/by/4.0/" rel="license"> Creative Commons Attribution 4.0 International License</a>.
-    </div>
-  </div>
-</footer>
-
 
 </body>
 </html>
