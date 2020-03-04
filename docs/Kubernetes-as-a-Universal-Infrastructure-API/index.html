@@ -1,118 +1,86 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<meta property="og:title" content="Kubernetes as a Universal Infrastructure API" />
-<meta property="og:description" content="Recently the Kubernetes (k8s) Cluster Lifecycle Special Interest Group (SIG) release their first Alpha of their Cluster API.
-What does this thing do? It is kinda like a k8s operator (it&#39;s a controller) that has custom resource definitions for things to launch another k8s cluster, with a bunch of cloud providers. It is kinda like if Terraform was re-imagined as a k8s operator, but only for launching other k8s clusters, and not general purpose." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/Kubernetes-as-a-Universal-Infrastructure-API/" />
-<meta property="article:published_time" content="2019-06-02T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-06-02T00:00:00+00:00" />
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Kubernetes as a Universal Infrastructure API"/>
-<meta name="twitter:description" content="Recently the Kubernetes (k8s) Cluster Lifecycle Special Interest Group (SIG) release their first Alpha of their Cluster API.
-What does this thing do? It is kinda like a k8s operator (it&#39;s a controller) that has custom resource definitions for things to launch another k8s cluster, with a bunch of cloud providers. It is kinda like if Terraform was re-imagined as a k8s operator, but only for launching other k8s clusters, and not general purpose."/>
-
-
-    <meta name="description" content="">
-    <link rel="canonical" href="../Kubernetes-as-a-Universal-Infrastructure-API/">
-
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.66.0" />
+  
+  
+  
+  <title>
     
-    <title>Kubernetes as a Universal Infrastructure API &middot; xkyle.com</title>
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="css/style.css" rel="stylesheet">
-
+    Kubernetes as a Universal Infrastructure API | xkyle.com
     
-
-    
-
-    
-  </head>
-  <body>
-    
+  </title>
+  <link rel="canonical" href="../Kubernetes-as-a-Universal-Infrastructure-API/">
+  
+  
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="../css/base.min.50883c9e7cc6f561db1dcd2089b6b895c60df8d10b9e71a90cbc10e59c8bfc40.css" integrity="sha256-UIg8nnzG9WHbHc0giba4lcYN&#43;NELnnGpDLwQ5ZyL/EA=" crossorigin="anonymous">
+  
+  
+</head>
+<body>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable" href="">xkyle.com</a>
+      </li>
       
-
-
-
-<nav class="white" role="navigation">
-    <div class="row max-width">
-        <div class="col s12 l10 offset-l1">
-            
-            <a href="#" data-target="nav-mobile" class="sidenav-trigger black-text">
-                <i class="material-icons">menu</i>
-            </a>
-
-            
-            <ul id="nav-mobile" class="sidenav">
-                
-                
-    
-    
-
-            </ul>
-
-            
-            <a href="../" class="brand-logo grey-text text-darken-3">xkyle.com</a>
-
-            
-            <div class="nav-wrapper">
-
-                
-                <ul class="right hide-on-med-and-down">
-                    
-                    
-    
-    
-
-                </ul>
-
-            </div>
-        </div>
-    </div>
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="about/">About</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="post/">Posts</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="tags/">Tags</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="categories/">Categories</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="index.xml">RSS</a>
+      </li>
+      
+    </ul>
+  </div>
 </nav>
-    
 
-    
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
 
-<article class="max-width">
-    
-    <section class="row">
-        <div class="col s12 m10 offset-m1 l10 offset-l1">
-            <h1>Kubernetes as a Universal Infrastructure API</h1>
-        </div>
-    </section>
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../Kubernetes-as-a-Universal-Infrastructure-API/" rel="bookmark">Kubernetes as a Universal Infrastructure API</a>
+  </h2>
+  
+  <time datetime="2019-06-02T00:00:00Z">
+    2 June, 2019
+  </time>
+  
+</header>
 
-    
-    
-
-    
-    <section class="row">
-        <div class="col s12 m8 offset-m2 l2 offset-l1">
-            
-
-<p class="article-meta">
-    <div class="article-meta-container">
-        <div class="article-meta-author-name"></div>
-        <div class="article-meta-description"></div>
-    </div>
-    <span class="article-meta-published-at grey-text text-darken-1">Jun 2, 2019</span>
-</p>
-        </div>
-        <div class="col s12 m8 offset-m2 l6">
-            <p>Recently the Kubernetes (k8s) <a href="https://github.com/kubernetes/community/tree/master/sig-cluster-lifecycle">Cluster Lifecycle Special Interest
+  <p>Recently the Kubernetes (k8s) <a href="https://github.com/kubernetes/community/tree/master/sig-cluster-lifecycle">Cluster Lifecycle Special Interest
 Group</a>
 (SIG) release their <a href="https://blogs.vmware.com/cloudnative/2019/05/14/cluster-api-kubernetes-lifecycle-management/">first
 Alpha</a>
 of their Cluster API.</p>
 <p>What does this thing do? It is kinda like a k8s
-<a href="https://enterprisersproject.com/article/2019/2/kubernetes-operators-plain-english">operator</a> (it's a controller) that
+<a href="https://enterprisersproject.com/article/2019/2/kubernetes-operators-plain-english">operator</a> (it&rsquo;s a controller) that
 has custom resource definitions for things to launch <strong>another</strong> k8s
 cluster, with a bunch of
 cloud <a href="https://github.com/kubernetes-sigs/cluster-api#provider-implementations">providers</a>.
@@ -158,7 +126,7 @@ all the things that are required to run all the things.</p>
 <p>That is OK. If all you need to do is launch other k8s clusters, then this API
 is for you! If you need to launch any other &ldquo;cloud&rdquo; resource, then you will
 have to end up reaching for another tool. Are you willing to have two different
-ways to launch things? I don't know, maybe I just really like Terraform.</p>
+ways to launch things? I don&rsquo;t know, maybe I just really like Terraform.</p>
 <p>On the other hand, Terraform is flexible, but not dynamic. It doesn't respond
 to events.  It has the benefit of git-commiting the state and being easier to
 reason about, but it can't really make new k8s clusters &quot;on the fly&quot;. It has
@@ -217,51 +185,45 @@ the operator pattern will have to become well established, <strong>then</strong>
 see infrastructure teams want to piggyback on all the goodness and
 extensibility that k8s provides.</p>
 
-        </div>
-    </section>
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+  
+
+
+
 </article>
 
 
-
-    
-      <footer class="page-footer grey lighten-5">
-    <div class="row max-width">
-        <div class="col s12 l10 offset-l1 clear-padding">
-            <div class="row">
-    
-        
-    
-
-    
-    
-    <div class="col s12 l12">
-        <h5 class="black-text"></h5>
-<p class="grey-text text-darken-4"></p>
-
+      </div>
     </div>
-
-    
-</div>
-
-
-        </div>
+  </main>
+  
+<footer class="Footer">
+  <div class="u-wrapper">
+    <div class="u-padding">
+      Except where otherwise noted, content on this site is licensed under a a <a href="http://creativecommons.org/licenses/by/4.0/" rel="license"> Creative Commons Attribution 4.0 International License</a>.
     </div>
-    <div class="footer-copyright">
-        <div class="row max-width" style="width: 100%;">
-            <div class="col s12 l10 offset-l1">
-                <span class="grey-text text-darken-4"></span>
-<div class="right">
-    
-</div>
-            </div>
-        </div>
-    </div>
+  </div>
 </footer>
-    
 
-    
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="js/script.js"></script>
-  </body>
+
+</body>
 </html>

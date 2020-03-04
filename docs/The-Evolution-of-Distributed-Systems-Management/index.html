@@ -1,116 +1,82 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<meta property="og:title" content="The Evolution of Distributed Systems Management" />
-<meta property="og:description" content="Let&#39;s survey the past and present of how we manage distributed systems, and then maybe try to predict the future.
-For this survey I&#39;ll look at a few open-source technologies to give concrete examples (in Kardashev style.
- Type 0: Manually Deployed and Configured Type 1: Host-Centric Configuration Management Type 2A: Infrastructure-scoped Orchestration Tooling Type 2B: Application-specific Orchestration Tooling Type 3: Compute-Platform-Native Application-Specific Frameworks   Type 3A: Mesos Frameworks     Type 3B: Kubernetes (k8s) Operators   Type 4: Hybrid?" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/The-Evolution-of-Distributed-Systems-Management/" />
-<meta property="article:published_time" content="2018-02-23T07:48:18+00:00" />
-<meta property="article:modified_time" content="2018-02-23T07:48:18+00:00" />
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="The Evolution of Distributed Systems Management"/>
-<meta name="twitter:description" content="Let&#39;s survey the past and present of how we manage distributed systems, and then maybe try to predict the future.
-For this survey I&#39;ll look at a few open-source technologies to give concrete examples (in Kardashev style.
- Type 0: Manually Deployed and Configured Type 1: Host-Centric Configuration Management Type 2A: Infrastructure-scoped Orchestration Tooling Type 2B: Application-specific Orchestration Tooling Type 3: Compute-Platform-Native Application-Specific Frameworks   Type 3A: Mesos Frameworks     Type 3B: Kubernetes (k8s) Operators   Type 4: Hybrid?"/>
-
-
-    <meta name="description" content="">
-    <link rel="canonical" href="../The-Evolution-of-Distributed-Systems-Management/">
-
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.66.0" />
+  
+  
+  
+  <title>
     
-    <title>The Evolution of Distributed Systems Management &middot; xkyle.com</title>
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="css/style.css" rel="stylesheet">
-
+    The Evolution of Distributed Systems Management | xkyle.com
     
-
-    
-
-    
-  </head>
-  <body>
-    
+  </title>
+  <link rel="canonical" href="../The-Evolution-of-Distributed-Systems-Management/">
+  
+  
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="../css/base.min.50883c9e7cc6f561db1dcd2089b6b895c60df8d10b9e71a90cbc10e59c8bfc40.css" integrity="sha256-UIg8nnzG9WHbHc0giba4lcYN&#43;NELnnGpDLwQ5ZyL/EA=" crossorigin="anonymous">
+  
+  
+</head>
+<body>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable" href="">xkyle.com</a>
+      </li>
       
-
-
-
-<nav class="white" role="navigation">
-    <div class="row max-width">
-        <div class="col s12 l10 offset-l1">
-            
-            <a href="#" data-target="nav-mobile" class="sidenav-trigger black-text">
-                <i class="material-icons">menu</i>
-            </a>
-
-            
-            <ul id="nav-mobile" class="sidenav">
-                
-                
-    
-    
-
-            </ul>
-
-            
-            <a href="../" class="brand-logo grey-text text-darken-3">xkyle.com</a>
-
-            
-            <div class="nav-wrapper">
-
-                
-                <ul class="right hide-on-med-and-down">
-                    
-                    
-    
-    
-
-                </ul>
-
-            </div>
-        </div>
-    </div>
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="about/">About</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="post/">Posts</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="tags/">Tags</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="categories/">Categories</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="index.xml">RSS</a>
+      </li>
+      
+    </ul>
+  </div>
 </nav>
-    
 
-    
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
 
-<article class="max-width">
-    
-    <section class="row">
-        <div class="col s12 m10 offset-m1 l10 offset-l1">
-            <h1>The Evolution of Distributed Systems Management</h1>
-        </div>
-    </section>
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../The-Evolution-of-Distributed-Systems-Management/" rel="bookmark">The Evolution of Distributed Systems Management</a>
+  </h2>
+  
+  <time datetime="2018-02-23T07:48:18Z">
+    23 February, 2018
+  </time>
+  
+</header>
 
-    
-    
-
-    
-    <section class="row">
-        <div class="col s12 m8 offset-m2 l2 offset-l1">
-            
-
-<p class="article-meta">
-    <div class="article-meta-container">
-        <div class="article-meta-author-name"></div>
-        <div class="article-meta-description"></div>
-    </div>
-    <span class="article-meta-published-at grey-text text-darken-1">Feb 23, 2018</span>
-</p>
-        </div>
-        <div class="col s12 m8 offset-m2 l6">
-            <p>Let's survey the past and present of how we manage distributed systems, and
+  <p>Let&rsquo;s survey the past and present of how we manage distributed systems, and
 then maybe try to predict the future.</p>
-<p>For this survey I'll look at a few open-source technologies to give concrete
+<p>For this survey I&rsquo;ll look at a few open-source technologies to give concrete
 examples (in <a href="https://en.wikipedia.org/wiki/Kardashev_scale">Kardashev style</a>.</p>
 <ul>
 <li><a href="#type-0-manually-deployed-and-configured">Type 0: Manually Deployed and Configured</a></li>
@@ -139,14 +105,14 @@ examples (in <a href="https://en.wikipedia.org/wiki/Kardashev_scale">Kardashev s
 configuration) that is designed to be installed and configured by humans. The
 configuration files are human-friendly ini-style. The runtime orchestration is
 established via commands (statements) in the MySQL shell.</p>
-<p>This doesn't mean that the software <em>can't</em> be automated. I'll discuss what
+<p>This doesn&rsquo;t mean that the software <em>can&rsquo;t</em> be automated. I&rsquo;ll discuss what
 MySQL looks like when it is automated at different levels further down in the
 blog post. I might call the &ldquo;scripting&rdquo; of MySQL orchestration &ldquo;Type 0.5&rdquo;-style
 orchestration. There are a
 <a href="https://github.com/thomasvs/mysql-replication-start/blob/master/mysql-replication-start.sh">few</a>
 <a href="http://blog.ditullio.fr/2016/04/30/initialize-mysql-master-slave-replication-script/">examples</a>
 of what this looks like.</p>
-<p>There isn't much to say about Type 0 automation. It is characterized by the
+<p>There isn&rsquo;t much to say about Type 0 automation. It is characterized by the
 <strong>lack</strong> of built-in automation facilities and cumbersome/brittle
 integrations with external automation systems.</p>
 <p>Other systems that are designed to be manually deployed and configured by humans
@@ -157,10 +123,10 @@ integrations with external automation systems.</p>
 <li><a href="https://zookeeper.apache.org/doc/r3.1.2/zookeeperStarted.html">Zookeeper</a></li>
 </ul>
 <p>It starts getting interesting when engineers take these systems and build
-orchestration tooling around them. I predict that we'll continue to see more
+orchestration tooling around them. I predict that we&rsquo;ll continue to see more
 and more systems being build with automation in mind from the start, leading to
 very different interface and configuration design decisions.</p>
-<h2 id="type-1-hostcentric-configuration-management">Type 1: Host-Centric Configuration Management</h2>
+<h2 id="type-1-host-centric-configuration-management">Type 1: Host-Centric Configuration Management</h2>
 <figure>
     <img src="../uploads/distributed-systems-management/type1.png"/> 
 </figure>
@@ -185,14 +151,14 @@ in a good way. Here are some examples of this:</p>
 <li><a href="https://forge.puppet.com/autostructure/kubernetes/tasks#task_kubeadm_join">Kubernetes module that uses &lsquo;puppet tasks&rsquo; to do adhoc orchistration</a></li>
 </ul>
 <p>These types of tools are very mature now, but they still operate at the &ldquo;host&rdquo;
-level and don't really have the capability to do &ldquo;cluster-wide&rdquo; operations like
+level and don&rsquo;t really have the capability to do &ldquo;cluster-wide&rdquo; operations like
 &ldquo;promote a new mysql master&rdquo; or &ldquo;replace a cassandra node&rdquo;. They mostly assume
 that the host in question already exists, and leave the provisioning and
 de-provisioning of servers up to another tool (knife, etc).</p>
 <p>I predict that Type 1 tools will continue to lose relevance in a world where
 Type 3 tools exist, and as the industry as a whole learns to look beyond &ldquo;the
 single node&rdquo;.</p>
-<h2 id="type-2a-infrastructurescoped-orchestration-tooling">Type 2A: Infrastructure-scoped Orchestration Tooling</h2>
+<h2 id="type-2a-infrastructure-scoped-orchestration-tooling">Type 2A: Infrastructure-scoped Orchestration Tooling</h2>
 <figure>
     <img src="../uploads/distributed-systems-management/type2a.png"/> 
 </figure>
@@ -225,7 +191,7 @@ possible. Here are some examples:</p>
 functionality. After all, these Type 2A tools are &ldquo;infrastructure oriented&rdquo;,
 not &ldquo;distributed-systems oriented.&rdquo; But if Type 2A tools are not quite
 sufficient for fully managing distributed systems for us, then what is?</p>
-<h2 id="type-2b-applicationspecific-orchestration-tooling">Type 2B: Application-specific Orchestration Tooling</h2>
+<h2 id="type-2b-application-specific-orchestration-tooling">Type 2B: Application-specific Orchestration Tooling</h2>
 <figure>
     <img src="../uploads/distributed-systems-management/type2b.png"/> 
 </figure>
@@ -236,11 +202,11 @@ launch raw infrastructure themselves, and often still require &ldquo;Type 1&rdqu
 get them going.</p>
 <p>Here are some examples:</p>
 <ul>
-<li>MySQL via Youtube's <a href="http://vitess.io/">Vitess</a></li>
-<li>MySQL via Github's <a href="https://github.com/github/orchestrator">Orchestrator</a></li>
-<li>CloudFoundary via Pivotal's <a href="https://github.com/cloudfoundry/cf-deployment">cf-deployment</a></li>
+<li>MySQL via Youtube&rsquo;s <a href="http://vitess.io/">Vitess</a></li>
+<li>MySQL via Github&rsquo;s <a href="https://github.com/github/orchestrator">Orchestrator</a></li>
+<li>CloudFoundary via Pivotal&rsquo;s <a href="https://github.com/cloudfoundry/cf-deployment">cf-deployment</a></li>
 <li>Spinaker via <a href="https://github.com/spinnaker/halyard#halyard">Halyard</a></li>
-<li>Cassandra via <a href="https://github.com/Netflix/Priam">Netflix's Priam</a></li>
+<li>Cassandra via <a href="https://github.com/Netflix/Priam">Netflix&rsquo;s Priam</a></li>
 <li>Cassandra (DataStax Enterprise) via <a href="https://docs.datastax.com/en/latest-opsc/index.html">DataStax OpsCenter</a></li>
 <li>Redis via <a href="https://redis.io/topics/sentinel">Redis-Sentinel</a></li>
 </ul>
@@ -253,7 +219,7 @@ this and usually run in a &ldquo;one-shot&rdquo; fashion.</p>
 <p>I predict this class of tooling will remain relevant to orchestrate the current
 generation of distributed systems in a platform-agnostic way, but eventually
 will give way to Type 3 tools.</p>
-<h2 id="type-3-computeplatformnative-applicationspecific-frameworks">Type 3: Compute-Platform-Native Application-Specific Frameworks</h2>
+<h2 id="type-3-compute-platform-native-application-specific-frameworks">Type 3: Compute-Platform-Native Application-Specific Frameworks</h2>
 <figure>
     <img src="../uploads/distributed-systems-management/type3.png"/> 
 </figure>
@@ -286,11 +252,11 @@ the framework/operator is trying to run. This is unlike Type 1 (config
 management) tools, where you only need to know a little bit of puppet to
 write a puppet module. The barrier to entry is higher.</li>
 </ul>
-<p>They are so different that I'm going to split them up and talk about them
+<p>They are so different that I&rsquo;m going to split them up and talk about them
 (Mesos/k8s) separately. Time will tell if there is room in the industry to have
 Mesos and k8s <strong>and</strong> any more than that. I predict that the difficulty in
 building high-quality Type 3 (Application-specific orchestrators) is so high
-that we <strong>won't</strong> splinter into many community-provided modules like we've seen in
+that we <strong>won&rsquo;t</strong> splinter into many community-provided modules like we&rsquo;ve seen in
 Type 1 (classic configuration management) tools where everyone makes their own
 &ldquo;Apache&rdquo; module.</p>
 <h3 id="type-3a-mesos-frameworks">Type 3A: Mesos Frameworks</h3>
@@ -302,7 +268,7 @@ few dozen open-source production-ready frameworks exist. Here is the
 of those that are available on the
 <a href="https://universe.dcos.io/#/packages">DC/OS Universe</a> (note: many of the packages
 on the DC/OS Universe are standalone applications that run on Marathon and are
-not Mesos Frameworks, and don't need to be).</p>
+not Mesos Frameworks, and don&rsquo;t need to be).</p>
 <p>DC/OS created by Mesosphere, is kinda like a &ldquo;Mesos Distribution&rdquo; which
 includes Mesos, a fancy installer, a basic process runner (Marathon) and a
 package manager, akin to a Linux distribution.</p>
@@ -326,10 +292,10 @@ needed to write a distributed system. Things a framework can/must do are:</p>
 into developing custom Mesos frameworks. Here are some examples (none of which
 are currently open source):</p>
 <ul>
-<li>Netflix's <a href="https://medium.com/netflix-techblog/the-evolution-of-container-usage-at-netflix-3abfc096781b">Titus</a></li>
-<li>Uber's <a href="https://www.youtube.com/watch?v=Ktc3GjshHcc">Peleton</a></li>
-<li>Apple's <a href="https://www.infoq.com/news/2015/05/mesos-powers-apple-siri">JARVIS</a></li>
-<li>Yelp's <a href="https://engineeringblog.yelp.com/2017/04/how-yelp-runs-millions-of-tests-every-day.html">Seagull</a></li>
+<li>Netflix&rsquo;s <a href="https://medium.com/netflix-techblog/the-evolution-of-container-usage-at-netflix-3abfc096781b">Titus</a></li>
+<li>Uber&rsquo;s <a href="https://www.youtube.com/watch?v=Ktc3GjshHcc">Peleton</a></li>
+<li>Apple&rsquo;s <a href="https://www.infoq.com/news/2015/05/mesos-powers-apple-siri">JARVIS</a></li>
+<li>Yelp&rsquo;s <a href="https://engineeringblog.yelp.com/2017/04/how-yelp-runs-millions-of-tests-every-day.html">Seagull</a></li>
 </ul>
 <p>But most companies should not need to build their own bespoke Mesos
 frameworks. Do most companies need Type 3 tools at all?</p>
@@ -338,7 +304,7 @@ but often lack the advanced automation to orchestrate them. The current status
 quo is that only experts in those distributed systems handle the orchestration
 of them. Without advanced orchestration, risky MySQL maneuvers are left up to a
 DBA. Cassandra maintenance needs to be done &ldquo;very carefully&rdquo;. You basically
-don't change a Zookeeper topology once it is up.</p>
+don&rsquo;t change a Zookeeper topology once it is up.</p>
 <p>The space of Type 3A tools for open-source distributed-systems just starting.
 Here are a few examples:</p>
 <ul>
@@ -386,7 +352,7 @@ the case today because Mesos has headstart of a few years, and k8s
 (one of the better core primitives in k8s to create operators) is still in beta.
 I think Custom Resource Definitions (CRDs) are going to be the best way that
 users will interact with custom k8s operators.</p>
-<p>What is the difference between a k8s operator and a Mesos framework? Let's
+<p>What is the difference between a k8s operator and a Mesos framework? Let&rsquo;s
 start with what k8s offers as a platform to operator-writers:</p>
 <ul>
 <li>You get your own custom namespaced REST endpoint in the k8s api (by applying
@@ -429,56 +395,50 @@ its <strong>own</strong> raw compute resources. I would like my
 <a href="https://github.com/kubeflow/tf-operator">Tensorflow k8s operator</a>
 to launch GPU instances if it needs to. I would like my
 <a href="https://github.com/apache-spark-on-k8s/kubernetes-HDFS">HDFS operator</a> to launch its
-own data nodes directly. I would like k8s itself to turn off nodes that it doesn't need.</p>
-<p>Past that, I don't have an imagination good enough to imagine what might be beyond.</p>
+own data nodes directly. I would like k8s itself to turn off nodes that it doesn&rsquo;t need.</p>
+<p>Past that, I don&rsquo;t have an imagination good enough to imagine what might be beyond.</p>
 <p><a href="mailto:kyle@xkyle.com">Email me</a> or make a
 <a href="https://github.com/solarkennedy/xkyle.com">pull request</a> if you have comments or corrections.</p>
 
-        </div>
-    </section>
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+  
+
+
+
 </article>
 
 
-
-    
-      <footer class="page-footer grey lighten-5">
-    <div class="row max-width">
-        <div class="col s12 l10 offset-l1 clear-padding">
-            <div class="row">
-    
-        
-    
-
-    
-    
-    <div class="col s12 l12">
-        <h5 class="black-text"></h5>
-<p class="grey-text text-darken-4"></p>
-
+      </div>
     </div>
-
-    
-</div>
-
-
-        </div>
+  </main>
+  
+<footer class="Footer">
+  <div class="u-wrapper">
+    <div class="u-padding">
+      Except where otherwise noted, content on this site is licensed under a a <a href="http://creativecommons.org/licenses/by/4.0/" rel="license"> Creative Commons Attribution 4.0 International License</a>.
     </div>
-    <div class="footer-copyright">
-        <div class="row max-width" style="width: 100%;">
-            <div class="col s12 l10 offset-l1">
-                <span class="grey-text text-darken-4"></span>
-<div class="right">
-    
-</div>
-            </div>
-        </div>
-    </div>
+  </div>
 </footer>
-    
 
-    
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="js/script.js"></script>
-  </body>
+
+</body>
 </html>

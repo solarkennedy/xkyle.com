@@ -1,122 +1,86 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<meta property="og:title" content="Building Linux Packages For Kernel Drivers! (dkms howto)" />
-<meta property="og:description" content="Background Most of the time the Linux kernel does a great job of having drivers you need, but sometimes you need to install a special driver or update an existing module.
-Running make; make install is all fine and dandy for testing, but for production you want a repeatable process. For me, this means OS packages. (deb/rpms)
-
-So, how do you go from kernel module source code =&gt; Debian package?" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/building-linux-packages-for-kernel-drivers/" />
-<meta property="article:published_time" content="2013-01-20T03:39:48+00:00" />
-<meta property="article:modified_time" content="2013-01-20T03:39:48+00:00" />
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Building Linux Packages For Kernel Drivers! (dkms howto)"/>
-<meta name="twitter:description" content="Background Most of the time the Linux kernel does a great job of having drivers you need, but sometimes you need to install a special driver or update an existing module.
-Running make; make install is all fine and dandy for testing, but for production you want a repeatable process. For me, this means OS packages. (deb/rpms)
-
-So, how do you go from kernel module source code =&gt; Debian package?"/>
-
-
-    <meta name="description" content="">
-    <link rel="canonical" href="../building-linux-packages-for-kernel-drivers/">
-
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.66.0" />
+  
+  
+  
+  <title>
     
-    <title>Building Linux Packages For Kernel Drivers! (dkms howto) &middot; xkyle.com</title>
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="css/style.css" rel="stylesheet">
-
+    Building Linux Packages For Kernel Drivers! (dkms howto) | xkyle.com
     
-
-    
-
-    
-  </head>
-  <body>
-    
+  </title>
+  <link rel="canonical" href="../building-linux-packages-for-kernel-drivers/">
+  
+  
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="../css/base.min.50883c9e7cc6f561db1dcd2089b6b895c60df8d10b9e71a90cbc10e59c8bfc40.css" integrity="sha256-UIg8nnzG9WHbHc0giba4lcYN&#43;NELnnGpDLwQ5ZyL/EA=" crossorigin="anonymous">
+  
+  
+</head>
+<body>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable" href="">xkyle.com</a>
+      </li>
       
-
-
-
-<nav class="white" role="navigation">
-    <div class="row max-width">
-        <div class="col s12 l10 offset-l1">
-            
-            <a href="#" data-target="nav-mobile" class="sidenav-trigger black-text">
-                <i class="material-icons">menu</i>
-            </a>
-
-            
-            <ul id="nav-mobile" class="sidenav">
-                
-                
-    
-    
-
-            </ul>
-
-            
-            <a href="../" class="brand-logo grey-text text-darken-3">xkyle.com</a>
-
-            
-            <div class="nav-wrapper">
-
-                
-                <ul class="right hide-on-med-and-down">
-                    
-                    
-    
-    
-
-                </ul>
-
-            </div>
-        </div>
-    </div>
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="about/">About</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="post/">Posts</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="tags/">Tags</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="categories/">Categories</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="index.xml">RSS</a>
+      </li>
+      
+    </ul>
+  </div>
 </nav>
-    
 
-    
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
 
-<article class="max-width">
-    
-    <section class="row">
-        <div class="col s12 m10 offset-m1 l10 offset-l1">
-            <h1>Building Linux Packages For Kernel Drivers! (dkms howto)</h1>
-        </div>
-    </section>
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../building-linux-packages-for-kernel-drivers/" rel="bookmark">Building Linux Packages For Kernel Drivers! (dkms howto)</a>
+  </h2>
+  
+  <time datetime="2013-01-20T03:39:48Z">
+    20 January, 2013
+  </time>
+  
+</header>
 
-    
-    
-
-    
-    <section class="row">
-        <div class="col s12 m8 offset-m2 l2 offset-l1">
-            
-
-<p class="article-meta">
-    <div class="article-meta-container">
-        <div class="article-meta-author-name">admin</div>
-        <div class="article-meta-description"></div>
-    </div>
-    <span class="article-meta-published-at grey-text text-darken-1">Jan 20, 2013</span>
-</p>
-        </div>
-        <div class="col s12 m8 offset-m2 l6">
-            <h2 id="background">Background</h2>
+  <h2 id="background">Background</h2>
 <p>Most of the time the Linux kernel does a great job of having drivers you need, but sometimes you need to install a special driver or update an existing module.</p>
 <p>Running make; make install is all fine and dandy for testing, but for production you want a repeatable process. For me, this means OS packages. (deb/rpms)</p>
 <p><a href="../uploads/morpheus-ipmi.jpg"><img src="../uploads/33657094-300x181.jpg" alt="33657094"></a></p>
 <p>So, how do you go from kernel module source code =&gt; Debian package? DKMS. DKMS will automatically build your kernel module for you, even if your kernel gets updated.</p>
 <h2 id="example-ixgbe">Example: ixgbe</h2>
-<p>Lets build something. In this example I'm on an Ubuntu machine building the latest ixgbe driver.</p>
+<p>Lets build something. In this example I&rsquo;m on an Ubuntu machine building the latest ixgbe driver.</p>
 <ol>
 <li>Get apt-get your stuff</li>
 </ol>
@@ -125,7 +89,7 @@ So, how do you go from kernel module source code =&gt; Debian package?"/>
 <li>Untar your source code into /usr/src/$modulename-$version, like /usr/src/ixgbe-3.12.6/</li>
 <li>Normally here you would run &ldquo;make&rdquo;, but instead we will make a dkms.conf file to describe how to build it. Like this:</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">        MAKE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">make -C src/ KERNELDIR=/lib/modules/</span><span style="color:#e6db74">${</span>kernelver<span style="color:#e6db74">}</span><span style="color:#e6db74">/build</span><span style="color:#e6db74">&#34;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">        MAKE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;make -C src/ KERNELDIR=/lib/modules/</span><span style="color:#e6db74">${</span>kernelver<span style="color:#e6db74">}</span><span style="color:#e6db74">/build&#34;</span>
         CLEAN<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;make -C src/ clean&#34;</span>
         BUILT_MODULE_NAME<span style="color:#f92672">=</span>ixgbe
         BUILT_MODULE_LOCATION<span style="color:#f92672">=</span>src/
@@ -237,55 +201,79 @@ So, how do you go from kernel module source code =&gt; Debian package?"/>
 </code></pre></div><h2 id="33657298uploads33657298jpguploads33657298jpg"><a href="../uploads/33657298.jpg"><img src="../uploads/33657298.jpg" alt="33657298"></a></h2>
 <h2 id="reading-more">Reading More:</h2>
 <ul>
-<li><a href="https://wiki.xkyle.com/DKMS_Howto"><a href="https://wiki.xkyle.com/DKMS_Howto">https://wiki.xkyle.com/DKMS_Howto</a></a></li>
-<li><a href="http://en.wikipedia.org/wiki/Dynamic_Kernel_Module_Support"><a href="http://en.wikipedia.org/wiki/Dynamic_Kernel_Module_Support">http://en.wikipedia.org/wiki/Dynamic_Kernel_Module_Support</a></a></li>
+<li><a href="https://wiki.xkyle.com/DKMS_Howto">https://wiki.xkyle.com/DKMS_Howto</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Dynamic_Kernel_Module_Support">http://en.wikipedia.org/wiki/Dynamic_Kernel_Module_Support</a></li>
 </ul>
 
-        </div>
-    </section>
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../categories/debs/" rel="tag">debs</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../categories/dkms/" rel="tag">dkms</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../categories/kernel-modules/" rel="tag">kernel modules</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../categories/linux/" rel="tag">linux</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../categories/packages/" rel="tag">packages</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+  
+
+
+
 </article>
 
 
-
-    
-      <footer class="page-footer grey lighten-5">
-    <div class="row max-width">
-        <div class="col s12 l10 offset-l1 clear-padding">
-            <div class="row">
-    
-        
-    
-
-    
-    
-    <div class="col s12 l12">
-        <h5 class="black-text"></h5>
-<p class="grey-text text-darken-4"></p>
-
+      </div>
     </div>
-
-    
-</div>
-
-
-        </div>
+  </main>
+  
+<footer class="Footer">
+  <div class="u-wrapper">
+    <div class="u-padding">
+      Except where otherwise noted, content on this site is licensed under a a <a href="http://creativecommons.org/licenses/by/4.0/" rel="license"> Creative Commons Attribution 4.0 International License</a>.
     </div>
-    <div class="footer-copyright">
-        <div class="row max-width" style="width: 100%;">
-            <div class="col s12 l10 offset-l1">
-                <span class="grey-text text-darken-4"></span>
-<div class="right">
-    
-</div>
-            </div>
-        </div>
-    </div>
+  </div>
 </footer>
-    
 
-    
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="js/script.js"></script>
-  </body>
+
+</body>
 </html>

@@ -1,113 +1,81 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<meta property="og:title" content="A Configuration Management Rosetta Stone: Configuring Sensu with Puppet, Chef, Ansible and Salt" />
-<meta property="og:description" content="I recently finished my Intermediate Sensu Training on Udemy. It was a ton of work but I&#39;m glad I got it all together. Part of that training includes how to deploy and configure Sensu with four of the most popular open-source configuration management tools: Puppet, Chef, Ansible, and Salt.
- TOC {:toc}  The Sensu Decree In order to do the training I had to learn each of these tools enough so I could install a baseline Sensu installation." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/configuration-management-rosetta-stone-configuring-sensu-with-puppet-chef-ansible-and-salt/" />
-<meta property="article:published_time" content="2015-10-11T18:21:14+00:00" />
-<meta property="article:modified_time" content="2015-10-11T18:21:14+00:00" />
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="A Configuration Management Rosetta Stone: Configuring Sensu with Puppet, Chef, Ansible and Salt"/>
-<meta name="twitter:description" content="I recently finished my Intermediate Sensu Training on Udemy. It was a ton of work but I&#39;m glad I got it all together. Part of that training includes how to deploy and configure Sensu with four of the most popular open-source configuration management tools: Puppet, Chef, Ansible, and Salt.
- TOC {:toc}  The Sensu Decree In order to do the training I had to learn each of these tools enough so I could install a baseline Sensu installation."/>
-
-
-    <meta name="description" content="">
-    <link rel="canonical" href="../configuration-management-rosetta-stone-configuring-sensu-with-puppet-chef-ansible-and-salt/">
-
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.66.0" />
+  
+  
+  
+  <title>
     
-    <title>A Configuration Management Rosetta Stone: Configuring Sensu with Puppet, Chef, Ansible and Salt &middot; xkyle.com</title>
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="css/style.css" rel="stylesheet">
-
+    A Configuration Management Rosetta Stone: Configuring Sensu with Puppet, Chef, Ansible and Salt | xkyle.com
     
-
-    
-
-    
-  </head>
-  <body>
-    
+  </title>
+  <link rel="canonical" href="../configuration-management-rosetta-stone-configuring-sensu-with-puppet-chef-ansible-and-salt/">
+  
+  
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="../css/base.min.50883c9e7cc6f561db1dcd2089b6b895c60df8d10b9e71a90cbc10e59c8bfc40.css" integrity="sha256-UIg8nnzG9WHbHc0giba4lcYN&#43;NELnnGpDLwQ5ZyL/EA=" crossorigin="anonymous">
+  
+  
+</head>
+<body>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable" href="">xkyle.com</a>
+      </li>
       
-
-
-
-<nav class="white" role="navigation">
-    <div class="row max-width">
-        <div class="col s12 l10 offset-l1">
-            
-            <a href="#" data-target="nav-mobile" class="sidenav-trigger black-text">
-                <i class="material-icons">menu</i>
-            </a>
-
-            
-            <ul id="nav-mobile" class="sidenav">
-                
-                
-    
-    
-
-            </ul>
-
-            
-            <a href="../" class="brand-logo grey-text text-darken-3">xkyle.com</a>
-
-            
-            <div class="nav-wrapper">
-
-                
-                <ul class="right hide-on-med-and-down">
-                    
-                    
-    
-    
-
-                </ul>
-
-            </div>
-        </div>
-    </div>
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="about/">About</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="post/">Posts</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="tags/">Tags</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="categories/">Categories</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="index.xml">RSS</a>
+      </li>
+      
+    </ul>
+  </div>
 </nav>
-    
 
-    
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
 
-<article class="max-width">
-    
-    <section class="row">
-        <div class="col s12 m10 offset-m1 l10 offset-l1">
-            <h1>A Configuration Management Rosetta Stone: Configuring Sensu with Puppet, Chef, Ansible and Salt</h1>
-        </div>
-    </section>
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../configuration-management-rosetta-stone-configuring-sensu-with-puppet-chef-ansible-and-salt/" rel="bookmark">A Configuration Management Rosetta Stone: Configuring Sensu with Puppet, Chef, Ansible and Salt</a>
+  </h2>
+  
+  <time datetime="2015-10-11T18:21:14Z">
+    11 October, 2015
+  </time>
+  
+</header>
 
-    
-    
-
-    
-    <section class="row">
-        <div class="col s12 m8 offset-m2 l2 offset-l1">
-            
-
-<p class="article-meta">
-    <div class="article-meta-container">
-        <div class="article-meta-author-name"></div>
-        <div class="article-meta-description"></div>
-    </div>
-    <span class="article-meta-published-at grey-text text-darken-1">Oct 11, 2015</span>
-</p>
-        </div>
-        <div class="col s12 m8 offset-m2 l6">
-            <p>I recently finished my <a href="https://www.udemy.com/sensu-intermediate/?couponCode=xkyle">Intermediate Sensu Training</a> on Udemy.
-It was a ton of work but I'm glad I got it all together. Part of that training
+  <p>I recently finished my <a href="https://www.udemy.com/sensu-intermediate/?couponCode=xkyle">Intermediate Sensu Training</a> on Udemy.
+It was a ton of work but I&rsquo;m glad I got it all together. Part of that training
 includes how to deploy and configure <a href="https://sensuapp.org/">Sensu</a> with four
 of the most popular open-source configuration management tools:
 <a href="https://puppetlabs.com/puppet/what-is-puppet">Puppet</a>,
@@ -197,7 +165,7 @@ other RabbitMQ, Redis, or any other module. To me this is expected, in the
 Puppet world it would be the job of a <code>profile</code> to combine the Sensu module
 with RabbitMQ and other things. For the most part this integration is left as
 an exercise to the reader.</p>
-<p>The Sensu Puppet module also doesn't manage Uchiwa. That requires a
+<p>The Sensu Puppet module also doesn&rsquo;t manage Uchiwa. That requires a
 <a href="https://github.com/Yelp/puppet-uchiwa">different puppet module</a>. Again to me
 this is a good thing, I hate it when tools try to do too much.</p>
 <p>The actual codebase is actively maintained and reasonably active, with a few
@@ -233,10 +201,10 @@ sorting by &ldquo;followers&rdquo;. This is made up by the fact that there are o
 a hundred <a href="https://supermarket.chef.io/users/chef">officially supported cookbooks</a>.</p>
 <p>Probably the most difficult aspect of Chef for me to understand was how
 attributes interact. This confusion is probably most obvious when you look at
-Chef's <a href="https://docs.chef.io/attributes.html#attribute-precedence">15 levels of attribute precedence</a>. It seems
+Chef&rsquo;s <a href="https://docs.chef.io/attributes.html#attribute-precedence">15 levels of attribute precedence</a>. It seems
 to me that there should be a more obvious way for intent to flow, but I could
-be just spoiled by Puppet's Hiera.</p>
-<h4 id="review-of-the-chefsensu-cookbook">Review of the Chef-Sensu Cookbook</h4>
+be just spoiled by Puppet&rsquo;s Hiera.</p>
+<h4 id="review-of-the-chef-sensu-cookbook">Review of the Chef-Sensu Cookbook</h4>
 <p>The <a href="https://github.com/sensu/sensu-chef">Sensu Chef Cookbook</a> is also a
 first-class citizen in the Sensu-world. Chef is the &ldquo;native config language&rdquo; of
 <a href="https://github.com/portertech">Sean Porter</a>, the main author of Sensu. This
@@ -271,23 +239,23 @@ files. Ansible has its own DSL and uses Jinja2 templating, which is parsed
 uploading shared roles. You can <a href="https://galaxy.ansible.com/list#/roles?page=1&amp;per_page=10&amp;sort_order=owner__username,name&amp;f=apache">sort by rating</a>
 to try to get a better idea about which roles are potentially higher quality
 than others.</p>
-<p>There doesn't seem to be any official roles/playbooks. The closest there is to
+<p>There doesn&rsquo;t seem to be any official roles/playbooks. The closest there is to
 official roles is the
 <a href="https://github.com/ansible/ansible-examples/tree/master/lamp_simple">ansible-examples</a>
 repository. But click the link and look at the <code>lamp_simple</code> example. There is
 no code-reuse at all! Every example re-invents how to install apache, install
-ntp, configure iptables, etc. What's up with that?</p>
+ntp, configure iptables, etc. What&rsquo;s up with that?</p>
 <p>While the yaml files may make it very easy for beginners to make playbooks that
-get things done quickly, I don't think they will work out great as
+get things done quickly, I don&rsquo;t think they will work out great as
 infrastructure expands. The <a href="https://github.com/ansible/ansible-examples/blob/49708518fab943a37bdbf15ee61177155f0cc50f/lamp_simple/roles/web/tasks/install_httpd.yml#L15-L17">abstractions just are not there</a></p>
 <p>Another sign, to me, that Ansible has the wrong abstractions is that
 so many roles are distro specific.
 Not many have the necessary code to work on both &ldquo;CentOS&rdquo; and &ldquo;Debian&rdquo;.  There
 is a generic <a href="http://docs.ansible.com/ansible/package_module.html">package</a>
-type, but very few roles use it? Check out <a href="https://groups.google.com/forum/#!msg/ansible-project/x2_9PzAJXNE/ZwcBv02oAhkJ">the original author's opinion on the subject</a>.
+type, but very few roles use it? Check out <a href="https://groups.google.com/forum/#!msg/ansible-project/x2_9PzAJXNE/ZwcBv02oAhkJ">the original author&rsquo;s opinion on the subject</a>.
 Look at the examples! They all only work on <code>yum</code> based distributions.</p>
-<p>I've read lots of posts of people migrating to Ansible and loving it.
-Personally, I don't get it. The abstractions are too low-level. If you are lucky,
+<p>I&rsquo;ve read lots of posts of people migrating to Ansible and loving it.
+Personally, I don&rsquo;t get it. The abstractions are too low-level. If you are lucky,
 then the Ansible core has a Module to manipulate the resources on the host,
 like <a href="http://docs.ansible.com/ansible/rabbitmq_user_module.html">RabbitMQ stuff</a>. If you are
 unlucky, then the only primitives you have available are yaml files and
@@ -296,14 +264,14 @@ Or you can write your <a href="http://docs.ansible.com/ansible/developing_module
 <h4 id="ansible-sensu-playbook-review">Ansible Sensu Playbook Review</h4>
 <p>There is no official Sensu Ansible playbook. I was not able to find any playbooks
 that support RedHat-based distributions.</p>
-<p>Luckily, I was able to use <a href="https://github.com/Mayeu/ansible-playbook-sensu">Mayeu's ansible playbook</a>, in conjunction with
+<p>Luckily, I was able to use <a href="https://github.com/Mayeu/ansible-playbook-sensu">Mayeu&rsquo;s ansible playbook</a>, in conjunction with
 this <a href="https://github.com/Mayeu/ansible-playbook-rabbitmq">RabbitMQ playbook</a> on
 my Ubuntu server.</p>
 <p>The <code>sensu_check</code> module is part of the &ldquo;Extras&rdquo;, but it is only a very small
 part of deploying Sensu, and it has no cohesion with the playbook that actually
 deploys Sensu itself. There is no way to extend <code>sensu_check</code> without forking
 <a href="http://github.com/ansible/ansible-modules-extras">ansible-modules-extras</a>. It
-can't consume arbitrary check metadata.</p>
+can&rsquo;t consume arbitrary check metadata.</p>
 <p>In the end, to meet my needs I had to construct hashes myself and deploy them
 to disk as JSON. The playbook-provided way to deploy sensu checks is to have
 them all contained in the single
@@ -323,11 +291,11 @@ one <a href="https://github.com/saltstack-formulas">GitHub project</a>. The docs
 for your own use. On the plus side, having &ldquo;canonical&rdquo; formulas for common
 tasks reduces duplication and encourages code re-use. The downside is that&hellip; it
 encourages forking? These formulas in general are not that extensive. They
-don't have releases or any kind of testing in place.</p>
-<p>Salt's <a href="https://docs.saltstack.com/en/latest/topics/pillar/">Pillar</a> is a powerful tool for separating configuration from code.
-It is similar to Puppet's Hiera. Pro: separate config from code; keep
+don&rsquo;t have releases or any kind of testing in place.</p>
+<p>Salt&rsquo;s <a href="https://docs.saltstack.com/en/latest/topics/pillar/">Pillar</a> is a powerful tool for separating configuration from code.
+It is similar to Puppet&rsquo;s Hiera. Pro: separate config from code; keep
 the site-specific variables in a separate folder than the formulas. Con:
-formulas have to be &ldquo;pillar-aware&rdquo;. There is no equivalent to Puppet's
+formulas have to be &ldquo;pillar-aware&rdquo;. There is no equivalent to Puppet&rsquo;s
 <a href="https://docs.puppetlabs.com/hiera/1/puppet.html#automatic-parameter-lookup">automatic parameter lookup</a>.</p>
 <h4 id="sensu-salt-formula-review">Sensu Salt Formula Review</h4>
 <p>For my testing, I used the official
@@ -345,17 +313,17 @@ this, but the file has been there for a year and nobody else has complained. I
 figured it was just me, and maybe I should get over myself and accept the fact
 that I got a free cron check!</p>
 <p>In my own testing, I used the native <code>gem</code> provider with a special path to
-Sensu's gem binary to install Sensu gems. But then I discovered that the
+Sensu&rsquo;s gem binary to install Sensu gems. But then I discovered that the
 formula did this too, but <a href="https://github.com/saltstack-formulas/sensu-formula/blob/5ca104f5aec94a20d206e98fb0d030674c8514b9/sensu/server.sls#L60-L63">in two</a>
 <a href="https://github.com/saltstack-formulas/sensu-formula/blob/5ca104f5aec94a20d206e98fb0d030674c8514b9/sensu/client.sls#L89-L92">different ways</a>,
-using the <code>cmd.run</code> method instead of the native <code>gem</code> method.  I didn't really
-like this, but at the same time, this is the first time I've ever used Salt.</p>
+using the <code>cmd.run</code> method instead of the native <code>gem</code> method.  I didn&rsquo;t really
+like this, but at the same time, this is the first time I&rsquo;ve ever used Salt.</p>
 <p>As far as I can tell, to do more advanced Sensu config things, like filters or
 mutators, you are expected to fork the formula and drop in the json file into
 <a href="https://github.com/saltstack-formulas/sensu-formula/tree/5ca104f5aec94a20d206e98fb0d030674c8514b9/sensu/files/mutators">the right directory</a>.</p>
 <h2 id="comparison">Comparison</h2>
 <p>A rough opinionated comparison between the tools, with regards the tool itself
-and the tool in conjunction with Sensu. &ldquo;High&rdquo; doesn't necessarily mean &ldquo;good&rdquo; here:</p>
+and the tool in conjunction with Sensu. &ldquo;High&rdquo; doesn&rsquo;t necessarily mean &ldquo;good&rdquo; here:</p>
 <table>
 <thead>
 <tr>
@@ -480,7 +448,7 @@ and the tool in conjunction with Sensu. &ldquo;High&rdquo; doesn't necessarily m
 <td>Medium</td>
 </tr>
 <tr>
-<td>Usability with Sensu's Embedded Ruby</td>
+<td>Usability with Sensu&rsquo;s Embedded Ruby</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>Not natively</td>
@@ -491,7 +459,7 @@ and the tool in conjunction with Sensu. &ldquo;High&rdquo; doesn't necessarily m
 <h2 id="conclusion">Conclusion</h2>
 <p>The way I see it, there are two camps. Chef and Puppet both provide a rich
 language to build modules with. For example, the <a href="https://forge.puppetlabs.com/puppetlabs/rabbitmq">PuppetLabs RabbitMQ module</a> contains all the code
-to interact with RabbitMQ. The main Puppet codebase doesn't know anything about
+to interact with RabbitMQ. The main Puppet codebase doesn&rsquo;t know anything about
 RabbitMQ. The same goes for Chef. Both Chef and Puppet also have their own DSL.
 Puppet uses yaml files for Hiera, but they are for config only, unlike
 Ansible/Salt.</p>
@@ -543,57 +511,81 @@ to provide the primitives.</p>
 <li><a href="https://www.udemy.com/sensu-introduction/">Sensu-Introduction</a> (Free)</li>
 <li><a href="https://www.udemy.com/sensu-intermediate/?couponCode=xkyle">Sensu-Intermediate</a> (50% off, $50)</li>
 </ul>
-<p>Or you can tell me I'm wrong. You can raise and
+<p>Or you can tell me I&rsquo;m wrong. You can raise and
 <a href="https://github.com/solarkennedy/xkyle.com/issues/new">issue</a> or make a
 <a href="https://github.com/solarkennedy/xkyle.com/pulls">pull-request</a> for the blog
 post or investigate my actual training material and code on
 <a href="https://github.com/solarkennedy/sensu-training/tree/master/intermediate/lectures">Github</a>.</p>
 
-        </div>
-    </section>
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../categories/Puppet/" rel="tag">puppet</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../categories/chef/" rel="tag">chef</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../categories/ansible/" rel="tag">ansible</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../categories/salt/" rel="tag">salt</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../categories/sensu/" rel="tag">sensu</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+  
+
+
+
 </article>
 
 
-
-    
-      <footer class="page-footer grey lighten-5">
-    <div class="row max-width">
-        <div class="col s12 l10 offset-l1 clear-padding">
-            <div class="row">
-    
-        
-    
-
-    
-    
-    <div class="col s12 l12">
-        <h5 class="black-text"></h5>
-<p class="grey-text text-darken-4"></p>
-
+      </div>
     </div>
-
-    
-</div>
-
-
-        </div>
+  </main>
+  
+<footer class="Footer">
+  <div class="u-wrapper">
+    <div class="u-padding">
+      Except where otherwise noted, content on this site is licensed under a a <a href="http://creativecommons.org/licenses/by/4.0/" rel="license"> Creative Commons Attribution 4.0 International License</a>.
     </div>
-    <div class="footer-copyright">
-        <div class="row max-width" style="width: 100%;">
-            <div class="col s12 l10 offset-l1">
-                <span class="grey-text text-darken-4"></span>
-<div class="right">
-    
-</div>
-            </div>
-        </div>
-    </div>
+  </div>
 </footer>
-    
 
-    
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="js/script.js"></script>
-  </body>
+
+</body>
 </html>

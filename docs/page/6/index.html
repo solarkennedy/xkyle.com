@@ -1,542 +1,1396 @@
-<!doctype html>
-<html lang="en">
-  <head>
-	<meta name="generator" content="Hugo 0.60.1" />
-    <meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<meta property="og:title" content="xkyle.com" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/" />
-<meta property="og:updated_time" content="2020-02-27T00:00:00+00:00" />
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="xkyle.com"/>
-<meta name="twitter:description" content=""/>
-
-
-    <meta name="description" content="">
-    <link rel="canonical" href="../../">
-
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.66.0" />
+  
+  
+  
+  <title>
     
-    <title>xkyle.com &middot; xkyle.com</title>
+    xkyle.com
+    
+  </title>
+  <link rel="canonical" href="../../">
+  
+  <link rel="alternate" type="application/rss+xml" href="../../index.xml" title="xkyle.com">
+  
+  
+  
+  
+  
+  
+  
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="css/style.css" rel="stylesheet">
 
-    
-      <link href="../../index.xml" rel="alternate" type="application/rss+xml" title="xkyle.com &middot; xkyle.com" />
-      <link href="../../index.xml" rel="feed" type="application/rss+xml" title="xkyle.com &middot; xkyle.com" />
-    
 
-    
 
-    
-  </head>
-  <body>
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <link rel="stylesheet" href="../../css/base.min.50883c9e7cc6f561db1dcd2089b6b895c60df8d10b9e71a90cbc10e59c8bfc40.css" integrity="sha256-UIg8nnzG9WHbHc0giba4lcYN&#43;NELnnGpDLwQ5ZyL/EA=" crossorigin="anonymous">
+  
+  
+</head>
+<body>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable" href="">xkyle.com</a>
+      </li>
       
-
-
-
-<nav class="white" role="navigation">
-    <div class="row max-width">
-        <div class="col s12 l10 offset-l1">
-            
-            <a href="#" data-target="nav-mobile" class="sidenav-trigger black-text">
-                <i class="material-icons">menu</i>
-            </a>
-
-            
-            <ul id="nav-mobile" class="sidenav">
-                
-                
-    
-    
-
-            </ul>
-
-            
-            <a href="../../" class="brand-logo grey-text text-darken-3">xkyle.com</a>
-
-            
-            <div class="nav-wrapper">
-
-                
-                <ul class="right hide-on-med-and-down">
-                    
-                    
-    
-    
-
-                </ul>
-
-            </div>
-        </div>
-    </div>
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="about/">About</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="post/">Posts</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="tags/">Tags</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="categories/">Categories</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="index.xml">RSS</a>
+      </li>
+      
+    </ul>
+  </div>
 </nav>
+
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../../7-underused-ipmitool-commands/" rel="bookmark">7 Underused IPMItool Commands</a>
+  </h2>
+  
+  <time datetime="2012-12-20T03:55:02Z">
+    20 December, 2012
+  </time>
+  
+</header>
+
+  
+  <p><img src="../../uploads/interesting-ipmi-239x300.jpg" alt="">
+<a href="http://en.wikipedia.org/wiki/Intelligent_Platform_Management_Interface">IPMI</a> is Awesome. But, it is underused. Most sysadmins don&rsquo;t even enable it. If they do enable it, they probably enable it by manually going into the BIOS, and then probably only using the Web interface. LAME.</p>
+<p>There is no need to go to the BIOS to configure ipmi. You can use IPMItool to configure it in-band. This is my first underused command:</p>
+<p>(disclaimer: not all IPMI interfaces / bios versions / hardware platforms are equal. Don&rsquo;t complain in a comment that your hardware doesn&rsquo;t support all of these cool things)</p>
+<h1 id="1-ipmitool-lan-set-1-ipsrc-dhcp">1. ipmitool lan set 1 ipsrc dhcp</h1>
+<h2 id="set-your-ipmi-interface-to-grab-an-ip-via-dhcp">(Set your ipmi interface to grab an IP via DHCP)</h2>
+<p>Do it. Script it. Make a <a href="https://github.com/zoide/puppet-ipmi/">puppet module</a>. There is no reason not to have IPMI configured on every server that supports it. Except laziness.  Don&rsquo;t forget to set a password and enable at least one user. Seriously, this is probably the #1 under-utilized command, just configuring the darn thing.</p>
+<h1 id="2ipmitool--h-server-ipmi--u-root--p-root-chassis-power-reset">2. ipmitool -H server-ipmi -U root -P root chassis power reset</h1>
+<h2 id="remote-reboot-via-ipmi">(Remote reboot via IPMI)</h2>
+<p>Once you have IPMI configured, doing a remote reboot is the next cool thing. Seriously, never press the power button, bother a noc tech, telnet to an APC, again. Notice that you need -H, -U, -P, etc. as this command must be run over the lan interface to a remote server.</p>
+<h1 id="3-ipmitool--h-server-ipmi--u-root--p-root-chassis-identify-1">3. ipmitool -H server-ipmi -U root -p root chassis identify 1</h1>
+<h2 id="blink-the-chassis-led">(Blink the chassis LED)</h2>
+<p>Freak out a NOC tech by running this command on all your servers as soon as they replace a harddrive. Make a special Christmas youtube video with your server farm&rsquo;s chassis LEDs.</p>
+<h1 id="4ipmitool--h-server-ipmi--u-root--p-root-chassis-bootparam-set-bootflag-force_bios">4. ipmitool -H server-ipmi -U root -P root  chassis bootparam set bootflag force_bios</h1>
+<h2 id="make-your-server-go-directly-into-bios-on-next-reboot">(Make your server go directly into bios on next reboot)</h2>
+<p><a href="../../uploads/morpheus-ipmi.jpg"><img src="../../uploads/morpheus-ipmi-300x300.jpg" alt=""></a>Now we are getting fancy! We&rsquo;ve all been there. Waiting for a slow-ass HP super server to boot, waiting and waiting for the signal to start frantically pounding the F2 key to enter the bios. Then missing it because the VGA didn&rsquo;t show up in time. Reboot again. Repeat.</p>
+<p>Fuck that noise. I don&rsquo;t wait for servers. The servers wait for me! Also works for EFI shell, PXE, disk, etc.</p>
+<p>Maybe someday I&rsquo;ll combine this command with the next command (SOL) and generate bios setting macros, sending perfect sequences of keystrokes to set the BIOS like some sort of tool-assisted-server-configuring-speed-run (<a href="https://www.youtube.com/watch?v=L_AerCVhoTM">YES. THIS IS HOW WE SHOULD CONFIGURE SERVERS</a>). Or if I&rsquo;m lucky, just <a href="https://wiki.xkyle.com/Configuing_BIOS_From_Linux">configure the bios from Linux itself</a>.</p>
+<h1 id="5ipmitool--h-server01-ipmi--i-lanplus--u-root--p-root-sol-activate">5. ipmitool -H server01-ipmi -I lanplus -U root -P root sol activate</h1>
+<h2 id="connect-to-the-remote-servers-serial-console">(Connect to the remote server&rsquo;s serial console)</h2>
+<p>You know that fancy KVM over IP you have? The one that probably works like crap, needs to be rebooted all the time, lots of extra cables, special dongles, bla bla bla? You don&rsquo;t need it man. All a server needs is power, and network.</p>
+<p>SOL or serial-over-lan allows you to use the server&rsquo;s serial console over ipmi. Configure the bios to do serial console redirection, configure your boot loader and OS to do the same, and you are set. Then load up a screen full of them and use the serial console <a href="https://wiki.xkyle.com/IPMI_Serial_Over_Lan#Like_a_Boss">like a boss</a>. Special props for using the magic-sysrq over SOL.</p>
+<h1 id="6ipmitool--h-ipmihost--u-root--p-root-delloem-powermonitor">6. ipmitool -H ipmihost -U root -P root delloem powermonitor</h1>
+<h2 id="get-server-power-measurements">(Get server power measurements)</h2>
+<p><a href="../../uploads/already-killawatt.jpg"><img src="../../uploads/already-killawatt-300x300.jpg" alt=""></a>
+Yes. On some platforms you can actually measure how much power your server is using. Scrape that shit and pump it to graphite man! I&rsquo;m trying to <a href="https://wiki.xkyle.com/IPMI_Power_Measurement">collect the different ways</a> to do this, as there are different vendor specific implementations.</p>
+<h1 id="7ipmitool--h-ipmihost--u-root--p-root-sensor-list">7. ipmitool -H ipmihost -U root -P root sensor list</h1>
+<h2 id="retrieve-low-level-hardware-sensor-output">(Retrieve low level hardware sensor output)</h2>
+<p>If you suspect you are having hardware issues, this can be super valuable. Combined with <a href="http://exchange.nagios.org/directory/Plugins/Hardware/Server-Hardware/IPMI-Sensor-Monitoring-Plugin/details">automatic sensor monitoring via nagios</a>, and you are an IPMI pro.</p>
+
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
     
-
     
-
-
-
-
-    
-        <article class="row max-width">
-    <div class="col s12 l10 offset-l1">
-        <h3>
-            <a class="grey-text text-darken-3" href="../../7-underused-ipmitool-commands/">7 Underused IPMItool Commands</a>
-        </h3>
-        <div>
-
-<p class="article-meta">
-    <div class="article-meta-container">
-        <div class="article-meta-author-name">admin</div>
-        <div class="article-meta-description"></div>
-    </div>
-    <span class="article-meta-published-at grey-text text-darken-1">Dec 20, 2012</span>
-</p></div>
-        <div>IPMI is Awesome. But, it is underused. Most sysadmins don't even enable it. If they do enable it, they probably enable it by manually going into the BIOS, and then probably only using the Web interface. LAME.
-There is no need to go to the BIOS to configure ipmi. You can use IPMItool to configure it in-band. This is my first underused command:
-(disclaimer: not all IPMI interfaces / bios versions / hardware platforms are equal.</div>
-    </div>
-</article>
-    
-
-
-
-    
-        <article class="row max-width">
-    <div class="col s12 l10 offset-l1">
-        <h3>
-            <a class="grey-text text-darken-3" href="../../carbon-fiber-table/">Carbon Fiber Table</a>
-        </h3>
-        <div>
-
-<p class="article-meta">
-    <div class="article-meta-container">
-        <div class="article-meta-author-name">admin</div>
-        <div class="article-meta-description"></div>
-    </div>
-    <span class="article-meta-published-at grey-text text-darken-1">Dec 15, 2012</span>
-</p></div>
-        <div>It kinda sucks. No matter how much sanding and polish I do, I can't get it to look great. It is smooth, however. Corners are hard. Just posting these pics for archival purposes, not to show off here.</div>
-    </div>
-</article>
-    
-
-
-
-    
-        <article class="row max-width">
-    <div class="col s12 l10 offset-l1">
-        <h3>
-            <a class="grey-text text-darken-3" href="../../carbon-fiber-copper-solar-light/">Carbon Fiber / Copper Solar Light</a>
-        </h3>
-        <div>
-
-<p class="article-meta">
-    <div class="article-meta-container">
-        <div class="article-meta-author-name">admin</div>
-        <div class="article-meta-description"></div>
-    </div>
-    <span class="article-meta-published-at grey-text text-darken-1">Dec 2, 2012</span>
-</p></div>
-        <div>A copper tube sculptural with carbon fiber leaves. One of the carbon fiber leaves is a solar panel from a deconstructed solar lamp. The tips of the small copper tubes have the white LEDs. The larger copper tube stores the battery and charge circuitry. I would show pictures of them at night but the sun doesn't shine much here anymore&hellip;</div>
-    </div>
-</article>
-    
-
-
-
-    
-        <article class="row max-width">
-    <div class="col s12 l10 offset-l1">
-        <h3>
-            <a class="grey-text text-darken-3" href="../../configuring-nagios-like-a-boss/">Configuring Nagios Like a Boss!</a>
-        </h3>
-        <div>
-
-<p class="article-meta">
-    <div class="article-meta-container">
-        <div class="article-meta-author-name">admin</div>
-        <div class="article-meta-description"></div>
-    </div>
-    <span class="article-meta-published-at grey-text text-darken-1">Nov 19, 2012</span>
-</p></div>
-        <div>I'm tired of configuring Nagios by hand. Just tired. I always forget to do stuff. I'll add a new host, or stick in a raid card, add a new website, whatever, and forget to add a nagios check for it.
-
-So it happened. You setup a server, put critical infrastructure on it, but forgot to monitor it. It goes down, bad stuff happens. Your boss asks, why weren't we monitoring this?</div>
-    </div>
-</article>
-    
-
-
-
-    
-        <article class="row max-width">
-    <div class="col s12 l10 offset-l1">
-        <h3>
-            <a class="grey-text text-darken-3" href="../../carbon-fiber-glasses/">Carbon Fiber Glasses</a>
-        </h3>
-        <div>
-
-<p class="article-meta">
-    <div class="article-meta-container">
-        <div class="article-meta-author-name">admin</div>
-        <div class="article-meta-description"></div>
-    </div>
-    <span class="article-meta-published-at grey-text text-darken-1">Nov 3, 2012</span>
-</p></div>
-        <div></div>
-    </div>
-</article>
-    
-
-
-
-    
-        <article class="row max-width">
-    <div class="col s12 l10 offset-l1">
-        <h3>
-            <a class="grey-text text-darken-3" href="../../build-systems-out-of-poured-concrete-not-bricks/">Build Systems out of Poured Concrete, not Bricks</a>
-        </h3>
-        <div>
-
-<p class="article-meta">
-    <div class="article-meta-container">
-        <div class="article-meta-author-name">admin</div>
-        <div class="article-meta-description"></div>
-    </div>
-    <span class="article-meta-published-at grey-text text-darken-1">Jun 24, 2012</span>
-</p></div>
-        <div>Personally, I don't have any kind of battle-hardened wisdom. Most of what I know comes from the wisdom of others. In particular I would like to acknowledge the real geniuses up front:
-  My First Petabyte: Now What? (Jacob Farmer from Cambridge Computer)
-  Google Platforms Rant (Steve Yegge of Google)
-  http://perspectives.mvdirona.com/ (James Hamilton of Amazon)
-  Ted Dzuiba
-  Tons of blogs posts, LISA talks, that I can't site specifically.</div>
-    </div>
-</article>
-    
-
-
-
-    
-        <article class="row max-width">
-    <div class="col s12 l10 offset-l1">
-        <h3>
-            <a class="grey-text text-darken-3" href="../../graph-everything-with-graphite/">Graph EVERYTHING with Graphite!</a>
-        </h3>
-        <div>
-
-<p class="article-meta">
-    <div class="article-meta-container">
-        <div class="article-meta-author-name">admin</div>
-        <div class="article-meta-description"></div>
-    </div>
-    <span class="article-meta-published-at grey-text text-darken-1">Apr 29, 2012</span>
-</p></div>
-        <div>I believe that a graphing tool should be flexible enough for the user to decide what metrics are important to their environment, and it should be able to accept metric data from any source.
- There are pretty good graphing tools out there for the Linux engineer: Munin, Ganglia, Cacti, Zabbix, Collectd, etc.
-I call these &ldquo;graphing&rdquo; tools, because I don't consider them &ldquo;monitoring&rdquo; tools, like Nagios, WhatsUp, or Zabbix.</div>
-    </div>
-</article>
-    
-
-
-
-    
-        <article class="row max-width">
-    <div class="col s12 l10 offset-l1">
-        <h3>
-            <a class="grey-text text-darken-3" href="../../lose-the-metawork-and-get-on-with-your-life/">Lose the Metawork and Get on with Your Life!</a>
-        </h3>
-        <div>
-
-<p class="article-meta">
-    <div class="article-meta-container">
-        <div class="article-meta-author-name">admin</div>
-        <div class="article-meta-description"></div>
-    </div>
-    <span class="article-meta-published-at grey-text text-darken-1">Apr 16, 2012</span>
-</p></div>
-        <div>Every job has metawork. Sometimes it becomes so commonplace that we just forget about it. We should never forget about it. I hope this blog post reminds you of what your metawork is. For the purposes of this blog post it will focus on code-centric stuff, but could apply to anything.
-Different jobs have different types of metawork. Sometimes it is just paperwork. Other times it is called &ldquo;overhead&rdquo;. Commonly it is referred to as &ldquo;Process&rdquo;.</div>
-    </div>
-</article>
-    
-
-
-
-    
-        <article class="row max-width">
-    <div class="col s12 l10 offset-l1">
-        <h3>
-            <a class="grey-text text-darken-3" href="../../puppet-versus-cfengine-editing-files/">Puppet versus CFEngine 2: Editing Files</a>
-        </h3>
-        <div>
-
-<p class="article-meta">
-    <div class="article-meta-container">
-        <div class="article-meta-author-name">admin</div>
-        <div class="article-meta-description"></div>
-    </div>
-    <span class="article-meta-published-at grey-text text-darken-1">Jan 26, 2012</span>
-</p></div>
-        <div>Update: I wrote this article when I was young and stupid. It is obsolete. Puppet wins, just use Augeas.  Both Puppet and CFEngine are formidable configuration management systems. Let's compare the two to see how the match up on the common task of editing files. Feel free to jump straight to the conclusion if you are impatient.
-Why would you need this? What is the use-case here? These are some common tasks I do that involve editing files:</div>
-    </div>
-</article>
-    
-
-
-
-    
-        <article class="row max-width">
-    <div class="col s12 l10 offset-l1">
-        <h3>
-            <a class="grey-text text-darken-3" href="../../achieving-awesome-single-stream-performance-over-bonded-ethernet/">Achieving Awesome Single-Stream Performance Over Bonded Ethernet</a>
-        </h3>
-        <div>
-
-<p class="article-meta">
-    <div class="article-meta-container">
-        <div class="article-meta-author-name">admin</div>
-        <div class="article-meta-description"></div>
-    </div>
-    <span class="article-meta-published-at grey-text text-darken-1">Jan 4, 2012</span>
-</p></div>
-        <div>Ethernet Link Aggregation (aka PortChannel, Etherchannel, ethernet bonding, NIC teaming, trunking, link bundling, Smartgroup, Ethertrunk, etc) is a way to combine multiple Ethernet links to a single logical link. This improves redundancy and increases aggregate performance. It is good stuff, especially if you are into High Availability.
-Here is a typical setup: 
-A good start. If you can spare the ports and cables to make this work, you should do it.</div>
-    </div>
-</article>
-    
-
-
-
-
-
-<ul class="pagination center-align">
-    <li class="waves-effect">
-        <a href="../../page/5/" aria-label="Previous"><i class="material-icons">chevron_left</i></a>
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/bios/" rel="tag">bios</a>
     </li>
     
     
-        
-        
-        
-        
-            
-            
-        
-        
-            <li class="waves-effect ">
-                <a href="../../">1</a>
-            </li>
-        
     
-        
-        
-        
-        
-            
-            
-        
-        
-            <li class="waves-effect ">
-                <a href="../../page/2/">2</a>
-            </li>
-        
-    
-        
-        
-        
-        
-            
-            
-        
-        
-            <li class="waves-effect ">
-                <a href="../../page/3/">3</a>
-            </li>
-        
-    
-        
-        
-        
-        
-            
-            
-        
-        
-            <li class="waves-effect disabled">
-                <a aria-hidden="true">&hellip;</a>
-            </li>
-        
-    
-        
-        
-        
-        
-            
-            
-        
-        
-            <li class="waves-effect ">
-                <a href="../../page/5/">5</a>
-            </li>
-        
-    
-        
-        
-        
-        
-            
-            
-        
-        
-            <li class="waves-effect active grey darken-4 ">
-                <a href="../../page/6/">6</a>
-            </li>
-        
-    
-        
-        
-        
-        
-            
-            
-        
-        
-            <li class="waves-effect ">
-                <a href="../../page/7/">7</a>
-            </li>
-        
-    
-        
-        
-        
-        
-            
-            
-        
-        
-            <li class="waves-effect disabled">
-                <a aria-hidden="true">&hellip;</a>
-            </li>
-        
-    
-        
-        
-        
-        
-            
-            
-        
-        
-    
-        
-        
-        
-        
-            
-            
-        
-        
-    
-        
-        
-        
-        
-            
-            
-        
-        
-    
-        
-        
-        
-        
-            
-            
-        
-        
-    
-        
-        
-        
-        
-            
-            
-        
-        
-    
-        
-        
-        
-        
-            
-            
-        
-        
-            <li class="waves-effect ">
-                <a href="../../page/14/">14</a>
-            </li>
-        
-    
-    <li class="waves-effect">
-        <a href="../../page/7/" aria-label="Next"><i class="material-icons">chevron_right</i></a>
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/ipmi/" rel="tag">ipmi</a>
     </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/ipmitool/" rel="tag">ipmitool</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/linux/" rel="tag">linux</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../../carbon-fiber-table/" rel="bookmark">Carbon Fiber Table</a>
+  </h2>
+  
+  <time datetime="2012-12-15T21:17:29Z">
+    15 December, 2012
+  </time>
+  
+</header>
+
+  
+  <p>It kinda sucks. No matter how much sanding and polish I do, I can&rsquo;t get it to look great. It is smooth, however. Corners are hard. Just posting these pics for archival purposes, not to show off here.</p>
+<p><a href="../../uploads/PC1500021.jpg"><img src="../../uploads/PC1500021-300x224.jpg" alt=""></a><a href="../../uploads/PC150005.jpg"><img src="../../uploads/PC150005-300x224.jpg" alt=""></a></p>
+<p><a href="../../uploads/PC150008.jpg"><img src="../../uploads/PC150008-300x224.jpg" alt=""></a><a href="../../uploads/PC150009.jpg"><img src="../../uploads/PC150009-300x224.jpg" alt=""></a></p>
+
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/carbon-fiber/" rel="tag">carbon fiber</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../../carbon-fiber-copper-solar-light/" rel="bookmark">Carbon Fiber / Copper Solar Light</a>
+  </h2>
+  
+  <time datetime="2012-12-02T18:39:02Z">
+    2 December, 2012
+  </time>
+  
+</header>
+
+  
+  <p><a href="../../uploads/PB200015.jpg"><img src="../../uploads/PB200015-224x300.jpg" alt=""></a><a href="../../uploads/PC020002.jpg"><img src="../../uploads/PC020002-300x224.jpg" alt=""></a><a href="../../uploads/PC080001.jpg"><img src="../../uploads/PC080001-300x300.jpg" alt=""></a></p>
+<p>A copper tube sculptural with carbon fiber leaves. One of the carbon fiber leaves is a solar panel from a deconstructed solar lamp. The tips of the small copper tubes have the white LEDs. The larger copper tube stores the battery and charge circuitry. I would show pictures of them at night but the sun doesn&rsquo;t shine much here anymore&hellip;</p>
+
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/carbon-fiber/" rel="tag">carbon fiber</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/copper/" rel="tag">copper</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../../configuring-nagios-like-a-boss/" rel="bookmark">Configuring Nagios Like a Boss!</a>
+  </h2>
+  
+  <time datetime="2012-11-19T05:41:17Z">
+    19 November, 2012
+  </time>
+  
+</header>
+
+  
+  <p>I&rsquo;m tired of configuring Nagios by hand. Just tired. I always forget to do stuff. I&rsquo;ll add a new host, or stick in a raid card, add a new website, whatever, and forget to add a nagios check for it.</p>
+<p><a href="../../uploads/nagiosforget.png"><img src="../../uploads/nagiosforget.png" alt=""></a></p>
+<p>So it happened. You setup a server, put critical infrastructure on it, but forgot to monitor it. It goes down, bad stuff happens. Your boss asks, why weren&rsquo;t we monitoring this? Let me supply a few options to prevent this from happening in the future:</p>
+<ol>
+<li>
+<p>Enforce draconian punishment for people who forget to do it (one cutoff finger per service check?)</p>
+</li>
+<li>
+<p>Have strict workflows/bkms/procedures for doing things like adding a vhost, starting a server, etc that include a step for adding them to Nagios</p>
+</li>
+<li>
+<p>Invent a fake sysadmin named Paco, and blame all the mistake on him.</p>
+</li>
+<li>
+<p>Automate it with puppet. Then blame puppet when it goes wrong!</p>
+</li>
+</ol>
+<h1 id="a-migration-plan">A Migration Plan</h1>
+<p>Let&rsquo;s do it. Let&rsquo;s make puppet do the work. After all, puppet is aware of my hosts, and it even knows what services are running them.</p>
+<p>You don&rsquo;t have to switch all at once, you can have a mix of automatically generated and manually configured checks. I like to put my automated definitions go into folders called hosts.d and services.d. Do what makes sense for your environment.</p>
+<h1 id="howto">Howto</h1>
+<p>First, define a &ldquo;virtual resource&rdquo; wherever a service is defined. Lets take a really simple, but overlooked example of health-checking raid:</p>
+<pre><code>class nagios_checks::raid {
+   file { &quot;/usr/lib64/nagios/plugins/check_raid&quot;:
+      mode =&gt; 555,
+      source =&gt; &quot;puppet:///modules/nagios_checks/check_raid&quot;,
+   }
+   @@nagios_service { &quot;${fqdn}_raid&quot;:
+      ensure =&gt; present,
+      host_name =&gt; &quot;$fqdn&quot;,
+      use =&gt; &quot;generic-service&quot;,
+      target =&gt; &quot;/etc/nagios/services.d/$fqdn-raid.cfg&quot;,
+      check_command =&gt; &quot;check_nrpe!check_raid&quot;,
+      service_description =&gt; &quot;raid&quot;,
+      notify =&gt; Service[&quot;nagios&quot;],
+   }
+}
+</code></pre>
+<p>So what is going on here? In this class we define a Nagios plugin, and we copy it over. (I like making things that puppet copies over set to 555 as a reminder that I shouldn&rsquo;t be editing them)</p>
+<p>The virtual resource is &ldquo;@@nagios_server&rdquo;. The @@ means that the resource is just saved on the puppet master, and not instantiated on the client. (this assumes you have <a href="http://projects.puppetlabs.com/projects/puppet/wiki/Using_Stored_Configuration">stored configs</a> enabled in your puppet setup.)</p>
+<p>With &ldquo;target =&gt;&rdquo; I&rsquo;m dumping the config into /etc/nagios/services.d/$fqdn-raid.cfg. It&rsquo;s a good idea to let puppet put service definitions in separate files. Making puppet scan a single file chock full of definitions will be slow.</p>
+<p>If this virtual resource is defined on a bunch of clients, on some nagios server we need to let puppet dump these files:</p>
+<pre><code>class nagios::server {
+   package { nagios:
+      ensure =&gt; latest;
+   }
+   service { &quot;nagios&quot;:
+      ensure =&gt; running,
+      enabled =&gt; true,
+   }
+
+   # Hack for bug #3299 where nagios stuff is root:600
+   file { [&quot;/etc/nagios/hosts.d/&quot;, &quot;/etc/nagios/services.d/&quot;]:
+      ensure =&gt; directory,
+      mode =&gt; 644,
+      recurse =&gt; true,
+   }
+
+   # Collect and instantiate all the puppet stuff
+   Nagios_host &lt;||&gt;
+   Nagios_service &lt;||&gt;
+
+}
+</code></pre>
+<p>That is a basic recipe for a Nagios server. We get the package, make sure the package is running, fix some permissions&hellip; when what the crap is that?</p>
+<p>The &lt;||&gt; operator takes virtual resources that were defined on other servers, and then makes them real. This means the $fqdn-host.cfg files will be created wherever this nagios::server is setup.</p>
+<p>So go forth, and define @@nagios_services&rsquo;s whenever you have a puppet server setup. Like a boss.</p>
+<p><a href="../../uploads/gravitron.jpg"><img src="../../uploads/gravitron-300x225.jpg" alt=""></a></p>
+
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/linux/" rel="tag">linux</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/nagios/" rel="tag">nagios</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/Puppet/" rel="tag">Puppet</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../../carbon-fiber-glasses/" rel="bookmark">Carbon Fiber Glasses</a>
+  </h2>
+  
+  <time datetime="2012-11-03T22:07:27Z">
+    3 November, 2012
+  </time>
+  
+</header>
+
+  
+  <p><a href="../../uploads/PA0900022.jpg"><img src="../../uploads/PA0900022-300x111.jpg" alt=""></a><a href="../../uploads/PA090004.jpg"><img src="../../uploads/PA090004-300x175.jpg" alt=""></a><a href="../../uploads/PA090005.jpg"><img src="../../uploads/PA090005-300x89.jpg" alt=""></a><a href="../../uploads/PB030038.jpg"><img src="../../uploads/PB030038-300x95.jpg" alt=""></a><a href="../../uploads/PB0300401.jpg"><img src="../../uploads/PB0300401-300x156.jpg" alt=""></a><a href="../../uploads/PB030041.jpg"><img src="../../uploads/PB030041-300x142.jpg" alt=""></a></p>
+
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/carbon-fiber/" rel="tag">carbon fiber</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../../build-systems-out-of-poured-concrete-not-bricks/" rel="bookmark">Build Systems out of Poured Concrete, not Bricks</a>
+  </h2>
+  
+  <time datetime="2012-06-24T17:05:04Z">
+    24 June, 2012
+  </time>
+  
+</header>
+
+  
+  <p>Personally, I don&rsquo;t have any kind of battle-hardened wisdom. Most of what I know comes from the wisdom of others. In particular I would like to acknowledge the real geniuses up front:</p>
+<ul>
+<li>
+<p><a href="http://www.youtube.com/watch?v=Eu430bqbK5w">My First Petabyte: Now What?</a> (<a href="http://www.cambridgecomputer.com/management.cfm">Jacob Farmer</a> from <a href="http://www.cambridgecomputer.com">Cambridge Computer</a>)</p>
+</li>
+<li>
+<p><a href="https://plus.google.com/112678702228711889851/posts/eVeouesvaVX">Google Platforms Rant</a> (<a href="https://plus.google.com/110981030061712822816/posts">Steve Yegge</a> of Google)</p>
+</li>
+<li>
+<p><a href="http://perspectives.mvdirona.com/">http://perspectives.mvdirona.com/</a> (<a href="http://perspectives.mvdirona.com/">James Hamilton</a> of Amazon)</p>
+</li>
+<li>
+<p><a href="https://github.com/teddziuba/teddziuba.github.com">Ted Dzuiba</a></p>
+</li>
+<li>
+<p>Tons of blogs posts, LISA talks, that I can&rsquo;t site specifically.</p>
+</li>
+<li>
+<p>Seriously, we are all a product of the RSS feeds we read?</p>
+</li>
+</ul>
+<p>I&rsquo;m not saying <a href="https://www.networkworld.com/news/2008/010908-carr-wrong.html">IT is dead</a>. But IT is changing.</p>
+<p>Look at how building houses has changed over time:
+<a href="../../uploads/brick.jpg"><img src="../../uploads/brick.jpg" alt=""></a><a href="../../uploads/cinderblock.jpg"><img src="../../uploads/cinderblock.jpg" alt=""></a><a href="../../uploads/concrete.jpg"><img src="../../uploads/concrete-1024x731.jpg" alt=""></a><a href="../../uploads/Prefabricated_house_construction.jpg"><img src="../../uploads/Prefabricated_house_construction-300x225.jpg" alt=""></a></p>
+<ul>
+<li>
+<p>Brick - small pieces, one at a time</p>
+</li>
+<li>
+<p>Cinder Block - Big pieces, one at a time</p>
+</li>
+<li>
+<p><strong>Poured Concrete - continuous pieces, poured continuously</strong></p>
+</li>
+<li>
+<p><strong>Prefab Houses - one house at a time?</strong></p>
+</li>
+</ul>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>I don&rsquo;t have book to sell, I have a job to do. That job it to help build systems, and I will <strong>not</strong> be doing it one at a time.</p>
+</blockquote>
+<p>You might think that I&rsquo;m talking about &ldquo;The Cloud&rdquo;. Well, I don&rsquo;t know what you are talking about. You might think I&rsquo;m talking about things like Amazon&rsquo;s EC2. While that is part of the puzzle, Amazon is just making it easier for us to rent bricks from them. <a href="https://aws.amazon.com/dynamodb/">Amazon DynamoDB</a> however is more like poured concrete&hellip;</p>
+<p>In the end, there is so much work to be done on internal stuff. Like it or not, lots and lots of computing just can&rsquo;t be run on public infrastructure. (Utility Computing?) For that, we need private infrastructure. A &ldquo;Private Cloud&rdquo; you might say? Yes, but that is only the beginning of the story.  It is certainly a good start: get really good a supplying bricks. (Or prefab houses)</p>
+<p>The rest of the infrastructure story (I believe) has to do with simplifying and unifying our bricks, or concrete. It is not enough to be able to spin up VM&rsquo;s on demand. A big scalable SAN is not enough. Who cares how fast you can provision, what is it that you are provisioning?</p>
+<p>Here is what we need to make it happen:</p>
+<h2 id="1-blur-the-lines-of-storage--compute--networking">1. Blur the lines of Storage / Compute / Networking</h2>
+<p>You system engineers should be <a href="http://puppetlabs.com/blog/puppet-network-device-management/">configuring your networking</a>. Your network should be <a href="https://en.wikipedia.org/wiki/Software_Defined_Networking">configuring itself</a>. The Storage should not just be salable, but agile and dynamic. The data should migrate to where it can be served the most efficiently. IaaS can enable this to happen as the apps are abstracted from the hardware. <em>Imagine a setup where every server node has internal SSDs and an agile filesystem automatically moves the most requested objects to its local storage (for the lowest latency)</em>.</p>
+<h2 id="2-devops">2. Devops</h2>
+<p>Destroy the Silos! There should be no difference between development and ops. Make your developers keep their apps running. This gives them an incentive to build them better. The trick is of course to have the infrastructure in place for them to use. <em>Imagine a place where Developers own the end-to-end lifecycle of their application</em>.</p>
+<h2 id="3-forward-thinking-business-people">3. Forward thinking business-people</h2>
+<p>&ldquo;IT&rdquo; provides a huge competitive advantage for business, even more than it has in the past. There is no industry where IT is not a critical business component. Evolving IT helps lift up everything. <em>Imagine a world where the CTO can see the vision and imagine how cutting edge infrastructure provides real value to the business</em>.</p>
+<h2 id="4-apps-that-assume-they-are-distributed">4. Apps that assume they are distributed</h2>
+<p>We can&rsquo;t keep building our systems with single points of failure, whether they are in a &ldquo;cloud&rdquo; or not. Think about the pain of going from one MySQL server to two. How about the three? It is too hard. We need a more Mongodb-like approach. <em>Imagine a world where every app can be &ldquo;poured&rdquo; to one node or a hundred nodes</em>.</p>
+<h2 id="5-design-apps-to-use-objects-instead-of-files">5. Design Apps to use Objects instead of Files</h2>
+<p>The S3 approach is good. We need to learn from this. Web-apps are not the only things that can benefit from the transition from file to objects. HTTP based object stores are much easier to scale and can keep a higher availability than traditional filesystems. <em>Imagine a world where applications can take advantage of distributed object stores as easily as they can use local filesystems</em>.</p>
+<p>Those are my predictions for the future. I&rsquo;m excited to be a part of it!</p>
+
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/it/" rel="tag">it</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/platforms/" rel="tag">platforms</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../../graph-everything-with-graphite/" rel="bookmark">Graph EVERYTHING with Graphite!</a>
+  </h2>
+  
+  <time datetime="2012-04-29T19:46:17Z">
+    29 April, 2012
+  </time>
+  
+</header>
+
+  
+  <blockquote>
+<p><strong>I believe that a graphing tool should be flexible enough for the user to decide what metrics are important to their environment, and it should be able to accept metric data from any source.</strong></p>
+</blockquote>
+<p>There are pretty good graphing tools out there for the Linux engineer: <a href="http://munin-monitoring.org/">Munin</a>, <a href="http://munin-monitoring.org/">Ganglia</a>, <a href="http://www.cacti.net/">Cacti</a>, <a href="http://www.zabbix.com/">Zabbix</a>, <a href="http://collectd.org/">Collectd</a>, etc.</p>
+<p>I call these &ldquo;graphing&rdquo; tools, because I don&rsquo;t consider them &ldquo;monitoring&rdquo; tools, like Nagios, WhatsUp, or Zabbix. Here is are my thoughts on graphing/monitoring:</p>
+<p>Graphing
+Monitoring</p>
+<ul>
+<li>
+<p>Shows trends over time</p>
+</li>
+<li>
+<p>Contains <strong>historic</strong> data</p>
+</li>
+<li>
+<p>Post-event analytics</p>
+</li>
+<li>
+<p><strong>Performance</strong> trends</p>
+</li>
+<li>
+<p>More Dev&rsquo;y?</p>
+</li>
+<li>
+<p>&ldquo;Will run out of disk space in 3 days&rdquo;</p>
+</li>
+<li>
+<p>&ldquo;Ldap queries up 200% in 6 months&rdquo;</p>
+</li>
+<li>
+<p><a href="../../uploads/graphite_fullscreen_800.png"><img src="../../uploads/graphite_fullscreen_800.png" alt=""></a></p>
+</li>
+<li>
+<p>Alerts when thresholds are crossed</p>
+</li>
+<li>
+<p>States are definite: Ok/Bad/Warning</p>
+</li>
+<li>
+<p>Notifications are <strong>actionable</strong></p>
+</li>
+<li>
+<p>Makes events</p>
+</li>
+<li>
+<p>More Ops&rsquo;y?</p>
+</li>
+<li>
+<p>&ldquo;OMG OUT OF SPACE&rdquo;</p>
+</li>
+<li>
+<p>&ldquo;LDAP IS DOWN&rdquo;</p>
+</li>
+<li>
+<p><a href="../../uploads/nagios.png"><img src="../../uploads/nagios.png" alt=""></a></p>
+</li>
+</ul>
+<p>Any good engineer knows you need both functions. Zabbix, WhatsUp, and some others handle both functions. Splunk can do threshold detection and make graphs too, but it ain&rsquo;t no Nagios. Personally I like tools that<a href="http://en.wikipedia.org/wiki/Unix_philosophy"> do one thing, and one thing well</a>. I am not after some sort of monitoring super-tool, and I don&rsquo;t believe that #monitoringsucks.</p>
+<h1 id="what-makes-graphite-awesome"> What Makes Graphite Awesome</h1>
+<h3 id="1-so-many-ways-to-get-data-into-it">1: So many ways to get data into it</h3>
+<p>Graphite does <strong>not</strong> have any kind of polling daemon. It just accepts incoming metrics, it is up to you how you want to get them there, and what to call them. It enforces no naming convention. All it needs you to do is echo your metricname, value into tcp port 2003, it does the rest.</p>
+<p>Ways you can get data into Graphite:</p>
+<ul>
+<li>
+<p>Push or pull from your <a href="https://github.com/adamhjk/munin-graphite">munin-nodes</a></p>
+</li>
+<li>
+<p>Pull from your existing <a href="https://github.com/ganglia/ganglia_contrib/tree/master/graphite_integration/">Ganglia</a> install</p>
+</li>
+<li>
+<p>Integrate sending metrics directly into your application with <a href="https://github.com/etsy/statsd/tree/master/examples">statsd</a></p>
+</li>
+<li>
+<p><code>echo``&quot;mycoolmetric.rate  9000 </code>date +%s<code>&quot;``|nc graphite.server 2003</code></p>
+</li>
+<li>
+<p>Extract metrics from your log files with <a href="https://github.com/etsy/logster">logster</a></p>
+</li>
+<li>
+<p><a href="http://graphite.readthedocs.org/en/1.0/tools.html">This list goes on</a>.</p>
+</li>
+</ul>
+<h3 id="2-the-only-limit-to-visualizing-your-data-is-your-imagination">2. The only limit to visualizing your data is your imagination</h3>
+<p>Unlike other graphing systems where the style of the graph is pre-determined, Graphite also does not enforce any kind of convention for making its graphs. It is more like a graph api. Composing your graphs is a manual process, and requires a bit of creativity.</p>
+<p>Graphite does <strong>not</strong> present the user with pages and pages of pre-rendered graphs like Ganglia, Munin, etc.</p>
+<p>What kind of graphs can you make with Graphite? Lets see some cool examples:</p>
+<p><a href="http://codeascraft.etsy.com/2010/12/08/track-every-release/">Etsy&rsquo;s</a> php warnings correlated with code deploys:
+<img src="http://etsycodeascraft.files.wordpress.com/2010/12/warnings_1hr_deploys3.png" alt=""></p>
+<p>My cool stacked latency graph:<a href="../../uploads/graphite-latency.png"><img src="../../uploads/graphite-latency.png" alt=""></a></p>
+<p>Filtering out <a href="http://obfuscurity.com/2012/04/Unhelpful-Graphite-Tip-6">deviant server loads</a>: <a href="../../uploads/graphite-load.png">
+<img src="../../uploads/graphite-load.png" alt=""></a></p>
+<p>You can see that graphite fits my initial principles. It can suck in metrics from anywhere, and create graphs to fit your imagination. Combine this with a crazy amount of <a href="http://graphite.readthedocs.org/en/1.0/functions.html">functions</a> that you can apply to your metrics, the sky is the limit!</p>
+<p>Cool graphs for you to make:</p>
+<ul>
+<li>
+<p>Ratio of shopping cart items to unique visitors?</p>
+</li>
+<li>
+<p>Overlay your average page load time with your code deploys?</p>
+</li>
+<li>
+<p>Graph your average rate of change of your storage?</p>
+</li>
+<li>
+<p>Plot the <a href="http://obfuscurity.com/2012/04/Unhelpful-Graphite-Tip-1">mortality rate of your EC2 Instances</a>?</p>
+</li>
+</ul>
+<p>More Reading:</p>
+<ul>
+<li>
+<p><a href="http://obfuscurity.com/Tags/Graphite"> Lots of graphite tips</a></p>
+</li>
+<li>
+<p>My <a href="https://wiki.xkyle.com/Graphite">Graphite notes</a></p>
+</li>
+<li>
+<p>How to install graphite <a href="https://github.com/dcarley/graphite-rpms">via RPMS</a></p>
+</li>
 </ul>
 
+  
+  
 
 
 
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
     
-      <footer class="page-footer grey lighten-5">
-    <div class="row max-width">
-        <div class="col s12 l10 offset-l1 clear-padding">
-            <div class="row">
     
-        
-    
-
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/devops/" rel="tag">devops</a>
+    </li>
     
     
-    <div class="col s12 l12">
-        <h5 class="black-text"></h5>
-<p class="grey-text text-darken-4"></p>
-
-    </div>
-
     
-</div>
-
-
-        </div>
-    </div>
-    <div class="footer-copyright">
-        <div class="row max-width" style="width: 100%;">
-            <div class="col s12 l10 offset-l1">
-                <span class="grey-text text-darken-4"></span>
-<div class="right">
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/ganglia/" rel="tag">ganglia</a>
+    </li>
     
-</div>
-            </div>
-        </div>
-    </div>
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/graphite/" rel="tag">graphite</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/metrics/" rel="tag">metrics</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/monitoring/" rel="tag">monitoring</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/munin/" rel="tag">munin</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  
 </footer>
-    
 
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../../lose-the-metawork-and-get-on-with-your-life/" rel="bookmark">Lose the Metawork and Get on with Your Life!</a>
+  </h2>
+  
+  <time datetime="2012-04-16T02:25:27Z">
+    16 April, 2012
+  </time>
+  
+</header>
+
+  
+  <p>Every job has metawork. Sometimes it becomes so commonplace that we just forget about it. We should never forget about it. I hope this blog post reminds you of what <strong>your</strong> metawork is. For the purposes of this blog post it will focus on code-centric stuff, but could apply to anything.</p>
+<p>Different jobs have different types of metawork. Sometimes it is just paperwork. Other times it is called &ldquo;overhead&rdquo;. Commonly it is referred to as &ldquo;Process&rdquo;.</p>
+<p>I personally like the word metawork. In the same sense that metdata is the data about the data, metawork is the work done about the actual work. Let me give some examples with some sort of chart:</p>
+<p><a href="../../uploads/metawork.png"><img src="../../uploads/metawork.png" alt=""></a></p>
+<p>Try to put some of your activities on a similar chart. Where is most of your time spent?</p>
+<p>Another litmus test I like to use to determine metawork versus work is to compare the same task if I were doing it at home. For example, installing a new OS on a new laptop:</p>
+<p>At Home
+AT Work</p>
+<ul>
+<li>
+<p>Install your OS</p>
+</li>
+<li>
+<p>Register the laptop</p>
+</li>
+<li>
+<p>Install your OS</p>
+</li>
+<li>
+<p>Do post install tasks to be compliant
+with the corporate infrastructure</p>
+</li>
+<li>
+<p>Document the system in whatever tracker is used</p>
+</li>
+</ul>
+<p>Or how about this? Let&rsquo;s compare working on some code at home versus at work:</p>
+<p>At Home
+AT Work</p>
+<ul>
+<li>
+<p>Make Changes to the code</p>
+</li>
+<li>
+<p>Commit / Push</p>
+</li>
+<li>
+<p>Reload the webserver</p>
+</li>
+<li>
+<p>Make a ticket/story in your tracker</p>
+</li>
+<li>
+<p>Make changes to the code</p>
+</li>
+<li>
+<p>Code review</p>
+</li>
+<li>
+<p>Commit / push</p>
+</li>
+<li>
+<p>Close ticket / story</p>
+</li>
+<li>
+<p>Documentation?</p>
+</li>
+<li>
+<p>Push to test / QA</p>
+</li>
+<li>
+<p>Push to production / reload</p>
+</li>
+</ul>
+<p>That example might be stretching some things. I didn&rsquo;t even mention branching / tagging / merging. Depending on who you ask, somethings might me more &ldquo;meta&rdquo; than others.</p>
+<p>But, what is the point here? Yes, it is a job, we have shit to do. Get over it!</p>
+<p>Except, I believe that life is short and precious. So short and precious that we should endeavor to eliminate as much metawork as possible.  Here is what I try to do to keep myself sane:</p>
+<ul>
+<li>
+<p>Automate as much as possible</p>
+</li>
+<li>
+<p>Resist meetings</p>
+</li>
+<li>
+<p>Keep the metawork / work distinction in mind when building systems</p>
+</li>
+<li>
+<p>Only have an email client open during preset times</p>
+</li>
+<li>
+<p>Use git :)</p>
+</li>
+<li>
+<p>Be conscious of when you are doing metawork (helps you recognize when you are doing too much?)</p>
+</li>
+</ul>
+<p>Knowing is half the battle. Do you know what percentage of your time is spent doing things that are not an &ldquo;end in themselves&rdquo;? Maybe someday as a species we will take drastic steps&hellip;.</p>
+<p>Other people who think like this but write better than me:</p>
+<ul>
+<li>
+<p><a href="http://teddziuba.com/2011/12/process.html">http://teddziuba.com/2011/12/process.html</a></p>
+</li>
+<li>
+<p><a href="http://zachholman.com/posts/how-github-works/">http://zachholman.com/posts/how-github-works/</a></p>
+</li>
+</ul>
+
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
     
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="js/script.js"></script>
-  </body>
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/code/" rel="tag">code</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/git/" rel="tag">git</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/management/" rel="tag">management</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/metawork/" rel="tag">metawork</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/work/" rel="tag">work</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../../puppet-versus-cfengine-editing-files/" rel="bookmark">Puppet versus CFEngine 2: Editing Files</a>
+  </h2>
+  
+  <time datetime="2012-01-26T01:46:30Z">
+    26 January, 2012
+  </time>
+  
+</header>
+
+  
+  <h2 id="update-i-wrote-this-article-when-i-was-young-and-stupid-it-is-obsolete-puppet-wins-just-use-augeashttpprojectspuppetlabscomprojects1wikipuppet_augeas">Update: I wrote this article when I was young and stupid. It is obsolete. Puppet wins, just use <a href="http://projects.puppetlabs.com/projects/1/wiki/puppet_augeas">Augeas</a>.</h2>
+<hr>
+<p>Both <a href="http://puppetlabs.com/">Puppet</a> and <a href="http://cfengine.com/">CFEngine</a> are formidable configuration management systems. Let&rsquo;s compare the two to see how the match up on the common task of editing files. Feel free to jump straight to the conclusion if you are impatient.</p>
+<h2 id="why-would-you-need-this">Why would you need this?</h2>
+<p>What is the use-case here? These are some common tasks I do that involve editing files:</p>
+<ul>
+<li>
+<p>Managing lines in /etc/fstab</p>
+</li>
+<li>
+<p>Adding and revoking ssh keys in authorized_keys</p>
+</li>
+<li>
+<p>Editing hosts in /etc/hosts</p>
+</li>
+<li>
+<p>Setting root passwords in /etc/shadow</p>
+</li>
+<li>
+<p>Adding users in /etc/passwd</p>
+</li>
+<li>
+<p>Adding lines to /etc/sudoers</p>
+</li>
+</ul>
+<h2 id="cfengine-2-capabilities">CFEngine 2 Capabilities</h2>
+<p>Starting with CFEngine 2, here are the built in functions for editing files:</p>
+<ul>
+<li>
+<p>Append</p>
+</li>
+<li>
+<p>AppendIfNoLineMatching</p>
+</li>
+<li>
+<p>AppendIfNoSuchLine</p>
+</li>
+<li>
+<p>AppendIfNoSuchLinesFromFile</p>
+</li>
+<li>
+<p>AppendToLineIfNotContains</p>
+</li>
+<li>
+<p>CommentLinesMatching</p>
+</li>
+<li>
+<p>CommentLinesStarting</p>
+</li>
+<li>
+<p>CommentNLines</p>
+</li>
+<li>
+<p>CommentToLineMatching</p>
+</li>
+<li>
+<p>DeleteLinesAfterThisMatching</p>
+</li>
+<li>
+<p>DeleteLinesContaining</p>
+</li>
+<li>
+<p>DeleteLinesMatching</p>
+</li>
+<li>
+<p>DeleteLinesStarting</p>
+</li>
+<li>
+<p>DeleteLinesNotContaining</p>
+</li>
+<li>
+<p>DeleteLinesNotMatchingFileItems</p>
+</li>
+<li>
+<p>DeleteLinesNotStartingFileItems</p>
+</li>
+<li>
+<p>DeleteNLines</p>
+</li>
+<li>
+<p>DeleteToLineMatching</p>
+</li>
+<li>
+<p>EmptyEntireFilePlease</p>
+</li>
+<li>
+<p>FixEndOfLine</p>
+</li>
+<li>
+<p>ForEachLineIn</p>
+</li>
+<li>
+<p>GotoLastLine</p>
+</li>
+<li>
+<p>HashCommentLinesContaining</p>
+</li>
+<li>
+<p>HashCommentLinesMatching</p>
+</li>
+<li>
+<p>HashCommentLinesStarting</p>
+</li>
+<li>
+<p>InsertFile</p>
+</li>
+<li>
+<p>InsertLine</p>
+</li>
+<li>
+<p>LocateLineMatching</p>
+</li>
+<li>
+<p>PercentCommentLinesContaining</p>
+</li>
+<li>
+<p>PercentCommentLinesMatching</p>
+</li>
+<li>
+<p>PercentCommentLinesStarting</p>
+</li>
+<li>
+<p>Prepend</p>
+</li>
+<li>
+<p>PrependIfNoLineMatching</p>
+</li>
+<li>
+<p>PrependIfNoSuchLine</p>
+</li>
+<li>
+<p>ReplaceLineWith</p>
+</li>
+<li>
+<p>ReplaceAll With</p>
+</li>
+<li>
+<p>ReplaceFirst</p>
+</li>
+<li>
+<p>ReplaceLinesMatchingField</p>
+</li>
+<li>
+<p>RunScriptIfLineMatching</p>
+</li>
+<li>
+<p>RunScriptIfNoLineMatching</p>
+</li>
+<li>
+<p>SlashCommentLinesContaining</p>
+</li>
+<li>
+<p>SlashCommentLinesMatching</p>
+</li>
+<li>
+<p>SlashCommentLinesStarting</p>
+</li>
+<li>
+<p>UnCommentLinesContaining</p>
+</li>
+<li>
+<p>UnCommentLinesMatching</p>
+</li>
+<li>
+<p>UnCommentsNLines</p>
+</li>
+<li>
+<p>UnCommentToLineMatching</p>
+</li>
+<li>
+<p>WarnIfFileMissing</p>
+</li>
+<li>
+<p>WarnIfLineContaining</p>
+</li>
+<li>
+<p>WarnIfLineMatching</p>
+</li>
+<li>
+<p>WarnIfLineStarting</p>
+</li>
+<li>
+<p>WarnIfNoLineContaining</p>
+</li>
+<li>
+<p>WarnIfNoLineMatching</p>
+</li>
+<li>
+<p>WarnIfNoLineStarting</p>
+</li>
+<li>
+<p>WarnIfNoSuchLine</p>
+</li>
+</ul>
+<p>So, lots of options for manipulating text files. Basically you can Append, Delete, Replace, Comment, or Uncomment (with various types of comment characters) any regex or normal string.</p>
+<h3 id="example-etchosts">Example:  /etc/hosts</h3>
+<pre><code>editfiles:
+ { /etc/hosts
+   AppendIfNoSuchLine  &quot;192.168.0.1   router&quot;
+   DeleteLinesMatching &quot;192.168.0.254 laptop&quot;
+ }
+</code></pre>
+<p>CFEngine 3 has a more <a href="https://cfengine.com/manuals/cf3-reference.html#files-in-agent-promises">refined edit_files bundle</a>, but I have yet to dig into it and learn it. (I&rsquo;m still stuck on CFEngine 2)</p>
+<h2 id="puppet-capabilities">Puppet Capabilities</h2>
+<p>How about Puppet? Well, it doesn&rsquo;t have (at the time of this writing) built-in file editing capabilities. (See <a href="http://projects.puppetlabs.com/projects/puppet/wiki/Pattern_Requests">http://projects.puppetlabs.com/projects/puppet/wiki/Pattern_Requests</a>)</p>
+<p>You can write your own definition if you feel so inclined, or copy and paste from the contributed <a href="http://projects.puppetlabs.com/projects/1/wiki/Simple_Text_Patterns">Simple Text Patterns</a>.</p>
+<p>For particular jobs there are existing modules for <a href="http://projects.puppetlabs.com/projects/1/wiki/Module_Ssh_Auth_Patterns">ssh key management</a>, <a href="http://docs.puppetlabs.com/references/stable/type.html#mount">fstab mounts</a>, <a href="http://docs.puppetlabs.com/references/stable/type.html#host">/etc/hosts entries</a>, etc. However there isn&rsquo;t a built in generic file editing procedure. Why not? Reading about the controversy might make you think differently about this seemingly &ldquo;lack&rdquo; of functionality in Puppet.</p>
+<h3 id="example-etchosts-1">EXAMPLE:  /ETC/HOSTS</h3>
+<pre><code>host { 'router':
+ ensure =&gt; 'present',
+ target =&gt; '/etc/hosts',
+ ip =&gt; '192.168.0.1',
+ host_aliases =&gt; 'router' 
+}
+host { 'laptop':
+ ensure =&gt; 'absent',
+ target =&gt; '/etc/hosts',
+ ip =&gt; '192.168.0.254',
+ host_aliases =&gt; 'laptop' 
+}
+</code></pre>
+<h2 id="the-controversy">The Controversy</h2>
+<p>Even in the CFEngine world there is disagreement about the editfiles functions. Some people believe that simply manipulating the text file is not the correct way to approach the problem, in fact some believe that it <a href="http://web.archive.org/web/20100710052745/http://www.cfwiki.org/cfwiki/index.php/Editfiles_Considered_Harmful">makes more problems</a> than it solves.</p>
+<p>In the Puppet world, it seems that their model of system management is designed to be more atomic, with settings being either <strong>absent</strong> or <strong>present</strong>. The edit files functions have a more script-like mentality, leading to configurations that end up being un-maintainable. (<a href="https://groups.google.com/group/puppet-users/browse_thread/thread/c64ba5017516b46f">See this discussion</a>)</p>
+<p>One might say that the solution to this problem is to use Puppet <a href="http://docs.puppetlabs.com/guides/templating.html">templates</a>, or CFEngine&rsquo;s copy functions. I agree that in some situations, like apache configs, sshd_config, or sudoers you want to have a predictable end result. Templates seem like a better solution than editing files for this end.</p>
+<p>On the other hand, there are some files that don&rsquo;t really fit into templates, like fstab, /etc/hosts, or /etc/passwd. This may be especially true if the client computers are not fully controlled by the Puppet/CFEngine admin. (Say in a compliance situation, were you may not even know what is in /etc/passwd, all you know is that youneed your line appended to it.)</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>If your environment involves keeping workstation and servers in compliance, where you do not have full control over the servers and need to keep the breakage to a minimum, CFEngine is probably the tool. Puppet certainly could be used, but CFEngine provides a richer set of pre-made tools. (You don&rsquo;t have to write your own sed and greps)</p>
+<p>If your environment is fully under your control, you are probably better off following the more atomic and template based model of Puppet. In the end that style of configuration management should lead to more predictable outcomes and less cleanup.</p>
+<p>Honestly I&rsquo;m still a CFEngine / Puppet noob. Feel free to disagree or correct me in the comments.</p>
+
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/cfengine/" rel="tag">cfengine</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/Puppet/" rel="tag">Puppet</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../../achieving-awesome-single-stream-performance-over-bonded-ethernet/" rel="bookmark">Achieving Awesome Single-Stream Performance Over Bonded Ethernet</a>
+  </h2>
+  
+  <time datetime="2012-01-04T14:19:10Z">
+    4 January, 2012
+  </time>
+  
+</header>
+
+  
+  <p>Ethernet Link Aggregation (aka PortChannel, Etherchannel, ethernet bonding, NIC teaming, trunking, link bundling, Smartgroup, Ethertrunk, etc) is a way to combine multiple Ethernet links to a single logical link. This improves redundancy and increases aggregate performance. It is good stuff, especially if you are into <a href="../../blog/categories/highavailability/">High Availability</a>.</p>
+<p>Here is a typical setup:
+<a href="../../uploads/typical.png"><img src="../../uploads/typical.png" alt=""></a></p>
+<p>A good start. If you can spare the ports and cables to make this work, you should do it. You get the benefit of very fast fail-over between links if one dies. And you get the aggregated bandwidth. However, you probably will <strong>not</strong> get the combined bandwidth over a **single **tcp stream. The reason for this is that the switch probably does not round-robin the ethernet frames to the source server. Usually switches have a configurable algorithm for switching frames over bonded links. Here are some options on my switch:</p>
+<pre><code>10g-nexus(config)# port-channel load-balance ethernet ?
+destination-ip Destination IP address
+destination-mac Destination MAC address
+destination-port Destination TCP/UDP port
+source-dest-ip Source &amp; Destination IP address
+source-dest-mac Source &amp; Destination MAC address
+source-dest-port Source &amp; Destination TCP/UDP port
+source-ip Source IP address
+source-mac Source MAC address
+source-port Source TCP/UDP port
+</code></pre>
+<p>Yea, no round robin.  As referenced in <a href="http://www.kernel.org/doc/Documentation/networking/bonding.txt">http://www.kernel.org/doc/Documentation/networking/bonding.txt</a> :</p>
+<blockquote>
+<p>Many switches do not support any modes that stripe traffic
+(instead choosing a port based upon IP or MAC level addresses);
+for those devices, traffic for a particular connection flowing
+through the switch to a balance-rr bond will not utilize greater
+than one interface&rsquo;s worth of bandwidth.</p>
+</blockquote>
+<p>If you do know of a switch that supports striped frames, please <a href="mailto:kyle@xkyle.com">contact me</a>. But! There is a way to work around this limitation and achieve Awesome performance! It costs an extra switch, but the benefits are double performance and the ability to withstand a switch failure. Here is a crappy diagram:</p>
+<p><a href="../../uploads/dual.png"><img src="../../uploads/dual.png" alt=""></a></p>
+<p>This is what is suggested in Section 12 in <a href="http://www.kernel.org/doc/Documentation/networking/bonding.txt">http://www.kernel.org/doc/Documentation/networking/bonding.txt</a></p>
+<p>With this setup, each switch makes its own decision about where to send a frame, but it only has one choice, sort of. In a sense, no matter what aggregation algorithm you have on the switch, it doesn&rsquo;t matter. What matters is the algorithm on the sending server. (round robin in my case)</p>
+<p>The end result give you key benefits:</p>
+<ul>
+<li>Resiliency for individual links (failure of cables / optics / nics )</li>
+<li>Resiliency for switches (failure of a switch, powersupply, etc?)</li>
+<li>Better than single-link performance on single streams</li>
+<li>iperf bragging rights?</li>
+</ul>
+<p>Proof is in the pudding:</p>
+<pre><code>root@server1:~# iperf -c server2
+------------------------------------------------------------
+Client connecting to server2, TCP port 5001
+TCP window size: 27.9 KByte (default)
+------------------------------------------------------------
+[ 3] local 192.168.0.2 port 38576 connected with 192.168.0.1 port 5001
+[ ID] Interval Transfer Bandwidth
+[ 3] 0.0-10.0 sec 21.1 GBytes 18.1 Gbits/sec
+</code></pre>
+<h4 id="exact-components-in-this-setup-if-you-want-to-reproduce-my-work">Exact Components in this setup (if you want to reproduce my work)</h4>
+<ul>
+<li>Fast servers from <a href="http://www.siliconmechanics.com/">SiliconMechanics.com</a> (~$10k, high end)</li>
+<li><a href="http://www.myricom.com/products/network-adapters/10g-pcie2-8b2-2s.html">Myricom 10G-PCIE2-8B2-2S</a> Dual Port Nics (Works great, built in kernel support, supports bonding, etc. ~$700 each)</li>
+<li><a href="http://www.newark.com/te-connectivity/2127932-2/sfp-cable-assembly-shld-twinax/dp/84R9082">Inexpensive 10G copper cables </a>(Get the right length you need, not something you can crimp. ~$50 each. You will need a bunch of course)</li>
+<li>2X <a href="http://www.cisco.com/en/US/products/ps11215/index.html">Cisco Nexus 5548</a> (Fancy. ~$15k per)</li>
+<li><a href="https://wiki.xkyle.com/Channel_Bonding">Round Robin Bonding</a> on the Linux server side</li>
+<li><a href="../../uploads/10g-switch.txt">Switch Config Setup for Virtual Port Channel</a> by some awesome networking dudes</li>
+</ul>
+<p>In the end it breaks down to about $2000 per 20g bond. (taking into account switch ports, nics, cables, etc) If your speed and availability can justify that cost, then it is a cool setup.</p>
+
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/10g/" rel="tag">10g</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/Bonding/" rel="tag">Bonding</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/High-Availability/" rel="tag">High Availability</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/iperf/" rel="tag">iperf</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/linux/" rel="tag">linux</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/Network/" rel="tag">Network</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+
+<nav>
+  
+  <a class="Pagination u-clickable" href="../../page/7/" rel="prev">« Previous</a>
+  
+  
+  <a class="Pagination Pagination--right u-clickable" href="../../page/5/" rel="next">Next »</a>
+  
+</nav>
+
+
+
+
+      </div>
+    </div>
+  </main>
+  
+<footer class="Footer">
+  <div class="u-wrapper">
+    <div class="u-padding">
+      Except where otherwise noted, content on this site is licensed under a a <a href="http://creativecommons.org/licenses/by/4.0/" rel="license"> Creative Commons Attribution 4.0 International License</a>.
+    </div>
+  </div>
+</footer>
+
+
+</body>
 </html>

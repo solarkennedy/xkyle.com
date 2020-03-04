@@ -1,12 +1,10 @@
 params:
-  color: teal           # Any color in CSS syntax
+  color: '#7c238c'           # Any color in CSS syntax
   width: 42rem          # Any length in CSS syntax
-  footer: Except where otherwise noted, content on this site is licensed under a
-    a <a href="http://creativecommons.org/licenses/by/4.0/" rel="license">
-    Creative Commons Attribution 4.0 International License</a>.
+  footer: ""
   rss: To subscribe to this RSS feed, copy its address and paste it into your
     favorite feed reader.
-  summaries: false      # Set to true to show summaries of posts on homepage
+  summaries: true      # Set to true to show summaries of posts on homepage
   divider: '\2015\2015' # Set to false to remove divider below posts on homepage
   schema: false         # Set to true to add Schema.org metadata
   opengraph: false      # Set to true to add Open Graph metadata

@@ -1,114 +1,82 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<meta property="og:title" content="Puppet versus CFEngine 2: Editing Files" />
-<meta property="og:description" content="Update: I wrote this article when I was young and stupid. It is obsolete. Puppet wins, just use Augeas.  Both Puppet and CFEngine are formidable configuration management systems. Let&#39;s compare the two to see how the match up on the common task of editing files. Feel free to jump straight to the conclusion if you are impatient.
-Why would you need this? What is the use-case here? These are some common tasks I do that involve editing files:" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/puppet-versus-cfengine-editing-files/" />
-<meta property="article:published_time" content="2012-01-26T01:46:30+00:00" />
-<meta property="article:modified_time" content="2012-01-26T01:46:30+00:00" />
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Puppet versus CFEngine 2: Editing Files"/>
-<meta name="twitter:description" content="Update: I wrote this article when I was young and stupid. It is obsolete. Puppet wins, just use Augeas.  Both Puppet and CFEngine are formidable configuration management systems. Let&#39;s compare the two to see how the match up on the common task of editing files. Feel free to jump straight to the conclusion if you are impatient.
-Why would you need this? What is the use-case here? These are some common tasks I do that involve editing files:"/>
-
-
-    <meta name="description" content="">
-    <link rel="canonical" href="../puppet-versus-cfengine-editing-files/">
-
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.66.0" />
+  
+  
+  
+  <title>
     
-    <title>Puppet versus CFEngine 2: Editing Files &middot; xkyle.com</title>
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="css/style.css" rel="stylesheet">
-
+    Puppet versus CFEngine 2: Editing Files | xkyle.com
     
-
-    
-
-    
-  </head>
-  <body>
-    
+  </title>
+  <link rel="canonical" href="../puppet-versus-cfengine-editing-files/">
+  
+  
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="../css/base.min.50883c9e7cc6f561db1dcd2089b6b895c60df8d10b9e71a90cbc10e59c8bfc40.css" integrity="sha256-UIg8nnzG9WHbHc0giba4lcYN&#43;NELnnGpDLwQ5ZyL/EA=" crossorigin="anonymous">
+  
+  
+</head>
+<body>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable" href="">xkyle.com</a>
+      </li>
       
-
-
-
-<nav class="white" role="navigation">
-    <div class="row max-width">
-        <div class="col s12 l10 offset-l1">
-            
-            <a href="#" data-target="nav-mobile" class="sidenav-trigger black-text">
-                <i class="material-icons">menu</i>
-            </a>
-
-            
-            <ul id="nav-mobile" class="sidenav">
-                
-                
-    
-    
-
-            </ul>
-
-            
-            <a href="../" class="brand-logo grey-text text-darken-3">xkyle.com</a>
-
-            
-            <div class="nav-wrapper">
-
-                
-                <ul class="right hide-on-med-and-down">
-                    
-                    
-    
-    
-
-                </ul>
-
-            </div>
-        </div>
-    </div>
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="about/">About</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="post/">Posts</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="tags/">Tags</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="categories/">Categories</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="index.xml">RSS</a>
+      </li>
+      
+    </ul>
+  </div>
 </nav>
-    
 
-    
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
 
-<article class="max-width">
-    
-    <section class="row">
-        <div class="col s12 m10 offset-m1 l10 offset-l1">
-            <h1>Puppet versus CFEngine 2: Editing Files</h1>
-        </div>
-    </section>
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../puppet-versus-cfengine-editing-files/" rel="bookmark">Puppet versus CFEngine 2: Editing Files</a>
+  </h2>
+  
+  <time datetime="2012-01-26T01:46:30Z">
+    26 January, 2012
+  </time>
+  
+</header>
 
-    
-    
-
-    
-    <section class="row">
-        <div class="col s12 m8 offset-m2 l2 offset-l1">
-            
-
-<p class="article-meta">
-    <div class="article-meta-container">
-        <div class="article-meta-author-name">admin</div>
-        <div class="article-meta-description"></div>
-    </div>
-    <span class="article-meta-published-at grey-text text-darken-1">Jan 26, 2012</span>
-</p>
-        </div>
-        <div class="col s12 m8 offset-m2 l6">
-            <h2 id="update-i-wrote-this-article-when-i-was-young-and-stupid-it-is-obsolete-puppet-wins-just-use-augeashttpprojectspuppetlabscomprojects1wikipuppetaugeas">Update: I wrote this article when I was young and stupid. It is obsolete. Puppet wins, just use <a href="http://projects.puppetlabs.com/projects/1/wiki/puppet_augeas">Augeas</a>.</h2>
+  <h2 id="update-i-wrote-this-article-when-i-was-young-and-stupid-it-is-obsolete-puppet-wins-just-use-augeashttpprojectspuppetlabscomprojects1wikipuppet_augeas">Update: I wrote this article when I was young and stupid. It is obsolete. Puppet wins, just use <a href="http://projects.puppetlabs.com/projects/1/wiki/puppet_augeas">Augeas</a>.</h2>
 <hr>
-<p>Both <a href="http://puppetlabs.com/">Puppet</a> and <a href="http://cfengine.com/">CFEngine</a> are formidable configuration management systems. Let's compare the two to see how the match up on the common task of editing files. Feel free to jump straight to the conclusion if you are impatient.</p>
+<p>Both <a href="http://puppetlabs.com/">Puppet</a> and <a href="http://cfengine.com/">CFEngine</a> are formidable configuration management systems. Let&rsquo;s compare the two to see how the match up on the common task of editing files. Feel free to jump straight to the conclusion if you are impatient.</p>
 <h2 id="why-would-you-need-this">Why would you need this?</h2>
 <p>What is the use-case here? These are some common tasks I do that involve editing files:</p>
 <ul>
@@ -308,12 +276,12 @@ Why would you need this? What is the use-case here? These are some common tasks 
    DeleteLinesMatching &quot;192.168.0.254 laptop&quot;
  }
 </code></pre>
-<p>CFEngine 3 has a more <a href="https://cfengine.com/manuals/cf3-reference.html#files-in-agent-promises">refined edit_files bundle</a>, but I have yet to dig into it and learn it. (I'm still stuck on CFEngine 2)</p>
+<p>CFEngine 3 has a more <a href="https://cfengine.com/manuals/cf3-reference.html#files-in-agent-promises">refined edit_files bundle</a>, but I have yet to dig into it and learn it. (I&rsquo;m still stuck on CFEngine 2)</p>
 <h2 id="puppet-capabilities">Puppet Capabilities</h2>
-<p>How about Puppet? Well, it doesn't have (at the time of this writing) built-in file editing capabilities. (See <a href="http://projects.puppetlabs.com/projects/puppet/wiki/Pattern_Requests"><a href="http://projects.puppetlabs.com/projects/puppet/wiki/Pattern_Requests">http://projects.puppetlabs.com/projects/puppet/wiki/Pattern_Requests</a></a>)</p>
+<p>How about Puppet? Well, it doesn&rsquo;t have (at the time of this writing) built-in file editing capabilities. (See <a href="http://projects.puppetlabs.com/projects/puppet/wiki/Pattern_Requests">http://projects.puppetlabs.com/projects/puppet/wiki/Pattern_Requests</a>)</p>
 <p>You can write your own definition if you feel so inclined, or copy and paste from the contributed <a href="http://projects.puppetlabs.com/projects/1/wiki/Simple_Text_Patterns">Simple Text Patterns</a>.</p>
-<p>For particular jobs there are existing modules for <a href="http://projects.puppetlabs.com/projects/1/wiki/Module_Ssh_Auth_Patterns">ssh key management</a>, <a href="http://docs.puppetlabs.com/references/stable/type.html#mount">fstab mounts</a>, <a href="http://docs.puppetlabs.com/references/stable/type.html#host">/etc/hosts entries</a>, etc. However there isn't a built in generic file editing procedure. Why not? Reading about the controversy might make you think differently about this seemingly &ldquo;lack&rdquo; of functionality in Puppet.</p>
-<h3 id="example-etchosts1">EXAMPLE:  /ETC/HOSTS</h3>
+<p>For particular jobs there are existing modules for <a href="http://projects.puppetlabs.com/projects/1/wiki/Module_Ssh_Auth_Patterns">ssh key management</a>, <a href="http://docs.puppetlabs.com/references/stable/type.html#mount">fstab mounts</a>, <a href="http://docs.puppetlabs.com/references/stable/type.html#host">/etc/hosts entries</a>, etc. However there isn&rsquo;t a built in generic file editing procedure. Why not? Reading about the controversy might make you think differently about this seemingly &ldquo;lack&rdquo; of functionality in Puppet.</p>
+<h3 id="example-etchosts-1">EXAMPLE:  /ETC/HOSTS</h3>
 <pre><code>host { 'router':
  ensure =&gt; 'present',
  target =&gt; '/etc/hosts',
@@ -330,58 +298,64 @@ host { 'laptop':
 <h2 id="the-controversy">The Controversy</h2>
 <p>Even in the CFEngine world there is disagreement about the editfiles functions. Some people believe that simply manipulating the text file is not the correct way to approach the problem, in fact some believe that it <a href="http://web.archive.org/web/20100710052745/http://www.cfwiki.org/cfwiki/index.php/Editfiles_Considered_Harmful">makes more problems</a> than it solves.</p>
 <p>In the Puppet world, it seems that their model of system management is designed to be more atomic, with settings being either <strong>absent</strong> or <strong>present</strong>. The edit files functions have a more script-like mentality, leading to configurations that end up being un-maintainable. (<a href="https://groups.google.com/group/puppet-users/browse_thread/thread/c64ba5017516b46f">See this discussion</a>)</p>
-<p>One might say that the solution to this problem is to use Puppet <a href="http://docs.puppetlabs.com/guides/templating.html">templates</a>, or CFEngine's copy functions. I agree that in some situations, like apache configs, sshd_config, or sudoers you want to have a predictable end result. Templates seem like a better solution than editing files for this end.</p>
-<p>On the other hand, there are some files that don't really fit into templates, like fstab, /etc/hosts, or /etc/passwd. This may be especially true if the client computers are not fully controlled by the Puppet/CFEngine admin. (Say in a compliance situation, were you may not even know what is in /etc/passwd, all you know is that youneed your line appended to it.)</p>
+<p>One might say that the solution to this problem is to use Puppet <a href="http://docs.puppetlabs.com/guides/templating.html">templates</a>, or CFEngine&rsquo;s copy functions. I agree that in some situations, like apache configs, sshd_config, or sudoers you want to have a predictable end result. Templates seem like a better solution than editing files for this end.</p>
+<p>On the other hand, there are some files that don&rsquo;t really fit into templates, like fstab, /etc/hosts, or /etc/passwd. This may be especially true if the client computers are not fully controlled by the Puppet/CFEngine admin. (Say in a compliance situation, were you may not even know what is in /etc/passwd, all you know is that youneed your line appended to it.)</p>
 <h2 id="conclusion">Conclusion</h2>
-<p>If your environment involves keeping workstation and servers in compliance, where you do not have full control over the servers and need to keep the breakage to a minimum, CFEngine is probably the tool. Puppet certainly could be used, but CFEngine provides a richer set of pre-made tools. (You don't have to write your own sed and greps)</p>
+<p>If your environment involves keeping workstation and servers in compliance, where you do not have full control over the servers and need to keep the breakage to a minimum, CFEngine is probably the tool. Puppet certainly could be used, but CFEngine provides a richer set of pre-made tools. (You don&rsquo;t have to write your own sed and greps)</p>
 <p>If your environment is fully under your control, you are probably better off following the more atomic and template based model of Puppet. In the end that style of configuration management should lead to more predictable outcomes and less cleanup.</p>
-<p>Honestly I'm still a CFEngine / Puppet noob. Feel free to disagree or correct me in the comments.</p>
+<p>Honestly I&rsquo;m still a CFEngine / Puppet noob. Feel free to disagree or correct me in the comments.</p>
 
-        </div>
-    </section>
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../categories/cfengine/" rel="tag">cfengine</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../categories/Puppet/" rel="tag">Puppet</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+  
+
+
+
 </article>
 
 
-
-    
-      <footer class="page-footer grey lighten-5">
-    <div class="row max-width">
-        <div class="col s12 l10 offset-l1 clear-padding">
-            <div class="row">
-    
-        
-    
-
-    
-    
-    <div class="col s12 l12">
-        <h5 class="black-text"></h5>
-<p class="grey-text text-darken-4"></p>
-
+      </div>
     </div>
-
-    
-</div>
-
-
-        </div>
+  </main>
+  
+<footer class="Footer">
+  <div class="u-wrapper">
+    <div class="u-padding">
+      Except where otherwise noted, content on this site is licensed under a a <a href="http://creativecommons.org/licenses/by/4.0/" rel="license"> Creative Commons Attribution 4.0 International License</a>.
     </div>
-    <div class="footer-copyright">
-        <div class="row max-width" style="width: 100%;">
-            <div class="col s12 l10 offset-l1">
-                <span class="grey-text text-darken-4"></span>
-<div class="right">
-    
-</div>
-            </div>
-        </div>
-    </div>
+  </div>
 </footer>
-    
 
-    
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="js/script.js"></script>
-  </body>
+
+</body>
 </html>

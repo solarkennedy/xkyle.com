@@ -1,118 +1,86 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<meta property="og:title" content="Solving the NFS 16-Group Limit Problem" />
-<meta property="og:description" content="I apologize for the verbose post. This is a complicated problem and it merits full explanation. If you are experiencing this problem I advise you to avoid skimming and read it very carefully :)
-Sometimes you come across a problem that is a little more complex than average. Sometimes it is problem that is rare enough that there isn&#39;t an obvious answer in the first google hint. Sometimes a problem may seem unavoidable, which leads to work-arounds, and before you know it you have a mess." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/solving-the-nfs-16-group-limit-problem/" />
-<meta property="article:published_time" content="2011-07-10T22:28:22+00:00" />
-<meta property="article:modified_time" content="2011-07-10T22:28:22+00:00" />
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Solving the NFS 16-Group Limit Problem"/>
-<meta name="twitter:description" content="I apologize for the verbose post. This is a complicated problem and it merits full explanation. If you are experiencing this problem I advise you to avoid skimming and read it very carefully :)
-Sometimes you come across a problem that is a little more complex than average. Sometimes it is problem that is rare enough that there isn&#39;t an obvious answer in the first google hint. Sometimes a problem may seem unavoidable, which leads to work-arounds, and before you know it you have a mess."/>
-
-
-    <meta name="description" content="">
-    <link rel="canonical" href="../solving-the-nfs-16-group-limit-problem/">
-
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.66.0" />
+  
+  
+  
+  <title>
     
-    <title>Solving the NFS 16-Group Limit Problem &middot; xkyle.com</title>
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="css/style.css" rel="stylesheet">
-
+    Solving the NFS 16-Group Limit Problem | xkyle.com
     
-
-    
-
-    
-  </head>
-  <body>
-    
+  </title>
+  <link rel="canonical" href="../solving-the-nfs-16-group-limit-problem/">
+  
+  
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="../css/base.min.50883c9e7cc6f561db1dcd2089b6b895c60df8d10b9e71a90cbc10e59c8bfc40.css" integrity="sha256-UIg8nnzG9WHbHc0giba4lcYN&#43;NELnnGpDLwQ5ZyL/EA=" crossorigin="anonymous">
+  
+  
+</head>
+<body>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable" href="">xkyle.com</a>
+      </li>
       
-
-
-
-<nav class="white" role="navigation">
-    <div class="row max-width">
-        <div class="col s12 l10 offset-l1">
-            
-            <a href="#" data-target="nav-mobile" class="sidenav-trigger black-text">
-                <i class="material-icons">menu</i>
-            </a>
-
-            
-            <ul id="nav-mobile" class="sidenav">
-                
-                
-    
-    
-
-            </ul>
-
-            
-            <a href="../" class="brand-logo grey-text text-darken-3">xkyle.com</a>
-
-            
-            <div class="nav-wrapper">
-
-                
-                <ul class="right hide-on-med-and-down">
-                    
-                    
-    
-    
-
-                </ul>
-
-            </div>
-        </div>
-    </div>
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="about/">About</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="post/">Posts</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="tags/">Tags</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="categories/">Categories</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="index.xml">RSS</a>
+      </li>
+      
+    </ul>
+  </div>
 </nav>
-    
 
-    
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
 
-<article class="max-width">
-    
-    <section class="row">
-        <div class="col s12 m10 offset-m1 l10 offset-l1">
-            <h1>Solving the NFS 16-Group Limit Problem</h1>
-        </div>
-    </section>
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../solving-the-nfs-16-group-limit-problem/" rel="bookmark">Solving the NFS 16-Group Limit Problem</a>
+  </h2>
+  
+  <time datetime="2011-07-10T22:28:22Z">
+    10 July, 2011
+  </time>
+  
+</header>
 
-    
-    
-
-    
-    <section class="row">
-        <div class="col s12 m8 offset-m2 l2 offset-l1">
-            
-
-<p class="article-meta">
-    <div class="article-meta-container">
-        <div class="article-meta-author-name">admin</div>
-        <div class="article-meta-description"></div>
-    </div>
-    <span class="article-meta-published-at grey-text text-darken-1">Jul 10, 2011</span>
-</p>
-        </div>
-        <div class="col s12 m8 offset-m2 l6">
-            <p>I apologize for the verbose post. This is a complicated problem and it merits full explanation. If you are experiencing this problem I advise you to avoid skimming and read it very carefully :)</p>
-<p>Sometimes you come across a problem that is a little more complex than average. Sometimes it is problem that is rare enough that there isn't an obvious answer in the first google hint. Sometimes a problem may seem unavoidable, which leads to work-arounds, and before you know it you have a mess. The NFS 16-group limit problem is like this. The internet is full of outdated and incorrect pieces of information. This blog post is an attempt to bring this problem to the year 2011. Google: Please make this the number 1 hit for &ldquo;NFS 16 group limit&rdquo; in order to save other souls the hours of troubleshooting that I went through to solve this.</p>
+  <p>I apologize for the verbose post. This is a complicated problem and it merits full explanation. If you are experiencing this problem I advise you to avoid skimming and read it very carefully :)</p>
+<p>Sometimes you come across a problem that is a little more complex than average. Sometimes it is problem that is rare enough that there isn&rsquo;t an obvious answer in the first google hint. Sometimes a problem may seem unavoidable, which leads to work-arounds, and before you know it you have a mess. The NFS 16-group limit problem is like this. The internet is full of outdated and incorrect pieces of information. This blog post is an attempt to bring this problem to the year 2011. Google: Please make this the number 1 hit for &ldquo;NFS 16 group limit&rdquo; in order to save other souls the hours of troubleshooting that I went through to solve this.</p>
 <p>TL;DR version: Use Linux and &ldquo;rpc.mountd &ndash;manage-gids&rdquo; and you are done.</p>
 <h2 id="definingthe-actual-problem">Defining the Actual Problem</h2>
 <p>So what is the actual problem? This problem occurs when a user, who is a member of more than 16 groups, tries to access a file or directory on an nfs mount that depends on his group rights in order to be authorized to see it.  The default authorization mechanism for NFS (auth_sys) will take only a subset of your groups and send it to the nfs server to check if you have rights to read a file. This leads to unpredicatable and intermittent permission problems when it looks like you <em>should</em> have permission. Allow me to demonstrate:</p>
 <p><a href="../uploads/groups-failure.png"><img src="../uploads/groups-failure-300x273.png" alt=""></a></p>
-<p>Seems odd right? I <em>should</em> be able to ls those other directories. Still don't believe me? See a wireshark disessction of one of the nfs packet:</p>
+<p>Seems odd right? I <em>should</em> be able to ls those other directories. Still don&rsquo;t believe me? See a wireshark disessction of one of the nfs packet:</p>
 <p><a href="../uploads/wireshark-groups.png"><img src="../uploads/wireshark-groups-300x176.png" alt=""></a></p>
 <p>You can see that the nfs client is telling the nfs server what groups you are in. And the protocol only has room for 16 :(</p>
 <h2 id="dispellingmyths-and-superstition">Dispelling Myths and Superstition</h2>
@@ -133,7 +101,7 @@ Sometimes you come across a problem that is a little more complex than average. 
 <p>Actually trying to wrap your brain around the problem and trying to solve it turns into a whiteboard that looks like this:</p>
 <p><a href="../uploads/acl-whiteboard.jpg"><img src="../uploads/acl-whiteboard-300x131.jpg" alt=""></a></p>
 <h2 id="the-best-solution-ever-a-new-option-for-the-nfs-server">The Best Solution Ever!: A New Option for the NFS Server</h2>
-<p>I hope this is the first thing you read after encountering this problem for the first time. I hope that you don't have to read any of the other &ldquo;solutions&rdquo; on this page. I hope you haven't wasted your time doing other work-arounds. I hope you are in an environment where you are able to use this solution:</p>
+<p>I hope this is the first thing you read after encountering this problem for the first time. I hope that you don&rsquo;t have to read any of the other &ldquo;solutions&rdquo; on this page. I hope you haven&rsquo;t wasted your time doing other work-arounds. I hope you are in an environment where you are able to use this solution:</p>
 <pre><code>rpc.mountd --manage-gids
 </code></pre>
 <p>rpc.mountd is the program that actually serves nfs. The &ndash;manage-gids option allows the server to just plain ignore the incoming bogus 16 groups from the client, and allow the nfs server to look it up for itself. Straight from the man page:</p>
@@ -154,16 +122,16 @@ Sometimes you come across a problem that is a little more complex than average. 
 <p>So what, are you going to add every user that needs access to any file or folder in the acl? Who is going to maintain these acls? If it is going to be scripted, who is going to maintain the script? Does your filesystem even have enough meta data space to handle all of these user acls? (Hint: probably not. JFS and ZFS are the only ones that can handle lots and lots of acls.)</p>
 <p>You might read somewhere that you can use NFS4 specific acls. While this is true, that they do exist, they do not solve the 16 group limit problem:</p>
 <p><a href="../uploads/nfs4-acls.png"><img src="../uploads/nfs4-acls-300x148.png" alt=""></a></p>
-<p>You don't have to believe my screen shots. Just do it for yourself.</p>
+<p>You don&rsquo;t have to believe my screen shots. Just do it for yourself.</p>
 <p>If you are going to go this route the only way is with ZFS or JFS with some sort of script that builds and modifies dozens and dozens of user ACLs recursively. Just say no.</p>
 <h2 id="an-even-more-complicated-solution-kerberos">An Even More Complicated Solution: Kerberos</h2>
-<p>Yea, just in case you didn't think hundreds of ACLs couldn't get any more complicated&hellip;
-Now, I don't have much to say on this subject. This might be a potential solution for you if you have conversations like this:</p>
+<p>Yea, just in case you didn&rsquo;t think hundreds of ACLs couldn&rsquo;t get any more complicated&hellip;
+Now, I don&rsquo;t have much to say on this subject. This might be a potential solution for you if you have conversations like this:</p>
 <p><strong>Comrade</strong>: Do you have a good recommendation for a text editor?</p>
 <p><strong>You</strong>: I recommend Eclipse or Microsoft Visual Studio.</p>
 <p><strong>Comrade</strong>: Hey dude, what is the key to your wifi?</p>
 <p><strong>You</strong>: You need an active directory account syncronized with the RADIUS server before you can authenticate. What is your MAC address?</p>
-<p>Yes, you can replace auth_sys\ with auth_krb5. Get ready for authentication tickets, backup key servers, crypto exchanges, setting up trust relationships, etc. If you have this many groups you probably have LDAP or Active Directory as well as your NFS server and client machines. What's one more complicated system you don't fully understand thrown into the mix?</p>
+<p>Yes, you can replace auth_sys\ with auth_krb5. Get ready for authentication tickets, backup key servers, crypto exchanges, setting up trust relationships, etc. If you have this many groups you probably have LDAP or Active Directory as well as your NFS server and client machines. What&rsquo;s one more complicated system you don&rsquo;t fully understand thrown into the mix?</p>
 <h2 id="oustide-the-box-solutions">Oustide the Box Solutions</h2>
 <ul>
 <li>
@@ -182,12 +150,12 @@ Now, I don't have much to say on this subject. This might be a potential solutio
 <p>Google Docs?</p>
 </li>
 </ul>
-<h2 id="appendix-fully-understanding-what-is-going-on-behind-the-scenes-with-managegids">Appendix: Fully Understanding What Is Going On Behind The Scenes With &ndash;manage-gids</h2>
+<h2 id="appendix-fully-understanding-what-is-going-on-behind-the-scenes-with---manage-gids">Appendix: Fully Understanding What Is Going On Behind The Scenes With &ndash;manage-gids</h2>
 <p>Ok. If you have come this far and you are using &ndash;manage-gids to elegantly solve this problem. Congratulations. Ready for the behind the scenes look?</p>
 <p>Rpc.mountd is basically ignoring what the nfs client says about your auxiliary group memberships. This does &ldquo;break&rdquo; the RFC, but if you ask me the RFC was broken to begin with.</p>
-<p>When testing this, you may find some odd behavior. Don't jump to conclusions without understanding!</p>
+<p>When testing this, you may find some odd behavior. Don&rsquo;t jump to conclusions without understanding!</p>
 <p>When the NFS server intercepts the access request, the server must now look up your groups. It will use whatever you have nsswitch.conf setup to look this stuff up. Be sure that the NFS server is reading your groups and user id membership stuff correctly, otherwise you will have permission failures.</p>
-<p>Also, the NFS server will cache group lookups so it doesn't have to continuously make queries. The cache is visible like this:</p>
+<p>Also, the NFS server will cache group lookups so it doesn&rsquo;t have to continuously make queries. The cache is visible like this:</p>
 <pre><code>root@archive:~# cat /proc/net/rpc/auth.unix.gid/content
 #uid cnt: gids...
 0 9: 0 4 20 24 46 100 112 121 127
@@ -199,61 +167,73 @@ root@archive:~# cat /proc/net/rpc/auth.unix.gid/content
 #uid cnt: gids...
 0 9: 0 4 20 24 46 100 112 121 127
 </code></pre>
-<p>Also, you now have a new limit on group membership. It isn't exactly a specific set number as much as a total number of bytes needed to represent your group memberships. In my experimenting it was 1000 bytes (characters). So if you are using group IDs that are 5 digits, +1 for a space separator and you have (1000 / 6) = 166 as your new group limit. This of course may change with time, so I encourage you to test this in your own environment. (I could not verify this with source code. It looks like it should be 100 to me? Experimentation was the only way for me to be sure what the new limit <!-- raw HTML omitted -->actually<!-- raw HTML omitted --> was.)</p>
-<p>When a user hits this limit, that user (and only that user) will have his process hang, and the nfs client kernel will complain that the nfs server isn't responding, which it isn't. The nfs server will not be able to look up the groups for that user, and fails to send back a nfs packet with a response.</p>
+<p>Also, you now have a new limit on group membership. It isn&rsquo;t exactly a specific set number as much as a total number of bytes needed to represent your group memberships. In my experimenting it was 1000 bytes (characters). So if you are using group IDs that are 5 digits, +1 for a space separator and you have (1000 / 6) = 166 as your new group limit. This of course may change with time, so I encourage you to test this in your own environment. (I could not verify this with source code. It looks like it should be 100 to me? Experimentation was the only way for me to be sure what the new limit <!-- raw HTML omitted -->actually<!-- raw HTML omitted --> was.)</p>
+<p>When a user hits this limit, that user (and only that user) will have his process hang, and the nfs client kernel will complain that the nfs server isn&rsquo;t responding, which it isn&rsquo;t. The nfs server will not be able to look up the groups for that user, and fails to send back a nfs packet with a response.</p>
 <p>In addition, your gid map cache will have a special entry that will be commented out like this:</p>
 <pre><code>root@archive:~# cat /proc/net/rpc/auth.unix.gid/content
 #uid cnt: gids...
 0 9: 0 4 20 24 46 100 112 121 127
 #1001 0:
 </code></pre>
-<p>This is an indication that the nfs server could not look up the groups for user 1001. I've setup a nagios check on my nfs servers to detect for this, in order to let us know right away that the problem is occurring. In addition I have nagios checks to alert us if we are approaching the new group limit.</p>
+<p>This is an indication that the nfs server could not look up the groups for user 1001. I&rsquo;ve setup a nagios check on my nfs servers to detect for this, in order to let us know right away that the problem is occurring. In addition I have nagios checks to alert us if we are approaching the new group limit.</p>
 
-        </div>
-    </section>
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../categories/acls/" rel="tag">acls</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../categories/linux/" rel="tag">linux</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../categories/nfs/" rel="tag">nfs</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+  
+
+
+
 </article>
 
 
-
-    
-      <footer class="page-footer grey lighten-5">
-    <div class="row max-width">
-        <div class="col s12 l10 offset-l1 clear-padding">
-            <div class="row">
-    
-        
-    
-
-    
-    
-    <div class="col s12 l12">
-        <h5 class="black-text"></h5>
-<p class="grey-text text-darken-4"></p>
-
+      </div>
     </div>
-
-    
-</div>
-
-
-        </div>
+  </main>
+  
+<footer class="Footer">
+  <div class="u-wrapper">
+    <div class="u-padding">
+      Except where otherwise noted, content on this site is licensed under a a <a href="http://creativecommons.org/licenses/by/4.0/" rel="license"> Creative Commons Attribution 4.0 International License</a>.
     </div>
-    <div class="footer-copyright">
-        <div class="row max-width" style="width: 100%;">
-            <div class="col s12 l10 offset-l1">
-                <span class="grey-text text-darken-4"></span>
-<div class="right">
-    
-</div>
-            </div>
-        </div>
-    </div>
+  </div>
 </footer>
-    
 
-    
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="js/script.js"></script>
-  </body>
+
+</body>
 </html>

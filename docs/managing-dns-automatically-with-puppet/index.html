@@ -1,119 +1,85 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<meta property="og:title" content="Managing DNS Automatically with Puppet" />
-<meta property="og:description" content="Why So you have a decent amount of things configured in Puppet. Great!
-Are you finding that you have to manually update your DNS entries when things change, like when new hosts or added, or additional services are created?
-Why? Your DNS zone files will forever be out of date, waiting for humans to update them. Just say no. Puppet already knows what the ip addresses and hostnames of your servers, why not take advantage of that existing data?" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/managing-dns-automatically-with-puppet/" />
-<meta property="article:published_time" content="2013-10-19T23:05:02+00:00" />
-<meta property="article:modified_time" content="2013-10-19T23:05:02+00:00" />
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Managing DNS Automatically with Puppet"/>
-<meta name="twitter:description" content="Why So you have a decent amount of things configured in Puppet. Great!
-Are you finding that you have to manually update your DNS entries when things change, like when new hosts or added, or additional services are created?
-Why? Your DNS zone files will forever be out of date, waiting for humans to update them. Just say no. Puppet already knows what the ip addresses and hostnames of your servers, why not take advantage of that existing data?"/>
-
-
-    <meta name="description" content="">
-    <link rel="canonical" href="../managing-dns-automatically-with-puppet/">
-
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.66.0" />
+  
+  
+  
+  <title>
     
-    <title>Managing DNS Automatically with Puppet &middot; xkyle.com</title>
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="css/style.css" rel="stylesheet">
-
+    Managing DNS Automatically with Puppet | xkyle.com
     
-
-    
-
-    
-  </head>
-  <body>
-    
+  </title>
+  <link rel="canonical" href="../managing-dns-automatically-with-puppet/">
+  
+  
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="../css/base.min.50883c9e7cc6f561db1dcd2089b6b895c60df8d10b9e71a90cbc10e59c8bfc40.css" integrity="sha256-UIg8nnzG9WHbHc0giba4lcYN&#43;NELnnGpDLwQ5ZyL/EA=" crossorigin="anonymous">
+  
+  
+</head>
+<body>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable" href="">xkyle.com</a>
+      </li>
       
-
-
-
-<nav class="white" role="navigation">
-    <div class="row max-width">
-        <div class="col s12 l10 offset-l1">
-            
-            <a href="#" data-target="nav-mobile" class="sidenav-trigger black-text">
-                <i class="material-icons">menu</i>
-            </a>
-
-            
-            <ul id="nav-mobile" class="sidenav">
-                
-                
-    
-    
-
-            </ul>
-
-            
-            <a href="../" class="brand-logo grey-text text-darken-3">xkyle.com</a>
-
-            
-            <div class="nav-wrapper">
-
-                
-                <ul class="right hide-on-med-and-down">
-                    
-                    
-    
-    
-
-                </ul>
-
-            </div>
-        </div>
-    </div>
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="about/">About</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="post/">Posts</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="tags/">Tags</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="categories/">Categories</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="index.xml">RSS</a>
+      </li>
+      
+    </ul>
+  </div>
 </nav>
-    
 
-    
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
 
-<article class="max-width">
-    
-    <section class="row">
-        <div class="col s12 m10 offset-m1 l10 offset-l1">
-            <h1>Managing DNS Automatically with Puppet</h1>
-        </div>
-    </section>
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../managing-dns-automatically-with-puppet/" rel="bookmark">Managing DNS Automatically with Puppet</a>
+  </h2>
+  
+  <time datetime="2013-10-19T23:05:02Z">
+    19 October, 2013
+  </time>
+  
+</header>
 
-    
-    
-
-    
-    <section class="row">
-        <div class="col s12 m8 offset-m2 l2 offset-l1">
-            
-
-<p class="article-meta">
-    <div class="article-meta-container">
-        <div class="article-meta-author-name">admin</div>
-        <div class="article-meta-description"></div>
-    </div>
-    <span class="article-meta-published-at grey-text text-darken-1">Oct 19, 2013</span>
-</p>
-        </div>
-        <div class="col s12 m8 offset-m2 l6">
-            <h1 id="why">Why</h1>
+  <h1 id="why">Why</h1>
 <p>So you have a decent amount of things configured in Puppet. Great!</p>
 <p>Are you finding that you have to manually update your DNS entries when things change, like when new hosts or added, or additional services are created?</p>
 <p>Why? Your DNS zone files will forever be out of date, waiting for humans to update them. Just say no. Puppet already knows what the ip addresses and hostnames of your servers, why not take advantage of that existing data?</p>
 <h1 id="how">How</h1>
-<p>Most of the credit for this has to go do <a href="https://github.com/ajjahn">Adam Jahn</a> for his <a href="https://github.com/ajjahn/puppet-dns">original work</a>. But there is a lot of work to be done and many outstanding pull requests. Until things are more unified, I'm going to recommend installing my version of the module:</p>
+<p>Most of the credit for this has to go do <a href="https://github.com/ajjahn">Adam Jahn</a> for his <a href="https://github.com/ajjahn/puppet-dns">original work</a>. But there is a lot of work to be done and many outstanding pull requests. Until things are more unified, I&rsquo;m going to recommend installing my version of the module:</p>
 <pre><code>puppet module install KyleAnderson/dns
 </code></pre>
 <p>Once the module is installed, you can setup bind on your nameserver:</p>
@@ -121,7 +87,7 @@ Why? Your DNS zone files will forever be out of date, waiting for humans to upda
   include dns::server
   ...
 </code></pre>
-<p>Warning: Don't try to use this on top of an existing configuration, Puppet will take control and break your existing stuff.</p>
+<p>Warning: Don&rsquo;t try to use this on top of an existing configuration, Puppet will take control and break your existing stuff.</p>
 <p>You can also create zones, right from puppet:</p>
 <pre><code> dns::zone { 'example.com':
     soa         =&gt; $::fqdn,
@@ -173,51 +139,69 @@ node 'ns1.example.com' {
 <h1 id="future-work">Future Work</h1>
 <p>I will continue to send my pull requests and maintaining my own fork. <a href="https://github.com/solarkennedy/puppet-dns">Join the fun</a>!</p>
 
-        </div>
-    </section>
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../categories/dns/" rel="tag">dns</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../categories/Puppet/" rel="tag">Puppet</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../categories/puppetdb/" rel="tag">puppetdb</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../categories/stored-configs/" rel="tag">stored configs</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+  
+
+
+
 </article>
 
 
-
-    
-      <footer class="page-footer grey lighten-5">
-    <div class="row max-width">
-        <div class="col s12 l10 offset-l1 clear-padding">
-            <div class="row">
-    
-        
-    
-
-    
-    
-    <div class="col s12 l12">
-        <h5 class="black-text"></h5>
-<p class="grey-text text-darken-4"></p>
-
+      </div>
     </div>
-
-    
-</div>
-
-
-        </div>
+  </main>
+  
+<footer class="Footer">
+  <div class="u-wrapper">
+    <div class="u-padding">
+      Except where otherwise noted, content on this site is licensed under a a <a href="http://creativecommons.org/licenses/by/4.0/" rel="license"> Creative Commons Attribution 4.0 International License</a>.
     </div>
-    <div class="footer-copyright">
-        <div class="row max-width" style="width: 100%;">
-            <div class="col s12 l10 offset-l1">
-                <span class="grey-text text-darken-4"></span>
-<div class="right">
-    
-</div>
-            </div>
-        </div>
-    </div>
+  </div>
 </footer>
-    
 
-    
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="js/script.js"></script>
-  </body>
+
+</body>
 </html>

@@ -1,115 +1,83 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<meta property="og:title" content="A DRBD Configuration Options Shootout!" />
-<meta property="og:description" content="DRBD is the bomb. Think Raid 1 over the network between two servers. It enables sysadmins (in combination with heartbeat) to increase service uptime, while enabling server downtime. This means you can do kernel updates, do hardware maintenance, upgrade ram, move the server to another rack, etc, all while keeping the service up.
-Because DRBD is often used in high availability scenario, there isn&#39;t much room for experimentation with in-production systems." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/a-drbd-configuration-options-shootout/" />
-<meta property="article:published_time" content="2011-07-24T20:41:55+00:00" />
-<meta property="article:modified_time" content="2011-07-24T20:41:55+00:00" />
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="A DRBD Configuration Options Shootout!"/>
-<meta name="twitter:description" content="DRBD is the bomb. Think Raid 1 over the network between two servers. It enables sysadmins (in combination with heartbeat) to increase service uptime, while enabling server downtime. This means you can do kernel updates, do hardware maintenance, upgrade ram, move the server to another rack, etc, all while keeping the service up.
-Because DRBD is often used in high availability scenario, there isn&#39;t much room for experimentation with in-production systems."/>
-
-
-    <meta name="description" content="">
-    <link rel="canonical" href="../a-drbd-configuration-options-shootout/">
-
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.66.0" />
+  
+  
+  
+  <title>
     
-    <title>A DRBD Configuration Options Shootout! &middot; xkyle.com</title>
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="css/style.css" rel="stylesheet">
-
+    A DRBD Configuration Options Shootout! | xkyle.com
     
-
-    
-
-    
-  </head>
-  <body>
-    
+  </title>
+  <link rel="canonical" href="../a-drbd-configuration-options-shootout/">
+  
+  
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="../css/base.min.50883c9e7cc6f561db1dcd2089b6b895c60df8d10b9e71a90cbc10e59c8bfc40.css" integrity="sha256-UIg8nnzG9WHbHc0giba4lcYN&#43;NELnnGpDLwQ5ZyL/EA=" crossorigin="anonymous">
+  
+  
+</head>
+<body>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable" href="">xkyle.com</a>
+      </li>
       
-
-
-
-<nav class="white" role="navigation">
-    <div class="row max-width">
-        <div class="col s12 l10 offset-l1">
-            
-            <a href="#" data-target="nav-mobile" class="sidenav-trigger black-text">
-                <i class="material-icons">menu</i>
-            </a>
-
-            
-            <ul id="nav-mobile" class="sidenav">
-                
-                
-    
-    
-
-            </ul>
-
-            
-            <a href="../" class="brand-logo grey-text text-darken-3">xkyle.com</a>
-
-            
-            <div class="nav-wrapper">
-
-                
-                <ul class="right hide-on-med-and-down">
-                    
-                    
-    
-    
-
-                </ul>
-
-            </div>
-        </div>
-    </div>
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="about/">About</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="post/">Posts</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="tags/">Tags</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="categories/">Categories</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="index.xml">RSS</a>
+      </li>
+      
+    </ul>
+  </div>
 </nav>
-    
 
-    
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
 
-<article class="max-width">
-    
-    <section class="row">
-        <div class="col s12 m10 offset-m1 l10 offset-l1">
-            <h1>A DRBD Configuration Options Shootout!</h1>
-        </div>
-    </section>
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../a-drbd-configuration-options-shootout/" rel="bookmark">A DRBD Configuration Options Shootout!</a>
+  </h2>
+  
+  <time datetime="2011-07-24T20:41:55Z">
+    24 July, 2011
+  </time>
+  
+</header>
 
-    
-    
-
-    
-    <section class="row">
-        <div class="col s12 m8 offset-m2 l2 offset-l1">
-            
-
-<p class="article-meta">
-    <div class="article-meta-container">
-        <div class="article-meta-author-name">admin</div>
-        <div class="article-meta-description"></div>
-    </div>
-    <span class="article-meta-published-at grey-text text-darken-1">Jul 24, 2011</span>
-</p>
-        </div>
-        <div class="col s12 m8 offset-m2 l6">
-            <p><a href="http://www.drbd.org/">DRBD</a> is the bomb. Think Raid 1 over the network between two servers. It enables sysadmins (in combination with heartbeat) to increase <em><strong>service</strong></em> uptime, while enabling <strong><em>server</em></strong> downtime. This means you can do kernel updates, do hardware maintenance, upgrade ram, move the server to another rack, etc, all while keeping the service up.</p>
-<p>Because DRBD is often used in <a href="http://en.wikipedia.org/wiki/High_availability">high availability</a> scenario, there isn't much room for experimentation with in-production systems. However, recently I had the opportunity configure DRBD on a pair of servers a couple of weeks before they were needed to be in service. I took the opportunity to benchmark different configurations of DRBD. Now, you might look at my graphs and say, &ldquo;Oh, obviously the performance is like that&rdquo;, but I would say it is not so obvious.</p>
-<h2 id="philosophers-corner">Philosopher's Corner</h2>
-<p>A bit of philosophy here, sometimes we are tempted to claim knowledge about a certain subject. For example someone might say that &ldquo;Intel is faster than AMD&rdquo; or &ldquo;Fords are better than Chevy's&rdquo;, or &ldquo;DRBD protocol A (asynchronous replication) is faster than protocol C (fully synchronous replication)&quot;. But when someone makes claims like this, often they do not believe that what they are saying is simply an opinion. They are claiming to have <strong><em>knowledge</em></strong> about the subject.</p>
+  <p><a href="http://www.drbd.org/">DRBD</a> is the bomb. Think Raid 1 over the network between two servers. It enables sysadmins (in combination with heartbeat) to increase <em><strong>service</strong></em> uptime, while enabling <strong><em>server</em></strong> downtime. This means you can do kernel updates, do hardware maintenance, upgrade ram, move the server to another rack, etc, all while keeping the service up.</p>
+<p>Because DRBD is often used in <a href="http://en.wikipedia.org/wiki/High_availability">high availability</a> scenario, there isn&rsquo;t much room for experimentation with in-production systems. However, recently I had the opportunity configure DRBD on a pair of servers a couple of weeks before they were needed to be in service. I took the opportunity to benchmark different configurations of DRBD. Now, you might look at my graphs and say, &ldquo;Oh, obviously the performance is like that&rdquo;, but I would say it is not so obvious.</p>
+<h2 id="philosophers-corner">Philosopher&rsquo;s Corner</h2>
+<p>A bit of philosophy here, sometimes we are tempted to claim knowledge about a certain subject. For example someone might say that &ldquo;Intel is faster than AMD&rdquo; or &ldquo;Fords are better than Chevy&rsquo;s&rdquo;, or &ldquo;DRBD protocol A (asynchronous replication) is faster than protocol C (fully synchronous replication)&quot;. But when someone makes claims like this, often they do not believe that what they are saying is simply an opinion. They are claiming to have <strong><em>knowledge</em></strong> about the subject.</p>
 <p>In order to claim to have knowledge about something, many philosophers believe that in order to claim to have knowledge you have to have three things:</p>
 <ol>
 <li>
@@ -122,7 +90,7 @@ Because DRBD is often used in high availability scenario, there isn&#39;t much
 <p>You have to have <em><strong>justification</strong></em> for your claim.</p>
 </li>
 </ol>
-<p>For many of us, we don't even get past step 1. Even if we do get past step 1 then we rarely get 3. With the case of DRBD, now that I have done these benchmarks I can feel confident to make claims. Not only will I believe myself, but I'm pretty sure they are actually true, and I will be justified as I have actually run tests to back up my claims.</p>
+<p>For many of us, we don&rsquo;t even get past step 1. Even if we do get past step 1 then we rarely get 3. With the case of DRBD, now that I have done these benchmarks I can feel confident to make claims. Not only will I believe myself, but I&rsquo;m pretty sure they are actually true, and I will be justified as I have actually run tests to back up my claims.</p>
 <h2 id="onto-the-benchmarks">Onto the Benchmarks</h2>
 <p>My test setup is a pair of 2U Silicon Mechanics servers. Here are their specifics:</p>
 <ul>
@@ -130,13 +98,13 @@ Because DRBD is often used in high availability scenario, there isn&#39;t much
 <p><a href="http://www.siliconmechanics.com/i28696/dual-xeon-server.php">Silicon Mechanics R346</a></p>
 </li>
 <li>
-<p>Single Xeon (quad core) CPU (for storage servers, you don't need tons of cpu, even this is overkill)</p>
+<p>Single Xeon (quad core) CPU (for storage servers, you don&rsquo;t need tons of cpu, even this is overkill)</p>
 </li>
 <li>
 <p>24 GB Ram (Nice! Ram is cheap and gives an awesome speed boost to repeatedly accessed data)</p>
 </li>
 <li>
-<p>8X 3TB Seagate SAS drives (3T isn't the best $/GB, but it is nice to go high)</p>
+<p>8X 3TB Seagate SAS drives (3T isn&rsquo;t the best $/GB, but it is nice to go high)</p>
 </li>
 <li>
 <p>3ware 9750-4i raid controller with BBU (If I could splurge on anything, this is it. I love 3ware raid cards)</p>
@@ -157,7 +125,7 @@ Because DRBD is often used in high availability scenario, there isn&#39;t much
 <p>DRBD backing flushes on and off (This makes my computer really fast right?)</p>
 </li>
 <li>
-<p>10G or 1G in a &ldquo;crossover&rdquo; between the two servers (Won't this make my nosql queries return 10x faster?)</p>
+<p>10G or 1G in a &ldquo;crossover&rdquo; between the two servers (Won&rsquo;t this make my nosql queries return 10x faster?)</p>
 </li>
 <li>
 <p>Paired or in disconnected mode (How does being disconnected impact performance?)</p>
@@ -165,22 +133,22 @@ Because DRBD is often used in high availability scenario, there isn&#39;t much
 </ul>
 <p>My testing methodology was to configure DRBD in the test configuration, wait for the synchronization to finish, then make one node primary and mount the filesystem. From there I ran the Bonnie++ benchmark program (version 1.03), and then record the results. If you want my raw data, <a href="../uploads/drbd-shootout-bonnie.csv">here it is</a>. But I will also try to distill the data and share some conclusions.</p>
 <h2 id="drbd-in-stand-alone-mode">DRBD In Stand Alone Mode</h2>
-<h2 id="uploadsdrbdstandalonepnguploadsdrbdstandalonepng"><a href="../uploads/drbd-stand-alone.png"><img src="../uploads/drbd-stand-alone.png" alt=""></a></h2>
-<p>The differences in speed here are within the standard deviation of just running bonnie, the only conclusion I would draw here is that in stand-alone mode the read and write speed of the array is the same as without drbd. (Sorry I don't have the non-drbd on the list). This is mostly expected, but how can we <strong><em>know</em></strong> without testing?</p>
+<h2 id="uploadsdrbd-stand-alonepnguploadsdrbd-stand-alonepng"><a href="../uploads/drbd-stand-alone.png"><img src="../uploads/drbd-stand-alone.png" alt=""></a></h2>
+<p>The differences in speed here are within the standard deviation of just running bonnie, the only conclusion I would draw here is that in stand-alone mode the read and write speed of the array is the same as without drbd. (Sorry I don&rsquo;t have the non-drbd on the list). This is mostly expected, but how can we <strong><em>know</em></strong> without testing?</p>
 <h2 id="testing-read-speed">Testing Read Speed</h2>
 <p><a href="../uploads/drbd-read-speeds1.png"><img src="../uploads/drbd-read-speeds1.png" alt=""></a></p>
-<p>With Read speeds across every configuration are about the same. There are some high and lows but they are within the standard deviation of Bonnie runs. I wish I had even more time to run many Bonnie runs and average them. The conclusion I take away from this is that DRBD does not impact the read speed performance. Again this is kinda expected, but_ I wasn't about to claim to know this without testing_. As such from now on I will be focusing on write performance. Again, no matter what your DRBD configuration, your disk read speed should be around the same as if you didn't have DRBD.</p>
+<p>With Read speeds across every configuration are about the same. There are some high and lows but they are within the standard deviation of Bonnie runs. I wish I had even more time to run many Bonnie runs and average them. The conclusion I take away from this is that DRBD does not impact the read speed performance. Again this is kinda expected, but_ I wasn&rsquo;t about to claim to know this without testing_. As such from now on I will be focusing on write performance. Again, no matter what your DRBD configuration, your disk read speed should be around the same as if you didn&rsquo;t have DRBD.</p>
 <h2 id="10g-versus-1g">10G versus 1G</h2>
 <p><a href="../uploads/drbd-write-speed.png"><img src="../uploads/drbd-write-speed.png" alt=""></a></p>
-<p>Here I'm comparing paired DRBD configurations with a 1g Ethernet crossover versus a 10g Ethernet crossover. As mentioned before, no matter what your connection is, the read speed is the same. You could have a 16mb Token Ring adapter between the two servers and the read speed would be the same. It is the write speed that changes. Here the 10g Ethernet gives us a tangible speed increase. For about $1.5k (at the time of this writing) you can throw in 2X 10g cards and a copper crossover and get the full potential write speeds out of your disks. Now, of course if these servers are only connected to client computers via 1g and not much disk IO happens on the server itself, this upgrade may not pass the cost/benefit test. But it is good to <strong><em>know</em></strong> what it would be like if you did take the 10g plunge.</p>
+<p>Here I&rsquo;m comparing paired DRBD configurations with a 1g Ethernet crossover versus a 10g Ethernet crossover. As mentioned before, no matter what your connection is, the read speed is the same. You could have a 16mb Token Ring adapter between the two servers and the read speed would be the same. It is the write speed that changes. Here the 10g Ethernet gives us a tangible speed increase. For about $1.5k (at the time of this writing) you can throw in 2X 10g cards and a copper crossover and get the full potential write speeds out of your disks. Now, of course if these servers are only connected to client computers via 1g and not much disk IO happens on the server itself, this upgrade may not pass the cost/benefit test. But it is good to <strong><em>know</em></strong> what it would be like if you did take the 10g plunge.</p>
 <h2 id="protocol-choice-and-flushes-impact-on-write-speeds">Protocol Choice and Flushes Impact on Write Speeds</h2>
-<h2 id="uploadsdrbd1gwritespnguploadsdrbd1gwritespnguploadsdrbd10gwritespnguploadsdrbd10gwritespng"><a href="../uploads/drbd-1g-writes.png"><img src="../uploads/drbd-1g-writes.png" alt=""></a><a href="../uploads/drbd-10g-writes.png"><img src="../uploads/drbd-10g-writes.png" alt=""></a></h2>
-<p>With the write speeds brought up next to each other it is easier to see the speed differences between the different protocols and whether disabling disk flushes matters. Here is a hint: it doesn't matter. Well, at least with my particular situation it doesn't matter. When the servers are linked together in a crossover situation (a very common scenario), the latency is so low that the protocol choice is mostly inconsequential. The bottom line is that most people can afford protocol C (completely synchronous replication).</p>
-<p>Regarding flushes, with my particular raid card with a BBU, the raid card basically lies to Linux when it asks to do a flush anyway. This is because it is &ldquo;OK&rdquo; for the 3ware card has a battery on its cache, so it is &ldquo;safe&rdquo;. If I didn't have a battery or if it was faulty these charts would probably look different. (Maybe my next blog post) In other situations where a battery-backed raid card is not in use, disabling the flushes would bring the write speeds up to this level, but at a cost of a risk of losing data upon a power loss. (serious data, see <a href="http://www.drbd.org/users-guide/s-disable-flushes.html"><a href="http://www.drbd.org/users-guide/s-disable-flushes.html">http://www.drbd.org/users-guide/s-disable-flushes.html</a></a> for more info). The bottom line here is that you should not disable flushes. Let Linux and your Raid card make the right decision for you.</p>
+<h2 id="uploadsdrbd-1g-writespnguploadsdrbd-1g-writespnguploadsdrbd-10g-writespnguploadsdrbd-10g-writespng"><a href="../uploads/drbd-1g-writes.png"><img src="../uploads/drbd-1g-writes.png" alt=""></a><a href="../uploads/drbd-10g-writes.png"><img src="../uploads/drbd-10g-writes.png" alt=""></a></h2>
+<p>With the write speeds brought up next to each other it is easier to see the speed differences between the different protocols and whether disabling disk flushes matters. Here is a hint: it doesn&rsquo;t matter. Well, at least with my particular situation it doesn&rsquo;t matter. When the servers are linked together in a crossover situation (a very common scenario), the latency is so low that the protocol choice is mostly inconsequential. The bottom line is that most people can afford protocol C (completely synchronous replication).</p>
+<p>Regarding flushes, with my particular raid card with a BBU, the raid card basically lies to Linux when it asks to do a flush anyway. This is because it is &ldquo;OK&rdquo; for the 3ware card has a battery on its cache, so it is &ldquo;safe&rdquo;. If I didn&rsquo;t have a battery or if it was faulty these charts would probably look different. (Maybe my next blog post) In other situations where a battery-backed raid card is not in use, disabling the flushes would bring the write speeds up to this level, but at a cost of a risk of losing data upon a power loss. (serious data, see <a href="http://www.drbd.org/users-guide/s-disable-flushes.html">http://www.drbd.org/users-guide/s-disable-flushes.html</a> for more info). The bottom line here is that you should not disable flushes. Let Linux and your Raid card make the right decision for you.</p>
 <h2 id="conclusions-skip-to-here-for-the-tldr-version">Conclusions (skip to here for the TL;DR version)</h2>
 <ul>
 <li>
-<p>Benchmarks on other people's stuff are worthless, do them yourself to see what happens on <strong>your</strong> OS with <strong>your</strong> raid card and <strong>your</strong> disks, etc.</p>
+<p>Benchmarks on other people&rsquo;s stuff are worthless, do them yourself to see what happens on <strong>your</strong> OS with <strong>your</strong> raid card and <strong>your</strong> disks, etc.</p>
 </li>
 <li>
 <p>If you DRBD servers are in the same datacenter and not replicating over a WAN, <strong>stick with protocol C</strong>, the performance cost is negligible.</p>
@@ -189,64 +157,70 @@ Because DRBD is often used in high availability scenario, there isn&#39;t much
 <p>If you need <strong>full speed writes</strong>, you must use <strong>10G Ethernet</strong> to do DRBD replication. If your total input to the server is 1G anyway, you probably can get by without it.</p>
 </li>
 <li>
-<p>Don't disable DRBD's flushes. If you need the speed, <strong>use a battery backed raid card</strong> and let it give you the equivalent write speed boost.</p>
+<p>Don&rsquo;t disable DRBD&rsquo;s flushes. If you need the speed, <strong>use a battery backed raid card</strong> and let it give you the equivalent write speed boost.</p>
 </li>
 <li>
 <p>Do not be confused, <strong>read speeds are not impacted</strong> by DRBD. If your workload is mostly reads, DRBD gives you super uptime for basically the cost of another server.</p>
 </li>
 <li>
-<p>In <strong>disconnected</strong> mode, the write and read <strong>performance is the same</strong> as if you didn't have DRBD in the first place, so it doesn't hurt you. (In fact on 1G it will probably speed up your writes)</p>
+<p>In <strong>disconnected</strong> mode, the write and read <strong>performance is the same</strong> as if you didn&rsquo;t have DRBD in the first place, so it doesn&rsquo;t hurt you. (In fact on 1G it will probably speed up your writes)</p>
 </li>
 <li>
 <p>DRBD involves many facets, the OS, raid cards, disks, networking throughput, latency, etc. It is a <strong>complicated system</strong> and is difficult to draw performance conclusions <strong>without testing</strong>. <strong>Measurement is knowing</strong>. I am by no means immune to inconsistent logic and bad testing methodologies. Please <a href="mailto:kyle@xkyle.com">email me</a> or leave a comment if you know something is wrong so I can fix it and not pollute the internet with false information.</p>
 </li>
 </ul>
 
-        </div>
-    </section>
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../categories/benchmarks/" rel="tag">benchmarks</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../categories/drdb/" rel="tag">drdb</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+  
+
+
+
 </article>
 
 
-
-    
-      <footer class="page-footer grey lighten-5">
-    <div class="row max-width">
-        <div class="col s12 l10 offset-l1 clear-padding">
-            <div class="row">
-    
-        
-    
-
-    
-    
-    <div class="col s12 l12">
-        <h5 class="black-text"></h5>
-<p class="grey-text text-darken-4"></p>
-
+      </div>
     </div>
-
-    
-</div>
-
-
-        </div>
+  </main>
+  
+<footer class="Footer">
+  <div class="u-wrapper">
+    <div class="u-padding">
+      Except where otherwise noted, content on this site is licensed under a a <a href="http://creativecommons.org/licenses/by/4.0/" rel="license"> Creative Commons Attribution 4.0 International License</a>.
     </div>
-    <div class="footer-copyright">
-        <div class="row max-width" style="width: 100%;">
-            <div class="col s12 l10 offset-l1">
-                <span class="grey-text text-darken-4"></span>
-<div class="right">
-    
-</div>
-            </div>
-        </div>
-    </div>
+  </div>
 </footer>
-    
 
-    
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="js/script.js"></script>
-  </body>
+
+</body>
 </html>
