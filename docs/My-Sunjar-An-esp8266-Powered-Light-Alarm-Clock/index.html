@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.66.0" />
+  
+  
+  
+  <title>
+    
+    My Sunjar - An esp8266-Powered Light Alarm Clock | xkyle.com
+    
+  </title>
+  <link rel="canonical" href="../My-Sunjar-An-esp8266-Powered-Light-Alarm-Clock/">
+  
+  
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="../css/base.min.47def9e9fb53a1b822ec70f6799bb1f010fe9aac5273d8a1192ac9c685262c4f.css" integrity="sha256-R9756ftTobgi7HD2eZux8BD&#43;mqxSc9ihGSrJxoUmLE8=" crossorigin="anonymous">
+  
+  
+</head>
+<body>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable" href="">xkyle.com</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="about/">About</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="post/">Posts</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="tags/">Tags</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="categories/">Categories</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="index.xml">RSS</a>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../My-Sunjar-An-esp8266-Powered-Light-Alarm-Clock/" rel="bookmark">My Sunjar - An esp8266-Powered Light Alarm Clock</a>
+  </h2>
+  
+  <time datetime="2020-03-26T12:54:42-07:00">
+    26 March, 2020
+  </time>
+  
+</header>
+
+  <p>This is my Sunjar (<a href="https://github.com/solarkennedy/sunjar">code</a>).
+Inspired by those (expensive) <a href="https://www.amazon.com/Philips-Simulation-Headspace-Subscription-HF3520/dp/B0093162RM">light alarm clocks</a>, my Sunjar gently wakes me up in the morning to this (click to see a youtube version):</p>
+<p><a href="https://www.youtube.com/watch?v=fExAfrpSHGU"><img src="../uploads/sunjar_ocean.gif" alt="Sunjar ocean pattern"></a></p>
+<p>And then fall asleep to flames:
+<a href="https://www.youtube.com/watch?v=G6xP6r_RCTU"><img src="../uploads/sunjar_flames.gif" alt="Sunjar fire pattern"></a></p>
+<h2 id="features">Features</h2>
+<p>This is <em>my</em> alarm clock, so I can put in the features that <em>I</em> want:</p>
+<ul>
+<li>NTP-synced time. Never forget about DST again. Always accurate.</li>
+<li>Wakeup by ocean light, with a 1-hour brightness ramp-up.</li>
+<li>Capacitive touch-sensitive override - snooze if I want to, just touch the jar</li>
+<li>1-hour red-light sleep timer for going to bed</li>
+<li>Cool patterns during the day</li>
+<li>Over the air (OTA) firmware updates</li>
+</ul>
+<h2 id="hardware">Hardware</h2>
+<ul>
+<li>An esp8266 (Wemos W1 Clone)</li>
+<li>5 WS2812 LEDs</li>
+<li>1 50M ohm resistor</li>
+</ul>
+<h2 id="wakeup--sleep-time-algorithm">Wakeup / Sleep Time Algorithm</h2>
+<p>I decided I only needed two different wakeup times, one for weekedays, one for weekends.</p>
+<p>If you would like to see a fancier light alarm clock with a web interface to set custom alarms, check out <a href="https://www.instructables.com/id/SootheRefresh-Smart-Lamp/">this soothing alarm clock</a>.</p>
+<h2 id="capacitive-touch-sensor">Capacitive Touch Sensor</h2>
+<p>The Sunjar is just a heavily frosted mason jar and it has a stainless steal rim.
+By connecting this rim to particular pins on the microcontroller, I can use the rim as a capacitive touch sensor, detecting when humans touch the jar.</p>
+<p>The electrical schematic for this is extremely simple, requiring only two pins and a resistor:</p>
+<p><a href="../uploads/sunjar_schematic.png"><img src="../uploads/sunjar_schematic.png" alt="Sunjar Schematic"></a></p>
+<p>My code easy to write thanks to a <a href="https://github.com/PaulStoffregen/CapacitiveSensor">library</a> that handles the hard parts.</p>
+<p>This touch sensor serves to override the lamp, for when I want to sleep early, use it as a night light, or need to snooze in the morning.</p>
+<h2 id="a-love-letter-to-pacifica-the-ocean-pattern">A Love Letter to &ldquo;Pacifica&rdquo;, the ocean pattern</h2>
+<p>&ldquo;Pacifica&rdquo; is the name of the ocean pattern. It powers the wakeup mode (with the ocean-inspired palette) as well as the sleep mode (with a fire-inspired palette):</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://player.vimeo.com/video/379376339" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="vimeo video" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+ </div>
+
+<p><a href="https://gist.github.com/kriegsman/36a1e277f5b4084258d9af1eae29bac4">Written by Mark Kriegsman</a> for the art piece &ldquo;<a href="https://vimeo.com/379376339">Beneath These Waves Lies Light</a>&quot;, it still looks beautiful on 5 leds:</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/fExAfrpSHGU" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<p>Its beauty comes from its complexity and depth.
+There are four simultaneous &ldquo;waves&rdquo; intersecting each other with extra effects for darker hues and whitecaps.</p>
+<h2 id="future-improvements">Future Improvements</h2>
+<ul>
+<li>I think eventually I will want an easier way to change the alarm times</li>
+<li>Maybe I can make the touch sensor detect long holds or double taps for more interesting commands</li>
+<li>Synchronized color schemes for special events copied from a <a href="https://github.com/solarkennedy/fadecandycal">different project</a></li>
+</ul>
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+</article>
+
+
+      </div>
+    </div>
+  </main>
+  
+
+</body>
+</html>

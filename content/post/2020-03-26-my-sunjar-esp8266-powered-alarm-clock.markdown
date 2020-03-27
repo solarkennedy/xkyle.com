@@ -1,7 +1,6 @@
 ---
 title: "My Sunjar - An esp8266-Powered Light Alarm Clock"
 date: 2020-03-26T12:54:42-07:00
-draft: true
 ---
 
 This is my Sunjar ([code](https://github.com/solarkennedy/sunjar)).

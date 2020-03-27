@@ -10,6 +10,65 @@
     <lastBuildDate>Wed, 04 Jan 2012 14:19:10 +0000</lastBuildDate>
     <atom:link href="/categories/Network/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>My Sunjar - An esp8266-Powered Light Alarm Clock</title>
+      <link>/My-Sunjar-An-esp8266-Powered-Light-Alarm-Clock/</link>
+      <pubDate>Thu, 26 Mar 2020 12:54:42 -0700</pubDate>
+      <guid>/My-Sunjar-An-esp8266-Powered-Light-Alarm-Clock/</guid>
+      <description>&lt;p&gt;This is my Sunjar (&lt;a href=&#34;https://github.com/solarkennedy/sunjar&#34;&gt;code&lt;/a&gt;).
+Inspired by those (expensive) &lt;a href=&#34;https://www.amazon.com/Philips-Simulation-Headspace-Subscription-HF3520/dp/B0093162RM&#34;&gt;light alarm clocks&lt;/a&gt;, my Sunjar gently wakes me up in the morning to this (click to see a youtube version):&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=fExAfrpSHGU&#34;&gt;&lt;img src=&#34;../../uploads/sunjar_ocean.gif&#34; alt=&#34;Sunjar ocean pattern&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;And then fall asleep to flames:
+&lt;a href=&#34;https://www.youtube.com/watch?v=G6xP6r_RCTU&#34;&gt;&lt;img src=&#34;../../uploads/sunjar_flames.gif&#34; alt=&#34;Sunjar fire pattern&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+&lt;p&gt;This is &lt;em&gt;my&lt;/em&gt; alarm clock, so I can put in the features that &lt;em&gt;I&lt;/em&gt; want:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;NTP-synced time. Never forget about DST again. Always accurate.&lt;/li&gt;
+&lt;li&gt;Wakeup by ocean light, with a 1-hour brightness ramp-up.&lt;/li&gt;
+&lt;li&gt;Capacitive touch-sensitive override - snooze if I want to, just touch the jar&lt;/li&gt;
+&lt;li&gt;1-hour red-light sleep timer for going to bed&lt;/li&gt;
+&lt;li&gt;Cool patterns during the day&lt;/li&gt;
+&lt;li&gt;Over the air (OTA) firmware updates&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;hardware&#34;&gt;Hardware&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;An esp8266 (Wemos W1 Clone)&lt;/li&gt;
+&lt;li&gt;5 WS2812 LEDs&lt;/li&gt;
+&lt;li&gt;1 50M ohm resistor&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;wakeup--sleep-time-algorithm&#34;&gt;Wakeup / Sleep Time Algorithm&lt;/h2&gt;
+&lt;p&gt;I decided I only needed two different wakeup times, one for weekedays, one for weekends.&lt;/p&gt;
+&lt;p&gt;If you would like to see a fancier light alarm clock with a web interface to set custom alarms, check out &lt;a href=&#34;https://www.instructables.com/id/SootheRefresh-Smart-Lamp/&#34;&gt;this soothing alarm clock&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;capacitive-touch-sensor&#34;&gt;Capacitive Touch Sensor&lt;/h2&gt;
+&lt;p&gt;The Sunjar is just a heavily frosted mason jar and it has a stainless steal rim.
+By connecting this rim to particular pins on the microcontroller, I can use the rim as a capacitive touch sensor, detecting when humans touch the jar.&lt;/p&gt;
+&lt;p&gt;The electrical schematic for this is extremely simple, requiring only two pins and a resistor:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;../../uploads/sunjar_schematic.png&#34;&gt;&lt;img src=&#34;../../uploads/sunjar_schematic.png&#34; alt=&#34;Sunjar Schematic&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;My code easy to write thanks to a &lt;a href=&#34;https://github.com/PaulStoffregen/CapacitiveSensor&#34;&gt;library&lt;/a&gt; that handles the hard parts.&lt;/p&gt;
+&lt;p&gt;This touch sensor serves to override the lamp, for when I want to sleep early, use it as a night light, or need to snooze in the morning.&lt;/p&gt;
+&lt;h2 id=&#34;a-love-letter-to-pacifica-the-ocean-pattern&#34;&gt;A Love Letter to &amp;ldquo;Pacifica&amp;rdquo;, the ocean pattern&lt;/h2&gt;
+&lt;p&gt;&amp;ldquo;Pacifica&amp;rdquo; is the name of the ocean pattern. It powers the wakeup mode (with the ocean-inspired palette) as well as the sleep mode (with a fire-inspired palette):&lt;/p&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://player.vimeo.com/video/379376339&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;vimeo video&#34; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+ &lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gist.github.com/kriegsman/36a1e277f5b4084258d9af1eae29bac4&#34;&gt;Written by Mark Kriegsman&lt;/a&gt; for the art piece &amp;ldquo;&lt;a href=&#34;https://vimeo.com/379376339&#34;&gt;Beneath These Waves Lies Light&lt;/a&gt;&amp;quot;, it still looks beautiful on 5 leds:&lt;/p&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/fExAfrpSHGU&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Its beauty comes from its complexity and depth.
+There are four simultaneous &amp;ldquo;waves&amp;rdquo; intersecting each other with extra effects for darker hues and whitecaps.&lt;/p&gt;
+&lt;h2 id=&#34;future-improvements&#34;&gt;Future Improvements&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;I think eventually I will want an easier way to change the alarm times&lt;/li&gt;
+&lt;li&gt;Maybe I can make the touch sensor detect long holds or double taps for more interesting commands&lt;/li&gt;
+&lt;li&gt;Synchronized color schemes for special events copied from a &lt;a href=&#34;https://github.com/solarkennedy/fadecandycal&#34;&gt;different project&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    <item>
       <title>The Case Against Kubernetes Sidecars</title>
       <link>/The-Case-Against-Kubernetes-Sidecars/</link>
       <pubDate>Thu, 27 Feb 2020 00:00:00 +0000</pubDate>
