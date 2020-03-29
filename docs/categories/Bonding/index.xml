@@ -10,6 +10,37 @@
     <lastBuildDate>Wed, 04 Jan 2012 14:19:10 +0000</lastBuildDate>
     <atom:link href="/categories/Bonding/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>An ePaper Clock</title>
+      <link>/An-ePaper-Clock/</link>
+      <pubDate>Sun, 29 Mar 2020 12:54:42 -0700</pubDate>
+      <guid>/An-ePaper-Clock/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m calling my ePaper (eInk) watch &amp;ldquo;done&amp;rdquo; (click on the image for a full resolution):
+&lt;a href=&#34;../../uploads/epaper_clock.jpg&#34;&gt;&lt;img src=&#34;../../uploads/epaper_clock-thumb.jpg&#34; alt=&#34;epaper clock&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;It uses a &lt;a href=&#34;../../epaper-watch-Cleaning-the-Literary-Quotes-Database/&#34;&gt;database of literary quotes&lt;/a&gt; to display what time it is, highlighting the quote in &lt;!-- raw HTML omitted --&gt;red&lt;!-- raw HTML omitted --&gt;.&lt;/p&gt;
+&lt;p&gt;This project originally started as a wrist watch with battery management and a custom PCB:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;../../uploads/epaper_watch.jpg&#34;&gt;&lt;img src=&#34;../../uploads/epaper_watch_prototype-thumb.jpg&#34; alt=&#34;epaper watch_prototype&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The wrist watch version was too ambitious and too distracting, so I gave up and just left it as a wall-clock. Originally I took inspiration from this &lt;a href=&#34;https://www.instructables.com/id/Literary-Clock-Made-From-E-reader/&#34;&gt;clock that used a kindle&lt;/a&gt;, but wanted more control over the hardware.&lt;/p&gt;
+&lt;h2 id=&#34;hardware&#34;&gt;Hardware&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;2.9inch (296x128 pixels) Waveshare eink &lt;a href=&#34;https://www.waveshare.com/wiki/2.9inch_e-Paper_Module_(B)&#34;&gt;module&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;esp8266 development board&lt;/li&gt;
+&lt;li&gt;Picture frame&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;software&#34;&gt;Software&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/solarkennedy/epaper-watch&#34;&gt;Source code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;NTP-sourced time&lt;/li&gt;
+&lt;li&gt;Ubuntu font&lt;/li&gt;
+&lt;li&gt;Literary quotes for (most) minute of the hour&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
+&lt;p&gt;It isn&amp;rsquo;t the most accurate or easy to read clock, but it is interesting and looks nice when it has a good quote on it.&lt;/p&gt;
+&lt;p&gt;The refresh is a bit ugly and could be improved (click for the youtube version):&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=ptu6fU2wjEg&#34;&gt;&lt;img src=&#34;../../uploads/epaper_clock_refresh.gif&#34; alt=&#34;epaper clock refresh&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The tri-color epaper requires two refresh cycles, one to clear the screen and put down black, then a second pass for the red. See &lt;a href=&#34;https://benkrasnow.blogspot.com/2017/10/fast-partial-refresh-on-42-e-paper.html&#34;&gt;Ben Krasnow&amp;rsquo;s (Applied Science) notes&lt;/a&gt; on these epaper displays for some interesting low-level technical details on how they work.&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>My Sunjar - An esp8266-Powered Light Alarm Clock</title>
       <link>/My-Sunjar-An-esp8266-Powered-Light-Alarm-Clock/</link>
       <pubDate>Thu, 26 Mar 2020 12:54:42 -0700</pubDate>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.66.0" />
+  
+  
+  
+  <title>
+    
+    An ePaper Clock | xkyle.com
+    
+  </title>
+  <link rel="canonical" href="../An-ePaper-Clock/">
+  
+  
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="../css/base.min.47def9e9fb53a1b822ec70f6799bb1f010fe9aac5273d8a1192ac9c685262c4f.css" integrity="sha256-R9756ftTobgi7HD2eZux8BD&#43;mqxSc9ihGSrJxoUmLE8=" crossorigin="anonymous">
+  
+  
+</head>
+<body>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable" href="">xkyle.com</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="about/">About</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="post/">Posts</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="tags/">Tags</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="categories/">Categories</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="index.xml">RSS</a>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../An-ePaper-Clock/" rel="bookmark">An ePaper Clock</a>
+  </h2>
+  
+  <time datetime="2020-03-29T12:54:42-07:00">
+    29 March, 2020
+  </time>
+  
+</header>
+
+  <p>I&rsquo;m calling my ePaper (eInk) watch &ldquo;done&rdquo; (click on the image for a full resolution):
+<a href="../uploads/epaper_clock.jpg"><img src="../uploads/epaper_clock-thumb.jpg" alt="epaper clock"></a></p>
+<p>It uses a <a href="../epaper-watch-Cleaning-the-Literary-Quotes-Database/">database of literary quotes</a> to display what time it is, highlighting the quote in <!-- raw HTML omitted -->red<!-- raw HTML omitted -->.</p>
+<p>This project originally started as a wrist watch with battery management and a custom PCB:</p>
+<p><a href="../uploads/epaper_watch.jpg"><img src="../uploads/epaper_watch_prototype-thumb.jpg" alt="epaper watch_prototype"></a></p>
+<p>The wrist watch version was too ambitious and too distracting, so I gave up and just left it as a wall-clock. Originally I took inspiration from this <a href="https://www.instructables.com/id/Literary-Clock-Made-From-E-reader/">clock that used a kindle</a>, but wanted more control over the hardware.</p>
+<h2 id="hardware">Hardware</h2>
+<ul>
+<li>2.9inch (296x128 pixels) Waveshare eink <a href="https://www.waveshare.com/wiki/2.9inch_e-Paper_Module_(B)">module</a></li>
+<li>esp8266 development board</li>
+<li>Picture frame</li>
+</ul>
+<h2 id="software">Software</h2>
+<ul>
+<li><a href="https://github.com/solarkennedy/epaper-watch">Source code</a></li>
+<li>NTP-sourced time</li>
+<li>Ubuntu font</li>
+<li>Literary quotes for (most) minute of the hour</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<p>It isn&rsquo;t the most accurate or easy to read clock, but it is interesting and looks nice when it has a good quote on it.</p>
+<p>The refresh is a bit ugly and could be improved (click for the youtube version):</p>
+<p><a href="https://www.youtube.com/watch?v=ptu6fU2wjEg"><img src="../uploads/epaper_clock_refresh.gif" alt="epaper clock refresh"></a></p>
+<p>The tri-color epaper requires two refresh cycles, one to clear the screen and put down black, then a second pass for the red. See <a href="https://benkrasnow.blogspot.com/2017/10/fast-partial-refresh-on-42-e-paper.html">Ben Krasnow&rsquo;s (Applied Science) notes</a> on these epaper displays for some interesting low-level technical details on how they work.</p>
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+</article>
+
+
+      </div>
+    </div>
+  </main>
+  
+
+</body>
+</html>
