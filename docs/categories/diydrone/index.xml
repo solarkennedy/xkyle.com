@@ -10,13 +10,147 @@
     <lastBuildDate>Fri, 15 Jan 2010 16:45:54 +0000</lastBuildDate>
     <atom:link href="/categories/diydrone/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Measuring AWS Region and AZ Latency</title>
+      <link>/Measuring-AWS-Region-and-AZ-Latency/</link>
+      <pubDate>Mon, 20 Apr 2020 12:54:42 -0700</pubDate>
+      <guid>/Measuring-AWS-Region-and-AZ-Latency/</guid>
+      <description>&lt;p&gt;Lots of people are aware of the different AWS regions that are available for use.&lt;/p&gt;
+&lt;p&gt;But let&amp;rsquo;s say you wanted to know about the network topology between regions, specifically how &amp;ldquo;close&amp;rdquo; they are to each other, from a network-perspective.&lt;/p&gt;
+&lt;p&gt;Using data from &lt;a href=&#34;https://www.cloudping.co/grid&#34;&gt;cloudping.io&lt;/a&gt; and some &lt;a href=&#34;https://github.com/solarkennedy/cloud-zone-analysis/tree/master/aws-regions&#34;&gt;graphviz&lt;/a&gt; code, I created this latency map (click for the pdf):&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/solarkennedy/cloud-zone-analysis/raw/master/aws-regions/region-latency.gv.pdf&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/solarkennedy/cloud-zone-analysis/master/aws-regions/region-latency.gv.png&#34; alt=&#34;aws latency map&#34; title=&#34;AWS Region Latency Map&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;how-about-aws-availability-zones&#34;&gt;How About AWS Availability Zones?&lt;/h2&gt;
+&lt;p&gt;Not Availability Zones (AZs) are the same.
+Due to geography, there will be some AZs with lower latency to other AZs.
+But how much? Are there some regions that are tighter than others?
+Are there outliers?
+I went ahead and made maps for ALL the AZs available to me.&lt;/p&gt;
+&lt;p&gt;Notes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Smallest inter-AZ Latency: aps1-az1 &amp;lt;&amp;gt; aps1-az1 ~ 0.250ms !&lt;/li&gt;
+&lt;li&gt;Largest inter-AZ Latency: sae1-az3 &amp;lt;&amp;gt; sae1-az2 ~ 3.37ms !&lt;/li&gt;
+&lt;li&gt;AZ names are shuffled with each AWS account (your us-west-2a is not necessarily &lt;em&gt;my&lt;/em&gt; us-west-2a), so I use the &lt;a href=&#34;https://docs.aws.amazon.com/ram/latest/userguide/working-with-az-ids.html&#34;&gt;AZ ID&lt;/a&gt; as a consistent identifier.&lt;/li&gt;
+&lt;li&gt;All results are taken from the best of 50 pings between AZs (See the &lt;a href=&#34;https://github.com/solarkennedy/cloud-zone-analysis/tree/master/aws-azs&#34;&gt;code&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Graphs use the latency measure squared as the desired length of the edges in the graph, which exaggerates the final shape.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Region&lt;/th&gt;
+&lt;th&gt;Notes&lt;/th&gt;
+&lt;th&gt;Map&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;af-south-1&lt;/code&gt; &lt;br&gt; Africa (Cape Town)&lt;/td&gt;
+&lt;td&gt;brand new region!&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;../../uploads/cloud_analysis/af-south-1.gv.svg&#34;&gt;&lt;img src=&#34;../../uploads/cloud_analysis/af-south-1.gv.svg&#34; height=&#34;200&#34; border=1&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;ap-east-1&lt;/code&gt; - Asia Pacific (Hong Kong)&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;../../uploads/cloud_analysis/ap-east-1.gv.svg&#34;&gt;&lt;img src=&#34;../../uploads/cloud_analysis/ap-east-1.gv.svg&#34; height=&#34;200&#34; border=1&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;ap-northeast-1&lt;/code&gt; &lt;br&gt; Asia Pacific (Tokyo)&lt;/td&gt;
+&lt;td&gt;N/A - I couldn&amp;rsquo;t get instance launched in apne1-az3? (no capacity)&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;ap-northeast-2&lt;/code&gt; &lt;br&gt; Pacific (Seoul)&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;../../uploads/cloud_analysis/ap-northeast-2.gv.svg&#34;&gt;&lt;img src=&#34;../../uploads/cloud_analysis/ap-northeast-2.gv.svg&#34; height=&#34;200&#34; border=1&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;ap-south-1&lt;/code&gt; &lt;br&gt; Pacific (Mumbai)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1&lt;/code&gt; and &lt;code&gt;2&lt;/code&gt; are &lt;em&gt;super&lt;/em&gt; close to each other&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;../../uploads/cloud_analysis/ap-south-1.gv.svg&#34;&gt;&lt;img src=&#34;../../uploads/cloud_analysis/ap-south-1.gv.svg&#34; height=&#34;200&#34; border=1&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;ap-southeast-1&lt;/code&gt; &lt;br&gt; Pacific (Singapore)&lt;/td&gt;
+&lt;td&gt;apse1-az1 is way farther away than the other two&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;../../uploads/cloud_analysis/ap-southeast-1.gv.svg&#34;&gt;&lt;img src=&#34;../../uploads/cloud_analysis/ap-southeast-1.gv.svg&#34; height=&#34;200&#34; border=1&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;ap-southeast-2&lt;/code&gt; &lt;br&gt; Pacific (Sydney)&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;../../uploads/cloud_analysis/ap-southeast-2.gv.svg&#34;&gt;&lt;img src=&#34;../../uploads/cloud_analysis/ap-southeast-2.gv.svg&#34; height=&#34;200&#34; border=1&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;ca-central-1&lt;/code&gt; &lt;br&gt; (Central)&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;../../uploads/cloud_analysis/ca-central-1.gv.svg&#34;&gt;&lt;img src=&#34;../../uploads/cloud_analysis/ca-central-1.gv.svg&#34; height=&#34;200&#34; border=1&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;eu-central-1&lt;/code&gt; &lt;br&gt; (Frankfurt)&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;../../uploads/cloud_analysis/eu-central-1.gv.svg&#34;&gt;&lt;img src=&#34;../../uploads/cloud_analysis/eu-central-1.gv.svg&#34; height=&#34;200&#34; border=1&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;eu-north-1&lt;/code&gt; &lt;br&gt; (Stockholm)&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;../../uploads/cloud_analysis/eu-north-1.gv.svg&#34;&gt;&lt;img src=&#34;../../uploads/cloud_analysis/eu-north-1.gv.svg&#34; height=&#34;200&#34; border=1&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;eu-west-1&lt;/code&gt; &lt;br&gt; (Ireland)&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;../../uploads/cloud_analysis/eu-west-1.gv.svg&#34;&gt;&lt;img src=&#34;../../uploads/cloud_analysis/eu-west-1.gv.svg&#34; height=&#34;200&#34; border=1&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;eu-west-2&lt;/code&gt; &lt;br&gt; (London)&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;../../uploads/cloud_analysis/eu-west-2.gv.svg&#34;&gt;&lt;img src=&#34;../../uploads/cloud_analysis/eu-west-2.gv.svg&#34; height=&#34;200&#34; border=1&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;eu-west-3&lt;/code&gt; &lt;br&gt; (Paris)&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;../../uploads/cloud_analysis/eu-west-3.gv.svg&#34;&gt;&lt;img src=&#34;../../uploads/cloud_analysis/eu-west-3.gv.svg&#34; height=&#34;200&#34; border=1&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;me-south-1&lt;/code&gt; &lt;br&gt; East (Bahrain)&lt;/td&gt;
+&lt;td&gt;Winner of the tightest region award!&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;../../uploads/cloud_analysis/me-south-1.gv.svg&#34;&gt;&lt;img src=&#34;../../uploads/cloud_analysis/me-south-1.gv.svg&#34; height=&#34;200&#34; border=1&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;sa-east-1&lt;/code&gt; &lt;br&gt; America (Sao Paulo)&lt;/td&gt;
+&lt;td&gt;Winner of the &lt;em&gt;farthest AZ&lt;/em&gt; award! :(&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;../../uploads/cloud_analysis/sa-east-1.gv.svg&#34;&gt;&lt;img src=&#34;../../uploads/cloud_analysis/sa-east-1.gv.svg&#34; height=&#34;200&#34; border=1&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;us-east-1&lt;/code&gt; &lt;br&gt; East (N. Virginia)&lt;/td&gt;
+&lt;td&gt;Most complext topology, 6 AZs!&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;../../uploads/cloud_analysis/us-east-1.gv.svg&#34;&gt;&lt;img src=&#34;../../uploads/cloud_analysis/us-east-1.gv.svg&#34; height=&#34;200&#34; border=1&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;us-east-2&lt;/code&gt; &lt;br&gt; East (Ohio)&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;../../uploads/cloud_analysis/us-east-2.gv.svg&#34;&gt;&lt;img src=&#34;../../uploads/cloud_analysis/us-east-2.gv.svg&#34; height=&#34;200&#34; border=1&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;us-west-1&lt;/code&gt; &lt;br&gt; West (N. California)&lt;/td&gt;
+&lt;td&gt;There is a third AZ, but it wasn&amp;rsquo;t available to me?&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;../../uploads/cloud_analysis/us-west-1.gv.svg&#34;&gt;&lt;img src=&#34;../../uploads/cloud_analysis/us-west-1.gv.svg&#34; height=&#34;200&#34; border=1&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;us-west-2&lt;/code&gt; &lt;br&gt; West (Oregon)&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;../../uploads/cloud_analysis/us-west-2.gv.svg&#34;&gt;&lt;img src=&#34;../../uploads/cloud_analysis/us-west-2.gv.svg&#34; height=&#34;200&#34; border=1&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Before deploying something to &amp;ldquo;the cloud&amp;rdquo; that does cross-AZ RPC, at least be aware of the &lt;a href=&#34;https://www.lastweekinaws.com/blog/aws-cross-az-data-transfer-costs-more-than-aws-says/&#34;&gt;monetary cost&lt;/a&gt; and at least with these maps, a feel for the latency between AZs.&lt;/p&gt;
+&lt;p&gt;Maybe next I&amp;rsquo;ll do Google Cloud &lt;a href=&#34;https://cloud.google.com/compute/docs/regions-zones#available&#34;&gt;Regions / Zones&lt;/a&gt; and Microsoft Azure &lt;a href=&#34;https://azure.microsoft.com/en-us/global-infrastructure/regions/&#34;&gt;Regions / Zones&lt;/a&gt;?&lt;/p&gt;
+</description>
+    </item>
+    <item>
       <title>An ePaper Clock</title>
       <link>/An-ePaper-Clock/</link>
       <pubDate>Sun, 29 Mar 2020 12:54:42 -0700</pubDate>
       <guid>/An-ePaper-Clock/</guid>
       <description>&lt;p&gt;I&amp;rsquo;m calling my ePaper (eInk) watch &amp;ldquo;done&amp;rdquo; (click on the image for a full resolution):
 &lt;a href=&#34;../../uploads/epaper_clock.jpg&#34;&gt;&lt;img src=&#34;../../uploads/epaper_clock-thumb.jpg&#34; alt=&#34;epaper clock&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;It uses a &lt;a href=&#34;../../epaper-watch-Cleaning-the-Literary-Quotes-Database/&#34;&gt;database of literary quotes&lt;/a&gt; to display what time it is, highlighting the quote in &lt;!-- raw HTML omitted --&gt;red&lt;!-- raw HTML omitted --&gt;.&lt;/p&gt;
+&lt;p&gt;It uses a &lt;a href=&#34;../../epaper-watch-Cleaning-the-Literary-Quotes-Database/&#34;&gt;database of literary quotes&lt;/a&gt; to display what time it is, highlighting the quote in &lt;font color=&#34;red&#34;&gt;red&lt;/font&gt;.&lt;/p&gt;
 &lt;p&gt;This project originally started as a wrist watch with battery management and a custom PCB:&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;../../uploads/epaper_watch.jpg&#34;&gt;&lt;img src=&#34;../../uploads/epaper_watch_prototype-thumb.jpg&#34; alt=&#34;epaper watch_prototype&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;The wrist watch version was too ambitious and too distracting, so I gave up and just left it as a wall-clock. Originally I took inspiration from this &lt;a href=&#34;https://www.instructables.com/id/Literary-Clock-Made-From-E-reader/&#34;&gt;clock that used a kindle&lt;/a&gt;, but wanted more control over the hardware.&lt;/p&gt;
@@ -825,7 +959,7 @@ intermediate. We don&amp;rsquo;t see the same sort of standard held against Terr
 Nobody really cares about the intermediate JSON that flows between Terraform
 and cloud APIs, to Terraform users, the Terraform DSL is what matters.&lt;/p&gt;
 &lt;h2 id=&#34;yaml-a-beast-that-can-be-tamed&#34;&gt;YAML: A Beast That Can Be Tamed&lt;/h2&gt;
-&lt;!-- raw HTML omitted --&gt;
+&lt;img src=&#34;../uploads/yaml.jpg&#34; alt=&#34;Credit: https://www.reddit.com/user/DoNDaPo&#34; width=&#34;500px&#34;&gt;
 &lt;p&gt;The question to me is:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Is YAML the input format or is YAML the output format?&lt;/p&gt;
@@ -1182,10 +1316,10 @@ that is only a nice to have.&lt;/p&gt;
       <pubDate>Fri, 05 Oct 2018 19:35:56 +0000</pubDate>
       <guid>/Sutro-Tower-Vinyl-Art/</guid>
       <description>&lt;p&gt;I recently finished a project to make a vinyl mural of Sutro tower:&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=../../uploads/sutro-tower-vinyl/sutro-tower-vinyl-1.jpg&gt;&lt;img src=&#34;../../uploads/sutro-tower-vinyl/sutro-tower-vinyl-1.jpg&#34; width=&#34;500&#34;/&gt;&lt;/a&gt;
+&lt;a href=../../uploads/sutro-tower-vinyl/sutro-tower-vinyl-2.jpg&gt;&lt;img src=&#34;../../uploads/sutro-tower-vinyl/sutro-tower-vinyl-2.jpg&#34; width=&#34;500&#34;/&gt;&lt;/a&gt;
+&lt;a href=../../uploads/sutro-tower-vinyl/sutro-tower-vinyl-3.jpg&gt;&lt;img src=&#34;../../uploads/sutro-tower-vinyl/sutro-tower-vinyl-3.jpg&#34; width=&#34;500&#34;/&gt;&lt;/a&gt;
+&lt;a href=../../uploads/sutro-tower-vinyl/sutro-tower-vinyl-4.jpg&gt;&lt;img src=&#34;../../uploads/sutro-tower-vinyl/sutro-tower-vinyl-4.jpg&#34; width=&#34;500&#34;/&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;The &amp;ldquo;source code&amp;rdquo; of this project is on &lt;a href=&#34;https://github.com/solarkennedy/sutro-tower-vinyl&#34;&gt;github&lt;/a&gt; and is in the public domain.&lt;/p&gt;
 </description>
     </item>
@@ -1777,18 +1911,22 @@ trip would relatively difficult. The majority of the journey would be against
 the wind and waves. For this reason we decided to motor the entire distance
 up North.&lt;/p&gt;
 &lt;p&gt;Due to technical difficulties, the first ~12 hours of the trip are missing from the GPS track.&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
+&lt;iframe src=&#34;https://www.google.com/maps/d/embed?mid=1glvXJozng8Xwo1her0wQgdYHBgQ&#34; width=&#34;640&#34; height=&#34;480&#34;&gt;&lt;/iframe&gt;
+In &lt;a href=&#34;../../uploads/sf_boat_trip/sf route.kmz&#34;&gt;Google Earth&lt;/a&gt; and &lt;a href=&#34;../../uploads/sf_boat_trip/Track1.gpx&#34;&gt;gpx&lt;/a&gt; format and directly in [Google Maps](https://drive.google.com/open?id=1glvXJozng8Xwo1her0wQgdYHBgQ&amp;usp=sharing).
 &lt;h2 id=&#34;day-1-2017-07-05&#34;&gt;Day 1 (2017-07-05)&lt;/h2&gt;
 &lt;p&gt;On the first day we took &lt;a href=&#34;http://www.bart.gov/&#34;&gt;Bart&lt;/a&gt; to
 &lt;a href=&#34;http://www.caltrain.com/&#34;&gt;Caltrain&lt;/a&gt; to
 &lt;a href=&#34;https://www.amtrak.com/coast-starlight-train&#34;&gt;Amtrack&lt;/a&gt; from San Francisco to
 Avila Beach. From there we took the Water Taxi to the boat which was moored on a mooring ball. I made the call for us to leave that night, with me taking the night-shift.&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;On Amtrack&lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&#34;../../uploads/sf_boat_trip/amtrack.jpg&#34;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;Port San Luis Pier&lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&#34;../../uploads/sf_boat_trip/port san luis.jpg&#34;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;All Smiles Right off the bat&lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&#34;../../uploads/sf_boat_trip/IMG_20170705_190923.jpg&#34;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;Gi Gi: A 1997 Gemini 105m&lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&#34;../../uploads/sf_boat_trip/gigi.jpg&#34;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;h4 id=&#34;5pm-leave-port-san-luis&#34;&gt;5pm: Leave Port San Luis&lt;/h4&gt;
 &lt;p&gt;Off this part of the coast during this time the winds were against us at 16kts
 gusting to 21kts.&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
+&lt;img src=&#34;../../uploads/sf_boat_trip/IMG_20170705_191051.jpg&#34;/&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;(Picture not taken by me) First Landmark: Diablo Canyon Power Plant (CCA &#34;Mike&#34; Michael L. Baird)&lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&#34;https://commons.wikimedia.org/wiki/File:Diablo_Canyon_Power_Plant_from_Port_San_Luis.jpg&#34;&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Diablo_Canyon_Power_Plant_from_Port_San_Luis.jpg/800px-Diablo_Canyon_Power_Plant_from_Port_San_Luis.jpg&#34;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;p&gt;The seas overnight were not too rough, but the combination of the pounding and the headwind meant we could only sustain 4kts.&lt;/p&gt;
 &lt;p&gt;The Gemini pounds the seas pretty badly. This is mostly due to a combination of a solid (not netted) forward deck, a relatively low bridge deck clearance, and the structural nature of a catamaran. Cody got very seasick.&lt;/p&gt;
 &lt;h2 id=&#34;day-2-2017-07-06&#34;&gt;Day 2 (2017-07-06)&lt;/h2&gt;
@@ -1800,14 +1938,16 @@ hear from someone in the middle of the night. I had a conversation with him,
 and his general advice to avoid the rough seas was to generally hug the coast.
 He mentioned the waves don&amp;rsquo;t get too bad until Point Sur.&lt;/p&gt;
 &lt;h4 id=&#34;7am-cody-takes-over&#34;&gt;7am: Cody takes over&lt;/h4&gt;
-&lt;!-- raw HTML omitted --&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;I sleep after Cody takes over for the day shift&lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&#34;../../uploads/sf_boat_trip/IMG_20170706_061253.jpg&#34;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;Cody carefully drives into the foggy morning&lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&#34;../../uploads/sf_boat_trip/IMG_20170706_061336.jpg&#34;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;Difficult to imagine doing this trip without a co-pilot&lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&#34;../../uploads/sf_boat_trip/IMG_20170706_113821.jpg&#34;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;h2 id=&#34;9am-a-snagged-prop&#34;&gt;9am: A snagged prop&lt;/h2&gt;
 &lt;p&gt;In the morning we had a prop fouling by a line that
 had been pounded out of it&amp;rsquo;s holding bag on the forward part of the deck. It
 had found its way under the hull and was just long enough to get the tip of the
 line fouled in the prop.&lt;/p&gt;
 &lt;p&gt;The Gemini has a raisable drive leg made by &lt;a href=&#34;http://www.sillette.co.uk/sonic_type_2_catamaran_drive.html&#34;&gt;Sillette&lt;/a&gt;:&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;Gemini Drive leg (copyright Chris Gruno)&lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&#34;../../uploads/sf_boat_trip/sillette.jpg&#34;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;p&gt;The drive leg adds complexity to the rig, but does make fixing fouled props
 easy. The difficulty here was actually figuring out it was fouled in the first
 place. Every time I would raise the leg to inspect it, there was nothing in it.
@@ -1815,7 +1955,7 @@ The line was &lt;em&gt;only&lt;/em&gt; long enough to get in the prop while down
 the suction would draw in the line). I had to watch the water carefully and
 wait for the line to find its way into the prop to confirm my suspicion about
 the cause of the extreme vibration.&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;Chewed up line, only at the tip&lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&#34;../../uploads/sf_boat_trip/IMG_20170710_101328.jpg&#34;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;h4 id=&#34;3-5pm-point-sur&#34;&gt;3-5pm: Point Sur&lt;/h4&gt;
 &lt;p&gt;By the time we hit &lt;a href=&#34;https://www.google.com/maps/place/Point+Sur+Lighthouse,+Monterey,+CA+93940/@36.2401963,-121.920675,8197a,35y,38.12t/data=!3m1!1e3!4m5!3m4!1s0x808d9154d4894371:0x4141b8589a0a31f9!8m2!3d36.3063643!4d-121.9016398&#34;&gt;Point Sur&lt;/a&gt; there was a small craft advisory in effct. There were very strong headwinds and 10ft seas.&lt;/p&gt;
 &lt;p&gt;This was the most difficult part of the trip. Usually the buoyancy of the
@@ -1846,34 +1986,43 @@ right lights. Luckily the friendly Harbormaster on the night shift gave us an
 end-tie and a good nights sleep.&lt;/p&gt;
 &lt;h4 id=&#34;9am-depart-monterey-harbor&#34;&gt;9am: Depart Monterey Harbor&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;http://monterey.org/Services/Harbor-and-Marina&#34;&gt;Monterey Harbor&lt;/a&gt; is a small city harbor. Nothing really notable, the service was nice, bathrooms were clean, fairly priced.&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;Docked at Monterey Harbor&lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&#34;../../uploads/sf_boat_trip/IMG_20170707_083156.jpg&#34;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;p&gt;For this day we decided to make an easy trip of only 22nm north to Santa Cruz.&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;On to Santa Cruz after a real nights sleep&lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&#34;../../uploads/sf_boat_trip/IMG_20170707_114444.jpg&#34;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;h4 id=&#34;5pm-arrive-at-santa-cruz&#34;&gt;5pm: Arrive at Santa Cruz&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.yelp.com/biz/santa-cruz-harbor-boatyard-santa-cruz&#34;&gt;Santa Cruz&lt;/a&gt; is a nice harbor, but for a transient berth we paid ~$50, which is twice as expensive compared to the other marinas we stayed at. On top of that, shower access required a non-refundable &amp;ldquo;deposit&amp;rdquo; and access to shore power was extra, no thanks. Since we had a short day, we treated ourselves to &lt;a href=&#34;https://www.yelp.com/biz/betty-burgers-santa-cruz&#34;&gt;Betty&amp;rsquo;s Burgers&lt;/a&gt; for dinner.&lt;/p&gt;
 &lt;h2 id=&#34;day-4-2017-07-08&#34;&gt;Day 4 (2017-07-08)&lt;/h2&gt;
 &lt;h4 id=&#34;6am-depart-santa-cruz&#34;&gt;6am: Depart Santa Cruz&lt;/h4&gt;
-&lt;!-- raw HTML omitted --&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;Early morning easy seas selfie&lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&#34;../../uploads/sf_boat_trip/IMG_20170708_065337.jpg&#34;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;Taking turns driving&lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&#34;../../uploads/sf_boat_trip/IMG_20170708_065438.jpg&#34;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;Passing a marker&lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&#34;../../uploads/sf_boat_trip/IMG_20170708_103001.jpg&#34;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;Calm seas for once&lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&#34;../../uploads/sf_boat_trip/IMG_20170708_131315.jpg&#34;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;p&gt;I say calm, but it still is the Pacific ocean. Calm in this context means no water is spraying in your face:
-&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;video width=&#34;1280&#34; height=&#34;720&#34; controls=&#34;controls&#34;&gt;&lt;source src=&#34;../../uploads/sf_boat_trip/VID_20170708_131342.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;/video&gt;&lt;/p&gt;
 &lt;h4 id=&#34;5pm-arrive-at-pillar-point&#34;&gt;5pm: Arrive at Pillar Point&lt;/h4&gt;
-&lt;!-- raw HTML omitted --&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;Tied up at Pillar Point&lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&#34;../../uploads/sf_boat_trip/IMG_20170708_172822.jpg&#34;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;Washing down the salt water&lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&#34;../../uploads/sf_boat_trip/IMG_20170708_173231.jpg&#34;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.yelp.com/biz/pillar-point-harbor-half-moon-bay&#34;&gt;Pillar Point Marina&lt;/a&gt; is primary a fishing harbor, but has lots of shops and restaurants nearby. It is a surprisingly happening place.&lt;/p&gt;
 &lt;h2 id=&#34;day-5-2017-07-09&#34;&gt;Day 5 (2017-07-09)&lt;/h2&gt;
 &lt;h4 id=&#34;6am-depart-pillar-point-marina&#34;&gt;6am: Depart Pillar Point Marina&lt;/h4&gt;
-&lt;!-- raw HTML omitted --&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;Ready for the last day&lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&#34;../../uploads/sf_boat_trip/IMG_20170709_075010.jpg&#34;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;p&gt;Departing Pillar Point was relatively easy in the early morning, especially assisted with Radar. We were accompanied by many fishing boats out to get their catch. A kayaker warned us of a pair of Humpbacks just outside the harbor barrier wall, and indeed I had to make evasive maneuvers to avoid a whale surfacing ~30ft in front of the boat!&lt;/p&gt;
 &lt;h4 id=&#34;9am-drive-leg-leak&#34;&gt;9am: Drive leg leak&lt;/h4&gt;
 &lt;p&gt;This morning the drive train of the boat sounded a lot more &amp;ldquo;whiny&amp;rdquo; than normal. The worrying sound was coming from the drive leg, and &lt;em&gt;not&lt;/em&gt; the diesel engine. Luckily I had been lurking on the &lt;a href=&#34;https://beta.groups.yahoo.com/neo/groups/Gemini_Cats/info&#34;&gt;Gemini Owners Mailing List&lt;/a&gt; to have a hunch that there might have been an oil leak, and that the &amp;ldquo;billows&amp;rdquo; was the most likely culprit:&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;Drive leg oil leak&lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&#34;../../uploads/sf_boat_trip/leg_leak.jpg&#34;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;p&gt;The billows is a rubber part that gets a lot of exercise as the drive leg turns, raises, and lowers. This leak allowed enough oil to drain to expose the top CV joint, leaving it less lubricated and whiny. After a quick phone call to the previous owner to confirm the correct oil was onboard and available (thanks so much Jerry! This was a huge lifesaver!), I topped up the drive oil to get us the rest of the way home. This billows will be first on my list of repairs to make on the boat.&lt;/p&gt;
 &lt;h4 id=&#34;11am-entering-san-francisco-bay&#34;&gt;11am: Entering San Francisco Bay&lt;/h4&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;A foggy approach to the Golden Gate Bridge&lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&#34;../../uploads/sf_boat_trip/IMG_20170709_095729.jpg&#34;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+And a classic &#34;dad move&#34; of mashing stop when you think you are mashing record:
+&lt;video width=&#34;1280&#34; height=&#34;720&#34; controls=&#34;controls&#34;&gt;&lt;source src=&#34;../../uploads/sf_boat_trip/VID_20170709_103021.mp4&#34; type=&#34;video/mp4&#34;&gt;&lt;/video&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;A foggy San Francisco&lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&#34;../../uploads/sf_boat_trip/IMG_20170709_103547.jpg&#34;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;A foggy Alcatraz&lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&#34;../../uploads/sf_boat_trip/IMG_20170709_105048.jpg&#34;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;Pier 39 or so&lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&#34;../../uploads/sf_boat_trip/IMG_20170709_110346.jpg&#34;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;Downtown Skyline&lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&#34;../../uploads/sf_boat_trip/IMG_20170709_110351.jpg&#34;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;p&gt;We timed it correctly to allow us to come in with the tide, giving as a nice 3kt speed boost giving us a peak speed of 9.3kts under the bridge.&lt;/p&gt;
 &lt;h4 id=&#34;1pm-arrive-at-oyster-point-marina&#34;&gt;1pm: Arrive at Oyster Point Marina&lt;/h4&gt;
 &lt;p&gt;And finally we arrived at our actual destination: &lt;a href=&#34;https://www.yelp.com/biz/oyster-point-marina-south-san-francisco&#34;&gt;Oyster Point Marina&lt;/a&gt;&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;Tied up at the Oyster Point guest dock&lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;img src=&#34;../../uploads/sf_boat_trip/IMG_20170709_135314.jpg&#34;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 </description>
     </item>
     <item>
@@ -1899,8 +2048,44 @@ used on &lt;a href=&#34;#15&#34;&gt;#15&lt;/a&gt; to evenly cover the entire (la
 &lt;p&gt;After the electrical treatment, each piece was finished with varnish, matted,
 framed, and shipped. Below is a gallery of final results. Each was given to a
 friend or family member as a winter gift:&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;a name=&#34;01&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;Piece 01: 14&#34;x7&#34; Mahogany   &lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&#34;../../uploads/lichtenberg2016/01.jpg&#34;&gt;&lt;img src=&#34;../../uploads/lichtenberg2016/01.jpg&#34;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br&gt;
+&lt;a name=&#34;02&#34;&gt;&lt;/a&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;Piece 02: 12&#34;x7&#34; Birch      &lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&#34;../../uploads/lichtenberg2016/02.jpg&#34;&gt;&lt;img src=&#34;../../uploads/lichtenberg2016/02.jpg&#34;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br&gt;
+&lt;a name=&#34;03&#34;&gt;&lt;/a&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;Piece 03: 12&#34;x7&#34; Birch      &lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&#34;../../uploads/lichtenberg2016/03.jpg&#34;&gt;&lt;img src=&#34;../../uploads/lichtenberg2016/03.jpg&#34;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br&gt;
+&lt;a name=&#34;04&#34;&gt;&lt;/a&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;Piece 04: 12&#34;x7&#34; Mahogany   &lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&#34;../../uploads/lichtenberg2016/04.jpg&#34;&gt;&lt;img src=&#34;../../uploads/lichtenberg2016/04.jpg&#34;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br&gt;
+&lt;a name=&#34;05&#34;&gt;&lt;/a&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;Piece 05: 14&#34;x7&#34; Mahogany   &lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&#34;../../uploads/lichtenberg2016/05.jpg&#34;&gt;&lt;img src=&#34;../../uploads/lichtenberg2016/05.jpg&#34;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br&gt;
+&lt;a name=&#34;06&#34;&gt;&lt;/a&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;Piece 06: 7.5&#34;x7.5&#34; Birch   &lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&#34;../../uploads/lichtenberg2016/06.jpg&#34;&gt;&lt;img src=&#34;../../uploads/lichtenberg2016/06.jpg&#34;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br&gt;
+&lt;a name=&#34;07&#34;&gt;&lt;/a&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;Piece 07: 7.5&#34;x7.5&#34; Mahogany&lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&#34;../../uploads/lichtenberg2016/07.jpg&#34;&gt;&lt;img src=&#34;../../uploads/lichtenberg2016/07.jpg&#34;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br&gt;
+&lt;a name=&#34;08&#34;&gt;&lt;/a&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;Piece 08: 7.5&#34;x7.5&#34; Mahogany&lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&#34;../../uploads/lichtenberg2016/08.jpg&#34;&gt;&lt;img src=&#34;../../uploads/lichtenberg2016/08.jpg&#34;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br&gt;
+&lt;a name=&#34;09&#34;&gt;&lt;/a&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;Piece 09: 7.5&#34;x7.5&#34; Mahogany&lt;/caption&gt;&lt;tr&gt;&lt;td&gt;(Image not available)                                                                     &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br&gt;
+&lt;a name=&#34;10&#34;&gt;&lt;/a&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;Piece 10: 18&#34;x7.5&#34; Mahogany &lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&#34;../../uploads/lichtenberg2016/10.jpg&#34;&gt;&lt;img src=&#34;../../uploads/lichtenberg2016/10.jpg&#34;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br&gt;
+&lt;a name=&#34;11&#34;&gt;&lt;/a&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;Piece 11: 18&#34;x7.5&#34; Mahogany &lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&#34;../../uploads/lichtenberg2016/11.jpg&#34;&gt;&lt;img src=&#34;../../uploads/lichtenberg2016/11.jpg&#34;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br&gt;
+&lt;a name=&#34;12&#34;&gt;&lt;/a&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;Piece 12: 24&#34;x7.5&#34; Mahogany &lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&#34;../../uploads/lichtenberg2016/12.jpg&#34;&gt;&lt;img src=&#34;../../uploads/lichtenberg2016/12.jpg&#34;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br&gt;
+&lt;a name=&#34;13&#34;&gt;&lt;/a&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;Piece 13: 24&#34;x7.5&#34; Mahogany &lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&#34;../../uploads/lichtenberg2016/13.jpg&#34;&gt;&lt;img src=&#34;../../uploads/lichtenberg2016/13.jpg&#34;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br&gt;
+&lt;a name=&#34;14&#34;&gt;&lt;/a&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;Piece 14: 24&#34;x5.5&#34; Oak      &lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&#34;../../uploads/lichtenberg2016/14.jpg&#34;&gt;&lt;img src=&#34;../../uploads/lichtenberg2016/14.jpg&#34;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br&gt;
+&lt;a name=&#34;15&#34;&gt;&lt;/a&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;Piece 15: 24&#34;x24&#34; MDF       &lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&#34;../../uploads/lichtenberg2016/15.jpg&#34;&gt;&lt;img src=&#34;../../uploads/lichtenberg2016/15.jpg&#34;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br&gt;
+&lt;a name=&#34;16&#34;&gt;&lt;/a&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;Piece 16: 24&#34;x5.5&#34; Poplar   &lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&#34;../../uploads/lichtenberg2016/16.jpg&#34;&gt;&lt;img src=&#34;../../uploads/lichtenberg2016/16.jpg&#34;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br&gt;
+&lt;a name=&#34;17&#34;&gt;&lt;/a&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;Piece 17: 24&#34;x7.5&#34; Birch    &lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&#34;../../uploads/lichtenberg2016/17.jpg&#34;&gt;&lt;img src=&#34;../../uploads/lichtenberg2016/17.jpg&#34;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br&gt;
+&lt;a name=&#34;18&#34;&gt;&lt;/a&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;Piece 18: 37&#34;x5.5&#34; Mahogany &lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&#34;../../uploads/lichtenberg2016/18.jpg&#34;&gt;&lt;img src=&#34;../../uploads/lichtenberg2016/18.jpg&#34;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br&gt;
+&lt;a name=&#34;20&#34;&gt;&lt;/a&gt;
+&lt;table&gt;&lt;caption align=&#34;bottom&#34;&gt;Piece 20: 18&#34;x5.5&#34; Mahogany &lt;/caption&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&#34;../../uploads/lichtenberg2016/20.jpg&#34;&gt;&lt;img src=&#34;../../uploads/lichtenberg2016/20.jpg&#34;/&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;br&gt;
 </description>
     </item>
     <item>
@@ -5304,13 +5489,13 @@ Now, I don&amp;rsquo;t have much to say on this subject. This might be a potenti
 0 9: 0 4 20 24 46 100 112 121 127
 1001 30: 100 4 20 24 46 112 115 121 122 127 1001 1002 1004 1005 1006 1007 1008 1009 1010 1011 1012 1013 1014 1015 1016 1017 1018 1019 1020 1021
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;You can see the map, and it provides a legend at the top. If you are making changes to group memberships very often, you must flush this cache to get reasonable results. The NFS rpc.mountd program will cache group mappings for &lt;!-- raw HTML omitted --&gt;30 minutes&lt;!-- raw HTML omitted --&gt; (nfs-utils-1.2.2/utils/mountd/cache.c line 157).  Flush it like this:&lt;/p&gt;
+&lt;p&gt;You can see the map, and it provides a legend at the top. If you are making changes to group memberships very often, you must flush this cache to get reasonable results. The NFS rpc.mountd program will cache group mappings for &lt;strong&gt;30 minutes&lt;/strong&gt; (nfs-utils-1.2.2/utils/mountd/cache.c line 157).  Flush it like this:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;root@archive:~# date +%s &amp;gt;  /proc/net/rpc/auth.unix.gid/flush
 root@archive:~# cat /proc/net/rpc/auth.unix.gid/content
 #uid cnt: gids...
 0 9: 0 4 20 24 46 100 112 121 127
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Also, you now have a new limit on group membership. It isn&amp;rsquo;t exactly a specific set number as much as a total number of bytes needed to represent your group memberships. In my experimenting it was 1000 bytes (characters). So if you are using group IDs that are 5 digits, +1 for a space separator and you have (1000 / 6) = 166 as your new group limit. This of course may change with time, so I encourage you to test this in your own environment. (I could not verify this with source code. It looks like it should be 100 to me? Experimentation was the only way for me to be sure what the new limit &lt;!-- raw HTML omitted --&gt;actually&lt;!-- raw HTML omitted --&gt; was.)&lt;/p&gt;
+&lt;p&gt;Also, you now have a new limit on group membership. It isn&amp;rsquo;t exactly a specific set number as much as a total number of bytes needed to represent your group memberships. In my experimenting it was 1000 bytes (characters). So if you are using group IDs that are 5 digits, +1 for a space separator and you have (1000 / 6) = 166 as your new group limit. This of course may change with time, so I encourage you to test this in your own environment. (I could not verify this with source code. It looks like it should be 100 to me? Experimentation was the only way for me to be sure what the new limit &lt;strong&gt;actually&lt;/strong&gt; was.)&lt;/p&gt;
 &lt;p&gt;When a user hits this limit, that user (and only that user) will have his process hang, and the nfs client kernel will complain that the nfs server isn&amp;rsquo;t responding, which it isn&amp;rsquo;t. The nfs server will not be able to look up the groups for that user, and fails to send back a nfs packet with a response.&lt;/p&gt;
 &lt;p&gt;In addition, your gid map cache will have a special entry that will be commented out like this:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;root@archive:~# cat /proc/net/rpc/auth.unix.gid/content
@@ -5680,7 +5865,7 @@ done
 &lt;p&gt;Here is what the starting / finishing line looked like:&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;../../uploads/startingline.jpg&#34;&gt;&lt;img src=&#34;../../uploads/startingline-300x224.jpg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;And some judges on the roof watching to make sure the Flying robots do not cut corners.&lt;/p&gt;
-&lt;p&gt;[](/uploads/startingline.jpg)&lt;a href=&#34;../../uploads/Judges.jpg&#34;&gt;&lt;img src=&#34;../../uploads/Judges-300x224.jpg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;../../uploads/startingline.jpg&#34;&gt;&lt;/a&gt;&lt;a href=&#34;../../uploads/Judges.jpg&#34;&gt;&lt;img src=&#34;../../uploads/Judges-300x224.jpg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;I was very impressed by the UAVs (unmanned aerial vehicles). Most of them were able to complete the course in record time. Some were even able to land autonomosouly!&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;../../uploads/Robota-Landing.3gp&#34;&gt;Robota-Landing&lt;/a&gt; &lt;a href=&#34;../../uploads/DougWiebel-landing.3gp&#34;&gt;DougWiebel-landing&lt;/a&gt; &lt;a href=&#34;../../uploads/Robota-Launch.3gp&#34;&gt;Robota-Launch&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Sorry for the 3gp format, it is native to the Droid. I wasn&amp;rsquo;t satisfied with the outcome of a transcode from ffmpeg or gstreamer. If someone wants to transcode for me, I would be happy to re-upload.&lt;/p&gt;
@@ -6020,7 +6205,7 @@ done
       <pubDate>Fri, 01 May 2009 17:17:02 +0000</pubDate>
       <guid>/discrete-wavelets-final-project-decaptcha/</guid>
       <description>&lt;p&gt;This semester I took a class on &lt;a href=&#34;http://en.wikipedia.org/wiki/Discrete_wavelet_transform&#34;&gt;Discrete Wavelets&lt;/a&gt;. It was awesome. The coolest part was our group final project. My group had the best topic by far: Decoding a Captcha! (Click on any of the following images to view them full size)&lt;/p&gt;
-&lt;p&gt;[](/uploads/file_captcha.jpg)&lt;a href=&#34;../../uploads/captcha.jpg&#34;&gt;&lt;img src=&#34;../../uploads/captcha.jpg&#34; alt=&#34;captcha&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;../../uploads/file_captcha.jpg&#34;&gt;&lt;/a&gt;&lt;a href=&#34;../../uploads/captcha.jpg&#34;&gt;&lt;img src=&#34;../../uploads/captcha.jpg&#34; alt=&#34;captcha&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;We&amp;rsquo;ve all seen Captchas before. They are used on websites to make sure that the person on the website is a real human, not a computer program. Why do we want to break them? The same reason we want to climb Mount Everest, it&amp;rsquo;s There!&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;../../uploads/input_captcha.jpg&#34;&gt;&lt;img src=&#34;../../uploads/input_captcha-300x108.jpg&#34; alt=&#34;input\_captcha&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;The above is the captcha we intended to solve. Its not particularly difficult, but this class is an introduction to wavelets and requires no previous experience with the language we had to use: Mathematica. Our real task was to implement the algorithm in &lt;a href=&#34;http://faculty.gvsu.edu/aboufade/web/cmj101-108.pdf&#34;&gt;this paper&lt;/a&gt;.&lt;/p&gt;
@@ -6343,8 +6528,8 @@ I stumpled upon them and ran a very simple analysis. Check it out:&lt;/p&gt;
 &lt;p&gt;Here is my evidence:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;http://www.urbandictionary.com/define.php?term=boom%20boom&#34;&gt;Urban Dictionary &lt;/a&gt;Claiming this fact[
-](&lt;a href=&#34;http://www.urbandictionary.com/define.php?term=boom%20boom&#34;&gt;http://www.urbandictionary.com/define.php?term=boom%20boom&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.urbandictionary.com/define.php?term=boom%20boom&#34;&gt;Urban Dictionary &lt;/a&gt;Claiming this fact&lt;a href=&#34;http://www.urbandictionary.com/define.php?term=boom%20boom&#34;&gt;
+&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&#34;http://www.google.com/search?hl=en&amp;amp;client=firefox-a&amp;amp;rls=com.ubuntu%3Aen-US%3Aunofficial&amp;amp;hs=HQd&amp;amp;q=%22boom+boom+class%22+site%3Amyspace.com&amp;amp;btnG=Search&#34;&gt;Google Results &lt;/a&gt;only turning up myspace pages in Tampa and Arizona?&lt;/p&gt;

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.68.3" />
+  
+  
+  
+  <title>
+    
+    Measuring AWS Region and AZ Latency | xkyle.com
+    
+  </title>
+  <link rel="canonical" href="../Measuring-AWS-Region-and-AZ-Latency/">
+  
+  
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="../css/base.min.47def9e9fb53a1b822ec70f6799bb1f010fe9aac5273d8a1192ac9c685262c4f.css" integrity="sha256-R9756ftTobgi7HD2eZux8BD&#43;mqxSc9ihGSrJxoUmLE8=" crossorigin="anonymous">
+  
+  
+</head>
+<body>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable" href="">xkyle.com</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../about/">About</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../post/">Posts</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../tags/">Tags</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../categories/">Categories</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../index.xml">RSS</a>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../Measuring-AWS-Region-and-AZ-Latency/" rel="bookmark">Measuring AWS Region and AZ Latency</a>
+  </h2>
+  
+  <time datetime="2020-04-20T12:54:42-07:00">
+    20 April, 2020
+  </time>
+  
+</header>
+
+  <p>Lots of people are aware of the different AWS regions that are available for use.</p>
+<p>But let&rsquo;s say you wanted to know about the network topology between regions, specifically how &ldquo;close&rdquo; they are to each other, from a network-perspective.</p>
+<p>Using data from <a href="https://www.cloudping.co/grid">cloudping.io</a> and some <a href="https://github.com/solarkennedy/cloud-zone-analysis/tree/master/aws-regions">graphviz</a> code, I created this latency map (click for the pdf):</p>
+<p><a href="https://github.com/solarkennedy/cloud-zone-analysis/raw/master/aws-regions/region-latency.gv.pdf"><img src="https://raw.githubusercontent.com/solarkennedy/cloud-zone-analysis/master/aws-regions/region-latency.gv.png" alt="aws latency map" title="AWS Region Latency Map"></a></p>
+<h2 id="how-about-aws-availability-zones">How About AWS Availability Zones?</h2>
+<p>Not Availability Zones (AZs) are the same.
+Due to geography, there will be some AZs with lower latency to other AZs.
+But how much? Are there some regions that are tighter than others?
+Are there outliers?
+I went ahead and made maps for ALL the AZs available to me.</p>
+<p>Notes:</p>
+<ul>
+<li>Smallest inter-AZ Latency: aps1-az1 &lt;&gt; aps1-az1 ~ 0.250ms !</li>
+<li>Largest inter-AZ Latency: sae1-az3 &lt;&gt; sae1-az2 ~ 3.37ms !</li>
+<li>AZ names are shuffled with each AWS account (your us-west-2a is not necessarily <em>my</em> us-west-2a), so I use the <a href="https://docs.aws.amazon.com/ram/latest/userguide/working-with-az-ids.html">AZ ID</a> as a consistent identifier.</li>
+<li>All results are taken from the best of 50 pings between AZs (See the <a href="https://github.com/solarkennedy/cloud-zone-analysis/tree/master/aws-azs">code</a>)</li>
+<li>Graphs use the latency measure squared as the desired length of the edges in the graph, which exaggerates the final shape.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Region</th>
+<th>Notes</th>
+<th>Map</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>af-south-1</code> <br> Africa (Cape Town)</td>
+<td>brand new region!</td>
+<td><a href="../uploads/cloud_analysis/af-south-1.gv.svg"><img src="../uploads/cloud_analysis/af-south-1.gv.svg" height="200" border=1></a></td>
+</tr>
+<tr>
+<td><code>ap-east-1</code> - Asia Pacific (Hong Kong)</td>
+<td>-</td>
+<td><a href="../uploads/cloud_analysis/ap-east-1.gv.svg"><img src="../uploads/cloud_analysis/ap-east-1.gv.svg" height="200" border=1></a></td>
+</tr>
+<tr>
+<td><code>ap-northeast-1</code> <br> Asia Pacific (Tokyo)</td>
+<td>N/A - I couldn&rsquo;t get instance launched in apne1-az3? (no capacity)</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>ap-northeast-2</code> <br> Pacific (Seoul)</td>
+<td>-</td>
+<td><a href="../uploads/cloud_analysis/ap-northeast-2.gv.svg"><img src="../uploads/cloud_analysis/ap-northeast-2.gv.svg" height="200" border=1></a></td>
+</tr>
+<tr>
+<td><code>ap-south-1</code> <br> Pacific (Mumbai)</td>
+<td><code>1</code> and <code>2</code> are <em>super</em> close to each other</td>
+<td><a href="../uploads/cloud_analysis/ap-south-1.gv.svg"><img src="../uploads/cloud_analysis/ap-south-1.gv.svg" height="200" border=1></a></td>
+</tr>
+<tr>
+<td><code>ap-southeast-1</code> <br> Pacific (Singapore)</td>
+<td>apse1-az1 is way farther away than the other two</td>
+<td><a href="../uploads/cloud_analysis/ap-southeast-1.gv.svg"><img src="../uploads/cloud_analysis/ap-southeast-1.gv.svg" height="200" border=1></a></td>
+</tr>
+<tr>
+<td><code>ap-southeast-2</code> <br> Pacific (Sydney)</td>
+<td>-</td>
+<td><a href="../uploads/cloud_analysis/ap-southeast-2.gv.svg"><img src="../uploads/cloud_analysis/ap-southeast-2.gv.svg" height="200" border=1></a></td>
+</tr>
+<tr>
+<td><code>ca-central-1</code> <br> (Central)</td>
+<td>-</td>
+<td><a href="../uploads/cloud_analysis/ca-central-1.gv.svg"><img src="../uploads/cloud_analysis/ca-central-1.gv.svg" height="200" border=1></a></td>
+</tr>
+<tr>
+<td><code>eu-central-1</code> <br> (Frankfurt)</td>
+<td>-</td>
+<td><a href="../uploads/cloud_analysis/eu-central-1.gv.svg"><img src="../uploads/cloud_analysis/eu-central-1.gv.svg" height="200" border=1></a></td>
+</tr>
+<tr>
+<td><code>eu-north-1</code> <br> (Stockholm)</td>
+<td>-</td>
+<td><a href="../uploads/cloud_analysis/eu-north-1.gv.svg"><img src="../uploads/cloud_analysis/eu-north-1.gv.svg" height="200" border=1></a></td>
+</tr>
+<tr>
+<td><code>eu-west-1</code> <br> (Ireland)</td>
+<td>-</td>
+<td><a href="../uploads/cloud_analysis/eu-west-1.gv.svg"><img src="../uploads/cloud_analysis/eu-west-1.gv.svg" height="200" border=1></a></td>
+</tr>
+<tr>
+<td><code>eu-west-2</code> <br> (London)</td>
+<td>-</td>
+<td><a href="../uploads/cloud_analysis/eu-west-2.gv.svg"><img src="../uploads/cloud_analysis/eu-west-2.gv.svg" height="200" border=1></a></td>
+</tr>
+<tr>
+<td><code>eu-west-3</code> <br> (Paris)</td>
+<td>-</td>
+<td><a href="../uploads/cloud_analysis/eu-west-3.gv.svg"><img src="../uploads/cloud_analysis/eu-west-3.gv.svg" height="200" border=1></a></td>
+</tr>
+<tr>
+<td><code>me-south-1</code> <br> East (Bahrain)</td>
+<td>Winner of the tightest region award!</td>
+<td><a href="../uploads/cloud_analysis/me-south-1.gv.svg"><img src="../uploads/cloud_analysis/me-south-1.gv.svg" height="200" border=1></a></td>
+</tr>
+<tr>
+<td><code>sa-east-1</code> <br> America (Sao Paulo)</td>
+<td>Winner of the <em>farthest AZ</em> award! :(</td>
+<td><a href="../uploads/cloud_analysis/sa-east-1.gv.svg"><img src="../uploads/cloud_analysis/sa-east-1.gv.svg" height="200" border=1></a></td>
+</tr>
+<tr>
+<td><code>us-east-1</code> <br> East (N. Virginia)</td>
+<td>Most complext topology, 6 AZs!</td>
+<td><a href="../uploads/cloud_analysis/us-east-1.gv.svg"><img src="../uploads/cloud_analysis/us-east-1.gv.svg" height="200" border=1></a></td>
+</tr>
+<tr>
+<td><code>us-east-2</code> <br> East (Ohio)</td>
+<td>-</td>
+<td><a href="../uploads/cloud_analysis/us-east-2.gv.svg"><img src="../uploads/cloud_analysis/us-east-2.gv.svg" height="200" border=1></a></td>
+</tr>
+<tr>
+<td><code>us-west-1</code> <br> West (N. California)</td>
+<td>There is a third AZ, but it wasn&rsquo;t available to me?</td>
+<td><a href="../uploads/cloud_analysis/us-west-1.gv.svg"><img src="../uploads/cloud_analysis/us-west-1.gv.svg" height="200" border=1></a></td>
+</tr>
+<tr>
+<td><code>us-west-2</code> <br> West (Oregon)</td>
+<td>-</td>
+<td><a href="../uploads/cloud_analysis/us-west-2.gv.svg"><img src="../uploads/cloud_analysis/us-west-2.gv.svg" height="200" border=1></a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="conclusion">Conclusion</h2>
+<p>Before deploying something to &ldquo;the cloud&rdquo; that does cross-AZ RPC, at least be aware of the <a href="https://www.lastweekinaws.com/blog/aws-cross-az-data-transfer-costs-more-than-aws-says/">monetary cost</a> and at least with these maps, a feel for the latency between AZs.</p>
+<p>Maybe next I&rsquo;ll do Google Cloud <a href="https://cloud.google.com/compute/docs/regions-zones#available">Regions / Zones</a> and Microsoft Azure <a href="https://azure.microsoft.com/en-us/global-infrastructure/regions/">Regions / Zones</a>?</p>
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+</article>
+
+
+      </div>
+    </div>
+  </main>
+  
+
+</body>
+</html>
