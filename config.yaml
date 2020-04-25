@@ -7,3 +7,8 @@ permalinks:
 relativeURLs: true
 publishDir: docs
 pygmentsCodeFences: true
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
