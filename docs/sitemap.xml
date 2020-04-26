@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/Measuring-AWS-Region-and-AZ-Latency/</loc>
-    <lastmod>2020-04-20T12:54:42-07:00</lastmod>
+    <loc>/post/</loc>
+    <lastmod>2020-04-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/</loc>
-    <lastmod>2020-04-20T12:54:42-07:00</lastmod>
+    <loc>/Time-Capsule/</loc>
+    <lastmod>2020-04-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/</loc>
+    <lastmod>2020-04-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/Measuring-AWS-Region-and-AZ-Latency/</loc>
     <lastmod>2020-04-20T12:54:42-07:00</lastmod>
   </url>
   

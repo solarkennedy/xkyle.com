@@ -1,6 +1,6 @@
 ---
 title: "Time Capsule"
-date: 2020-04-26T12:54:42-07:00
+date: 2020-04-26T00:00:00-00:00
 ---
 
 I've held onto this Time Capsule for 29 years. I believe I made it in first grade, at seven years old, at [Cypress Woods Elementary](https://www.pcsb.org/Domain/23) in "Gifted Class".

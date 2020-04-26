@@ -136,6 +136,64 @@
 <article>
   <header class="Heading">
   <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../../an-overdrive-pro-connecting-on-openwrt/" rel="bookmark">An Overdrive Pro Connecting on OpenWrt</a>
+  </h2>
+  
+  <time datetime="2013-05-31T01:45:13Z">
+    31 May, 2013
+  </time>
+  
+</header>
+
+  
+  Have a fancy FreedomPop Overdrive Pro? Want to hook it up to your OpenWrt based router to use as a backup (or primary?) internet connection? Lets do it.
+Plug it into your router via USB. Then run:
+opkg install kmod-usb-net-cdc-ether  Run dmesg and it will report which eth device came up. Mine shows up as &ldquo;eth1&rdquo;. Now make eth1 your &ldquo;wan&rdquo; interface:
+uci set network.wan.ifname=eth1 uci commit reboot  Whoa.
+  
+  <p>
+    <a class="u-clickable" href="../../an-overdrive-pro-connecting-on-openwrt/">Read More…</a>
+  </p>
+  
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/freedompop/" rel="tag">freedompop</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/openwrt/" rel="tag">openwrt</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
     <a class="Heading-link u-clickable" href="../../a-team-fortress-2-see-n-say/" rel="bookmark">A Team Fortress 2 See &#39;n Say!</a>
   </h2>
   
@@ -705,75 +763,6 @@ power METER-NAME sleep 10s  Pretty handy. The &ldquo;METER-NAME&rdquo; is pretty
     
     <li class="Tags-item u-background">
       <a class="Tags-link u-clickable" href="../../categories/power/" rel="tag">power</a>
-    </li>
-    
-    
-  </ul>
-  
-  
-  
-  
-</footer>
-
-
-</article>
-<div class="Divider"></div>
-
-<article>
-  <header class="Heading">
-  <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="../../an-ipmi-sel-viewing-shootout/" rel="bookmark">An IPMI SEL Viewing Shootout!</a>
-  </h2>
-  
-  <time datetime="2013-02-13T06:08:18Z">
-    13 February, 2013
-  </time>
-  
-</header>
-
-  
-  UPDATE (2015-02-18) Albert Chu from FreeIPMI commented that FreeIPMI does NOT attempt to decode OEM events by default. These are events that are OEM specific, so each motherboard may require a different interpretation.
-FreeIPMI has a --interpret-oem-data option and possibly in conjunction with the -W assumesystemevent option, to attempt to decode these.
-Unfortunately I no longer have the motherboard I originally ran these on. I might do a followup post with a new motherboard with similar &ldquo;issues&rdquo; and see how FreeIPMI compares to the other tools with these options.
-  
-  <p>
-    <a class="u-clickable" href="../../an-ipmi-sel-viewing-shootout/">Read More…</a>
-  </p>
-  
-  
-  
-
-
-
-
-
-
-<footer>
-  
-  
-  <ul class="Tags">
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/intel/" rel="tag">intel</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/ipmi/" rel="tag">ipmi</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/linux/" rel="tag">linux</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/sel/" rel="tag">sel</a>
     </li>
     
     
