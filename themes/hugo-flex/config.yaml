@@ -32,12 +32,10 @@ menu:
   - name: Posts
     url: /post/
     weight: 2
-  - name: Tags
-    url: /tags/
-    weight: 3
   - name: Categories
     url: /categories/
+    weight: 3
+# I don't understand flebox but somehow this gets the search bar on the right
+  - name: ""
+    url: /
     weight: 4
-  - name: RSS
-    url: /index.xml
-    weight: 5

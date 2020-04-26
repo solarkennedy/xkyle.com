@@ -9,6 +9,12 @@
         <a class="Banner-link u-clickable" href="{{ .URL | absURL }}">{{ .Name }}</a>
       </li>
       {{ end }}
-    </ul>
+      <li class="Banner-item">
+<form action="https://www.google.com/search" class="Banner-link u-clickable" method="get" name="searchform" target="_blank">
+<input name="sitesearch" type="hidden" value="xkyle.com">
+<input autocomplete="on" class="form-control search2" name="q" placeholder="Search" required="required"  type="text" style="width: 50px;">
+<button class="button" type="submit" style="width:1px;text-align: center;border-right-width: 20px;border-right-style: solid;height: 34px;">🔍</button>
+</form>
+      </li>
   </div>
 </nav>
