@@ -10,6 +10,117 @@
     <lastBuildDate>Wed, 11 Feb 2009 22:40:10 +0000</lastBuildDate>
     <atom:link href="/categories/Myspace/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>A Survey of Golang &#39;plugins&#39; in 2020</title>
+      <link>/A-Survey-of-Golang-plugins-in-2020/</link>
+      <pubDate>Sat, 01 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>/A-Survey-of-Golang-plugins-in-2020/</guid>
+      <description>&lt;p&gt;For the purpose of this blog post, my definition of plugin is:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A method of extending the functionality of program without forking it&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In particular, I&amp;rsquo;ll be looking at methods of extending Golang (go) programs.&lt;/p&gt;
+&lt;h2 id=&#34;official-golang-plugins&#34;&gt;Official Golang Plugins&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://golang.org/pkg/plugin/&#34;&gt;Official Golang Plugins&lt;/a&gt; are a native way of extending go codebases without forking them.&lt;/p&gt;
+&lt;h4 id=&#34;how-they-work&#34;&gt;How They Work&lt;/h4&gt;
+&lt;p&gt;Official Golang Plugins work by compiling your plugin in a special way:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;go build -buildmode=plugin
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This build mode can output a &lt;code&gt;.so&lt;/code&gt; file with symbols that a &amp;ldquo;main&amp;rdquo; program can load dynamically. A quick example would look like with your plugin code:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;package&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;
+
+&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;PluginInputNumber&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;KnownPluginFunction&lt;/span&gt;() { &lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Printf&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;My custom code prints PluginInputNumber: %d\n&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;PluginInputNumber&lt;/span&gt;) }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And then the &amp;ldquo;main&amp;rdquo; code would load plugins and operate on known functions:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;p&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;plugin&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Open&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;myplugin.so&amp;#34;&lt;/span&gt;)
+&lt;span style=&#34;color:#a6e22e&#34;&gt;in&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;p&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Lookup&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;PluginInputNumber&amp;#34;&lt;/span&gt;)
+&lt;span style=&#34;color:#a6e22e&#34;&gt;f&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;p&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Lookup&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;KnownPluginFunction&amp;#34;&lt;/span&gt;)
+&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;in&lt;/span&gt;.(&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt;) = &lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;f&lt;/span&gt;.(&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt;())() &lt;span style=&#34;color:#75715e&#34;&gt;// prints &amp;#34;My custom code prints PluginInputNumber: 7&amp;#34;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;pros&#34;&gt;Pros&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;In the golang stdlib. Simple and sparse.&lt;/li&gt;
+&lt;li&gt;High performance, it is just calling functions in a library using native interfaces&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;cons&#34;&gt;Cons&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Plugins can crash the main loop&lt;/li&gt;
+&lt;li&gt;Linux, FreeBSD, and macOS &lt;a href=&#34;https://github.com/golang/go/issues/19282&#34;&gt;only&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Plugins and the main program must be built in the &lt;a href=&#34;https://www.reddit.com/r/golang/comments/b6h8qq/is_anyone_actually_using_go_plugins/ejkxd2k?utm_source=share&amp;amp;utm_medium=web2x&#34;&gt;exact same environment&lt;/a&gt;. (same golang version, mod dependencies, go path, cgo)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;examples&#34;&gt;Examples&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.krakend.io/blog/krakend-golang-plugins/&#34;&gt;Krakend&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gotify.net/docs/plugin-write&#34;&gt;Gotify&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/solarkennedy/xkyle.com/edit/master/content/post/2020-08-01-golang-plugins-survey.markdown&#34;&gt;(add more?)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;hashicorp-go-plugin&#34;&gt;Hashicorp go-plugin&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/hashicorp/go-plugin&#34;&gt;Hashicorp go-plugin&lt;/a&gt; is the method that Hashicorp uses in many of its products to support extending them.&lt;/p&gt;
+&lt;h4 id=&#34;how-they-work-1&#34;&gt;How They Work&lt;/h4&gt;
+&lt;p&gt;Hashicorp go-plugin works by having the main process spawn the plugin as a separate process and communicate with it over gRPC (via http2, or a few other options). This communication usually happens over a unix socket or localhost. This is a more full-featured version of &lt;a href=&#34;https://github.com/natefinch/pie&#34;&gt;pie&lt;/a&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;pros-1&#34;&gt;Pros&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Writing plugins feels natural because you are talking to a golang interface&lt;/li&gt;
+&lt;li&gt;Cross-platform and cross-language (it is &amp;ldquo;just&amp;rdquo; gRPC over a socket)&lt;/li&gt;
+&lt;li&gt;Logging, stdout/err, and even TTYs are transparently preserved!&lt;/li&gt;
+&lt;li&gt;Plugins can be versioned to help support backwards-compatible changes&lt;/li&gt;
+&lt;li&gt;Plugins cannot crash the main program and can even be hot-reloaded&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;cons-1&#34;&gt;Cons&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Lower performance than dynamic library function calls (native golang plugins)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;examples-1&#34;&gt;Examples&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/hashicorp/vault-plugin-auth-kubernetes&#34;&gt;Kubernetes Auth Vault Plugin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Any of the Terraform &lt;a href=&#34;https://www.terraform.io/docs/providers/index.html&#34;&gt;first-party providers&lt;/a&gt; or &lt;a href=&#34;https://www.terraform.io/docs/providers/type/community-index.html&#34;&gt;third-party providers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/solarkennedy/xkyle.com/edit/master/content/post/2020-08-01-golang-plugins-survey.markdown&#34;&gt;(add more?)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;kubernetes-scheduler-style-plugins&#34;&gt;Kubernetes-Scheduler-Style Plugins&lt;/h2&gt;
+&lt;p&gt;The &lt;a href=&#34;https://kubernetes.io/docs/concepts/scheduling-eviction/scheduling-framework/&#34;&gt;Kubernetes Scheduler has a framework&lt;/a&gt; for writing your own plugins to the Kubernetes scheduler (but not to any other Kubernetes component at the time of this writing).&lt;/p&gt;
+&lt;h4 id=&#34;how-they-work-2&#34;&gt;How They Work&lt;/h4&gt;
+&lt;p&gt;These k8s plugins work by wrapping the main kubernetes scheduler binary with a special invocation:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;() {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;command&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;app&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;NewSchedulerCommand&lt;/span&gt;(
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;app&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;WithPlugin&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;coscheduling&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Name&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;coscheduling&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;New&lt;/span&gt;),
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;app&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;WithPlugin&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;qos&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Name&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;qos&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;New&lt;/span&gt;),
+	)
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;command&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Execute&lt;/span&gt;(); &lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;nil&lt;/span&gt; {
+		&lt;span style=&#34;color:#a6e22e&#34;&gt;os&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Exit&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The resulting binary is a mono-binary of both your and the k8s code. It is kinda like the k8s code will &amp;ldquo;inherit&amp;rdquo; the functions you overwrite:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-golang&#34; data-lang=&#34;golang&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// Less is the function used by the activeQ heap algorithm to sort pods.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// It sorts pods based on their priorities. When the priorities are equal, it uses
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;// the Pod QoS classes to break the tie.
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Sort&lt;/span&gt;) &lt;span style=&#34;color:#a6e22e&#34;&gt;Less&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;pInfo1&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;pInfo2&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;framework&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;PodInfo&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;bool&lt;/span&gt; {
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;p1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;pod&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;GetPodPriority&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;pInfo1&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Pod&lt;/span&gt;)
+	&lt;span style=&#34;color:#a6e22e&#34;&gt;p2&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;pod&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;GetPodPriority&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;pInfo2&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Pod&lt;/span&gt;)
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;p1&lt;/span&gt; &amp;gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;p2&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;p1&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;p2&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;compQOS&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;pInfo1&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Pod&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;pInfo2&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Pod&lt;/span&gt;))
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;It is kinda a stretch to call these plugins, but it does allow you to extend Kubernetes without actually forking the codebase.&lt;/p&gt;
+&lt;h4 id=&#34;pros-2&#34;&gt;Pros&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Simpler interface.&lt;/li&gt;
+&lt;li&gt;No real magic, just normal go code&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;cons-2&#34;&gt;Cons&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Nothing fancy, you have to compile the main program and your plugin together as a single binary.&lt;/li&gt;
+&lt;li&gt;You must compile the whole binary yourself, you cannot use a pre-packaged binary and connect to it.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;examples-2&#34;&gt;Examples&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/kubernetes-sigs/scheduler-plugins/tree/master/pkg/qos&#34;&gt;QOS Sorter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/kubernetes-sigs/scheduler-plugins/tree/master/pkg/coscheduling&#34;&gt;&amp;ldquo;PodGroup&amp;rdquo; Co-Scheduler&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/admiraltyio/multicluster-scheduler&#34;&gt;Admiraltiy.io Multicluster-Scheduler&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/solarkennedy/xkyle.com/edit/master/content/post/2020-08-01-golang-plugins-survey.markdown&#34;&gt;(add more?)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    <item>
       <title>Securing Your Own Privately-Hosted Internal Web Services</title>
       <link>/Securing-Your-Own-Privately-Hosted-Internal-Web-Services/</link>
       <pubDate>Sat, 11 Jul 2020 00:00:00 +0000</pubDate>

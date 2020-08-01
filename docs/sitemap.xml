@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/post/</loc>
-    <lastmod>2020-07-11T00:00:00+00:00</lastmod>
+    <loc>/A-Survey-of-Golang-plugins-in-2020/</loc>
+    <lastmod>2020-08-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/Securing-Your-Own-Privately-Hosted-Internal-Web-Services/</loc>
-    <lastmod>2020-07-11T00:00:00+00:00</lastmod>
+    <loc>/post/</loc>
+    <lastmod>2020-08-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/</loc>
+    <lastmod>2020-08-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/Securing-Your-Own-Privately-Hosted-Internal-Web-Services/</loc>
     <lastmod>2020-07-11T00:00:00+00:00</lastmod>
   </url>
   

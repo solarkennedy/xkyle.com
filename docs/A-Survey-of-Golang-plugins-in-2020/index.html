@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.68.3" />
+  
+  
+  
+  <title>
+    
+    A Survey of Golang &#39;plugins&#39; in 2020 | xkyle.com
+    
+  </title>
+  <link rel="canonical" href="../A-Survey-of-Golang-plugins-in-2020/">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="manifest" href="../site.webmanifest">
+  
+  
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="../css/base.min.45652926e2b73100c3e3039ae41e6f5d8fbd8d09bceae09498f99c4ee7e79d7b.css" integrity="sha256-RWUpJuK3MQDD4wOa5B5vXY&#43;9jQm86uCUmPmcTufnnXs=" crossorigin="anonymous">
+  
+  
+</head>
+<body>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable" href="">xkyle.com</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../about/">About</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../post/">Posts</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../categories/">Categories</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../"></a>
+      </li>
+      
+      <li class="Banner-item">
+<form action="https://www.google.com/search" class="Banner-link u-clickable" method="get" name="searchform" target="_blank">
+<input name="sitesearch" type="hidden" value="xkyle.com">
+<input autocomplete="on" class="form-control search2" name="q" placeholder="Search" required="required"  type="text" style="width: 50px;">
+<button class="button" type="submit" style="width:1px;text-align: center;border-right-width: 20px;border-right-style: solid;height: 34px;">🔍</button>
+</form>
+      </li>
+  </div>
+</nav>
+
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../A-Survey-of-Golang-plugins-in-2020/" rel="bookmark">A Survey of Golang &#39;plugins&#39; in 2020</a>
+  </h2>
+  
+  <time datetime="2020-08-01T00:00:00Z">
+    1 August, 2020
+  </time>
+  
+</header>
+
+  <p>For the purpose of this blog post, my definition of plugin is:</p>
+<blockquote>
+<p>A method of extending the functionality of program without forking it</p>
+</blockquote>
+<p>In particular, I&rsquo;ll be looking at methods of extending Golang (go) programs.</p>
+<h2 id="official-golang-plugins">Official Golang Plugins</h2>
+<p><a href="https://golang.org/pkg/plugin/">Official Golang Plugins</a> are a native way of extending go codebases without forking them.</p>
+<h4 id="how-they-work">How They Work</h4>
+<p>Official Golang Plugins work by compiling your plugin in a special way:</p>
+<pre><code>go build -buildmode=plugin
+</code></pre>
+<p>This build mode can output a <code>.so</code> file with symbols that a &ldquo;main&rdquo; program can load dynamically. A quick example would look like with your plugin code:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">PluginInputNumber</span> <span style="color:#66d9ef">int</span>
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">KnownPluginFunction</span>() { <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;My custom code prints PluginInputNumber: %d\n&#34;</span>, <span style="color:#a6e22e">PluginInputNumber</span>) }
+</code></pre></div><p>And then the &ldquo;main&rdquo; code would load plugins and operate on known functions:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#a6e22e">p</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">plugin</span>.<span style="color:#a6e22e">Open</span>(<span style="color:#e6db74">&#34;myplugin.so&#34;</span>)
+<span style="color:#a6e22e">in</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">Lookup</span>(<span style="color:#e6db74">&#34;PluginInputNumber&#34;</span>)
+<span style="color:#a6e22e">f</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">Lookup</span>(<span style="color:#e6db74">&#34;KnownPluginFunction&#34;</span>)
+<span style="color:#f92672">*</span><span style="color:#a6e22e">in</span>.(<span style="color:#f92672">*</span><span style="color:#66d9ef">int</span>) = <span style="color:#ae81ff">7</span>
+<span style="color:#a6e22e">f</span>.(<span style="color:#66d9ef">func</span>())() <span style="color:#75715e">// prints &#34;My custom code prints PluginInputNumber: 7&#34;
+</span></code></pre></div><h4 id="pros">Pros</h4>
+<ul>
+<li>In the golang stdlib. Simple and sparse.</li>
+<li>High performance, it is just calling functions in a library using native interfaces</li>
+</ul>
+<h4 id="cons">Cons</h4>
+<ul>
+<li>Plugins can crash the main loop</li>
+<li>Linux, FreeBSD, and macOS <a href="https://github.com/golang/go/issues/19282">only</a></li>
+<li>Plugins and the main program must be built in the <a href="https://www.reddit.com/r/golang/comments/b6h8qq/is_anyone_actually_using_go_plugins/ejkxd2k?utm_source=share&amp;utm_medium=web2x">exact same environment</a>. (same golang version, mod dependencies, go path, cgo)</li>
+</ul>
+<h4 id="examples">Examples</h4>
+<ul>
+<li><a href="https://www.krakend.io/blog/krakend-golang-plugins/">Krakend</a></li>
+<li><a href="https://gotify.net/docs/plugin-write">Gotify</a></li>
+<li><a href="https://github.com/solarkennedy/xkyle.com/edit/master/content/post/2020-08-01-golang-plugins-survey.markdown">(add more?)</a></li>
+</ul>
+<h2 id="hashicorp-go-plugin">Hashicorp go-plugin</h2>
+<p><a href="https://github.com/hashicorp/go-plugin">Hashicorp go-plugin</a> is the method that Hashicorp uses in many of its products to support extending them.</p>
+<h4 id="how-they-work-1">How They Work</h4>
+<p>Hashicorp go-plugin works by having the main process spawn the plugin as a separate process and communicate with it over gRPC (via http2, or a few other options). This communication usually happens over a unix socket or localhost. This is a more full-featured version of <a href="https://github.com/natefinch/pie">pie</a>.</p>
+<h4 id="pros-1">Pros</h4>
+<ul>
+<li>Writing plugins feels natural because you are talking to a golang interface</li>
+<li>Cross-platform and cross-language (it is &ldquo;just&rdquo; gRPC over a socket)</li>
+<li>Logging, stdout/err, and even TTYs are transparently preserved!</li>
+<li>Plugins can be versioned to help support backwards-compatible changes</li>
+<li>Plugins cannot crash the main program and can even be hot-reloaded</li>
+</ul>
+<h4 id="cons-1">Cons</h4>
+<ul>
+<li>Lower performance than dynamic library function calls (native golang plugins)</li>
+</ul>
+<h4 id="examples-1">Examples</h4>
+<ul>
+<li><a href="https://github.com/hashicorp/vault-plugin-auth-kubernetes">Kubernetes Auth Vault Plugin</a></li>
+<li>Any of the Terraform <a href="https://www.terraform.io/docs/providers/index.html">first-party providers</a> or <a href="https://www.terraform.io/docs/providers/type/community-index.html">third-party providers</a></li>
+<li><a href="https://github.com/solarkennedy/xkyle.com/edit/master/content/post/2020-08-01-golang-plugins-survey.markdown">(add more?)</a></li>
+</ul>
+<h2 id="kubernetes-scheduler-style-plugins">Kubernetes-Scheduler-Style Plugins</h2>
+<p>The <a href="https://kubernetes.io/docs/concepts/scheduling-eviction/scheduling-framework/">Kubernetes Scheduler has a framework</a> for writing your own plugins to the Kubernetes scheduler (but not to any other Kubernetes component at the time of this writing).</p>
+<h4 id="how-they-work-2">How They Work</h4>
+<p>These k8s plugins work by wrapping the main kubernetes scheduler binary with a special invocation:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#a6e22e">command</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">NewSchedulerCommand</span>(
+		<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">WithPlugin</span>(<span style="color:#a6e22e">coscheduling</span>.<span style="color:#a6e22e">Name</span>, <span style="color:#a6e22e">coscheduling</span>.<span style="color:#a6e22e">New</span>),
+		<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">WithPlugin</span>(<span style="color:#a6e22e">qos</span>.<span style="color:#a6e22e">Name</span>, <span style="color:#a6e22e">qos</span>.<span style="color:#a6e22e">New</span>),
+	)
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">command</span>.<span style="color:#a6e22e">Execute</span>(); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+		<span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Exit</span>(<span style="color:#ae81ff">1</span>)
+    }
+}
+</code></pre></div><p>The resulting binary is a mono-binary of both your and the k8s code. It is kinda like the k8s code will &ldquo;inherit&rdquo; the functions you overwrite:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#75715e">// Less is the function used by the activeQ heap algorithm to sort pods.
+</span><span style="color:#75715e">// It sorts pods based on their priorities. When the priorities are equal, it uses
+</span><span style="color:#75715e">// the Pod QoS classes to break the tie.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#f92672">*</span><span style="color:#a6e22e">Sort</span>) <span style="color:#a6e22e">Less</span>(<span style="color:#a6e22e">pInfo1</span>, <span style="color:#a6e22e">pInfo2</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">framework</span>.<span style="color:#a6e22e">PodInfo</span>) <span style="color:#66d9ef">bool</span> {
+	<span style="color:#a6e22e">p1</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">pod</span>.<span style="color:#a6e22e">GetPodPriority</span>(<span style="color:#a6e22e">pInfo1</span>.<span style="color:#a6e22e">Pod</span>)
+	<span style="color:#a6e22e">p2</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">pod</span>.<span style="color:#a6e22e">GetPodPriority</span>(<span style="color:#a6e22e">pInfo2</span>.<span style="color:#a6e22e">Pod</span>)
+	<span style="color:#66d9ef">return</span> (<span style="color:#a6e22e">p1</span> &gt; <span style="color:#a6e22e">p2</span>) <span style="color:#f92672">||</span> (<span style="color:#a6e22e">p1</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">p2</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">compQOS</span>(<span style="color:#a6e22e">pInfo1</span>.<span style="color:#a6e22e">Pod</span>, <span style="color:#a6e22e">pInfo2</span>.<span style="color:#a6e22e">Pod</span>))
+}
+</code></pre></div><p>It is kinda a stretch to call these plugins, but it does allow you to extend Kubernetes without actually forking the codebase.</p>
+<h4 id="pros-2">Pros</h4>
+<ul>
+<li>Simpler interface.</li>
+<li>No real magic, just normal go code</li>
+</ul>
+<h4 id="cons-2">Cons</h4>
+<ul>
+<li>Nothing fancy, you have to compile the main program and your plugin together as a single binary.</li>
+<li>You must compile the whole binary yourself, you cannot use a pre-packaged binary and connect to it.</li>
+</ul>
+<h4 id="examples-2">Examples</h4>
+<ul>
+<li><a href="https://github.com/kubernetes-sigs/scheduler-plugins/tree/master/pkg/qos">QOS Sorter</a></li>
+<li><a href="https://github.com/kubernetes-sigs/scheduler-plugins/tree/master/pkg/coscheduling">&ldquo;PodGroup&rdquo; Co-Scheduler</a></li>
+<li><a href="https://github.com/admiraltyio/multicluster-scheduler">Admiraltiy.io Multicluster-Scheduler</a></li>
+<li><a href="https://github.com/solarkennedy/xkyle.com/edit/master/content/post/2020-08-01-golang-plugins-survey.markdown">(add more?)</a></li>
+</ul>
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+</article>
+
+
+      </div>
+    </div>
+  </main>
+  
+
+</body>
+</html>
