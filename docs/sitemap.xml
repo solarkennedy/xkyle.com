@@ -848,11 +848,6 @@
   </url>
   
   <url>
-    <loc>/categories/games/</loc>
-    <lastmod>2010-10-05T20:25:06+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/categories/Games-Magazine/</loc>
     <lastmod>2010-10-05T20:25:06+00:00</lastmod>
   </url>
@@ -1345,6 +1340,11 @@
   <url>
     <loc>/categories/sniffing/</loc>
     <lastmod>2008-11-15T02:04:41+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/games/</loc>
+    <lastmod>2008-09-30T03:11:20+00:00</lastmod>
   </url>
   
   <url>

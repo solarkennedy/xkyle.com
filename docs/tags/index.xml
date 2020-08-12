@@ -581,7 +581,7 @@ By connecting this rim to particular pins on the microcontroller, I can use the 
   &lt;iframe src=&#34;https://player.vimeo.com/video/379376339&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;vimeo video&#34; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
  &lt;/div&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://gist.github.com/kriegsman/36a1e277f5b4084258d9af1eae29bac4&#34;&gt;Written by Mark Kriegsman&lt;/a&gt; for the art piece &amp;ldquo;&lt;a href=&#34;https://vimeo.com/379376339&#34;&gt;Beneath These Waves Lies Light&lt;/a&gt;&amp;quot;, it still looks beautiful on 5 leds:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://gist.github.com/kriegsman/36a1e277f5b4084258d9af1eae29bac4&#34;&gt;Written by Mark Kriegsman&lt;/a&gt; for the art piece &amp;ldquo;&lt;a href=&#34;https://vimeo.com/379376339&#34;&gt;Beneath These Waves Lies Light&lt;/a&gt;&amp;rdquo;, it still looks beautiful on 5 leds:&lt;/p&gt;
 
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
   &lt;iframe src=&#34;https://www.youtube.com/embed/fExAfrpSHGU&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
@@ -625,7 +625,7 @@ The alternative is what I will call &amp;ldquo;the daemon pattern&amp;rdquo;.&lt
 &lt;p&gt;With the daemon pattern, the auxiliary processes scale with the number of nodes, and in general goes down as servers get larger over time. With the sidecar pattern, the number of processes scales &lt;strong&gt;up&lt;/strong&gt; with the number of pods you want to run, and usually goes up as you add more things.&lt;/p&gt;
 &lt;p&gt;Compared to the daemon pattern, the sidecar pattern consumes more compute resources as well as management resources.&lt;/p&gt;
 &lt;h2 id=&#34;sidecar-con-whose-job-is-it-anyway-to-run-these-things&#34;&gt;Sidecar Con: Whose Job is it Anyway to Run These Things?&lt;/h2&gt;
-&lt;p&gt;I really do feel bad for those organizations where the &amp;ldquo;platform team&amp;rdquo; provides only a raw k8s base, or maybe a team that &amp;ldquo;just uses {cloud provider&amp;rsquo;s k8s as a service}&amp;quot;. Whose job is it to actually add, upgrade, configure, monitor, and maintain all these sidecars?&lt;/p&gt;
+&lt;p&gt;I really do feel bad for those organizations where the &amp;ldquo;platform team&amp;rdquo; provides only a raw k8s base, or maybe a team that &amp;ldquo;just uses {cloud provider&amp;rsquo;s k8s as a service}&amp;rdquo;. Whose job is it to actually add, upgrade, configure, monitor, and maintain all these sidecars?&lt;/p&gt;
 &lt;p&gt;With the daemon pattern it is pretty clear to me that it is &lt;em&gt;not&lt;/em&gt; the application developer&amp;rsquo;s job to maintain system daemons. Maybe a logging subteam is responsible for keeping the logging platform up (even if it isn&amp;rsquo;t literally a daemon on the local host). Maybe it is just a big catchall for the &amp;ldquo;ops&amp;rdquo; team.&lt;/p&gt;
 &lt;p&gt;With the sidecar pattern, it isn&amp;rsquo;t as clear. On the plus side, it is empowering for a dev team to copy paste some YAML to get a &lt;a href=&#34;https://www.hashicorp.com/blog/injecting-vault-secrets-into-kubernetes-pods-via-a-sidecar/&#34;&gt;Vault Sidecar&lt;/a&gt;, but maybe every app shouldn&amp;rsquo;t need to have them?&lt;/p&gt;
 &lt;p&gt;I think the daemon pattern provides better separation between &amp;ldquo;infrastructure versus application&amp;rdquo;, which should unburden application developers and let them provide more business value.&lt;/p&gt;
@@ -766,7 +766,7 @@ This is only possible because of this blurring of layers, and is one thing that 
 &lt;p&gt;This is sorta like the client libraries issue, but at the next level. How does one write automation integration with Mesos? You go through the difficult task of writing a framework. Sure it may take seconds to get something running, but it will take a long time before the operator is production ready. Writing a good Mesos Framework isn&amp;rsquo;t easy.&lt;/p&gt;
 &lt;p&gt;The &lt;a href=&#34;https://mesosphere.github.io/dcos-commons/&#34;&gt;DC/OS Commons&lt;/a&gt; as the closest thing to a good Mesos Framework SDK. It also never really took off.&lt;/p&gt;
 &lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;When this blog post is titled &amp;ldquo;what k8s does &amp;lsquo;right&amp;rsquo;&amp;quot;, you should ask, &amp;ldquo;right for who?&amp;quot;. The answer to me is, right for most infrastructure engineers want a platform to run all their different workloads on. &lt;em&gt;Not&lt;/em&gt; a distributed systems SDK (Mesos).&lt;/p&gt;
+&lt;p&gt;When this blog post is titled &amp;ldquo;what k8s does &amp;lsquo;right&amp;rsquo;&amp;rdquo;, you should ask, &amp;ldquo;right for who?&amp;rdquo;. The answer to me is, right for most infrastructure engineers want a platform to run all their different workloads on. &lt;em&gt;Not&lt;/em&gt; a distributed systems SDK (Mesos).&lt;/p&gt;
 &lt;p&gt;The next thing you should ask is: &amp;ldquo;Isn&amp;rsquo;t this an unfair comparison? K8s is more like DC/OS, Mesos is more like the k8s-scheduler component.&amp;rdquo; To which I say: Kinda. I think it is more like Mesos is k8s just without the replica-set/deployment controllers and good API (those were left to frameworks like Marathon to implement). But sure, it isn&amp;rsquo;t fair.&lt;/p&gt;
 &lt;p&gt;In a sense, Mesos is a tool that does &amp;ldquo;one thing well. In the right circumstance, it can be the right tool for the job.&lt;/p&gt;
 &lt;p&gt;Kubernetes do one thing well, it does a lot of stuff &amp;ldquo;ok&amp;rdquo;, but leaves room for infrastructure engineers to replace parts and integrate. It also met developers where they are at, by giving them good client libraries in their native language, primitives to build operators on, and lots of the &amp;ldquo;things you just need to get going&amp;rdquo; (secrets, service discovery, etc) to make things work.&lt;/p&gt;
@@ -1153,9 +1153,9 @@ environment you are in, leaving it better than when you got there.&lt;/p&gt;
 &lt;a href=&#34;https://thedailywtf.com/articles/the-enterprise-axe&#34;&gt;software package&lt;/a&gt;
 mean you won&amp;rsquo;t be creating any &amp;ldquo;personal engineering capital&amp;rdquo; for yourself?&lt;/p&gt;
 &lt;p&gt;What does this really mean? Is this just a fancy way of saying &amp;ldquo;I want to work
-on something that will look good on my resume.&amp;quot;? Or is it even simpler than
+on something that will look good on my resume.&amp;rdquo;? Or is it even simpler than
 that: &amp;ldquo;I want to work on something that is different (or in a different
-language) than what the company needs.&amp;quot;?&lt;/p&gt;
+language) than what the company needs.&amp;rdquo;?&lt;/p&gt;
 &lt;p&gt;Although this comes from a position of privilege, I don&amp;rsquo;t think that it is my
 current employer&amp;rsquo;s job to set me up for my next job. Not only that, I see the
 both the opportunity to buy and the opportunity to build &lt;em&gt;both&lt;/em&gt; as ways to
@@ -1571,7 +1571,7 @@ challenging tasks. There is some degree of &amp;ldquo;fun&amp;rdquo; as well. A 
 easy isn&amp;rsquo;t very fun, and likewise a game that is brutally hard is also no fun.&lt;/p&gt;
 &lt;p&gt;Sometimes things are difficult because they are simply unfamiliar. Sometimes
 &amp;ldquo;simple&amp;rdquo; things seem easy only because they are &amp;ldquo;&lt;a href=&#34;https://www.infoq.com/presentations/Simple-Made-Easy&#34;&gt;at
-hand&lt;/a&gt;&amp;quot;. I try to balance
+hand&lt;/a&gt;&amp;rdquo;. I try to balance
 steering mentees towards tasks that are easy for them (even if they are not
 necessarily easy for me), to get their confidence up early, and then slowly add
 in more challenging and unfamiliar tasks.&lt;/p&gt;
@@ -2190,11 +2190,11 @@ than the half-block character, to create an interesting output. Look at the
 list of &lt;a href=&#34;https://github.com/stefanhaustein/TerminalImageViewer/blob/65ebc0a59e58ba5ba2f3d4dc54ced5e468317277/src/main/java/TerminalImageViewer.java#L248-L345&#34;&gt;unique unicode characters&lt;/a&gt;
 available for use. Due to this feature, I had to provide an &lt;strong&gt;upscaled&lt;/strong&gt;
 version of the source images in order to produce the the desired output.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/eliukblau/pixterm&#34;&gt;pixterm&lt;/a&gt;&amp;lsquo;s most prominent feature is its
+&lt;p&gt;&lt;a href=&#34;https://github.com/eliukblau/pixterm&#34;&gt;pixterm&lt;/a&gt;&amp;rsquo;s most prominent feature is its
 speed. Taking advantage of Go&amp;rsquo;s concurrency features, it can convert images
 quickly using all available cores. It can also support a wide range of input
 formats.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/hzeller/timg&#34;&gt;timg&lt;/a&gt;&amp;lsquo;s unique feature is that it can show
+&lt;p&gt;&lt;a href=&#34;https://github.com/hzeller/timg&#34;&gt;timg&lt;/a&gt;&amp;rsquo;s unique feature is that it can show
 animated gifs directly in the terminal. It can handle true color using the
 half-block character for double the vertical resolution.&lt;/p&gt;
 &lt;table&gt;
@@ -3310,7 +3310,7 @@ adding it to your Gemfile and running &lt;code&gt;bundle install&lt;/code&gt;.&l
 &lt;pre&gt;&lt;code&gt;gem &#39;beaker&#39;
 gem &#39;beaker-rspec&#39;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;I recommend using &lt;a href=&#34;http://www.morethanseven.net&#34;&gt;grethr&lt;/a&gt;&amp;lsquo;s
+&lt;p&gt;I recommend using &lt;a href=&#34;http://www.morethanseven.net&#34;&gt;grethr&lt;/a&gt;&amp;rsquo;s
 &lt;a href=&#34;https://github.com/garethr/puppet-module-skeleton/blob/master/skeleton/Gemfile&#34;&gt;puppet module skeleton Gemfile&lt;/a&gt;
 , which includes Beaker already.&lt;/p&gt;
 &lt;p&gt;Now install it:&lt;/p&gt;
@@ -5667,7 +5667,7 @@ TCP window size: 27.9 KByte (default)
       <description>&lt;p&gt;&lt;a href=&#34;http://www.drbd.org/&#34;&gt;DRBD&lt;/a&gt; is the bomb. Think Raid 1 over the network between two servers. It enables sysadmins (in combination with heartbeat) to increase &lt;em&gt;&lt;strong&gt;service&lt;/strong&gt;&lt;/em&gt; uptime, while enabling &lt;strong&gt;&lt;em&gt;server&lt;/em&gt;&lt;/strong&gt; downtime. This means you can do kernel updates, do hardware maintenance, upgrade ram, move the server to another rack, etc, all while keeping the service up.&lt;/p&gt;
 &lt;p&gt;Because DRBD is often used in &lt;a href=&#34;http://en.wikipedia.org/wiki/High_availability&#34;&gt;high availability&lt;/a&gt; scenario, there isn&amp;rsquo;t much room for experimentation with in-production systems. However, recently I had the opportunity configure DRBD on a pair of servers a couple of weeks before they were needed to be in service. I took the opportunity to benchmark different configurations of DRBD. Now, you might look at my graphs and say, &amp;ldquo;Oh, obviously the performance is like that&amp;rdquo;, but I would say it is not so obvious.&lt;/p&gt;
 &lt;h2 id=&#34;philosophers-corner&#34;&gt;Philosopher&amp;rsquo;s Corner&lt;/h2&gt;
-&lt;p&gt;A bit of philosophy here, sometimes we are tempted to claim knowledge about a certain subject. For example someone might say that &amp;ldquo;Intel is faster than AMD&amp;rdquo; or &amp;ldquo;Fords are better than Chevy&amp;rsquo;s&amp;rdquo;, or &amp;ldquo;DRBD protocol A (asynchronous replication) is faster than protocol C (fully synchronous replication)&amp;quot;. But when someone makes claims like this, often they do not believe that what they are saying is simply an opinion. They are claiming to have &lt;strong&gt;&lt;em&gt;knowledge&lt;/em&gt;&lt;/strong&gt; about the subject.&lt;/p&gt;
+&lt;p&gt;A bit of philosophy here, sometimes we are tempted to claim knowledge about a certain subject. For example someone might say that &amp;ldquo;Intel is faster than AMD&amp;rdquo; or &amp;ldquo;Fords are better than Chevy&amp;rsquo;s&amp;rdquo;, or &amp;ldquo;DRBD protocol A (asynchronous replication) is faster than protocol C (fully synchronous replication)&amp;rdquo;. But when someone makes claims like this, often they do not believe that what they are saying is simply an opinion. They are claiming to have &lt;strong&gt;&lt;em&gt;knowledge&lt;/em&gt;&lt;/strong&gt; about the subject.&lt;/p&gt;
 &lt;p&gt;In order to claim to have knowledge about something, many philosophers believe that in order to claim to have knowledge you have to have three things:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -6699,7 +6699,7 @@ RSHZ0,1F901944DB
       <pubDate>Thu, 12 Feb 2009 19:40:06 +0000</pubDate>
       <guid>/my-dads-terminal-patent/</guid>
       <description>&lt;p&gt;I suppose I come from a&amp;hellip; short line of engineers. My father used to work for &lt;a href=&#34;http://www.paradyne.com/&#34;&gt;Paradyne&lt;/a&gt; which was gobbled up by At&amp;amp;t, and is now owned by &lt;a href=&#34;http://www.zhone.com/&#34;&gt;Zhone&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;But back in the day they worked on &amp;ldquo;&lt;a href=&#34;http://en.wikipedia.org/wiki/Computer_terminal&#34;&gt;Terminals&lt;/a&gt;&amp;quot;. You know, back when &amp;ldquo;Computers&amp;rdquo; has a gazillion serial ports and the &amp;ldquo;Terminal&amp;rdquo; was the box that had a monitor and keyboard which parsed the 300baud green text? Yea neither do I&amp;hellip;&lt;/p&gt;
+&lt;p&gt;But back in the day they worked on &amp;ldquo;&lt;a href=&#34;http://en.wikipedia.org/wiki/Computer_terminal&#34;&gt;Terminals&lt;/a&gt;&amp;rdquo;. You know, back when &amp;ldquo;Computers&amp;rdquo; has a gazillion serial ports and the &amp;ldquo;Terminal&amp;rdquo; was the box that had a monitor and keyboard which parsed the 300baud green text? Yea neither do I&amp;hellip;&lt;/p&gt;
 &lt;p&gt;But I&amp;rsquo;ve read about such times, and I know about the history of my &lt;a href=&#34;http://en.wikipedia.org/wiki/Xterm&#34;&gt;xterm&lt;/a&gt; and &lt;a href=&#34;http://efault.net/npat/hacks/picocom/&#34;&gt;picocom&lt;/a&gt; programs. They emulate these devices. Such devices that my Dad (Richard Anderson) designed! It is good to know your roots. Amazing:&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;../uploads/terminal.jpg&#34;&gt;&lt;img src=&#34;../uploads/terminal-300x221.jpg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;../uploads/patd273189.pdf&#34;&gt;Terminal Design (PDF)&lt;/a&gt;&lt;/p&gt;

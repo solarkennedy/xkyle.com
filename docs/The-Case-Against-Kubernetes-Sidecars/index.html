@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.68.3" />
+  <meta name="generator" content="Hugo 0.74.3" />
   
   
   
@@ -103,7 +103,7 @@ The alternative is what I will call &ldquo;the daemon pattern&rdquo;.</p>
 <p>With the daemon pattern, the auxiliary processes scale with the number of nodes, and in general goes down as servers get larger over time. With the sidecar pattern, the number of processes scales <strong>up</strong> with the number of pods you want to run, and usually goes up as you add more things.</p>
 <p>Compared to the daemon pattern, the sidecar pattern consumes more compute resources as well as management resources.</p>
 <h2 id="sidecar-con-whose-job-is-it-anyway-to-run-these-things">Sidecar Con: Whose Job is it Anyway to Run These Things?</h2>
-<p>I really do feel bad for those organizations where the &ldquo;platform team&rdquo; provides only a raw k8s base, or maybe a team that &ldquo;just uses {cloud provider&rsquo;s k8s as a service}&quot;. Whose job is it to actually add, upgrade, configure, monitor, and maintain all these sidecars?</p>
+<p>I really do feel bad for those organizations where the &ldquo;platform team&rdquo; provides only a raw k8s base, or maybe a team that &ldquo;just uses {cloud provider&rsquo;s k8s as a service}&rdquo;. Whose job is it to actually add, upgrade, configure, monitor, and maintain all these sidecars?</p>
 <p>With the daemon pattern it is pretty clear to me that it is <em>not</em> the application developer&rsquo;s job to maintain system daemons. Maybe a logging subteam is responsible for keeping the logging platform up (even if it isn&rsquo;t literally a daemon on the local host). Maybe it is just a big catchall for the &ldquo;ops&rdquo; team.</p>
 <p>With the sidecar pattern, it isn&rsquo;t as clear. On the plus side, it is empowering for a dev team to copy paste some YAML to get a <a href="https://www.hashicorp.com/blog/injecting-vault-secrets-into-kubernetes-pods-via-a-sidecar/">Vault Sidecar</a>, but maybe every app shouldn&rsquo;t need to have them?</p>
 <p>I think the daemon pattern provides better separation between &ldquo;infrastructure versus application&rdquo;, which should unburden application developers and let them provide more business value.</p>

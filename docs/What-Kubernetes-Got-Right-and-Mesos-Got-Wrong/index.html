@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.68.3" />
+  <meta name="generator" content="Hugo 0.74.3" />
   
   
   
@@ -149,7 +149,7 @@ This is only possible because of this blurring of layers, and is one thing that 
 <p>This is sorta like the client libraries issue, but at the next level. How does one write automation integration with Mesos? You go through the difficult task of writing a framework. Sure it may take seconds to get something running, but it will take a long time before the operator is production ready. Writing a good Mesos Framework isn&rsquo;t easy.</p>
 <p>The <a href="https://mesosphere.github.io/dcos-commons/">DC/OS Commons</a> as the closest thing to a good Mesos Framework SDK. It also never really took off.</p>
 <h2 id="conclusion">Conclusion</h2>
-<p>When this blog post is titled &ldquo;what k8s does &lsquo;right&rsquo;&quot;, you should ask, &ldquo;right for who?&quot;. The answer to me is, right for most infrastructure engineers want a platform to run all their different workloads on. <em>Not</em> a distributed systems SDK (Mesos).</p>
+<p>When this blog post is titled &ldquo;what k8s does &lsquo;right&rsquo;&rdquo;, you should ask, &ldquo;right for who?&rdquo;. The answer to me is, right for most infrastructure engineers want a platform to run all their different workloads on. <em>Not</em> a distributed systems SDK (Mesos).</p>
 <p>The next thing you should ask is: &ldquo;Isn&rsquo;t this an unfair comparison? K8s is more like DC/OS, Mesos is more like the k8s-scheduler component.&rdquo; To which I say: Kinda. I think it is more like Mesos is k8s just without the replica-set/deployment controllers and good API (those were left to frameworks like Marathon to implement). But sure, it isn&rsquo;t fair.</p>
 <p>In a sense, Mesos is a tool that does &ldquo;one thing well. In the right circumstance, it can be the right tool for the job.</p>
 <p>Kubernetes do one thing well, it does a lot of stuff &ldquo;ok&rdquo;, but leaves room for infrastructure engineers to replace parts and integrate. It also met developers where they are at, by giving them good client libraries in their native language, primitives to build operators on, and lots of the &ldquo;things you just need to get going&rdquo; (secrets, service discovery, etc) to make things work.</p>
