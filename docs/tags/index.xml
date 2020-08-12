@@ -2505,50 +2505,50 @@ for the exact commands used to generate everything.&lt;/p&gt;
 &lt;h3 id=&#34;wikipedia-rule_110httpsenwikipediaorgwikirule_110&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Rule_110&#34;&gt;Wikipedia Rule_110&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Wikipedia has great text-based browsing support in general. I did not try editing anything.
 All browsers had no trouble rendering the data in a readable way.&lt;/p&gt;
-&lt;p&gt;![https://en.wikipedia.org/wiki/Rule_110 rendered using retawq](/uploads/en.wikipedia.org retawq.png &amp;lsquo;&lt;a href=&#34;https://en.wikipedia.org/wiki/Rule&#34;&gt;https://en.wikipedia.org/wiki/Rule&lt;/a&gt;_110 rendered using retawq&amp;rsquo;)
-![https://en.wikipedia.org/wiki/Rule_110 rendered using elinks](/uploads/en.wikipedia.org elinks.png &amp;lsquo;&lt;a href=&#34;https://en.wikipedia.org/wiki/Rule&#34;&gt;https://en.wikipedia.org/wiki/Rule&lt;/a&gt;_110 rendered using elinks&amp;rsquo;)
-![https://en.wikipedia.org/wiki/Rule_110 rendered using links2](/uploads/en.wikipedia.org links2.png &amp;lsquo;&lt;a href=&#34;https://en.wikipedia.org/wiki/Rule&#34;&gt;https://en.wikipedia.org/wiki/Rule&lt;/a&gt;_110 rendered using links2&amp;rsquo;)
-![https://en.wikipedia.org/wiki/Rule_110 rendered using w3m](/uploads/en.wikipedia.org w3m.png &amp;lsquo;&lt;a href=&#34;https://en.wikipedia.org/wiki/Rule&#34;&gt;https://en.wikipedia.org/wiki/Rule&lt;/a&gt;_110 rendered using w3m&amp;rsquo;)
-![https://en.wikipedia.org/wiki/Rule_110 rendered using lynx](/uploads/en.wikipedia.org lynx.png &amp;lsquo;&lt;a href=&#34;https://en.wikipedia.org/wiki/Rule&#34;&gt;https://en.wikipedia.org/wiki/Rule&lt;/a&gt;_110 rendered using lynx&amp;rsquo;)
-![https://en.wikipedia.org/wiki/Rule_110 rendered using Original (surf)](/uploads/en.wikipedia.org original.png &amp;lsquo;&lt;a href=&#34;https://en.wikipedia.org/wiki/Rule&#34;&gt;https://en.wikipedia.org/wiki/Rule&lt;/a&gt;_110 rendered using Original (surf)&#39;)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;&#39;/uploads/en.wikipedia.org%20retawq.png&#39;&#34; alt=&#34;https://en.wikipedia.org/wiki/Rule_110 rendered using retawq&#34; title=&#34;https://en.wikipedia.org/wiki/Rule_110 rendered using retawq&#34;&gt;
+&lt;img src=&#34;../uploads/en.wikipedia.org%20elinks.png&#34; alt=&#34;https://en.wikipedia.org/wiki/Rule_110 rendered using elinks&#34; title=&#34;https://en.wikipedia.org/wiki/Rule_110 rendered using elinks&#34;&gt;
+&lt;img src=&#34;../uploads/en.wikipedia.org%20links2.png&#34; alt=&#34;https://en.wikipedia.org/wiki/Rule_110 rendered using links2&#34; title=&#34;https://en.wikipedia.org/wiki/Rule_110 rendered using links2&#34;&gt;
+&lt;img src=&#34;../uploads/en.wikipedia.org%20w3m.png&#34; alt=&#34;https://en.wikipedia.org/wiki/Rule_110 rendered using w3m&#34; title=&#34;https://en.wikipedia.org/wiki/Rule_110 rendered using w3m&#34;&gt;
+&lt;img src=&#34;../uploads/en.wikipedia.org%20lynx.png&#34; alt=&#34;https://en.wikipedia.org/wiki/Rule_110 rendered using lynx&#34; title=&#34;https://en.wikipedia.org/wiki/Rule_110 rendered using lynx&#34;&gt;
+&lt;img src=&#34;../uploads/en.wikipedia.org%20original.png&#34; alt=&#34;https://en.wikipedia.org/wiki/Rule_110 rendered using Original (surf)&#34; title=&#34;https://en.wikipedia.org/wiki/Rule_110 rendered using Original (surf)&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;hacker-newshttpnewsycombinatorcom&#34;&gt;&lt;a href=&#34;http://news.ycombinator.com&#34;&gt;Hacker News&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Hacker News is mostly text-based, so these browsers had no trouble with it in general.
 I appreciate elinks&amp;rsquo;s support for colors that are true to the original.&lt;/p&gt;
-&lt;p&gt;![http://news.ycombinator.com rendered using retawq](/uploads/news.ycombinator.com retawq.png &amp;lsquo;&lt;a href=&#34;http://news.ycombinator.com&#34;&gt;http://news.ycombinator.com&lt;/a&gt; rendered using retawq&amp;rsquo;)
-![http://news.ycombinator.com rendered using elinks](/uploads/news.ycombinator.com elinks.png &amp;lsquo;&lt;a href=&#34;http://news.ycombinator.com&#34;&gt;http://news.ycombinator.com&lt;/a&gt; rendered using elinks&amp;rsquo;)
-![http://news.ycombinator.com rendered using links2](/uploads/news.ycombinator.com links2.png &amp;lsquo;&lt;a href=&#34;http://news.ycombinator.com&#34;&gt;http://news.ycombinator.com&lt;/a&gt; rendered using links2&amp;rsquo;)
-![http://news.ycombinator.com rendered using w3m](/uploads/news.ycombinator.com w3m.png &amp;lsquo;&lt;a href=&#34;http://news.ycombinator.com&#34;&gt;http://news.ycombinator.com&lt;/a&gt; rendered using w3m&amp;rsquo;)
-![http://news.ycombinator.com rendered using lynx](/uploads/news.ycombinator.com lynx.png &amp;lsquo;&lt;a href=&#34;http://news.ycombinator.com&#34;&gt;http://news.ycombinator.com&lt;/a&gt; rendered using lynx&amp;rsquo;)
-![http://news.ycombinator.com rendered using Original (surf)](/uploads/news.ycombinator.com original.png &amp;lsquo;&lt;a href=&#34;http://news.ycombinator.com&#34;&gt;http://news.ycombinator.com&lt;/a&gt; rendered using Original (surf)&#39;)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../uploads/news.ycombinator.com%20retawq.png&#34; alt=&#34;http://news.ycombinator.com rendered using retawq&#34; title=&#34;http://news.ycombinator.com rendered using retawq&#34;&gt;
+&lt;img src=&#34;../uploads/news.ycombinator.com%20elinks.png&#34; alt=&#34;http://news.ycombinator.com rendered using elinks&#34; title=&#34;http://news.ycombinator.com rendered using elinks&#34;&gt;
+&lt;img src=&#34;../uploads/news.ycombinator.com%20links2.png&#34; alt=&#34;http://news.ycombinator.com rendered using links2&#34; title=&#34;http://news.ycombinator.com rendered using links2&#34;&gt;
+&lt;img src=&#34;../uploads/news.ycombinator.com%20w3m.png&#34; alt=&#34;http://news.ycombinator.com rendered using w3m&#34; title=&#34;http://news.ycombinator.com rendered using w3m&#34;&gt;
+&lt;img src=&#34;../uploads/news.ycombinator.com%20lynx.png&#34; alt=&#34;http://news.ycombinator.com rendered using lynx&#34; title=&#34;http://news.ycombinator.com rendered using lynx&#34;&gt;
+&lt;img src=&#34;../uploads/news.ycombinator.com%20original.png&#34; alt=&#34;http://news.ycombinator.com rendered using Original (surf)&#34; title=&#34;http://news.ycombinator.com rendered using Original (surf)&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;facebookhttpsfacebookcom&#34;&gt;&lt;a href=&#34;https://facebook.com&#34;&gt;Facebook&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;I could not actually log into facebook with any text-based browser.&lt;/p&gt;
-&lt;p&gt;![https://facebook.com rendered using retawq](/uploads/facebook.com retawq.png &amp;lsquo;&lt;a href=&#34;https://facebook.com&#34;&gt;https://facebook.com&lt;/a&gt; rendered using retawq&amp;rsquo;)
-![https://facebook.com rendered using elinks](/uploads/facebook.com elinks.png &amp;lsquo;&lt;a href=&#34;https://facebook.com&#34;&gt;https://facebook.com&lt;/a&gt; rendered using elinks&amp;rsquo;)
-![https://facebook.com rendered using links2](/uploads/facebook.com links2.png &amp;lsquo;&lt;a href=&#34;https://facebook.com&#34;&gt;https://facebook.com&lt;/a&gt; rendered using links2&amp;rsquo;)
-![https://facebook.com rendered using w3m](/uploads/facebook.com w3m.png &amp;lsquo;&lt;a href=&#34;https://facebook.com&#34;&gt;https://facebook.com&lt;/a&gt; rendered using w3m&amp;rsquo;)
-![https://facebook.com rendered using lynx](/uploads/facebook.com lynx.png &amp;lsquo;&lt;a href=&#34;https://facebook.com&#34;&gt;https://facebook.com&lt;/a&gt; rendered using lynx&amp;rsquo;)
-![https://facebook.com rendered using Original (surf)](/uploads/facebook.com original.png &amp;lsquo;&lt;a href=&#34;https://facebook.com&#34;&gt;https://facebook.com&lt;/a&gt; rendered using Original (surf)&#39;)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../uploads/facebook.com%20retawq.png&#34; alt=&#34;https://facebook.com rendered using retawq&#34; title=&#34;https://facebook.com rendered using retawq&#34;&gt;
+&lt;img src=&#34;../uploads/facebook.com%20elinks.png&#34; alt=&#34;https://facebook.com rendered using elinks&#34; title=&#34;https://facebook.com rendered using elinks&#34;&gt;
+&lt;img src=&#34;../uploads/facebook.com%20links2.png&#34; alt=&#34;https://facebook.com rendered using links2&#34; title=&#34;https://facebook.com rendered using links2&#34;&gt;
+&lt;img src=&#34;../uploads/facebook.com%20w3m.png&#34; alt=&#34;https://facebook.com rendered using w3m&#34; title=&#34;https://facebook.com rendered using w3m&#34;&gt;
+&lt;img src=&#34;../uploads/facebook.com%20lynx.png&#34; alt=&#34;https://facebook.com rendered using lynx&#34; title=&#34;https://facebook.com rendered using lynx&#34;&gt;
+&lt;img src=&#34;../uploads/facebook.com%20original.png&#34; alt=&#34;https://facebook.com rendered using Original (surf)&#34; title=&#34;https://facebook.com rendered using Original (surf)&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;twitterhttpstwittercom&#34;&gt;&lt;a href=&#34;https://twitter.com&#34;&gt;Twitter&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Twitter looks &amp;ldquo;ok&amp;rdquo; on text-based browsers, although for that particular
 application you might want to consider a &lt;a href=&#34;http://www.rainbowstream.org/&#34;&gt;dedicated application&lt;/a&gt;
 built for the terminal.&lt;/p&gt;
 &lt;p&gt;retawq was unable to log in for some reason.&lt;/p&gt;
-&lt;p&gt;![https://twitter.com rendered using retawq](/uploads/twitter.com retawq.png &amp;lsquo;&lt;a href=&#34;https://twitter.com&#34;&gt;https://twitter.com&lt;/a&gt; rendered using retawq&amp;rsquo;)
-![https://twitter.com rendered using elinks](/uploads/twitter.com elinks.png &amp;lsquo;&lt;a href=&#34;https://twitter.com&#34;&gt;https://twitter.com&lt;/a&gt; rendered using elinks&amp;rsquo;)
-![https://twitter.com rendered using links2](/uploads/twitter.com links2.png &amp;lsquo;&lt;a href=&#34;https://twitter.com&#34;&gt;https://twitter.com&lt;/a&gt; rendered using links2&amp;rsquo;)
-![https://twitter.com rendered using w3m](/uploads/twitter.com w3m.png &amp;lsquo;&lt;a href=&#34;https://twitter.com&#34;&gt;https://twitter.com&lt;/a&gt; rendered using w3m&amp;rsquo;)
-![https://twitter.com rendered using lynx](/uploads/twitter.com lynx.png &amp;lsquo;&lt;a href=&#34;https://twitter.com&#34;&gt;https://twitter.com&lt;/a&gt; rendered using lynx&amp;rsquo;)
-![https://twitter.com rendered using Original (surf)](/uploads/twitter.com original.png &amp;lsquo;&lt;a href=&#34;https://twitter.com&#34;&gt;https://twitter.com&lt;/a&gt; rendered using Original (surf)&#39;)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../uploads/twitter.com%20retawq.png&#34; alt=&#34;https://twitter.com rendered using retawq&#34; title=&#34;https://twitter.com rendered using retawq&#34;&gt;
+&lt;img src=&#34;../uploads/twitter.com%20elinks.png&#34; alt=&#34;https://twitter.com rendered using elinks&#34; title=&#34;https://twitter.com rendered using elinks&#34;&gt;
+&lt;img src=&#34;../uploads/twitter.com%20links2.png&#34; alt=&#34;https://twitter.com rendered using links2&#34; title=&#34;https://twitter.com rendered using links2&#34;&gt;
+&lt;img src=&#34;../uploads/twitter.com%20w3m.png&#34; alt=&#34;https://twitter.com rendered using w3m&#34; title=&#34;https://twitter.com rendered using w3m&#34;&gt;
+&lt;img src=&#34;../uploads/twitter.com%20lynx.png&#34; alt=&#34;https://twitter.com rendered using lynx&#34; title=&#34;https://twitter.com rendered using lynx&#34;&gt;
+&lt;img src=&#34;../uploads/twitter.com%20original.png&#34; alt=&#34;https://twitter.com rendered using Original (surf)&#34; title=&#34;https://twitter.com rendered using Original (surf)&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;gmailhttpsmailgooglecom&#34;&gt;&lt;a href=&#34;https://mail.google.com&#34;&gt;Gmail&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Gmail is a tall order for a text based browser. Only elinks, w3m, and lynx could pull it off.&lt;/p&gt;
 &lt;p&gt;elinks shines again with great CSS support, with w3m with second place. These were all rendered
 using the basic HTML version. Luckily I didn&amp;rsquo;t get a CAPTCHA?&lt;/p&gt;
-&lt;p&gt;![https://mail.google.com rendered using retawq](/uploads/mail.google.com retawq.png &amp;lsquo;&lt;a href=&#34;https://mail.google.com&#34;&gt;https://mail.google.com&lt;/a&gt; rendered using retawq&amp;rsquo;)
-![https://mail.google.com rendered using elinks](/uploads/mail.google.com elinks.png &amp;lsquo;&lt;a href=&#34;https://mail.google.com&#34;&gt;https://mail.google.com&lt;/a&gt; rendered using elinks&amp;rsquo;)
-![https://mail.google.com rendered using links2](/uploads/mail.google.com links2.png &amp;lsquo;&lt;a href=&#34;https://mail.google.com&#34;&gt;https://mail.google.com&lt;/a&gt; rendered using links2&amp;rsquo;)
-![https://mail.google.com rendered using w3m](/uploads/mail.google.com w3m.png &amp;lsquo;&lt;a href=&#34;https://mail.google.com&#34;&gt;https://mail.google.com&lt;/a&gt; rendered using w3m&amp;rsquo;)
-![https://mail.google.com rendered using lynx](/uploads/mail.google.com lynx.png &amp;lsquo;&lt;a href=&#34;https://mail.google.com&#34;&gt;https://mail.google.com&lt;/a&gt; rendered using lynx&amp;rsquo;)
-![https://mail.google.com rendered using Original (surf)](/uploads/mail.google.com original.png &amp;lsquo;&lt;a href=&#34;https://mail.google.com&#34;&gt;https://mail.google.com&lt;/a&gt; rendered using Original (surf)&#39;)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../uploads/mail.google.com%20retawq.png&#34; alt=&#34;https://mail.google.com rendered using retawq&#34; title=&#34;https://mail.google.com rendered using retawq&#34;&gt;
+&lt;img src=&#34;../uploads/mail.google.com%20elinks.png&#34; alt=&#34;https://mail.google.com rendered using elinks&#34; title=&#34;https://mail.google.com rendered using elinks&#34;&gt;
+&lt;img src=&#34;../uploads/mail.google.com%20links2.png&#34; alt=&#34;https://mail.google.com rendered using links2&#34; title=&#34;https://mail.google.com rendered using links2&#34;&gt;
+&lt;img src=&#34;../uploads/mail.google.com%20w3m.png&#34; alt=&#34;https://mail.google.com rendered using w3m&#34; title=&#34;https://mail.google.com rendered using w3m&#34;&gt;
+&lt;img src=&#34;../uploads/mail.google.com%20lynx.png&#34; alt=&#34;https://mail.google.com rendered using lynx&#34; title=&#34;https://mail.google.com rendered using lynx&#34;&gt;
+&lt;img src=&#34;../uploads/mail.google.com%20original.png&#34; alt=&#34;https://mail.google.com rendered using Original (surf)&#34; title=&#34;https://mail.google.com rendered using Original (surf)&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;p&gt;elinks is my favorite of the bunch because of color support.&lt;/p&gt;
 &lt;p&gt;This blog post is about 10 years too late, and mostly serves to remind myself which version of &amp;ldquo;links&amp;rdquo; I like and why.&lt;/p&gt;
