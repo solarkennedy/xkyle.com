@@ -6,7 +6,16 @@
     <description>Recent content on xkyle.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 01 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My MegaDesk Build</title>
+      <link>/My-MegaDesk-Build/</link>
+      <pubDate>Fri, 13 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>/My-MegaDesk-Build/</guid>
+      <description>I recently finished my MegaDesk project. Here are the specs:
+ 11 feet wide x 39 inches deep finished butcher block top leg-less design with lots of wood infrastructure underneath to support it  Supports that are anchored to the 2x6 studs Horizontal support anchored to studs   More outlets (there was only 1 lone outlet in this office originally) Cat6 and Coax in keystone jacks Cable pass-through tubes for clean cable management Insulation!</description>
+    </item>
+    
     <item>
       <title>A Survey of Golang &#39;plugins&#39; in 2020</title>
       <link>/A-Survey-of-Golang-plugins-in-2020/</link>
