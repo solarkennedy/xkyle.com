@@ -17,6 +17,7 @@ Here are the specs:
 * 5/8" thick sound dampening drywall
 * Cool triangular floating shelves (maybe I'll put some plants on them)
 * Wall-mounted ultrawide monitor ([Samsung CGR9](https://www.samsung.com/us/computing/monitors/gaming/49-crg9-dual-qhd-curved-qled-gaming-monitor-lc49rg90ssnxza/))
-* Cables for future LEDs / speakers on the shelves
+* Cables for LEDs / speakers on the shelves
+* Code that drives the LEDs is [here](https://github.com/solarkennedy/megadesk)
 
 {{< gallery dir="/uploads/megadesk" />}} {{< load-photoswipe >}}
