@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.74.3" />
+  <meta name="generator" content="Hugo 0.80.0" />
   
   
   
@@ -25,7 +25,7 @@
   
   
   
-  <link rel="stylesheet" href="../css/base.min.45652926e2b73100c3e3039ae41e6f5d8fbd8d09bceae09498f99c4ee7e79d7b.css" integrity="sha256-RWUpJuK3MQDD4wOa5B5vXY&#43;9jQm86uCUmPmcTufnnXs=" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/base.min.8024376f74e6e2fb66dfb9768383c16d4275793d39e317e929b52533f51faa2e.css" integrity="sha256-gCQ3b3Tm4vtm37l2g4PBbUJ1eT054xfpKbUlM/Ufqi4=" crossorigin="anonymous">
   
   
 </head>
@@ -47,6 +47,10 @@
       
       <li class="Banner-item">
         <a class="Banner-link u-clickable" href="../categories/">Categories</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../subscribe.html">Subscribe</a>
       </li>
       
       <li class="Banner-item">
@@ -84,7 +88,7 @@
 <p>It has this crappy DRM that only lets me view the pdf on one computer using only &ldquo;Adobe Digital Editions&rdquo;.</p>
 <p>If that wasn&rsquo;t so bad, only a small subset of the text is OCR&rsquo;d, so most of it isn&rsquo;t even searchable!</p>
 <p>Now I&rsquo;m pissed, but wait, what do you say? These files are just RSA encrypted, and I have the key?</p>
-<p>Some cool guy named **<a href="http://i-u2665-cabbages.blogspot.com/2009/02/circumventing-adobe-adept-drm-for-epub.html">i♥cabbages</a> **has released code do extract your key, and then decrypt the file to a good ol&rsquo; plain pdf. If you want to reproduce my steps you will need to use the <a href="http://www.cs.helsinki.fi/u/vahakang/ineptpdf.pyw">PDF decrypter</a> unless you have epubs.</p>
+<p>Some cool guy named **<a href="http://i-u2665-cabbages.blogspot.com/2009/02/circumventing-adobe-adept-drm-for-epub.html">i♥cabbages</a> **has released code do extract your key, and then decrypt the file to a good ol' plain pdf. If you want to reproduce my steps you will need to use the <a href="http://www.cs.helsinki.fi/u/vahakang/ineptpdf.pyw">PDF decrypter</a> unless you have epubs.</p>
 <p>So I use the tool and get a pdf, now I can use one of the most awesome tools in the world: <a href="http://en.wikipedia.org/wiki/ImageMagick">Imagemagick</a>.</p>
 <p>Imagemagick can whip this pdf into shape. The first thing I&rsquo;m going to do is convert each page into a tiff:</p>
 <pre><code>$ convert -density 200 input.pdf[1-124] -depth 8 -monochrome %05d.tif
