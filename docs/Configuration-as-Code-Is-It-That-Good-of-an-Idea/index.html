@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.74.3" />
   
   
   
@@ -153,7 +153,7 @@ be written by humans. It was always intended to be a
 <p>To put it another way, the <a href="http://portertech.ca/2011/11/01/sensu-a-monitoring-framework/">original Sensu
 authors</a> wanted
 the JSON to be an &ldquo;intermediate form&rdquo; (where the human readable form was the
-users' choice (chef code), then deployed to JSON for sensu to read, eventually
+users&rsquo; choice (chef code), then deployed to JSON for sensu to read, eventually
 ending up as internal Sensu (ruby) objects).</p>
 <p>Why? Why would the Sensu authors make their system use configuration format
 that is hostile to humans (JSON)? I think they were building it this way for two reasons:</p>
@@ -209,7 +209,7 @@ To them, the configuration management language they use <em>is</em> the config
 language they use, they don&rsquo;t care about the JSON intermediate form (for all
 they care, it doesn&rsquo;t even exist and is an implementation detail).</p>
 <h3 id="what-about-k8s-dsls">What About k8s DSLs?</h3>
-<p>Kubernetes' (k8s) popularity, combined with it&rsquo;s &ldquo;almost human readable api&rdquo;
+<p>Kubernetes&rsquo; (k8s) popularity, combined with it&rsquo;s &ldquo;almost human readable api&rdquo;
 format (when you look at it in YAML form), have created a <a href="https://www.merriam-webster.com/dictionary/cottage%20industry">cottage
 industry</a> of
 tools built to deal with k8s&rsquo;s &ldquo;intermediate form YAML&rdquo;.</p>
@@ -281,22 +281,22 @@ nagios hosts configuration generator and turn a static tool into a dynamic one.<
 <p>Infrastructure changes, and the true &ldquo;data gravity&rdquo; is in configuration.</p>
 <p>Having configuration in declarative config formats allows change, validation, and linting. It allows infrastructure developers to easily build &ldquo;seams&rdquo; around that configuration, adding new features, refactoring old ones, and upgrading configuration en-masse, without having to &ldquo;refactor&rdquo; a codebase.</p>
 <p>Which of these DAG configurations do you think would be easier to transition to a new platform?</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">name</span>: <span style="color:#ae81ff">my-dag-1</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">name</span>: my-dag<span style="color:#ae81ff">-1</span>
 
-<span style="color:#f92672">default_task_args</span>:
-  <span style="color:#f92672">start_date</span>: <span style="color:#e6db74">&#39;2018-10-01&#39;</span>
+<span style="color:#66d9ef">default_task_args</span>:
+  <span style="color:#66d9ef">start_date</span>: <span style="color:#e6db74">&#39;2018-10-01&#39;</span>
 
-<span style="color:#f92672">operators</span>:
-- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">print-hello</span>
-  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">bash</span>
-  <span style="color:#f92672">properties</span>:
-    <span style="color:#f92672">bash_command</span>: <span style="color:#e6db74">&#34;echo hello&#34;</span>
-- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">print-world</span>
-  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">bash</span>
-  <span style="color:#f92672">upstream_dependencies</span>:
-  - <span style="color:#ae81ff">print-hello</span>
-  <span style="color:#f92672">properties</span>:
-    <span style="color:#f92672">bash_command</span>: <span style="color:#e6db74">&#34;echo world&#34;</span>
+<span style="color:#66d9ef">operators</span>:
+- <span style="color:#66d9ef">name</span>: print-hello
+  <span style="color:#66d9ef">type</span>: bash
+  <span style="color:#66d9ef">properties</span>:
+    <span style="color:#66d9ef">bash_command</span>: <span style="color:#e6db74">&#34;echo hello&#34;</span>
+- <span style="color:#66d9ef">name</span>: print-world
+  <span style="color:#66d9ef">type</span>: bash
+  <span style="color:#66d9ef">upstream_dependencies</span>:
+  - print-hello
+  <span style="color:#66d9ef">properties</span>:
+    <span style="color:#66d9ef">bash_command</span>: <span style="color:#e6db74">&#34;echo world&#34;</span>
 </code></pre></div><p>Or</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> os
 <span style="color:#f92672">from</span> airflow <span style="color:#f92672">import</span> DAG

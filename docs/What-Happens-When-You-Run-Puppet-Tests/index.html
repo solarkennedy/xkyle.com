@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.74.3" />
   
   
   
@@ -123,11 +123,11 @@ Here I will describe the minimal set of files you need:</p>
 <p>.fixtures.yml is a puppet_spec_helper construct that allows you to symlink in
 other modules that might be required to test your code. For example you might
 require functions from the stdlib. How does Rspec know where stdlib is?</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">fixtures</span>:
-  <span style="color:#f92672">repositories</span>:
-    <span style="color:#f92672">stdlib</span>: <span style="color:#e6db74">&#34;git://github.com/puppetlabs/puppetlabs-stdlib.git&#34;</span>
-  <span style="color:#f92672">symlinks</span>:
-    <span style="color:#f92672">your_module</span>: <span style="color:#e6db74">&#34;#{source_dir}&#34;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">fixtures</span>:
+  <span style="color:#66d9ef">repositories</span>:
+    <span style="color:#66d9ef">stdlib</span>: <span style="color:#e6db74">&#34;git://github.com/puppetlabs/puppetlabs-stdlib.git&#34;</span>
+  <span style="color:#66d9ef">symlinks</span>:
+    <span style="color:#66d9ef">your_module</span>: <span style="color:#e6db74">&#34;#{source_dir}&#34;</span>
 </code></pre></div><p>When rspec runs the preparation parts, the spec_helper will create symlinks,
 or <a href="https://github.com/puppetlabs/puppetlabs_spec_helper#fixtures-examples">clone repos, or whatever.</a></p>
 <h3 id="specspec_helperrb">spec/spec_helper.rb</h3>
@@ -162,7 +162,7 @@ essential:</p>
 │       └── basic_spec.rb
 </code></pre><h3 id="the-tests">The Tests</h3>
 <p>How to write puppet tests is outside the scope of this particular blog post.</p>
-<p>I recommend looking at solid examples from puppetlabs' github, or right from the
+<p>I recommend looking at solid examples from puppetlabs&rsquo; github, or right from the
 <a href="http://rspec-puppet.com/tutorial/">offical documentation</a>.</p>
 <p>But essentially, Rspec runs puppet in a noop mode, only generating a catelog
 of what it would do. Then the rspec tests use <a href="http://rspec-puppet.com/matchers/">matchers</a>

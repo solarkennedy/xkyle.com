@@ -6,7 +6,17 @@
     <description>Recent content on xkyle.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sutro Cat Tower</title>
+      <link>/Sutro-Cat-Tower/</link>
+      <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>/Sutro-Cat-Tower/</guid>
+      <description>This is my &amp;ldquo;Sutro Cat Tower&amp;rdquo;, modeled after the real Sutro Tower in San Francisco CA.
+It features:
+ 7&amp;rsquo; 3&amp;rdquo; (221cm) Tall 369 Individually addressable RGB LEDs ESP8266 programming (timers, dimming, &amp;ldquo;smart&amp;rdquo; features), code Fleece-lined platforms for the cats Modular wood construction  Honestly it is too tall, I&amp;rsquo;ll have to come up with something to make it easier for the cats to jump up into the upper platforms.</description>
+    </item>
+    
     <item>
       <title>My MegaDesk Build</title>
       <link>/My-MegaDesk-Build/</link>
@@ -283,7 +293,7 @@ Methodology All browsers were set to use xterm with TERM=xterm-256color.</descri
       <guid>/A-Comparison-of-Image-to-ASCII-Conversion-Tools/</guid>
       <description>Inspired by ponysay, I think wicked ascii/ansi artwork on the terminal is great.
 I decided to survey all the tools I could find that aid in this conversion to see if there were any dramatic differences in results.
-Methodology For these tests I used an image with a 160px width, twice that of a standard terminal. Then I cat&amp;rsquo;d the image in plain xterm and took a screenshot of the results.</description>
+Methodology For these tests I used an image with a 160px width, twice that of a standard terminal. Then I cat&#39;d the image in plain xterm and took a screenshot of the results.</description>
     </item>
     
     <item>
@@ -455,7 +465,7 @@ uci set network.wan.ifname=eth1 uci commit reboot  Whoa.</description>
       <pubDate>Sat, 18 May 2013 21:12:21 +0000</pubDate>
       <guid>/a-team-fortress-2-see-n-say/</guid>
       <description>Hopefully Valve will offer me a job instead of suing me? :)
-Teardown [gallery ids=&amp;ldquo;991,992,993,994,995,996,999,1001,1002,1000,1003,997&amp;rdquo;] Parts   Many See N&#39; Says to destroy (I burned through 3)
+Teardown [gallery ids=&amp;quot;991,992,993,994,995,996,999,1001,1002,1000,1003,997&amp;rdquo;] Parts   Many See N&amp;rsquo; Says to destroy (I burned through 3)
   An Arduino (yes, because I&amp;rsquo;m a lazy noob)
   Wave shield
   Some sort of ISP programmer
