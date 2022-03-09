@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.80.0" />
+  
+  
+  
+  <title>
+    
+    Tasmota on a Novostella Flood Lamp | xkyle.com
+    
+  </title>
+  <link rel="canonical" href="../Tasmota-on-a-Novostella-Flood-Lamp/">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="manifest" href="../site.webmanifest">
+  
+  
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="../css/base.min.8024376f74e6e2fb66dfb9768383c16d4275793d39e317e929b52533f51faa2e.css" integrity="sha256-gCQ3b3Tm4vtm37l2g4PBbUJ1eT054xfpKbUlM/Ufqi4=" crossorigin="anonymous">
+  
+  
+</head>
+<body>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable" href="">xkyle.com</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../about/">About</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../post/">Posts</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../categories/">Categories</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../subscribe.html">Subscribe</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../"></a>
+      </li>
+      
+      <li class="Banner-item">
+<form action="https://www.google.com/search" class="Banner-link u-clickable" method="get" name="searchform" target="_blank">
+<input name="sitesearch" type="hidden" value="xkyle.com">
+<input autocomplete="on" class="form-control search2" name="q" placeholder="Search" required="required"  type="text" style="width: 50px;">
+<button class="button" type="submit" style="width:1px;text-align: center;border-right-width: 20px;border-right-style: solid;height: 34px;">🔍</button>
+</form>
+      </li>
+  </div>
+</nav>
+
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../Tasmota-on-a-Novostella-Flood-Lamp/" rel="bookmark">Tasmota on a Novostella Flood Lamp</a>
+  </h2>
+  
+  <time datetime="2022-03-09T00:00:00Z">
+    9 March, 2022
+  </time>
+  
+</header>
+
+  <p>I recently bought a pair of <a href="https://www.amazon.com/Novostella-2700K-6500K-Dimmable-Waterproof-Multicolor/dp/B07VH1VHYL">Novostella 20W Smart LED Flood Lights</a>.
+These lights are RGBCW (Red/Blue/Green/Cold/Warm) and use the ubiquitous ESP8266 controller.</p>
+<p>Based on <a href="https://notenoughtech.com/home-automation/flashing-tasmota-on-novostella-smart-bulb-floodlights/">other</a> <a href="https://www.theeggeadventure.com/2019/12/connecting-novostella-20w-smart-led-flood-lights-to-smartthings/">guides</a> thought that I could use the <a href="https://github.com/ct-Open-Source/tuya-convert">tuya-convert</a> tool to flash them with my own software OTA (over the air).
+Unfortunately the latest revision of these lights uses a patched firmware that tuya-convert <a href="https://github.com/ct-Open-Source/tuya-convert/wiki/Collaboration-document-for-PSK-Identity-02">does not understand</a>. This means that these Flood Lamps cannot be re-flashed without being taken apart.</p>
+<p>So let&rsquo;s take them apart!
+Even with a heat gun I was unable to remove the glass without destroying it.</p>
+<p>
+<link rel="stylesheet" href="../css/hugo-easy-gallery.css" />
+
+<div class="gallery caption-position-bottom caption-effect-slide hover-effect-zoom hover-transition" itemscope itemtype="http://schema.org/ImageGallery">
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('/uploads/Tasmota-on-a-Novostella-Flood-Lamp/BP1808A.jpg');" >
+				      <img itemprop="thumbnail" src="../uploads/Tasmota-on-a-Novostella-Flood-Lamp/BP1808A.jpg" alt="B p1808 a" />
+				    </div>
+			      <figcaption>
+		          <p>B p1808 a</p>
+			      </figcaption>
+				    <a href="../uploads/Tasmota-on-a-Novostella-Flood-Lamp/BP1808A.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('/uploads/Tasmota-on-a-Novostella-Flood-Lamp/boyalmicro.jpg');" >
+				      <img itemprop="thumbnail" src="../uploads/Tasmota-on-a-Novostella-Flood-Lamp/boyalmicro.jpg" alt="Boyalmicro" />
+				    </div>
+			      <figcaption>
+		          <p>Boyalmicro</p>
+			      </figcaption>
+				    <a href="../uploads/Tasmota-on-a-Novostella-Flood-Lamp/boyalmicro.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('/uploads/Tasmota-on-a-Novostella-Flood-Lamp/esp-gpio0.jpg');" >
+				      <img itemprop="thumbnail" src="../uploads/Tasmota-on-a-Novostella-Flood-Lamp/esp-gpio0.jpg" alt="Esp gpio0" />
+				    </div>
+			      <figcaption>
+		          <p>Esp gpio0</p>
+			      </figcaption>
+				    <a href="../uploads/Tasmota-on-a-Novostella-Flood-Lamp/esp-gpio0.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('/uploads/Tasmota-on-a-Novostella-Flood-Lamp/esp-module-2.jpg');" >
+				      <img itemprop="thumbnail" src="../uploads/Tasmota-on-a-Novostella-Flood-Lamp/esp-module-2.jpg" alt="Esp module 2" />
+				    </div>
+			      <figcaption>
+		          <p>Esp module 2</p>
+			      </figcaption>
+				    <a href="../uploads/Tasmota-on-a-Novostella-Flood-Lamp/esp-module-2.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('/uploads/Tasmota-on-a-Novostella-Flood-Lamp/esp-module1.jpg');" >
+				      <img itemprop="thumbnail" src="../uploads/Tasmota-on-a-Novostella-Flood-Lamp/esp-module1.jpg" alt="Esp module1" />
+				    </div>
+			      <figcaption>
+		          <p>Esp module1</p>
+			      </figcaption>
+				    <a href="../uploads/Tasmota-on-a-Novostella-Flood-Lamp/esp-module1.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('/uploads/Tasmota-on-a-Novostella-Flood-Lamp/esp8266.jpg');" >
+				      <img itemprop="thumbnail" src="../uploads/Tasmota-on-a-Novostella-Flood-Lamp/esp8266.jpg" alt="Esp8266" />
+				    </div>
+			      <figcaption>
+		          <p>Esp8266</p>
+			      </figcaption>
+				    <a href="../uploads/Tasmota-on-a-Novostella-Flood-Lamp/esp8266.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('/uploads/Tasmota-on-a-Novostella-Flood-Lamp/heat-sink.jpg');" >
+				      <img itemprop="thumbnail" src="../uploads/Tasmota-on-a-Novostella-Flood-Lamp/heat-sink.jpg" alt="Heat sink" />
+				    </div>
+			      <figcaption>
+		          <p>Heat sink</p>
+			      </figcaption>
+				    <a href="../uploads/Tasmota-on-a-Novostella-Flood-Lamp/heat-sink.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('/uploads/Tasmota-on-a-Novostella-Flood-Lamp/inside1.jpg');" >
+				      <img itemprop="thumbnail" src="../uploads/Tasmota-on-a-Novostella-Flood-Lamp/inside1.jpg" alt="Inside1" />
+				    </div>
+			      <figcaption>
+		          <p>Inside1</p>
+			      </figcaption>
+				    <a href="../uploads/Tasmota-on-a-Novostella-Flood-Lamp/inside1.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('/uploads/Tasmota-on-a-Novostella-Flood-Lamp/inside2.jpg');" >
+				      <img itemprop="thumbnail" src="../uploads/Tasmota-on-a-Novostella-Flood-Lamp/inside2.jpg" alt="Inside2" />
+				    </div>
+			      <figcaption>
+		          <p>Inside2</p>
+			      </figcaption>
+				    <a href="../uploads/Tasmota-on-a-Novostella-Flood-Lamp/inside2.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('/uploads/Tasmota-on-a-Novostella-Flood-Lamp/pinout.png');" >
+				      <img itemprop="thumbnail" src="../uploads/Tasmota-on-a-Novostella-Flood-Lamp/pinout.png" alt="Pinout" />
+				    </div>
+			      <figcaption>
+		          <p>Pinout</p>
+			      </figcaption>
+				    <a href="../uploads/Tasmota-on-a-Novostella-Flood-Lamp/pinout.png" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('/uploads/Tasmota-on-a-Novostella-Flood-Lamp/smash1.jpg');" >
+				      <img itemprop="thumbnail" src="../uploads/Tasmota-on-a-Novostella-Flood-Lamp/smash1.jpg" alt="Smash1" />
+				    </div>
+			      <figcaption>
+		          <p>Smash1</p>
+			      </figcaption>
+				    <a href="../uploads/Tasmota-on-a-Novostella-Flood-Lamp/smash1.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('/uploads/Tasmota-on-a-Novostella-Flood-Lamp/smash2.jpg');" >
+				      <img itemprop="thumbnail" src="../uploads/Tasmota-on-a-Novostella-Flood-Lamp/smash2.jpg" alt="Smash2" />
+				    </div>
+			      <figcaption>
+		          <p>Smash2</p>
+			      </figcaption>
+				    <a href="../uploads/Tasmota-on-a-Novostella-Flood-Lamp/smash2.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+</div>
+ 
+
+
+
+  
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="../js/load-photoswipe.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+</p>
+<p>See the images in the image gallery for (crappy) photos of the components and pinout of the module.
+I traced the pins and soldered connections required to hookup a ESP programmer.</p>
+<p>Just using the <a href="https://tasmota.github.io/install/">web installer</a> is fine.
+Once the module is hooked up to a programmer, it is a &ldquo;normal&rdquo; ESP8266.</p>
+<p>Based on the other prior art, I used this Tasmota template:</p>
+<pre><code>{&quot;NAME&quot;:&quot;Novostella 13W&quot;,&quot;GPIO&quot;:[0,0,0,0,37,40,0,0,38,41,39,0,0],&quot;FLAG&quot;:0,&quot;BASE&quot;:18}
+</code></pre>
+<p>A Breakdown of what this configuration means:</p>
+<ul>
+<li><code>&quot;NAME&quot;</code>: Just a human-friendly name of this device</li>
+<li><code>&quot;GPIO&quot;</code>: Maps GPIO output of the ESP8266 to the function in Tasmota. The translation here is:
+<ul>
+<li><code>GPIO 0-3,6,7,11,1</code>: Not used</li>
+<li><code>GPIO 04</code>: PWM Channel 1</li>
+<li><code>GPIO 05</code>: PWM Channel 2</li>
+<li><code>GPIO 08</code>: PWM Channel 3</li>
+<li><code>GPIO 09</code>: PWM Channel 4</li>
+<li><code>GPIO 10</code>: PWM Channel 5</li>
+</ul>
+</li>
+<li><code>&quot;FLAG&quot;</code>: A value of <code>0</code> means there are no <a href="https://tasmota.github.io/docs/ADC/">ADC</a></li>
+<li><code>&quot;BASE&quot;</code>: A value of <code>18</code> indicates that Tasmota should treat this as a generic device, and just show whatever GPIO pins there are with no translation</li>
+</ul>
+<p>With this in place, Tasmota can correctly adjust the color (RGB), brightness, and temperature.
+This is the 5-Channel RGBCCT <a href="https://tasmota.github.io/docs/Lights/#5-channels-rgbcct-lights">Tasmota Light Type</a>.</p>
+<p>Next I intend to flash <a href="https://kno.wled.ge/">WLED</a>, and hopefully build a version of WLED that <a href="https://github.com/Aircoookie/WLED/issues/798">supports</a> these floodlamps.</p>
+
+  
+
+
+
+
+
+
+
+  <a href="mailto:kyle@xkyle.com?subject=Comment on: Tasmota%20on%20a%20Novostella%20Flood%20Lamp">Comment via email</a>
+
+</article>
+
+
+      </div>
+    </div>
+  </main>
+  
+
+</body>
+</html>

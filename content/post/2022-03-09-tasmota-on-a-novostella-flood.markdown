@@ -12,7 +12,7 @@ Unfortunately the latest revision of these lights uses a patched firmware that t
 So let's take them apart!
 Even with a heat gun I was unable to remove the glass without destroying it.
 
-{{< gallery dir="/uploads/WLED-on-a-Novostella-Flood-Lamp" />}} {{< load-photoswipe >}}
+{{< gallery dir="/uploads/Tasmota-on-a-Novostella-Flood-Lamp" />}} {{< load-photoswipe >}}
 
 See the images in the image gallery for (crappy) photos of the components and pinout of the module.
 I traced the pins and soldered connections required to hookup a ESP programmer.
