@@ -4,7 +4,7 @@ date: 2022-03-13T00:00:00-00:00
 ---
 
 I recently bought a pair of [Novostella 20W Smart LED Flood Lights](https://www.amazon.com/Novostella-2700K-6500K-Dimmable-Waterproof-Multicolor/dp/B07VH1VHYL).
-These lights are RGBCW (Red/Blue/Green/Cold/Warm) and use the ubiquitous ESP8266 controller.
+These lights are RGBCW (Red/Blue/Green/Cold/Warm) and use the ubiquitous ESP8266 controller on the [Tuya TYLC4-IPEX](https://developer.tuya.com/en/docs/iot/wifilc4module?id=K9605t0d19jiy).
 
 From the [previous blog post]({{< ref "2022-03-09-tasmota-on-a-novostella-flood" >}}) we learned that the ESP8266 is connected to the LED controller in the following way:
 

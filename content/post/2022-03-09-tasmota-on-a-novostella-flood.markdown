@@ -4,7 +4,7 @@ date: 2022-03-09T00:00:00-00:00
 ---
 
 I recently bought a pair of [Novostella 20W Smart LED Flood Lights](https://www.amazon.com/Novostella-2700K-6500K-Dimmable-Waterproof-Multicolor/dp/B07VH1VHYL).
-These lights are RGBCW (Red/Blue/Green/Cold/Warm) and use the ubiquitous ESP8266 controller.
+These lights are RGBCW (Red/Blue/Green/Cold/Warm) and use the ubiquitous ESP8266 controller on the [Tuya TYLC4-IPEX](https://developer.tuya.com/en/docs/iot/wifilc4module?id=K9605t0d19jiy).
 
 Based on [other](https://notenoughtech.com/home-automation/flashing-tasmota-on-novostella-smart-bulb-floodlights/) [guides](https://www.theeggeadventure.com/2019/12/connecting-novostella-20w-smart-led-flood-lights-to-smartthings/) thought that I could use the [tuya-convert](https://github.com/ct-Open-Source/tuya-convert) tool to flash them with my own software OTA (over the air).
 Unfortunately the latest revision of these lights uses a patched firmware that tuya-convert [does not understand](https://github.com/ct-Open-Source/tuya-convert/wiki/Collaboration-document-for-PSK-Identity-02). This means that these Flood Lamps cannot be re-flashed without being taken apart.

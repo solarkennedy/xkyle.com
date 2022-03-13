@@ -156,7 +156,7 @@
 </header>
 
   
-  I recently bought a pair of Novostella 20W Smart LED Flood Lights. These lights are RGBCW (Red/Blue/Green/Cold/Warm) and use the ubiquitous ESP8266 controller.
+  I recently bought a pair of Novostella 20W Smart LED Flood Lights. These lights are RGBCW (Red/Blue/Green/Cold/Warm) and use the ubiquitous ESP8266 controller on the Tuya TYLC4-IPEX.
 From the previous blog post we learned that the ESP8266 is connected to the LED controller in the following way:
  GPIO 04: PWM Channel 1 (Red) GPIO 05: PWM Channel 5 (Color Temp) GPIO 12: PWM Channel 2 (Green) GPIO 13: PWM Channel 4 (White) GPIO 14: PWM Channel 3 (Blue) GPIO 0-3,6,7,11,1: Not used  My particular version of this Novostella Flood Light had the latest version of their software, which means I did have to break the glass and solder up a programmer to flash WLED on it.
   
@@ -189,7 +189,7 @@ From the previous blog post we learned that the ESP8266 is connected to the LED 
 </header>
 
   
-  I recently bought a pair of Novostella 20W Smart LED Flood Lights. These lights are RGBCW (Red/Blue/Green/Cold/Warm) and use the ubiquitous ESP8266 controller.
+  I recently bought a pair of Novostella 20W Smart LED Flood Lights. These lights are RGBCW (Red/Blue/Green/Cold/Warm) and use the ubiquitous ESP8266 controller on the Tuya TYLC4-IPEX.
 Based on other guides thought that I could use the tuya-convert tool to flash them with my own software OTA (over the air). Unfortunately the latest revision of these lights uses a patched firmware that tuya-convert does not understand. This means that these Flood Lamps cannot be re-flashed without being taken apart.
   
   <p>
