@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.94.2" />
   
   
   
@@ -96,20 +96,20 @@
 <pre><code>go build -buildmode=plugin
 </code></pre>
 <p>This build mode can output a <code>.so</code> file with symbols that a &ldquo;main&rdquo; program can load dynamically. A quick example would look like with your plugin code:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-
-<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
-
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">PluginInputNumber</span> <span style="color:#66d9ef">int</span>
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">KnownPluginFunction</span>() { <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;My custom code prints PluginInputNumber: %d\n&#34;</span>, <span style="color:#a6e22e">PluginInputNumber</span>) }
-</code></pre></div><p>And then the &ldquo;main&rdquo; code would load plugins and operate on known functions:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#a6e22e">p</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">plugin</span>.<span style="color:#a6e22e">Open</span>(<span style="color:#e6db74">&#34;myplugin.so&#34;</span>)
-<span style="color:#a6e22e">in</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">Lookup</span>(<span style="color:#e6db74">&#34;PluginInputNumber&#34;</span>)
-<span style="color:#a6e22e">f</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">Lookup</span>(<span style="color:#e6db74">&#34;KnownPluginFunction&#34;</span>)
-<span style="color:#f92672">*</span><span style="color:#a6e22e">in</span>.(<span style="color:#f92672">*</span><span style="color:#66d9ef">int</span>) = <span style="color:#ae81ff">7</span>
-<span style="color:#a6e22e">f</span>.(<span style="color:#66d9ef">func</span>())() <span style="color:#75715e">// prints &#34;My custom code prints PluginInputNumber: 7&#34;
-</span></code></pre></div><h4 id="pros">Pros</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">PluginInputNumber</span> <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">KnownPluginFunction</span>() { <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;My custom code prints PluginInputNumber: %d\n&#34;</span>, <span style="color:#a6e22e">PluginInputNumber</span>) }
+</span></span></code></pre></div><p>And then the &ldquo;main&rdquo; code would load plugins and operate on known functions:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#a6e22e">p</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">plugin</span>.<span style="color:#a6e22e">Open</span>(<span style="color:#e6db74">&#34;myplugin.so&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">in</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">Lookup</span>(<span style="color:#e6db74">&#34;PluginInputNumber&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">f</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">Lookup</span>(<span style="color:#e6db74">&#34;KnownPluginFunction&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#f92672">*</span><span style="color:#a6e22e">in</span>.(<span style="color:#f92672">*</span><span style="color:#66d9ef">int</span>) = <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">f</span>.(<span style="color:#66d9ef">func</span>())() <span style="color:#75715e">// prints &#34;My custom code prints PluginInputNumber: 7&#34;
+</span></span></span></code></pre></div><h4 id="pros">Pros</h4>
 <ul>
 <li>In the golang stdlib. Simple and sparse.</li>
 <li>High performance, it is just calling functions in a library using native interfaces</li>
@@ -152,25 +152,25 @@
 <p>The <a href="https://kubernetes.io/docs/concepts/scheduling-eviction/scheduling-framework/">Kubernetes Scheduler has a framework</a> for writing your own plugins to the Kubernetes scheduler (but not to any other Kubernetes component at the time of this writing).</p>
 <h4 id="how-they-work-2">How They Work</h4>
 <p>These k8s plugins work by wrapping the main kubernetes scheduler binary with a special invocation:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#a6e22e">command</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">NewSchedulerCommand</span>(
-		<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">WithPlugin</span>(<span style="color:#a6e22e">coscheduling</span>.<span style="color:#a6e22e">Name</span>, <span style="color:#a6e22e">coscheduling</span>.<span style="color:#a6e22e">New</span>),
-		<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">WithPlugin</span>(<span style="color:#a6e22e">qos</span>.<span style="color:#a6e22e">Name</span>, <span style="color:#a6e22e">qos</span>.<span style="color:#a6e22e">New</span>),
-	)
-	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">command</span>.<span style="color:#a6e22e">Execute</span>(); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
-		<span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Exit</span>(<span style="color:#ae81ff">1</span>)
-    }
-}
-</code></pre></div><p>The resulting binary is a mono-binary of both your and the k8s code. It is kinda like the k8s code will &ldquo;inherit&rdquo; the functions you overwrite:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#75715e">// Less is the function used by the activeQ heap algorithm to sort pods.
-</span><span style="color:#75715e">// It sorts pods based on their priorities. When the priorities are equal, it uses
-</span><span style="color:#75715e">// the Pod QoS classes to break the tie.
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#f92672">*</span><span style="color:#a6e22e">Sort</span>) <span style="color:#a6e22e">Less</span>(<span style="color:#a6e22e">pInfo1</span>, <span style="color:#a6e22e">pInfo2</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">framework</span>.<span style="color:#a6e22e">PodInfo</span>) <span style="color:#66d9ef">bool</span> {
-	<span style="color:#a6e22e">p1</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">pod</span>.<span style="color:#a6e22e">GetPodPriority</span>(<span style="color:#a6e22e">pInfo1</span>.<span style="color:#a6e22e">Pod</span>)
-	<span style="color:#a6e22e">p2</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">pod</span>.<span style="color:#a6e22e">GetPodPriority</span>(<span style="color:#a6e22e">pInfo2</span>.<span style="color:#a6e22e">Pod</span>)
-	<span style="color:#66d9ef">return</span> (<span style="color:#a6e22e">p1</span> &gt; <span style="color:#a6e22e">p2</span>) <span style="color:#f92672">||</span> (<span style="color:#a6e22e">p1</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">p2</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">compQOS</span>(<span style="color:#a6e22e">pInfo1</span>.<span style="color:#a6e22e">Pod</span>, <span style="color:#a6e22e">pInfo2</span>.<span style="color:#a6e22e">Pod</span>))
-}
-</code></pre></div><p>It is kinda a stretch to call these plugins, but it does allow you to extend Kubernetes without actually forking the codebase.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">command</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">NewSchedulerCommand</span>(
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">WithPlugin</span>(<span style="color:#a6e22e">coscheduling</span>.<span style="color:#a6e22e">Name</span>, <span style="color:#a6e22e">coscheduling</span>.<span style="color:#a6e22e">New</span>),
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">WithPlugin</span>(<span style="color:#a6e22e">qos</span>.<span style="color:#a6e22e">Name</span>, <span style="color:#a6e22e">qos</span>.<span style="color:#a6e22e">New</span>),
+</span></span><span style="display:flex;"><span>	)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">command</span>.<span style="color:#a6e22e">Execute</span>(); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Exit</span>(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The resulting binary is a mono-binary of both your and the k8s code. It is kinda like the k8s code will &ldquo;inherit&rdquo; the functions you overwrite:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#75715e">// Less is the function used by the activeQ heap algorithm to sort pods.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// It sorts pods based on their priorities. When the priorities are equal, it uses
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// the Pod QoS classes to break the tie.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#f92672">*</span><span style="color:#a6e22e">Sort</span>) <span style="color:#a6e22e">Less</span>(<span style="color:#a6e22e">pInfo1</span>, <span style="color:#a6e22e">pInfo2</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">framework</span>.<span style="color:#a6e22e">PodInfo</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">p1</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">pod</span>.<span style="color:#a6e22e">GetPodPriority</span>(<span style="color:#a6e22e">pInfo1</span>.<span style="color:#a6e22e">Pod</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">p2</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">pod</span>.<span style="color:#a6e22e">GetPodPriority</span>(<span style="color:#a6e22e">pInfo2</span>.<span style="color:#a6e22e">Pod</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> (<span style="color:#a6e22e">p1</span> &gt; <span style="color:#a6e22e">p2</span>) <span style="color:#f92672">||</span> (<span style="color:#a6e22e">p1</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">p2</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">compQOS</span>(<span style="color:#a6e22e">pInfo1</span>.<span style="color:#a6e22e">Pod</span>, <span style="color:#a6e22e">pInfo2</span>.<span style="color:#a6e22e">Pod</span>))
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>It is kinda a stretch to call these plugins, but it does allow you to extend Kubernetes without actually forking the codebase.</p>
 <h4 id="pros-2">Pros</h4>
 <ul>
 <li>Simpler interface.</li>

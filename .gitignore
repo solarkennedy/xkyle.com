@@ -14,3 +14,4 @@ vendor
 node_modules
 *.swp
 hugo_target/
+.hugo_build.lock

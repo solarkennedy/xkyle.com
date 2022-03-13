@@ -23,7 +23,7 @@ Based on other guides thought that I could use the tuya-convert tool to flash th
       <guid>/Sutro-Cat-Tower/</guid>
       <description>This is my &amp;ldquo;Sutro Cat Tower&amp;rdquo;, modeled after the real Sutro Tower in San Francisco CA.
 It features:
- 7&#39; 3&amp;quot; (221cm) Tall 369 Individually addressable RGB LEDs ESP8266 programming (timers, dimming, &amp;ldquo;smart&amp;rdquo; features), code Fleece-lined platforms for the cats Modular wood construction  Honestly it is too tall, I&amp;rsquo;ll have to come up with something to make it easier for the cats to jump up into the upper platforms.</description>
+ 7&amp;rsquo; 3&amp;quot; (221cm) Tall 369 Individually addressable RGB LEDs ESP8266 programming (timers, dimming, &amp;ldquo;smart&amp;rdquo; features), code Fleece-lined platforms for the cats Modular wood construction  Honestly it is too tall, I&amp;rsquo;ll have to come up with something to make it easier for the cats to jump up into the upper platforms.</description>
     </item>
     
     <item>
@@ -234,8 +234,8 @@ For this survey I&amp;rsquo;ll look at a few open-source technologies to give co
       <pubDate>Sat, 10 Feb 2018 14:27:46 +0000</pubDate>
       <guid>/Adding-Electric-Motors-to-a-Gemini-105m/</guid>
       <description>I recently added a pair of electric motors to my Gemini 105m catamaran.
-  Haul out   Although I don&amp;rsquo;t have any photos of the actual installation, here is what they look like:
-  motors     wake   These are a pair of Caroutte S400&amp;rsquo;s.
+ Haul out   Although I don&amp;rsquo;t have any photos of the actual installation, here is what they look like:
+ motors    wake   These are a pair of Caroutte S400&amp;rsquo;s.
 In theory they have a thrust of 180lbs each and a peak power consumption of 2.7kw each. Although it cannot be directly compared, the onboard diesel is a 20kw (27 Horsepower) engine.</description>
     </item>
     
@@ -281,7 +281,7 @@ Methodology All browsers were set to use xterm with TERM=xterm-256color.</descri
       <link>/Kyles-Fashion-Style-Guide/</link>
       <pubDate>Sat, 23 Jan 2016 16:24:01 +0000</pubDate>
       <guid>/Kyles-Fashion-Style-Guide/</guid>
-      <description>I recently read &amp;ldquo;Why Are SO Many Millennials SO Uncool?&amp;quot;. Let&amp;rsquo;s start with a quote:
+      <description>I recently read &amp;ldquo;Why Are SO Many Millennials SO Uncool?&amp;rdquo;. Let&amp;rsquo;s start with a quote:
  *For the purpose of this writing, I’m defining “cool” as those who don’t conform, who don’t always fit in nor do they try to, and who follow their own path; and “uncool” as those who dress, act, and have the same tastes as the masses and are vulnerable to corporate influences.
  Now, I&amp;rsquo;m by no means some sort of authority on coolness.</description>
     </item>
@@ -354,7 +354,7 @@ The Gem The first thing you need to do is install beaker. Usually this is as sim
       <guid>/Managing-Ssh-Known-Hosts-With-Serf/</guid>
       <description>Serf is a very interesting service discovery mechanism. Its dynamic membership and tags capability make it very flexible. Can we use it to generate a centralized ssh_known_hosts file?
 Installing and Configuring Serf I like to use configuration management to manage servers. Here I use a Puppet module to install and configure Serf:
-class { &amp;#39;serf&amp;#39;: config_hash =&amp;gt; { &amp;#39;node_name&amp;#39; =&amp;gt; $::fqdn, &amp;#39;tags&amp;#39; =&amp;gt; { &amp;#39;sshrsakey&amp;#39; =&amp;gt; $::sshrsakey }, &amp;#39;discover&amp;#39; =&amp;gt; &amp;#39;cluster&amp;#39;, } } This particular module uses a hash to translate directly into the config.</description>
+class { &amp;#39;serf&amp;#39;:  config_hash =&amp;gt; {  &amp;#39;node_name&amp;#39; =&amp;gt; $::fqdn,  &amp;#39;tags&amp;#39; =&amp;gt; {  &amp;#39;sshrsakey&amp;#39; =&amp;gt; $::sshrsakey  },  &amp;#39;discover&amp;#39; =&amp;gt; &amp;#39;cluster&amp;#39;,  } } This particular module uses a hash to translate directly into the config.</description>
     </item>
     
     <item>
@@ -375,7 +375,7 @@ Exec The second part is exec.</description>
       <guid>/Writing-Purgable-Puppet-Code/</guid>
       <description>Whenever possible, I try to write Puppet code that is purgable and &amp;ldquo;Comment Safe&amp;rdquo;. That is not a very good description. What I mean is, Puppet code that removes resources from a system when the corresponding Puppet code is &amp;ldquo;Commented&amp;rdquo; out of a manifest. Lets look at a few examples.
 Example: Managed Sudo Lets say you used this popular sudo module with the following params:
-class { &amp;#39;sudo&amp;#39;: purge =&amp;gt; true, } Great start.</description>
+class { &amp;#39;sudo&amp;#39;:  purge =&amp;gt; true, } Great start.</description>
     </item>
     
     <item>
@@ -474,7 +474,7 @@ uci set network.wan.ifname=eth1 uci commit reboot  Whoa.</description>
       <pubDate>Sat, 18 May 2013 21:12:21 +0000</pubDate>
       <guid>/a-team-fortress-2-see-n-say/</guid>
       <description>Hopefully Valve will offer me a job instead of suing me? :)
-Teardown [gallery ids=&amp;ldquo;991,992,993,994,995,996,999,1001,1002,1000,1003,997&amp;rdquo;] Parts   Many See N&#39; Says to destroy (I burned through 3)
+Teardown [gallery ids=&amp;ldquo;991,992,993,994,995,996,999,1001,1002,1000,1003,997&amp;rdquo;] Parts   Many See N&amp;rsquo; Says to destroy (I burned through 3)
   An Arduino (yes, because I&amp;rsquo;m a lazy noob)
   Wave shield
   Some sort of ISP programmer

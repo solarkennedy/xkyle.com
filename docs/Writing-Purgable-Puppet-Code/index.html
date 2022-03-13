@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.94.2" />
   
   
   
@@ -91,39 +91,39 @@ code is &ldquo;Commented&rdquo; out of a manifest. Lets look at a few examples.<
 <h3 id="example-managed-sudo">Example: Managed Sudo</h3>
 <p>Lets say you used this <a href="https://forge.puppetlabs.com/saz/sudo">popular sudo module</a>
 with the following params:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">class</span> { <span style="color:#e6db74">&#39;sudo&#39;</span>:
-  purge <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">true</span>,
-}
-</code></pre></div><p>Great start. All future <code>sudo::conf</code> blocks you write will <em>automatically</em> disappear
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> { <span style="color:#e6db74">&#39;sudo&#39;</span>:
+</span></span><span style="display:flex;"><span>  purge <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Great start. All future <code>sudo::conf</code> blocks you write will <em>automatically</em> disappear
 from the host:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">sudo<span style="color:#f92672">::</span>conf { <span style="color:#e6db74">&#39;web&#39;</span>:
-   source <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;puppet:///files/etc/sudoers.d/web&#39;</span>,
- }
- 
-<span style="color:#75715e"># Commenting out for now. Automatically is purged from the server</span>
-<span style="color:#75715e"># sudo::conf { &#39;admins&#39;:</span>
-<span style="color:#75715e">#   priority =&gt; 10,</span>
-<span style="color:#75715e">#   content  =&gt; &#34;%admins ALL=(ALL) NOPASSWD: ALL&#34;,</span>
-<span style="color:#75715e"># }</span>
-</code></pre></div><p>Good stuff. Do this.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>sudo<span style="color:#f92672">::</span>conf { <span style="color:#e6db74">&#39;web&#39;</span>:
+</span></span><span style="display:flex;"><span>   source <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;puppet:///files/etc/sudoers.d/web&#39;</span>,
+</span></span><span style="display:flex;"><span> }
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Commenting out for now. Automatically is purged from the server</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># sudo::conf { &#39;admins&#39;:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   priority =&gt; 10,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   content  =&gt; &#34;%admins ALL=(ALL) NOPASSWD: ALL&#34;,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># }</span>
+</span></span></code></pre></div><p>Good stuff. Do this.</p>
 <h3 id="example-managed-firewall">Example: Managed Firewall</h3>
 <p>How about another example with the
 <a href="https://forge.puppetlabs.com/puppetlabs/firewall">Puppetlabs Firewall module</a>?</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e"># Automatically remove rules that are not declared</span>
-resources { <span style="color:#e6db74">&#34;firewall&#34;</span>:
-  purge <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">true</span>
-} 
-
-<span style="color:#75715e"># Production needs 111 open</span>
-firewall { <span style="color:#e6db74">&#39;111 open port 111&#39;</span>:
-  dport <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">111</span>
-}
-<span style="color:#75715e"># Tried this but didn&#39;t work. Commenting out for now</span>
-<span style="color:#75715e"># Automatically removed from the server when I commented it out</span>
-<span style="color:#75715e"># firewall { &#39;112 open port 112&#39;:</span>
-<span style="color:#75715e">#   dport =&gt; 112</span>
-<span style="color:#75715e"># }</span>
-</code></pre></div><h3 id="the-point">The Point?</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span><span style="color:#75715e"># Automatically remove rules that are not declared</span>
+</span></span><span style="display:flex;"><span>resources { <span style="color:#e6db74">&#34;firewall&#34;</span>:
+</span></span><span style="display:flex;"><span>  purge <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>} 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Production needs 111 open</span>
+</span></span><span style="display:flex;"><span>firewall { <span style="color:#e6db74">&#39;111 open port 111&#39;</span>:
+</span></span><span style="display:flex;"><span>  dport <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">111</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Tried this but didn&#39;t work. Commenting out for now</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Automatically removed from the server when I commented it out</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># firewall { &#39;112 open port 112&#39;:</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#   dport =&gt; 112</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># }</span>
+</span></span></code></pre></div><h3 id="the-point">The Point?</h3>
 <p>The point here is that we should encourage a culture of purging. Having
 resources get automatically purged when you comment them out from puppet
 is great.</p>
@@ -133,12 +133,12 @@ prevents cruft.</p>
 <h3 id="going-further-purging-packages">Going Further: Purging Packages</h3>
 <p>I want to purge packages. If someone installs a package not controlled by
 Puppet, I want puppet to purge it. Crazy I know.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">package { <span style="color:#e6db74">&#39;apache&#39;</span>: <span style="color:#66d9ef">ensure</span> <span style="color:#f92672">=&gt;</span> installed }
-
-<span style="color:#75715e"># No longer using php</span>
-<span style="color:#75715e"># But puppet leaves this behind!</span>
-<span style="color:#75715e"># package { &#39;php5&#39;: ensure =&gt; installed }</span>
-</code></pre></div><p>Of course puppet will leave the package behind. I should be doing <code>ensure =&gt; purged</code>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>package { <span style="color:#e6db74">&#39;apache&#39;</span>: <span style="color:#66d9ef">ensure</span> <span style="color:#f92672">=&gt;</span> installed }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># No longer using php</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># But puppet leaves this behind!</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># package { &#39;php5&#39;: ensure =&gt; installed }</span>
+</span></span></code></pre></div><p>Of course puppet will leave the package behind. I should be doing <code>ensure =&gt; purged</code>
 right?</p>
 <p>But what if the package is deep within nested classes or simply manually installed?</p>
 <p>Some day I would like to get to the point where I at least get notified when

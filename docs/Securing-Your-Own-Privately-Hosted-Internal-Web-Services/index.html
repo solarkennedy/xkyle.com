@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.94.2" />
   
   
   
@@ -107,7 +107,7 @@
 <h2 id="caddy-config">Caddy Config</h2>
 <p>First I had to setup an oauth key for my Caddy application. Here are the <a href="https://support.google.com/cloud/answer/6158849?hl=en">official docs</a>. The important setting is the &ldquo;Authorized redirect URIs&rdquo;, which needs to be <code>https://auth.internal.xkyle.com/login/google</code>, as set in the next config:</p>
 <p>Here is the configuration for enabling internal google auth:</p>
-<pre><code>(int-auth) {
+<pre tabindex="0"><code>(int-auth) {
 
     # Use cloudflare for ACME challenges. Note: Requires setting env variables!
     tls {
@@ -123,12 +123,12 @@
     }
 }
 </code></pre><p>Now I can include this in a domain definition and it will automatically be behind auth and encryption. Here is an examples for <a href="https://syncthing.net/">syncthing</a></p>
-<pre><code>syncthing.internal.xkyle.com {
+<pre tabindex="0"><code>syncthing.internal.xkyle.com {
     import int-auth
     proxy / localhost:8384
 }
 </code></pre><p>But what &ldquo;is&rdquo; <code>auth.internal.xkyle.com</code>? It is defined like this:</p>
-<pre><code>auth.internal.xkyle.com {
+<pre tabindex="0"><code>auth.internal.xkyle.com {
         tls {
           dns cloudflare
         } 
@@ -152,7 +152,7 @@
 <p>Caddy uses the go-acme library, which understands these <a href="https://go-acme.github.io/lego/dns/cloudflare/">environment variables</a> for talking to Cloudflare. Here are the <a href="https://developers.cloudflare.com/api/tokens/create">docs</a> on creating a token.</p>
 <h2 id="dealing-with-websockets-gotify">Dealing with Websockets (gotify)</h2>
 <p><a href="https://gotify.net/">gotify</a> is a self-hosted push notifications service. It uses websockets to function properly. To use gotify behind Caddy you can do this:</p>
-<pre><code>gotify.internal.xkyle.com {
+<pre tabindex="0"><code>gotify.internal.xkyle.com {
     proxy / localhost:81 {
         websocket
         transparent

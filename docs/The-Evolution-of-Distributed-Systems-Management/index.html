@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.94.2" />
   
   
   
@@ -107,8 +107,7 @@ examples (in <a href="https://en.wikipedia.org/wiki/Kardashev_scale">Kardashev s
 <li><a href="#type-4-hybrid">Type 4: Hybrid?</a></li>
 </ul>
 <h2 id="type-0-manually-deployed-and-configured">Type 0: Manually Deployed and Configured</h2>
-<figure>
-    <img src="../uploads/distributed-systems-management/mysql-manual.png"/> 
+<figure><img src="../uploads/distributed-systems-management/mysql-manual.png"/>
 </figure>
 
 <p>MySQL is a great example of a distributed system (when setup in Master/Slave
@@ -137,8 +136,7 @@ orchestration tooling around them. I predict that we&rsquo;ll continue to see mo
 and more systems being build with automation in mind from the start, leading to
 very different interface and configuration design decisions.</p>
 <h2 id="type-1-host-centric-configuration-management">Type 1: Host-Centric Configuration Management</h2>
-<figure>
-    <img src="../uploads/distributed-systems-management/type1.png"/> 
+<figure><img src="../uploads/distributed-systems-management/type1.png"/>
 </figure>
 
 <p>I characterize &ldquo;Type 1&rdquo; distributed systems management as an
@@ -169,8 +167,7 @@ de-provisioning of servers up to another tool (knife, etc).</p>
 Type 3 tools exist, and as the industry as a whole learns to look beyond &ldquo;the
 single node&rdquo;.</p>
 <h2 id="type-2a-infrastructure-scoped-orchestration-tooling">Type 2A: Infrastructure-scoped Orchestration Tooling</h2>
-<figure>
-    <img src="../uploads/distributed-systems-management/type2a.png"/> 
+<figure><img src="../uploads/distributed-systems-management/type2a.png"/>
 </figure>
 
 <p>Type 2A distributed system management tools can operate beyond a single node,
@@ -202,8 +199,7 @@ functionality. After all, these Type 2A tools are &ldquo;infrastructure oriented
 not &ldquo;distributed-systems oriented.&rdquo; But if Type 2A tools are not quite
 sufficient for fully managing distributed systems for us, then what is?</p>
 <h2 id="type-2b-application-specific-orchestration-tooling">Type 2B: Application-specific Orchestration Tooling</h2>
-<figure>
-    <img src="../uploads/distributed-systems-management/type2b.png"/> 
+<figure><img src="../uploads/distributed-systems-management/type2b.png"/>
 </figure>
 
 <p>Type 2B Tools are the counterparts of 2A. They are very &ldquo;application-aware&rdquo; and
@@ -230,8 +226,7 @@ this and usually run in a &ldquo;one-shot&rdquo; fashion.</p>
 generation of distributed systems in a platform-agnostic way, but eventually
 will give way to Type 3 tools.</p>
 <h2 id="type-3-compute-platform-native-application-specific-frameworks">Type 3: Compute-Platform-Native Application-Specific Frameworks</h2>
-<figure>
-    <img src="../uploads/distributed-systems-management/type3.png"/> 
+<figure><img src="../uploads/distributed-systems-management/type3.png"/>
 </figure>
 
 <p>Type 3 tools are Application-specific, like 2B. But they sorta look like type
@@ -372,7 +367,7 @@ launching a new &ldquo;database&rdquo; has the same workflow as launching a &ldq
 kubectl create)</li>
 <li>Operators (using golang) get nice boilerplate
 <a href="https://github.com/kubernetes/client-go">client code</a> to be able to sync and cache
-etcd state and batch up calls to the k8s api (similar to Mesos' task
+etcd state and batch up calls to the k8s api (similar to Mesos&rsquo; task
 reconciliation behavior)</li>
 </ul>
 <p>The surface area of what you have to write for a k8s operator is much smaller

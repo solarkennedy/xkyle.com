@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.80.0" />
+  <meta name="generator" content="Hugo 0.94.2" />
   
   
   
@@ -91,7 +91,7 @@
 <p>So how will we go about solving this? Let us start by numbering the nodes to make them easy to reference:
 <a href="../uploads/GamesMagazineContest29-WithNodes.gif"><img src="../uploads/GamesMagazineContest29-WithNodes.gif" alt=""></a></p>
 <p>My language of choice to solve this is going to be python. The first thing we will need though, is a copy of the IMDB. Luckily, the IMDB provides alternative interfaces besides their web interface, including <a href="http://www.imdb.com/interfaces#plain">plain text file downloads</a>! And now we need the <a href="http://imdbpy.sourceforge.net/">python-imdbpy</a> package. It comes with a script that will allow you to import these imdb downloads into local mysql tables. For exact commands you can check out my <a href="https://dev.xkyle.com/gamesmagazine/Role%20Playing%204/README">README</a> file, which includes exact wget, mysql, and python commands to import the database locally.</p>
-<p>[caption id=&ldquo;attachment_539&rdquo; align=&ldquo;alignnone&rdquo; width=&ldquo;835&rdquo; caption=&ldquo;I&rsquo;m hopeless without phpmyadmin. Yes I am a noob.&quot;]<a href="../uploads/phpmyadmin-rp4.jpg"><img src="../uploads/phpmyadmin-rp4.jpg" alt=""></a>[/caption]</p>
+<p>[caption id=&ldquo;attachment_539&rdquo; align=&ldquo;alignnone&rdquo; width=&ldquo;835&rdquo; caption=&ldquo;I&rsquo;m hopeless without phpmyadmin. Yes I am a noob.&rdquo;]<a href="../uploads/phpmyadmin-rp4.jpg"><img src="../uploads/phpmyadmin-rp4.jpg" alt=""></a>[/caption]</p>
 <p>So you have a local copy of the imdb? Great! Now how will we go about solving the puzzle? My approach is to start first by narrowing down all of the possibilities for the actors in each node. The center node possibilities are going to be any actress who has been in 13 movies in the last century (only a few hundred). How will we narrow down the other nodes? Regular expressions. For example, node 0 has 5 letters in their first name, and 3,4,6 or 9 letters in their last. Here is a regular expression to find that:</p>
 <blockquote>
 </blockquote>
@@ -109,14 +109,14 @@
         if level == 8:
                 # Print the solution
                 print [actorname(i) for i in placedactors]
-      print placedactors
-      return
+		print placedactors
+		return
 
 	for possibleactor in actor[level].possibilities:
-      if possibleactor not in placedactors + [centeractress]:
-          sharedmovies = moviesincommon(centeractress, possibleactor)
-          if len(sharedmovies) &gt;= len(actor[level].links):
-              recurse(level+1, centeractress, copy.copy(placedactors + [possibleactor]))
+		if possibleactor not in placedactors + [centeractress]:
+			sharedmovies = moviesincommon(centeractress, possibleactor)
+			if len(sharedmovies) &gt;= len(actor[level].links):
+				recurse(level+1, centeractress, copy.copy(placedactors + [possibleactor]))
 </code></pre>
 </blockquote>
 <p>The actor object has a property called links that has a tuple of the movies they are connected to. Most are 2 but one of them is 3. All I do is check how many movies they have been in with the center spoke. I&rsquo;m not even testing what that movie is, or even recording it!  To make it a little faster and cut out false positives, I check between outlining actors at key points where they overlap:</p>
@@ -124,22 +124,22 @@
 </blockquote>
 <blockquote>
 <pre><code>        if level == 2:
-      if len(moviesincommon3(placedactors[0], placedactors[1], centeractress)) &lt; 1:
-          return
+		if len(moviesincommon3(placedactors[0], placedactors[1], centeractress)) &lt; 1:
+			return
 	elif level == 3:
-      if len(moviesincommon4(placedactors[0], placedactors[1], placedactors[2], centeractress)) &lt; 1:
-          return
+		if len(moviesincommon4(placedactors[0], placedactors[1], placedactors[2], centeractress)) &lt; 1:
+			return
 	elif level == 6:
-      if len(moviesincommon3(placedactors[4], placedactors[5], centeractress)) &lt; 1:
-          return
+		if len(moviesincommon3(placedactors[4], placedactors[5], centeractress)) &lt; 1:
+			return
 	elif level == 8:
                 if len(moviesincommon3(placedactors[0], placedactors[7], centeractress)) &lt; 1:
                         return
-      else:
-          print &quot;I HAZ A SOLUTION:&quot;
-          print [actorname(i) for i in placedactors]
-          print placedactors
-          return
+		else:
+			print &quot;I HAZ A SOLUTION:&quot;
+			print [actorname(i) for i in placedactors]
+			print placedactors
+			return
 </code></pre>
 </blockquote>
 <p>These points are on the chart where multiple actors are in the same movie with the center actress. This prunes down quite a bit. All we need now some code to kick use off:</p>
