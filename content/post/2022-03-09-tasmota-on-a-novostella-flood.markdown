@@ -29,11 +29,11 @@ A Breakdown of what this configuration means:
 * `"NAME"`: Just a human-friendly name of this device 
 * `"GPIO"`: Maps GPIO output of the ESP8266 to the function in Tasmota. The translation here is:
   * `GPIO 0-3,6,7,11,1`: Not used
-  * `GPIO 04`: PWM Channel 1
-  * `GPIO 05`: PWM Channel 2
-  * `GPIO 08`: PWM Channel 3
-  * `GPIO 09`: PWM Channel 4
-  * `GPIO 10`: PWM Channel 5
+  * `GPIO 04`: PWM Channel 1 (Red)
+  * `GPIO 05`: PWM Channel 5 (Color Temp)
+  * `GPIO 12`: PWM Channel 2 (Green)
+  * `GPIO 13`: PWM Channel 4 (White)
+  * `GPIO 14`: PWM Channel 3 (Blue)
 * `"FLAG"`: A value of `0` means there are no [ADC](https://tasmota.github.io/docs/ADC/)
 * `"BASE"`: A value of `18` indicates that Tasmota should treat this as a generic device, and just show whatever GPIO pins there are with no translation
 
