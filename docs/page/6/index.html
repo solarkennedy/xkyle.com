@@ -146,6 +146,71 @@
 <article>
   <header class="Heading">
   <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../../disabling-microphone-auto-gain-sensitivity-for-google-plus-hangouts/" rel="bookmark">Disabling Microphone Auto-Gain (Sensitivity) For Google Plus Hangouts</a>
+  </h2>
+  
+  <time datetime="2013-04-17T01:14:56Z">
+    17 April, 2013
+  </time>
+  
+</header>
+
+  
+  Google&rsquo;s Google Plus Hangout / Gtalk plugin automatically adjust your volume to account for varying noise conditions by default. Sometimes this is an undesired behavior, but there is no button to turn it off. Here is how you do it:
+Linux: Run this in a terminal:
+echo &quot;audio-flags=1&quot; &gt; ~/.config/google-googletalkplugin/options  Windows: Set the registry Key:
+HKEY_CURRENT_USER\&lt;wbr&gt;&lt;/wbr&gt;Software\Google\Google Talk Plugin\options\audio-flags = 1  Mac OSX: Edit the plist:
+~/Library/Preferences/com.&lt;wbr&gt;&lt;/wbr&gt;google.GoogleTalkPluginD.plist  and set &ldquo;Audio Flags&rdquo; = 1
+  
+  <p>
+    <a class="u-clickable" href="../../disabling-microphone-auto-gain-sensitivity-for-google-plus-hangouts/">Read More…</a>
+  </p>
+  
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/audio/" rel="tag">audio</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/google/" rel="tag">google</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/google-plus/" rel="tag">google plus</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
     <a class="Heading-link u-clickable" href="../../my-first-published-puppet-module-bios/" rel="bookmark">My First Published Puppet Module: bios</a>
   </h2>
   
@@ -720,74 +785,6 @@ So, how do you go from kernel module source code =&gt; Debian package?
     
     <li class="Tags-item u-background">
       <a class="Tags-link u-clickable" href="../../categories/packages/" rel="tag">packages</a>
-    </li>
-    
-    
-  </ul>
-  
-  
-  
-  
-</footer>
-
-
-</article>
-<div class="Divider"></div>
-
-<article>
-  <header class="Heading">
-  <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="../../cool-things-to-do-after-installing-openwrt/" rel="bookmark">Cool Things to Do After Installing OpenWrt</a>
-  </h2>
-  
-  <time datetime="2013-01-06T23:16:33Z">
-    6 January, 2013
-  </time>
-  
-</header>
-
-  
-  OpenWrt is the bomb. Think all the power of a full Linux distro on your tiny home router or plug computer.
-Install an External Root Overlay What the heck does that mean? OpenWrt uses an ingenious system were the root filesystem is a super compressed squashfs, merged with a read/write jffs2 filesystem called the overlay. This maximizes your available space on the device. Instead of using part of your remaining flash for read/write, you can use a larger, external device for the overlay.
-  
-  <p>
-    <a class="u-clickable" href="../../cool-things-to-do-after-installing-openwrt/">Read More…</a>
-  </p>
-  
-  
-  
-
-
-
-
-
-
-<footer>
-  
-  
-  <ul class="Tags">
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/openwrt/" rel="tag">openwrt</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/plug-computers/" rel="tag">plug computers</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/pxe/" rel="tag">pxe</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/security/" rel="tag">security</a>
     </li>
     
     
