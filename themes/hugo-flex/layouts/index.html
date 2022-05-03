@@ -29,13 +29,9 @@
   {{ partial "heading.html" . }}
   {{ if site.Params.summaries }}
   {{ .Summary }}
-  {{ if .Truncated }}
   <p>
-    <a class="u-clickable" href="{{ .Permalink }}">Read More…</a>
+    <a class="u-clickable" href="{{ .Permalink }}">Read Full Post…</a>
   </p>
-  {{ end }}
-  {{ else }}
-  {{ .Content }}
   {{ end }}
   {{ partial "tags.html" . }}
 </article>
