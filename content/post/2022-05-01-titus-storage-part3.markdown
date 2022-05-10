@@ -25,7 +25,7 @@ Is there any other way to "inject" a mount?
 
 Remember from [Part 1]({{< ref "2022-05-01-titus-storage-part1" >}}) I decided to give up on the CSI and its limitations.
 Instead we are just going to build some binaries, like `mount.nfs`
-It will just a binary that can run at any time and mount storage in a container, even after it has been created!
+It will just be a binary that can run at any time and mount storage in a container, even after it has been created!
 
 We will run this mount binary outside of the container, where we have privileges.
 When we are done, we want a mount setup _inside_ the container, with all the namespaces correctly set, _all without giving container additional privileges_.

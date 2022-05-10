@@ -99,7 +99,7 @@ Is there any other way to &ldquo;inject&rdquo; a mount?</p>
 <h2 id="how-titus-titus-storage-does-it">How Titus (<code>titus-storage</code>) Does It</h2>
 <p>Remember from <a href="../Advancing-the-State-of-The-Art-of-Container-Storage-With-Titus-Part-1/">Part 1</a> I decided to give up on the CSI and its limitations.
 Instead we are just going to build some binaries, like <code>mount.nfs</code>
-It will just a binary that can run at any time and mount storage in a container, even after it has been created!</p>
+It will just be a binary that can run at any time and mount storage in a container, even after it has been created!</p>
 <p>We will run this mount binary outside of the container, where we have privileges.
 When we are done, we want a mount setup <em>inside</em> the container, with all the namespaces correctly set, <em>all without giving container additional privileges</em>.</p>
 <p>If you would rather read C than my sequence diagrams, just go straight for <a href="https://github.com/Netflix/titus-executor/tree/b2af5aa27437b5c3ec734af51e1d0c3a7e145173/mount">the code</a>.</p>
