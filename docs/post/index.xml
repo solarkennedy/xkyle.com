@@ -8,39 +8,39 @@
     <language>en-us</language>
     <lastBuildDate>Sun, 01 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Advancing the State of The Art With Container Storage on Titus, Part 1</title>
-      <link>/Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-1/</link>
+      <title>Advancing the State of The Art of Container Storage With Titus, Part 1</title>
+      <link>/Advancing-the-State-of-The-Art-of-Container-Storage-With-Titus-Part-1/</link>
       <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
-      <guid>/Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-1/</guid>
+      <guid>/Advancing-the-State-of-The-Art-of-Container-Storage-With-Titus-Part-1/</guid>
       <description>Disclaimer: This blog post is a deep dive in to the topic of Linux container storage, specifically looking at Netflix&amp;rsquo;s Open Source Titus container platform. Netflix happens to be my employer, but nothing in this blog post is secret or talk about anything that isn&amp;rsquo;t already open source.
 Intro (The Problem) Container storage is a complex subject. Getting a hook into the right place to be able to do storage syscalls in Linux for a container requires orchestration help between the storage driver and the container orchestrator.</description>
     </item>
     
     <item>
-      <title>Advancing the State of The Art With Container Storage on Titus, Part 2</title>
-      <link>/Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-2/</link>
+      <title>Advancing the State of The Art of Container Storage with Titus, Part 2</title>
+      <link>/Advancing-the-State-of-The-Art-of-Container-Storage-with-Titus-Part-2/</link>
       <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
-      <guid>/Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-2/</guid>
+      <guid>/Advancing-the-State-of-The-Art-of-Container-Storage-with-Titus-Part-2/</guid>
       <description>Disclaimer: This blog post is a deep dive in to the topic of Linux container storage, specifically looking at Netflix&amp;rsquo;s Open Source Titus container platform. Netflix happens to be my employer, but nothing in this blog post is secret or talk about anything that isn&amp;rsquo;t already open source.
 In Part 1, I discussed the current state of the art of container storage with the CSI+kubernetes, and its limitations.
 In this Part 2, I&amp;rsquo;ll discuss why mounting storage is difficult in containers, especially in user namespaces are in use.</description>
     </item>
     
     <item>
-      <title>Advancing the State of The Art With Container Storage on Titus, Part 3</title>
-      <link>/Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-3/</link>
+      <title>Advancing the State of The Art of Container Storage With Titus, Part 3</title>
+      <link>/Advancing-the-State-of-The-Art-of-Container-Storage-With-Titus-Part-3/</link>
       <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
-      <guid>/Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-3/</guid>
+      <guid>/Advancing-the-State-of-The-Art-of-Container-Storage-With-Titus-Part-3/</guid>
       <description>Disclaimer: This blog post is a deep dive in to the topic of Linux container storage, specifically looking at Netflix&amp;rsquo;s Open Source Titus container platform. Netflix happens to be my employer, but nothing in this blog post is secret or talk about anything that isn&amp;rsquo;t already open source.
 In Part 1, I discussed the current state of the art of container storage with the CSI+kubernetes, and its limitations.
 In Part 2, I discuss the problem of mounting storage inside running containers, especially using user namespaces.</description>
     </item>
     
     <item>
-      <title>Advancing the State of The Art With Container Storage on Titus, Part 4</title>
-      <link>/Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-4/</link>
+      <title>Advancing the State of The Art of Container Storage With Titus, Part 4</title>
+      <link>/Advancing-the-State-of-The-Art-of-Container-Storage-With-Titus-Part-4/</link>
       <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
-      <guid>/Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-4/</guid>
+      <guid>/Advancing-the-State-of-The-Art-of-Container-Storage-With-Titus-Part-4/</guid>
       <description>Disclaimer: This blog post is a deep dive in to the topic of Linux container storage, specifically looking at Netflix&amp;rsquo;s Open Source Titus container platform. Netflix happens to be my employer, but nothing in this blog post is secret or talk about anything that isn&amp;rsquo;t already open source.
 In Part 1, I discussed the current state of the art of container storage with the CSI+kubernetes, and its limitations.
 In Part 2, I the problem of mounting storage inside running containers, especially using user namespaces.</description>

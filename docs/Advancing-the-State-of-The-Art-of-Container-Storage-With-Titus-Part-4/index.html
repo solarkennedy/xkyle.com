@@ -9,10 +9,10 @@
   
   <title>
     
-    Advancing the State of The Art With Container Storage on Titus, Part 4 | xkyle.com
+    Advancing the State of The Art of Container Storage With Titus, Part 4 | xkyle.com
     
   </title>
-  <link rel="canonical" href="../Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-4/">
+  <link rel="canonical" href="../Advancing-the-State-of-The-Art-of-Container-Storage-With-Titus-Part-4/">
   <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -75,7 +75,7 @@
 <article>
   <header class="Heading">
   <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="../Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-4/" rel="bookmark">Advancing the State of The Art With Container Storage on Titus, Part 4</a>
+    <a class="Heading-link u-clickable" href="../Advancing-the-State-of-The-Art-of-Container-Storage-With-Titus-Part-4/" rel="bookmark">Advancing the State of The Art of Container Storage With Titus, Part 4</a>
   </h2>
   
   <time datetime="2022-05-01T00:00:00Z">
@@ -86,9 +86,9 @@
 
   <p><strong>Disclaimer</strong>: This blog post is a deep dive in to the topic of Linux container storage, specifically looking at Netflix&rsquo;s Open Source <a href="https://github.com/Netflix/titus-executor">Titus</a> container platform.
 Netflix happens to be my employer, but nothing in this blog post is secret or talk about anything that isn&rsquo;t already open source.</p>
-<p>In <a href="../Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-1/">Part 1</a>, I discussed the current state of the art of container storage with the CSI+kubernetes, and its limitations.</p>
-<p>In <a href="../Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-2/">Part 2</a>, I the problem of mounting storage inside running containers, especially using user namespaces.</p>
-<p>In <a href="../Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-3/">Part 3</a>, I talked about the mount binaries Titus uses to mount storage in containers at runtime using new Linux mount apis and <code>SCM_RIGHTS</code>.</p>
+<p>In <a href="../Advancing-the-State-of-The-Art-of-Container-Storage-With-Titus-Part-1/">Part 1</a>, I discussed the current state of the art of container storage with the CSI+kubernetes, and its limitations.</p>
+<p>In <a href="../Advancing-the-State-of-The-Art-of-Container-Storage-with-Titus-Part-2/">Part 2</a>, I the problem of mounting storage inside running containers, especially using user namespaces.</p>
+<p>In <a href="../Advancing-the-State-of-The-Art-of-Container-Storage-With-Titus-Part-3/">Part 3</a>, I talked about the mount binaries Titus uses to mount storage in containers at runtime using new Linux mount apis and <code>SCM_RIGHTS</code>.</p>
 <p>In this Part 4, I&rsquo;ll talk about how we are able to do all that, and still ensure that all the storage is ready by the time a user&rsquo;s workload starts up.</p>
 <h2 id="getting-storage-right-before-a-workload-starts">Getting Storage Right, Before a Workload Starts</h2>
 <p>One consequence of building storage primitives that depend on the containers (namespaces) existing, is that it means we have to mount the storage <em>after</em> the PID1 of the container exists.</p>
@@ -166,7 +166,7 @@ It also can enable fine-grained control over process order, the <a href="https:/
 </ul>
 <p>These are hard, but not impossible requirements to meet, and all <a href="https://github.com/Netflix/titus-executor">open source</a>.</p>
 <p>I look forward to continuing to be on the cutting edge of container technology as we aim to meet new challenges.</p>
-<p>[ <a href="../Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-1/">Part 1</a> | <a href="../Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-2/">Part 2</a> | <a href="../Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-3/">Part 3</a> | Part 4 ]</p>
+<p>[ <a href="../Advancing-the-State-of-The-Art-of-Container-Storage-With-Titus-Part-1/">Part 1</a> | <a href="../Advancing-the-State-of-The-Art-of-Container-Storage-with-Titus-Part-2/">Part 2</a> | <a href="../Advancing-the-State-of-The-Art-of-Container-Storage-With-Titus-Part-3/">Part 3</a> | Part 4 ]</p>
 
   
   <script src="../javascripts/mermaid.min.js"></script>
@@ -190,7 +190,7 @@ It also can enable fine-grained control over process order, the <a href="https:/
 
 
 
-  <a href="mailto:kyle@xkyle.com?subject=Comment on: Advancing%20the%20State%20of%20The%20Art%20With%20Container%20Storage%20on%20Titus%2c%20Part%204">Comment via email</a>
+  <a href="mailto:kyle@xkyle.com?subject=Comment on: Advancing%20the%20State%20of%20The%20Art%20of%20Container%20Storage%20With%20Titus%2c%20Part%204">Comment via email</a>
 
 </article>
 
