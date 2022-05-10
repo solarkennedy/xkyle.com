@@ -1,5 +1,5 @@
 ---
-title: "Advancing the State of The Art With Container Storage on Titus, Part 3"
+title: "Advancing the State of The Art of Container Storage With Titus, Part 3"
 date: 2022-05-01T00:00:00-00:00
 ---
 
@@ -18,7 +18,7 @@ We have a running container.
 We want to mount something _in_ it.
 That "something" could be a network filesystem, a block device, a bind mount, overlayfs, tmpfs, who knows.
 Each situation requires a unique solution.
-We know that as soon as we try to switch into the user namespace of the container, we no longer can use the `mount` syscall reliabily.
+We know that as soon as we try to switch into the user namespace of the container, we no longer can use the `mount` syscall reliably.
 Is there any other way to "inject" a mount?
 
 ## How Titus (`titus-storage`) Does It
@@ -150,7 +150,7 @@ sequenceDiagram
 
 This is an example of mounting a traditional block device from the host into a container.
 This is useful in AWS for [EBS](https://aws.amazon.com/ebs/), which shows up as a NVMe device, like `/dev/nvme0n1`.
-Normall this device file is not visible by the container.
+Normally this device file is not visible by the container.
 But with the right tricks, we can configure the mount while we are on the "outside" of the container, where we can still see it.
 
 This demonstrates the [`titus-mount-block-device`](https://github.com/Netflix/titus-executor/blob/d1ce08c6094eea329c3cb94c8bd317e1ad71646a/mount/titus-mount-block-device.c) binary:

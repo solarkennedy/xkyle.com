@@ -1,5 +1,5 @@
 ---
-title: "Advancing the State of The Art With Container Storage on Titus, Part 2"
+title: "Advancing the State of The Art of Container Storage with Titus, Part 2"
 date: 2022-05-01T00:00:00-00:00
 ---
 
@@ -22,7 +22,7 @@ mount: /mnt: permission denied.
 Why?
 You are root, what other credentials do you need?
 
-You have to be a little careful about interpretting the `permission denied` error.
+You have to be a little careful about interpreting the `permission denied` error.
 This error (`EPERM`) is coming from the syscall itself, which you can verify using `strace`:
 
 ```bash-session
