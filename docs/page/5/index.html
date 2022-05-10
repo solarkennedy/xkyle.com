@@ -94,7 +94,7 @@
 
 
   
-  <link rel="stylesheet" href="../../css/base.min.8024376f74e6e2fb66dfb9768383c16d4275793d39e317e929b52533f51faa2e.css" integrity="sha256-gCQ3b3Tm4vtm37l2g4PBbUJ1eT054xfpKbUlM/Ufqi4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/base.min.17b32e90232991b097108d9974565b67796288386646a8dcca99c8923a7b30fe.css" integrity="sha256-F7MukCMpkbCXEI2ZdFZbZ3liiDhmRqjcypnIkjp7MP4=" crossorigin="anonymous">
   
   
 </head>
@@ -146,6 +146,208 @@
 <article>
   <header class="Heading">
   <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../../Managing-Ssh-Known-Hosts-With-Serf/" rel="bookmark">Managing Ssh Known Hosts With-Serf</a>
+  </h2>
+  
+  <time datetime="2014-04-06T05:33:58Z">
+    6 April, 2014
+  </time>
+  
+</header>
+
+  
+  Serf is a very interesting service discovery mechanism. Its dynamic membership and tags capability make it very flexible. Can we use it to generate a centralized ssh_known_hosts file?
+Installing and Configuring Serf I like to use configuration management to manage servers. Here I use a Puppet module to install and configure Serf:
+class { &#39;serf&#39;:  config_hash =&gt; {  &#39;node_name&#39; =&gt; $::fqdn,  &#39;tags&#39; =&gt; {  &#39;sshrsakey&#39; =&gt; $::sshrsakey  },  &#39;discover&#39; =&gt; &#39;cluster&#39;,  } } This particular module uses a hash to translate directly into the config.
+  <p>
+    <a class="u-clickable" href="../../Managing-Ssh-Known-Hosts-With-Serf/">Read Full Post…</a>
+  </p>
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/Puppet/" rel="tag">puppet</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/serf/" rel="tag">serf</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../../What-Happens-When-You-Run-Puppet-Tests/" rel="bookmark">What Happens When You Run Puppet Tests</a>
+  </h2>
+  
+  <time datetime="2014-03-31T05:33:58Z">
+    31 March, 2014
+  </time>
+  
+</header>
+
+  
+  Breaking down bundle exec rake spec What is happening when you run:
+bundle exec rake spec Bundle The first command you are running is bundle. Bundle is kinda like virtualenv for Ruby. It makes sure that you use the same ruby libraries that you, everyone, and puppetmasters use.
+Bundle uses a Gemfile, and searches downwards. As long as you have the Gemfile in the puppet repo, it will work.
+Exec The second part is exec.
+  <p>
+    <a class="u-clickable" href="../../What-Happens-When-You-Run-Puppet-Tests/">Read Full Post…</a>
+  </p>
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/Puppet/" rel="tag">puppet</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../../Writing-Purgable-Puppet-Code/" rel="bookmark">Writing Purgable Puppet Code</a>
+  </h2>
+  
+  <time datetime="2014-01-29T05:33:58Z">
+    29 January, 2014
+  </time>
+  
+</header>
+
+  
+  Whenever possible, I try to write Puppet code that is purgable and &ldquo;Comment Safe&rdquo;. That is not a very good description. What I mean is, Puppet code that removes resources from a system when the corresponding Puppet code is &ldquo;Commented&rdquo; out of a manifest. Lets look at a few examples.
+Example: Managed Sudo Lets say you used this popular sudo module with the following params:
+class { &#39;sudo&#39;:  purge =&gt; true, } Great start.
+  <p>
+    <a class="u-clickable" href="../../Writing-Purgable-Puppet-Code/">Read Full Post…</a>
+  </p>
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/Puppet/" rel="tag">puppet</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../../Introducing-sensu-shell-helper/" rel="bookmark">Introducing sensu-shell-helper!</a>
+  </h2>
+  
+  <time datetime="2013-12-15T09:12:26Z">
+    15 December, 2013
+  </time>
+  
+</header>
+
+  
+  The Problem The barrier to writing Nagios checks is high. I dare say very high. You have to think about check intervals, host groups, service groups, config files, etc.
+But, I know my servers are not behaving, if only there was a way to check them! They run commands for me all the time. In the worst case they fail and no one knows. The best case is that they end up in my cron spam folder&hellip;.
+  <p>
+    <a class="u-clickable" href="../../Introducing-sensu-shell-helper/">Read Full Post…</a>
+  </p>
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/sensu/" rel="tag">Sensu</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
     <a class="Heading-link u-clickable" href="../../Saying-Goodbye-to-Wordpress/" rel="bookmark">Saying Goodbye to Wordpress</a>
   </h2>
   
@@ -159,11 +361,9 @@
   It&rsquo;s Been a Great Ride There is no doubt that Wordpress is a great piece of software. As much as people love to hate on PHP, it runs a lot of the internet.
 I&rsquo;ve been running Wordpress personally and professionally for years. It only gets better. I was only hacked once :)
 Rethinking What I Need Since moving to a Low End Box, my resources have been tight. Even on a tuned system, I can&rsquo;t run much more interesting things than my Nginx+PHPfpm+MySQL.
-  
   <p>
-    <a class="u-clickable" href="../../Saying-Goodbye-to-Wordpress/">Read More…</a>
+    <a class="u-clickable" href="../../Saying-Goodbye-to-Wordpress/">Read Full Post…</a>
   </p>
-  
   
   
 
@@ -221,11 +421,9 @@ Rethinking What I Need Since moving to a Low End Box, my resources have been tig
   
   Intro Sensu is a pretty cool monitoring framework. The authors designed it to be configured by a configuration management system from the beginning. Check out how easily I can make it put a report in my motd with a little bit of python and puppet.
 The Report Script Sensu&rsquo;s API is super easy to work with. For this I will be using the Events endpoint. Here is a quick script to get the events for a host (gist):
-  
   <p>
-    <a class="u-clickable" href="../../sensu-reports-in-your-motd-with-puppet/">Read More…</a>
+    <a class="u-clickable" href="../../sensu-reports-in-your-motd-with-puppet/">Read Full Post…</a>
   </p>
-  
   
   
 
@@ -278,11 +476,9 @@ The Report Script Sensu&rsquo;s API is super easy to work with. For this I will 
   Why So you have a decent amount of things configured in Puppet. Great!
 Are you finding that you have to manually update your DNS entries when things change, like when new hosts or added, or additional services are created?
 Why? Your DNS zone files will forever be out of date, waiting for humans to update them. Just say no. Puppet already knows what the ip addresses and hostnames of your servers, why not take advantage of that existing data?
-  
   <p>
-    <a class="u-clickable" href="../../managing-dns-automatically-with-puppet/">Read More…</a>
+    <a class="u-clickable" href="../../managing-dns-automatically-with-puppet/">Read Full Post…</a>
   </p>
-  
   
   
 
@@ -348,11 +544,9 @@ Why? Your DNS zone files will forever be out of date, waiting for humans to upda
 Talk to most ops people, even at really big places, and they will probably admit to using it.
 Puppet&rsquo;s exported resources takes away some of the pain, but sometimes I think to myself, there must be a better way to do this. Sensu might be that better way.
 Let&rsquo;s try it out, but gosh, I am SO lazy.
-  
   <p>
-    <a class="u-clickable" href="../../getting-started-with-sensu-using-puppet-for-real/">Read More…</a>
+    <a class="u-clickable" href="../../getting-started-with-sensu-using-puppet-for-real/">Read Full Post…</a>
   </p>
-  
   
   
 
@@ -412,11 +606,9 @@ Let&rsquo;s try it out, but gosh, I am SO lazy.
 Low end boxes usually are tight on resources, so Dropbear is often used as a lightweight ssh server. Mosh is mostly tested with openssh-client/server, so I think there are some bugs.
 But it can work, just make sure:
   You are using the same version of mosh on the server as you are on your client. (otherwise they may not support the same command line options)
-  
   <p>
-    <a class="u-clickable" href="../../dropbear-with-mosh-on-a-low-end-server/">Read More…</a>
+    <a class="u-clickable" href="../../dropbear-with-mosh-on-a-low-end-server/">Read Full Post…</a>
   </p>
-  
   
   
 
@@ -475,11 +667,9 @@ But it can work, just make sure:
   Working at Intel has been a great experience. I wish I could have stayed longer, but in the end we decided to part ways.
 During my stay I learned lots of stuff. I would like to boil my experience down to my top Linux commands.
 The List  git: Lots of git. syscfg: Managing bios settings from within Linux. Nice. (Intel platforms) setupbios: More bios settings from within Linux. (Dell platforms) puppet: I actually enjoy manually running puppet.
-  
   <p>
-    <a class="u-clickable" href="../../goodbye-intel-my-favorite-commands/">Read More…</a>
+    <a class="u-clickable" href="../../goodbye-intel-my-favorite-commands/">Read Full Post…</a>
   </p>
-  
   
   
 
@@ -544,244 +734,6 @@ The List  git: Lots of git. syscfg: Managing bios settings from within Linux. Ni
     
     <li class="Tags-item u-background">
       <a class="Tags-link u-clickable" href="../../categories/syscfg/" rel="tag">syscfg</a>
-    </li>
-    
-    
-  </ul>
-  
-  
-  
-  
-</footer>
-
-
-</article>
-<div class="Divider"></div>
-
-<article>
-  <header class="Heading">
-  <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="../../rebuilding-packages-for-arm-or-any-other-arch/" rel="bookmark">Rebuilding Packages for ARM (or any other arch)</a>
-  </h2>
-  
-  <time datetime="2013-06-21T04:46:58Z">
-    21 June, 2013
-  </time>
-  
-</header>
-
-  
-  Sometimes there are packages out there that don&rsquo;t come in your cool new Architecture. In my case it is ARM, and the package I wanted was Puppet. Here is how to rebuild source packages the cool way.
-Add the Puppet repo so you can get fresh source packages cd /tmp # Add the repo, even though it may not have arm binaries... wget http://apt.puppetlabs.com/puppetlabs-release-precise.deb dpkg -i puppetlabs-release-precise.deb # Get dependencies... apt-get update apt-get build-dep puppet facter  Build / Install # Get sources.
-  
-  <p>
-    <a class="u-clickable" href="../../rebuilding-packages-for-arm-or-any-other-arch/">Read More…</a>
-  </p>
-  
-  
-  
-
-
-
-
-
-
-<footer>
-  
-  
-  <ul class="Tags">
-    
-  </ul>
-  
-  
-  
-  
-</footer>
-
-
-</article>
-<div class="Divider"></div>
-
-<article>
-  <header class="Heading">
-  <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="../../an-overdrive-pro-connecting-on-openwrt/" rel="bookmark">An Overdrive Pro Connecting on OpenWrt</a>
-  </h2>
-  
-  <time datetime="2013-05-31T01:45:13Z">
-    31 May, 2013
-  </time>
-  
-</header>
-
-  
-  Have a fancy FreedomPop Overdrive Pro? Want to hook it up to your OpenWrt based router to use as a backup (or primary?) internet connection? Lets do it.
-Plug it into your router via USB. Then run:
-opkg install kmod-usb-net-cdc-ether  Run dmesg and it will report which eth device came up. Mine shows up as &ldquo;eth1&rdquo;. Now make eth1 your &ldquo;wan&rdquo; interface:
-uci set network.wan.ifname=eth1 uci commit reboot  Whoa.
-  
-  <p>
-    <a class="u-clickable" href="../../an-overdrive-pro-connecting-on-openwrt/">Read More…</a>
-  </p>
-  
-  
-  
-
-
-
-
-
-
-<footer>
-  
-  
-  <ul class="Tags">
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/freedompop/" rel="tag">freedompop</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/openwrt/" rel="tag">openwrt</a>
-    </li>
-    
-    
-  </ul>
-  
-  
-  
-  
-</footer>
-
-
-</article>
-<div class="Divider"></div>
-
-<article>
-  <header class="Heading">
-  <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="../../a-team-fortress-2-see-n-say/" rel="bookmark">A Team Fortress 2 See &#39;n Say!</a>
-  </h2>
-  
-  <time datetime="2013-05-18T21:12:21Z">
-    18 May, 2013
-  </time>
-  
-</header>
-
-  
-  Hopefully Valve will offer me a job instead of suing me? :)
-Teardown [gallery ids=&ldquo;991,992,993,994,995,996,999,1001,1002,1000,1003,997&rdquo;] Parts   Many See N&rsquo; Says to destroy (I burned through 3)
-  An Arduino (yes, because I&rsquo;m a lazy noob)
-  Wave shield
-  Some sort of ISP programmer
-  Speaker / Switch / Hot-glue / Resistors / etc
-  How It Works   A user pulls the handle, activating the normally-open switch and powering the arduino
-  
-  <p>
-    <a class="u-clickable" href="../../a-team-fortress-2-see-n-say/">Read More…</a>
-  </p>
-  
-  
-  
-
-
-
-
-
-
-<footer>
-  
-  
-  <ul class="Tags">
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/arduino/" rel="tag">arduino</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/Personal/" rel="tag">Personal</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/See-N-Say/" rel="tag">See N Say</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/Team-Fortress-2/" rel="tag">Team Fortress 2</a>
-    </li>
-    
-    
-  </ul>
-  
-  
-  
-  
-</footer>
-
-
-</article>
-<div class="Divider"></div>
-
-<article>
-  <header class="Heading">
-  <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="../../getting-started-with-spdy-on-nginx/" rel="bookmark">Getting Started With SPDY on Nginx</a>
-  </h2>
-  
-  <time datetime="2013-05-12T21:29:09Z">
-    12 May, 2013
-  </time>
-  
-</header>
-
-  
-  SPDY is a fancy new way to do HTTP, pioneered by Google. Pretty much all modern browsers support it now, except for of course, IE.
-If you have SSL enabled and are using nginx, they you are pretty close to running your sites with SPDY. What how easy it is!
-Step 1: Get a version of nginx with spdy enabled. Ubuntu Get some packages. The Ubuntu packages have &ldquo;&ndash;with-http_spdy_module&rdquo; compiled, so you can install them with no problem:
-  
-  <p>
-    <a class="u-clickable" href="../../getting-started-with-spdy-on-nginx/">Read More…</a>
-  </p>
-  
-  
-  
-
-
-
-
-
-
-<footer>
-  
-  
-  <ul class="Tags">
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/httpd/" rel="tag">httpd</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/nginx/" rel="tag">nginx</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/SPDY/" rel="tag">SPDY</a>
     </li>
     
     

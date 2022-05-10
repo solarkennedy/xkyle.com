@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.94.2" />
+  
+  
+  
+  <title>
+    
+    Advancing the State of The Art With Container Storage on Titus, Part 2 | xkyle.com
+    
+  </title>
+  <link rel="canonical" href="../Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-2/">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="manifest" href="../site.webmanifest">
+  
+  
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="../css/base.min.17b32e90232991b097108d9974565b67796288386646a8dcca99c8923a7b30fe.css" integrity="sha256-F7MukCMpkbCXEI2ZdFZbZ3liiDhmRqjcypnIkjp7MP4=" crossorigin="anonymous">
+  
+  
+</head>
+<body>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable" href="">xkyle.com</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../about/">About</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../post/">Posts</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../categories/">Categories</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../subscribe.html">Subscribe</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../"></a>
+      </li>
+      
+      <li class="Banner-item">
+<form action="https://www.google.com/search" class="Banner-link u-clickable" method="get" name="searchform" target="_blank">
+<input name="sitesearch" type="hidden" value="xkyle.com">
+<input autocomplete="on" class="form-control search2" name="q" placeholder="Search" required="required"  type="text" style="width: 50px;">
+<button class="button" type="submit" style="width:1px;text-align: center;border-right-width: 20px;border-right-style: solid;height: 34px;">🔍</button>
+</form>
+      </li>
+  </div>
+</nav>
+
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-2/" rel="bookmark">Advancing the State of The Art With Container Storage on Titus, Part 2</a>
+  </h2>
+  
+  <time datetime="2022-05-01T00:00:00Z">
+    1 May, 2022
+  </time>
+  
+</header>
+
+  <p><strong>Disclaimer</strong>: This blog post is a deep dive in to the topic of Linux container storage, specifically looking at Netflix&rsquo;s Open Source <a href="https://github.com/Netflix/titus-executor">Titus</a> container platform.
+Netflix happens to be my employer, but nothing in this blog post is secret or talk about anything that isn&rsquo;t already open source.</p>
+<p>In <a href="../Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-1/">Part 1</a>, I discussed the current state of the art of container storage with the CSI+kubernetes, and its limitations.</p>
+<p>In this Part 2, I&rsquo;ll discuss why mounting storage is difficult in containers, especially in <a href="https://docs.docker.com/engine/security/userns-remap/">user namespaces</a> are in use.</p>
+<h2 id="why-cant-one-just-mount-in-a-container">Why can&rsquo;t one just <code>mount</code> in a container?</h2>
+<p>If you try to <code>mount</code> in a docker container, with default settings, you will get permission denied:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span># docker run ubuntu mount -t tmpfs none /mnt
+</span></span><span style="display:flex;"><span>mount: /mnt: permission denied.
+</span></span></code></pre></div><p>Why?
+You are root, what other credentials do you need?</p>
+<p>You have to be a little careful about interpretting the <code>permission denied</code> error.
+This error (<code>EPERM</code>) is coming from the syscall itself, which you can verify using <code>strace</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>mount(&#34;none&#34;, &#34;/mnt&#34;, &#34;tmpfs&#34;, 0, NULL) = -1 EPERM (Operation not permitted)
+</span></span></code></pre></div><p>This first <code>EPERM</code> is due to <a href="https://docs.docker.com/engine/security/seccomp/">seccomp</a>.
+Seccomp is a Linux kernel feature that allows one to set a policy of which syscalls are allowed to be called.
+The <a href="https://en.wikipedia.org/wiki/Seccomp">seccomp mechanism</a> is fine-grained, and the default policy that docker applies <a href="https://github.com/moby/moby/blob/085c6a98d54720e70b28354ccec6da9b1b9e7fcf/profiles/seccomp/default.json#L564-L582">only allows <code>mount()</code> syscalls if <code>CAP_SYS_ADMIN</code> is enabled</a>.</p>
+<p>So let&rsquo;s enable it <code>SYS_ADMIN</code>, which should allow us to mount given that default policy?:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span># docker run --cap-add SYS_ADMIN ubuntu mount -t tmpfs none /mnt
+</span></span><span style="display:flex;"><span>mount: /mnt: cannot mount none read-only.
+</span></span></code></pre></div><p>Still not working?
+With strace we can reveal we get a different error, <code>EACCES</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>mount(&#34;none&#34;, &#34;/mnt&#34;, &#34;tmpfs&#34;, MS_RDONLY, NULL) = -1 EACCES (Permission denied)
+</span></span></code></pre></div><p>This <code>EACCES</code> is coming from <a href="https://docs.docker.com/engine/security/apparmor/">AppArmor</a>.
+AppArmor is yet another Linux security mechanism to do fine-grained syscall (as well as other things) access control.
+The <a href="https://github.com/moby/moby/blob/085c6a98d54720e70b28354ccec6da9b1b9e7fcf/profiles/apparmor/template.go#L44">default docker AppArmor profile</a> denies <code>mount</code>.</p>
+<p>So let&rsquo;s disable AppArmor and keep <code>SYS_ADMIN</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span># docker run  --cap-add SYS_ADMIN --security-opt apparmor<span style="color:#f92672">=</span>unconfined ubuntu  mount  --verbose -t tmpfs none /mnt
+</span></span><span style="display:flex;"><span>mount: none mounted on /mnt.
+</span></span><span style="display:flex;"><span>#
+</span></span></code></pre></div><p>No news is good news here.
+The mount worked!</p>
+<p>What about a block device?:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span># docker run -ti --security-opt apparmor:unconfined --cap-add SYS_ADMIN ubuntu bash -c <span style="color:#e6db74">&#34;dd if=/dev/zero of=/tmp/loop.img bs=1024k count=100 &amp;&amp; mkfs.ext3 -F /tmp/loop.img &amp;&amp; mount /tmp/loop.img /mnt/ -o loop&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>100+0 records in
+</span></span><span style="display:flex;"><span>100+0 records out
+</span></span><span style="display:flex;"><span>104857600 bytes (105 MB, 100 MiB) copied, 0.132879 s, 789 MB/s
+</span></span><span style="display:flex;"><span>mke2fs 1.46.5 (30-Dec-2021)
+</span></span><span style="display:flex;"><span>Discarding device blocks: done                            
+</span></span><span style="display:flex;"><span>Creating filesystem with 25600 4k blocks and 25600 inodes
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>Allocating group tables: done                            
+</span></span><span style="display:flex;"><span>Writing inode tables: done                            
+</span></span><span style="display:flex;"><span>Creating journal (1024 blocks): done
+</span></span><span style="display:flex;"><span>Writing superblocks and filesystem accounting information: done
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>mount: /mnt/: mount failed: Operation not permitted.
+</span></span></code></pre></div><p>What now though? I thought we had all the permissions setup to mount?</p>
+<p>In this case, using strace again reveals that this time the permission has to do with <code>/dev/</code> files:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>newfstatat(AT_FDCWD, &#34;/dev/loop-control&#34;, 0x7ffe59ededb0, 0) = -1 ENOENT (No such file or direc
+</span></span><span style="display:flex;"><span>tory)
+</span></span><span style="display:flex;"><span>newfstatat(AT_FDCWD, &#34;/dev/loop&#34;, 0x7ffe59edefd0, 0) = -1 ENOENT (No such file or directory)
+</span></span><span style="display:flex;"><span>newfstatat(AT_FDCWD, &#34;/dev/loop0&#34;, 0x7ffe59eddf40, 0) = -1 ENOENT (No such file or directory)
+</span></span><span style="display:flex;"><span>newfstatat(AT_FDCWD, &#34;/dev/loop1&#34;, 0x7ffe59eddf40, 0) = -1 ENOENT (No such file or directory)
+</span></span><span style="display:flex;"><span>newfstatat(AT_FDCWD, &#34;/dev/loop2&#34;, 0x7ffe59eddf40, 0) = -1 ENOENT (No such file or directory)
+</span></span><span style="display:flex;"><span>newfstatat(AT_FDCWD, &#34;/dev/loop3&#34;, 0x7ffe59eddf40, 0) = -1 ENOENT (No such file or directory)
+</span></span><span style="display:flex;"><span>newfstatat(AT_FDCWD, &#34;/dev/loop4&#34;, 0x7ffe59eddf40, 0) = -1 ENOENT (No such file or directory)
+</span></span><span style="display:flex;"><span>newfstatat(AT_FDCWD, &#34;/dev/loop5&#34;, 0x7ffe59eddf40, 0) = -1 ENOENT (No such file or directory)
+</span></span><span style="display:flex;"><span>newfstatat(AT_FDCWD, &#34;/dev/loop6&#34;, 0x7ffe59eddf40, 0) = -1 ENOENT (No such file or directory)
+</span></span><span style="display:flex;"><span>newfstatat(AT_FDCWD, &#34;/dev/loop7&#34;, 0x7ffe59eddf40, 0) = -1 ENOENT (No such file or directory)
+</span></span><span style="display:flex;"><span>openat(AT_FDCWD, &#34;/dev/&#34;, O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+</span></span></code></pre></div><p>Any mount requiring something in <code>/dev/</code> is going to need docker&rsquo;s <code>--privileged=true</code>.
+And you can&rsquo;t just add <code>--privileged</code> to <a href="https://github.com/moby/moby/issues/21984"><code>docker exec</code></a>, it must be applied to the container at start time.</p>
+<p><code>--privileged</code>? <code>CAP_SYSADMIN</code>? <code>--security-opt apparmor=unconfined</code>?
+Seems like a lot of security we have to disable to make it work though.
+But this is the opposite of what I want. I want <em>more</em> security, not less.
+This is even more complex when we throw in Linux User Namespaces.</p>
+<h2 id="user-namespaces">User Namespaces</h2>
+<p><a href="http://man7.org/linux/man-pages/man7/user_namespaces.7.html">Linux user namespaces</a> are a way mapping a UID/GIDs in a container.
+For securing containers, <a href="https://netflixtechblog.com/evolving-container-security-with-linux-user-namespaces-afbe3308c082">Titus uses user namespaces</a> to ensure the <code>root</code> in the container is <strong>not</strong> root on the host.</p>
+<p>At the time of this writing, user namespaces are <em>not</em> enabled by default on <a href="https://docs.docker.com/engine/security/rootless/">Docker</a> (sometimes called &ldquo;rootless docker&rdquo;) or <a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux_atomic_host/7/html-single/managing_containers/index#set_up_for_rootless_containers">Podman</a>.</p>
+<p>But, if rootless mode is setup in docker, can we <em>still</em> run mount?:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>&lt;docker-rootless&gt; $ docker run --cap-add SYS_ADMIN ubuntu mount --verbose -t tmpfs none /mnt
+</span></span></code></pre></div><p>On modern kernels this works!
+Interestingly, we don&rsquo;t even need to disable AppArmor or Seccomp, as they are not enabled by default in rootless mode&hellip; :(
+I&rsquo;m not exactly sure why this is the case.
+Titus is able to have (granted, custom) Seccomp and Apparmor policies in place on containers <em>and</em> have user namespaces enabled.</p>
+<p>But user namespaces only allow certain filesystems to be mounted.
+Per the <a href="https://man7.org/linux/man-pages/man7/user_namespaces.7.html">man page</a>:</p>
+<blockquote>
+<p>Holding <code>CAP_SYS_ADMIN</code> within the user namespace that owns a
+process&rsquo;s mount namespace allows that process to create bind
+mounts and mount the following types of filesystems:</p>
+<ul>
+<li>/proc (since Linux 3.8)</li>
+<li>/sys (since Linux 3.8)</li>
+<li>devpts (since Linux 3.9)</li>
+<li>tmpfs(5) (since Linux 3.9)</li>
+<li>ramfs (since Linux 3.9)</li>
+<li>mqueue (since Linux 3.9)</li>
+<li>bpf (since Linux 4.4)</li>
+<li>overlayfs (since Linux 5.11)</li>
+</ul>
+</blockquote>
+<p>This is not good enough for me.
+I would like to be able to mount other filesystems than those.</p>
+<p>But what if we are OK with running a command as <code>root</code> (<em>real</em> root) outside of the container to mount storage <em>inside</em> container.
+Why can&rsquo;t we just &ldquo;run <code>mount</code>&rdquo; for a container, even if it is rootless or has no additional privileges?</p>
+<h2 id="injecting-mounts-in-containers">Injecting Mounts in Containers</h2>
+<p>You <em>can</em> run <code>mount</code> on behalf of a container!</p>
+<p>What makes the difference between mounting something inside or outside a container?
+How does Linux &ldquo;know&rdquo; that something is mounted in a container or not?
+The answer: &ldquo;The Linux mount namespace&rdquo;.</p>
+<p>If you can enter the mount namespace first, <em>then</em> <code>mount</code>, the mount will &ldquo;be&rdquo; in the container&rsquo;s mount namespace:</p>
+<table>
+<tr><td> Outside the container </td> <td> Inside the container </td></tr>
+<tr><td>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span># P<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>docker inspect -f <span style="color:#e6db74">&#39;{{.State.Pid}}&#39;</span> bdfaa6ac3407<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span># nsenter -t $P -m mount -t tmpfs tmpfs /mnt
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div></td><td>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span># docker run -ti ubuntu
+</span></span><span style="display:flex;"><span>root@bdfaa6ac3407:/# grep mnt /proc/mounts 
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>root@bdfaa6ac3407:/# grep mnt /proc/mounts 
+</span></span><span style="display:flex;"><span>tmpfs /mnt tmpfs rw,relatime,inode64 0 0
+</span></span><span style="display:flex;"><span>root@bdfaa6ac3407:/# 
+</span></span></code></pre></div></td></tr>
+</table>
+<p>While this looks like a good lead, it will <em>not</em> work for block devices in <code>/dev</code>.
+Why?
+Because as soon as you change into the container&rsquo;s mount namespace, you no longer can see <code>/dev</code>.</p>
+<p>Even if we could see dev files, or fuse, or network filesystems, the <code>mount</code> wouldn&rsquo;t work if we had the <strong>user namespaces</strong> on too.
+Why? Because just because you are (fake) root in a container and have capabilities, they are still not enough to allow a mount (with the exception of those filesystems listed above).</p>
+<h2 id="the-problemsecurity-of-user-namespaces-namespaced-capabilities">The Problem/Security of User Namespaces: Namespaced Capabilities</h2>
+<p>Let&rsquo;s take docker out of the picture and just use raw Linux namespaces.
+They are simpler to use (even if less familiar) and demonstrate things easier.</p>
+<p>Let&rsquo;s just get root:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>$ whoami
+</span></span><span style="display:flex;"><span>kyle
+</span></span><span style="display:flex;"><span>$ unshare --user --fork --map-root-user 
+</span></span><span style="display:flex;"><span># whoami
+</span></span><span style="display:flex;"><span>root
+</span></span><span style="display:flex;"><span># capsh --print
+</span></span><span style="display:flex;"><span>Current: =ep
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><p>Use user namespaces, it looks like I&rsquo;m root in my micro-container, and have full capabilities!
+(<code>=ep</code> means all capabilities)</p>
+<p>Can I mount block devices <strong>now</strong>???</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>unshare --user --fork --map-root-user mount /dev/sda1 /mnt/
+</span></span><span style="display:flex;"><span>mount: /mnt: permission denied.
+</span></span></code></pre></div><p>No.
+&ldquo;Of course&rdquo; I cannot.
+This is not a limitation of docker (not in use), has nothing to do with seccomp, apparmor, or even file permissions!</p>
+<p><code>unshare</code> isn&rsquo;t <code>sudo</code>.
+In fact it is kinda the opposite: I&rsquo;m in my own &ldquo;container&rdquo;, but the only thing I&rsquo;ve containerized is UIDs.
+You can even <code>chmod 777 /dev/sda1</code> and it won&rsquo;t make a difference!</p>
+<p>But could we pull the same <code>nsenter</code> trick on a running container?</p>
+<table>
+<tr><td> Outside the container </td> <td> Inside the container </td></tr>
+<tr><td>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span># nsenter -t <span style="color:#ae81ff">320704</span> --mount --user mount --verbose /dev/sda1 /tmp
+</span></span><span style="display:flex;"><span>mount: /tmp: permission denied.
+</span></span><span style="display:flex;"><span># nsenter -t <span style="color:#ae81ff">320704</span> --mount mount --verbose /dev/sda1 /tmp
+</span></span><span style="display:flex;"><span>mount: /dev/sda1 mounted on /tmp.
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div></td><td>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>$ unshare --user --fork --map-root-user bash
+</span></span><span style="display:flex;"><span># echo $$
+</span></span><span style="display:flex;"><span>320704
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span># grep /tmp /proc/mounts 
+</span></span><span style="display:flex;"><span>/dev/sda1 /tmp vfat rw,relatime,fmask=0077,dmask=0077,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro 0 0
+</span></span><span style="display:flex;"><span># ls -la /tmp
+</span></span><span style="display:flex;"><span>ls: cannot open directory &#39;/tmp&#39;: Permission denied
+</span></span></code></pre></div></td></tr>
+</table>
+<p>It didn&rsquo;t work when we tried to <code>nsenter</code> <em>with</em> user namespaces.
+It <em>did</em> work when we omitted user namespaces, but then the container couldn&rsquo;t <code>ls</code> it!
+Why couldn&rsquo;t we &ldquo;just&rdquo; mount it on the left hand side with <code>--user</code>?
+We have real root on the left hand side, why didn&rsquo;t it work?</p>
+<h3 id="user-namespaces-capabilities-and-filesystems">User namespaces, Capabilities, and filesystems</h3>
+<p>The real reason that mounting in user namespaced containers works sometimes, but not others, is that <em>only certain filesystems are <code>ns_capable</code></em>.</p>
+<p>For example, only starting in kernel version <a href="https://kernelnewbies.org/Linux_5.11?highlight=%28overlayfs%29#Unprivileged_Overlayfs_mounts">5.11</a> was overlayfs audited and blessed to be mounted in an unprivileged (user namespaced) container.</p>
+<p>Still, we are talking only a <a href="https://elixir.bootlin.com/linux/latest/A/ident/FS_USERNS_MOUNT">handful</a> of filesystems that have this capability.</p>
+<p>Is there <em>any</em> way to mount storage in an unprivileged container???
+Yes, with some tricks.</p>
+<h2 id="next">Next</h2>
+<p>In <a href="../Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-3/">Part 3</a> I&rsquo;ll discuss how Titus (<code>titus-storage</code>) is able to separate the attaching of storage from the container lifecycle (how to attach storage after a container is running), all while respecting all four linux namespaces, <em>and</em> while keeping the container completely unprivileged.</p>
+<p>[ <a href="../Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-1/">Part 1</a> | Part 2 | <a href="../Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-3/">Part 3</a> | <a href="../Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-4/">Part 4</a> ]</p>
+
+  
+
+  
+
+
+
+
+
+
+
+  <a href="mailto:kyle@xkyle.com?subject=Comment on: Advancing%20the%20State%20of%20The%20Art%20With%20Container%20Storage%20on%20Titus%2c%20Part%202">Comment via email</a>
+
+</article>
+
+
+      </div>
+    </div>
+  </main>
+  
+
+</body>
+</html>

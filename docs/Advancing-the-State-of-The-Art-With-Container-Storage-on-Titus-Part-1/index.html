@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.94.2" />
+  
+  
+  
+  <title>
+    
+    Advancing the State of The Art With Container Storage on Titus, Part 1 | xkyle.com
+    
+  </title>
+  <link rel="canonical" href="../Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-1/">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="manifest" href="../site.webmanifest">
+  
+  
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="../css/base.min.17b32e90232991b097108d9974565b67796288386646a8dcca99c8923a7b30fe.css" integrity="sha256-F7MukCMpkbCXEI2ZdFZbZ3liiDhmRqjcypnIkjp7MP4=" crossorigin="anonymous">
+  
+  
+</head>
+<body>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable" href="">xkyle.com</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../about/">About</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../post/">Posts</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../categories/">Categories</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../subscribe.html">Subscribe</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../"></a>
+      </li>
+      
+      <li class="Banner-item">
+<form action="https://www.google.com/search" class="Banner-link u-clickable" method="get" name="searchform" target="_blank">
+<input name="sitesearch" type="hidden" value="xkyle.com">
+<input autocomplete="on" class="form-control search2" name="q" placeholder="Search" required="required"  type="text" style="width: 50px;">
+<button class="button" type="submit" style="width:1px;text-align: center;border-right-width: 20px;border-right-style: solid;height: 34px;">🔍</button>
+</form>
+      </li>
+  </div>
+</nav>
+
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-1/" rel="bookmark">Advancing the State of The Art With Container Storage on Titus, Part 1</a>
+  </h2>
+  
+  <time datetime="2022-05-01T00:00:00Z">
+    1 May, 2022
+  </time>
+  
+</header>
+
+  <p><strong>Disclaimer</strong>: This blog post is a deep dive in to the topic of Linux container storage, specifically looking at Netflix&rsquo;s Open Source <a href="https://github.com/Netflix/titus-executor">Titus</a> container platform.
+Netflix happens to be my employer, but nothing in this blog post is secret or talk about anything that isn&rsquo;t already open source.</p>
+<h2 id="intro-the-problem">Intro (The Problem)</h2>
+<p>Container storage is a complex subject.
+Getting a hook into the right place to be able to do storage syscalls in Linux for a container requires orchestration help between the storage driver and the container
+orchestrator.
+Starting in 2019, the industry standard way to do it is with the <a href="https://github.com/container-storage-interface/spec/blob/master/spec.md"><em>Container Storage Interface</em></a> (CSI).</p>
+<p>As comprehensive as the CSI is, it has some limitations:</p>
+<ul>
+<li>
+<p>What about Linux namepaces? Titus makes use of Linux user namespaces, and the CSI doesn&rsquo;t make provisions for how to use user (nor network, pid, or mount!) namespaces.</p>
+</li>
+<li>
+<p>What if you don&rsquo;t know what your storage is at container start time?
+It would be nice if we could decouple exactly what storage is required for a container away from the container orchestrator.</p>
+</li>
+<li>
+<p>Wouldn&rsquo;t it be cool if you could attach storage after the fact?
+What if we need to attach storage full of debugging tools?
+Or on-demand for doing a backup of a database?
+Or a dynamic media encoder that computes storage artifacts at runtime?</p>
+</li>
+</ul>
+<h2 id="background-linux-namespaces-and-storage">Background: Linux Namespaces and Storage</h2>
+<p>When it comes to storage and containers there are four Linux namespaces we need to consider:</p>
+<ol>
+<li>
+<p><strong>Mount Namespace</strong>
+(<a href="https://man7.org/linux/man-pages/man7/mount_namespaces.7.html"><code>NEWNS</code></a>):
+The mount namespace is the most obvious namespace to look at when it comes to storage.
+You can see the mounts of your local namespace with <code>cat /proc/mounts</code>.
+If we do anything with container storage, it would be nice if the mount only showed up in the container&rsquo;s namespace, and didn&rsquo;t fill up the host&rsquo;s.</p>
+</li>
+<li>
+<p><strong>User Namespace</strong>
+(<a href="https://man7.org/linux/man-pages/man7/user_namespaces.7.html"><code>NEWUSER</code></a>):
+Filesystems have file permissions.
+If a Linux container is using a special User namespace, then the filesystem mount will need to respect that.
+If the mount does not happen within the user namespace, the UIDs will be wrong, access checks will be different and wrong.
+This is especially important with shared network filesystems where there might be more than one container mounting it at a time.</p>
+</li>
+<li>
+<p><strong>PID Namespace</strong>
+(<a href="https://man7.org/linux/man-pages/man7/pid_namespaces.7.html"><code>NEWPID</code></a>):
+Some filesystems (mostly FUSE) come with userspace components with real PIDs and consume real CPU and ram.
+For each mount, these userspace components should get launched in the container&rsquo;s PID namespace so that they are correctly accounted for, and can be seen when the container runs <code>ps</code>.
+Otherwise they will clutter up the host pid namespace and may not get reaped when the container dies.</p>
+</li>
+<li>
+<p><strong>Network Namespaces</strong>
+(<a href="https://man7.org/linux/man-pages/man7/network_namespaces.7.html"><code>NEWNET</code></a>):
+The network namespace contains the ip addresses, routes, and bandwidth limits (stock k8s doesn&rsquo;t have bandwith limiting, but Titus does) for the container.
+For storage, this network namespace is important for any network-attached storage, like NFS, which may need to resolve hostnames or do network traffic to do its job.</p>
+</li>
+</ol>
+<h2 id="how-kubernetes-via-the-csi-mounts-storage">How Kubernetes (via the CSI) Mounts Storage</h2>
+<p>There are many <a href="https://medium.com/velotio-perspectives/kubernetes-csi-in-action-explained-with-features-and-use-cases-4f966b910774">steps</a> involved to go from zero to a running Kubernetes Pod with a volume.</p>
+<p>For this blog post I want to focus on one of the last steps,
+<a href="https://github.com/container-storage-interface/spec/blob/master/spec.md#nodepublishvolume"><em>PublishVolume</em></a>, where the CSI driver actually mounts storage. The normal location would be
+something like:</p>
+<pre tabindex="0"><code>/var/lib/kubelet/pods/&lt;pod-uuid&gt;/volumes/&lt;/pod-uuid&gt;kubernetes.io~csi/&lt;pvc-name&gt;/mount`&lt;/pvc-name&gt;
+</code></pre><p>The CSI driver creates that directory, then actually mounts the requested storage there, &ldquo;outside&rdquo; of the container, on the host.
+Next, kubelet will <strong>bind-mount</strong> that directory into those new containers as they are created for the pod.</p>
+<p>Already with this design we are locked into the fact that the storage must be bind mounted at the time of the container creation.
+We&rsquo;ll never be able to attach storage via the CSI <em>after</em> a pod is launched with this design.</p>
+<p>The next major drawback has to do with all those Linux user namespaces that we talked about.
+The CSI spec says:</p>
+<blockquote>
+<p>A Plugin SHOULD NOT assume that it is in the same Linux namespaces as the Plugin Supervisor.</p>
+</blockquote>
+<p>In some sense that could be good!
+Ideally the CSI storage plugin would simply be in all the container&rsquo;s namespaces.
+In practice, container namespaces are often not used with CSI/k8s:</p>
+<ul>
+<li>
+<p><strong>Mount Namespace?</strong>:
+CSI plugins end up running in the host mount namespace, and the kubelet bind-mounts that folder into the container&rsquo;s mount namespace.
+The mounts end up in both namespaces.</p>
+</li>
+<li>
+<p><strong>User Namespace?</strong>:
+Kubernetes/Kubelet <a href="https://github.com/kubernetes/enhancements/pull/2101">currently</a> does not support user namespaces.
+UID 0 in the container == UID 0 on the host.</p>
+</li>
+<li>
+<p><strong>PID Namespace?</strong>:
+Fuse-based CSI drivers usually use a daemon-set (example: <a href="https://github.com/kubernetes-sigs/blob-csi-driver">Azure Blob CSI</a>) to run processes.
+They don&rsquo;t live in the container&rsquo;s PID namespace.
+A container using this CSI cannot see the fuse driver with <code>ps</code>, and its CPU/RAM get allocated to the daemon-set, not the container actually using the storage.</p>
+</li>
+<li>
+<p><strong>Network Namespace?</strong>:
+All the CSI plugins I&rsquo;ve seen run on the host&rsquo;s network namespace.
+Any storage must be reachable by the <strong>host&rsquo;s</strong> firewall and <strong>host&rsquo;s</strong> ip address.
+Any dns resolution for the storage is done on the host as well.</p>
+</li>
+</ul>
+<h2 id="next">Next</h2>
+<p>Can we do better than the CSI implementations of storage?
+Yes.</p>
+<p>In <a href="../Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-2/">Part 2</a> I&rsquo;ll discuss how Titus (<code>titus-storage</code>) is able to separate the attaching of storage from the container lifecycle (how to attach storage after a container is running), all while respecting all four Linux namespaces, <em>and</em> while keeping the container completely unprivileged.</p>
+<p>[ Part 1 | <a href="../Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-2/">Part 2</a> | <a href="../Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-3/">Part 3</a> | <a href="../Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-4/">Part 4</a> ]</p>
+
+  
+
+  
+
+
+
+
+
+
+
+  <a href="mailto:kyle@xkyle.com?subject=Comment on: Advancing%20the%20State%20of%20The%20Art%20With%20Container%20Storage%20on%20Titus%2c%20Part%201">Comment via email</a>
+
+</article>
+
+
+      </div>
+    </div>
+  </main>
+  
+
+</body>
+</html>
