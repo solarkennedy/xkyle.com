@@ -9,10 +9,10 @@
   
   <title>
     
-    Advancing the State of The Art With Container Storage on Titus, Part 2 | xkyle.com
+    Advancing the State of The Art of Container Storage with Titus, Part 2 | xkyle.com
     
   </title>
-  <link rel="canonical" href="../Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-2/">
+  <link rel="canonical" href="../Advancing-the-State-of-The-Art-of-Container-Storage-with-Titus-Part-2/">
   <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -75,7 +75,7 @@
 <article>
   <header class="Heading">
   <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="../Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-2/" rel="bookmark">Advancing the State of The Art With Container Storage on Titus, Part 2</a>
+    <a class="Heading-link u-clickable" href="../Advancing-the-State-of-The-Art-of-Container-Storage-with-Titus-Part-2/" rel="bookmark">Advancing the State of The Art of Container Storage with Titus, Part 2</a>
   </h2>
   
   <time datetime="2022-05-01T00:00:00Z">
@@ -86,7 +86,7 @@
 
   <p><strong>Disclaimer</strong>: This blog post is a deep dive in to the topic of Linux container storage, specifically looking at Netflix&rsquo;s Open Source <a href="https://github.com/Netflix/titus-executor">Titus</a> container platform.
 Netflix happens to be my employer, but nothing in this blog post is secret or talk about anything that isn&rsquo;t already open source.</p>
-<p>In <a href="../Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-1/">Part 1</a>, I discussed the current state of the art of container storage with the CSI+kubernetes, and its limitations.</p>
+<p>In <a href="../Advancing-the-State-of-The-Art-of-Container-Storage-With-Titus-Part-1/">Part 1</a>, I discussed the current state of the art of container storage with the CSI+kubernetes, and its limitations.</p>
 <p>In this Part 2, I&rsquo;ll discuss why mounting storage is difficult in containers, especially in <a href="https://docs.docker.com/engine/security/userns-remap/">user namespaces</a> are in use.</p>
 <h2 id="why-cant-one-just-mount-in-a-container">Why can&rsquo;t one just <code>mount</code> in a container?</h2>
 <p>If you try to <code>mount</code> in a docker container, with default settings, you will get permission denied:</p>
@@ -94,7 +94,7 @@ Netflix happens to be my employer, but nothing in this blog post is secret or ta
 </span></span><span style="display:flex;"><span>mount: /mnt: permission denied.
 </span></span></code></pre></div><p>Why?
 You are root, what other credentials do you need?</p>
-<p>You have to be a little careful about interpretting the <code>permission denied</code> error.
+<p>You have to be a little careful about interpreting the <code>permission denied</code> error.
 This error (<code>EPERM</code>) is coming from the syscall itself, which you can verify using <code>strace</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>mount(&#34;none&#34;, &#34;/mnt&#34;, &#34;tmpfs&#34;, 0, NULL) = -1 EPERM (Operation not permitted)
 </span></span></code></pre></div><p>This first <code>EPERM</code> is due to <a href="https://docs.docker.com/engine/security/seccomp/">seccomp</a>.
@@ -276,8 +276,8 @@ We have real root on the left hand side, why didn&rsquo;t it work?</p>
 <p>Is there <em>any</em> way to mount storage in an unprivileged container???
 Yes, with some tricks.</p>
 <h2 id="next">Next</h2>
-<p>In <a href="../Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-3/">Part 3</a> I&rsquo;ll discuss how Titus (<code>titus-storage</code>) is able to separate the attaching of storage from the container lifecycle (how to attach storage after a container is running), all while respecting all four linux namespaces, <em>and</em> while keeping the container completely unprivileged.</p>
-<p>[ <a href="../Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-1/">Part 1</a> | Part 2 | <a href="../Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-3/">Part 3</a> | <a href="../Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-4/">Part 4</a> ]</p>
+<p>In <a href="../Advancing-the-State-of-The-Art-of-Container-Storage-With-Titus-Part-3/">Part 3</a> I&rsquo;ll discuss how Titus (<code>titus-storage</code>) is able to separate the attaching of storage from the container lifecycle (how to attach storage after a container is running), all while respecting all four linux namespaces, <em>and</em> while keeping the container completely unprivileged.</p>
+<p>[ <a href="../Advancing-the-State-of-The-Art-of-Container-Storage-With-Titus-Part-1/">Part 1</a> | Part 2 | <a href="../Advancing-the-State-of-The-Art-of-Container-Storage-With-Titus-Part-3/">Part 3</a> | <a href="../Advancing-the-State-of-The-Art-of-Container-Storage-With-Titus-Part-4/">Part 4</a> ]</p>
 
   
 
@@ -289,7 +289,7 @@ Yes, with some tricks.</p>
 
 
 
-  <a href="mailto:kyle@xkyle.com?subject=Comment on: Advancing%20the%20State%20of%20The%20Art%20With%20Container%20Storage%20on%20Titus%2c%20Part%202">Comment via email</a>
+  <a href="mailto:kyle@xkyle.com?subject=Comment on: Advancing%20the%20State%20of%20The%20Art%20of%20Container%20Storage%20with%20Titus%2c%20Part%202">Comment via email</a>
 
 </article>
 

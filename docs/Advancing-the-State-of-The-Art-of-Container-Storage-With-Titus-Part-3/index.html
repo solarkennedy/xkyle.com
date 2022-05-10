@@ -9,10 +9,10 @@
   
   <title>
     
-    Advancing the State of The Art With Container Storage on Titus, Part 3 | xkyle.com
+    Advancing the State of The Art of Container Storage With Titus, Part 3 | xkyle.com
     
   </title>
-  <link rel="canonical" href="../Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-3/">
+  <link rel="canonical" href="../Advancing-the-State-of-The-Art-of-Container-Storage-With-Titus-Part-3/">
   <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -75,7 +75,7 @@
 <article>
   <header class="Heading">
   <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="../Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-3/" rel="bookmark">Advancing the State of The Art With Container Storage on Titus, Part 3</a>
+    <a class="Heading-link u-clickable" href="../Advancing-the-State-of-The-Art-of-Container-Storage-With-Titus-Part-3/" rel="bookmark">Advancing the State of The Art of Container Storage With Titus, Part 3</a>
   </h2>
   
   <time datetime="2022-05-01T00:00:00Z">
@@ -86,18 +86,18 @@
 
   <p><strong>Disclaimer</strong>: This blog post is a deep dive in to the topic of Linux container storage, specifically looking at Netflix&rsquo;s Open Source <a href="https://github.com/Netflix/titus-executor">Titus</a> container platform.
 Netflix happens to be my employer, but nothing in this blog post is secret or talk about anything that isn&rsquo;t already open source.</p>
-<p>In <a href="../Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-1/">Part 1</a>, I discussed the current state of the art of container storage with the CSI+kubernetes, and its limitations.</p>
-<p>In <a href="../Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-2/">Part 2</a>, I discuss the problem of mounting storage inside running containers, especially using user namespaces.</p>
+<p>In <a href="../Advancing-the-State-of-The-Art-of-Container-Storage-With-Titus-Part-1/">Part 1</a>, I discussed the current state of the art of container storage with the CSI+kubernetes, and its limitations.</p>
+<p>In <a href="../Advancing-the-State-of-The-Art-of-Container-Storage-with-Titus-Part-2/">Part 2</a>, I discuss the problem of mounting storage inside running containers, especially using user namespaces.</p>
 <p>In this Part 3, I&rsquo;ll discuss how Titus (<code>titus-storage</code>) is able to separate the attaching of storage from the container lifecycle (how to attach storage after a container is running), all while respecting Linux namespaces, <em>and</em> while keeping the container completely unprivileged <em>and</em> in its user namespace.</p>
 <h2 id="what-we-are-up-against">What We Are Up Against</h2>
 <p>We have a running container.
 We want to mount something <em>in</em> it.
 That &ldquo;something&rdquo; could be a network filesystem, a block device, a bind mount, overlayfs, tmpfs, who knows.
 Each situation requires a unique solution.
-We know that as soon as we try to switch into the user namespace of the container, we no longer can use the <code>mount</code> syscall reliabily.
+We know that as soon as we try to switch into the user namespace of the container, we no longer can use the <code>mount</code> syscall reliably.
 Is there any other way to &ldquo;inject&rdquo; a mount?</p>
 <h2 id="how-titus-titus-storage-does-it">How Titus (<code>titus-storage</code>) Does It</h2>
-<p>Remember from <a href="../Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-1/">Part 1</a> I decided to give up on the CSI and its limitations.
+<p>Remember from <a href="../Advancing-the-State-of-The-Art-of-Container-Storage-With-Titus-Part-1/">Part 1</a> I decided to give up on the CSI and its limitations.
 Instead we are just going to build some binaries, like <code>mount.nfs</code>
 It will just a binary that can run at any time and mount storage in a container, even after it has been created!</p>
 <p>We will run this mount binary outside of the container, where we have privileges.
@@ -164,7 +164,7 @@ We are <em>not</em> just transferring the file descriptor number here, we are pa
 <p>This does require that the Linux Namespaces, heck the whole container needs to exist before we can do this procedure (contrast to the CSI, where the container needs to be created <strong>after</strong> the mount happens, so that it can be bind-mounted in).</p>
 <p>This is a feature, not a bug!
 It means we can mount storage in Titus containers whenever we want, just like you can attach storage on demand with any other normal server!
-(See <a href="../Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-4/">part 4</a> for how Titus is able to pause workloads at first launch, to give <code>titus-storage</code> time to mount things first)</p>
+(See <a href="../Advancing-the-State-of-The-Art-of-Container-Storage-With-Titus-Part-4/">part 4</a> for how Titus is able to pause workloads at first launch, to give <code>titus-storage</code> time to mount things first)</p>
 <h2 id="putting-it-all-together-nfs-efs">Putting It All Together: NFS (EFS)</h2>
 <p>Here is an animation that demonstrates the use of these new syscalls, in combination with <code>SCM_RIGHTS</code>, mount an NFS (EFS) volume in a container.
 This demonstrates the <a href="https://github.com/Netflix/titus-executor/blob/b2af5aa27437b5c3ec734af51e1d0c3a7e145173/mount/titus-mount-nfs.c#L1"><code>titus-mount-nfs</code></a> binary.
@@ -233,7 +233,7 @@ All that is required is that a mount is <code>open_tree</code>&rsquo;d on the ho
 <h2 id="putting-it-all-together-block-device">Putting It All Together: Block Device</h2>
 <p>This is an example of mounting a traditional block device from the host into a container.
 This is useful in AWS for <a href="https://aws.amazon.com/ebs/">EBS</a>, which shows up as a NVMe device, like <code>/dev/nvme0n1</code>.
-Normall this device file is not visible by the container.
+Normally this device file is not visible by the container.
 But with the right tricks, we can configure the mount while we are on the &ldquo;outside&rdquo; of the container, where we can still see it.</p>
 <p>This demonstrates the <a href="https://github.com/Netflix/titus-executor/blob/d1ce08c6094eea329c3cb94c8bd317e1ad71646a/mount/titus-mount-block-device.c"><code>titus-mount-block-device</code></a> binary:</p>
 <div class="mermaid">sequenceDiagram
@@ -306,8 +306,8 @@ Or maybe a service mesh sidecar needs the main container&rsquo;s certificate fil
 <h2 id="conclusion">Conclusion</h2>
 <p>These mount binaries are doing some creative things with syscalls to allow us to mount storage at will with containers, all while keeping them unprivileged.</p>
 <p>But 99% of the time, users will want their storage ready <em>at start</em>, not after the container has started.
-See <a href="../Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-4/">part 4</a> were I demonstrate how we are able to control the startup timing of containers, to ensure that storage is mounted before they start.</p>
-<p>[ <a href="../Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-1/">Part 1</a> | <a href="../Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-2/">Part 2</a> | Part 3 | <a href="../Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-Part-4/">Part 4</a> ]</p>
+See <a href="../Advancing-the-State-of-The-Art-of-Container-Storage-With-Titus-Part-4/">part 4</a> were I demonstrate how we are able to control the startup timing of containers, to ensure that storage is mounted before they start.</p>
+<p>[ <a href="../Advancing-the-State-of-The-Art-of-Container-Storage-With-Titus-Part-1/">Part 1</a> | <a href="../Advancing-the-State-of-The-Art-of-Container-Storage-with-Titus-Part-2/">Part 2</a> | Part 3 | <a href="../Advancing-the-State-of-The-Art-of-Container-Storage-With-Titus-Part-4/">Part 4</a> ]</p>
 
   
   <script src="../javascripts/mermaid.min.js"></script>
@@ -331,7 +331,7 @@ See <a href="../Advancing-the-State-of-The-Art-With-Container-Storage-on-Titus-P
 
 
 
-  <a href="mailto:kyle@xkyle.com?subject=Comment on: Advancing%20the%20State%20of%20The%20Art%20With%20Container%20Storage%20on%20Titus%2c%20Part%203">Comment via email</a>
+  <a href="mailto:kyle@xkyle.com?subject=Comment on: Advancing%20the%20State%20of%20The%20Art%20of%20Container%20Storage%20With%20Titus%2c%20Part%203">Comment via email</a>
 
 </article>
 
