@@ -94,7 +94,7 @@
 
 
   
-  <link rel="stylesheet" href="../../css/base.min.8024376f74e6e2fb66dfb9768383c16d4275793d39e317e929b52533f51faa2e.css" integrity="sha256-gCQ3b3Tm4vtm37l2g4PBbUJ1eT054xfpKbUlM/Ufqi4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/base.min.17b32e90232991b097108d9974565b67796288386646a8dcca99c8923a7b30fe.css" integrity="sha256-F7MukCMpkbCXEI2ZdFZbZ3liiDhmRqjcypnIkjp7MP4=" crossorigin="anonymous">
   
   
 </head>
@@ -146,6 +146,258 @@
 <article>
   <header class="Heading">
   <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../../dns-training-at-sago/" rel="bookmark">DNS Training At Sago</a>
+  </h2>
+  
+  <time datetime="2008-09-25T02:14:57Z">
+    25 September, 2008
+  </time>
+  
+</header>
+
+  
+  This past Tuesday I hosted a DNS training seminar for all the employees at Sago. It went over great! The curriculum involved:
+ The difference between Caching and Authoritative DNS All the different types of DNS Records How to use dig and how to interpret it How to troubleshoot dns problems Secret DNS Tricks!  I recorded the AUDIO (sorry the audio sucks) and the BASH history for those poor souls who want to listen to me drone on for an hour about dns&hellip;.
+  <p>
+    <a class="u-clickable" href="../../dns-training-at-sago/">Read Full Post…</a>
+  </p>
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/dns/" rel="tag">dns</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/learning/" rel="tag">learning</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/nclug/" rel="tag">nclug</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/work/" rel="tag">work</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../../custom-arp-alerts-ii/" rel="bookmark">Custom Arp Alerts II!</a>
+  </h2>
+  
+  <time datetime="2008-08-21T11:59:57Z">
+    21 August, 2008
+  </time>
+  
+</header>
+
+  
+  So I&rsquo;ve found a better way to do what I did in the previous post. Instead of running a separate script to parse the arp alert logs, I have arp alert itself send the alerts! The key is this line in the arpalert.conf
+action on detect = &quot;/etc/scripts/arp-alert&quot;  Its so simple, it just runs that script sending the information about the alert as certain arguments. With this I have more control over the formatting of arpalert messages:
+  <p>
+    <a class="u-clickable" href="../../custom-arp-alerts-ii/">Read Full Post…</a>
+  </p>
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/nclug/" rel="tag">nclug</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/programming/" rel="tag">programming</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/scripting/" rel="tag">scripting</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/security/" rel="tag">security</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../../custom-arp-alerts/" rel="bookmark">Custom Arp-Alerts</a>
+  </h2>
+  
+  <time datetime="2008-08-20T23:17:05Z">
+    20 August, 2008
+  </time>
+  
+</header>
+
+  
+  So I was looking around, and I wanted some sort of tool to allow me to be more aware about what was happening in the lower &ldquo;bowels&rdquo; of the network that I&rsquo;m on with my laptop. So what is it that I want&hellip;
+What I really want is some sort of mac-address based buddy list. One that would show my a list of the mac addresses talking on my network, and allow me to alias them.
+  <p>
+    <a class="u-clickable" href="../../custom-arp-alerts/">Read Full Post…</a>
+  </p>
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/programming/" rel="tag">programming</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/scripting/" rel="tag">scripting</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/security/" rel="tag">security</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../../dns-cache-poisoning/" rel="bookmark">DNS Cache Poisoning </a>
+  </h2>
+  
+  <time datetime="2008-07-31T12:00:10Z">
+    31 July, 2008
+  </time>
+  
+</header>
+
+  
+  Recently a DNS expert found a flaw in the way that DNS servers talk to other DNS servers to get records that allows interested parties (hackers) to insert their own records. If you need a primer: the Wikipedia link.
+Well&hellip; a DNS flaw is no fun without a tool to use it. So this guy &ldquo;HD Moore&rdquo; wrote a program (script) that takes advantage of this and makes it relatively easy for someone to use something called Metasploit to tinker with it.
+  <p>
+    <a class="u-clickable" href="../../dns-cache-poisoning/">Read Full Post…</a>
+  </p>
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/programming/" rel="tag">programming</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/scripting/" rel="tag">scripting</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/security/" rel="tag">security</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
     <a class="Heading-link u-clickable" href="../../failing-hard-drives/" rel="bookmark">Failing Hard Drives</a>
   </h2>
   
@@ -159,11 +411,9 @@
   So lots of people use computers, and lots of people have harddrives.
 At my work I deal with lots and lots of computers and lots and lots of drives. So during a week I see plenty of failing drives, just because of the statistics.
 So now-a-days I run a &ldquo;smart test&rdquo; on the drive to see how it is. Unfortunately most drive testers and smart tests are crap. So I made my own and I want to share it with you&hellip;.
-  
   <p>
-    <a class="u-clickable" href="../../failing-hard-drives/">Read More…</a>
+    <a class="u-clickable" href="../../failing-hard-drives/">Read Full Post…</a>
   </p>
-  
   
   
 
@@ -222,11 +472,9 @@ So now-a-days I run a &ldquo;smart test&rdquo; on the drive to see how it is. Un
   We have finally built enough pieces of the clock together to get some digits! It basically comes down to a white wooden box, a piece of cardboard with the LEDs wired, running to a RJ45 jack. Then a stryofoam cutout painted black, with a white piece of paper and plexyglass on top for a face.
 Here is the template with wired LEDS: 
 A multitude of completed digits (still missing the blank faceplate).
-  
   <p>
-    <a class="u-clickable" href="../../putting-the-clock-together/">Read More…</a>
+    <a class="u-clickable" href="../../putting-the-clock-together/">Read Full Post…</a>
   </p>
-  
   
   
 
@@ -278,7 +526,9 @@ A multitude of completed digits (still missing the blank faceplate).
   
   This is a video that I made for some fourth graders in an attempt to explain what Wikipedia is, how it works, and why it is neat. We made a new article together, and they all went home with a piece of fiber optic to remind them of the event. This is the video I showed them for historical purposes:
 Get the Flash Player to see this player.
-  
+  <p>
+    <a class="u-clickable" href="../../great-american-teach-in-wikipedia/">Read Full Post…</a>
+  </p>
   
   
 
@@ -330,11 +580,9 @@ Get the Flash Player to see this player.
   
   Now hear me out, I used to be a hater. It seems that the more people blog, the more the internet is loaded up with wasted bandwidth and ad space. The truth is that blogging has a very small marginal cost, and usually blogging occupies time that would not otherwise be spent doing &ldquo;productive&rdquo; things.
 But! What if all of humanity blogged, and then we could aggregate all blogs on the internet.
-  
   <p>
-    <a class="u-clickable" href="../../blogging-human-salvation/">Read More…</a>
+    <a class="u-clickable" href="../../blogging-human-salvation/">Read Full Post…</a>
   </p>
-  
   
   
 
@@ -400,11 +648,9 @@ But! What if all of humanity blogged, and then we could aggregate all blogs on t
  We start with a template made at a sign shop, and the cover the edges with aluminum tape to protect them from the heat from the hot wire.
  I&rsquo;ve pushed out holes with a strait wire and a blow torch to give my entry points for my hot wires. Its going to be a plunge and cut job.
  The laserpointer helps guide the hot wire because it inevitably bends and makes crooked cuts.
-  
   <p>
-    <a class="u-clickable" href="../../clock-primer/">Read More…</a>
+    <a class="u-clickable" href="../../clock-primer/">Read Full Post…</a>
   </p>
-  
   
   
 
@@ -461,7 +707,9 @@ Sometimes we make up silly things&hellip; late at night&hellip;
  Our true feelings for each other?
  To do list&hellip;
  Sometimes we DON&rsquo;T let each other borrow things&hellip;
-  
+  <p>
+    <a class="u-clickable" href="../../whiteboard-whiteboard-interactions/">Read Full Post…</a>
+  </p>
   
   
 
@@ -484,237 +732,6 @@ Sometimes we make up silly things&hellip; late at night&hellip;
     
     <li class="Tags-item u-background">
       <a class="Tags-link u-clickable" href="../../categories/whiteboard/" rel="tag">whiteboard</a>
-    </li>
-    
-    
-  </ul>
-  
-  
-  
-  
-</footer>
-
-
-</article>
-<div class="Divider"></div>
-
-<article>
-  <header class="Heading">
-  <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="../../compact-flash-replacement/" rel="bookmark">Compact Flash Replacement</a>
-  </h2>
-  
-  <time datetime="2007-01-20T16:38:32Z">
-    20 January, 2007
-  </time>
-  
-</header>
-
-  
-  My laptop is a Sharp MM20, which I knew I was going to spraypaint eventually, I just needed a reason to. After about a year of wear and scratches from abuse, it was time.
-I&rsquo;m replacing the harddrive in my laptop with a 4GB flash card. It should be faster:
-/dev/sdb: Timing cached reads: 3532 MB in 2.00 seconds = 1766.79 MB/sec Timing buffered disk reads: 58 MB in 3.10 seconds = 18.
-  
-  <p>
-    <a class="u-clickable" href="../../compact-flash-replacement/">Read More…</a>
-  </p>
-  
-  
-  
-
-
-
-
-
-
-<footer>
-  
-  
-  <ul class="Tags">
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/flash/" rel="tag">flash</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/Laptop/" rel="tag">Laptop</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/Personal/" rel="tag">Personal</a>
-    </li>
-    
-    
-  </ul>
-  
-  
-  
-  
-</footer>
-
-
-</article>
-<div class="Divider"></div>
-
-<article>
-  <header class="Heading">
-  <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="../../next-piece-armband/" rel="bookmark">Next Piece: Armband</a>
-  </h2>
-  
-  <time datetime="2007-01-10T06:34:04Z">
-    10 January, 2007
-  </time>
-  
-</header>
-
-  
-  We were thinking it would be cool to have the LCD display be on the arm, instead of the side of the gun.
-So we have modified roller-blading wrist-guards for the purpose:
-
-Watch Karl Show It Off!
-Karl&rsquo;s Mom helped with the sewing. Next we&rsquo;ll add buttons for mode and backlight. I think they will be very thin and unobtrusive.
-  
-  
-  
-
-
-
-
-
-
-<footer>
-  
-  
-  <ul class="Tags">
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/gun/" rel="tag">gun</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/LaserTag/" rel="tag">LaserTag</a>
-    </li>
-    
-    
-  </ul>
-  
-  
-  
-  
-</footer>
-
-
-</article>
-<div class="Divider"></div>
-
-<article>
-  <header class="Heading">
-  <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="../../our-first-real-gun/" rel="bookmark">Our First Real Gun</a>
-  </h2>
-  
-  <time datetime="2007-01-06T06:26:25Z">
-    6 January, 2007
-  </time>
-  
-</header>
-
-  
-  Here it is, the big milestone: our first real gun!
-From this: 
-To this!
-You can see how we have gutted an air-soft gun, and inserted our led&rsquo;s and switches to turn it into a lasertag gun. All of our guns will be interchangeable as they will all have the same Cat-5 Pinout. Eventually we will have an array of guns and we can change their properties in software. (Reload times, shots per clip, damage per shot, etc.
-  
-  <p>
-    <a class="u-clickable" href="../../our-first-real-gun/">Read More…</a>
-  </p>
-  
-  
-  
-
-
-
-
-
-
-<footer>
-  
-  
-  <ul class="Tags">
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/gun/" rel="tag">gun</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/LaserTag/" rel="tag">LaserTag</a>
-    </li>
-    
-    
-  </ul>
-  
-  
-  
-  
-</footer>
-
-
-</article>
-<div class="Divider"></div>
-
-<article>
-  <header class="Heading">
-  <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="../../prototype-1/" rel="bookmark">Prototype #1</a>
-  </h2>
-  
-  <time datetime="2006-12-31T15:33:53Z">
-    31 December, 2006
-  </time>
-  
-</header>
-
-  
-  Here are some pictures and some short video of our first prototype gun!
-A more or less finished backpack.
-2x4 Gun and LCD wristbandI love having good tools, and this $40 soldering iron is the best $40 I ever spent.
-Nicd battery pack! With velcro! 
-And Kyle explains it all! Sort of&hellip;
-  
-  
-  
-
-
-
-
-
-
-<footer>
-  
-  
-  <ul class="Tags">
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/gun/" rel="tag">gun</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/LaserTag/" rel="tag">LaserTag</a>
     </li>
     
     

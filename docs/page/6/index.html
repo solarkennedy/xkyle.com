@@ -94,7 +94,7 @@
 
 
   
-  <link rel="stylesheet" href="../../css/base.min.8024376f74e6e2fb66dfb9768383c16d4275793d39e317e929b52533f51faa2e.css" integrity="sha256-gCQ3b3Tm4vtm37l2g4PBbUJ1eT054xfpKbUlM/Ufqi4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/base.min.17b32e90232991b097108d9974565b67796288386646a8dcca99c8923a7b30fe.css" integrity="sha256-F7MukCMpkbCXEI2ZdFZbZ3liiDhmRqjcypnIkjp7MP4=" crossorigin="anonymous">
   
   
 </head>
@@ -146,6 +146,236 @@
 <article>
   <header class="Heading">
   <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../../rebuilding-packages-for-arm-or-any-other-arch/" rel="bookmark">Rebuilding Packages for ARM (or any other arch)</a>
+  </h2>
+  
+  <time datetime="2013-06-21T04:46:58Z">
+    21 June, 2013
+  </time>
+  
+</header>
+
+  
+  Sometimes there are packages out there that don&rsquo;t come in your cool new Architecture. In my case it is ARM, and the package I wanted was Puppet. Here is how to rebuild source packages the cool way.
+Add the Puppet repo so you can get fresh source packages cd /tmp # Add the repo, even though it may not have arm binaries... wget http://apt.puppetlabs.com/puppetlabs-release-precise.deb dpkg -i puppetlabs-release-precise.deb # Get dependencies... apt-get update apt-get build-dep puppet facter  Build / Install # Get sources.
+  <p>
+    <a class="u-clickable" href="../../rebuilding-packages-for-arm-or-any-other-arch/">Read Full Post…</a>
+  </p>
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../../an-overdrive-pro-connecting-on-openwrt/" rel="bookmark">An Overdrive Pro Connecting on OpenWrt</a>
+  </h2>
+  
+  <time datetime="2013-05-31T01:45:13Z">
+    31 May, 2013
+  </time>
+  
+</header>
+
+  
+  Have a fancy FreedomPop Overdrive Pro? Want to hook it up to your OpenWrt based router to use as a backup (or primary?) internet connection? Lets do it.
+Plug it into your router via USB. Then run:
+opkg install kmod-usb-net-cdc-ether  Run dmesg and it will report which eth device came up. Mine shows up as &ldquo;eth1&rdquo;. Now make eth1 your &ldquo;wan&rdquo; interface:
+uci set network.wan.ifname=eth1 uci commit reboot  Whoa.
+  <p>
+    <a class="u-clickable" href="../../an-overdrive-pro-connecting-on-openwrt/">Read Full Post…</a>
+  </p>
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/freedompop/" rel="tag">freedompop</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/openwrt/" rel="tag">openwrt</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../../a-team-fortress-2-see-n-say/" rel="bookmark">A Team Fortress 2 See &#39;n Say!</a>
+  </h2>
+  
+  <time datetime="2013-05-18T21:12:21Z">
+    18 May, 2013
+  </time>
+  
+</header>
+
+  
+  Hopefully Valve will offer me a job instead of suing me? :)
+Teardown [gallery ids=&ldquo;991,992,993,994,995,996,999,1001,1002,1000,1003,997&rdquo;] Parts   Many See N&rsquo; Says to destroy (I burned through 3)
+  An Arduino (yes, because I&rsquo;m a lazy noob)
+  Wave shield
+  Some sort of ISP programmer
+  Speaker / Switch / Hot-glue / Resistors / etc
+  How It Works   A user pulls the handle, activating the normally-open switch and powering the arduino
+  <p>
+    <a class="u-clickable" href="../../a-team-fortress-2-see-n-say/">Read Full Post…</a>
+  </p>
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/arduino/" rel="tag">arduino</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/Personal/" rel="tag">Personal</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/See-N-Say/" rel="tag">See N Say</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/Team-Fortress-2/" rel="tag">Team Fortress 2</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../../getting-started-with-spdy-on-nginx/" rel="bookmark">Getting Started With SPDY on Nginx</a>
+  </h2>
+  
+  <time datetime="2013-05-12T21:29:09Z">
+    12 May, 2013
+  </time>
+  
+</header>
+
+  
+  SPDY is a fancy new way to do HTTP, pioneered by Google. Pretty much all modern browsers support it now, except for of course, IE.
+If you have SSL enabled and are using nginx, they you are pretty close to running your sites with SPDY. What how easy it is!
+Step 1: Get a version of nginx with spdy enabled. Ubuntu Get some packages. The Ubuntu packages have &ldquo;&ndash;with-http_spdy_module&rdquo; compiled, so you can install them with no problem:
+  <p>
+    <a class="u-clickable" href="../../getting-started-with-spdy-on-nginx/">Read Full Post…</a>
+  </p>
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/httpd/" rel="tag">httpd</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/nginx/" rel="tag">nginx</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/SPDY/" rel="tag">SPDY</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
     <a class="Heading-link u-clickable" href="../../disabling-microphone-auto-gain-sensitivity-for-google-plus-hangouts/" rel="bookmark">Disabling Microphone Auto-Gain (Sensitivity) For Google Plus Hangouts</a>
   </h2>
   
@@ -161,11 +391,9 @@ Linux: Run this in a terminal:
 echo &quot;audio-flags=1&quot; &gt; ~/.config/google-googletalkplugin/options  Windows: Set the registry Key:
 HKEY_CURRENT_USER\&lt;wbr&gt;&lt;/wbr&gt;Software\Google\Google Talk Plugin\options\audio-flags = 1  Mac OSX: Edit the plist:
 ~/Library/Preferences/com.&lt;wbr&gt;&lt;/wbr&gt;google.GoogleTalkPluginD.plist  and set &ldquo;Audio Flags&rdquo; = 1
-  
   <p>
-    <a class="u-clickable" href="../../disabling-microphone-auto-gain-sensitivity-for-google-plus-hangouts/">Read More…</a>
+    <a class="u-clickable" href="../../disabling-microphone-auto-gain-sensitivity-for-google-plus-hangouts/">Read Full Post…</a>
   </p>
-  
   
   
 
@@ -224,11 +452,9 @@ HKEY_CURRENT_USER\&lt;wbr&gt;&lt;/wbr&gt;Software\Google\Google Talk Plugin\opti
   What? I&rsquo;ve written lots of crappy Puppet modules. Here is a slightly less crappy module that can help you configure BIOS settings on your servers for you.
 It works on Dell C class servers and Intel platforms. Please pull request or email me if you want to have it work on something else too!
 Why? BIOS settings should be considered configuration just like any other configuration, and hence managed by your configuration management tool, if possible.
-  
   <p>
-    <a class="u-clickable" href="../../my-first-published-puppet-module-bios/">Read More…</a>
+    <a class="u-clickable" href="../../my-first-published-puppet-module-bios/">Read Full Post…</a>
   </p>
-  
   
   
 
@@ -303,11 +529,9 @@ Why? BIOS settings should be considered configuration just like any other config
   Why? To scratch my own itch, and for Fun!
 How? Downloads are here: http://download.xkyle.com/openwrt/
 Because of the dependencies, it is probably easier to add the repo:
-  
   <p>
-    <a class="u-clickable" href="../../puppet-on-openwrt/">Read More…</a>
+    <a class="u-clickable" href="../../puppet-on-openwrt/">Read Full Post…</a>
   </p>
-  
   
   
 
@@ -348,11 +572,9 @@ Because of the dependencies, it is probably easier to add the repo:
   Picking a server hostname is abig deal. I&rsquo;ve seen quite a few, lets traverse the hostname-awesomeness-continuum and see if we can learn something.
 Worsest  morpheous trinity alf  Why do these suck? These names have no information what-so-ever. If you see a server alert, you have no clue what services are actually down. It might as well be a random string. IT is a random string.
  Pro Tip: Don&rsquo;t give make server hostnames random strings.
-  
   <p>
-    <a class="u-clickable" href="../../picking-server-hostnames-worstest-worser-worst-better-betterer-bestest/">Read More…</a>
+    <a class="u-clickable" href="../../picking-server-hostnames-worstest-worser-worst-better-betterer-bestest/">Read Full Post…</a>
   </p>
-  
   
   
 
@@ -406,11 +628,9 @@ Worsest  morpheous trinity alf  Why do these suck? These names have no informati
  NmQ2ZjYzMmU3Mzc0NmU2NTZkNzk2MTcwNjQ2NTYzNm U2MTZjNjE2MjQwNjU2MzZlNjU3MjY1NjY2NjY5NjQ2MTY1N mI2MTZkNmY3NDc0NmU2MTc3Njk=
  One of those puzzles to attract coders I guess. The guys at Hacker News spilled the beans, so lets spill them some more.
 First though,** Mad Props** to the Balanced team for thinking &ldquo;outside&rdquo; the unit-test-box. Plus Jenkins rocks. The world needs more Jenkins. Bash? I&rsquo;m not a developer, so my first instinct was to use the existing set of tools that people have already written to solve this puzzle:
-  
   <p>
-    <a class="u-clickable" href="../../decoding-balanced-payments-puzzle-1/">Read More…</a>
+    <a class="u-clickable" href="../../decoding-balanced-payments-puzzle-1/">Read Full Post…</a>
   </p>
-  
   
   
 
@@ -476,11 +696,9 @@ First though,** Mad Props** to the Balanced team for thinking &ldquo;outside&rdq
 
 Doesn&rsquo;t Hallmark know kids have cell phones now? Anyway, it is an extremely simple micro-controller driving a led matrix and a C-Max CMM-9201. You get 10 characters, and a small reed-switch? triggers a hardware interrupt, and broadcasts your 10 characters to a friend, and you swap messages. The devices holds 24 messages, FIFO. Memory is volatile. Profanity filter included.
 Oh well. Lets hack it.
-  
   <p>
-    <a class="u-clickable" href="../../hacking-a-hallmark-text-band-first-attempt/">Read More…</a>
+    <a class="u-clickable" href="../../hacking-a-hallmark-text-band-first-attempt/">Read Full Post…</a>
   </p>
-  
   
   
 
@@ -515,276 +733,6 @@ Oh well. Lets hack it.
     
     <li class="Tags-item u-background">
       <a class="Tags-link u-clickable" href="../../categories/text-band/" rel="tag">text band</a>
-    </li>
-    
-    
-  </ul>
-  
-  
-  
-  
-</footer>
-
-
-</article>
-<div class="Divider"></div>
-
-<article>
-  <header class="Heading">
-  <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="../../validating-graphite-metrics-with-bash/" rel="bookmark">Validating Graphite Metrics With Bash!</a>
-  </h2>
-  
-  <time datetime="2013-03-07T05:35:49Z">
-    7 March, 2013
-  </time>
-  
-</header>
-
-  
-  At my dayjob I get to work with Graphite and power meters. It is cool:
-
-To make it easy for my clients to get power information, I&rsquo;ve written a command line tool called &ldquo;power&rdquo; that they can run to get the power usage for a server when running their program. Here is an example:
-power METER-NAME sleep 10s  Pretty handy. The &ldquo;METER-NAME&rdquo; is pretty important, as it lets the script know which system&rsquo;s power you are interested in.
-  
-  <p>
-    <a class="u-clickable" href="../../validating-graphite-metrics-with-bash/">Read More…</a>
-  </p>
-  
-  
-  
-
-
-
-
-
-
-<footer>
-  
-  
-  <ul class="Tags">
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/bash/" rel="tag">bash</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/graphite/" rel="tag">graphite</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/power/" rel="tag">power</a>
-    </li>
-    
-    
-  </ul>
-  
-  
-  
-  
-</footer>
-
-
-</article>
-<div class="Divider"></div>
-
-<article>
-  <header class="Heading">
-  <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="../../an-ipmi-sel-viewing-shootout/" rel="bookmark">An IPMI SEL Viewing Shootout!</a>
-  </h2>
-  
-  <time datetime="2013-02-13T06:08:18Z">
-    13 February, 2013
-  </time>
-  
-</header>
-
-  
-  UPDATE (2015-02-18) Albert Chu from FreeIPMI commented that FreeIPMI does NOT attempt to decode OEM events by default. These are events that are OEM specific, so each motherboard may require a different interpretation.
-FreeIPMI has a --interpret-oem-data option and possibly in conjunction with the -W assumesystemevent option, to attempt to decode these.
-Unfortunately I no longer have the motherboard I originally ran these on. I might do a followup post with a new motherboard with similar &ldquo;issues&rdquo; and see how FreeIPMI compares to the other tools with these options.
-  
-  <p>
-    <a class="u-clickable" href="../../an-ipmi-sel-viewing-shootout/">Read More…</a>
-  </p>
-  
-  
-  
-
-
-
-
-
-
-<footer>
-  
-  
-  <ul class="Tags">
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/intel/" rel="tag">intel</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/ipmi/" rel="tag">ipmi</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/linux/" rel="tag">linux</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/sel/" rel="tag">sel</a>
-    </li>
-    
-    
-  </ul>
-  
-  
-  
-  
-</footer>
-
-
-</article>
-<div class="Divider"></div>
-
-<article>
-  <header class="Heading">
-  <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="../../configuring-bios-settings-with-puppet/" rel="bookmark">Configuring BIOS Settings With Puppet!</a>
-  </h2>
-  
-  <time datetime="2013-02-12T03:35:01Z">
-    12 February, 2013
-  </time>
-  
-</header>
-
-  
-  You know what it is like to spend time configuring the BIOS on a a server. You reboot the server, and wait for it to take its sweet time to come back up, frantically push its button, hope that you didn&rsquo;t miss your chance. Then spend some one-on-one alone time with the interface, making sure you do all the right keystrokes to get the settings you want. Sounds like a bad date.
-  
-  <p>
-    <a class="u-clickable" href="../../configuring-bios-settings-with-puppet/">Read More…</a>
-  </p>
-  
-  
-  
-
-
-
-
-
-
-<footer>
-  
-  
-  <ul class="Tags">
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/bios/" rel="tag">bios</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/linux/" rel="tag">linux</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/Puppet/" rel="tag">Puppet</a>
-    </li>
-    
-    
-  </ul>
-  
-  
-  
-  
-</footer>
-
-
-</article>
-<div class="Divider"></div>
-
-<article>
-  <header class="Heading">
-  <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="../../building-linux-packages-for-kernel-drivers/" rel="bookmark">Building Linux Packages For Kernel Drivers! (dkms howto)</a>
-  </h2>
-  
-  <time datetime="2013-01-20T03:39:48Z">
-    20 January, 2013
-  </time>
-  
-</header>
-
-  
-  Background Most of the time the Linux kernel does a great job of having drivers you need, but sometimes you need to install a special driver or update an existing module.
-Running make; make install is all fine and dandy for testing, but for production you want a repeatable process. For me, this means OS packages. (deb/rpms)
-
-So, how do you go from kernel module source code =&gt; Debian package?
-  
-  <p>
-    <a class="u-clickable" href="../../building-linux-packages-for-kernel-drivers/">Read More…</a>
-  </p>
-  
-  
-  
-
-
-
-
-
-
-<footer>
-  
-  
-  <ul class="Tags">
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/debs/" rel="tag">debs</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/dkms/" rel="tag">dkms</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/kernel-modules/" rel="tag">kernel modules</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/linux/" rel="tag">linux</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/packages/" rel="tag">packages</a>
     </li>
     
     
