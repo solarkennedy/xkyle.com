@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.94.2" />
+  
+  
+  
+  <title>
+    
+    Configuring 6LoWPAN on Linux in 2022 | xkyle.com
+    
+  </title>
+  <link rel="canonical" href="../Configuring-6LoWPAN-on-Linux-in-2022/">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="manifest" href="../site.webmanifest">
+  
+  
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="../css/base.min.17b32e90232991b097108d9974565b67796288386646a8dcca99c8923a7b30fe.css" integrity="sha256-F7MukCMpkbCXEI2ZdFZbZ3liiDhmRqjcypnIkjp7MP4=" crossorigin="anonymous">
+  
+  
+</head>
+<body>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable" href="">xkyle.com</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../about/">About</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../post/">Posts</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../categories/">Categories</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../subscribe.html">Subscribe</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../"></a>
+      </li>
+      
+      <li class="Banner-item">
+<form action="https://www.google.com/search" class="Banner-link u-clickable" method="get" name="searchform" target="_blank">
+<input name="sitesearch" type="hidden" value="xkyle.com">
+<input autocomplete="on" class="form-control search2" name="q" placeholder="Search" required="required"  type="text" style="width: 50px;">
+<button class="button" type="submit" style="width:1px;text-align: center;border-right-width: 20px;border-right-style: solid;height: 34px;">🔍</button>
+</form>
+      </li>
+  </div>
+</nav>
+
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../Configuring-6LoWPAN-on-Linux-in-2022/" rel="bookmark">Configuring 6LoWPAN on Linux in 2022</a>
+  </h2>
+  
+  <time datetime="2022-05-17T00:00:00Z">
+    17 May, 2022
+  </time>
+  
+</header>
+
+  <p><a href="https://en.wikipedia.org/wiki/6LoWPAN">6LoWPAN</a> is a networking protocol that enabled IPv6 connectivity over <a href="https://en.wikipedia.org/wiki/IEEE_802.15.4">IEEE 802.15.4</a> instead of <a href="https://en.wikipedia.org/wiki/IEEE_802.11">802.11</a>.</p>
+<p>This low energy network spec shoves IPv6 + Link layer encryption on top of Bluetooth low energy.</p>
+<p>But wait, there are actually two types of connections here, and the landscape is confusing due to the different options.</p>
+<ul>
+<li><a href="https://datatracker.ietf.org/doc/html/rfc7668">RFC7668</a> is IPv6 over Bluetooth LE</li>
+<li><a href="https://datatracker.ietf.org/doc/html/rfc4944">RFC4944</a> is IPv6 over 802.15.14</li>
+</ul>
+<p>6LoWPAN seems to encompass any type of IPv6 over low energy network setup.
+(both of the above)
+Many laptops with modern Bluetooth chips can do the first one.
+An embedded device or special purpose hardware can do the latter.</p>
+<p>This blog post will only be focusing on the first one, using Bluetooth LE.</p>
+<p>I tried networking Linux devices together in <a href="../Playing-with-IPv6-Over-Bluetooth-Low-Energy-6LoWPAN/">2015</a> using this spec, and achieved partial success.
+But now it is 2022, and even <a href="https://www.phoronix.com/scan.php?page=news_item&amp;px=NetworkManager-6LoWPAN">NetworkManager</a> supports 6LoWPAN.
+In the new hot world of IOT, can we have Bluetooth LE IPv6 Networks on Linux?</p>
+<table>
+<tr><td> Master Node </td> <td> Slave Node </td></tr>
+<tr><td>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>modprobe bluetooth_6lowpan
+</span></span><span style="display:flex;"><span>echo 1 &gt; /sys/kernel/debug/bluetooth/6lowpan_enable
+</span></span><span style="display:flex;"><span># Advertise over LE
+</span></span><span style="display:flex;"><span>hciconfig hci0 leadv
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span># Ping all IPv6 nodes on the network
+</span></span><span style="display:flex;"><span>ping6 ff02::1%bt0
+</span></span></code></pre></div></td><td>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span>modprobe bluetooth_6lowpan
+</span></span><span style="display:flex;"><span>echo 1 &gt; /sys/kernel/debug/bluetooth/6lowpan_enable
+</span></span><span style="display:flex;"><span># Scan to find the HW address of the master
+</span></span><span style="display:flex;"><span>hcitool lescan
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span># Connect to the master
+</span></span><span style="display:flex;"><span>echo &#34;connect C4:85:08:31:XX:XX 1&#34; &gt;/sys/kernel/debug/bluetooth/6lowpan_control
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div></td></tr>
+</table>
+<p>It does work.</p>
+<p>For my tests I&rsquo;m not even bothering with assigning IPs, I just use the link-local addresses.</p>
+<p>Latency does seem a little high between two laptops that are right next to each other:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span># ping6 fe80::c485:8ff:fe31:7e77%bt0 -c <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>PING fe80::c485:8ff:fe31:7e77%bt0(fe80::c485:8ff:fe31:7e77%bt0) 56 data bytes
+</span></span><span style="display:flex;"><span>64 bytes from fe80::c485:8ff:fe31:7e77%bt0: icmp_seq=1 ttl=64 time=78.3 ms
+</span></span><span style="display:flex;"><span>64 bytes from fe80::c485:8ff:fe31:7e77%bt0: icmp_seq=2 ttl=64 time=52.7 ms
+</span></span><span style="display:flex;"><span>64 bytes from fe80::c485:8ff:fe31:7e77%bt0: icmp_seq=3 ttl=64 time=74.7 ms
+</span></span><span style="display:flex;"><span>64 bytes from fe80::c485:8ff:fe31:7e77%bt0: icmp_seq=4 ttl=64 time=96.8 ms
+</span></span><span style="display:flex;"><span>64 bytes from fe80::c485:8ff:fe31:7e77%bt0: icmp_seq=5 ttl=64 time=70.1 ms
+</span></span><span style="display:flex;"><span>64 bytes from fe80::c485:8ff:fe31:7e77%bt0: icmp_seq=6 ttl=64 time=92.8 ms
+</span></span><span style="display:flex;"><span>64 bytes from fe80::c485:8ff:fe31:7e77%bt0: icmp_seq=7 ttl=64 time=66.1 ms
+</span></span><span style="display:flex;"><span>64 bytes from fe80::c485:8ff:fe31:7e77%bt0: icmp_seq=8 ttl=64 time=88.7 ms
+</span></span><span style="display:flex;"><span>64 bytes from fe80::c485:8ff:fe31:7e77%bt0: icmp_seq=9 ttl=64 time=62.0 ms
+</span></span><span style="display:flex;"><span>64 bytes from fe80::c485:8ff:fe31:7e77%bt0: icmp_seq=10 ttl=64 time=84.8 ms
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>--- fe80::c485:8ff:fe31:7e77%bt0 ping statistics ---
+</span></span><span style="display:flex;"><span>10 packets transmitted, 10 received, 0% packet loss, time 9012ms
+</span></span><span style="display:flex;"><span>rtt min/avg/max/mdev = 52.745/76.707/96.793/13.508 ms
+</span></span></code></pre></div><p>Packet loss seems bad. Super bad.
+<code>iperf</code> gets worse the longer you run it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span># iperf -c fe80::c485:8ff:fe31:7e77%bt0 -V 
+</span></span><span style="display:flex;"><span>------------------------------------------------------------
+</span></span><span style="display:flex;"><span>Client connecting to fe80::c485:8ff:fe31:7e77%bt0, TCP port 5001
+</span></span><span style="display:flex;"><span>TCP window size: 45.0 KByte (default)
+</span></span><span style="display:flex;"><span>------------------------------------------------------------
+</span></span><span style="display:flex;"><span>[  1] local fe80::f8ff:c2ff:fe50:f6a8 port 47580 connected with fe80::c485:8ff:fe31:7e77 port 5001
+</span></span><span style="display:flex;"><span>[ ID] Interval       Transfer     Bandwidth
+</span></span><span style="display:flex;"><span>[  1] 0.0000-20.5697 sec  80.3 KBytes  32.0 Kbits/sec
+</span></span></code></pre></div><p>UDP seems much faster, but I&rsquo;m skeptical:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash-session" data-lang="bash-session"><span style="display:flex;"><span># iperf -c fe80::c485:8ff:fe31:7e77%bt0 -V  -u
+</span></span><span style="display:flex;"><span>------------------------------------------------------------
+</span></span><span style="display:flex;"><span>Client connecting to fe80::c485:8ff:fe31:7e77%bt0, UDP port 5001
+</span></span><span style="display:flex;"><span>Sending 1450 byte datagrams, IPG target: 11062.62 us (kalman adjust)
+</span></span><span style="display:flex;"><span>UDP buffer size:  208 KByte (default)
+</span></span><span style="display:flex;"><span>------------------------------------------------------------
+</span></span><span style="display:flex;"><span>[  1] local fe80::f8ff:c2ff:fe50:f6a8 port 34445 connected with fe80::c485:8ff:fe31:7e77 port 5001
+</span></span><span style="display:flex;"><span>[ ID] Interval       Transfer     Bandwidth
+</span></span><span style="display:flex;"><span>[  1] 0.0000-10.0118 sec  1.25 MBytes  1.05 Mbits/sec
+</span></span><span style="display:flex;"><span>[  1] Sent 908 datagrams
+</span></span><span style="display:flex;"><span>read failed: Connection refused
+</span></span><span style="display:flex;"><span>[  3] WARNING: did not receive ack of last datagram after 10 tries.
+</span></span></code></pre></div><p>In practice, the TCP communication seems only unidirectional.
+Typing into <code>nc</code> into a client on the slave to a listener on the master node works fine.
+The other direction doesn&rsquo;t seem to work at all.
+Yet <code>ping6</code> works?
+It seems to only work with a 1280 MTU, no pings on any other MTU.</p>
+<p>Still requires some more investigation.</p>
+
+  
+
+  
+
+
+
+
+
+
+
+  <a href="mailto:kyle@xkyle.com?subject=Comment on: Configuring%206LoWPAN%20on%20Linux%20in%202022">Comment via email</a>
+
+</article>
+
+
+      </div>
+    </div>
+  </main>
+  
+
+</body>
+</html>

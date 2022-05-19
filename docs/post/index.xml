@@ -6,7 +6,18 @@
     <description>Recent content in Posts on xkyle.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 01 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 17 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Configuring 6LoWPAN on Linux in 2022</title>
+      <link>/Configuring-6LoWPAN-on-Linux-in-2022/</link>
+      <pubDate>Tue, 17 May 2022 00:00:00 +0000</pubDate>
+      <guid>/Configuring-6LoWPAN-on-Linux-in-2022/</guid>
+      <description>6LoWPAN is a networking protocol that enabled IPv6 connectivity over IEEE 802.15.4 instead of 802.11.
+This low energy network spec shoves IPv6 + Link layer encryption on top of Bluetooth low energy.
+But wait, there are actually two types of connections here, and the landscape is confusing due to the different options.
+ RFC7668 is IPv6 over Bluetooth LE RFC4944 is IPv6 over 802.15.14  6LoWPAN seems to encompass any type of IPv6 over low energy network setup.</description>
+    </item>
+    
     <item>
       <title>Advancing the State of The Art of Container Storage With Titus, Part 1</title>
       <link>/Advancing-the-State-of-The-Art-of-Container-Storage-With-Titus-Part-1/</link>
@@ -532,7 +543,7 @@ uci set network.wan.ifname=eth1 uci commit reboot  Whoa.</description>
       <pubDate>Sat, 18 May 2013 21:12:21 +0000</pubDate>
       <guid>/a-team-fortress-2-see-n-say/</guid>
       <description>Hopefully Valve will offer me a job instead of suing me? :)
-Teardown [gallery ids=&amp;ldquo;991,992,993,994,995,996,999,1001,1002,1000,1003,997&amp;rdquo;] Parts   Many See N&amp;rsquo; Says to destroy (I burned through 3)
+Teardown   Parts   Many See N&amp;rsquo; Says to destroy (I burned through 3)
   An Arduino (yes, because I&amp;rsquo;m a lazy noob)
   Wave shield
   Some sort of ISP programmer

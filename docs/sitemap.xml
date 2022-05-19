@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/Configuring-6LoWPAN-on-Linux-in-2022/</loc>
+    <lastmod>2022-05-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2022-05-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2022-05-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/Advancing-the-State-of-The-Art-of-Container-Storage-With-Titus-Part-1/</loc>
     <lastmod>2022-05-01T00:00:00+00:00</lastmod>
   </url>
@@ -19,16 +34,6 @@
   
   <url>
     <loc>/Advancing-the-State-of-The-Art-of-Container-Storage-With-Titus-Part-4/</loc>
-    <lastmod>2022-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
-    <lastmod>2022-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
     <lastmod>2022-05-01T00:00:00+00:00</lastmod>
   </url>
   
