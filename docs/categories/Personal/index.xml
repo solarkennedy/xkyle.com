@@ -21,12 +21,13 @@
       <pubDate>Sat, 18 May 2013 21:12:21 +0000</pubDate>
       <guid>/a-team-fortress-2-see-n-say/</guid>
       <description>Hopefully Valve will offer me a job instead of suing me? :)
-Teardown   Parts   Many See N&amp;rsquo; Says to destroy (I burned through 3)
-  An Arduino (yes, because I&amp;rsquo;m a lazy noob)
-  Wave shield
-  Some sort of ISP programmer
-  Speaker / Switch / Hot-glue / Resistors / etc
-  How It Works   A user pulls the handle, activating the normally-open switch and powering the arduino</description>
+Teardown Parts Many See N&amp;rsquo; Says to destroy (I burned through 3)
+An Arduino (yes, because I&amp;rsquo;m a lazy noob)
+Wave shield
+Some sort of ISP programmer
+Speaker / Switch / Hot-glue / Resistors / etc
+How It Works A user pulls the handle, activating the normally-open switch and powering the arduino
+When the handle is released and the spinner starts spinning, a resistor sensor detects at least two succsessive reistor changes, indicating that the spinner is in motion and noting the first value of the resistor for the next step</description>
     </item>
     
     <item>
@@ -62,11 +63,11 @@ But! What if all of humanity blogged, and then we could aggregate all blogs on t
       <guid>/whiteboard-whiteboard-interactions/</guid>
       <description>Here are some of the messages that are passed back and forth between my roommate and I&amp;hellip;
 Sometimes we make up silly things&amp;hellip; late at night&amp;hellip;
- Sometimes we borrow each others things&amp;hellip;
- And we get the better of each other with our antics&amp;hellip;
- Our true feelings for each other?
- To do list&amp;hellip;
- Sometimes we DON&amp;rsquo;T let each other borrow things&amp;hellip;</description>
+Sometimes we borrow each others things&amp;hellip;
+And we get the better of each other with our antics&amp;hellip;
+Our true feelings for each other?
+To do list&amp;hellip;
+Sometimes we DON&amp;rsquo;T let each other borrow things&amp;hellip;</description>
     </item>
     
     <item>

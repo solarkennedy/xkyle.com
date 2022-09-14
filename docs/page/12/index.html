@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.94.2" />
+  <meta name="generator" content="Hugo 0.102.3" />
   
   
   
@@ -225,7 +225,6 @@ In my previous post I showed a correlation between the WEP key of a Verizon FiOS
 
   
   Posting a screenshot of your desktop is the cool thing for geeks to do apparently.
-
 It&rsquo;s Ubuntu 8.10, no big surprise there. I&rsquo;m using the &ldquo;Dusk&rdquo; theme with the proposed background for the next Ubuntu. I really like it.
   <p>
     <a class="u-clickable" href="../../my-desktop/">Read Full Post…</a>
@@ -280,13 +279,10 @@ It&rsquo;s Ubuntu 8.10, no big surprise there. I&rsquo;m using the &ldquo;Dusk&r
 
   
   The weekend I Kayaked to Anclote Key. Here is a picture of us unloading our Kayaks! (Not me in the picture)
-
 We Kayaked 4 hours to the north end of Anclote Key. Here the the google maps link.
 We camped overnight on the night of Valentines day. How romantic right?
-
 And here is Cody inside the tent looking cutsy:
-
-And if you have Google Earth, here is a link to a path I made of the trip: anclote-key-trip
+And if you have Google Earth, here is a link to a path I made of the trip: anclote-key-trip And if you want to use Google Maps, here is a link to the arial photo.
   <p>
     <a class="u-clickable" href="../../couples-kayak-at-anclote-key/">Read Full Post…</a>
   </p>
@@ -406,7 +402,7 @@ But back in the day they worked on &ldquo;Terminals&rdquo;. You know, back when 
 
   
   A couple of years ago, a large list of phished Myspace accounts was leaked on the internet. I stumpled upon them and ran a very simple analysis. Check it out:
-root@a:/# cat myspace.hackedlist | cut -f 2 -d : | sort | uniq -c | sort -n | tail -n 20 14 qwerty1 15 123456a 15 babygirl1 15 blink182 16 123456 16 123abc 16 iloveyou2 17 football1 17 nicole1 18 number1 19 password 23 myspace1 24 fuckyou1 28 iloveyou1 28 monkey1 29 fuckyou 54 abc123 74 password1  The file was in the form of &ldquo;Username:password&rdquo;, so the first part of that command &ldquo;cuts&rdquo; the second column, with the colon as the delimiter.
+root@a:/# cat myspace.hackedlist | cut -f 2 -d : | sort | uniq -c | sort -n | tail -n 20 14 qwerty1 15 123456a 15 babygirl1 15 blink182 16 123456 16 123abc 16 iloveyou2 17 football1 17 nicole1 18 number1 19 password 23 myspace1 24 fuckyou1 28 iloveyou1 28 monkey1 29 fuckyou 54 abc123 74 password1 The file was in the form of &ldquo;Username:password&rdquo;, so the first part of that command &ldquo;cuts&rdquo; the second column, with the colon as the delimiter.
   <p>
     <a class="u-clickable" href="../../myspace-phishing-analysis/">Read Full Post…</a>
   </p>
@@ -466,8 +462,8 @@ root@a:/# cat myspace.hackedlist | cut -f 2 -d : | sort | uniq -c | sort -n | ta
 
   
   Take a look at some wireless keys that I&rsquo;ve collected from some Verizon FiOS installs around Tampa:
- 00-18-01-EA-3D-99,E3X12,6,WEP,1801349FCA 00-18-01-F0-6D-C4,NAMX2,1,WEP,18014B311F 00-18-01-F0-95-78,MWXV2,11,WEP,180149FF66 00-18-01-FD-4F-0E,R0LC7,1,WEP,1801BC5C6B 00-18-01-FE-15-46,JE2K7,1,WEP,1801C1B02B 00-18-01-FF-DF-DD,HH150,1,WEP,1F900396C5 00-1F-90-E0-B1-F8,3RA18,6,WEP,1801CDF4AF 00-1F-90-E0-B5-AC,OQ838,6,WEP,1801CF5700 00-1F-90-E2-7E-61,7WY20,6,WEP,1F90021D27 00-1F-90-E3-1E-90,C7WA0,6,WEP,1F9007C188 00-1F-90-E3-2E-07,DJP80,6,WEP,1F90063349 00-1F-90-E6-A7-D5,BJ2Z0,11,WEP,1F9018F797 00-1F-90-E6-D4-E3,RSHZ0,4,WEP,1F901944DB
- What you are looking at here is MAC, SSID, Channel, Encryption, Key.
+00-18-01-EA-3D-99,E3X12,6,WEP,1801349FCA 00-18-01-F0-6D-C4,NAMX2,1,WEP,18014B311F 00-18-01-F0-95-78,MWXV2,11,WEP,180149FF66 00-18-01-FD-4F-0E,R0LC7,1,WEP,1801BC5C6B 00-18-01-FE-15-46,JE2K7,1,WEP,1801C1B02B 00-18-01-FF-DF-DD,HH150,1,WEP,1F900396C5 00-1F-90-E0-B1-F8,3RA18,6,WEP,1801CDF4AF 00-1F-90-E0-B5-AC,OQ838,6,WEP,1801CF5700 00-1F-90-E2-7E-61,7WY20,6,WEP,1F90021D27 00-1F-90-E3-1E-90,C7WA0,6,WEP,1F9007C188 00-1F-90-E3-2E-07,DJP80,6,WEP,1F90063349 00-1F-90-E6-A7-D5,BJ2Z0,11,WEP,1F9018F797 00-1F-90-E6-D4-E3,RSHZ0,4,WEP,1F901944DB
+What you are looking at here is MAC, SSID, Channel, Encryption, Key.
 Notice that they are all WEP, 64bit, with 5 Alpha numeric SSID&rsquo;s.
 I want to emphasize that these are the defaults, and only geeks, nerds and the like change the defaults.
   <p>
@@ -541,7 +537,6 @@ I want to emphasize that these are the defaults, and only geeks, nerds and the l
 
   
   Often I get to enjoy wonderful mornings with my girlfriend Cody. She is a great cook, and one of her best concoctions are these AMAZING breakfast burritos:
-
 Sorry for the bad picture, I took it with the webcam on my eeepc. I don&rsquo;t apologize for her cleavage. I did that intentionally without her knowing :)
   <p>
     <a class="u-clickable" href="../../amazing-breakfasts-with-cody/">Read Full Post…</a>
@@ -596,9 +591,7 @@ Sorry for the bad picture, I took it with the webcam on my eeepc. I don&rsquo;t 
 
   
   Today was our trip back to Tampa, so we saw a show:
-
 Crowd Control?
-
 I&rsquo;m sure this family had fun. I wonder what the personality is like of whoever made the door decorations:
   <p>
     <a class="u-clickable" href="../../cruise-day-5/">Read Full Post…</a>
@@ -653,7 +646,6 @@ I&rsquo;m sure this family had fun. I wonder what the personality is like of who
 
   
   Today we visited the ancient Mayan ruins of Tulum.
-
 [gallery]
   <p>
     <a class="u-clickable" href="../../cruise-day-4/">Read Full Post…</a>
@@ -708,11 +700,8 @@ I&rsquo;m sure this family had fun. I wonder what the personality is like of who
 
   
   Today Cody and I visited the beautiful Grand Cayman:
-
 Myspace shot:
-
 And for the geek in everyone, hacked someone&rsquo;s WEP key and used their wireless while on the land. The ip I used was 63.136.113.229 which is hosted by Cable and Wireless. Here is an MTR to it:
-
 Yea..maybe not so interesting to others. Our shore excursions to go snorkeling with sting rays got canceled because of the weather&hellip;.
   <p>
     <a class="u-clickable" href="../../cruise-day-3/">Read Full Post…</a>

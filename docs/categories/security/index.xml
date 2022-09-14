@@ -22,8 +22,8 @@ Install an External Root Overlay What the heck does that mean? OpenWrt uses an i
       <pubDate>Mon, 01 Jun 2009 08:00:51 +0000</pubDate>
       <guid>/my-wireless-cracking-tool/</guid>
       <description>I&amp;rsquo;ve become a semi-expert on wireless networking and their security features.. and how to get around them. Before I continue I want to emphasize:
- The act of cracking encryption is not illegal just like picking a lock is not illegal. It is the unauthorized access of that network which is illegal, just like breaking and entering is illegal.
- So. To sum it up, there are two types of encryption.</description>
+The act of cracking encryption is not illegal just like picking a lock is not illegal. It is the unauthorized access of that network which is illegal, just like breaking and entering is illegal.
+So. To sum it up, there are two types of encryption. There is the weak kind (wep) and the strong kind (wpa).</description>
     </item>
     
     <item>
@@ -32,7 +32,7 @@ Install an External Root Overlay What the heck does that mean? OpenWrt uses an i
       <pubDate>Wed, 11 Feb 2009 22:40:10 +0000</pubDate>
       <guid>/myspace-phishing-analysis/</guid>
       <description>A couple of years ago, a large list of phished Myspace accounts was leaked on the internet. I stumpled upon them and ran a very simple analysis. Check it out:
-root@a:/# cat myspace.hackedlist | cut -f 2 -d : | sort | uniq -c | sort -n | tail -n 20 14 qwerty1 15 123456a 15 babygirl1 15 blink182 16 123456 16 123abc 16 iloveyou2 17 football1 17 nicole1 18 number1 19 password 23 myspace1 24 fuckyou1 28 iloveyou1 28 monkey1 29 fuckyou 54 abc123 74 password1  The file was in the form of &amp;ldquo;Username:password&amp;rdquo;, so the first part of that command &amp;ldquo;cuts&amp;rdquo; the second column, with the colon as the delimiter.</description>
+root@a:/# cat myspace.hackedlist | cut -f 2 -d : | sort | uniq -c | sort -n | tail -n 20 14 qwerty1 15 123456a 15 babygirl1 15 blink182 16 123456 16 123abc 16 iloveyou2 17 football1 17 nicole1 18 number1 19 password 23 myspace1 24 fuckyou1 28 iloveyou1 28 monkey1 29 fuckyou 54 abc123 74 password1 The file was in the form of &amp;ldquo;Username:password&amp;rdquo;, so the first part of that command &amp;ldquo;cuts&amp;rdquo; the second column, with the colon as the delimiter.</description>
     </item>
     
     <item>
@@ -58,9 +58,9 @@ I wanted a program that would alert me of my laptop&amp;rsquo;s where-a-bouts, a
       <pubDate>Sat, 15 Nov 2008 02:04:41 +0000</pubDate>
       <guid>/ettercaps-authors-birthday/</guid>
       <description>Today is the Birthday of AloR, the author of the amazing tool, ettercap.
-
 You can see that because it is his birthday, he asks that you email him. I happily obliged.
-Ettercap is an amazing tool. Not only does it have a console, curses, and graphical versions, it can be scripted, hacked, used with plugins, and the list goes on. Here is a screen shot of it in progress:</description>
+Ettercap is an amazing tool. Not only does it have a console, curses, and graphical versions, it can be scripted, hacked, used with plugins, and the list goes on. Here is a screen shot of it in progress:
+Here is the everyday use senario:</description>
     </item>
     
     <item>
@@ -69,7 +69,7 @@ Ettercap is an amazing tool. Not only does it have a console, curses, and graphi
       <pubDate>Thu, 21 Aug 2008 11:59:57 +0000</pubDate>
       <guid>/custom-arp-alerts-ii/</guid>
       <description>So I&amp;rsquo;ve found a better way to do what I did in the previous post. Instead of running a separate script to parse the arp alert logs, I have arp alert itself send the alerts! The key is this line in the arpalert.conf
-action on detect = &amp;quot;/etc/scripts/arp-alert&amp;quot;  Its so simple, it just runs that script sending the information about the alert as certain arguments. With this I have more control over the formatting of arpalert messages:</description>
+action on detect = &amp;quot;/etc/scripts/arp-alert&amp;quot; Its so simple, it just runs that script sending the information about the alert as certain arguments. With this I have more control over the formatting of arpalert messages:</description>
     </item>
     
     <item>

@@ -22,7 +22,6 @@ Moving my websites and dns to a dedicated server grants me the ability to implem
       <pubDate>Tue, 05 Oct 2010 20:25:06 +0000</pubDate>
       <guid>/solving-role-playing-4/</guid>
       <description>Last month Games Magazine published their Online Contest 29 - Role Playing 4. Here is the puzzle:
-
 The circles represent actors, the diamonds represent movies they have been in. Pink is for actresses and blue is for actors. The numbers represent the numbers in their name: First, Last. Question marks indicate the number in their name is 3,4,6, or 9 letters. The center actress is what we are after. Note there are no clues for her name, but she has been in 13 movies.</description>
     </item>
     
@@ -56,11 +55,11 @@ You will need the linux &amp;ldquo;words&amp;rdquo; dictionary, which is install
       <guid>/computer-assisted-jenga-with-the-wii-balance-board-and-linux/</guid>
       <description>I like to think about how games work, in the case of Jenga, it is just physics!
 But don&amp;rsquo;t you wish you could peel back reality and see what is happening with the physics from the inside? Well now you can, with the help of a Wii Balance Board.
-
 For the setup you need these ingredients:
-  Wii Balance Board
-  Computer with Bluetooth
-  Linux, preferably Ubuntu</description>
+Wii Balance Board
+Computer with Bluetooth
+Linux, preferably Ubuntu
+Jenga Set, alternatively &amp;ldquo;Tension Tower&amp;rdquo;</description>
     </item>
     
     <item>
@@ -69,7 +68,6 @@ For the setup you need these ingredients:
       <pubDate>Tue, 20 Jul 2010 05:35:25 +0000</pubDate>
       <guid>/the-seagate-dockstar-a-very-cool-linux-device/</guid>
       <description>What if I told you there was a computer out there, a small one, with gigabit ethernet, 4 USB 2.0 ports, runs on 5 watts, and serves as a great NAS (network attached storage) for your home. It can share files, serve media, be a router, make backups for you, host a lamp stack, be a mail server, etc. It can do whatever you can think up.
-
 How much would you pay for such a neat little device?</description>
     </item>
     
@@ -87,7 +85,7 @@ How much would you pay for such a neat little device?</description>
       <pubDate>Wed, 19 May 2010 01:20:39 +0000</pubDate>
       <guid>/isps-should-capitalize-on-their-reverse-dns/</guid>
       <description>Actually&amp;hellip; no they shouldn&amp;rsquo;t. Here is what it would look like:
- My traceroute [v0.75] kyle (0.0.0.0) Tue May 18 15:14:52 2010 Keys: Help Display mode Restart statistics Order of fields quit Host Loss% Snt Last Avg Best Wrst StDev 1. 192.168.0.1 0.0% 10 12.0 15.6 11.3 33.6 6.7 2 UPGRADE-YOUR-CONNECTION-1800-COMCAST.res.comcast.net 0.0% 10 13.1 15.8 11.5 31.1 5.9 3. TURBOBOOST-UP-TO-50MBS.car1.Den.core.comcast.net 44.4% 10 15.3 17.7 11.8 23.1 4.5 4. LIKE-WHAT-YOU-SEE?-GET-WITH-LEVEL3!.Level3.net 0.0% 10 27.</description>
+My traceroute [v0.75] kyle (0.0.0.0) Tue May 18 15:14:52 2010 Keys: Help Display mode Restart statistics Order of fields quit Host Loss% Snt Last Avg Best Wrst StDev 1. 192.168.0.1 0.0% 10 12.0 15.6 11.3 33.6 6.7 2 UPGRADE-YOUR-CONNECTION-1800-COMCAST.res.comcast.net 0.0% 10 13.1 15.8 11.5 31.1 5.9 3. TURBOBOOST-UP-TO-50MBS.car1.Den.core.comcast.net 44.4% 10 15.3 17.7 11.8 23.1 4.5 4. LIKE-WHAT-YOU-SEE?-GET-WITH-LEVEL3!.Level3.net 0.0% 10 27.</description>
     </item>
     
     <item>
@@ -107,10 +105,8 @@ I decided to do a twitter search for anything with a youtube link, and then let 
       <guid>/sparkfuns-autonomous-vehicle-competition/</guid>
       <description>The Sparkfun Autonomous Vehicle Competition (AVC) was a smash! You can watch some footage of the event at Sparkfun&amp;rsquo;s Ustream page.
 Here is what the starting / finishing line looked like:
-
 And some judges on the roof watching to make sure the Flying robots do not cut corners.
-
-I was very impressed by the UAVs (unmanned aerial vehicles). Most of them were able to complete the course in record time.</description>
+I was very impressed by the UAVs (unmanned aerial vehicles). Most of them were able to complete the course in record time. Some were even able to land autonomosouly!</description>
     </item>
     
     <item>
@@ -171,9 +167,8 @@ If you play any of these games, feel free to ally with me :) If aftershock bans 
       <pubDate>Wed, 16 Sep 2009 01:43:46 +0000</pubDate>
       <guid>/final-clock-post/</guid>
       <description>I&amp;rsquo;ve finally moved to Colorado, and I had to leave the big clock behind, and luckily I had finished it:
-
 I finilized the code, installed the clock in my church, and programmed it for there needs. The code is stored here if someone want to see it. If you want to check it out run:
-git clone https://github.com/solarkennedy/clock.git  I have a little more technical info on my wiki, but it basically goes like this:</description>
+git clone https://github.com/solarkennedy/clock.git I have a little more technical info on my wiki, but it basically goes like this:</description>
     </item>
     
     <item>
@@ -184,7 +179,6 @@ git clone https://github.com/solarkennedy/clock.git  I have a little more techni
       <description>When I first arrived at toor camp, I was issued a Hardhat and a kit of electronics to construct my own badge:
 [](/uploads/DCAM0007-toorcamp.jpg)
 What a cool start! Combined with the already cool scenery:
-
 Only one problem: no silo access. We&amp;rsquo;ll see if that changes for day two&amp;hellip;</description>
     </item>
     
@@ -194,8 +188,7 @@ Only one problem: no silo access. We&amp;rsquo;ll see if that changes for day tw
       <pubDate>Fri, 01 May 2009 17:17:02 +0000</pubDate>
       <guid>/discrete-wavelets-final-project-decaptcha/</guid>
       <description>This semester I took a class on Discrete Wavelets. It was awesome. The coolest part was our group final project. My group had the best topic by far: Decoding a Captcha! (Click on any of the following images to view them full size)
-
-We&amp;rsquo;ve all seen Captchas before. They are used on websites to make sure that the person on the website is a real human, not a computer program.</description>
+We&amp;rsquo;ve all seen Captchas before. They are used on websites to make sure that the person on the website is a real human, not a computer program. Why do we want to break them?</description>
     </item>
     
     <item>
@@ -215,8 +208,8 @@ In my previous post I showed a correlation between the WEP key of a Verizon FiOS
       <pubDate>Sat, 07 Feb 2009 18:29:04 +0000</pubDate>
       <guid>/verizon-fios-wireless-security-analysis/</guid>
       <description>Take a look at some wireless keys that I&amp;rsquo;ve collected from some Verizon FiOS installs around Tampa:
- 00-18-01-EA-3D-99,E3X12,6,WEP,1801349FCA 00-18-01-F0-6D-C4,NAMX2,1,WEP,18014B311F 00-18-01-F0-95-78,MWXV2,11,WEP,180149FF66 00-18-01-FD-4F-0E,R0LC7,1,WEP,1801BC5C6B 00-18-01-FE-15-46,JE2K7,1,WEP,1801C1B02B 00-18-01-FF-DF-DD,HH150,1,WEP,1F900396C5 00-1F-90-E0-B1-F8,3RA18,6,WEP,1801CDF4AF 00-1F-90-E0-B5-AC,OQ838,6,WEP,1801CF5700 00-1F-90-E2-7E-61,7WY20,6,WEP,1F90021D27 00-1F-90-E3-1E-90,C7WA0,6,WEP,1F9007C188 00-1F-90-E3-2E-07,DJP80,6,WEP,1F90063349 00-1F-90-E6-A7-D5,BJ2Z0,11,WEP,1F9018F797 00-1F-90-E6-D4-E3,RSHZ0,4,WEP,1F901944DB
- What you are looking at here is MAC, SSID, Channel, Encryption, Key.
+00-18-01-EA-3D-99,E3X12,6,WEP,1801349FCA 00-18-01-F0-6D-C4,NAMX2,1,WEP,18014B311F 00-18-01-F0-95-78,MWXV2,11,WEP,180149FF66 00-18-01-FD-4F-0E,R0LC7,1,WEP,1801BC5C6B 00-18-01-FE-15-46,JE2K7,1,WEP,1801C1B02B 00-18-01-FF-DF-DD,HH150,1,WEP,1F900396C5 00-1F-90-E0-B1-F8,3RA18,6,WEP,1801CDF4AF 00-1F-90-E0-B5-AC,OQ838,6,WEP,1801CF5700 00-1F-90-E2-7E-61,7WY20,6,WEP,1F90021D27 00-1F-90-E3-1E-90,C7WA0,6,WEP,1F9007C188 00-1F-90-E3-2E-07,DJP80,6,WEP,1F90063349 00-1F-90-E6-A7-D5,BJ2Z0,11,WEP,1F9018F797 00-1F-90-E6-D4-E3,RSHZ0,4,WEP,1F901944DB
+What you are looking at here is MAC, SSID, Channel, Encryption, Key.
 Notice that they are all WEP, 64bit, with 5 Alpha numeric SSID&amp;rsquo;s.
 I want to emphasize that these are the defaults, and only geeks, nerds and the like change the defaults.</description>
     </item>
@@ -227,8 +220,7 @@ I want to emphasize that these are the defaults, and only geeks, nerds and the l
       <pubDate>Sat, 06 Dec 2008 22:05:55 +0000</pubDate>
       <guid>/giving-my-wrt54gl-a-2g-drive/</guid>
       <description>The WRT54GL is a pretty cool little toy. Yes it is a router with a cheezy web interface for grandmas with ESSID&amp;rsquo;s named &amp;ldquo;linksys&amp;rdquo;. But you can flash it with your own linux and solder in your own SD card to turn it from a 4MB machine to a 2GB machine&amp;hellip; far out!
-
-Above it the bare board that I&amp;rsquo;ve unscrewed out of the thing. Some solder + a card&amp;hellip;.</description>
+Above it the bare board that I&amp;rsquo;ve unscrewed out of the thing. Some solder + a card&amp;hellip;..</description>
     </item>
     
     <item>
@@ -246,7 +238,6 @@ I wanted a program that would alert me of my laptop&amp;rsquo;s where-a-bouts, a
       <pubDate>Tue, 18 Nov 2008 03:01:04 +0000</pubDate>
       <guid>/vnc-surpirse/</guid>
       <description>Don&amp;rsquo;t you just love it when co-workers communicate with you in the most interesting ways???
-
 Sorry it is so small. Click on it!</description>
     </item>
     
@@ -257,7 +248,6 @@ Sorry it is so small. Click on it!</description>
       <guid>/newold-laptop-ubuntu-montage/</guid>
       <description>You may remember my old laptop from such posts as this.
 Well it broke, so I bought another one!
-
 It even has the original stickers. But.. Its slower than I remember. So I&amp;rsquo;m trying out different Ubuntu versions to see what boots the fastest. Here are my methodology and results.
 Methodology: The first number is the ammount of seconds from the 0 in the grub countdown till the X in the initial X-server.</description>
     </item>
@@ -276,9 +266,9 @@ Methodology: The first number is the ammount of seconds from the 0 in the grub c
       <pubDate>Sat, 15 Nov 2008 02:04:41 +0000</pubDate>
       <guid>/ettercaps-authors-birthday/</guid>
       <description>Today is the Birthday of AloR, the author of the amazing tool, ettercap.
-
 You can see that because it is his birthday, he asks that you email him. I happily obliged.
-Ettercap is an amazing tool. Not only does it have a console, curses, and graphical versions, it can be scripted, hacked, used with plugins, and the list goes on. Here is a screen shot of it in progress:</description>
+Ettercap is an amazing tool. Not only does it have a console, curses, and graphical versions, it can be scripted, hacked, used with plugins, and the list goes on. Here is a screen shot of it in progress:
+Here is the everyday use senario:</description>
     </item>
     
     <item>
@@ -296,7 +286,7 @@ So I wrote my own program to decode these and make images using html tables.</de
       <pubDate>Thu, 25 Sep 2008 02:14:57 +0000</pubDate>
       <guid>/dns-training-at-sago/</guid>
       <description>This past Tuesday I hosted a DNS training seminar for all the employees at Sago. It went over great! The curriculum involved:
- The difference between Caching and Authoritative DNS All the different types of DNS Records How to use dig and how to interpret it How to troubleshoot dns problems Secret DNS Tricks!  I recorded the AUDIO (sorry the audio sucks) and the BASH history for those poor souls who want to listen to me drone on for an hour about dns&amp;hellip;.</description>
+The difference between Caching and Authoritative DNS All the different types of DNS Records How to use dig and how to interpret it How to troubleshoot dns problems Secret DNS Tricks! I recorded the AUDIO (sorry the audio sucks) and the BASH history for those poor souls who want to listen to me drone on for an hour about dns&amp;hellip;.</description>
     </item>
     
     <item>
@@ -305,7 +295,7 @@ So I wrote my own program to decode these and make images using html tables.</de
       <pubDate>Thu, 21 Aug 2008 11:59:57 +0000</pubDate>
       <guid>/custom-arp-alerts-ii/</guid>
       <description>So I&amp;rsquo;ve found a better way to do what I did in the previous post. Instead of running a separate script to parse the arp alert logs, I have arp alert itself send the alerts! The key is this line in the arpalert.conf
-action on detect = &amp;quot;/etc/scripts/arp-alert&amp;quot;  Its so simple, it just runs that script sending the information about the alert as certain arguments. With this I have more control over the formatting of arpalert messages:</description>
+action on detect = &amp;quot;/etc/scripts/arp-alert&amp;quot; Its so simple, it just runs that script sending the information about the alert as certain arguments. With this I have more control over the formatting of arpalert messages:</description>
     </item>
     
     <item>

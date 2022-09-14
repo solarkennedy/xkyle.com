@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.94.2" />
+  <meta name="generator" content="Hugo 0.102.3" />
   
   
   
@@ -207,7 +207,7 @@ The Gem The first thing you need to do is install beaker. Usually this is as sim
   
   Serf is a very interesting service discovery mechanism. Its dynamic membership and tags capability make it very flexible. Can we use it to generate a centralized ssh_known_hosts file?
 Installing and Configuring Serf I like to use configuration management to manage servers. Here I use a Puppet module to install and configure Serf:
-class { &#39;serf&#39;:  config_hash =&gt; {  &#39;node_name&#39; =&gt; $::fqdn,  &#39;tags&#39; =&gt; {  &#39;sshrsakey&#39; =&gt; $::sshrsakey  },  &#39;discover&#39; =&gt; &#39;cluster&#39;,  } } This particular module uses a hash to translate directly into the config.
+class { &#39;serf&#39;: config_hash =&gt; { &#39;node_name&#39; =&gt; $::fqdn, &#39;tags&#39; =&gt; { &#39;sshrsakey&#39; =&gt; $::sshrsakey }, &#39;discover&#39; =&gt; &#39;cluster&#39;, } } This particular module uses a hash to translate directly into the config.
   <p>
     <a class="u-clickable" href="../../Managing-Ssh-Known-Hosts-With-Serf/">Read Full Post…</a>
   </p>
@@ -312,7 +312,7 @@ Exec The second part is exec.
   
   Whenever possible, I try to write Puppet code that is purgable and &ldquo;Comment Safe&rdquo;. That is not a very good description. What I mean is, Puppet code that removes resources from a system when the corresponding Puppet code is &ldquo;Commented&rdquo; out of a manifest. Lets look at a few examples.
 Example: Managed Sudo Lets say you used this popular sudo module with the following params:
-class { &#39;sudo&#39;:  purge =&gt; true, } Great start.
+class { &#39;sudo&#39;: purge =&gt; true, } Great start.
   <p>
     <a class="u-clickable" href="../../Writing-Purgable-Puppet-Code/">Read Full Post…</a>
   </p>
@@ -654,7 +654,7 @@ Let&rsquo;s try it out, but gosh, I am SO lazy.
   I love my low end boxes. I also love mosh.
 Low end boxes usually are tight on resources, so Dropbear is often used as a lightweight ssh server. Mosh is mostly tested with openssh-client/server, so I think there are some bugs.
 But it can work, just make sure:
-  You are using the same version of mosh on the server as you are on your client. (otherwise they may not support the same command line options)
+You are using the same version of mosh on the server as you are on your client. (otherwise they may not support the same command line options)
   <p>
     <a class="u-clickable" href="../../dropbear-with-mosh-on-a-low-end-server/">Read Full Post…</a>
   </p>

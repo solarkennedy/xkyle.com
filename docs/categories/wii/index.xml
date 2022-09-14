@@ -13,9 +13,7 @@
       <pubDate>Thu, 07 Oct 2010 01:21:22 +0000</pubDate>
       <guid>/adding-a-built-in-sensor-bar-to-a-tv/</guid>
       <description>I was thinking about moving my Wii, and relocating it to a more conspicuous place. I was annoyed at my sensor bar getting in the way:
-
 I knew that the sensor bar was just 2 IR LEDs. So why not just build those LEDs right into the TV? One less cord to lay around. Lets open it up!
-
 I used the given board that had 2 White LEDs that lit up the Westinghouse Logo.</description>
     </item>
     
@@ -26,11 +24,11 @@ I used the given board that had 2 White LEDs that lit up the Westinghouse Logo.<
       <guid>/computer-assisted-jenga-with-the-wii-balance-board-and-linux/</guid>
       <description>I like to think about how games work, in the case of Jenga, it is just physics!
 But don&amp;rsquo;t you wish you could peel back reality and see what is happening with the physics from the inside? Well now you can, with the help of a Wii Balance Board.
-
 For the setup you need these ingredients:
-  Wii Balance Board
-  Computer with Bluetooth
-  Linux, preferably Ubuntu</description>
+Wii Balance Board
+Computer with Bluetooth
+Linux, preferably Ubuntu
+Jenga Set, alternatively &amp;ldquo;Tension Tower&amp;rdquo;</description>
     </item>
     
   </channel>

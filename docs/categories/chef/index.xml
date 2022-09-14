@@ -13,7 +13,7 @@
       <pubDate>Sun, 11 Oct 2015 18:21:14 +0000</pubDate>
       <guid>/configuration-management-rosetta-stone-configuring-sensu-with-puppet-chef-ansible-and-salt/</guid>
       <description>I recently finished my Intermediate Sensu Training on Udemy. It was a ton of work but I&amp;rsquo;m glad I got it all together. Part of that training includes how to deploy and configure Sensu with four of the most popular open-source configuration management tools: Puppet, Chef, Ansible, and Salt.
- TOC {:toc}  The Sensu Decree In order to do the training I had to learn each of these tools enough so I could install a baseline Sensu installation.</description>
+TOC {:toc} The Sensu Decree In order to do the training I had to learn each of these tools enough so I could install a baseline Sensu installation.</description>
     </item>
     
   </channel>

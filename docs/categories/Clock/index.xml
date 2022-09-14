@@ -13,9 +13,8 @@
       <pubDate>Wed, 16 Sep 2009 01:43:46 +0000</pubDate>
       <guid>/final-clock-post/</guid>
       <description>I&amp;rsquo;ve finally moved to Colorado, and I had to leave the big clock behind, and luckily I had finished it:
-
 I finilized the code, installed the clock in my church, and programmed it for there needs. The code is stored here if someone want to see it. If you want to check it out run:
-git clone https://github.com/solarkennedy/clock.git  I have a little more technical info on my wiki, but it basically goes like this:</description>
+git clone https://github.com/solarkennedy/clock.git I have a little more technical info on my wiki, but it basically goes like this:</description>
     </item>
     
     <item>
@@ -32,8 +31,7 @@ git clone https://github.com/solarkennedy/clock.git  I have a little more techni
       <pubDate>Fri, 14 Dec 2007 14:22:12 +0000</pubDate>
       <guid>/putting-the-clock-together/</guid>
       <description>We have finally built enough pieces of the clock together to get some digits! It basically comes down to a white wooden box, a piece of cardboard with the LEDs wired, running to a RJ45 jack. Then a stryofoam cutout painted black, with a white piece of paper and plexyglass on top for a face.
-Here is the template with wired LEDS: 
-A multitude of completed digits (still missing the blank faceplate).</description>
+Here is the template with wired LEDS: A multitude of completed digits (still missing the blank faceplate).</description>
     </item>
     
     <item>
@@ -42,9 +40,9 @@ A multitude of completed digits (still missing the blank faceplate).</descriptio
       <pubDate>Wed, 02 May 2007 02:08:51 +0000</pubDate>
       <guid>/clock-primer/</guid>
       <description>Here is the intro to the clock project:
- We start with a template made at a sign shop, and the cover the edges with aluminum tape to protect them from the heat from the hot wire.
- I&amp;rsquo;ve pushed out holes with a strait wire and a blow torch to give my entry points for my hot wires. Its going to be a plunge and cut job.
- The laserpointer helps guide the hot wire because it inevitably bends and makes crooked cuts.</description>
+We start with a template made at a sign shop, and the cover the edges with aluminum tape to protect them from the heat from the hot wire.
+I&amp;rsquo;ve pushed out holes with a strait wire and a blow torch to give my entry points for my hot wires. Its going to be a plunge and cut job.
+The laserpointer helps guide the hot wire because it inevitably bends and makes crooked cuts.</description>
     </item>
     
   </channel>

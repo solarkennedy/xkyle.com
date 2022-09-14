@@ -22,7 +22,6 @@ Different jobs have different types of metawork. Sometimes it is just paperwork.
       <pubDate>Tue, 18 Nov 2008 03:01:04 +0000</pubDate>
       <guid>/vnc-surpirse/</guid>
       <description>Don&amp;rsquo;t you just love it when co-workers communicate with you in the most interesting ways???
-
 Sorry it is so small. Click on it!</description>
     </item>
     
@@ -32,7 +31,7 @@ Sorry it is so small. Click on it!</description>
       <pubDate>Thu, 25 Sep 2008 02:14:57 +0000</pubDate>
       <guid>/dns-training-at-sago/</guid>
       <description>This past Tuesday I hosted a DNS training seminar for all the employees at Sago. It went over great! The curriculum involved:
- The difference between Caching and Authoritative DNS All the different types of DNS Records How to use dig and how to interpret it How to troubleshoot dns problems Secret DNS Tricks!  I recorded the AUDIO (sorry the audio sucks) and the BASH history for those poor souls who want to listen to me drone on for an hour about dns&amp;hellip;.</description>
+The difference between Caching and Authoritative DNS All the different types of DNS Records How to use dig and how to interpret it How to troubleshoot dns problems Secret DNS Tricks! I recorded the AUDIO (sorry the audio sucks) and the BASH history for those poor souls who want to listen to me drone on for an hour about dns&amp;hellip;.</description>
     </item>
     
   </channel>

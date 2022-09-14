@@ -13,7 +13,7 @@
       <pubDate>Fri, 02 Apr 2010 18:40:56 +0000</pubDate>
       <guid>/help-wanted-what-is-the-pattern-in-these-new-wep-keys/</guid>
       <description>Can you see the pattern?
-ESSID ESSID in Hex BSSID KEY MCFVC 23CB158 0021636A7177 F8AA1AABA2 H47MD 1B6B095 001D19E2A557 BFD896F9D4 Q36G7 29C9D67 0021632D31E3 BCD77B3755 UX78G 31880E0 0024d2682944 18DD3AB249  These key pairs were graciously provided by Eric Betts. They do not conform to my existing WEP key calculator.
+ESSID ESSID in Hex BSSID KEY MCFVC 23CB158 0021636A7177 F8AA1AABA2 H47MD 1B6B095 001D19E2A557 BFD896F9D4 Q36G7 29C9D67 0021632D31E3 BCD77B3755 UX78G 31880E0 0024d2682944 18DD3AB249 These key pairs were graciously provided by Eric Betts. They do not conform to my existing WEP key calculator.
 Maybe Verizon wised up and made them random? The previous correlation was dead obvious, but this one I can&amp;rsquo;t see.
 Of course, I am only a wannabe cryptologist :)</description>
     </item>
@@ -24,8 +24,8 @@ Of course, I am only a wannabe cryptologist :)</description>
       <pubDate>Mon, 01 Jun 2009 08:00:51 +0000</pubDate>
       <guid>/my-wireless-cracking-tool/</guid>
       <description>I&amp;rsquo;ve become a semi-expert on wireless networking and their security features.. and how to get around them. Before I continue I want to emphasize:
- The act of cracking encryption is not illegal just like picking a lock is not illegal. It is the unauthorized access of that network which is illegal, just like breaking and entering is illegal.
- So. To sum it up, there are two types of encryption.</description>
+The act of cracking encryption is not illegal just like picking a lock is not illegal. It is the unauthorized access of that network which is illegal, just like breaking and entering is illegal.
+So. To sum it up, there are two types of encryption. There is the weak kind (wep) and the strong kind (wpa).</description>
     </item>
     
     <item>

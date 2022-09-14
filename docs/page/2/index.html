@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.94.2" />
+  <meta name="generator" content="Hugo 0.102.3" />
   
   
   
@@ -157,11 +157,11 @@
 
   
   For the purpose of this blog post, my definition of plugin is:
- A method of extending the functionality of program without forking it
- In particular, I&rsquo;ll be looking at methods of extending Golang (go) programs.
+A method of extending the functionality of program without forking it
+In particular, I&rsquo;ll be looking at methods of extending Golang (go) programs.
 Official Golang Plugins Official Golang Plugins are a native way of extending go codebases without forking them.
 How They Work Official Golang Plugins work by compiling your plugin in a special way:
-go build -buildmode=plugin  This build mode can output a .
+go build -buildmode=plugin This build mode can output a .
   <p>
     <a class="u-clickable" href="../../A-Survey-of-Golang-plugins-in-2020/">Read Full Post…</a>
   </p>
@@ -193,7 +193,7 @@ go build -buildmode=plugin  This build mode can output a .
   Like any self-respecting nerd, I have a colletion of internal web services running in my home network.
 Even though these are not exposed to the internet, I think they still deserve encryption and authentication. Inspired by this blog post, I decided to do this for myself.
 Here are were my requirements:
- Google auth Not on the internet Easy to remember domain names Encryption  Installing Caddy Note: At the time of this writing I used Caddy version 1, which is now replaced with v2.
+Google auth Not on the internet Easy to remember domain names Encryption Installing Caddy Note: At the time of this writing I used Caddy version 1, which is now replaced with v2.
   <p>
     <a class="u-clickable" href="../../Securing-Your-Own-Privately-Hosted-Internal-Web-Services/">Read Full Post…</a>
   </p>
@@ -224,7 +224,7 @@ Here are were my requirements:
   
   I&rsquo;ve held onto this Time Capsule for 29 years. I believe I made it in first grade, at seven years old, at Cypress Woods Elementary in &ldquo;Gifted Class&rdquo;.
 Certainly some things have fallen out of the manila folders. The things that I drew are a kind of snapshot of my life at the time?
- Bart Simpson Bill - Bill Clinton? Self-Portrait Nintendo - NES Orbiter - The Space Shuttle Orbiter Wcheis (sic) - Watches?
+Bart Simpson Bill - Bill Clinton? Self-Portrait Nintendo - NES Orbiter - The Space Shuttle Orbiter Wcheis (sic) - Watches?
   <p>
     <a class="u-clickable" href="../../Time-Capsule/">Read Full Post…</a>
   </p>
@@ -256,7 +256,6 @@ Certainly some things have fallen out of the manila folders. The things that I d
   Lots of people are aware of the different AWS regions that are available for use.
 But let&rsquo;s say you wanted to know about the network topology between regions, specifically how &ldquo;close&rdquo; they are to each other, from a network-perspective.
 Using data from cloudping.io and some graphviz code, I created this latency map (click for the pdf):
-
 How About AWS Availability Zones? Not Availability Zones (AZs) are the same. Due to geography, there will be some AZs with lower latency to other AZs.
   <p>
     <a class="u-clickable" href="../../Measuring-AWS-Region-and-AZ-Latency/">Read Full Post…</a>
@@ -286,11 +285,9 @@ How About AWS Availability Zones? Not Availability Zones (AZs) are the same. Due
 </header>
 
   
-  I&rsquo;m calling my ePaper (eInk) watch &ldquo;done&rdquo; (click on the image for a full resolution): 
-It uses a database of literary quotes to display what time it is, highlighting the quote in red.
+  I&rsquo;m calling my ePaper (eInk) watch &ldquo;done&rdquo; (click on the image for a full resolution): It uses a database of literary quotes to display what time it is, highlighting the quote in red.
 This project originally started as a wrist watch with battery management and a custom PCB:
-
-The wrist watch version was too ambitious and too distracting, so I gave up and just left it as a wall-clock.
+The wrist watch version was too ambitious and too distracting, so I gave up and just left it as a wall-clock. Originally I took inspiration from this clock that used a kindle, but wanted more control over the hardware.
   <p>
     <a class="u-clickable" href="../../An-ePaper-Clock/">Read Full Post…</a>
   </p>
@@ -320,10 +317,8 @@ The wrist watch version was too ambitious and too distracting, so I gave up and 
 
   
   This is my Sunjar (code). Inspired by those (expensive) light alarm clocks, my Sunjar gently wakes me up in the morning to this (click to see a youtube version):
-
-And then fall asleep to flames: 
-Features This is my alarm clock, so I can put in the features that I want:
- NTP-synced time. Never forget about DST again. Always accurate. Wakeup by ocean light, with a 1-hour brightness ramp-up.
+And then fall asleep to flames: Features This is my alarm clock, so I can put in the features that I want:
+NTP-synced time. Never forget about DST again. Always accurate. Wakeup by ocean light, with a 1-hour brightness ramp-up. Capacitive touch-sensitive override - snooze if I want to, just touch the jar 1-hour red-light sleep timer for going to bed Cool patterns during the day Over the air (OTA) firmware updates Hardware An esp8266 (Wemos W1 Clone) 5 WS2812 LEDs 1 50M ohm resistor Wakeup / Sleep Time Algorithm I decided I only needed two different wakeup times, one for weekedays, one for weekends.
   <p>
     <a class="u-clickable" href="../../My-Sunjar-An-esp8266-Powered-Light-Alarm-Clock/">Read Full Post…</a>
   </p>
@@ -353,7 +348,6 @@ Features This is my alarm clock, so I can put in the features that I want:
 
   
   Intro The Kubernetes (k8s) ecosystem has gone crazy for sidecar containers.
-
 Sidecar containers (sidecars) are auxiliary containers, not part of your application, that provide additional support to make it work. Along with your application, sidecars can be used to inject secrets, ship logs, or power a service mesh.
 Although there are some advantages to Sidecars over traditional daemons, I would like to make the case that they are actually and inferior solution for a company that has the resources to provide a platform to its developers.
   <p>

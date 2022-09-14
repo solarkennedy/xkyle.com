@@ -24,7 +24,6 @@ Let&amp;rsquo;s try it out, but gosh, I am SO lazy.</description>
       <pubDate>Mon, 19 Nov 2012 05:41:17 +0000</pubDate>
       <guid>/configuring-nagios-like-a-boss/</guid>
       <description>I&amp;rsquo;m tired of configuring Nagios by hand. Just tired. I always forget to do stuff. I&amp;rsquo;ll add a new host, or stick in a raid card, add a new website, whatever, and forget to add a nagios check for it.
-
 So it happened. You setup a server, put critical infrastructure on it, but forgot to monitor it. It goes down, bad stuff happens. Your boss asks, why weren&amp;rsquo;t we monitoring this?</description>
     </item>
     

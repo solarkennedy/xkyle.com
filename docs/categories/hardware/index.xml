@@ -13,7 +13,6 @@
       <pubDate>Thu, 14 Mar 2013 04:08:20 +0000</pubDate>
       <guid>/hacking-a-hallmark-text-band-first-attempt/</guid>
       <description>The Hallmark Text Band is a strange thing:
-
 Doesn&amp;rsquo;t Hallmark know kids have cell phones now? Anyway, it is an extremely simple micro-controller driving a led matrix and a C-Max CMM-9201. You get 10 characters, and a small reed-switch? triggers a hardware interrupt, and broadcasts your 10 characters to a friend, and you swap messages. The devices holds 24 messages, FIFO. Memory is volatile. Profanity filter included.
 Oh well. Lets hack it.</description>
     </item>
@@ -24,8 +23,7 @@ Oh well. Lets hack it.</description>
       <pubDate>Sat, 06 Dec 2008 22:05:55 +0000</pubDate>
       <guid>/giving-my-wrt54gl-a-2g-drive/</guid>
       <description>The WRT54GL is a pretty cool little toy. Yes it is a router with a cheezy web interface for grandmas with ESSID&amp;rsquo;s named &amp;ldquo;linksys&amp;rdquo;. But you can flash it with your own linux and solder in your own SD card to turn it from a 4MB machine to a 2GB machine&amp;hellip; far out!
-
-Above it the bare board that I&amp;rsquo;ve unscrewed out of the thing. Some solder + a card&amp;hellip;.</description>
+Above it the bare board that I&amp;rsquo;ve unscrewed out of the thing. Some solder + a card&amp;hellip;..</description>
     </item>
     
     <item>
@@ -35,7 +33,6 @@ Above it the bare board that I&amp;rsquo;ve unscrewed out of the thing. Some sol
       <guid>/newold-laptop-ubuntu-montage/</guid>
       <description>You may remember my old laptop from such posts as this.
 Well it broke, so I bought another one!
-
 It even has the original stickers. But.. Its slower than I remember. So I&amp;rsquo;m trying out different Ubuntu versions to see what boots the fastest. Here are my methodology and results.
 Methodology: The first number is the ammount of seconds from the 0 in the grub countdown till the X in the initial X-server.</description>
     </item>
@@ -56,8 +53,7 @@ So now-a-days I run a &amp;ldquo;smart test&amp;rdquo; on the drive to see how i
       <pubDate>Fri, 14 Dec 2007 14:22:12 +0000</pubDate>
       <guid>/putting-the-clock-together/</guid>
       <description>We have finally built enough pieces of the clock together to get some digits! It basically comes down to a white wooden box, a piece of cardboard with the LEDs wired, running to a RJ45 jack. Then a stryofoam cutout painted black, with a white piece of paper and plexyglass on top for a face.
-Here is the template with wired LEDS: 
-A multitude of completed digits (still missing the blank faceplate).</description>
+Here is the template with wired LEDS: A multitude of completed digits (still missing the blank faceplate).</description>
     </item>
     
     <item>
@@ -66,9 +62,9 @@ A multitude of completed digits (still missing the blank faceplate).</descriptio
       <pubDate>Wed, 02 May 2007 02:08:51 +0000</pubDate>
       <guid>/clock-primer/</guid>
       <description>Here is the intro to the clock project:
- We start with a template made at a sign shop, and the cover the edges with aluminum tape to protect them from the heat from the hot wire.
- I&amp;rsquo;ve pushed out holes with a strait wire and a blow torch to give my entry points for my hot wires. Its going to be a plunge and cut job.
- The laserpointer helps guide the hot wire because it inevitably bends and makes crooked cuts.</description>
+We start with a template made at a sign shop, and the cover the edges with aluminum tape to protect them from the heat from the hot wire.
+I&amp;rsquo;ve pushed out holes with a strait wire and a blow torch to give my entry points for my hot wires. Its going to be a plunge and cut job.
+The laserpointer helps guide the hot wire because it inevitably bends and makes crooked cuts.</description>
     </item>
     
   </channel>

@@ -13,9 +13,7 @@
       <pubDate>Thu, 07 Oct 2010 01:21:22 +0000</pubDate>
       <guid>/adding-a-built-in-sensor-bar-to-a-tv/</guid>
       <description>I was thinking about moving my Wii, and relocating it to a more conspicuous place. I was annoyed at my sensor bar getting in the way:
-
 I knew that the sensor bar was just 2 IR LEDs. So why not just build those LEDs right into the TV? One less cord to lay around. Lets open it up!
-
 I used the given board that had 2 White LEDs that lit up the Westinghouse Logo.</description>
     </item>
     

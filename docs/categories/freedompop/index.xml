@@ -14,8 +14,9 @@
       <guid>/an-overdrive-pro-connecting-on-openwrt/</guid>
       <description>Have a fancy FreedomPop Overdrive Pro? Want to hook it up to your OpenWrt based router to use as a backup (or primary?) internet connection? Lets do it.
 Plug it into your router via USB. Then run:
-opkg install kmod-usb-net-cdc-ether  Run dmesg and it will report which eth device came up. Mine shows up as &amp;ldquo;eth1&amp;rdquo;. Now make eth1 your &amp;ldquo;wan&amp;rdquo; interface:
-uci set network.wan.ifname=eth1 uci commit reboot  Whoa.</description>
+opkg install kmod-usb-net-cdc-ether Run dmesg and it will report which eth device came up. Mine shows up as &amp;ldquo;eth1&amp;rdquo;. Now make eth1 your &amp;ldquo;wan&amp;rdquo; interface:
+uci set network.wan.ifname=eth1 uci commit reboot Whoa.
+Or, set it up as a second wan interface and use Multiwan:</description>
     </item>
     
   </channel>

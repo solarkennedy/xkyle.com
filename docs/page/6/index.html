@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.94.2" />
+  <meta name="generator" content="Hugo 0.102.3" />
   
   
   
@@ -158,7 +158,7 @@
   
   Working at Intel has been a great experience. I wish I could have stayed longer, but in the end we decided to part ways.
 During my stay I learned lots of stuff. I would like to boil my experience down to my top Linux commands.
-The List  git: Lots of git. syscfg: Managing bios settings from within Linux. Nice. (Intel platforms) setupbios: More bios settings from within Linux. (Dell platforms) puppet: I actually enjoy manually running puppet.
+The List git: Lots of git. syscfg: Managing bios settings from within Linux. Nice. (Intel platforms) setupbios: More bios settings from within Linux. (Dell platforms) puppet: I actually enjoy manually running puppet.
   <p>
     <a class="u-clickable" href="../../goodbye-intel-my-favorite-commands/">Read Full Post…</a>
   </p>
@@ -254,7 +254,7 @@ The List  git: Lots of git. syscfg: Managing bios settings from within Linux. Ni
 
   
   Sometimes there are packages out there that don&rsquo;t come in your cool new Architecture. In my case it is ARM, and the package I wanted was Puppet. Here is how to rebuild source packages the cool way.
-Add the Puppet repo so you can get fresh source packages cd /tmp # Add the repo, even though it may not have arm binaries... wget http://apt.puppetlabs.com/puppetlabs-release-precise.deb dpkg -i puppetlabs-release-precise.deb # Get dependencies... apt-get update apt-get build-dep puppet facter  Build / Install # Get sources.
+Add the Puppet repo so you can get fresh source packages cd /tmp # Add the repo, even though it may not have arm binaries... wget http://apt.puppetlabs.com/puppetlabs-release-precise.deb dpkg -i puppetlabs-release-precise.deb # Get dependencies... apt-get update apt-get build-dep puppet facter Build / Install # Get sources.
   <p>
     <a class="u-clickable" href="../../rebuilding-packages-for-arm-or-any-other-arch/">Read Full Post…</a>
   </p>
@@ -297,8 +297,9 @@ Add the Puppet repo so you can get fresh source packages cd /tmp # Add the repo,
   
   Have a fancy FreedomPop Overdrive Pro? Want to hook it up to your OpenWrt based router to use as a backup (or primary?) internet connection? Lets do it.
 Plug it into your router via USB. Then run:
-opkg install kmod-usb-net-cdc-ether  Run dmesg and it will report which eth device came up. Mine shows up as &ldquo;eth1&rdquo;. Now make eth1 your &ldquo;wan&rdquo; interface:
-uci set network.wan.ifname=eth1 uci commit reboot  Whoa.
+opkg install kmod-usb-net-cdc-ether Run dmesg and it will report which eth device came up. Mine shows up as &ldquo;eth1&rdquo;. Now make eth1 your &ldquo;wan&rdquo; interface:
+uci set network.wan.ifname=eth1 uci commit reboot Whoa.
+Or, set it up as a second wan interface and use Multiwan:
   <p>
     <a class="u-clickable" href="../../an-overdrive-pro-connecting-on-openwrt/">Read Full Post…</a>
   </p>
@@ -352,12 +353,13 @@ uci set network.wan.ifname=eth1 uci commit reboot  Whoa.
 
   
   Hopefully Valve will offer me a job instead of suing me? :)
-Teardown   Parts   Many See N&rsquo; Says to destroy (I burned through 3)
-  An Arduino (yes, because I&rsquo;m a lazy noob)
-  Wave shield
-  Some sort of ISP programmer
-  Speaker / Switch / Hot-glue / Resistors / etc
-  How It Works   A user pulls the handle, activating the normally-open switch and powering the arduino
+Teardown Parts Many See N&rsquo; Says to destroy (I burned through 3)
+An Arduino (yes, because I&rsquo;m a lazy noob)
+Wave shield
+Some sort of ISP programmer
+Speaker / Switch / Hot-glue / Resistors / etc
+How It Works A user pulls the handle, activating the normally-open switch and powering the arduino
+When the handle is released and the spinner starts spinning, a resistor sensor detects at least two succsessive reistor changes, indicating that the spinner is in motion and noting the first value of the resistor for the next step
   <p>
     <a class="u-clickable" href="../../a-team-fortress-2-see-n-say/">Read Full Post…</a>
   </p>
@@ -485,9 +487,9 @@ Step 1: Get a version of nginx with spdy enabled. Ubuntu Get some packages. The 
   
   Google&rsquo;s Google Plus Hangout / Gtalk plugin automatically adjust your volume to account for varying noise conditions by default. Sometimes this is an undesired behavior, but there is no button to turn it off. Here is how you do it:
 Linux: Run this in a terminal:
-echo &quot;audio-flags=1&quot; &gt; ~/.config/google-googletalkplugin/options  Windows: Set the registry Key:
-HKEY_CURRENT_USER\&lt;wbr&gt;&lt;/wbr&gt;Software\Google\Google Talk Plugin\options\audio-flags = 1  Mac OSX: Edit the plist:
-~/Library/Preferences/com.&lt;wbr&gt;&lt;/wbr&gt;google.GoogleTalkPluginD.plist  and set &ldquo;Audio Flags&rdquo; = 1
+echo &quot;audio-flags=1&quot; &gt; ~/.config/google-googletalkplugin/options Windows: Set the registry Key:
+HKEY_CURRENT_USER\&lt;wbr&gt;&lt;/wbr&gt;Software\Google\Google Talk Plugin\options\audio-flags = 1 Mac OSX: Edit the plist:
+~/Library/Preferences/com.&lt;wbr&gt;&lt;/wbr&gt;google.GoogleTalkPluginD.plist and set &ldquo;Audio Flags&rdquo; = 1
   <p>
     <a class="u-clickable" href="../../disabling-microphone-auto-gain-sensitivity-for-google-plus-hangouts/">Read Full Post…</a>
   </p>
@@ -619,13 +621,14 @@ Why? BIOS settings should be considered configuration just like any other config
 </header>
 
   
-  Status:   Github Repo is here: https://github.com/solarkennedy/puppet-on-openwrt/
-  OpenWrt package files are submitted for inclusion
-  Puppet/facter patches have been included in Trunk for inclusion in puppet 3.2
-  Binary packages have been made for early adopters (and me)
-  Why? To scratch my own itch, and for Fun!
+  Status: Github Repo is here: https://github.com/solarkennedy/puppet-on-openwrt/
+OpenWrt package files are submitted for inclusion
+Puppet/facter patches have been included in Trunk for inclusion in puppet 3.2
+Binary packages have been made for early adopters (and me)
+Why? To scratch my own itch, and for Fun!
 How? Downloads are here: http://download.xkyle.com/openwrt/
 Because of the dependencies, it is probably easier to add the repo:
+. /etc/openwrt_release VERSION=`echo $DISTRIB_RELEASE | cut -f 1 -d -` TARGET=`echo $DISTRIB_TARGET | cut -f 1 -d /` LINE=&quot;src/gz puppet-packages http://download.
   <p>
     <a class="u-clickable" href="../../puppet-on-openwrt/">Read Full Post…</a>
   </p>
@@ -666,9 +669,9 @@ Because of the dependencies, it is probably easier to add the repo:
 </header>
 
   
-  Picking a server hostname is abig deal. I&rsquo;ve seen quite a few, lets traverse the hostname-awesomeness-continuum and see if we can learn something.
-Worsest  morpheous trinity alf  Why do these suck? These names have no information what-so-ever. If you see a server alert, you have no clue what services are actually down. It might as well be a random string. IT is a random string.
- Pro Tip: Don&rsquo;t give make server hostnames random strings.
+  Picking a server hostname is a big deal. I&rsquo;ve seen quite a few, lets traverse the hostname-awesomeness-continuum and see if we can learn something.
+Worsest morpheous trinity alf Why do these suck? These names have no information what-so-ever. If you see a server alert, you have no clue what services are actually down. It might as well be a random string. IT is a random string.
+Pro Tip: Don&rsquo;t give make server hostnames random strings.
   <p>
     <a class="u-clickable" href="../../picking-server-hostnames-worstest-worser-worst-better-betterer-bestest/">Read Full Post…</a>
   </p>
@@ -722,8 +725,8 @@ Worsest  morpheous trinity alf  Why do these suck? These names have no informati
 
   
   A strange string appeared at the bottom of a Balanced Payments blog post:
- NmQ2ZjYzMmU3Mzc0NmU2NTZkNzk2MTcwNjQ2NTYzNm U2MTZjNjE2MjQwNjU2MzZlNjU3MjY1NjY2NjY5NjQ2MTY1N mI2MTZkNmY3NDc0NmU2MTc3Njk=
- One of those puzzles to attract coders I guess. The guys at Hacker News spilled the beans, so lets spill them some more.
+NmQ2ZjYzMmU3Mzc0NmU2NTZkNzk2MTcwNjQ2NTYzNm U2MTZjNjE2MjQwNjU2MzZlNjU3MjY1NjY2NjY5NjQ2MTY1N mI2MTZkNmY3NDc0NmU2MTc3Njk=
+One of those puzzles to attract coders I guess. The guys at Hacker News spilled the beans, so lets spill them some more.
 First though,** Mad Props** to the Balanced team for thinking &ldquo;outside&rdquo; the unit-test-box. Plus Jenkins rocks. The world needs more Jenkins. Bash? I&rsquo;m not a developer, so my first instinct was to use the existing set of tools that people have already written to solve this puzzle:
   <p>
     <a class="u-clickable" href="../../decoding-balanced-payments-puzzle-1/">Read Full Post…</a>

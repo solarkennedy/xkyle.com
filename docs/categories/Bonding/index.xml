@@ -13,8 +13,7 @@
       <pubDate>Wed, 04 Jan 2012 14:19:10 +0000</pubDate>
       <guid>/achieving-awesome-single-stream-performance-over-bonded-ethernet/</guid>
       <description>Ethernet Link Aggregation (aka PortChannel, Etherchannel, ethernet bonding, NIC teaming, trunking, link bundling, Smartgroup, Ethertrunk, etc) is a way to combine multiple Ethernet links to a single logical link. This improves redundancy and increases aggregate performance. It is good stuff, especially if you are into High Availability.
-Here is a typical setup: 
-A good start. If you can spare the ports and cables to make this work, you should do it.</description>
+Here is a typical setup: A good start. If you can spare the ports and cables to make this work, you should do it.</description>
     </item>
     
   </channel>

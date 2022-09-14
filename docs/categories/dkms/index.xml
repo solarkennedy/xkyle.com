@@ -14,8 +14,7 @@
       <guid>/building-linux-packages-for-kernel-drivers/</guid>
       <description>Background Most of the time the Linux kernel does a great job of having drivers you need, but sometimes you need to install a special driver or update an existing module.
 Running make; make install is all fine and dandy for testing, but for production you want a repeatable process. For me, this means OS packages. (deb/rpms)
-
-So, how do you go from kernel module source code =&amp;gt; Debian package?</description>
+So, how do you go from kernel module source code =&amp;gt; Debian package? DKMS.</description>
     </item>
     
   </channel>
