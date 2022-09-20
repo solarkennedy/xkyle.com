@@ -1,5 +1,5 @@
 ---
-title: "Advancing the State of The Art of Container Storage with Titus, Part 2"
+title: "Advancing the State of The Art of Container Storage With Titus, Part 2"
 date: 2022-05-01T00:00:00-00:00
 ---
 

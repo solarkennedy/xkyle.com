@@ -87,7 +87,7 @@
   <p><strong>Disclaimer</strong>: This blog post is a deep dive in to the topic of Linux container storage, specifically looking at Netflix&rsquo;s Open Source <a href="https://github.com/Netflix/titus-executor">Titus</a> container platform.
 Netflix happens to be my employer, but nothing in this blog post is secret or talk about anything that isn&rsquo;t already open source.</p>
 <p>In <a href="../Advancing-the-State-of-The-Art-of-Container-Storage-With-Titus-Part-1/">Part 1</a>, I discussed the current state of the art of container storage with the CSI+kubernetes, and its limitations.</p>
-<p>In <a href="../Advancing-the-State-of-The-Art-of-Container-Storage-with-Titus-Part-2/">Part 2</a>, I discuss the problem of mounting storage inside running containers, especially using user namespaces.</p>
+<p>In <a href="../Advancing-the-State-of-The-Art-of-Container-Storage-With-Titus-Part-2/">Part 2</a>, I discuss the problem of mounting storage inside running containers, especially using user namespaces.</p>
 <p>In this Part 3, I&rsquo;ll discuss how Titus (<code>titus-storage</code>) is able to separate the attaching of storage from the container lifecycle (how to attach storage after a container is running), all while respecting Linux namespaces, <em>and</em> while keeping the container completely unprivileged <em>and</em> in its user namespace.</p>
 <h2 id="what-we-are-up-against">What We Are Up Against</h2>
 <p>We have a running container.
@@ -307,7 +307,7 @@ Or maybe a service mesh sidecar needs the main container&rsquo;s certificate fil
 <p>These mount binaries are doing some creative things with syscalls to allow us to mount storage at will with containers, all while keeping them unprivileged.</p>
 <p>But 99% of the time, users will want their storage ready <em>at start</em>, not after the container has started.
 See <a href="../Advancing-the-State-of-The-Art-of-Container-Storage-With-Titus-Part-4/">part 4</a> were I demonstrate how we are able to control the startup timing of containers, to ensure that storage is mounted before they start.</p>
-<p>[ <a href="../Advancing-the-State-of-The-Art-of-Container-Storage-With-Titus-Part-1/">Part 1</a> | <a href="../Advancing-the-State-of-The-Art-of-Container-Storage-with-Titus-Part-2/">Part 2</a> | Part 3 | <a href="../Advancing-the-State-of-The-Art-of-Container-Storage-With-Titus-Part-4/">Part 4</a> ]</p>
+<p>[ <a href="../Advancing-the-State-of-The-Art-of-Container-Storage-With-Titus-Part-1/">Part 1</a> | <a href="../Advancing-the-State-of-The-Art-of-Container-Storage-With-Titus-Part-2/">Part 2</a> | Part 3 | <a href="../Advancing-the-State-of-The-Art-of-Container-Storage-With-Titus-Part-4/">Part 4</a> ]</p>
 
   
   <script src="../javascripts/mermaid.min.js"></script>
