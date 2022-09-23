@@ -6,7 +6,17 @@
     <description>Recent content on xkyle.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 23 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>An AQI LED Jar</title>
+      <link>/An-AQI-LED-Jar/</link>
+      <pubDate>Fri, 23 Sep 2022 00:00:00 +0000</pubDate>
+      <guid>/An-AQI-LED-Jar/</guid>
+      <description>In California we have wildfire season in the summer. Sometimes the air can be bad enough that it is unhealthy to breath for an extended period of time. This problem of course is not specific to California.
+One of my favorite tools for visualizing air quality is Purple Air:
+Using crowd-sourced sensors, you can get hyper-local readings of your surrounding air quality. Try finding the closest sensor available to you on the map.</description>
+    </item>
+    
     <item>
       <title>Configuring 6LoWPAN on Linux in 2022</title>
       <link>/Configuring-6LoWPAN-on-Linux-in-2022/</link>

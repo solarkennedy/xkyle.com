@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.102.3" />
+  
+  
+  
+  <title>
+    
+    An AQI LED Jar | xkyle.com
+    
+  </title>
+  <link rel="canonical" href="../An-AQI-LED-Jar/">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="manifest" href="../site.webmanifest">
+  
+  
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="../css/base.min.17b32e90232991b097108d9974565b67796288386646a8dcca99c8923a7b30fe.css" integrity="sha256-F7MukCMpkbCXEI2ZdFZbZ3liiDhmRqjcypnIkjp7MP4=" crossorigin="anonymous">
+  
+  
+</head>
+<body>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable" href="">xkyle.com</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../about/">About</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../post/">Posts</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../categories/">Categories</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../subscribe.html">Subscribe</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../"></a>
+      </li>
+      
+      <li class="Banner-item">
+<form action="https://www.google.com/search" class="Banner-link u-clickable" method="get" name="searchform" target="_blank">
+<input name="sitesearch" type="hidden" value="xkyle.com">
+<input autocomplete="on" class="form-control search2" name="q" placeholder="Search" required="required"  type="text" style="width: 50px;">
+<button class="button" type="submit" style="width:1px;text-align: center;border-right-width: 20px;border-right-style: solid;height: 34px;">🔍</button>
+</form>
+      </li>
+  </div>
+</nav>
+
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../An-AQI-LED-Jar/" rel="bookmark">An AQI LED Jar</a>
+  </h2>
+  
+  <time datetime="2022-09-23T00:00:00Z">
+    23 September, 2022
+  </time>
+  
+</header>
+
+  <p>In California we have wildfire season in the summer.
+Sometimes the air can be bad enough that it is unhealthy to breath for an extended period of time.
+This problem of course is not specific to California.</p>
+<p>One of my favorite tools for visualizing air quality is <a href="https://map.purpleair.com/">Purple Air</a>:</p>
+<p><img src="../uploads/2022-09-23-aqi-led-jar/purple-air-map.png" alt="Purple Air Map"></p>
+<p>Using crowd-sourced sensors, you can get hyper-local readings of your surrounding air quality.
+Try finding the closest sensor available to you on the <a href="https://map.purpleair.com/">map</a>.</p>
+<p>But I don&rsquo;t want to have to check on the website all the time.
+What if I had a real physical object that could reflect the current air quality?</p>
+<p><img src="../uploads/2022-09-23-aqi-led-jar/aqi-led-jar.jpg" alt="AQI LED Jar on a Yellow Day"></p>
+<p>This LED Jar shows the color representation of the EPA AQI of my local Purple Air sensor, updated hourly!</p>
+<h2 id="hardware">Hardware</h2>
+<p>The hardware for this project is already documented in <a href="../My-Sunjar-An-esp8266-Powered-Light-Alarm-Clock/">this post</a></p>
+<h2 id="software">Software</h2>
+<h3 id="wled">WLED</h3>
+<p>The Jar just runs <a href="https://kno.wled.ge/">WLED</a>.
+WLED is an excellent piece of software for running on an ESP8266.
+It allows the LEDs to be controlled remotely, as well as configuration for beautiful patterns, timers, palettes, and more.
+For this AQI project, I&rsquo;m taking advantage of the fact that WLED has an easy-to-use API to control the colors.</p>
+<h3 id="cron-job">Cron Job</h3>
+<p>To periodically update the color of the jar, I&rsquo;m using a <a href="https://github.com/solarkennedy/aqi2wled">python script</a> running on an hourly <a href="https://en.wikipedia.org/wiki/Cron">cron</a> schedule.</p>
+<p>The script is small, but does a lot of work:</p>
+<ol>
+<li>Fetches the local sensor data from the <a href="https://api.purpleair.com/">Purple Air API</a>.
+It uses the existing <a href="https://pypi.org/project/purpleair/"><code>purpleair</code></a> python module.
+Purple Air gives out API keys at no charge, simply email their support for one.</li>
+<li>Converts the local sensor data into the EPA AQI value.
+This conversion is non-trivial.
+Feel feel to read the <a href="https://www.airnow.gov/sites/default/files/2020-05/aqi-technical-assistance-document-sept2018.pdf">technical details</a> for what goes into the formula for computing AQI, but it is complex.
+In the end I used another existing <a href="https://pypi.org/project/python-aqi/">python module</a> for computing the AQI correctly.</li>
+<li>Convert the AQI to a real RGB color.
+With the help of another useful <a href="https://pypi.org/project/colour/">python module</a>, I can compute a pleasing color outside the normal 6 color blocks <a href="https://aqs.epa.gov/aqsweb/documents/codetables/aqi_breakpoints.html">specified</a> by the EPA.</li>
+<li>Call the <a href="https://kno.wled.ge/interfaces/http-api/">WLED API</a> to set the color.</li>
+</ol>
+<h2 id="conclusion">Conclusion</h2>
+<p>WLED is such a flexible piece of software, I run it on ever LED toy I have now.
+I&rsquo;m also grateful for Purple Air for giving free access to their API for integrations like this.</p>
+<p><img src="../uploads/2022-09-23-aqi-led-jar/aqi-led-jar2.jpg" alt="AQI LED Jar"></p>
+
+  
+
+  
+
+
+
+
+
+
+
+  <a href="mailto:kyle@xkyle.com?subject=Comment on: An%20AQI%20LED%20Jar">Comment via email</a>
+
+</article>
+
+
+      </div>
+    </div>
+  </main>
+  
+
+</body>
+</html>
