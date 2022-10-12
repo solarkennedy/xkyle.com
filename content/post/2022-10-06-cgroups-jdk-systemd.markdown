@@ -218,7 +218,38 @@ Sampling /proc/wchan, stat, syscall for 10 seconds... finished.
       12 |        2.40 | (C* CompilerThre) | Disk (Uninterruptible) | fstat     | kernfs_iop_getattr    |
 ```
 
+## Clever JVM Features Go Wrong
+
+`possibly_add_compiler_threads` calls `os::available_memory` at the very beginning of the method.
+Now it depends how often `possibly_add_compiler_threads` is called.
+Sadly it is very frequently used as part of the compiler thread loop.
+Depending on the work for compilation java will check if it can add dynamically more compiler threads.
+That means when we start a lot of java containers and at the same time with the same application they start compilation to native code at about the same time.
+Leading to a very active call frequency for the memory limit within the container.
+
+What can be done?
+Any way out?
+
 ## A Solution: Disabling Dynamic Compiler Threads
+
+Equipped with the knowledge above we were able to find a workaround.
+The feature for dynamic compiler thread management can be configured.
+Using `-XX:-UseDynamicNumberOfCompilerThreads` will disable it (it is enabled by default).
+The Java process will create all the threads up to the limit right from the beginning and keep the count at that level.
+The cost is that we might now have more threads that we actually need. The test with the flag showed no symptoms for mutex contention.
+
+In the end we even found an existing bug describing our observations.
+There is already a cache for data provided by cgroups but the timeout for checking the updates is still quite short.
+It would be great to have it configured.
+
+Is there any other option, perhaps on the OS side? We don’t know. Let’s end with a few quotes from the bug history:
+> I would not be surprised if we have to add a flag to control this once people start to encounter it - which could still be years out from now.
+
+Yes it is years and yes people are encountering it.
+
+> I wish the container folk would provide better APIs that aren't so expensive and for which you know what can and can't change over time based on the container configuration.
+
+Yes, me too.
 
 With that options we only get minor cgroup access:
 
