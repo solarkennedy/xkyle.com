@@ -181,6 +181,14 @@ Checking OperatingSystemMXBean
 
 ### What is the JDK Actually Doing?
 
+At Netflix we have great [FlameGraph](https://netflixtechblog.com/java-in-flames-e763b3d32166) support.
+What can a flame graph tell us about what the JDK is doing when the server is under stress?
+The trick is, in this situation, the interesting part isn't the "normal" part of the workload, it is in the auxilary threads of the JDK.
+Let's zoom into a suspiciously large flame that is outside the main business logic of the application:
+
+[![FlameGraph](/uploads/2022-10-06-cgroups-jdk-systemd/flamegraph1.png)](/uploads/2022-10-06-cgroups-jdk-systemd/flamegraph1.png)
+
+
 https://bugs.java.com/bugdatabase/view_bug.do?bug_id=8232207
 
 You know what would be a good tool to help explain "what is going on" with a system, without having to write our own tool, and a tool that can coalesce lots of processes together to see patterns?
