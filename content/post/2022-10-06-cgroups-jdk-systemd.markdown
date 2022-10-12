@@ -35,7 +35,7 @@ After this, the k8s node taint is lifted, and the node will start running new po
 But _what_ was causing the problem in the first place?
 
 Experience has shown us that, even though this problem is only affecting a handful of nodes in our test environment (hasn't even hit prod yet!), it is worth investigating this one.
-If D-Bus is breaking, then soming really wrong is going on the node.
+If D-Bus is breaking, then something really wrong is going on the node.
 
 ## Triaging Difficult to Find Issues at Scale
 
@@ -43,7 +43,7 @@ Going from a small trickle of "hey a few Titus agents have some problems" to the
 A little observability goes a long way, and for Titus we get a lot of mileage out of the tried and true [ELK stack](https://www.elastic.co/what-is/elk-stack).
 By logging structured data about what launches when, we can ask the question:
 
-> Given these broken nodes with a D-Bus problem over this particular timeframe,
+> Given these broken nodes with a D-Bus problem over this particular time frame,
 > what workloads started on them just before the D-Bus problem was triggered?
 
 [![Titus workloads groups by image](/uploads/2022-10-06-cgroups-jdk-systemd/workloads-by-image.png)](/uploads/2022-10-06-cgroups-jdk-systemd/workloads-by-image.png)
@@ -58,26 +58,33 @@ Now what?
 
 If you run a platform, even if that platform is just internal to your company, it is important to be friends with your big customers.
 
-TBD
+Why?
+Because it means they are more likely to roll back when you ask nicely!
+This issue never hit prod and was triaged before many customers were impacted because the big customer rolled back for us.
+They won't stay rolled back forever, but it saved prod and gave us some breathing room to investigate and get a good fix in.
+This is the power of good customer relations and communication: it can make (potentially) big problems small ones.
 
-### What is D-Bus Actually Doing?
+## Debugging D-Bus
 
-One interesting thing you can do to inspect D-Bus is to dump whatever it is doing into a pcap for inspection:
+With the new code rolled back, we could investigate our components and analyze exactly what this workload was doing to the servers.
 
-```bash
-dbus-monitor --monitor --system --pcap > dbus-capture.pcap
-```
+D-Bus is a good first stop for analysis because it is the actual "problem detector"
 
 The problem here is that, if you are going to debug a system from scratch, you need to spend your debug-tokens wisely, and I don't think this is the right place to spend it.
 
 My reasoning here is that D-Bus is, well, a [Bus](https://en.wikipedia.org/wiki/Software_bus)!
 There probably isn't really anything wrong with it.
 The "D-Bus Problem" is really the lack of response from messages, specifically replies from systemd.
-Even if you did stare at the pcaps from dbus under wireshark, it would be the _missing_ packets that would be important!
+Even if you did stare at the pcaps from dbus under wireshark, it would be the _missing_ packets that would be important:
 
-Why would be they missing? Well because systemd isn't responding on the bus in a timely manner.
+```bash
+dbus-monitor --monitor --system --pcap > dbus-capture.pcap
+```
 
-But it isn't just systemd or D-Bus, is is the whole system coming to a crawl.
+Why would be they missing?
+Well because systemd isn't responding on the bus in a timely manner.
+
+But it isn't just systemd or D-Bus, it is the whole system coming to a crawl.
 Heck just `ps` takes forever.
 This implies we need to be looking deeper...
 
