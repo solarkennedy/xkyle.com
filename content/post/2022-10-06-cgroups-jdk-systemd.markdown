@@ -195,9 +195,6 @@ Let's zoom into a suspiciously large flame that is outside the main business log
 
 [![FlameGraph](/uploads/2022-10-06-cgroups-jdk-systemd/flamegraph1.png)](/uploads/2022-10-06-cgroups-jdk-systemd/flamegraph1.png)
 
-
-https://bugs.java.com/bugdatabase/view_bug.do?bug_id=8232207
-
 You know what would be a good tool to help explain "what is going on" with a system, without having to write our own tool, and a tool that can coalesce lots of processes together to see patterns?
 I
 https://tanelpoder.com/posts/high-system-load-low-cpu-utilization-on-linux/
@@ -245,7 +242,7 @@ Using `-XX:-UseDynamicNumberOfCompilerThreads` will disable it (it is enabled by
 The Java process will create all the threads up to the limit right from the beginning and keep the count at that level.
 The cost is that we might now have more threads that we actually need. The test with the flag showed no symptoms for mutex contention.
 
-In the end we even found an existing bug describing our observations.
+In the end we even found an existing [bug](https://bugs.java.com/bugdatabase/view_bug.do?bug_id=8232207) describing our observations.
 There is already a cache for data provided by cgroups but the timeout for checking the updates is still quite short.
 It would be great to have it configured.
 
