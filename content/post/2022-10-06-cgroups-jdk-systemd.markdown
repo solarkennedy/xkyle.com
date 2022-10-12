@@ -146,11 +146,11 @@ What has changed (again, only through lots of triaging and narrowing down exactl
 TBD
 https://github.com/tych0/linux/commit/6307916f26ec85ebe47aae997c07913c320dad60
 
-### Background: JDK Container Support
+### JDK Container Support
 
-https://developers.redhat.com/articles/2022/04/19/java-17-whats-new-openjdks-container-awareness
+JDK provides [support](https://developers.redhat.com/articles/2022/04/19/java-17-whats-new-openjdks-container-awareness) for running in containers. Java automatically detects when it is running in a container and then uses container environement to determine information about operating system. It can be controlled explicitly via `-XX:±UseContainerSupport`
 
-With `-XX:-UseContainerSupport`, no cgroup access at all!!!
+A sample how changing the flag impacts reading information about operating system when executed with a container.
 
 ```
 -XX:-UseContainerSupport
@@ -177,7 +177,7 @@ OperatingSystemMXBean.getSystemCpuLoad: 1.000000
 Checking OperatingSystemMXBean
 ```
 
--XX:-UseDynamicNumberOfCompilerThreads
+Indeed, when we disable the container awareness the issue with our non responsive systemd disappears. The cgroups are not involved anymore. However, the output above shows a difference in reported memory limits. We start seeing instead of container memory limit what is available on the host. This can have unexpected impact because container cannot trully use that memory. We could face surprising downfall effect of such change. This is not an acceptable solution for us.
 
 ### What is the JDK Actually Doing?
 
