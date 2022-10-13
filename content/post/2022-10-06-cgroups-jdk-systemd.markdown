@@ -239,8 +239,16 @@ Any way out?
 Equipped with the knowledge above we were able to find a workaround.
 The feature for dynamic compiler thread management can be configured.
 Using `-XX:-UseDynamicNumberOfCompilerThreads` will disable it (it is enabled by default).
-The Java process will create all the threads up to the limit right from the beginning and keep the count at that level.
+The Java process [will create all the threads](https://github.com/openjdk/jdk/blob/0f28cb06ab9de649dedbe93f5d4e30fb779532d9/src/hotspot/share/compiler/compilationPolicy.cpp#L435) up to the limit right from the beginning and keep the count at that level.
 The cost is that we might now have more threads that we actually need. The test with the flag showed no symptoms for mutex contention.
+
+With that options we only get minor cgroup access:
+
+```
+[pid 2352244] openat(AT_FDCWD, "/sys/fs/cgroup/cpu,cpuacct/system.slice/ezconfig-app.service/cpu.cfs_quota_us", O_RDONLY) = 650
+[pid 2352244] openat(AT_FDCWD, "/sys/fs/cgroup/cpu,cpuacct/system.slice/ezconfig-app.service/cpu.cfs_period_us", O_RDONLY) = 650
+[pid 2352244] openat(AT_FDCWD, "/sys/fs/cgroup/cpu,cpuacct/system.slice/ezconfig-app.service/cpu.shares", O_RDONLY) = 650
+```
 
 In the end we even found an existing [bug](https://bugs.java.com/bugdatabase/view_bug.do?bug_id=8232207) describing our observations.
 There is already a cache for data provided by cgroups but the timeout for checking the updates is still quite short.
@@ -254,13 +262,3 @@ Yes it is years and yes people are encountering it.
 > I wish the container folk would provide better APIs that aren't so expensive and for which you know what can and can't change over time based on the container configuration.
 
 Yes, me too.
-
-With that options we only get minor cgroup access:
-
-```
-[pid 2352244] openat(AT_FDCWD, "/sys/fs/cgroup/cpu,cpuacct/system.slice/ezconfig-app.service/cpu.cfs_quota_us", O_RDONLY) = 650
-[pid 2352244] openat(AT_FDCWD, "/sys/fs/cgroup/cpu,cpuacct/system.slice/ezconfig-app.service/cpu.cfs_period_us", O_RDONLY) = 650
-[pid 2352244] openat(AT_FDCWD, "/sys/fs/cgroup/cpu,cpuacct/system.slice/ezconfig-app.service/cpu.shares", O_RDONLY) = 650
-```
-
-https://github.com/openjdk/jdk/blob/0f28cb06ab9de649dedbe93f5d4e30fb779532d9/src/hotspot/share/compiler/compilationPolicy.cpp#L435
