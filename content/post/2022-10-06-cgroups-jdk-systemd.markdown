@@ -91,6 +91,8 @@ This implies we need to be looking deeper...
 ### What is Linux Actually Doing?
 
 ```bash
+# echo d > /proc/sysrq-trigger
+# dmesg
 [  479.904961] sysrq: Show Locks Held
 [  479.906001]
                Showing all locks held in the system:
