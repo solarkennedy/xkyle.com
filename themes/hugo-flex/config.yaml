@@ -1,6 +1,6 @@
 params:
   color: '#7c238c'           # Any color in CSS syntax
-  width: 42rem          # Any length in CSS syntax
+  width: 72rem          # Any length in CSS syntax
   footer: ""
   rss: To subscribe to this RSS feed, copy its address and paste it into your
     favorite feed reader.
