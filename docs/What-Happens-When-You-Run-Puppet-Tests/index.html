@@ -4,7 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="generator" content="Hugo 0.102.3" />
-  
+  <meta itemprop="name" content="What Happens When You Run Puppet Tests">
+<meta itemprop="description" content="Breaking down bundle exec rake spec What is happening when you run:
+bundle exec rake spec Bundle The first command you are running is bundle. Bundle is kinda like virtualenv for Ruby. It makes sure that you use the same ruby libraries that you, everyone, and puppetmasters use.
+Bundle uses a Gemfile, and searches downwards. As long as you have the Gemfile in the puppet repo, it will work.
+Exec The second part is exec."><meta itemprop="datePublished" content="2014-03-31T05:33:58+00:00" />
+<meta itemprop="dateModified" content="2014-03-31T05:33:58+00:00" />
+<meta itemprop="wordCount" content="550">
+<meta itemprop="keywords" content="" />
   
   
   <title>

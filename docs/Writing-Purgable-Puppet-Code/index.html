@@ -4,7 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="generator" content="Hugo 0.102.3" />
-  
+  <meta itemprop="name" content="Writing Purgable Puppet Code">
+<meta itemprop="description" content="Whenever possible, I try to write Puppet code that is purgable and &ldquo;Comment Safe&rdquo;. That is not a very good description. What I mean is, Puppet code that removes resources from a system when the corresponding Puppet code is &ldquo;Commented&rdquo; out of a manifest. Lets look at a few examples.
+Example: Managed Sudo Lets say you used this popular sudo module with the following params:
+class { &#39;sudo&#39;: purge =&gt; true, } Great start."><meta itemprop="datePublished" content="2014-01-29T05:33:58+00:00" />
+<meta itemprop="dateModified" content="2014-01-29T05:33:58+00:00" />
+<meta itemprop="wordCount" content="535">
+<meta itemprop="keywords" content="" />
   
   
   <title>

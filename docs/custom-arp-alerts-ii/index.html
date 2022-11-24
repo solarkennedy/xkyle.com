@@ -4,7 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="generator" content="Hugo 0.102.3" />
-  
+  <meta itemprop="name" content="Custom Arp Alerts II!">
+<meta itemprop="description" content="So I&rsquo;ve found a better way to do what I did in the previous post. Instead of running a separate script to parse the arp alert logs, I have arp alert itself send the alerts! The key is this line in the arpalert.conf
+action on detect = &quot;/etc/scripts/arp-alert&quot; Its so simple, it just runs that script sending the information about the alert as certain arguments. With this I have more control over the formatting of arpalert messages:"><meta itemprop="datePublished" content="2008-08-21T11:59:57+00:00" />
+<meta itemprop="dateModified" content="2008-08-21T11:59:57+00:00" />
+<meta itemprop="wordCount" content="154">
+<meta itemprop="keywords" content="" />
   
   
   <title>

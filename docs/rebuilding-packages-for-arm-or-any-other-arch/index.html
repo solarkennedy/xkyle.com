@@ -4,7 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="generator" content="Hugo 0.102.3" />
-  
+  <meta itemprop="name" content="Rebuilding Packages for ARM (or any other arch)">
+<meta itemprop="description" content="Sometimes there are packages out there that don&rsquo;t come in your cool new Architecture. In my case it is ARM, and the package I wanted was Puppet. Here is how to rebuild source packages the cool way.
+Add the Puppet repo so you can get fresh source packages cd /tmp # Add the repo, even though it may not have arm binaries... wget http://apt.puppetlabs.com/puppetlabs-release-precise.deb dpkg -i puppetlabs-release-precise.deb # Get dependencies... apt-get update apt-get build-dep puppet facter Build / Install # Get sources."><meta itemprop="datePublished" content="2013-06-21T04:46:58+00:00" />
+<meta itemprop="dateModified" content="2013-06-21T04:46:58+00:00" />
+<meta itemprop="wordCount" content="143">
+<meta itemprop="keywords" content="" />
   
   
   <title>

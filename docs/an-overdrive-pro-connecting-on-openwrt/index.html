@@ -4,7 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="generator" content="Hugo 0.102.3" />
-  
+  <meta itemprop="name" content="An Overdrive Pro Connecting on OpenWrt">
+<meta itemprop="description" content="Have a fancy FreedomPop Overdrive Pro? Want to hook it up to your OpenWrt based router to use as a backup (or primary?) internet connection? Lets do it.
+Plug it into your router via USB. Then run:
+opkg install kmod-usb-net-cdc-ether Run dmesg and it will report which eth device came up. Mine shows up as &ldquo;eth1&rdquo;. Now make eth1 your &ldquo;wan&rdquo; interface:
+uci set network.wan.ifname=eth1 uci commit reboot Whoa.
+Or, set it up as a second wan interface and use Multiwan:"><meta itemprop="datePublished" content="2013-05-31T01:45:13+00:00" />
+<meta itemprop="dateModified" content="2013-05-31T01:45:13+00:00" />
+<meta itemprop="wordCount" content="144">
+<meta itemprop="keywords" content="" />
   
   
   <title>

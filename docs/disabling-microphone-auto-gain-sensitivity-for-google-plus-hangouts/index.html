@@ -4,7 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="generator" content="Hugo 0.102.3" />
-  
+  <meta itemprop="name" content="Disabling Microphone Auto-Gain (Sensitivity) For Google Plus Hangouts">
+<meta itemprop="description" content="Google&rsquo;s Google Plus Hangout / Gtalk plugin automatically adjust your volume to account for varying noise conditions by default. Sometimes this is an undesired behavior, but there is no button to turn it off. Here is how you do it:
+Linux: Run this in a terminal:
+echo &quot;audio-flags=1&quot; &gt; ~/.config/google-googletalkplugin/options Windows: Set the registry Key:
+HKEY_CURRENT_USER\&lt;wbr&gt;&lt;/wbr&gt;Software\Google\Google Talk Plugin\options\audio-flags = 1 Mac OSX: Edit the plist:
+~/Library/Preferences/com.&lt;wbr&gt;&lt;/wbr&gt;google.GoogleTalkPluginD.plist and set &ldquo;Audio Flags&rdquo; = 1"><meta itemprop="datePublished" content="2013-04-17T01:14:56+00:00" />
+<meta itemprop="dateModified" content="2013-04-17T01:14:56+00:00" />
+<meta itemprop="wordCount" content="95">
+<meta itemprop="keywords" content="" />
   
   
   <title>

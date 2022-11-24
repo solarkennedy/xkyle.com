@@ -4,7 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="generator" content="Hugo 0.102.3" />
-  
+  <meta itemprop="name" content="Managing Ssh Known Hosts With-Serf">
+<meta itemprop="description" content="Serf is a very interesting service discovery mechanism. Its dynamic membership and tags capability make it very flexible. Can we use it to generate a centralized ssh_known_hosts file?
+Installing and Configuring Serf I like to use configuration management to manage servers. Here I use a Puppet module to install and configure Serf:
+class { &#39;serf&#39;: config_hash =&gt; { &#39;node_name&#39; =&gt; $::fqdn, &#39;tags&#39; =&gt; { &#39;sshrsakey&#39; =&gt; $::sshrsakey }, &#39;discover&#39; =&gt; &#39;cluster&#39;, } } This particular module uses a hash to translate directly into the config."><meta itemprop="datePublished" content="2014-04-06T05:33:58+00:00" />
+<meta itemprop="dateModified" content="2014-04-06T05:33:58+00:00" />
+<meta itemprop="wordCount" content="358">
+<meta itemprop="keywords" content="" />
   
   
   <title>

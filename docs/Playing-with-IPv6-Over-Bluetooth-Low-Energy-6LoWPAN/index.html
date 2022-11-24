@@ -4,7 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="generator" content="Hugo 0.102.3" />
-  
+  <meta itemprop="name" content="Playing with IPv6 Over Bluetooth Low Energy (6LoWPAN)">
+<meta itemprop="description" content="I like Bluetooth Low Energy (BTLE). I also like IPv6. Did you know you could but both together?
+Technically 6LoWPAN
+Requirements modprobe bluetooth_6lowpan echo &#39;bluetooth_6lowpan&#39; &gt;&gt; /etc/modules Establishing the Connection Set the Bluetooth L2CAP PSM First you need to set the Protocol/Service Multiplexer value on both sides to &ldquo;62&rdquo; (0x3E) on both sides:
+echo 62 &gt; /sys/kernel/debug/bluetooth/6lowpan_psm This PSM value lets the driver know that you are going to multiplex this special new protocol on top of whatever your bluetooth device mith also be doing."><meta itemprop="datePublished" content="2015-06-14T18:18:03+00:00" />
+<meta itemprop="dateModified" content="2015-06-14T18:18:03+00:00" />
+<meta itemprop="wordCount" content="371">
+<meta itemprop="keywords" content="" />
   
   
   <title>
