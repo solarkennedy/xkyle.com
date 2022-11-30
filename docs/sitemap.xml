@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/An-AQI-LED-Jar/</loc>
-    <lastmod>2022-09-23T00:00:00+00:00</lastmod>
+    <loc>/A-Detailed-Comparison-of-YAML-Formatters/</loc>
+    <lastmod>2022-11-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2022-09-23T00:00:00+00:00</lastmod>
+    <lastmod>2022-11-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/</loc>
+    <lastmod>2022-11-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/An-AQI-LED-Jar/</loc>
     <lastmod>2022-09-23T00:00:00+00:00</lastmod>
   </url>
   
