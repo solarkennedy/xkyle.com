@@ -1,14 +1,17 @@
 ---
 slug: "A Fundamental Theory of Platforms: Part 1"
-title: "A Fundamental Theory of Platforms"
+title: "A Fundamental Theory of Platforms: Part 1"
 date: 2022-12-01T00:00:00-00:00
 published: false
 ---
 
+> Note: This is Part 1 on Platform Engineering theory.
+> Skip to [Part 2]({{< ref "2022-12-02-platform-abstraction-practice" >}}) if you are more interested in the practical aspects.
+
 Platform Engineering is the new hotness for 2022.
-I've been working with [Aaron Blohowiak](https://www.linkedin.com/in/aaronblohowiak) to think about platforms generally, trying to come up with a model to understand how their lifecycle, and what makes them good.
+I've been working with [Aaron Blohowiak](https://www.linkedin.com/in/aaronblohowiak) (Netflix) and [Scott Triglia](https://twitter.com/scott_triglia) (Stripe) to think about platforms generally, trying to come up with a model to understand how their lifecycle, and what makes them _good_.
 We've tried to use our past industry experience (good and bad), combined with external examples of platforms, to come up with some general rules about how they evolve over time.
-In this blog post I'll present our theory, and see how it aligns with some industry examples.
+In this blog post I'll present the theory, and see how it aligns with some industry examples.
 
 Before we jump into theory, how did we get here?
 I would argue a quick timeline looks like this:
@@ -39,7 +42,7 @@ What counts as a "Platform" anyway?
 This definition works for me, but doesn't exactly say what the workflows should look like, or how self-service it should be, or how integrated the product is.
 It also doesn't give any advice as to how much of the "operational necessities" should be covered.
 
-## "Platform Engineering" Vs "DevOps"
+### "Platform Engineering" Vs "DevOps"
 
 Platform engineering is a cultural response to DevOps.
 I imagine the conversation went like this:
@@ -51,25 +54,26 @@ I imagine the conversation went like this:
 - **Devs**: Ok. I hope the platform sucks less.
 
 But there is a big difference.
-Previously Ops/Devops built things *for themselves*.
-In this new world, they are building things (the platform) *for internal developers*.
+Previously Ops/Devops built things _for themselves_.
+In this new world, they are building things (the platform) _for internal developers_.
 
 But what should they build?
 
 ## A Fundamental Theorem of Platforms
 
-For internal platforms, you can be much less polished than offering a product to the industry.
+For internal platforms, you can be much less polished than an industry product offering.
 This is both an advantage and sometimes leads to long term disdain of internal platforms.
 
-But it also means, for an internal platform, your fundamental goal is to provide business value, and it doesn't necessarily need to be something that would sell on the open market.
+But it also means, for an internal platform, your fundamental goal is to _provide business value_, and it doesn't necessarily need to be something that would sell on the open market.
 
-Therefore, here is what I've got for a fundamental theory of (internal) platforms:
+Therefore, here is what I've got for a Fundamental Theory of (internal) Platforms:
 
-> One should be build an internal platform to solve real business needs, starting with the following properties:
-> * As high-level of an abstraction as possible, evolving to later provide lower-levels as well
-> * As opinionated as possible to start, evolving to more flexibility with _other_ offerings
-> * As little self-service as possible, evolving to more self-service
-> * As multi-tenant as possible, evolving to (more expensive) isolated environments as the business requires it
+> One should be build an _internal platform_ to solve **real business needs**, starting with the following properties:
+>
+> - As high-level of an abstraction as possible, evolving to later provide lower-levels as well
+> - As opinionated as possible to start, evolving to more flexibility with _other_ offerings
+> - As little self-service as possible, evolving to more self-service
+> - As multi-tenant as possible, evolving to (more expensive) isolated environments as the business requires it
 
 This theory is more like the [Fundamental Theorem of Poker](https://en.wikipedia.org/wiki/Fundamental_theorem_of_poker), where:
 
@@ -110,17 +114,20 @@ Abstraction Extremes:
 - Extremely _low_ level of abstraction: Fly.io's [Machines](https://fly.io/docs/reference/machines/), AWS's EC2 [Instances](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html)
 - Extremely _high_ level of abstraction: Edgio [Sites](https://edg.io/app/sites/), Cloudflare [Workers](https://workers.cloudflare.com/)
 
+Read more in [Part 2]({{< ref "2022-12-02-platform-abstraction-practice" >}}) with some practical advice on how flexible or abstract you should be in practice.
+
 ### Analysis
 
 Here is an analysis with some subjective opinions on where a few public platforms fall on these axes:
-[![Analysis chart](https://docs.google.com/drawings/d/e/2PACX-1vR0BVbYzUgDM13m_bxwhX4Tih8tNja7cyJYfZTpdIe5PuY9ECAh0JH-vbIx142_kqhdgLALPc4zHEIr/pub?w=1440&h=1080)](https://docs.google.com/drawings/d/e/2PACX-1vR0BVbYzUgDM13m_bxwhX4Tih8tNja7cyJYfZTpdIe5PuY9ECAh0JH-vbIx142_kqhdgLALPc4zHEIr/pub?w=1440&h=1080)
+
+[![Analysis Chart](/uploads/A-Fundamental-Theory-of-Platforms-Part-1/A-Theory-of-Platforms-Abstraction-Flexibility.svg)](/uploads/A-Fundamental-Theory-of-Platforms-Part-1/A-Theory-of-Platforms-Abstraction-Flexibility.svg)
 
 Some observations:
 
 - Things that start Opinionated, eventually become more flexible (Heroku, Lambda)
 - Things never get less flexible
 - Higher level abstractions, if they meet customer needs, usually can provide more business value
-- Individual products don't move up and down the abstraction axis, instead they make new products
+- Individual products don't (shouldn't) move up and down the abstraction axis, instead they make new products
 
 #### Abstraction & Flexibility in the Fundamental Theorem
 
@@ -143,14 +150,7 @@ Why is providing a super flexible platform not a good idea?
   Once you provide a particularly flexible capability, its use will proliferate, and you will not be able to take it back.
 
 So what should you do when you build something that is opinionated, but then realize it isn't flexible enough?
-You have two options:
-
-1. Extend what you have
-2. Offer a second lower-level thing
-
-It is not possible to give advice here on which option is the best without specifics on the situation.
-For AWS Lambda, it was almost 6 years after its original release that it offered [custom image/runtime](https://aws.amazon.com/blogs/aws/new-for-aws-lambda-container-image-support/) support.
-That 6 years of experience hopefully informed that decision!
+Read more about your options in [Part 2]({{< ref "2022-12-02-platform-abstraction-practice" >}}).
 
 #### What about Pierceable Abstractions?
 
@@ -165,17 +165,20 @@ My main two objections to this blog post are:
    In the blog post, it really implies that having the option to pick a lower layer is the key to providing for the other 10% of your customers.
    Per the fundamental theory, one should address this 10% as late in the game as possible
 
+Don't build literally pierceable abstractions.
+Build separate offerings for different levels of abstraction.
+
 ## Agency vs Tenancy
 
 **Agency** is a measure of how much prior engagement is required to use a platform.
 For public providers, a low-agency service is one that requires upfront work (Quote, initial setup, sales consultation) before using the platform.
 For internal providers, a low-agency service might involves slack threads, tickets, or meetings before using the platform.
-A high-agency service is one where the platform owner isn't involved at all.
+A high-agency service is one where the platform owner isn't involved at all (self-service).
 
 Agency Extremes:
 
-- Extreme _agency_: 
-- Extremely _low agency_:
+- Extreme _agency_: Any provider with a free tier and no credit card required!
+- Extremely _low agency_: Many SaaS products, anything that says "Contact Us" for a buy link.
 
 **Tenancy** is a measure of how shared or segmented the platform is for each customer.
 Multi-tenant environments include things like classic "shared webhosting".
@@ -184,30 +187,57 @@ In 2022, this dimension is independent of the agency dimension.
 
 Tenancy Extremes:
 
-- Extreme _multi-tenancy_:
-- Extreme _single-tenancy_:
+- Extreme _multi-tenancy_: Dreamhost shared webhosting
+- Extreme _single-tenancy_: Any dedicated server provider (Hetzner)
 
 ### Analysis
 
-[![Analysis Chart](https://docs.google.com/drawings/d/e/2PACX-1vSLVqQ1YIZD3RB0tR_EHZhqDN1i53Rl90Jwp8YlQzXFM0JbAzXAT2VNPabCxKyd6YF0Kk-4yPmbhLCY/pub?w=1440&h=1080)](https://docs.google.com/drawings/d/e/2PACX-1vSLVqQ1YIZD3RB0tR_EHZhqDN1i53Rl90Jwp8YlQzXFM0JbAzXAT2VNPabCxKyd6YF0Kk-4yPmbhLCY/pub?w=1440&h=1080)
+[![Analysis Chart](/uploads/A-Fundamental-Theory-of-Platforms-Part-1/A-Theory-of-Platforms-Agency-Tenancy.svg)](/uploads/A-Fundamental-Theory-of-Platforms-Part-1/A-Theory-of-Platforms-Agency-Tenancy.svg)
 
-- Enterprise Sales stuff : why?
+Some observations:
+- Enterprise Sales stuff is often low-agency, for lots of reasons.
+- Shared vs not has fluctuated in the industry over time.
+  Servers started off shared (mainframes), moved to dedicated (good old servers, PCs), and then back to shared (vps, VMs)
+- Self-service is used in high-volume environments, low-agency in low-volume environments  
 
-- Theorm: Self-service platforms can be hard to build
-  Maybe your bueinss just neesd a "fully managed" ("Contact Us") platform if you don't have that many customers
+#### Agency in the Fundamental Theorem
 
-Platform engineers want to build self-service stuff, but only do that with higher level abstractions.
+Platform engineers want to build self-service stuff, but should only do that with higher level abstractions.
 Don't try to build low-level abstraction self-service things.
+Why?
 
-Where does shared vs not-shared fit in?
+- Because if you try to build a high-level abstraction platform that is self-serve, you will end up doing more work than you need to at first.
+  Building a self-service platform is hard work!
+  By delaying this work, you are in closer contact with your first customers, and will learn more about what they actually need, faster!
+- Building a low-level abstraction platform that is self-service is also a waste of company time.
+  In order to build such a thing, it will require you to be a "thin" layer on top of some other low-level platform.
+  Your customers will see you as being "in the way".
 
-Shred offers economic benifits and low minimum cost per tenant.
-Too hard to give general advice here.
-Depends on the cardinality of your stuff, impact of problems when you use shared stuff.
+Maybe being a "contact us" style platform at first is better?
+Internally, if you are not-self-serve, does that make things better?
+What if you built a [doorbell in the jungle](https://medium.com/@komorama/the-doorbell-in-the-jungle-cca22fbd78d0) first?
 
-#### Agency & Tenancy in the Fundamental Theorem
+In theory, a platform should stay white-glove, simply until the act of manually onboarding a customer hurts the platform more than it helps.
 
+#### Tenancy in the Fundamental Theorem
 
+Tenancy for platforms probably the least prescriptive dimension for the fundamental theorem.
 
+What really matters is the cardinality of the "fundamental unit" of the platform, impact of problems when you use shared stuff.
 
-[ [Part 1]({{< ref "2022-12-01-platform-abstraction-theory" >}}) | [Part 2]({{< ref "2022-12-02-platform-abstraction-practice" >}})]
+In general, the theory advises to **start multi-tenant, and move to single-tenancy as the business requires it.**
+Why?
+Because often, regardless of the problem domain of the platform, it is easier to move from multi-tenant to single-tenant, and not the other way around.
+
+Designing this way ensures that you _can_ do multi-tenancy, and you reap the economic benefits from doing so from the start.
+You will be lucky to have the problem of customers that require dedicated units!
+
+### Conclusion
+
+By now, nobody doubts the power of having good internal platforms.
+Platform Engineering will continue to grow in popularity as companies figure out how much of a super power that it is.
+
+Armed with the Fundamental Theory of Platforms, we can build what is best for the business from the beginning based on core principals.
+
+But what does this look like _in practice_?
+Take a look at [Part 2]({{< ref "2022-12-02-platform-abstraction-practice" >}}) concrete examples of this theory in the real world, with advice on how to course-correct if you think you are building the wrong thing.
