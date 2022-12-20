@@ -152,6 +152,93 @@
 <article>
   <header class="Heading">
   <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../../A-Comparison-of-Image-to-ASCII-Conversion-Tools/" rel="bookmark">A Comparison of Image to ASCII Conversion Tools</a>
+  </h2>
+  
+  <time datetime="2015-09-26T19:35:56Z">
+    26 September, 2015
+  </time>
+  
+</header>
+
+  
+  Inspired by ponysay, I think wicked ascii/ansi artwork on the terminal is great.
+I decided to survey all the tools I could find that aid in this conversion to see if there were any dramatic differences in results.
+Methodology For these tests I used an image with a 160px width, twice that of a standard terminal. Then I cat&rsquo;d the image in plain xterm and took a screenshot of the results.
+  <p>
+    <a class="u-clickable" href="../../A-Comparison-of-Image-to-ASCII-Conversion-Tools/">Read Full Post…</a>
+  </p>
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../../Playing-with-IPv6-Over-Bluetooth-Low-Energy-6LoWPAN/" rel="bookmark">Playing with IPv6 Over Bluetooth Low Energy (6LoWPAN)</a>
+  </h2>
+  
+  <time datetime="2015-06-14T18:18:03Z">
+    14 June, 2015
+  </time>
+  
+</header>
+
+  
+  I like Bluetooth Low Energy (BTLE). I also like IPv6. Did you know you could but both together?
+Technically 6LoWPAN
+Requirements modprobe bluetooth_6lowpan echo 'bluetooth_6lowpan' &gt;&gt; /etc/modules Establishing the Connection Set the Bluetooth L2CAP PSM First you need to set the Protocol/Service Multiplexer value on both sides to &ldquo;62&rdquo; (0x3E) on both sides:
+echo 62 &gt; /sys/kernel/debug/bluetooth/6lowpan_psm This PSM value lets the driver know that you are going to multiplex this special new protocol on top of whatever your bluetooth device mith also be doing.
+  <p>
+    <a class="u-clickable" href="../../Playing-with-IPv6-Over-Bluetooth-Low-Energy-6LoWPAN/">Read Full Post…</a>
+  </p>
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
     <a class="Heading-link u-clickable" href="../../Etherhouse-Part-2-Software/" rel="bookmark">Etherhouse Part 2 - Software</a>
   </h2>
   
@@ -546,127 +633,6 @@ Rethinking What I Need Since moving to a Low End Box, my resources have been tig
     
     <li class="Tags-item u-background">
       <a class="Tags-link u-clickable" href="../../categories/octopress/" rel="tag">octopress</a>
-    </li>
-    
-    
-  </ul>
-  
-  
-  
-  
-</footer>
-
-
-</article>
-<div class="Divider"></div>
-
-<article>
-  <header class="Heading">
-  <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="../../sensu-reports-in-your-motd-with-puppet/" rel="bookmark">Sensu Reports in your Motd with Puppet!</a>
-  </h2>
-  
-  <time datetime="2013-11-30T00:19:24Z">
-    30 November, 2013
-  </time>
-  
-</header>
-
-  
-  Intro Sensu is a pretty cool monitoring framework. The authors designed it to be configured by a configuration management system from the beginning. Check out how easily I can make it put a report in my motd with a little bit of python and puppet.
-The Report Script Sensu&rsquo;s API is super easy to work with. For this I will be using the Events endpoint. Here is a quick script to get the events for a host (gist):
-  <p>
-    <a class="u-clickable" href="../../sensu-reports-in-your-motd-with-puppet/">Read Full Post…</a>
-  </p>
-  
-  
-
-
-
-
-
-
-<footer>
-  
-  
-  <ul class="Tags">
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/Puppet/" rel="tag">Puppet</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/sensu/" rel="tag">sensu</a>
-    </li>
-    
-    
-  </ul>
-  
-  
-  
-  
-</footer>
-
-
-</article>
-<div class="Divider"></div>
-
-<article>
-  <header class="Heading">
-  <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="../../managing-dns-automatically-with-puppet/" rel="bookmark">Managing DNS Automatically with Puppet</a>
-  </h2>
-  
-  <time datetime="2013-10-19T23:05:02Z">
-    19 October, 2013
-  </time>
-  
-</header>
-
-  
-  Why So you have a decent amount of things configured in Puppet. Great!
-Are you finding that you have to manually update your DNS entries when things change, like when new hosts or added, or additional services are created?
-Why? Your DNS zone files will forever be out of date, waiting for humans to update them. Just say no. Puppet already knows what the ip addresses and hostnames of your servers, why not take advantage of that existing data?
-  <p>
-    <a class="u-clickable" href="../../managing-dns-automatically-with-puppet/">Read Full Post…</a>
-  </p>
-  
-  
-
-
-
-
-
-
-<footer>
-  
-  
-  <ul class="Tags">
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/dns/" rel="tag">dns</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/Puppet/" rel="tag">Puppet</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/puppetdb/" rel="tag">puppetdb</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/stored-configs/" rel="tag">stored configs</a>
     </li>
     
     

@@ -2,7 +2,6 @@
 slug: "A Fundamental Theory of Platforms: Part 2"
 title: "A Fundamental Theory of Platforms: Part 2"
 date: 2022-12-02T00:00:00-00:00
-published: false
 ---
 
 > Note: This is Part 2 on Platform Engineering theory.

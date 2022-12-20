@@ -152,6 +152,127 @@
 <article>
   <header class="Heading">
   <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../../my-first-published-puppet-module-bios/" rel="bookmark">My First Published Puppet Module: bios</a>
+  </h2>
+  
+  <time datetime="2013-04-15T21:06:09Z">
+    15 April, 2013
+  </time>
+  
+</header>
+
+  
+  What? I&rsquo;ve written lots of crappy Puppet modules. Here is a slightly less crappy module that can help you configure BIOS settings on your servers for you.
+It works on Dell C class servers and Intel platforms. Please pull request or email me if you want to have it work on something else too!
+Why? BIOS settings should be considered configuration just like any other configuration, and hence managed by your configuration management tool, if possible.
+  <p>
+    <a class="u-clickable" href="../../my-first-published-puppet-module-bios/">Read Full Post…</a>
+  </p>
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/bios/" rel="tag">bios</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/dell/" rel="tag">dell</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/hp/" rel="tag">hp</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/intel/" rel="tag">intel</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/Puppet/" rel="tag">Puppet</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../../puppet-on-openwrt/" rel="bookmark">Puppet on OpenWrt!</a>
+  </h2>
+  
+  <time datetime="2013-03-31T19:38:28Z">
+    31 March, 2013
+  </time>
+  
+</header>
+
+  
+  Status: Github Repo is here: https://github.com/solarkennedy/puppet-on-openwrt/
+OpenWrt package files are submitted for inclusion
+Puppet/facter patches have been included in Trunk for inclusion in puppet 3.2
+Binary packages have been made for early adopters (and me)
+Why? To scratch my own itch, and for Fun!
+How? Downloads are here: http://download.xkyle.com/openwrt/
+Because of the dependencies, it is probably easier to add the repo:
+. /etc/openwrt_release VERSION=`echo $DISTRIB_RELEASE | cut -f 1 -d -` TARGET=`echo $DISTRIB_TARGET | cut -f 1 -d /` LINE=&quot;src/gz puppet-packages http://download.
+  <p>
+    <a class="u-clickable" href="../../puppet-on-openwrt/">Read Full Post…</a>
+  </p>
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
     <a class="Heading-link u-clickable" href="../../picking-server-hostnames-worstest-worser-worst-better-betterer-bestest/" rel="bookmark">Picking Server Hostnames: Worstest, Worser, Worst... Better, Betterer, Bestest</a>
   </h2>
   
@@ -651,120 +772,6 @@ Install an External Root Overlay What the heck does that mean? OpenWrt uses an i
     
     <li class="Tags-item u-background">
       <a class="Tags-link u-clickable" href="../../categories/security/" rel="tag">security</a>
-    </li>
-    
-    
-  </ul>
-  
-  
-  
-  
-</footer>
-
-
-</article>
-<div class="Divider"></div>
-
-<article>
-  <header class="Heading">
-  <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="../../7-underused-ipmitool-commands/" rel="bookmark">7 Underused IPMItool Commands</a>
-  </h2>
-  
-  <time datetime="2012-12-20T03:55:02Z">
-    20 December, 2012
-  </time>
-  
-</header>
-
-  
-  IPMI is Awesome. But, it is underused. Most sysadmins don&rsquo;t even enable it. If they do enable it, they probably enable it by manually going into the BIOS, and then probably only using the Web interface. LAME.
-There is no need to go to the BIOS to configure ipmi. You can use IPMItool to configure it in-band. This is my first underused command:
-(disclaimer: not all IPMI interfaces / bios versions / hardware platforms are equal.
-  <p>
-    <a class="u-clickable" href="../../7-underused-ipmitool-commands/">Read Full Post…</a>
-  </p>
-  
-  
-
-
-
-
-
-
-<footer>
-  
-  
-  <ul class="Tags">
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/bios/" rel="tag">bios</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/ipmi/" rel="tag">ipmi</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/ipmitool/" rel="tag">ipmitool</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/linux/" rel="tag">linux</a>
-    </li>
-    
-    
-  </ul>
-  
-  
-  
-  
-</footer>
-
-
-</article>
-<div class="Divider"></div>
-
-<article>
-  <header class="Heading">
-  <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="../../carbon-fiber-table/" rel="bookmark">Carbon Fiber Table</a>
-  </h2>
-  
-  <time datetime="2012-12-15T21:17:29Z">
-    15 December, 2012
-  </time>
-  
-</header>
-
-  
-  It kinda sucks. No matter how much sanding and polish I do, I can&rsquo;t get it to look great. It is smooth, however. Corners are hard. Just posting these pics for archival purposes, not to show off here.
-  <p>
-    <a class="u-clickable" href="../../carbon-fiber-table/">Read Full Post…</a>
-  </p>
-  
-  
-
-
-
-
-
-
-<footer>
-  
-  
-  <ul class="Tags">
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/carbon-fiber/" rel="tag">carbon fiber</a>
     </li>
     
     

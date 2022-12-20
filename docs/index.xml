@@ -6,7 +6,27 @@
     <description>Recent content on xkyle.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 29 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 02 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Fundamental Theory of Platforms: Part 2</title>
+      <link>/A-Fundamental-Theory-of-Platforms-Part-2/</link>
+      <pubDate>Fri, 02 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>/A-Fundamental-Theory-of-Platforms-Part-2/</guid>
+      <description>Note: This is Part 2 on Platform Engineering theory. Read Part 1 if you are more interested in the theory behind these recommendations.
+Applying Theory As a recap from Part 1, the Fundamental Theory of (internal) Platforms is:
+One should be build an internal platform to solve real business needs, starting with the following properties:
+As high-level of an abstraction as possible, evolving to later provide lower-levels as well As opinionated as possible to start, evolving to more flexibility with other offerings As little self-service as possible, evolving to more self-service As multi-tenant as possible, evolving to (more expensive) isolated environments as the business requires it So sure, we have some general guidelines on how to build them, and some of the &amp;ldquo;why&amp;rdquo; from part 1.</description>
+    </item>
+    
+    <item>
+      <title>A Fundamental Theory of Platforms: Part 1</title>
+      <link>/A-Fundamental-Theory-of-Platforms-Part-1/</link>
+      <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>/A-Fundamental-Theory-of-Platforms-Part-1/</guid>
+      <description>Note: This is Part 1 on Platform Engineering theory. Skip to Part 2 if you are more interested in the practical aspects.
+Platform Engineering is the new hotness for 2022. I&amp;rsquo;ve been working with Aaron Blohowiak (Netflix) and Scott Triglia (Stripe) to think about platforms generally, trying to come up with a model to understand how their lifecycle, and what makes them good. We&amp;rsquo;ve tried to use our past industry experience (good and bad), combined with external examples of platforms, to come up with some general rules about how they evolve over time.</description>
+    </item>
+    
     <item>
       <title>A Detailed Comparison of YAML Formatters</title>
       <link>/A-Detailed-Comparison-of-YAML-Formatters/</link>
