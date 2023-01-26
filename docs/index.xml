@@ -6,7 +6,30 @@
     <description>Recent content on xkyle.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 02 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 27 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Enabling USB Tethering on a Palm PVG100 Without Root</title>
+      <link>/Enabling-USB-Tethering-on-a-Palm-PVG100-Without-Root/</link>
+      <pubDate>Fri, 27 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>/Enabling-USB-Tethering-on-a-Palm-PVG100-Without-Root/</guid>
+      <description>I&amp;rsquo;m trying out the 2018 Palm PVG100 as my daily driver cell phone.
+Sure, it is ancient by smartphone standards, but it makes me feel like I&amp;rsquo;m in the future whenever I use it.
+Plus it pairs well with my OneNetbook 4:
+Reasons for using this:
+It is cool It satisfies my &amp;ldquo;under $100 device on my person&amp;rdquo; constraint It discourages &amp;ldquo;bad scrolling habits&amp;rdquo; It fits in my wallet Why USB Tethering I think USB Tethering is underrated.</description>
+    </item>
+    
+    <item>
+      <title>Ustellar RGB Flood 6 Pack Teardown</title>
+      <link>/Ustellar-RGB-Flood-6-Pack-Teardown/</link>
+      <pubDate>Thu, 26 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>/Ustellar-RGB-Flood-6-Pack-Teardown/</guid>
+      <description>I recently bought this 6-pack of Outdoor RGBW Flood lights with the intention of disassembling them.
+These have the SEO words of:
+Ustellar RGB Flood Light Outdoor, Smart WiFi RGBW Color Changing Landscape Lights+Warm White 2700K, 40W App Control Christmas Spotlight Works with Alexa, IP66 Waterproof Uplights, Plug &amp;amp; Play (6 Pack)
+They have a part number of UT88865-RGBW-US-1. Fundamentally they are a string of 6 24v WS2814A RGBW flood lights with the first flood as the controller with a Tuya CBU module for wifi control.</description>
+    </item>
+    
     <item>
       <title>A Fundamental Theory of Platforms: Part 2</title>
       <link>/A-Fundamental-Theory-of-Platforms-Part-2/</link>

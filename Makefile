@@ -1,6 +1,6 @@
 build:
 	@rm -rf docs/*
-	hugo
+	hugo --buildFuture
 
 serve:
 	hugo serve --buildDrafts --buildFuture

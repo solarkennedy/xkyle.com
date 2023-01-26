@@ -152,6 +152,130 @@
 <article>
   <header class="Heading">
   <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../../getting-started-with-spdy-on-nginx/" rel="bookmark">Getting Started With SPDY on Nginx</a>
+  </h2>
+  
+  <time datetime="2013-05-12T21:29:09Z">
+    12 May, 2013
+  </time>
+  
+</header>
+
+  
+  SPDY is a fancy new way to do HTTP, pioneered by Google. Pretty much all modern browsers support it now, except for of course, IE.
+If you have SSL enabled and are using nginx, they you are pretty close to running your sites with SPDY. What how easy it is!
+Step 1: Get a version of nginx with spdy enabled. Ubuntu Get some packages. The Ubuntu packages have &ldquo;&ndash;with-http_spdy_module&rdquo; compiled, so you can install them with no problem:
+  <p>
+    <a class="u-clickable" href="../../getting-started-with-spdy-on-nginx/">Read Full Post…</a>
+  </p>
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/httpd/" rel="tag">httpd</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/nginx/" rel="tag">nginx</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/SPDY/" rel="tag">SPDY</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../../disabling-microphone-auto-gain-sensitivity-for-google-plus-hangouts/" rel="bookmark">Disabling Microphone Auto-Gain (Sensitivity) For Google Plus Hangouts</a>
+  </h2>
+  
+  <time datetime="2013-04-17T01:14:56Z">
+    17 April, 2013
+  </time>
+  
+</header>
+
+  
+  Google&rsquo;s Google Plus Hangout / Gtalk plugin automatically adjust your volume to account for varying noise conditions by default. Sometimes this is an undesired behavior, but there is no button to turn it off. Here is how you do it:
+Linux: Run this in a terminal:
+echo &quot;audio-flags=1&quot; &gt; ~/.config/google-googletalkplugin/options Windows: Set the registry Key:
+HKEY_CURRENT_USER\&lt;wbr&gt;&lt;/wbr&gt;Software\Google\Google Talk Plugin\options\audio-flags = 1 Mac OSX: Edit the plist:
+~/Library/Preferences/com.&lt;wbr&gt;&lt;/wbr&gt;google.GoogleTalkPluginD.plist and set &ldquo;Audio Flags&rdquo; = 1
+  <p>
+    <a class="u-clickable" href="../../disabling-microphone-auto-gain-sensitivity-for-google-plus-hangouts/">Read Full Post…</a>
+  </p>
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/audio/" rel="tag">audio</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/google/" rel="tag">google</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/google-plus/" rel="tag">google plus</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
     <a class="Heading-link u-clickable" href="../../my-first-published-puppet-module-bios/" rel="bookmark">My First Published Puppet Module: bios</a>
   </h2>
   
@@ -633,145 +757,6 @@ Unfortunately I no longer have the motherboard I originally ran these on. I migh
     
     <li class="Tags-item u-background">
       <a class="Tags-link u-clickable" href="../../categories/Puppet/" rel="tag">Puppet</a>
-    </li>
-    
-    
-  </ul>
-  
-  
-  
-  
-</footer>
-
-
-</article>
-<div class="Divider"></div>
-
-<article>
-  <header class="Heading">
-  <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="../../building-linux-packages-for-kernel-drivers/" rel="bookmark">Building Linux Packages For Kernel Drivers! (dkms howto)</a>
-  </h2>
-  
-  <time datetime="2013-01-20T03:39:48Z">
-    20 January, 2013
-  </time>
-  
-</header>
-
-  
-  Background Most of the time the Linux kernel does a great job of having drivers you need, but sometimes you need to install a special driver or update an existing module.
-Running make; make install is all fine and dandy for testing, but for production you want a repeatable process. For me, this means OS packages. (deb/rpms)
-So, how do you go from kernel module source code =&gt; Debian package? DKMS.
-  <p>
-    <a class="u-clickable" href="../../building-linux-packages-for-kernel-drivers/">Read Full Post…</a>
-  </p>
-  
-  
-
-
-
-
-
-
-<footer>
-  
-  
-  <ul class="Tags">
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/debs/" rel="tag">debs</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/dkms/" rel="tag">dkms</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/kernel-modules/" rel="tag">kernel modules</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/linux/" rel="tag">linux</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/packages/" rel="tag">packages</a>
-    </li>
-    
-    
-  </ul>
-  
-  
-  
-  
-</footer>
-
-
-</article>
-<div class="Divider"></div>
-
-<article>
-  <header class="Heading">
-  <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="../../cool-things-to-do-after-installing-openwrt/" rel="bookmark">Cool Things to Do After Installing OpenWrt</a>
-  </h2>
-  
-  <time datetime="2013-01-06T23:16:33Z">
-    6 January, 2013
-  </time>
-  
-</header>
-
-  
-  OpenWrt is the bomb. Think all the power of a full Linux distro on your tiny home router or plug computer.
-Install an External Root Overlay What the heck does that mean? OpenWrt uses an ingenious system were the root filesystem is a super compressed squashfs, merged with a read/write jffs2 filesystem called the overlay. This maximizes your available space on the device. Instead of using part of your remaining flash for read/write, you can use a larger, external device for the overlay.
-  <p>
-    <a class="u-clickable" href="../../cool-things-to-do-after-installing-openwrt/">Read Full Post…</a>
-  </p>
-  
-  
-
-
-
-
-
-
-<footer>
-  
-  
-  <ul class="Tags">
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/openwrt/" rel="tag">openwrt</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/plug-computers/" rel="tag">plug computers</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/pxe/" rel="tag">pxe</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/security/" rel="tag">security</a>
     </li>
     
     
