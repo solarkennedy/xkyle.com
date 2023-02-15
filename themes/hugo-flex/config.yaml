@@ -36,7 +36,7 @@ menu:
     url: /categories/
     weight: 3
   - name: Subscribe
-    url: /subscribe.html
+    url: /subscribe/
     weight: 4
 # I don't understand flebox but somehow this gets the search bar on the right
   - name: ""
