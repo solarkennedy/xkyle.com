@@ -6,7 +6,19 @@
     <description>Recent content in Posts on xkyle.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 27 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Modern Text (Console) Browsers in 2023</title>
+      <link>/Modern-Text-Console-Browsers-in-2023/</link>
+      <pubDate>Tue, 14 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>/Modern-Text-Console-Browsers-in-2023/</guid>
+      <description>Back in 2016 I did a comparison of text-based browser here.
+Back then this was the state of the art (elinks):
+This is speaking generously, with a particularly text-friendly example!
+Now, in 2023, there are two new text-based browsers that are incredible. Because they are backed by normal browser engines, we no longer have to be impressed by features like &amp;ldquo;color support&amp;rdquo;!
+Browsh Browsh is a modern text browser backed by the Firefox (gecko) rendering engine.</description>
+    </item>
+    
     <item>
       <title>Enabling USB Tethering on a Palm PVG100 Without Root</title>
       <link>/Enabling-USB-Tethering-on-a-Palm-PVG100-Without-Root/</link>
