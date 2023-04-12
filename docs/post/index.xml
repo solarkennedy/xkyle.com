@@ -6,7 +6,18 @@
     <description>Recent content in Posts on xkyle.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 14 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>We (Software Engineers) Are All Already Prompt Engineers</title>
+      <link>/We-Software-Engineers-Are-All-Already-Prompt-Engineers/</link>
+      <pubDate>Wed, 12 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>/We-Software-Engineers-Are-All-Already-Prompt-Engineers/</guid>
+      <description>Prompt engineering is an the emerging practice of talking to an AI to get a desired outcome.
+As a software engineer, I would like to make the case that we were already doing this, just our &amp;ldquo;AIs&amp;rdquo; were extremely primitive and error-prone.
+ChatGPT and Copilot are getting very close (in March 2023) to being less error-prone than I am.
+I am a Natural Intelligence with a Finite Prompt I&amp;rsquo;m 39 and this is deep, but my &amp;ldquo;prompt&amp;rdquo; is all I can remember from the last couple of decades of my professional experience.</description>
+    </item>
+    
     <item>
       <title>Modern Text (Console) Browsers in 2023</title>
       <link>/Modern-Text-Console-Browsers-in-2023/</link>

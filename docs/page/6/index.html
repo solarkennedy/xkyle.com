@@ -152,6 +152,56 @@
 <article>
   <header class="Heading">
   <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../../What-Happens-When-You-Run-Puppet-Tests/" rel="bookmark">What Happens When You Run Puppet Tests</a>
+  </h2>
+  
+  <time datetime="2014-03-31T05:33:58Z">
+    31 March, 2014
+  </time>
+  
+</header>
+
+  
+  Breaking down bundle exec rake spec What is happening when you run:
+bundle exec rake spec Bundle The first command you are running is bundle. Bundle is kinda like virtualenv for Ruby. It makes sure that you use the same ruby libraries that you, everyone, and puppetmasters use.
+Bundle uses a Gemfile, and searches downwards. As long as you have the Gemfile in the puppet repo, it will work.
+Exec The second part is exec.
+  <p>
+    <a class="u-clickable" href="../../What-Happens-When-You-Run-Puppet-Tests/">Read Full Post…</a>
+  </p>
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/Puppet/" rel="tag">puppet</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
     <a class="Heading-link u-clickable" href="../../Writing-Purgable-Puppet-Code/" rel="bookmark">Writing Purgable Puppet Code</a>
   </h2>
   
@@ -679,63 +729,6 @@ Add the Puppet repo so you can get fresh source packages cd /tmp # Add the repo,
   
   
   <ul class="Tags">
-    
-  </ul>
-  
-  
-  
-  
-</footer>
-
-
-</article>
-<div class="Divider"></div>
-
-<article>
-  <header class="Heading">
-  <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="../../an-overdrive-pro-connecting-on-openwrt/" rel="bookmark">An Overdrive Pro Connecting on OpenWrt</a>
-  </h2>
-  
-  <time datetime="2013-05-31T01:45:13Z">
-    31 May, 2013
-  </time>
-  
-</header>
-
-  
-  Have a fancy FreedomPop Overdrive Pro? Want to hook it up to your OpenWrt based router to use as a backup (or primary?) internet connection? Lets do it.
-Plug it into your router via USB. Then run:
-opkg install kmod-usb-net-cdc-ether Run dmesg and it will report which eth device came up. Mine shows up as &ldquo;eth1&rdquo;. Now make eth1 your &ldquo;wan&rdquo; interface:
-uci set network.wan.ifname=eth1 uci commit reboot Whoa.
-Or, set it up as a second wan interface and use Multiwan:
-  <p>
-    <a class="u-clickable" href="../../an-overdrive-pro-connecting-on-openwrt/">Read Full Post…</a>
-  </p>
-  
-  
-
-
-
-
-
-
-<footer>
-  
-  
-  <ul class="Tags">
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/freedompop/" rel="tag">freedompop</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/openwrt/" rel="tag">openwrt</a>
-    </li>
-    
     
   </ul>
   

@@ -152,6 +152,72 @@
 <article>
   <header class="Heading">
   <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../../custom-arp-alerts-ii/" rel="bookmark">Custom Arp Alerts II!</a>
+  </h2>
+  
+  <time datetime="2008-08-21T11:59:57Z">
+    21 August, 2008
+  </time>
+  
+</header>
+
+  
+  So I&rsquo;ve found a better way to do what I did in the previous post. Instead of running a separate script to parse the arp alert logs, I have arp alert itself send the alerts! The key is this line in the arpalert.conf
+action on detect = &quot;/etc/scripts/arp-alert&quot; Its so simple, it just runs that script sending the information about the alert as certain arguments. With this I have more control over the formatting of arpalert messages:
+  <p>
+    <a class="u-clickable" href="../../custom-arp-alerts-ii/">Read Full Post…</a>
+  </p>
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/nclug/" rel="tag">nclug</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/programming/" rel="tag">programming</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/scripting/" rel="tag">scripting</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="../../categories/security/" rel="tag">security</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
     <a class="Heading-link u-clickable" href="../../custom-arp-alerts/" rel="bookmark">Custom Arp-Alerts</a>
   </h2>
   
@@ -666,62 +732,6 @@ I&rsquo;m replacing the harddrive in my laptop with a 4GB flash card. It should 
     
     <li class="Tags-item u-background">
       <a class="Tags-link u-clickable" href="../../categories/Personal/" rel="tag">Personal</a>
-    </li>
-    
-    
-  </ul>
-  
-  
-  
-  
-</footer>
-
-
-</article>
-<div class="Divider"></div>
-
-<article>
-  <header class="Heading">
-  <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="../../next-piece-armband/" rel="bookmark">Next Piece: Armband</a>
-  </h2>
-  
-  <time datetime="2007-01-10T06:34:04Z">
-    10 January, 2007
-  </time>
-  
-</header>
-
-  
-  We were thinking it would be cool to have the LCD display be on the arm, instead of the side of the gun.
-So we have modified roller-blading wrist-guards for the purpose:
-Watch Karl Show It Off!
-Karl&rsquo;s Mom helped with the sewing. Next we&rsquo;ll add buttons for mode and backlight. I think they will be very thin and unobtrusive.
-  <p>
-    <a class="u-clickable" href="../../next-piece-armband/">Read Full Post…</a>
-  </p>
-  
-  
-
-
-
-
-
-
-<footer>
-  
-  
-  <ul class="Tags">
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/gun/" rel="tag">gun</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/LaserTag/" rel="tag">LaserTag</a>
     </li>
     
     
