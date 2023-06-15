@@ -6,7 +6,16 @@
     <description>Recent content on xkyle.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 12 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>There Is No Such Thing As Stock Kubernetes</title>
+      <link>/There-Is-No-Such-Thing-As-Stock-Kubernetes/</link>
+      <pubDate>Thu, 15 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>/There-Is-No-Such-Thing-As-Stock-Kubernetes/</guid>
+      <description>Sometimes I hear the phrase &amp;ldquo;Stock Kubernetes&amp;rdquo; and wonder exactly what one means when they say that. Often it is in contrast to a &amp;ldquo;Managed&amp;rdquo; kubernetes (k8s) offering, for example (just the big three):
+Amazon EKS Google GKE Azure AKS But these are all on cloud providers. When someone says &amp;ldquo;Stock Kubernetes&amp;rdquo;, they may mean they want to run k8s on a cloud provider, but not use the cloud provider&amp;rsquo;s service.</description>
+    </item>
+    
     <item>
       <title>We (Software Engineers) Are All Already Prompt Engineers</title>
       <link>/We-Software-Engineers-Are-All-Already-Prompt-Engineers/</link>
