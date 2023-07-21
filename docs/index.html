@@ -93,10 +93,6 @@
 
 
 
-
-
-
-
   
   <link rel="stylesheet" href="./css/base.min.24be1671072a4ffd1658d18782fbd46366c3ac77c8897688b09caf78e90fce23.css" integrity="sha256-JL4WcQcqT/0WWNGHgvvUY2bDrHfIiXaIsJyveOkPziM=" crossorigin="anonymous">
   
@@ -146,6 +142,39 @@
         
 
 
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="./Using-golangs-pprof-over-a-Unix-Socket/" rel="bookmark">Using golang&#39;s pprof over a Unix Socket</a>
+  </h2>
+  
+  <time datetime="2023-07-21T00:00:00Z">
+    21 July, 2023
+  </time>
+  
+</header>
+
+  
+  Python Manhole When working with a complex python daemon, I really appreciated the python-manhole library. This tool allows you to listen on a Unix domain socket, and serve a REPL, get stack traces, and more.
+From the README, it is as simple as this:
+Install it:
+pip install manhole Add it to your python code somewhere in the start sequence:
+import manhole ... def main(): manhole.install() # this will start the daemon thread .
+  <p>
+    <a class="u-clickable" href="./Using-golangs-pprof-over-a-Unix-Socket/">Read Full Post…</a>
+  </p>
+  
+  
+
+
+
+
+
+
+
+</article>
+<div class="Divider"></div>
 
 <article>
   <header class="Heading">
@@ -417,38 +446,6 @@ One of my favorite tools for visualizing air quality is Purple Air:
 Using crowd-sourced sensors, you can get hyper-local readings of your surrounding air quality. Try finding the closest sensor available to you on the map.
   <p>
     <a class="u-clickable" href="./An-AQI-LED-Jar/">Read Full Post…</a>
-  </p>
-  
-  
-
-
-
-
-
-
-
-</article>
-<div class="Divider"></div>
-
-<article>
-  <header class="Heading">
-  <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="./Configuring-6LoWPAN-on-Linux-in-2022/" rel="bookmark">Configuring 6LoWPAN on Linux in 2022</a>
-  </h2>
-  
-  <time datetime="2022-05-17T00:00:00Z">
-    17 May, 2022
-  </time>
-  
-</header>
-
-  
-  6LoWPAN is a networking protocol that enabled IPv6 connectivity over IEEE 802.15.4 instead of 802.11.
-This low energy network spec shoves IPv6 + Link layer encryption on top of Bluetooth low energy.
-But wait, there are actually two types of connections here, and the landscape is confusing due to the different options.
-RFC7668 is IPv6 over Bluetooth LE RFC4944 is IPv6 over 802.15.14 6LoWPAN seems to encompass any type of IPv6 over low energy network setup.
-  <p>
-    <a class="u-clickable" href="./Configuring-6LoWPAN-on-Linux-in-2022/">Read Full Post…</a>
   </p>
   
   
