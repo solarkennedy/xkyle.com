@@ -1602,5 +1602,17 @@ If you would like to know more, check out my Github or my LinkedIn.
 If you want to stay up to date with these posts, you can use the RSS fee or Subscribe via email</description>
     </item>
     
+    <item>
+      <title>Using golang&#39;s pprof over a Unix Socket</title>
+      <link>/Using-golangs-pprof-over-a-Unix-Socket/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/Using-golangs-pprof-over-a-Unix-Socket/</guid>
+      <description>Python Manhole When working with a complex python daemon, I really appreciated the python-manhole library. This tool allows you to listen on a Unix domain socket, and serve a REPL, get stack traces, and more.
+From the README, it is as simple as this:
+Install it:
+pip install manhole Add it to your python code somewhere in the start sequence:
+import manhole ... def main(): manhole.install() # this will start the daemon thread .</description>
+    </item>
+    
   </channel>
 </rss>
