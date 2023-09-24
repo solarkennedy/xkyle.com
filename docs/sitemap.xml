@@ -4,16 +4,21 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2023-07-21T00:00:00+00:00</lastmod>
+    <lastmod>2023-09-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/Using-golangs-pprof-over-a-Unix-Socket/</loc>
-    <lastmod>2023-07-21T00:00:00+00:00</lastmod>
+    <loc>/Using-Per-Instance-Type-Kernels-in-a-Single-AWS-EC2-AMI/</loc>
+    <lastmod>2023-09-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/</loc>
+    <lastmod>2023-09-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/Using-golangs-pprof-over-a-Unix-Socket/</loc>
     <lastmod>2023-07-21T00:00:00+00:00</lastmod>
   </url>
   
