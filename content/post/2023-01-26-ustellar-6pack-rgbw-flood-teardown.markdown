@@ -78,6 +78,9 @@ graph LR
     C -- Data: Red  --> D
 ```
 
+Note: The power supply's wires may not be color coded like this.
+Always double check the polarity with a multimeter.
+
 ## Conclusion
 
 Honestly, I'm not that interested in repurposing or flashing the Tuya CBU.
