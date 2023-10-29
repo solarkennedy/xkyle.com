@@ -6,7 +6,17 @@
     <description>Recent content in Posts on xkyle.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 21 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 31 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Halloween Crafts 2023</title>
+      <link>/Halloween-Crafts-2023/</link>
+      <pubDate>Tue, 31 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>/Halloween-Crafts-2023/</guid>
+      <description>Here is a sampling of craft projects for Halloween 2023 that I made with wife help. Click on a picture to see a full size image. Sorry for the terrible image quality.
+Transmutation Circle Materials:
+Charcoal chalk LED Candles Magnet Wire Wemos D1 controller running WLED Straight edge, vinyl stencils, wire/compass. It is kinda surreal to see this in real life. This thing is big enough to create a human from raw elements!</description>
+    </item>
+    
     <item>
       <title>Using Per-Instance-Type Kernels in a Single AWS EC2 AMI</title>
       <link>/Using-Per-Instance-Type-Kernels-in-a-Single-AWS-EC2-AMI/</link>

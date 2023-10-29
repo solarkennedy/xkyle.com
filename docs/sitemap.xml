@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/post/</loc>
-    <lastmod>2023-09-21T00:00:00+00:00</lastmod>
+    <loc>/Halloween-Crafts-2023/</loc>
+    <lastmod>2023-10-31T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/Using-Per-Instance-Type-Kernels-in-a-Single-AWS-EC2-AMI/</loc>
-    <lastmod>2023-09-21T00:00:00+00:00</lastmod>
+    <loc>/post/</loc>
+    <lastmod>2023-10-31T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/</loc>
+    <lastmod>2023-10-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/Using-Per-Instance-Type-Kernels-in-a-Single-AWS-EC2-AMI/</loc>
     <lastmod>2023-09-21T00:00:00+00:00</lastmod>
   </url>
   
