@@ -6,7 +6,18 @@
     <description>Recent content in Posts on xkyle.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 09 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS re:Invent 2023 Talk: Iterating Faster on Stateful Services in the Cloud</title>
+      <link>/AWS-reInvent-2023-Talk-Iterating-Faster-on-Stateful-Services-in-the-Cloud/</link>
+      <pubDate>Sun, 10 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>/AWS-reInvent-2023-Talk-Iterating-Faster-on-Stateful-Services-in-the-Cloud/</guid>
+      <description>This is a joint talk with one of my Netflix Coworkers JS Jeannotte.
+In this talk we survey the different options for running stateful workloads on EC2.
+We also present a hybrid method of using containers to run workloads using Kubelet in standalone mode, combined with the EC2 replace-root-volume API. This method enables us to iterate quickly through:
+Loading new container images and restarting kubelet for workload software upgrades Rebooting the server into a new OS and kernel quickly for upgrading everything else All without losing the on-disk state.</description>
+    </item>
+    
     <item>
       <title>re:Invent 2023 Badge Teardown</title>
       <link>/reInvent-2023-Badge-Teardown/</link>
