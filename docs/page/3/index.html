@@ -151,6 +151,37 @@
 <article>
   <header class="Heading">
   <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../../WLED-on-a-Novostella-Flood-Lamp/" rel="bookmark">WLED on a Novostella Flood Lamp</a>
+  </h2>
+  
+  <time datetime="2022-03-13T00:00:00Z">
+    13 March, 2022
+  </time>
+  
+</header>
+
+  
+  I recently bought a pair of Novostella 20W Smart LED Flood Lights. These lights are RGBCW (Red/Blue/Green/Cold/Warm) and use the ubiquitous ESP8266 controller on the Tuya TYLC4-IPEX.
+From the previous blog post we learned that the ESP8266 is connected to the LED controller in the following way:
+GPIO 04: PWM Channel 1 (Red) GPIO 05: PWM Channel 5 (Color Temp) GPIO 12: PWM Channel 2 (Green) GPIO 13: PWM Channel 4 (White) GPIO 14: PWM Channel 3 (Blue) GPIO 0-3,6,7,11,1: Not used My particular version of this Novostella Flood Light had the latest version of their software, which means I did have to break the glass and solder up a programmer to flash WLED on it.
+  <p>
+    <a class="u-clickable" href="../../WLED-on-a-Novostella-Flood-Lamp/">Read Full Post…</a>
+  </p>
+  
+  
+
+
+
+
+
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
     <a class="Heading-link u-clickable" href="../../Tasmota-on-a-Novostella-Flood-Lamp/" rel="bookmark">Tasmota on a Novostella Flood Lamp</a>
   </h2>
   
@@ -426,49 +457,6 @@ NTP-synced time. Never forget about DST again. Always accurate. Wakeup by ocean 
 
 
 
-
-
-</article>
-<div class="Divider"></div>
-
-<article>
-  <header class="Heading">
-  <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="../../The-Case-Against-Kubernetes-Sidecars/" rel="bookmark">The Case Against Kubernetes Sidecars</a>
-  </h2>
-  
-  <time datetime="2020-02-27T00:00:00Z">
-    27 February, 2020
-  </time>
-  
-</header>
-
-  
-  Intro The Kubernetes (k8s) ecosystem has gone crazy for sidecar containers.
-Sidecar containers (sidecars) are auxiliary containers, not part of your application, that provide additional support to make it work. Along with your application, sidecars can be used to inject secrets, ship logs, or power a service mesh.
-Although there are some advantages to Sidecars over traditional daemons, I would like to make the case that they are actually and inferior solution for a company that has the resources to provide a platform to its developers.
-  <p>
-    <a class="u-clickable" href="../../The-Case-Against-Kubernetes-Sidecars/">Read Full Post…</a>
-  </p>
-  
-  
-
-
-
-
-
-
-<footer>
-  
-  
-  <ul class="Tags">
-    
-  </ul>
-  
-  
-  
-  
-</footer>
 
 
 </article>

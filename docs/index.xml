@@ -6,7 +6,19 @@
     <description>Recent content on xkyle.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>re:Invent 2023 Badge Teardown</title>
+      <link>/reInvent-2023-Badge-Teardown/</link>
+      <pubDate>Sat, 09 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>/reInvent-2023-Badge-Teardown/</guid>
+      <description>NOTE: This blog post is just a physical teardown and documentation of the device&amp;rsquo;s advertised bluetooth capabilities. No reverse engineering was done (I&amp;rsquo;m not that good).
+I recently attended AWS re:Invent 2023, and the badge had a curious circular object attached to it.
+In extremely small print it had some sort of serial, 00234867 silk screened on the case.
+Inside was a small circular PCB and a CR2016 battery:
+(click for a larger image)</description>
+    </item>
+    
     <item>
       <title>Hosting an Apple Tasting Party</title>
       <link>/Hosting-an-Apple-Tasting-Party/</link>

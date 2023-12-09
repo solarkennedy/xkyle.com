@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.110.0">
+  <meta itemprop="name" content="re:Invent 2023 Badge Teardown">
+<meta itemprop="description" content="NOTE: This blog post is just a physical teardown and documentation of the device&rsquo;s advertised bluetooth capabilities. No reverse engineering was done (I&rsquo;m not that good).
+I recently attended AWS re:Invent 2023, and the badge had a curious circular object attached to it.
+In extremely small print it had some sort of serial, 00234867 silk screened on the case.
+Inside was a small circular PCB and a CR2016 battery:
+(click for a larger image)"><meta itemprop="datePublished" content="2023-12-09T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2023-12-09T00:00:00+00:00" />
+<meta itemprop="wordCount" content="478">
+<meta itemprop="keywords" content="" />
+  <meta property="og:title" content="re:Invent 2023 Badge Teardown" />
+<meta property="og:description" content="NOTE: This blog post is just a physical teardown and documentation of the device&rsquo;s advertised bluetooth capabilities. No reverse engineering was done (I&rsquo;m not that good).
+I recently attended AWS re:Invent 2023, and the badge had a curious circular object attached to it.
+In extremely small print it had some sort of serial, 00234867 silk screened on the case.
+Inside was a small circular PCB and a CR2016 battery:
+(click for a larger image)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/reInvent-2023-Badge-Teardown/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-12-09T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-12-09T00:00:00+00:00" />
+
+  
+  <title>
+    
+    re:Invent 2023 Badge Teardown | xkyle.com
+    
+  </title>
+  <link rel="canonical" href="../reInvent-2023-Badge-Teardown/">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="manifest" href="../site.webmanifest">
+  
+  
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="../css/base.min.24be1671072a4ffd1658d18782fbd46366c3ac77c8897688b09caf78e90fce23.css" integrity="sha256-JL4WcQcqT/0WWNGHgvvUY2bDrHfIiXaIsJyveOkPziM=" crossorigin="anonymous">
+  
+  
+</head>
+<body>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable" href="">xkyle.com</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../about/">About</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../post/">Posts</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../categories/">Categories</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../subscribe/">Subscribe</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../"></a>
+      </li>
+      
+      <li class="Banner-item">
+<form action="https://www.google.com/search" class="Banner-link u-clickable" method="get" name="searchform" target="_blank">
+<input name="sitesearch" type="hidden" value="xkyle.com">
+<input autocomplete="on" class="form-control search2" name="q" placeholder="Search" required="required"  type="text" style="width: 50px;">
+<button class="button" type="submit" style="width:1px;text-align: center;border-right-width: 20px;border-right-style: solid;height: 34px;">🔍</button>
+</form>
+      </li>
+  </div>
+</nav>
+
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../reInvent-2023-Badge-Teardown/" rel="bookmark">re:Invent 2023 Badge Teardown</a>
+  </h2>
+  
+  <time datetime="2023-12-09T00:00:00Z">
+    9 December, 2023
+  </time>
+  
+</header>
+
+  <p>NOTE: This blog post is just a physical teardown and documentation of the device&rsquo;s advertised bluetooth capabilities.
+No reverse engineering was done (I&rsquo;m not that good).</p>
+<p>I recently attended AWS re:Invent 2023, and the badge had a curious circular object attached to it.</p>
+<p>In extremely small print it had some sort of serial, <code>00234867</code> silk screened on the case.</p>
+<p>Inside was a small circular PCB and a CR2016 battery:</p>
+<p><a href="../uploads/2023-12-09-reinvent-badge-teardown/badgepcb.png"><img src="../uploads/2023-12-09-reinvent-badge-teardown/badgepcb.thumb.png" alt="badgepcb.png text"></a></p>
+<p>(click for a larger image)</p>
+<p>The PCB is labled with <code>MS60SF9_V1.0</code> and a <code>m1805</code> chip.
+I couldn&rsquo;t find any documentation on this chip, but it looks related to the <a href="https://en.minewsemi.com/bluetooth-module/m1805-ms48sf2">MINEWSEMI M1805-MS48SF2</a>.</p>
+<p>The bluetooth device identifies as a <code>Tnnow</code> with the following UUIDs:</p>
+<pre tabindex="0"><code>BC:00:00:00:4C:D6 Tnnow
+
+00001800-0000-1000-8000-00805f9b34fb Generic Access
+00001801-0000-1000-8000-00805f9b34fb Generic Attribute
+0000180a-0000-1000-8000-00805f9b34fb Device Information
+0000180f-0000-1000-8000-00805f9b34fb Battery Service
+0000fff0-0000-1000-8000-00805f9b34fb Unknown
+</code></pre><p>Connecting to the serial port at 115200 bps gives me a single string on boot:</p>
+<pre tabindex="0"><code>-boot-
+</code></pre><p>And here is the full <code>bluetoothctl</code> output for the device:</p>
+<pre tabindex="0"><code>[NEW] Primary Service (Handle 0x0000)
+	/org/bluez/hci0/dev_BC_00_00_00_4C_D6/service0008
+	00001801-0000-1000-8000-00805f9b34fb
+	Generic Attribute Profile
+[NEW] Characteristic (Handle 0x0000)
+	/org/bluez/hci0/dev_BC_00_00_00_4C_D6/service0008/char0009
+	00002a05-0000-1000-8000-00805f9b34fb
+	Service Changed
+[NEW] Descriptor (Handle 0x0000)
+	/org/bluez/hci0/dev_BC_00_00_00_4C_D6/service0008/char0009/desc000b
+	00002902-0000-1000-8000-00805f9b34fb
+	Client Characteristic Configuration
+[NEW] Primary Service (Handle 0x0000)
+	/org/bluez/hci0/dev_BC_00_00_00_4C_D6/service000c
+	0000180f-0000-1000-8000-00805f9b34fb
+	Battery Service
+[NEW] Characteristic (Handle 0x0000)
+	/org/bluez/hci0/dev_BC_00_00_00_4C_D6/service000c/char000d
+	00002a19-0000-1000-8000-00805f9b34fb
+	Battery Level
+[NEW] Descriptor (Handle 0x0000)
+	/org/bluez/hci0/dev_BC_00_00_00_4C_D6/service000c/char000d/desc000f
+	00002902-0000-1000-8000-00805f9b34fb
+	Client Characteristic Configuration
+[NEW] Primary Service (Handle 0x0000)
+	/org/bluez/hci0/dev_BC_00_00_00_4C_D6/service0010
+	0000180a-0000-1000-8000-00805f9b34fb
+	Device Information
+[NEW] Characteristic (Handle 0x0000)
+	/org/bluez/hci0/dev_BC_00_00_00_4C_D6/service0010/char0011
+	00002a29-0000-1000-8000-00805f9b34fb
+	Manufacturer Name String
+[NEW] Characteristic (Handle 0x0000)
+	/org/bluez/hci0/dev_BC_00_00_00_4C_D6/service0010/char0013
+	00002a24-0000-1000-8000-00805f9b34fb
+	Model Number String
+[NEW] Characteristic (Handle 0x0000)
+	/org/bluez/hci0/dev_BC_00_00_00_4C_D6/service0010/char0015
+	00002a25-0000-1000-8000-00805f9b34fb
+	Serial Number String
+[NEW] Characteristic (Handle 0x0000)
+	/org/bluez/hci0/dev_BC_00_00_00_4C_D6/service0010/char0017
+	00002a27-0000-1000-8000-00805f9b34fb
+	Hardware Revision String
+[NEW] Characteristic (Handle 0x0000)
+	/org/bluez/hci0/dev_BC_00_00_00_4C_D6/service0010/char0019
+	00002a26-0000-1000-8000-00805f9b34fb
+	Firmware Revision String
+[NEW] Characteristic (Handle 0x0000)
+	/org/bluez/hci0/dev_BC_00_00_00_4C_D6/service0010/char001b
+	00002a28-0000-1000-8000-00805f9b34fb
+	Software Revision String
+[NEW] Primary Service (Handle 0x0000)
+	/org/bluez/hci0/dev_BC_00_00_00_4C_D6/service001d
+	0000fff0-0000-1000-8000-00805f9b34fb
+	Unknown
+[NEW] Characteristic (Handle 0x0000)
+	/org/bluez/hci0/dev_BC_00_00_00_4C_D6/service001d/char001e
+	0000fff1-0000-1000-8000-00805f9b34fb
+	Unknown
+[NEW] Descriptor (Handle 0x0000)
+	/org/bluez/hci0/dev_BC_00_00_00_4C_D6/service001d/char001e/desc0020
+	00002901-0000-1000-8000-00805f9b34fb
+	Characteristic User Description
+[NEW] Characteristic (Handle 0x0000)
+	/org/bluez/hci0/dev_BC_00_00_00_4C_D6/service001d/char0021
+	0000fff2-0000-1000-8000-00805f9b34fb
+	Unknown
+[NEW] Descriptor (Handle 0x0000)
+	/org/bluez/hci0/dev_BC_00_00_00_4C_D6/service001d/char0021/desc0023
+	00002901-0000-1000-8000-00805f9b34fb
+	Characteristic User Description
+[NEW] Characteristic (Handle 0x0000)
+	/org/bluez/hci0/dev_BC_00_00_00_4C_D6/service001d/char0024
+	0000fff3-0000-1000-8000-00805f9b34fb
+	Unknown
+[NEW] Descriptor (Handle 0x0000)
+	/org/bluez/hci0/dev_BC_00_00_00_4C_D6/service001d/char0024/desc0026
+	00002901-0000-1000-8000-00805f9b34fb
+	Characteristic User Description
+[NEW] Characteristic (Handle 0x0000)
+	/org/bluez/hci0/dev_BC_00_00_00_4C_D6/service001d/char0027
+	0000fff4-0000-1000-8000-00805f9b34fb
+	Unknown
+[NEW] Descriptor (Handle 0x0000)
+	/org/bluez/hci0/dev_BC_00_00_00_4C_D6/service001d/char0027/desc0029
+	00002901-0000-1000-8000-00805f9b34fb
+	Characteristic User Description
+[NEW] Characteristic (Handle 0x0000)
+	/org/bluez/hci0/dev_BC_00_00_00_4C_D6/service001d/char002a
+	0000fff5-0000-1000-8000-00805f9b34fb
+	Unknown
+[NEW] Descriptor (Handle 0x0000)
+	/org/bluez/hci0/dev_BC_00_00_00_4C_D6/service001d/char002a/desc002c
+	00002901-0000-1000-8000-00805f9b34fb
+	Characteristic User Description
+[NEW] Characteristic (Handle 0x0000)
+	/org/bluez/hci0/dev_BC_00_00_00_4C_D6/service001d/char002d
+	0000fff6-0000-1000-8000-00805f9b34fb
+	Unknown
+[NEW] Descriptor (Handle 0x0000)
+	/org/bluez/hci0/dev_BC_00_00_00_4C_D6/service001d/char002d/desc002f
+	00002901-0000-1000-8000-00805f9b34fb
+	Characteristic User Description
+[NEW] Characteristic (Handle 0x0000)
+	/org/bluez/hci0/dev_BC_00_00_00_4C_D6/service001d/char0030
+	0000fff7-0000-1000-8000-00805f9b34fb
+	Unknown
+[NEW] Descriptor (Handle 0x0000)
+	/org/bluez/hci0/dev_BC_00_00_00_4C_D6/service001d/char0030/desc0032
+	00002901-0000-1000-8000-00805f9b34fb
+	Characteristic User Description
+[NEW] Characteristic (Handle 0x0000)
+	/org/bluez/hci0/dev_BC_00_00_00_4C_D6/service001d/char0033
+	0000fff8-0000-1000-8000-00805f9b34fb
+	Unknown
+[NEW] Descriptor (Handle 0x0000)
+	/org/bluez/hci0/dev_BC_00_00_00_4C_D6/service001d/char0033/desc0035
+	00002901-0000-1000-8000-00805f9b34fb
+	Characteristic User Description
+[NEW] Characteristic (Handle 0x0000)
+	/org/bluez/hci0/dev_BC_00_00_00_4C_D6/service001d/char0036
+	0000fff9-0000-1000-8000-00805f9b34fb
+	Unknown
+[NEW] Descriptor (Handle 0x0000)
+	/org/bluez/hci0/dev_BC_00_00_00_4C_D6/service001d/char0036/desc0038
+	00002901-0000-1000-8000-00805f9b34fb
+	Characteristic User Description
+[NEW] Characteristic (Handle 0x0000)
+	/org/bluez/hci0/dev_BC_00_00_00_4C_D6/service001d/char0039
+	0000fffa-0000-1000-8000-00805f9b34fb
+	Unknown
+[NEW] Descriptor (Handle 0x0000)
+	/org/bluez/hci0/dev_BC_00_00_00_4C_D6/service001d/char0039/desc003b
+	00002901-0000-1000-8000-00805f9b34fb
+	Characteristic User Description
+[NEW] Characteristic (Handle 0x0000)
+	/org/bluez/hci0/dev_BC_00_00_00_4C_D6/service001d/char003c
+	0000fffe-0000-1000-8000-00805f9b34fb
+	Alliance for Wireless Power (A4WP)
+[NEW] Descriptor (Handle 0x0000)
+	/org/bluez/hci0/dev_BC_00_00_00_4C_D6/service001d/char003c/desc003e
+	00002901-0000-1000-8000-00805f9b34fb
+	Characteristic User Description
+[NEW] Characteristic (Handle 0x0000)
+	/org/bluez/hci0/dev_BC_00_00_00_4C_D6/service001d/char003f
+	0000ffff-0000-1000-8000-00805f9b34fb
+	Unknown
+[NEW] Descriptor (Handle 0x0000)
+	/org/bluez/hci0/dev_BC_00_00_00_4C_D6/service001d/char003f/desc0041
+	00002901-0000-1000-8000-00805f9b34fb
+	Characteristic User Description
+</code></pre><p>That is all I&rsquo;ve got.</p>
+
+  
+
+  
+
+
+
+
+
+
+
+  <a href="mailto:kyle@xkyle.com?subject=Comment on: re%3aInvent%202023%20Badge%20Teardown">Comment via email</a>
+
+</article>
+
+
+      </div>
+    </div>
+  </main>
+  
+
+</body>
+</html>
