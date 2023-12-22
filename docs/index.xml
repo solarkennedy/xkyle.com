@@ -6,7 +6,18 @@
     <description>Recent content on xkyle.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 10 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WLED on a Ustellar RGB Flood 6 Pack</title>
+      <link>/WLED-on-a-Ustellar-RGB-Flood-6-Pack/</link>
+      <pubDate>Thu, 21 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>/WLED-on-a-Ustellar-RGB-Flood-6-Pack/</guid>
+      <description>Previously, I bought this 6-pack of Outdoor RGBW Flood lights and disassembled them.
+These have the SEO words of:
+Ustellar RGB Flood Light Outdoor, Smart WiFi RGBW Color Changing Landscape Lights+Warm White 2700K, 40W App Control Christmas Spotlight Works with Alexa, IP66 Waterproof Uplights, Plug &amp;amp; Play (6 Pack)
+They have a part number of UT88865-RGBW-US-1. Fundamentally they are a string of 6 24v WS2814A RGBW flood lights with the first flood as the controller with a Tuya CBU module for wifi control.</description>
+    </item>
+    
     <item>
       <title>AWS re:Invent 2023 Talk: Iterating Faster on Stateful Services in the Cloud</title>
       <link>/AWS-reInvent-2023-Talk-Iterating-Faster-on-Stateful-Services-in-the-Cloud/</link>
