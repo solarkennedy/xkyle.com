@@ -85,4 +85,4 @@ Always double check the polarity with a multimeter.
 
 Honestly, I'm not that interested in repurposing or flashing the Tuya CBU.
 I would rather these as "dumb" inexpensive WS2814 lights with my own controller.
-Stay tuned for the next blog post the electrical and software configuration required to control these lights directly.
+Stay tuned for the [next blog post]({{< ref 2023-12-21-wled-on-a-ustellar-6pack-rgb-flood.markdown >}}) the electrical and software configuration required to control these lights directly.
