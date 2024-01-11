@@ -6,7 +6,18 @@
     <description>Recent content in Posts on xkyle.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 21 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 10 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Incidental Complexity of Kubernetes</title>
+      <link>/The-Incidental-Complexity-of-Kubernetes/</link>
+      <pubDate>Wed, 10 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>/The-Incidental-Complexity-of-Kubernetes/</guid>
+      <description>Kubernetes is the quintessential source of incidental complexity for our age, and our industry has been duped into believing that it is &amp;ldquo;good&amp;rdquo;.
+(50,000 people can&amp;rsquo;t be wrong!)
+In the classic No Silver Bullet, Brooks (the author), carves out two different types of complexity:
+Accidental complexity: the introduction of more code or moving parts &amp;ldquo;by accident&amp;rdquo;, and can be corrected. Essential complexity: inherit to the problem at hand, independent of the surrounding environment (environment, programming language, hardware constraints, etc).</description>
+    </item>
+    
     <item>
       <title>WLED on a Ustellar RGB Flood 6 Pack</title>
       <link>/WLED-on-a-Ustellar-RGB-Flood-6-Pack/</link>
