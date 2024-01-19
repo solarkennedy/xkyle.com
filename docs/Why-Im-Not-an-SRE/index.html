@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.110.0">
+  <meta itemprop="name" content="Why I&#39;m Not an SRE">
+<meta itemprop="description" content="SRE (Site Reliability Engineer) as coined by Google in 2003, came into prominence in 2016 with the release of &ldquo;The SRE Book&rdquo;. It defines a particular job in an engineering org. This job is mostly focused on of course, reliability, but also performance, observability/monitoring, code deployment, capacity planning, and many other adjacent activities.
+Some people say SRE is Google&rsquo;s &ldquo;version of DevOps&rdquo; (aka a &ldquo;DevOps implementation&rdquo;). This is a little tricky to talk about, because DevOps, started as a rallying cry for shortening deployment times and adding more automation in the SDLC, has turned into a role itself."><meta itemprop="datePublished" content="2024-01-18T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2024-01-18T00:00:00+00:00" />
+<meta itemprop="wordCount" content="360">
+<meta itemprop="keywords" content="" />
+  <meta property="og:title" content="Why I&#39;m Not an SRE" />
+<meta property="og:description" content="SRE (Site Reliability Engineer) as coined by Google in 2003, came into prominence in 2016 with the release of &ldquo;The SRE Book&rdquo;. It defines a particular job in an engineering org. This job is mostly focused on of course, reliability, but also performance, observability/monitoring, code deployment, capacity planning, and many other adjacent activities.
+Some people say SRE is Google&rsquo;s &ldquo;version of DevOps&rdquo; (aka a &ldquo;DevOps implementation&rdquo;). This is a little tricky to talk about, because DevOps, started as a rallying cry for shortening deployment times and adding more automation in the SDLC, has turned into a role itself." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/Why-Im-Not-an-SRE/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2024-01-18T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-01-18T00:00:00+00:00" />
+
+  
+  <title>
+    
+    Why I&#39;m Not an SRE | xkyle.com
+    
+  </title>
+  <link rel="canonical" href="../Why-Im-Not-an-SRE/">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="manifest" href="../site.webmanifest">
+  
+  
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="../css/base.min.24be1671072a4ffd1658d18782fbd46366c3ac77c8897688b09caf78e90fce23.css" integrity="sha256-JL4WcQcqT/0WWNGHgvvUY2bDrHfIiXaIsJyveOkPziM=" crossorigin="anonymous">
+  
+  
+</head>
+<body>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable" href="">xkyle.com</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../about/">About</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../post/">Posts</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../categories/">Categories</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../subscribe/">Subscribe</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="../"></a>
+      </li>
+      
+      <li class="Banner-item">
+<form action="https://www.google.com/search" class="Banner-link u-clickable" method="get" name="searchform" target="_blank">
+<input name="sitesearch" type="hidden" value="xkyle.com">
+<input autocomplete="on" class="form-control search2" name="q" placeholder="Search" required="required"  type="text" style="width: 50px;">
+<button class="button" type="submit" style="width:1px;text-align: center;border-right-width: 20px;border-right-style: solid;height: 34px;">🔍</button>
+</form>
+      </li>
+  </div>
+</nav>
+
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../Why-Im-Not-an-SRE/" rel="bookmark">Why I&#39;m Not an SRE</a>
+  </h2>
+  
+  <time datetime="2024-01-18T00:00:00Z">
+    18 January, 2024
+  </time>
+  
+</header>
+
+  <p>SRE (Site Reliability Engineer) as coined by Google in 2003, came into prominence in 2016 with the release of <a href="https://sre.google/books/">&ldquo;The SRE Book&rdquo;</a>.
+It defines a particular job in an engineering org.
+This job is mostly focused on of course, reliability, but also performance, observability/monitoring, code deployment, capacity planning, and many other adjacent activities.</p>
+<p>Some people say SRE is Google&rsquo;s &ldquo;version of DevOps&rdquo; (aka a &ldquo;DevOps implementation&rdquo;).
+This is a little tricky to talk about, because <a href="https://en.wikipedia.org/wiki/DevOps">DevOps</a>, started as a rallying cry for shortening deployment times and adding more automation in the SDLC, has turned into a role itself.
+There are lots of job openings for &ldquo;Devops Engineer&rdquo;, and engineers really identify that term, some calling themselves &ldquo;a devop&rdquo;.</p>
+<p>While I don&rsquo;t like the &ldquo;devop&rdquo; term, for the purpose of this blog post, SRE as an implementation of the DevOps philosophy is close enough.</p>
+<h2 id="the-stories-we-tell-ourselves">The Stories We Tell Ourselves</h2>
+<p>Our jobs titles can strongly influence our personal identities.
+Think of your job title as a <a href="https://www.xkyle.com/We-Software-Engineers-Are-All-Already-Prompt-Engineers/">mini prompt</a> fed to your own personal neural network, like:</p>
+<blockquote>
+<p>I&rsquo;m a good SRE.
+I build reliable systems.
+I&rsquo;m good enough, I&rsquo;m smart enough, and doggone it, people like me.</p>
+</blockquote>
+<h2 id="why-i-dont-like-sre">Why I Don&rsquo;t Like SRE</h2>
+<p>To me, reliability has never been the top priority for most of the systems I&rsquo;ve managed.
+It just hasn&rsquo;t.
+Certainly reliability is one important aspect of a good system, but only to a degree.</p>
+<p>For any individual job, there may be a time that reliability is job 1, but other times it might be performance, or cost efficiency.
+There are lots of tradeoffs to be made like:</p>
+<ul>
+<li>For security, we need all logins to funnel through this central server</li>
+<li>For efficiency, we need to run in 2 availability zones instead of 3.</li>
+<li>For performance, we need to run the database as a singleton instead of being distributed.</li>
+</ul>
+<p>I just don&rsquo;t want to be boxed in, as simple as that.
+For that reason, I don&rsquo;t identify as an SRE, and I just stick to &ldquo;engineer&rdquo; (luckily not a protected title in the US).
+That way I don&rsquo;t let a reliability bias hold me back from making hard tradeoffs when the time comes.</p>
+
+  
+
+  
+
+
+
+
+
+
+
+  <a href="mailto:kyle@xkyle.com?subject=Comment on: Why%20I%27m%20Not%20an%20SRE">Comment via email</a>
+
+</article>
+
+
+      </div>
+    </div>
+  </main>
+  
+
+</body>
+</html>

@@ -6,7 +6,16 @@
     <description>Recent content on xkyle.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why I&#39;m Not an SRE</title>
+      <link>/Why-Im-Not-an-SRE/</link>
+      <pubDate>Thu, 18 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>/Why-Im-Not-an-SRE/</guid>
+      <description>SRE (Site Reliability Engineer) as coined by Google in 2003, came into prominence in 2016 with the release of &amp;ldquo;The SRE Book&amp;rdquo;. It defines a particular job in an engineering org. This job is mostly focused on of course, reliability, but also performance, observability/monitoring, code deployment, capacity planning, and many other adjacent activities.
+Some people say SRE is Google&amp;rsquo;s &amp;ldquo;version of DevOps&amp;rdquo; (aka a &amp;ldquo;DevOps implementation&amp;rdquo;). This is a little tricky to talk about, because DevOps, started as a rallying cry for shortening deployment times and adding more automation in the SDLC, has turned into a role itself.</description>
+    </item>
+    
     <item>
       <title>The Incidental Complexity of Kubernetes</title>
       <link>/The-Incidental-Complexity-of-Kubernetes/</link>
