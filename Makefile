@@ -1,9 +1,9 @@
 build:
 	@rm -rf docs/*
-	hugo --buildFuture
+	./hugo --buildFuture
 
 serve:
-	hugo serve --buildDrafts --buildFuture
+	./hugo serve --buildDrafts --buildFuture
 
 clean:
 	@rm -rf $(BUILD_DIR)
