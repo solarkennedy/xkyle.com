@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/post/</loc>
-    <lastmod>2024-01-18T00:00:00+00:00</lastmod>
+    <loc>/New-Name-New-Blog/</loc>
+    <lastmod>2024-03-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/Why-Im-Not-an-SRE/</loc>
-    <lastmod>2024-01-18T00:00:00+00:00</lastmod>
+    <loc>/post/</loc>
+    <lastmod>2024-03-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/</loc>
+    <lastmod>2024-03-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/Why-Im-Not-an-SRE/</loc>
     <lastmod>2024-01-18T00:00:00+00:00</lastmod>
   </url>
   

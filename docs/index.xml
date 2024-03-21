@@ -6,7 +6,16 @@
     <description>Recent content on xkyle.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 18 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>New Name, New Blog</title>
+      <link>/New-Name-New-Blog/</link>
+      <pubDate>Thu, 21 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>/New-Name-New-Blog/</guid>
+      <description>I&amp;rsquo;m changing my name from &amp;ldquo;Kyle Anderson&amp;rdquo; to Kyle Cascade&amp;quot;. I&amp;rsquo;m changing it in anticipation of a new family member, and my wife and I figured it would be nice to all have the same last name together, without patriarchal traditions. And it sounds cool.
+But seriously, it marks a new chapter in my life. We wanted to pick a new name that represented us. We wanted a nod to nature, but also nothing too far out there.</description>
+    </item>
+    
     <item>
       <title>Why I&#39;m Not an SRE</title>
       <link>/Why-Im-Not-an-SRE/</link>

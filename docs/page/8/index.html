@@ -151,6 +151,48 @@
 <article>
   <header class="Heading">
   <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="../../rebuilding-packages-for-arm-or-any-other-arch/" rel="bookmark">Rebuilding Packages for ARM (or any other arch)</a>
+  </h2>
+  
+  <time datetime="2013-06-21T04:46:58Z">
+    21 June, 2013
+  </time>
+  
+</header>
+
+  
+  Sometimes there are packages out there that don&rsquo;t come in your cool new Architecture. In my case it is ARM, and the package I wanted was Puppet. Here is how to rebuild source packages the cool way.
+Add the Puppet repo so you can get fresh source packages cd /tmp # Add the repo, even though it may not have arm binaries... wget http://apt.puppetlabs.com/puppetlabs-release-precise.deb dpkg -i puppetlabs-release-precise.deb # Get dependencies... apt-get update apt-get build-dep puppet facter Build / Install # Get sources.
+  <p>
+    <a class="u-clickable" href="../../rebuilding-packages-for-arm-or-any-other-arch/">Read Full Post…</a>
+  </p>
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+  </ul>
+  
+  
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
     <a class="Heading-link u-clickable" href="../../an-overdrive-pro-connecting-on-openwrt/" rel="bookmark">An Overdrive Pro Connecting on OpenWrt</a>
   </h2>
   
@@ -698,67 +740,6 @@ Oh well. Lets hack it.
     
     <li class="Tags-item u-background">
       <a class="Tags-link u-clickable" href="../../categories/text-band/" rel="tag">text band</a>
-    </li>
-    
-    
-  </ul>
-  
-  
-  
-  
-</footer>
-
-
-</article>
-<div class="Divider"></div>
-
-<article>
-  <header class="Heading">
-  <h2 class="Heading-title">
-    <a class="Heading-link u-clickable" href="../../validating-graphite-metrics-with-bash/" rel="bookmark">Validating Graphite Metrics With Bash!</a>
-  </h2>
-  
-  <time datetime="2013-03-07T05:35:49Z">
-    7 March, 2013
-  </time>
-  
-</header>
-
-  
-  At my dayjob I get to work with Graphite and power meters. It is cool:
-To make it easy for my clients to get power information, I&rsquo;ve written a command line tool called &ldquo;power&rdquo; that they can run to get the power usage for a server when running their program. Here is an example:
-power METER-NAME sleep 10s Pretty handy. The &ldquo;METER-NAME&rdquo; is pretty important, as it lets the script know which system&rsquo;s power you are interested in.
-  <p>
-    <a class="u-clickable" href="../../validating-graphite-metrics-with-bash/">Read Full Post…</a>
-  </p>
-  
-  
-
-
-
-
-
-
-<footer>
-  
-  
-  <ul class="Tags">
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/bash/" rel="tag">bash</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/graphite/" rel="tag">graphite</a>
-    </li>
-    
-    
-    
-    <li class="Tags-item u-background">
-      <a class="Tags-link u-clickable" href="../../categories/power/" rel="tag">power</a>
     </li>
     
     
